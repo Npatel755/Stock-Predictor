@@ -7,3 +7,5 @@ flask-migrate
 python-dotenv
 sqlalchemy
 flask-sqlalchemy
+requests
+os
