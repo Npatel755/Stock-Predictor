@@ -23,3 +23,4 @@ class StockModel(db.Model):
     Daily_Return = db.Column(db.Float, nullable=False)
     High_Low_Percent = db.Column(db.Float, nullable=False)
     Open_Close_Percent = db.Column(db.Float, nullable=False)
+    ticker = db.Column(db.String(80), nullable=False)

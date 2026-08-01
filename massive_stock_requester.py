@@ -78,5 +78,9 @@ stock_dataframe['High-Low %'] = (
 stock_dataframe['Open-Close %'] = (
     (stock_dataframe["Close"] - stock_dataframe["Open"])/ stock_dataframe['Open']
 )
+
+#Add ticker name
+stock_dataframe['Ticker'] = ticker
+
 stock_dataframe.dropna(axis=0,inplace=True)
 stock_dataframe.head()
