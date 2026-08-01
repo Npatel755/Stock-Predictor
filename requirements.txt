@@ -1,0 +1,8 @@
+schemas
+flask
+flask-smorest
+marshmallow
+flask-jwt-extended
+flask-migrate
+python-dotenv
+sqlalchemy
