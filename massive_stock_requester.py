@@ -3,7 +3,10 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 import datetime
-
+from database import db
+from models.stockmodel import StockModel
+from app import app
+from sqlalchemy.dialects.postgresql import insert
 
 #Grab data from massive using api key
 load_dotenv()
@@ -67,20 +70,37 @@ stock_dataframe['Signal'] = stock_dataframe['MACD'].ewm(span=9,adjust=False).mea
 stock_dataframe['Histogram'] = stock_dataframe['MACD'] - stock_dataframe['Signal']
 
 #Add daily return
-stock_dataframe["Dailly Return"] = stock_dataframe['Close'].pct_change()
+stock_dataframe["Daily_Return"] = stock_dataframe['Close'].pct_change()
 
 #Add high-low%
-stock_dataframe['High-Low %'] = (
+stock_dataframe['High_Low_Percent'] = (
     (stock_dataframe["High"] - stock_dataframe["Low"])/ stock_dataframe['Low']
 )
 
 #Add open-close %
-stock_dataframe['Open-Close %'] = (
+stock_dataframe['Open_Close_Percent'] = (
     (stock_dataframe["Close"] - stock_dataframe["Open"])/ stock_dataframe['Open']
 )
 
 #Add ticker name
-stock_dataframe['Ticker'] = ticker
+stock_dataframe['ticker'] = ticker
 
+#Delete first 40 something values with null values
 stock_dataframe.dropna(axis=0,inplace=True)
-stock_dataframe.head()
+
+#Add all information to the database
+with app.app_context():
+
+    records = stock_dataframe.to_dict(orient="records")
+
+    stmt = insert(StockModel).values(records)
+
+    stmt = stmt.on_conflict_do_nothing(
+        index_elements=["ticker", "Timestamp"]
+    )
+
+    result = db.session.execute(stmt)
+    db.session.commit()
+    print("Rows ready:", len(records))
+    print("Rows inserted:", result.rowcount)
+    print("Duplicates skipped:", len(records) - result.rowcount)

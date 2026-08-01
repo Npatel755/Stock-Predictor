@@ -3,6 +3,14 @@ from database import db
 class StockModel(db.Model):
     __tablename__ = 'stock_data'
 
+    __table_args__ = (
+        db.UniqueConstraint(
+            "ticker",
+            "Timestamp",
+            name="uq_stock_ticker_timestamp",
+        ),
+    )
+
     id = db.Column(db.Integer, primary_key=True)
     Volume = db.Column(db.Float, nullable=False)
     VWAP = db.Column(db.Float, nullable=False)

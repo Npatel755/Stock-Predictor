@@ -2,6 +2,8 @@ from flask_smorest import Api
 from flask import Flask,jsonify
 from database import db
 import os
+from flask_migrate import Migrate
+from models.stockmodel import StockModel
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -16,4 +18,6 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
     api = Api(app)
+    migrate = Migrate(app, db)
+    return app
 app = create_app()
