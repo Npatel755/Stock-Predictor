@@ -1,3 +1,5 @@
 .env
-flask.env
+.venv
+.vscode
 __pycache__
+data.db
