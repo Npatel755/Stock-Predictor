@@ -6,3 +6,4 @@ flask-jwt-extended
 flask-migrate
 python-dotenv
 sqlalchemy
+flask-sqlalchemy
