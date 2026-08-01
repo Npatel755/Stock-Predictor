@@ -8,4 +8,7 @@ python-dotenv
 sqlalchemy
 flask-sqlalchemy
 requests
-os
+pandas
+numpy
+seaborn
+matplotlib
