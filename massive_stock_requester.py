@@ -7,7 +7,6 @@ import os
 from datetime import datetime
 from database import db
 from models.stockmodel import StockModel
-from app import app
 from sqlalchemy.dialects.postgresql import insert
 def grab_data(ticker):
     today = datetime.today()
@@ -24,6 +23,26 @@ def grab_data(ticker):
     }
     response = requests.get(url,params=params)
     data = response.json()
+
+    try:
+        data = response.json()
+    except requests.exceptions.JSONDecodeError:
+        print(f"{ticker} returned invalid JSON")
+        return
+
+    if response.status_code != 200:
+        print(f"{ticker} failed: {response.status_code}")
+        print(data)
+        return
+
+    if "results" not in data:
+        print(f"{ticker} missing results:")
+        print(data)
+        return
+
+    if len(data["results"]) == 0:
+        print(f"{ticker} has no price data")
+        return
 
     #turn the results into a dataframe
     stock_dataframe = pd.DataFrame(data['results'])
@@ -238,18 +257,17 @@ def grab_data(ticker):
     stock_dataframe.reset_index(drop=True,inplace=True)
 
     #Add all information to the database
-    with app.app_context():
-        
-        records = stock_dataframe.to_dict(orient="records")
+    print(stock_dataframe.columns.tolist())
+    records = stock_dataframe.to_dict(orient="records")
 
-        stmt = insert(StockModel).values(records)
+    stmt = insert(StockModel).values(records)
 
-        stmt = stmt.on_conflict_do_nothing(
-            index_elements=["ticker", "Timestamp"]
-        )
+    stmt = stmt.on_conflict_do_nothing(
+        index_elements=["ticker", "Timestamp"]
+    )
 
-        result = db.session.execute(stmt)
-        db.session.commit()
-        print("Rows ready:", len(records))
-        print("Rows inserted:", result.rowcount)
-        print("Duplicates skipped:", len(records) - result.rowcount)
+    result = db.session.execute(stmt)
+    db.session.commit()
+    print("Rows ready:", len(records))
+    print("Rows inserted:", result.rowcount)
+    print("Duplicates skipped:", len(records) - result.rowcount)

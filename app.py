@@ -5,6 +5,7 @@ import os
 from flask_migrate import Migrate
 from models.stockmodel import StockModel
 from dotenv import load_dotenv
+from api import blp
 
 load_dotenv()
 def create_app(db_url=None):
@@ -20,6 +21,7 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
     api = Api(app)
+    app.register_blueprint(blp)
     migrate = Migrate(app, db)
     return app
 app = create_app()

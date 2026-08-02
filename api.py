@@ -5,46 +5,54 @@ import joblib
 from database import db
 from sqlalchemy import select
 from models.stockmodel import StockModel
-from app import app
 import pandas as pd
 from massive_stock_requester import grab_data
+from flask_smorest import abort
+
 
 blp = Blueprint('Tickers',__name__,description="Get prediction on ticker")
 
-model_bundle = joblib.load("stock_model.pkl")
+model_bundle = joblib.load("xg_boost_bundle.pkl")
 model = model_bundle["model"]
 scaler = model_bundle["scaler"]
 feature_columns = model_bundle["feature_columns"]
 
 
-@blp.route('Ticker/<string:ticker_symbol>')
-class get_prediction(MethodView):
+@blp.route('/Ticker/<string:ticker_symbol>')
+class GetPrediction(MethodView):
     
 
-    @blp.arguments(TickerSchema)
+
     @blp.response(200,TickerSchema)
-    def get_ticker_prediction(ticker_data):
-        grab_data(ticker_data['ticker'])
+    def get(self, ticker_symbol):
+
+        grab_data(ticker_symbol)
         
         latest_row = db.session.execute(
                 select(StockModel)
-                .where(StockModel.ticker == ticker_data['ticker'])
+                .where(StockModel.ticker == ticker_symbol)
                 .order_by(StockModel.Timestamp.desc())
             ).scalar()
         if latest_row is None:
             abort(
                 404,
-                message=f"No stock data found for {ticker_data['ticker']}"
+                message=f"No stock data found for {ticker_symbol}"
             )
 
         # Convert SQLAlchemy row into one-row DataFrame
+        feature_data = {}
+
+        for column in feature_columns:
+            if column.startswith("ticker_"):
+                expected_ticker = column.removeprefix("ticker_")
+                feature_data[column] = int(
+                    ticker_symbol == expected_ticker
+                )
+            else:
+                feature_data[column] = getattr(latest_row, column)
+
         latest_features = pd.DataFrame(
-            [
-                {
-                    column: getattr(latest_row, column)
-                    for column in feature_columns
-                }
-            ],
+            [feature_data],
             columns=feature_columns
         )
 
@@ -60,10 +68,11 @@ class get_prediction(MethodView):
         )
 
         return {
-            "ticker": ticker_data['ticker'],
+            "ticker": ticker_symbol,
             "latest_date": latest_row.Timestamp.isoformat(),
             "prediction": "UP" if prediction == 1 else "DOWN",
             "prediction_value": prediction,
+            "model_confidence": probability_up*100,
             "probability_up": probability_up
         }
 
