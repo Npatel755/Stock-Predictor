@@ -13,3 +13,5 @@ numpy
 seaborn
 matplotlib
 psycopg2-binary
+scikit-learn
+xgboost

@@ -4,7 +4,9 @@ from database import db
 import os
 from flask_migrate import Migrate
 from models.stockmodel import StockModel
+from dotenv import load_dotenv
 
+load_dotenv()
 def create_app(db_url=None):
     app = Flask(__name__)
     app.config["PROPAGATE_EXCEPTIONS"] = True
