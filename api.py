@@ -7,10 +7,11 @@ from sqlalchemy import select
 from models.stockmodel import StockModel
 from app import app
 import pandas as pd
+from massive_stock_requester import grab_data
 
 blp = Blueprint('Tickers',__name__,description="Get prediction on ticker")
 
-model_bundle = joblib.load("stock_model.pk1")
+model_bundle = joblib.load("stock_model.pkl")
 model = model_bundle["model"]
 scaler = model_bundle["scaler"]
 feature_columns = model_bundle["feature_columns"]
@@ -23,16 +24,17 @@ class get_prediction(MethodView):
     @blp.arguments(TickerSchema)
     @blp.response(200,TickerSchema)
     def get_ticker_prediction(ticker_data):
-        with app.app_context():
-            latest_row = db.session.execute(
-                    select(StockModel)
-                    .where(StockModel.ticker == ticker_data['ticker'])
-                    .order_by(StockModel.Timestamp.desc())
-                ).scalar()
+        grab_data(ticker_data['ticker'])
+        
+        latest_row = db.session.execute(
+                select(StockModel)
+                .where(StockModel.ticker == ticker_data['ticker'])
+                .order_by(StockModel.Timestamp.desc())
+            ).scalar()
         if latest_row is None:
             abort(
                 404,
-                message=f"No stock data found for {ticker}"
+                message=f"No stock data found for {ticker_data['ticker']}"
             )
 
         # Convert SQLAlchemy row into one-row DataFrame
@@ -58,7 +60,7 @@ class get_prediction(MethodView):
         )
 
         return {
-            "ticker": ticker,
+            "ticker": ticker_data['ticker'],
             "latest_date": latest_row.Timestamp.isoformat(),
             "prediction": "UP" if prediction == 1 else "DOWN",
             "prediction_value": prediction,
