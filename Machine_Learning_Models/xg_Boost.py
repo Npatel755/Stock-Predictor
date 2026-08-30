@@ -34,7 +34,7 @@ df.dropna(axis=0,inplace=True)
 #Split the data into training data and test data and scale the data
 X = df.drop(['ticker','Target','Timestamp','id'],axis=1)
 Y = df['Target']
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.3)
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.3,stratify=Y)
 scaler = StandardScaler()
 
 feature_columns = X_train.columns.tolist()
@@ -52,6 +52,15 @@ predictions = model.predict(X_test)
 print(confusion_matrix(Y_test, predictions))
 print(classification_report(Y_test, predictions))
 
+
+train_predictions = model.predict(X_train)
+test_predictions = model.predict(X_test)
+
+print("Train accuracy:",
+      accuracy_score(Y_train, train_predictions))
+
+print("Test accuracy:",
+      accuracy_score(Y_test, test_predictions))
 
 # param_distributions = {
 #     "n_estimators": [100, 200, 300, 500, 700],
