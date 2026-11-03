@@ -3,3 +3,8 @@
 .vscode
 __pycache__
 data.db
+.stockvenv/
+.ethvenv/
+artifacts/ethusd/
+data/ethusd/
+*.pyc
