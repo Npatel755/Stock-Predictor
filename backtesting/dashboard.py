@@ -19,7 +19,7 @@ from backtesting.date_ranges import default_dates, select_dates
 from backtesting.engine import backtest
 from backtesting.market_data import download_history, load_history
 from backtesting.paths import PARQUET, RUNS, ROOT
-from backtesting.reporting import chart, save_result, safe_value
+from backtesting.reporting import chart, save_result, safe_value, attach_research_profile
 
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
@@ -65,6 +65,7 @@ with st.sidebar:
         if profile.startswith("DVS ETH v1.2"):
             saved_profile = json.loads(profile_path.read_text(encoding="utf-8"))
             st.caption("Saved v1.2 research rules; the original v1.1 parity source stays separate.")
+            st.caption("Historical research only: passing a reused-data gate does not establish future profitability. Earlier-regime and slippage failures are in the reports.")
             profile_metadata = profile_path.with_name("dvs_eth_v1_2.metadata.json")
             if profile_metadata.exists() and not json.loads(profile_metadata.read_text(encoding="utf-8")).get("passed_predeclared_validation_gate", False):
                 st.caption("v1.2 has not passed the strict validation gate. Results and failed checks are retained in Strategy research.")
@@ -157,7 +158,7 @@ if run:
                                       max_daily_loss=float(max_daily), max_trades_day=int(maximum_entries), **research))
                 result = backtest(selected_bars, cfg, quality=selected_quality)
                 if saved_profile:
-                    result.provenance["research_profile"] = "DVS ETH v1.2 (experimental)"
+                    attach_research_profile(result, profile_path)
                 location = RUNS / ("dashboard_v1_2" if saved_profile else f"dashboard_{mode}_{strategy_version.replace('.', '_')}")
                 save_result(result, location, PARQUET)
                 st.session_state["dvs_result"] = result

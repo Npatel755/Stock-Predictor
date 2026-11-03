@@ -59,3 +59,13 @@ The user requested the new derivative be named **DVS ETH v1.2**. The exporter sa
 The first 256-candidate search found no shortlisted candidate that passed both half-year profit gates. Its frozen winner improved aggregate net P&L, but failed the gate with a small H1 loss. It is saved as experimental v1.2, not promoted as validated.
 
 The follow-up `python -m backtesting.refine` preregisters 128 configurations around the saved v1.2, retaining its cost-aware sizing and original DVS state machine while varying reward/risk, stop buffer, breakout RVOL and minimum ATR. It snapshots the parent configuration and records the new source/protocol hashes before evaluation. It uses 2023–2024 screening and **reuses 2025 selection data**, so this is additional model selection, not independent validation. Both validation halves being profitable is an eligibility condition before ranking in this round. The already-inspected 2026 audit cannot choose parameters. It does not automatically overwrite v1.2.
+
+## Follow-up evidence and earlier-regime transfer
+
+The refinement finished with reward/risk 4.5, stop buffer 0.4 ATR, cost-aware risk and minimum ATR 10bp. Its 2025 halves made +$25.50 and +$1,639.91. Current v1.2 uses these frozen rules; earlier Pine/config/metadata are content-addressed revisions. This historical gate pass is not prospective validation.
+
+`python -m backtesting.transfer_audit` froze the three comparators before downloading previously unused 2020–2022 perpetual data into a separate directory. Refined v1.2 lost $3,093.86 over that period, with 8.55% running-peak drawdown. The failed regime transfer is preserved without tuning to it.
+
+`python -m backtesting.execution_audit backtesting/artifacts/optimization/round2_v1_2_neighborhood` measures half-year slippage sensitivity and concentration without selecting new rules. H1 2025 turns negative at 4bp extra slippage, and a few large winners drive much of the 2026 result.
+
+The separate `python -m backtesting.adaptive_audit` diagnostic compares fixed variants with cash. Quarterly allocation uses only the preceding 12 months of shadow marks/exits, requiring 20 closed legs and profit in both halves. It liquidates at scheduled quarter ends with costs, carries cash across windows and resets setup state. This is a causal historical allocation replay, **not independent walk-forward validation**, since the candidates themselves were selected using later data. It never overwrites v1.2 or submits orders. The verified run is stored in `adaptive_trailing_audit_verified`; the first diagnostic was rerun after correcting reporting of scheduled liquidation costs, without changing allocation rules.

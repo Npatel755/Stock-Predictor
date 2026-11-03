@@ -10,7 +10,7 @@ from .config import StrategyConfig
 from .engine import backtest
 from .market_data import download_history, load_history, utc
 from .paths import PARQUET, RUNS
-from .reporting import save_result, safe_value
+from .reporting import save_result, safe_value, attach_research_profile
 
 
 def main():
@@ -48,6 +48,8 @@ def main():
         bars, quality = clean_candles(bars, start, end)
     logging.info("Starting %s DVS run: %s bars", cfg.mode, len(bars))
     result = backtest(bars, cfg, quality=quality)
+    if args.config:
+        attach_research_profile(result, args.config)
     out = args.output or RUNS / f"{cfg.mode}_{cfg.strategy_version.replace('.', '_')}"
     report = save_result(result, out, args.data)
     print(json.dumps(safe_value({"report": report, **result.metrics}), indent=2, allow_nan=False))

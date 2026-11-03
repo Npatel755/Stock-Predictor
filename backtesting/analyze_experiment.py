@@ -34,13 +34,18 @@ def paired_week_bootstrap(candidate, comparator, samples=10000, seed=1027):
     if pair.isna().any().any() or pair.empty:
         raise ValueError("Paired uncertainty estimates require matching complete daily series")
     delta = pair.candidate - pair.baseline
-    # Fixed seven-day chronological blocks; no independence claim for intraday trades.
-    blocks = delta.groupby(np.arange(len(delta)) // 7).sum().to_numpy()
+    # Circular moving seven-day blocks, trimmed to the original day count.
+    # Aggregating a short final block and resampling it as a full block would
+    # vary the observation horizon across replicates (365 is not divisible by 7).
+    values = delta.to_numpy(dtype=float)
     rng = np.random.default_rng(seed)
-    draws = rng.choice(blocks, size=(samples, len(blocks)), replace=True).sum(axis=1)
+    block_count = int(np.ceil(len(values) / 7))
+    starts = rng.integers(0, len(values), size=(samples, block_count))
+    indices = ((starts[:, :, None] + np.arange(7)) % len(values)).reshape(samples, -1)[:, :len(values)]
+    draws = values[indices].sum(axis=1)
     return {"paired_net_pnl_difference": float(delta.sum()), "conditional_95pct_interval": np.quantile(draws, [.025, .975]).tolist(),
-            "fraction_resamples_positive": float((draws > 0).mean()), "days": len(delta), "blocks": len(blocks),
-            "method": "paired seven-day block bootstrap, fixed sample length, conditional on selected strategy",
+            "fraction_resamples_positive": float((draws > 0).mean()), "days": len(delta), "blocks": block_count,
+            "method": "paired circular moving seven-day block bootstrap, trimmed to original day count, conditional on selected strategy",
             "limitations": "Does not correct the selection bias from searching many candidates; not a future-profit probability"}
 
 

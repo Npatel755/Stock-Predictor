@@ -1,0 +1,17 @@
+{
+  "strategy_name": "DVS ETH v1.2",
+  "base_pine_version": "v1.1",
+  "mode": "research",
+  "experiment": "round1_verified",
+  "selected_candidate": "family_3_187",
+  "passed_predeclared_validation_gate": false,
+  "configuration_sha256": "abb97e28ca201866f6d5805a446775390ab044d2f3262ee0d6aaa52c604e67fb",
+  "pine_sha256": "67db4b4a709ce106da12cde896d81a79f699b199709098650b50a9ed052f722a",
+  "pine_compilation_verified": false,
+  "tradingview_parity_verified": false,
+  "execution_differences": [
+    "Pine fixed tick slippage omits Python's additional basis-point fill slippage",
+    "Pine omits Python's financing and stop-first ambiguity policy"
+  ],
+  "note": "Version label names this research derivative; it is not evidence of profitable future trading"
+}

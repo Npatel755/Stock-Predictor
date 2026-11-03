@@ -111,3 +111,18 @@ def test_cooldown_counts_a_position_that_opens_and_closes_in_the_same_next_bar()
     assert result.metrics["closed_trade_legs"] == 1
     assert result.metrics["entries"] == 1
     assert result.metrics["filtered_entry_signals"] >= 1
+
+
+def test_failed_volatility_filter_consumes_setup_instead_of_allowing_later_entry():
+    bars, frame = deferred_fixture(n=7)
+    # Original confirmation is below the experimental volatility threshold.
+    # A later candle passes it, but the already-rejected setup must be gone.
+    for data in [bars, frame]:
+        data.loc[3, ["open", "low", "close", "high"]] = [103, 102, 121, 122]
+    frame.loc[3, ["atr5", "rv5", "previous_high"]] = [4, 2, 120]
+    cfg = research(min_atr_bps=200)
+    result = backtest(bars, cfg, indicators=frame)
+    assert result.metrics["filtered_entry_signals"] == 1
+    assert result.metrics["entries"] == 0
+    assert result.signals.iloc[2].setup_direction == 0
+    assert not result.signals.iloc[3].entered

@@ -18,6 +18,28 @@ from plotly.subplots import make_subplots
 from .engine import BacktestResult
 
 
+def attach_research_profile(result: BacktestResult, configuration: Path):
+    """Label a saved preset only if its exact config and derivative hash match."""
+    configuration = Path(configuration)
+    metadata_path = configuration.with_name(configuration.stem + ".metadata.json")
+    if not metadata_path.exists():
+        return
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    digest = hashlib.sha256(json.dumps(result.config, sort_keys=True).encode()).hexdigest()
+    if digest != metadata.get("configuration_sha256"):
+        return  # CLI overrides or edited configurations are not the frozen preset.
+    name = metadata.get("strategy_name")
+    if name != "DVS ETH v1.2":
+        return
+    derivative = configuration.parent.parent / "reference/DVS_ETH_v1_2.pine"
+    if not derivative.exists() or hashlib.sha256(derivative.read_bytes()).hexdigest() != metadata.get("pine_sha256"):
+        raise ValueError("Saved strategy's Pine derivative does not match its metadata")
+    result.provenance.update(research_profile=name + " (experimental)",
+                             research_derivative_sha256=metadata["pine_sha256"],
+                             base_pine_version=result.config["strategy_version"],
+                             historical_gate_passed=metadata.get("passed_predeclared_validation_gate", False))
+
+
 def safe_value(value):
     if isinstance(value, dict):
         return {key: safe_value(item) for key, item in value.items()}
@@ -42,7 +64,8 @@ def chart(result: BacktestResult):
     dd = curve.equity / curve.equity.cummax() - 1
     fig.add_trace(go.Scatter(x=display.timestamp, y=dd.iloc[::step] * 100, name="Close drawdown %", fill="tozeroy",
                              line={"color": "#fb7185"}), row=2, col=1)
-    fig.update_layout(template="plotly_dark", title=f"DVS ETH {result.config['strategy_version']} · {result.config['mode']} · parity unverified",
+    profile = result.provenance.get("research_profile", f"DVS ETH {result.config['strategy_version']}")
+    fig.update_layout(template="plotly_dark", title=f"{profile} · {result.config['mode']} · parity unverified",
                       height=650, margin=dict(l=30, r=30, t=65, b=30), legend=dict(orientation="h"))
     fig.update_yaxes(title_text="USD", row=1, col=1)
     fig.update_yaxes(title_text="%", row=2, col=1)
@@ -66,12 +89,13 @@ def save_result(result: BacktestResult, directory: Path, data_path: Path) -> Pat
     chart(result).write_html(directory / "equity.html", include_plotlyjs=True)
     fig, ax = plt.subplots(figsize=(11, 4), constrained_layout=True)
     ax.plot(result.equity.timestamp, result.equity.equity, color="#0284c7", linewidth=.8)
-    ax.set(title=f"DVS ETH {result.config['strategy_version']} — {result.config['mode']} (TradingView parity unverified)", ylabel="Equity (USD)")
+    profile = result.provenance.get("research_profile", f"DVS ETH {result.config['strategy_version']}")
+    ax.set(title=f"{profile} — {result.config['mode']} (TradingView parity unverified)", ylabel="Equity (USD)")
     ax.grid(alpha=.2)
     fig.savefig(directory / "equity.png", dpi=150)
     plt.close(fig)
     m = result.metrics
-    summary = f"""# DVS ETH {result.config['strategy_version']} backtest — {result.config['mode']}
+    summary = f"""# {profile} backtest — {result.config['mode']}
 
 Source: **{provenance['pine_title']}**. TradingView parity remains **unverified**.
 Period: {result.equity.timestamp.iloc[0]} through {result.equity.timestamp.iloc[-1]}.

@@ -1,0 +1,228 @@
+// RESEARCH DERIVATIVE of the supplied DVS ETH v1.1; original copyright/license retained.
+// Candidate: family_3_187
+// Config SHA-256: abb97e28ca201866f6d5805a446775390ab044d2f3262ee0d6aaa52c604e67fb
+// NOT a verified TradingView/Python execution match.
+// Pine models only 2 ticks of slippage; Python additionally assumes 2.0bp per market/stop side.
+// Extra slippage below affects risk estimation, not Pine's broker fills.
+// Pine does not reproduce Python's 3.3bp/day financing or its 'stop_first' OHLC ambiguity policy.
+// Compare exported entries/stops/sizes before using this research derivative.
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © nick_patel74586
+//@version=6
+strategy("DVS ETH v1.2 | Research candidate", overlay=true,
+     initial_capital=50000.0, currency=currency.USD,
+     pyramiding=0, process_orders_on_close=false,
+     commission_type=strategy.commission.percent, commission_value=0.04,
+     slippage=2, margin_long=20.0, margin_short=20.0)
+
+// Apply to a standard 5-minute ETH perpetual chart.
+riskUSD      = input.float(100.0, "Planned risk per trade ($)", minval=1)
+rewardR      = input.float(4.0, "Reward / risk", minval=1, step=0.25)
+maxLeverage  = input.float(5.0, "Maximum notional leverage", minval=1, maxval=5)
+maxDailyLoss = input.float(300.0, "Personal daily loss limit ($)", minval=1)
+maxTradesDay = input.int(3, "Maximum entries per day", minval=1)
+maxSetupBars = input.int(24, "Retest window (5m bars)", minval=1)
+breakoutRVOL = input.float(1.5, "15m breakout RVOL minimum", minval=0.1, step=0.1)
+entryRVOL    = input.float(1.2, "5m confirmation RVOL minimum", minval=0.1, step=0.1)
+retestATR    = input.float(0.25, "Retest tolerance (5m ATR)", minval=0, step=0.05)
+stopATR      = input.float(0.5, "Stop buffer (5m ATR)", minval=0, step=0.05)
+
+
+// Experimental settings, separate from the supplied parity source.
+minStopBps = input.float(0.0, "Minimum stop (basis points)", minval=0)
+minStopATR = input.float(0.0, "Minimum stop (ATR)", minval=0)
+costRisk = input.bool(true, "Include estimated fees/slippage in size")
+assumedExtraBps = input.float(2.0, "Extra slippage for risk estimate only (bp)", minval=0)
+minRewardCost = input.float(0.0, "Minimum target / estimated costs", minval=0)
+minAtrBps = input.float(10.0, "Minimum 5m ATR (bp)", minval=0)
+maxAtrBps = input.float(0.0, "Maximum 5m ATR (bp; 0 disables)", minval=0)
+minTrendBps = input.float(0.0, "Minimum 4H trend distance (bp)", minval=0)
+tradeDirection = input.string("both", "Directions", options=["both", "long", "short"])
+utcSession = input.string("all", "UTC session", options=["all", "europe_us", "us", "asia"])
+weekends = input.bool(true, "Allow weekends")
+cooldownBars = input.int(0, "Cooldown bars after exit", minval=0)
+breakevenR = input.float(0.0, "Close-based breakeven trigger R; 0 disables", minval=0)
+trailATR = input.float(0.0, "Close-based trailing ATR; 0 disables", minval=0)
+maxHoldingBars = input.int(0, "Maximum holding bars; 0 disables", minval=0)
+estimateCosts(price) => 2 * price * (4.0 + assumedExtraBps) / 10000 + 2 * 2 * syminfo.mintick
+var int lastExitBar = -1000000
+var float activeStop = na
+var float activeTarget = na
+var float initialRisk = na
+if strategy.closedtrades > nz(strategy.closedtrades[1])
+    lastExitBar := bar_index
+
+validChart = timeframe.in_seconds() == 300
+
+// Read previous completed higher-timeframe candles to avoid lookahead.
+dailyUp = request.security(syminfo.tickerid, "D", close[1] > close[2], lookahead=barmerge.lookahead_on)
+dailyDn = request.security(syminfo.tickerid, "D", close[1] < close[2], lookahead=barmerge.lookahead_on)
+ema4h = request.security(syminfo.tickerid, "240", ta.ema(close, 50)[1], lookahead=barmerge.lookahead_on)
+close4h = request.security(syminfo.tickerid, "240", close[1], lookahead=barmerge.lookahead_on)
+
+// Confirmed 4H pivots, two candles on each side.
+// Each value is taken from the last fully closed 4H bar.
+h4new = request.security(syminfo.tickerid, "240", ta.valuewhen(not na(ta.pivothigh(high, 2, 2)), ta.pivothigh(high, 2, 2), 0)[1], lookahead=barmerge.lookahead_on)
+h4old = request.security(syminfo.tickerid, "240", ta.valuewhen(not na(ta.pivothigh(high, 2, 2)), ta.pivothigh(high, 2, 2), 1)[1], lookahead=barmerge.lookahead_on)
+l4new = request.security(syminfo.tickerid, "240", ta.valuewhen(not na(ta.pivotlow(low, 2, 2)), ta.pivotlow(low, 2, 2), 0)[1], lookahead=barmerge.lookahead_on)
+l4old = request.security(syminfo.tickerid, "240", ta.valuewhen(not na(ta.pivotlow(low, 2, 2)), ta.pivotlow(low, 2, 2), 1)[1], lookahead=barmerge.lookahead_on)
+
+bullBias = dailyUp and close4h > ema4h and h4new > h4old and l4new > l4old
+bearBias = dailyDn and close4h < ema4h and h4new < h4old and l4new < l4old
+
+// 15-minute structure and breakout confirmation.
+// Pivot levels are read as of the bar preceding the breakout candle.
+res15 = request.security(syminfo.tickerid, "15", ta.valuewhen(not na(ta.pivothigh(high, 2, 2)), ta.pivothigh(high, 2, 2), 0)[2], lookahead=barmerge.lookahead_on)
+sup15 = request.security(syminfo.tickerid, "15", ta.valuewhen(not na(ta.pivotlow(low, 2, 2)), ta.pivotlow(low, 2, 2), 0)[2], lookahead=barmerge.lookahead_on)
+c15 = request.security(syminfo.tickerid, "15", close[1], lookahead=barmerge.lookahead_on)
+p15 = request.security(syminfo.tickerid, "15", close[2], lookahead=barmerge.lookahead_on)
+v15 = request.security(syminfo.tickerid, "15", volume[1] / ta.sma(volume, 20)[2], lookahead=barmerge.lookahead_on)
+
+new15 = timeframe.change("15")
+longBreak = new15 and bullBias and not na(res15) and p15 <= res15 and c15 > res15 and v15 >= breakoutRVOL
+shortBreak = new15 and bearBias and not na(sup15) and p15 >= sup15 and c15 < sup15 and v15 >= breakoutRVOL
+
+atr5 = ta.atr(14)
+volAverage5 = ta.sma(volume[1], 20)
+rv5 = volAverage5 > 0 ? volume / volAverage5 : na
+
+// Personal intraday limits. These do not reproduce the prop firm's rules.
+var float dayStartEquity = na
+var int entriesToday = 0
+var bool dailyLocked = false
+if na(dayStartEquity) or timeframe.change("D")
+    dayStartEquity := strategy.equity
+    entriesToday := 0
+    dailyLocked := false
+if strategy.equity <= dayStartEquity - maxDailyLoss
+    dailyLocked := true
+canTrade = not dailyLocked and entriesToday < maxTradesDay
+
+// Setup states: +1 long, -1 short, 0 inactive.
+var int setupDir = 0
+var float setupLevel = na
+var int setupBar = na
+var bool retested = false
+var float retestExtreme = na
+
+expired = setupDir != 0 and (bar_index - setupBar > maxSetupBars or (setupDir == 1 and not bullBias) or (setupDir == -1 and not bearBias))
+if expired or not canTrade
+    setupDir := 0
+    retested := false
+    retestExtreme := na
+
+if validChart and strategy.position_size == 0 and canTrade
+    if longBreak or shortBreak
+        setupDir := longBreak ? 1 : -1
+        setupLevel := longBreak ? res15 : sup15
+        setupBar := bar_index
+        retested := false
+        retestExtreme := na
+
+// Wait for a separate pullback after the breakout was detected.
+active = validChart and canTrade and strategy.position_size == 0 and setupDir != 0 and bar_index > setupBar
+nearLevel = active and low <= setupLevel + retestATR * atr5 and high >= setupLevel - retestATR * atr5
+
+if nearLevel and setupDir == 1 and close >= setupLevel
+    retested := true
+    retestExtreme := na(retestExtreme) ? low : math.min(retestExtreme, low)
+if nearLevel and setupDir == -1 and close <= setupLevel
+    retested := true
+    retestExtreme := na(retestExtreme) ? high : math.max(retestExtreme, high)
+
+// Invalidate if price closes convincingly through the retest level.
+failedLong = active and setupDir == 1 and close < setupLevel - retestATR * atr5
+failedShort = active and setupDir == -1 and close > setupLevel + retestATR * atr5
+if failedLong or failedShort
+    setupDir := 0
+    retested := false
+    retestExtreme := na
+
+// Confirmation must occur after the retest candle, not on the same candle.
+var int lastRetestBar = na
+if nearLevel and retested
+    lastRetestBar := bar_index
+
+confirmLong = active and setupDir == 1 and retested and bar_index > lastRetestBar and close > open and close > high[1] and rv5 >= entryRVOL
+confirmShort = active and setupDir == -1 and retested and bar_index > lastRetestBar and close < open and close < low[1] and rv5 >= entryRVOL
+
+
+utcHour = hour(time, "UTC")
+utcDay = dayofweek(time, "UTC")
+sessionOK = utcSession == "all" or (utcSession == "europe_us" and utcHour >= 7 and utcHour < 21) or (utcSession == "us" and utcHour >= 13 and utcHour < 21) or (utcSession == "asia" and utcHour >= 0 and utcHour < 8)
+weekdayOK = weekends or (utcDay >= dayofweek.monday and utcDay <= dayofweek.friday)
+directionOK = (confirmLong and tradeDirection != "short") or (confirmShort and tradeDirection != "long")
+atrBps = atr5 / close * 10000
+volatilityOK = atrBps >= minAtrBps and (maxAtrBps == 0 or atrBps <= maxAtrBps)
+trendOK = minTrendBps == 0 or math.abs(close4h / ema4h - 1) * 10000 >= minTrendBps
+researchAllowed = sessionOK and weekdayOK and directionOK and volatilityOK and trendOK and bar_index - lastExitBar >= cooldownBars
+
+if barstate.isconfirmed and (confirmLong or confirmShort)
+    isLong = confirmLong
+    stopPrice = isLong ? retestExtreme - stopATR * atr5 : retestExtreme + stopATR * atr5
+    stopDistance = math.abs(close - stopPrice)
+    stopValid = isLong ? stopPrice < close : stopPrice > close
+    stopDistance := math.max(stopDistance, math.max(close * minStopBps / 10000, atr5 * minStopATR))
+    stopPrice := close - (isLong ? 1 : -1) * stopDistance
+    estimatedCost = estimateCosts(close)
+    rewardCostOK = rewardR * stopDistance >= minRewardCost * estimatedCost
+    if stopValid and stopDistance > syminfo.mintick and rewardCostOK and researchAllowed
+        sizeByRisk = riskUSD / ((stopDistance + (costRisk ? estimatedCost : 0)) * syminfo.pointvalue)
+        sizeByLeverage = strategy.equity * maxLeverage / (close * syminfo.pointvalue)
+        tradeQty = math.floor(math.min(sizeByRisk, sizeByLeverage) * 1000) / 1000
+        targetPrice = isLong ? close + rewardR * stopDistance : close - rewardR * stopDistance
+        if tradeQty > 0
+            activeStop := stopPrice
+            activeTarget := targetPrice
+            initialRisk := na
+            if isLong
+                strategy.entry("Long", strategy.long, qty=tradeQty)
+                strategy.exit("Long TP/SL", from_entry="Long", stop=stopPrice, limit=targetPrice)
+            else
+                strategy.entry("Short", strategy.short, qty=tradeQty)
+                strategy.exit("Short TP/SL", from_entry="Short", stop=stopPrice, limit=targetPrice)
+            entriesToday += 1
+    setupDir := 0
+    retested := false
+    retestExtreme := na
+
+
+// Completed-close management affects later ticks; it cannot fill earlier on this candle.
+if strategy.position_size != 0 and not na(activeStop)
+    dir = strategy.position_size > 0 ? 1 : -1
+    if na(initialRisk)
+        initialRisk := math.abs(strategy.position_avg_price - activeStop)
+    heldBars = bar_index - strategy.opentrades.entry_bar_index(0) + 1
+    if maxHoldingBars > 0 and heldBars >= maxHoldingBars
+        if dir == 1
+            strategy.close("Long", comment="Research time exit", immediately=true)
+        else
+            strategy.close("Short", comment="Research time exit", immediately=true)
+    else
+        favorable = dir * (close - strategy.position_avg_price)
+        proposed = activeStop
+        if breakevenR > 0 and favorable >= breakevenR * initialRisk
+            proposed := strategy.position_avg_price + dir * estimateCosts(strategy.position_avg_price)
+        if trailATR > 0 and favorable >= math.max(1, breakevenR) * initialRisk
+            trailing = close - dir * trailATR * atr5
+            proposed := dir == 1 ? math.max(proposed, trailing) : math.min(proposed, trailing)
+        tighter = dir == 1 ? proposed > activeStop : proposed < activeStop
+        placeable = dir * (close - proposed) > syminfo.mintick
+        if tighter and placeable
+            activeStop := proposed
+            if dir == 1
+                strategy.exit("Long TP/SL", from_entry="Long", stop=activeStop, limit=activeTarget)
+            else
+                strategy.exit("Short TP/SL", from_entry="Short", stop=activeStop, limit=activeTarget)
+
+plot(ema4h, "Previous confirmed 4H EMA 50", color=color.orange, linewidth=2)
+plot(setupDir != 0 ? setupLevel : na, "Active retest level", color=color.aqua, style=plot.style_linebr, linewidth=2)
+plotshape(longBreak and validChart, title="15m Bull Break", style=shape.triangleup, location=location.belowbar, color=color.lime, size=size.tiny, text="BOS")
+plotshape(shortBreak and validChart, title="15m Bear Break", style=shape.triangledown, location=location.abovebar, color=color.red, size=size.tiny, text="BOS")
+bgcolor(bullBias ? color.new(color.green, 93) : bearBias ? color.new(color.red, 93) : na)
+
+alertcondition(longBreak and validChart, "Bullish breakout", "DVS: confirmed 15m bullish breakout")
+alertcondition(shortBreak and validChart, "Bearish breakout", "DVS: confirmed 15m bearish breakout")
+
+if barstate.islast and not validChart
+    label.new(bar_index, high, "DVS requires a standard 5-minute chart", style=label.style_label_down, color=color.red, textcolor=color.white)

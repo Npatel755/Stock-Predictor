@@ -1,6 +1,6 @@
 // RESEARCH DERIVATIVE of the supplied DVS ETH v1.1; original copyright/license retained.
-// Candidate: family_3_187
-// Config SHA-256: abb97e28ca201866f6d5805a446775390ab044d2f3262ee0d6aaa52c604e67fb
+// Candidate: refine_rr4.5_stop0.4_rvol1.5_atr10.0
+// Config SHA-256: 3dcb48c8bd58cc5e9eeb8b7a4cdc5b8e73555a527350b9022a4808d075dd86d4
 // NOT a verified TradingView/Python execution match.
 // Pine models only 2 ticks of slippage; Python additionally assumes 2.0bp per market/stop side.
 // Extra slippage below affects risk estimation, not Pine's broker fills.
@@ -17,7 +17,7 @@ strategy("DVS ETH v1.2 | Research candidate", overlay=true,
 
 // Apply to a standard 5-minute ETH perpetual chart.
 riskUSD      = input.float(100.0, "Planned risk per trade ($)", minval=1)
-rewardR      = input.float(4.0, "Reward / risk", minval=1, step=0.25)
+rewardR      = input.float(4.5, "Reward / risk", minval=1, step=0.25)
 maxLeverage  = input.float(5.0, "Maximum notional leverage", minval=1, maxval=5)
 maxDailyLoss = input.float(300.0, "Personal daily loss limit ($)", minval=1)
 maxTradesDay = input.int(3, "Maximum entries per day", minval=1)
@@ -25,7 +25,7 @@ maxSetupBars = input.int(24, "Retest window (5m bars)", minval=1)
 breakoutRVOL = input.float(1.5, "15m breakout RVOL minimum", minval=0.1, step=0.1)
 entryRVOL    = input.float(1.2, "5m confirmation RVOL minimum", minval=0.1, step=0.1)
 retestATR    = input.float(0.25, "Retest tolerance (5m ATR)", minval=0, step=0.05)
-stopATR      = input.float(0.5, "Stop buffer (5m ATR)", minval=0, step=0.05)
+stopATR      = input.float(0.4, "Stop buffer (5m ATR)", minval=0, step=0.05)
 
 
 // Experimental settings, separate from the supplied parity source.
@@ -157,7 +157,7 @@ volatilityOK = atrBps >= minAtrBps and (maxAtrBps == 0 or atrBps <= maxAtrBps)
 trendOK = minTrendBps == 0 or math.abs(close4h / ema4h - 1) * 10000 >= minTrendBps
 researchAllowed = sessionOK and weekdayOK and directionOK and volatilityOK and trendOK and bar_index - lastExitBar >= cooldownBars
 
-if barstate.isconfirmed and (confirmLong or confirmShort) and researchAllowed
+if barstate.isconfirmed and (confirmLong or confirmShort)
     isLong = confirmLong
     stopPrice = isLong ? retestExtreme - stopATR * atr5 : retestExtreme + stopATR * atr5
     stopDistance = math.abs(close - stopPrice)
@@ -166,7 +166,7 @@ if barstate.isconfirmed and (confirmLong or confirmShort) and researchAllowed
     stopPrice := close - (isLong ? 1 : -1) * stopDistance
     estimatedCost = estimateCosts(close)
     rewardCostOK = rewardR * stopDistance >= minRewardCost * estimatedCost
-    if stopValid and stopDistance > syminfo.mintick and rewardCostOK
+    if stopValid and stopDistance > syminfo.mintick and rewardCostOK and researchAllowed
         sizeByRisk = riskUSD / ((stopDistance + (costRisk ? estimatedCost : 0)) * syminfo.pointvalue)
         sizeByLeverage = strategy.equity * maxLeverage / (close * syminfo.pointvalue)
         tradeQty = math.floor(math.min(sizeByRisk, sizeByLeverage) * 1000) / 1000

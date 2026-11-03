@@ -2,16 +2,18 @@
   "strategy_name": "DVS ETH v1.2",
   "base_pine_version": "v1.1",
   "mode": "research",
-  "experiment": "round1_verified",
-  "selected_candidate": "family_3_187",
-  "passed_predeclared_validation_gate": false,
-  "configuration_sha256": "abb97e28ca201866f6d5805a446775390ab044d2f3262ee0d6aaa52c604e67fb",
-  "pine_sha256": "02acd6c3ddbf54e9ec036259c89f010e4d7b6e6489f5d1dc20051cf0af00f397",
+  "experiment": "round2_v1_2_neighborhood",
+  "selected_candidate": "refine_rr4.5_stop0.4_rvol1.5_atr10.0",
+  "passed_predeclared_validation_gate": true,
+  "ready_for_funded_trading": false,
+  "historical_gate_is_forward_validation": false,
+  "configuration_sha256": "3dcb48c8bd58cc5e9eeb8b7a4cdc5b8e73555a527350b9022a4808d075dd86d4",
+  "pine_sha256": "5d560dc6289ad1bf7154d74d94a8d9064c41a4e0e6eada9a01f49851f7fb401d",
   "pine_compilation_verified": false,
   "tradingview_parity_verified": false,
   "execution_differences": [
     "Pine fixed tick slippage omits Python's additional basis-point fill slippage",
     "Pine omits Python's financing and stop-first ambiguity policy"
   ],
-  "note": "Version label names this research derivative; it is not evidence of profitable future trading"
+  "note": "Version label names this research derivative; gate is historical/reused-data selection, not evidence of profitable future trading. See regime-transfer and execution-stress reports."
 }

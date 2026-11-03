@@ -54,6 +54,11 @@ def test_paired_bootstrap_preserves_equal_series_and_constant_paired_difference(
     assert positive["conditional_95pct_interval"] == [28, 28]
     with pytest.raises(ValueError, match="matching"):
         paired_week_bootstrap(values.iloc[1:], values, samples=100)
+    # A partial final week cannot alter a replicate's number of daily marks.
+    odd_days = pd.date_range("2025-01-01", periods=365, freq="D", tz="UTC")
+    flat = pd.Series(0., index=odd_days)
+    odd_result = paired_week_bootstrap(flat + 1, flat, samples=100)
+    assert odd_result["conditional_95pct_interval"] == [365, 365]
 
 
 def test_checkpoint_reader_ignores_only_an_unfinished_last_line(tmp_path):
@@ -77,6 +82,11 @@ def test_pine_derivative_retains_source_license_and_explicit_execution_limits():
     assert "rewardR      = input.float(3.0" in text
     assert "costRisk = input.bool(true" in text
     assert "riskUSD / ((stopDistance + (costRisk ? estimatedCost : 0))" in text
+    # Rejected research confirmations still consume/clear the setup, matching
+    # Python. Gating the whole block would allow extra later Pine entries.
+    assert "if barstate.isconfirmed and (confirmLong or confirmShort)\n" in text
+    assert "if barstate.isconfirmed and (confirmLong or confirmShort) and researchAllowed" not in text
+    assert "if stopValid and stopDistance > syminfo.mintick and rewardCostOK and researchAllowed" in text
     assert "NOT a verified TradingView/Python execution match" in text
     assert "financing" in text and "stop_first" in text
     assert text.count("//@version=6") == 1
@@ -138,7 +148,20 @@ def test_v1_2_export_saves_matching_config_and_honest_failed_gate_metadata(tmp_p
     assert metadata["strategy_name"] == "DVS ETH v1.2"
     assert metadata["passed_predeclared_validation_gate"] is False
     assert metadata["pine_compilation_verified"] is False
+    assert metadata["ready_for_funded_trading"] is False
+    assert metadata["historical_gate_is_forward_validation"] is False
     assert metadata["pine_sha256"] == hashlib.sha256(output.read_bytes()).hexdigest()
+    previous_pine = output.read_bytes()
+    previous_config = (tmp_path / "configs/dvs_eth_v1_2.json").read_bytes()
+    selection["candidate"]["config"]["reward_r"] = 4.5
+    (directory / "selection.json").write_text(json.dumps(selection), encoding="utf-8")
+    module.export(directory, output)
+    revisions = list((tmp_path / "reference/revisions").iterdir())
+    assert len(revisions) == 1
+    assert (revisions[0] / output.name).read_bytes() == previous_pine
+    assert (revisions[0] / "dvs_eth_v1_2.json").read_bytes() == previous_config
+    module.export(directory, output)
+    assert len(list((tmp_path / "reference/revisions").iterdir())) == 1
 
 
 def test_refinement_keeps_baseline_parent_and_deterministic_bounded_neighborhood():
@@ -152,3 +175,31 @@ def test_refinement_keeps_baseline_parent_and_deterministic_bounded_neighborhood
     assert candidates[1]["config"] == asdict(cfg)
     assert strict_validation_score([metrics(-1), metrics(10000)]) == -1e9
     assert strict_validation_score([metrics(500), metrics(500)]) > -1e8
+
+
+def test_report_profile_labels_require_matching_config_and_pine_hash(tmp_path):
+    import hashlib
+    from backtesting.engine import backtest
+    from backtesting.reporting import attach_research_profile, chart
+    from test_v11 import deferred_fixture
+    bars, indicators = deferred_fixture(n=3)
+    cfg = baseline()
+    result = backtest(bars, cfg, indicators=indicators)
+    config = tmp_path / "configs/dvs_eth_v1_2.json"
+    config.parent.mkdir()
+    config.write_text(json.dumps(asdict(cfg)), encoding="utf-8")
+    pine = tmp_path / "reference/DVS_ETH_v1_2.pine"
+    pine.parent.mkdir()
+    pine.write_text("// test derivative", encoding="utf-8")
+    meta = {"strategy_name": "DVS ETH v1.2", "configuration_sha256": hashlib.sha256(json.dumps(asdict(cfg), sort_keys=True).encode()).hexdigest(),
+            "pine_sha256": hashlib.sha256(pine.read_bytes()).hexdigest()}
+    config.with_suffix(".metadata.json").write_text(json.dumps(meta), encoding="utf-8")
+    attach_research_profile(result, config)
+    assert "v1.2" in result.provenance["research_profile"]
+    assert "v1.2" in chart(result).layout.title.text
+    changed = backtest(bars, StrategyConfig(mode="research", reward_r=3), indicators=indicators)
+    attach_research_profile(changed, config)
+    assert "research_profile" not in changed.provenance
+    pine.write_text("// changed derivative", encoding="utf-8")
+    with pytest.raises(ValueError, match="does not match"):
+        attach_research_profile(result, config)

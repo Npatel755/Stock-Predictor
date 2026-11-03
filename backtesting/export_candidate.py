@@ -90,12 +90,12 @@ volatilityOK = atrBps >= minAtrBps and (maxAtrBps == 0 or atrBps <= maxAtrBps)
 trendOK = minTrendBps == 0 or math.abs(close4h / ema4h - 1) * 10000 >= minTrendBps
 researchAllowed = sessionOK and weekdayOK and directionOK and volatilityOK and trendOK and bar_index - lastExitBar >= cooldownBars
 """
-    swap("if barstate.isconfirmed and (confirmLong or confirmShort)", gating + "\nif barstate.isconfirmed and (confirmLong or confirmShort) and researchAllowed")
+    swap("if barstate.isconfirmed and (confirmLong or confirmShort)", gating + "\nif barstate.isconfirmed and (confirmLong or confirmShort)")
     swap("    if stopValid and stopDistance > syminfo.mintick", """    stopDistance := math.max(stopDistance, math.max(close * minStopBps / 10000, atr5 * minStopATR))
     stopPrice := close - (isLong ? 1 : -1) * stopDistance
     estimatedCost = estimateCosts(close)
     rewardCostOK = rewardR * stopDistance >= minRewardCost * estimatedCost
-    if stopValid and stopDistance > syminfo.mintick and rewardCostOK""")
+    if stopValid and stopDistance > syminfo.mintick and rewardCostOK and researchAllowed""")
     swap("sizeByRisk = riskUSD / (stopDistance * syminfo.pointvalue)", "sizeByRisk = riskUSD / ((stopDistance + (costRisk ? estimatedCost : 0)) * syminfo.pointvalue)")
     swap("        if tradeQty > 0", """        if tradeQty > 0
             activeStop := stopPrice
@@ -140,20 +140,34 @@ def export(directory: Path, output: Path):
     candidate = selection["candidate"]
     cfg = StrategyConfig(**candidate["config"])
     content = render_candidate(cfg, candidate["label"])
+    config_path = ROOT / "configs/dvs_eth_v1_2.json"
+    metadata_path = ROOT / "configs/dvs_eth_v1_2.metadata.json"
+    # Preserve each earlier saved derivative before changing the current v1.2.
+    # Content-addressed revisions make repeated exports idempotent.
+    if output.exists() and output.read_text(encoding="utf-8") != content:
+        previous_digest = hashlib.sha256(output.read_bytes()).hexdigest()
+        archive = ROOT / "reference/revisions" / previous_digest[:16]
+        archive.mkdir(parents=True, exist_ok=True)
+        (archive / output.name).write_bytes(output.read_bytes())
+        for previous in [config_path, metadata_path]:
+            if previous.exists():
+                (archive / previous.name).write_bytes(previous.read_bytes())
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(content, encoding="utf-8")
-    config_path = ROOT / "configs/dvs_eth_v1_2.json"
+    config_path.parent.mkdir(parents=True, exist_ok=True)
     config_path.write_text(json.dumps(asdict(cfg), indent=2), encoding="utf-8")
     metadata = {"strategy_name": "DVS ETH v1.2", "base_pine_version": "v1.1", "mode": "research",
                 "experiment": directory.name, "selected_candidate": candidate["label"],
                 "passed_predeclared_validation_gate": selection["passed_predeclared_validation_gate"],
+                "ready_for_funded_trading": False,
+                "historical_gate_is_forward_validation": False,
                 "configuration_sha256": hashlib.sha256(json.dumps(asdict(cfg), sort_keys=True).encode()).hexdigest(),
                 "pine_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
                 "pine_compilation_verified": False, "tradingview_parity_verified": False,
                 "execution_differences": ["Pine fixed tick slippage omits Python's additional basis-point fill slippage",
                                           "Pine omits Python's financing and stop-first ambiguity policy"],
-                "note": "Version label names this research derivative; it is not evidence of profitable future trading"}
-    (ROOT / "configs/dvs_eth_v1_2.metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
+                "note": "Version label names this research derivative; gate is historical/reused-data selection, not evidence of profitable future trading. See regime-transfer and execution-stress reports."}
+    metadata_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     print(f"Exported experimental Pine signals/risk; execution assumptions differ: {output}")
 
 
