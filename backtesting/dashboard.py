@@ -31,8 +31,10 @@ def cached_data(path: str, modified: float):
     return load_history(Path(path))
 
 
-def use_complete_range(key, dates):
-    st.session_state[key] = dates
+def use_complete_range(revision_key):
+    # Recreate the date widget with its range default rather than assigning a
+    # widget value after construction or changing its single-date/range type.
+    st.session_state[revision_key] = st.session_state.get(revision_key, 0) + 1
 
 
 with st.sidebar:
@@ -60,14 +62,13 @@ with st.sidebar:
     except ValueError as exc:
         st.warning(str(exc))
         st.stop()
-    period_key = f"dvs_period_{mode}"
-    if period_key not in st.session_state:
-        st.session_state[period_key] = suggested_dates
-    period = st.date_input("Backtest UTC dates", value=None, key=period_key,
+    revision_key = f"dvs_period_revision_{mode}"
+    period_key = f"dvs_period_{mode}_{st.session_state.get(revision_key, 0)}"
+    period = st.date_input("Backtest UTC dates", value=suggested_dates, key=period_key,
                            min_value=bars.timestamp.min().date(), max_value=bars.timestamp.max().date())
     if mode == "parity":
         st.caption(f"Complete parity range: {suggested_dates[0]} through {suggested_dates[1]} UTC. Later candles remain available in Research mode.")
-        st.button("Use complete parity range", on_click=use_complete_range, args=(period_key, suggested_dates))
+        st.button("Use complete parity range", on_click=use_complete_range, args=(revision_key,))
     selected_bars, selected_quality, selection_error = None, None, None
     try:
         selected_bars, selected_quality = select_dates(bars, period)
