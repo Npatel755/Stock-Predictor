@@ -1,0 +1,26 @@
+{
+  "name": "ETH Volume Research",
+  "experiment": "round8_volume_geometry",
+  "candidate": "geometry0_rvol2.0_weekendsTrue",
+  "full_configuration_sha256": "67ce2bf80f465c9567b0390f6da702f29205424c72588d951fdf3cbdc344aa2f",
+  "pine_sha256": "2e5bfbd2bc2bfca97b25992fee6a5d2e140aa3845872e835496a32d6afabe34f",
+  "selection_sha256": "62f403747d52406c4ad6d85635293f7ed35ea3747b74ed236c21850ca82cd731",
+  "passed_historical_gate": true,
+  "independent_forward_validation": false,
+  "ready_for_funded_trading": false,
+  "pine_compilation_verified": false,
+  "tradingview_parity_verified": false,
+  "filters_exported": {
+    "direction": "both",
+    "min_atr_bps": 0.0,
+    "max_atr_bps": 0.0,
+    "min_trend_gap_bps": 0.0,
+    "min_signed_slope_bps": null,
+    "min_rvol": 2.0,
+    "weekends": true
+  },
+  "execution_differences": [
+    "Pine omits additional basis-point fill slippage, financing and Python stop-first policy",
+    "Symbol quantity/tick rounding and history initialization remain unreconciled"
+  ]
+}

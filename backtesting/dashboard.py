@@ -366,10 +366,10 @@ with research_tab:
             from backtesting.research_display import search_status, overview_rows, training_overview
             status = search_status(ROOT / "artifacts/optimization" / chosen_run)
             plan, training, validation, summary = [status[k] for k in ["manifest", "training", "validation", "summary"]]
-            historical_profit_search = plan.get("name") == "Explicit historical net-profit improvement"
+            historical_profit_search = plan.get("historical_profit_selection", False) or plan.get("name") == "Explicit historical net-profit improvement"
             st.progress(min(1., len(training) / plan["candidate_count"]), text=f"Recorded training: {len(training)} / {plan['candidate_count']} candidates")
             st.caption(f"Validation checkpoints: {len(validation)}. Checkpoints show saved work, not whether a process is still running.")
-            training_period = plan.get("training", plan.get("train", [plan.get("start", "2023-01-01"), plan.get("end_exclusive", "2025-01-01")]))
+            training_period = plan.get("selection_window", plan.get("training", plan.get("train", [plan.get("start", "2023-01-01"), plan.get("end_exclusive", "2025-01-01")])))
             if historical_profit_search:
                 st.write(f"Profit-selection window: {training_period}. The entire inspected period, including 2026, selects parameters. Additional checks reuse 2025 halves, earlier regimes and higher costs; they are not independent validation.")
             else:
@@ -386,6 +386,23 @@ with research_tab:
                 st.json({"selection_checks": selection["validation"], "historical_replays" if historical_profit_search else "retrospective_audit": summary.get("audit", summary.get("evaluation"))}, expanded=False)
                 independent = "rule" in candidate
                 payload = {"rule": candidate["rule"], "execution": selection["execution_config"]} if independent else candidate["config"]
+                if 'filters' in candidate:
+                    payload['filters'] = candidate['filters']
+                    st.caption("This is an entry-filter experiment. Saved v1.4 remains unchanged; these filters are not omitted when comparing results or exporting settings.")
+                    preview = ROOT / 'reference/experimental/ETH_Volume_Research.pine'
+                    preview_metadata = preview.with_suffix('.metadata.json')
+                    if preview.exists() and preview_metadata.exists() and json.loads(preview_metadata.read_text(encoding='utf-8')).get('experiment') == chosen_run:
+                        st.download_button('Download volume research Pine Editor text', preview.read_bytes(), 'ETH_Volume_Research.txt', 'text/plain')
+                    if st.button('Backtest filtered research candidate on selected dates', disabled=bool(selection_error or selected_quality is None or selected_quality.get('missing_bars', 0))):
+                        from backtesting.filtered_replay import replay as replay_filtered
+                        try:
+                            with st.spinner('Replaying the full strategy with the selected entry filters…'):
+                                st.session_state[f'filtered_research_{chosen_run}'] = replay_filtered(selected_bars, candidate, selection['execution_config'], ROOT / 'artifacts/independent' / f'research_{chosen_run}')
+                        except (ValueError, KeyError, OSError) as exc:
+                            st.error(str(exc))
+                    if f'filtered_research_{chosen_run}' in st.session_state:
+                        from backtesting.filtered_replay import display as display_filtered
+                        display_filtered(st.session_state[f'filtered_research_{chosen_run}'], bars, chosen_run)
                 st.download_button("Download experimental configuration", json.dumps(payload, indent=2),
                                    "eth_independent_candidate.json" if independent else "dvs_research_candidate.json", "application/json")
                 with st.expander("Selected research rules"):

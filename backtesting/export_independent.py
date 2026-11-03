@@ -41,6 +41,8 @@ def render(rule: SignalRule, config: StrategyConfig, version='v1.3'):
 def export(directory: Path, version='v1.3'):
     selected_path = directory/'selection.json'
     selected = json.loads(selected_path.read_text(encoding='utf-8'))
+    if 'filters' in selected['candidate']:
+        raise ValueError('Filtered candidates require a filter-aware exporter; refusing to omit entry filters')
     rule = SignalRule(**selected['candidate']['rule'])
     cfg = StrategyConfig(**selected['execution_config'])
     text, payload, digest = render(rule, cfg, version=version)

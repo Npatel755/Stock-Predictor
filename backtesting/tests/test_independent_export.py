@@ -92,3 +92,13 @@ def test_v14_is_a_separate_export_and_keeps_v13_intact(tmp_path, monkeypatch):
     assert pine.read_bytes() == (tmp_path/'downloads/ETH_Strategy_v1_4.txt').read_bytes()
     with pytest.raises(ValueError, match='Unsupported'):
         render(new_rule, cfg, version='../v1.4')
+
+
+def test_generic_export_refuses_to_silently_drop_signal_filters(tmp_path, monkeypatch):
+    import backtesting.export_independent as module
+    monkeypatch.setattr(module, 'ROOT', tmp_path)
+    selection = dict(candidate=dict(rule=asdict(SignalRule('channel_breakout')), filters={'min_rvol': 1.2}))
+    (tmp_path/'selection.json').write_text(json.dumps(selection))
+    with pytest.raises(ValueError, match='refusing to omit'):
+        export(tmp_path, version='v1.4')
+    assert not (tmp_path/'reference').exists()
