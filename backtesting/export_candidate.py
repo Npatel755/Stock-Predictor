@@ -20,7 +20,9 @@ def pine_value(value):
     return str(value)
 
 
-def render_candidate(config: StrategyConfig, label="Experimental research") -> str:
+def render_candidate(config: StrategyConfig, label="Experimental research", version="v1.2") -> str:
+    if version not in {"v1.2", "v1.3"}:
+        raise ValueError("Unsupported research export version")
     if config.mode != "research" or config.strategy_version != "v1.1":
         raise ValueError("Export requires a v1.1 research configuration")
     source = PINE.read_text(encoding="utf-8")
@@ -31,7 +33,7 @@ def render_candidate(config: StrategyConfig, label="Experimental research") -> s
             raise ValueError(f"Pine source anchor changed: {old[:65]}")
         source = source.replace(old, new, 1)
 
-    swap('strategy("DVS ETH v1.1 | Bias + Structure + Volume",', 'strategy("DVS ETH v1.2 | Research candidate",')
+    swap('strategy("DVS ETH v1.1 | Bias + Structure + Volume",', f'strategy("DVS ETH {version} | Research candidate",')
     swap("process_orders_on_close=true", "process_orders_on_close=" + pine_value(config.entry_timing == "signal_close"))
     swap("commission_value=0.04", f"commission_value={config.commission_bps / 100}")
     swap("slippage=2, margin_long=20, margin_short=20", f"slippage={config.slippage_ticks}, margin_long={config.margin_ratio*100}, margin_short={config.margin_ratio*100}")
@@ -135,13 +137,14 @@ if strategy.position_size != 0 and not na(activeStop)
     return header + source
 
 
-def export(directory: Path, output: Path):
+def export(directory: Path, output: Path, version="v1.2"):
     selection = json.loads((directory / "selection.json").read_text(encoding="utf-8"))
     candidate = selection["candidate"]
     cfg = StrategyConfig(**candidate["config"])
-    content = render_candidate(cfg, candidate["label"])
-    config_path = ROOT / "configs/dvs_eth_v1_2.json"
-    metadata_path = ROOT / "configs/dvs_eth_v1_2.metadata.json"
+    content = render_candidate(cfg, candidate["label"], version=version)
+    stem = "dvs_eth_" + version.replace(".", "_")
+    config_path = ROOT / "configs" / f"{stem}.json"
+    metadata_path = ROOT / "configs" / f"{stem}.metadata.json"
     # Preserve each earlier saved derivative before changing the current v1.2.
     # Content-addressed revisions make repeated exports idempotent.
     if output.exists() and output.read_text(encoding="utf-8") != content:
@@ -156,7 +159,7 @@ def export(directory: Path, output: Path):
     output.write_text(content, encoding="utf-8")
     config_path.parent.mkdir(parents=True, exist_ok=True)
     config_path.write_text(json.dumps(asdict(cfg), indent=2), encoding="utf-8")
-    metadata = {"strategy_name": "DVS ETH v1.2", "base_pine_version": "v1.1", "mode": "research",
+    metadata = {"strategy_name": f"DVS ETH {version}", "base_pine_version": "v1.1", "mode": "research",
                 "experiment": directory.name, "selected_candidate": candidate["label"],
                 "passed_predeclared_validation_gate": selection["passed_predeclared_validation_gate"],
                 "ready_for_funded_trading": False,
@@ -174,6 +177,8 @@ def export(directory: Path, output: Path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
-    parser.add_argument("--output", type=Path, default=ROOT / "reference/DVS_ETH_v1_2.pine")
+    parser.add_argument("--version", choices=["v1.2", "v1.3"], default="v1.2")
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    export(args.directory, args.output)
+    output = args.output or ROOT / "reference" / f"DVS_ETH_{args.version.replace('.', '_')}.pine"
+    export(args.directory, output, version=args.version)

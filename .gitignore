@@ -10,5 +10,6 @@ data/ethusd/
 backtesting/data/
 backtesting/artifacts/
 backtesting/.venv/
+backtesting/downloads/
 .pytest_cache/
 *.pyc
