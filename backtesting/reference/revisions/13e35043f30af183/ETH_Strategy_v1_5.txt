@@ -1,0 +1,118 @@
+//@version=6
+// Historical net-profit baseline: $6000 on 2023-01-01 through 2026-10-27 UTC at $100 planned risk.
+// ETH v1.5; earlier numbered versions are preserved.
+// Full rule/filter/config SHA-256: 67ce2bf80f465c9567b0390f6da702f29205424c72588d951fdf3cbdc344aa2f
+// Selected using inspected 2023-2026 history, including 2026; no independent forward validation.
+// Independent ETH research candidate. Base geometry SHA-256: 64069de573085e340450639408b079f66a5c8120e125ec6226f57ff8d33c5b22
+// Python/Pine trade matching and TradingView compilation remain unverified.
+// Python adds basis-point fill slippage, financing and stop-first ambiguity handling.
+// Pine models fixed-tick fill slippage only; extra bp below affect sizing only.
+strategy("ETH v1.5 | Volume filtered channel research", overlay=true,
+     initial_capital=50000.0, currency=currency.USD, pyramiding=0,
+     process_orders_on_close=false, commission_type=strategy.commission.percent,
+     commission_value=0.04, slippage=2, margin_long=20, margin_short=20)
+
+// Use standard BINANCE:ETHUSDT.P candles, five-minute timeframe.
+family = input.string("channel_breakout", "Hourly signal family", options=["ema_cross", "channel_breakout", "bollinger_reversion"])
+length = input.int(96, "Hourly lookback / fast EMA", minval=2)
+slowLength = input.int(150, "Hourly trend / slow EMA", minval=3)
+stopATR = input.float(1.5, "Initial stop (hourly ATR)", minval=0.1)
+rewardR = input.float(4.5, "Reward / risk", minval=0.1)
+trailATR = input.float(3.0, "Trailing hourly ATR; 0 disables", minval=0)
+maxHoldingBars = input.int(0, "Maximum 5m holding bars; 0 disables", minval=0)
+riskUSD = input.float(100.0, "Planned risk per trade ($)", minval=1)
+maxLeverage = input.float(5.0, "Maximum notional leverage", minval=1, maxval=5)
+maxDailyLoss = input.float(300.0, "Personal daily loss gate ($)", minval=1)
+maxTradesDay = input.int(3, "Maximum entries per UTC day", minval=1)
+estimatedExtraBps = input.float(2.0, "Extra slippage estimate for sizing only (bp)", minval=0)
+
+minHourlyRVOL = input.float(2.0, "Minimum completed-hour relative volume", minval=0, step=0.1)
+allowWeekends = input.bool(true, "Allow UTC weekends")
+
+hourlySignals() =>
+    fast = ta.ema(close, length)
+    slow = ta.ema(close, slowLength)
+    upperChannel = ta.highest(high, length)[1]
+    lowerChannel = ta.lowest(low, length)[1]
+    middle = ta.sma(close, length)
+    deviation = ta.stdev(close, length)
+    upperBand = middle + 2 * deviation
+    lowerBand = middle - 2 * deviation
+    crossUp = ta.crossover(fast, slow)
+    crossDown = ta.crossunder(fast, slow)
+    longSignal = family == "ema_cross" ? crossUp : family == "channel_breakout" ? close > upperChannel and close > slow : close[1] < lowerBand[1] and close >= lowerBand
+    shortSignal = family == "ema_cross" ? crossDown : family == "channel_breakout" ? close < lowerChannel and close < slow : close[1] > upperBand[1] and close <= upperBand
+    ready = bar_index + 1 >= slowLength
+    priorMeanVolume = ta.sma(volume[1], 20)
+    hourlyRVOL = priorMeanVolume > 0 ? volume / priorMeanVolume : na
+    volumeOK = minHourlyRVOL == 0 or hourlyRVOL >= minHourlyRVOL
+    [ready and longSignal and volumeOK, ready and shortSignal and volumeOK, ta.atr(14)]
+
+// lookahead_off exposes an hour's result on its final 5m bar. We submit
+// signals only when BOTH that five-minute bar and the hour are complete.
+[hourLong, hourShort, hourATR] = request.security(syminfo.tickerid, "60", hourlySignals(), lookahead=barmerge.lookahead_off)
+previousHourATR = request.security(syminfo.tickerid, "60", ta.atr(14)[1], lookahead=barmerge.lookahead_on)
+hourClosed = time_close == time_close("60")
+managementATR = hourClosed ? hourATR : previousHourATR
+validChart = timeframe.in_seconds() == 300
+estimatedCosts(price) => 2 * price * (4.0 + estimatedExtraBps) / 10000 + 2 * 2 * syminfo.mintick
+
+var float activeStop = na
+var float activeTarget = na
+// Completed-close management changes orders for later ticks only.
+if barstate.isconfirmed and strategy.position_size != 0 and not na(activeStop)
+    direction = strategy.position_size > 0 ? 1 : -1
+    heldBars = bar_index - strategy.opentrades.entry_bar_index(0) + 1
+    if maxHoldingBars > 0 and heldBars >= maxHoldingBars
+        if direction == 1
+            strategy.close("Long", comment="Time exit", immediately=true)
+        else
+            strategy.close("Short", comment="Time exit", immediately=true)
+    else if trailATR > 0 and not na(managementATR)
+        proposed = close - direction * trailATR * managementATR
+        tighter = direction == 1 ? proposed > activeStop : proposed < activeStop
+        placeable = direction * (close - proposed) > syminfo.mintick
+        if tighter and placeable
+            activeStop := proposed
+            if direction == 1
+                strategy.exit("Long bracket", "Long", stop=activeStop, limit=activeTarget)
+            else
+                strategy.exit("Short bracket", "Short", stop=activeStop, limit=activeTarget)
+
+var float dayStartEquity = na
+var int entriesToday = 0
+var bool dailyLocked = false
+if na(dayStartEquity) or timeframe.change("D")
+    dayStartEquity := strategy.equity
+    entriesToday := 0
+    dailyLocked := false
+if strategy.equity <= dayStartEquity - maxDailyLoss
+    dailyLocked := true
+
+utcDay = dayofweek(time, "UTC")
+weekdayOK = allowWeekends or (utcDay >= dayofweek.monday and utcDay <= dayofweek.friday)
+longSignal = validChart and hourClosed and hourLong and weekdayOK
+shortSignal = validChart and hourClosed and hourShort and weekdayOK
+if barstate.isconfirmed and strategy.position_size == 0 and not dailyLocked and entriesToday < maxTradesDay and not na(hourATR) and (longSignal or shortSignal)
+    direction = longSignal ? 1 : -1
+    distance = stopATR * hourATR
+    sizeByRisk = riskUSD / ((distance + estimatedCosts(close)) * syminfo.pointvalue)
+    sizeByLeverage = strategy.equity * maxLeverage / (close * syminfo.pointvalue)
+    quantity = math.floor(math.min(sizeByRisk, sizeByLeverage) * 1000) / 1000
+    if distance > syminfo.mintick and quantity > 0
+        activeStop := close - direction * distance
+        activeTarget := close + direction * rewardR * distance
+        if direction == 1
+            strategy.entry("Long", strategy.long, qty=quantity)
+            strategy.exit("Long bracket", "Long", stop=activeStop, limit=activeTarget)
+        else
+            strategy.entry("Short", strategy.short, qty=quantity)
+            strategy.exit("Short bracket", "Short", stop=activeStop, limit=activeTarget)
+        entriesToday += 1
+
+plot(strategy.position_size != 0 ? activeStop : na, "Active stop", color=color.red, style=plot.style_linebr)
+plot(strategy.position_size != 0 ? activeTarget : na, "Active target", color=color.green, style=plot.style_linebr)
+plotshape(longSignal and barstate.isconfirmed, "Hourly long signal", shape.triangleup, location.belowbar, color=color.lime, size=size.tiny)
+plotshape(shortSignal and barstate.isconfirmed, "Hourly short signal", shape.triangledown, location.abovebar, color=color.red, size=size.tiny)
+if barstate.islast and not validChart
+    label.new(bar_index, high, "Requires standard 5-minute ETH perpetual candles", color=color.red, textcolor=color.white)

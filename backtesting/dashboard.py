@@ -27,7 +27,12 @@ from backtesting.versioned_profiles import load_profile
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
 st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exchange execution")
-st.info("Choose v1.5 for the volume-filter strategy with a $6,000 historical baseline. Earlier versions remain available. TradingView parity remains unverified.")
+baseline_path=ROOT/'configs/research_baseline.json'
+if baseline_path.exists():
+    current_target=json.loads(baseline_path.read_text(encoding='utf-8'))
+    st.info(f"Choose v1.5 for the saved strategy. The research baseline is ${current_target['requested_net_profit_usd']:,.0f}; a replacement must beat the exact ${current_target['prior_reference_net_profit_usd']:,.2f} reference on the same dates and costs. TradingView parity remains unverified.")
+else:
+    st.info("Choose a saved strategy version to replay its fixed rules. TradingView parity remains unverified.")
 
 
 @st.cache_data(show_spinner=False)
@@ -87,14 +92,18 @@ def display_independent_result(key, version='v1.3'):
     a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
     b.metric("Entries", m["entries"])
     c.metric("Running-peak drawdown", f"{m['max_intrabar_drawdown']:.2%}")
-    if current_meta.get('baseline_net_usd') is not None:
-        expected_period = [pd.Timestamp(t, tz='UTC') for t in current_meta['baseline_period']]
+    from backtesting.profit_baseline import current_baseline
+    target = current_baseline(ROOT, current_meta)
+    if target is not None:
+        expected_period = [pd.Timestamp(t, tz='UTC') for t in target['period']]
         actual_period = [pd.Timestamp(t) for t in replay['period']]
         if actual_period == expected_period:
-            gain = m['final_equity']-m['initial_capital']-current_meta['baseline_net_usd']
-            st.metric('Above requested $6,000 baseline', f'${gain:,.2f}')
+            gain = m['final_equity']-m['initial_capital']-target['net']
+            st.metric(f"Above current ${target['net']:,.0f} baseline", f'${gain:,.2f}')
         else:
-            st.caption('The $6,000 baseline applies to January 1, 2023 through October 27, 2026 UTC at $100 risk. This replay uses different dates.')
+            st.caption(f"The ${target['net']:,.0f} baseline applies to January 1, 2023 through October 27, 2026 UTC at $100 risk. This replay uses different dates.")
+        if target['reference_net'] is not None:
+            st.caption(f"New candidates must beat {target['reference']}'s exact ${target['reference_net']:,.2f} result; exceeding the rounded baseline alone does not count as improvement.")
     from backtesting.independent_visuals import equity_curve, performance_chart, monthly_chart, trade_chart
     replay_bars = bars[(bars.timestamp >= pd.Timestamp(replay['period'][0])) &
                        (bars.timestamp < pd.Timestamp(replay['period'][1]))]
@@ -405,7 +414,7 @@ with research_tab:
                 payload = {"rule": candidate["rule"], "execution": selection["execution_config"]} if independent else candidate["config"]
                 if 'filters' in candidate:
                     payload['filters'] = candidate['filters']
-                    st.caption("This experiment includes entry filters. Saved numbered strategies remain unchanged; these filters are included when comparing results or exporting settings.")
+                    st.caption("This experiment includes entry filters. Research replays do not overwrite saved versions; these filters are included when comparing results or exporting settings.")
                     preview = ROOT / 'reference/experimental/ETH_Volume_Research.pine'
                     preview_metadata = preview.with_suffix('.metadata.json')
                     if preview.exists() and preview_metadata.exists() and json.loads(preview_metadata.read_text(encoding='utf-8')).get('experiment') == chosen_run:
@@ -457,7 +466,12 @@ with independent_tab:
         st.write(f"This alternative uses a {rule.lookback}-hour channel, {rule.slow}-hour EMA filter, {rule.stop_atr:g} ATR initial stop, {rule.reward_r:g}R target and {rule.trail_atr:g} ATR trailing stop. Signals confirm hourly; execution uses five-minute candles.")
         if independent_meta.get('entry_filters'):
             st.write(f"Entry volume filter: completed-hour volume must be at least {independent_meta['entry_filters']['min_rvol']:g} times the mean of the preceding 20 completed hours.")
-            st.caption('Requested baseline: $6,000 net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.')
+            if independent_meta['entry_filters'].get('min_trend_gap_bps'):
+                gap=independent_meta['entry_filters']['min_trend_gap_bps']
+                st.write(f"Entry trend filter: the hourly close must be at least {gap:g}bp ({gap/100:g}%) beyond EMA{rule.slow} in the trade's direction.")
+            from backtesting.profit_baseline import current_baseline
+            target = current_baseline(ROOT, independent_meta)
+            st.caption(f"Current baseline: ${target['net']:,.0f} net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.")
         st.caption("v1.2 remains a separate DVS strategy. Reused historical data is not independent forward validation. Pine compilation and trade matching remain unverified.")
         if independent_meta.get('selection_is_historical_profit_optimization'):
             st.caption(independent_meta['selection_note'])

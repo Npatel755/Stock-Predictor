@@ -1,27 +1,28 @@
 {
   "strategy_name": "ETH v1.5",
-  "experiment": "round8_volume_geometry",
-  "selected_candidate": "geometry0_rvol2.0_weekendsTrue",
-  "configuration_sha256": "67ce2bf80f465c9567b0390f6da702f29205424c72588d951fdf3cbdc344aa2f",
-  "pine_sha256": "13e35043f30af1837bea65db66ddf768e883c39b8e0147d093a165ad325ea95a",
-  "selection_sha256": "62f403747d52406c4ad6d85635293f7ed35ea3747b74ed236c21850ca82cd731",
+  "experiment": "round10_v1_5_trend",
+  "selected_candidate": "trendgap200.0_slopeNone",
+  "configuration_sha256": "401fd82ec14a7ad4b7504ea284e0dc41b3432e12b19e3edcd01ec45708b95daa",
+  "pine_sha256": "c56211d6c0b0666f6668703d4f065d29533b9fab7a1e9bdcc01355321c1b8943",
+  "selection_sha256": "85c2239af8cd7a89ebac6ba0355eab32b84f8f39a90948fd45d58b664b4dcc21",
   "entry_filters": {
     "direction": "both",
     "min_atr_bps": 0.0,
     "max_atr_bps": 0.0,
-    "min_trend_gap_bps": 0.0,
+    "min_trend_gap_bps": 200.0,
     "min_signed_slope_bps": null,
     "min_rvol": 2.0,
     "weekends": true
   },
-  "baseline_net_usd": 6000.0,
+  "baseline_net_usd": 9900.0,
   "baseline_period": [
     "2023-01-01",
     "2026-10-28"
   ],
   "baseline_risk_usd": 100.0,
-  "same_period_net_usd": 9971.427110129662,
-  "improvement_above_requested_baseline": 3971.4271101296617,
+  "exact_reference_at_selection": 9971.427110129662,
+  "same_period_net_usd": 10089.86981444979,
+  "improvement_above_requested_baseline": 189.86981444979028,
   "passed_predeclared_validation_gate": true,
   "selection_is_historical_profit_optimization": true,
   "selection_note": "All 2023-2026 observations including 2026 participated in selection. Additional data tests freeze these rules; they do not reselect them.",
@@ -31,7 +32,8 @@
   "tradingview_parity_verified": false,
   "additional_data_reports": [
     "reports/v1_5_additional_data.md",
-    "reports/v1_5_spot_proxy.md"
+    "reports/v1_5_spot_proxy.md",
+    "reports/v1_5_trend_verification.md"
   ],
   "execution_differences": [
     "Pine omits additional basis-point fill slippage, financing and Python stop-first handling",

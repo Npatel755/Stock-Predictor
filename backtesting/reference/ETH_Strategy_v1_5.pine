@@ -1,13 +1,13 @@
 //@version=6
-// Historical net-profit baseline: $6000 on 2023-01-01 through 2026-10-27 UTC at $100 planned risk.
+// Historical net-profit baseline at selection: $9900 on 2023-01-01 through 2026-10-27 UTC at $100 planned risk.
 // ETH v1.5; earlier numbered versions are preserved.
-// Full rule/filter/config SHA-256: 67ce2bf80f465c9567b0390f6da702f29205424c72588d951fdf3cbdc344aa2f
+// Full rule/filter/config SHA-256: 401fd82ec14a7ad4b7504ea284e0dc41b3432e12b19e3edcd01ec45708b95daa
 // Selected using inspected 2023-2026 history, including 2026; no independent forward validation.
 // Independent ETH research candidate. Base geometry SHA-256: 64069de573085e340450639408b079f66a5c8120e125ec6226f57ff8d33c5b22
 // Python/Pine trade matching and TradingView compilation remain unverified.
 // Python adds basis-point fill slippage, financing and stop-first ambiguity handling.
 // Pine models fixed-tick fill slippage only; extra bp below affect sizing only.
-strategy("ETH v1.5 | Volume filtered channel research", overlay=true,
+strategy("ETH v1.5 | Volume + trend research", overlay=true,
      initial_capital=50000.0, currency=currency.USD, pyramiding=0,
      process_orders_on_close=false, commission_type=strategy.commission.percent,
      commission_value=0.04, slippage=2, margin_long=20, margin_short=20)
@@ -29,6 +29,8 @@ estimatedExtraBps = input.float(2.0, "Extra slippage estimate for sizing only (b
 minHourlyRVOL = input.float(2.0, "Minimum completed-hour relative volume", minval=0, step=0.1)
 allowWeekends = input.bool(true, "Allow UTC weekends")
 
+minHourlyTrendBps = input.float(200.0, "Minimum signed hourly close/EMA gap (bp)", minval=0)
+
 hourlySignals() =>
     fast = ta.ema(close, length)
     slow = ta.ema(close, slowLength)
@@ -46,7 +48,10 @@ hourlySignals() =>
     priorMeanVolume = ta.sma(volume[1], 20)
     hourlyRVOL = priorMeanVolume > 0 ? volume / priorMeanVolume : na
     volumeOK = minHourlyRVOL == 0 or hourlyRVOL >= minHourlyRVOL
-    [ready and longSignal and volumeOK, ready and shortSignal and volumeOK, ta.atr(14)]
+    signedLongGap = (close / slow - 1) * 10000
+    longGapOK = minHourlyTrendBps == 0 or signedLongGap >= minHourlyTrendBps
+    shortGapOK = minHourlyTrendBps == 0 or -signedLongGap >= minHourlyTrendBps
+    [ready and longSignal and volumeOK and longGapOK, ready and shortSignal and volumeOK and shortGapOK, ta.atr(14)]
 
 // lookahead_off exposes an hour's result on its final 5m bar. We submit
 // signals only when BOTH that five-minute bar and the hour are complete.

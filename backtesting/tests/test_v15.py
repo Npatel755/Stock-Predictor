@@ -130,6 +130,38 @@ def test_v15_save_rejects_results_below_baseline_and_risk_inflation(tmp_path,mon
         save(directory)
 
 
+def test_v15_refinement_must_beat_exact_current_reference_and_export_its_trend_filter(tmp_path,monkeypatch):
+    import backtesting.save_v15 as module
+    monkeypatch.setattr(module,'ROOT',tmp_path)
+    folder=tmp_path/'configs'
+    folder.mkdir()
+    baseline_path=folder/'research_baseline.json'
+    baseline=dict(requested_net_profit_usd=9900.,prior_reference_net_profit_usd=9971.427110129662)
+    baseline_path.write_text(json.dumps(baseline))
+    experiment=tmp_path/'experiment'
+    selection=write_selection(experiment,net=9950.)
+    with pytest.raises(ValueError,match='exact saved reference'):
+        save(experiment)
+    selection['candidate']['filters']['min_trend_gap_bps']=200.
+    selection['requested_baseline']=9900.
+    selection['exact_reference_net']=9971.427110129662
+    (experiment/'selection.json').write_text(json.dumps(selection))
+    (experiment/'summary.json').write_text(json.dumps(dict(evaluation=dict(full_period=dict(initial_capital=50000.,final_equity=60089.87)))))
+    save(experiment)
+    _,_,meta,pine=load_profile(tmp_path,version='v1.5')
+    assert meta['entry_filters']['min_trend_gap_bps']==200.
+    assert meta['baseline_net_usd']==9900.
+    assert 'Volume + trend research' in pine.read_text()
+    assert 'minHourlyTrendBps = input.float(200.0' in pine.read_text()
+    # Re-exporting the exact same selection after raising the reference is
+    # idempotent and does not rewrite its historical comparison benchmark.
+    baseline['prior_reference_net_profit_usd']=10089.87
+    baseline_path.write_text(json.dumps(baseline))
+    save(experiment)
+    _,_,again,_=load_profile(tmp_path,version='v1.5')
+    assert again['exact_reference_at_selection']==9971.427110129662
+
+
 def test_dashboard_v15_selector_applies_filters_and_retains_v14(tmp_path,monkeypatch):
     import backtesting.paths as paths
     import backtesting.save_v15 as exporter
@@ -137,7 +169,9 @@ def test_dashboard_v15_selector_applies_filters_and_retains_v14(tmp_path,monkeyp
     from backtesting.market_data import clean_candles
     monkeypatch.setattr(exporter,'ROOT',tmp_path)
     directory=tmp_path/'experiment'
-    write_selection(directory)
+    chosen=write_selection(directory)
+    chosen['candidate']['filters']['min_trend_gap_bps']=200.
+    (directory/'selection.json').write_text(json.dumps(chosen))
     save(directory)
     bars,quality=clean_candles(candles(5000))
     data=tmp_path/'candles.parquet'
@@ -156,7 +190,9 @@ def test_dashboard_v15_selector_applies_filters_and_retains_v14(tmp_path,monkeyp
     assert not app.exception and not app.error
     result=app.session_state['independent_v15_result']
     assert result['filters']['min_rvol']==2.
+    assert result['filters']['min_trend_gap_bps']==200.
     saved=json.loads((tmp_path/'artifacts/independent/v1_5_dashboard/results.json').read_text())
     assert saved['filters']['min_rvol']==2.
+    assert saved['filters']['min_trend_gap_bps']==200.
     assert 'independent_v14_result' not in app.session_state
     assert any('baseline applies' in line.value for line in app.caption)
