@@ -32,6 +32,12 @@ def render(root):
             st.plotly_chart(fig,width='stretch',key='locked_forward_equity')
             st.plotly_chart(monthly_chart(curve,50000.),width='stretch',key='locked_forward_monthly')
     else:st.info('Locked future evaluation: pending. There is no forward-validation certificate yet.')
+    from .cost_reserve_display import render as show_cost_reserve
+    show_cost_reserve(root)
+    from .strategy_lab_display import render as show_strategy_lab
+    show_strategy_lab(root)
+    from .additional_labs_display import render as show_additional_labs
+    show_additional_labs(root)
     from .forward_collection import collect,latest
     st.subheader('Blinded forward-data collection')
     st.caption('Collect completed UTC source days and coverage only. No strategy signals, trades or returns are calculated. This is a manual collector; no background schedule is running.')

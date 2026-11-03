@@ -1,0 +1,62 @@
+{
+  "candidate": "v1.12 research candidate",
+  "created_at_utc": "2026-11-03 19:15:38.983102+00:00",
+  "parent_protocol_sha256": "a60e3ee0c300b6d6b68b574a71faf29b4ecc55bd0a321b4fda27561c00c8b4e5",
+  "candidate_sha256": "f375c98b460e2a612aa8361b6e7ef6684386ce5fb82f94d84fbb1956a166764a",
+  "sizing_budgets_bps": {
+    "v1.11_fixed_2bp_budget": 2.0,
+    "v1.12_candidate_8bp_budget": 8.0
+  },
+  "actual_fill_slippage_bps": [
+    2.0,
+    4.0,
+    8.0
+  ],
+  "change": "Only quantity uses a fixed 8bp budget; all signal/stop/target/trailing rules and $100 planned risk stay fixed.",
+  "rationale": "Budget for adverse execution without choosing signal parameters from consumed cross-venue/asset outcomes.",
+  "source": "https://intercom.help/breakoutprop/en/articles/16110234-why-does-my-fill-price-differ-from-the-quoted-price",
+  "source_note": "Breakout describes order-size/liquidity-dependent fills; it does not establish 8bp as a measured normal rate.",
+  "number_of_candidate_hypotheses": 1,
+  "optimizer_enabled": false,
+  "historical_period": [
+    "2023-01-01",
+    "2026-10-28"
+  ],
+  "historical_data_already_inspected": true,
+  "transfer_data_used_to_choose_thresholds": false,
+  "development_outcomes_may_change_candidate": false,
+  "future_period": [
+    "2026-11-04 00:00:00+00:00",
+    "2027-05-03 00:00:00+00:00"
+  ],
+  "final_evaluation_only": true,
+  "minimum_closed_trades": 30,
+  "maximum_drawdown": 0.05,
+  "primary_comparison": "At 8bp actual fills: lower intrabar drawdown and at least 90% of fixed-2bp-budget baseline net; baseline net must be positive.",
+  "additional_checks": "Candidate positive net at all three fill costs, no margin calls, <=5% drawdown, >=30 closed trades, positive lower seven-day-block interval at 8bp.",
+  "bootstrap": {
+    "seed": 20261104,
+    "draws": 10000,
+    "block_days": 7
+  },
+  "promotion_automatic": false,
+  "ready_for_funded_trading": false,
+  "source_sha256": {
+    "alternative_strategies.py": "863532fedae16edb66c5ecdf7c29da842f499e206e7d1d46105e8969598a0ebb",
+    "engine.py": "d7143963793d4d7b96258a90c90a48a68428552cbc005ace7b4a8e3b454d45ba",
+    "regime_filters.py": "43bcdf8160adca697925e40ac1f9fae4017d10a234cd7257b19c0cb66cf6324e",
+    "indicators.py": "005bd0e0020d9eeefa773c96a48fd2ecbbca17d12020ea05a3820223f843ea2b",
+    "config.py": "73363900e2ff1928088e62791c504b1592fb6ba0ab5c44cec5aaa58f47fd361b",
+    "cost_reserve.py": "03292507eb94e6d72c610a4d6dd28d4270fb586a8e03ff542dee78abad3e1faa",
+    "cost_reserve_study.py": "2e49bc5ead9998c7ff70ddea7cef20db7cf28130314bfde7caa62075decfc05b",
+    "independent_visuals.py": "88a6d0def18e5c572f45b11b4cc05a0a63da7efffa36603821e0a344a1dec375",
+    "post_selection_checks.py": "c87838f98115fe12290512b440ec2f34085276085364fe855fae3d10feaf30bf",
+    "market_data.py": "d0a991a1ed701787ddb51624fe189cea0452b2ba4e87b150b8d35b1bf33c3576",
+    "optimize.py": "911381504042c401c974aa52652b79a794b61df842f66e9bc75f3525c660fef3",
+    "eth_research/data.py": "65ed62c3d8de6c9831cd9b7b33f811f439f115e2d0e2558e7cbba846601d74db"
+  },
+  "export_sha256": {
+    "ETH_Strategy_v1_12_candidate.pine": "3628dba928c15315f8fb678e7f535576dbbfd0886614b1b547609493dd1ee36f",
+    "ETH_Strategy_v1_12_candidate.txt": "3628dba928c15315f8fb678e7f535576dbbfd0886614b1b547609493dd1ee36f"
+  }
+}

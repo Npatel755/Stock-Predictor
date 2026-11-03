@@ -1,3 +1,4 @@
+Output truncated at line 134; continue reading from line 135.
 # Generalization protocol and current findings
 
 **Future usability is unproven.** Repeatedly choosing better 2023–2026 results exposed that history to selection. Resplitting those observations now cannot create an untouched holdout. Current versions remain experimental.
@@ -60,7 +61,49 @@ The dashboard places Coinbase ETH/USD under **Generalization**. **BTC transfer t
 
 The first command returns an existing consumed audit after checking its pinned sources; it does not fetch a revised feed or choose new parameters. The second rebuilds inputs and replays the recorded costs. These operations do not create a forward-validation certificate or promote a strategy version.
 
-## Historical warning signs
+## v1.12 cost-reserve candidate
+
+One new hypothesis is registered separately under `candidates/eth_v1_12/`: keep the frozen entry/exit rules, but size for a fixed 8bp slippage budget. This is an **unpromoted research candidate**, not a new historical-profit winner. Its Pine and pasteable text exports are explicitly labeled as candidates.
+
+The new comparison separates the cost used for sizing from the cost used for market/stop fills. The baseline always sizes for 2bp; the candidate always sizes for 8bp. Actual fills are then stressed at 2, 4 and 8bp for both. Previous stress tests raised both assumptions together and remain diagnostics of known higher execution costs. They did not measure the same unexpected-cost question. Neither method observes actual order-book depth or guarantees a maximum realized loss.
+
+Only the already-inspected native ETH development period is replayed, including each annual account reset. External ETH venue tests and BTC results do not choose new signal thresholds. No parameter grid is searched. The original v1.11 main result must reproduce exactly, and a second replay must reproduce the new metrics, ledgers and curves before the dashboard labels them computationally reproduced.
+
+The candidate has its own hash-pinned 180-day future protocol. Its primary comparison requires lower intrabar drawdown at 8bp actual fills while retaining at least 90% of the positive fixed-2bp-budget baseline net, together with positive net at all costs, trade-count, drawdown, no-margin-call and positive lower block-interval checks. The original v1.11 lock is preserved; no candidate inherits its future evidence or automatically promotes itself. Historical profits cannot revise the new hypothesis or its protocol.
+
+```powershell
+.ethvenv/Scripts/python.exe -m backtesting.cost_reserve_study
+.ethvenv/Scripts/python.exe -m backtesting.cost_reserve_study --verify
+.ethvenv/Scripts/python.exe -m backtesting.cost_reserve_study --forward-bars PATH_TO_COMPLETE_FORWARD_PARQUET
+```
+
+The last command reads no prices before the candidate's registered end date. See [the cost-reserve report](reports/v1_12_cost_reserve.md). The Generalization tab includes the fixed-budget comparison, equity/drawdown overlays, monthly results, trade charts and candidate downloads.
+
+## Structural robustness candidates (robust_structure_round1)
+
+A pre-registered round of ten candidates (`backtesting/robust_structure_lab.py`, manifest frozen before any outcome) changed trade structure instead of entry thresholds, motivated by the consumed v1.11 ledger: trades stopped within two hours lose about $4.8k of the $9.4k total stop losses at a 5% win rate because the 1.5 ATR stop sits inside the median 2.8 ATR breakout candle, and no causal entry feature had Spearman |rho| above 0.14 with trade R. Groups: (a) initial stop 2.0/2.5/3.0 ATR with the 8.25 ATR target distance and 3 ATR trail unchanged; (b) a guard rejecting entries preceded by more than two same-direction raw channel breakouts in the prior 72 completed hours; (c) ensembles of neighbouring channel-length (48/72/96) and RVOL (2.4/2.8/3.2) settings traded as independent $100/n-risk sub-accounts. Same chronology as the other labs: 2020-2023 annual training at 8bp fills against a same-budget v1.11 replica, 2024 check, frozen selection, 2025-2026 diagnostics.
+
+Outcome: **no candidate improved on v1.11, and nothing was promoted.** The 2.0 ATR stop scored 459.51 against the 410.06 v1.11 replica in training but closed $1,930.06 in 2024 against v1.11's $2,854.86; 2.5 and 3.0 ATR stops were ineligible. The fresh-breakout guard lowered the training score for every stop width (231.13 at 1.5 ATR). Ensembles had the best training scores (ensemble_grid_9: 769.52, 2024 closed $2,279.73) and were selected by the fixed gates, but on 2023-2026 the nine-member ensemble made $10,761.15 at 2bp fills versus $13,166.91 for v1.11 ($8,628.28 versus $10,858.31 at 8bp) with a slightly lower drawdown (2.83% versus 3.03%, upper-bound basis) and 2,806 small trades, so it failed the historical improvement gate (`higher_main` and `higher_stressed` false). Conclusion: v1.11's structure is not improved by wider stops, de-chasing or parameter averaging on the inspected history; its weakness is a cost of the breakout style rather than a fixable parameter, and more development rounds on this data only add selection exposure. v1.11 remains the frozen strategy awaiting its sealed prospective test.
+
+Commands: `.ethvenv\Scripts\python.exe -m backtesting.robust_structure_lab` then `--verify`. Artifacts under `backtesting/artifacts/strategy_lab/robust_structure_round1/`, report at `backtesting/reports/robust_structure_round1.md`, dashboard section under the additional labs.
+
+## v2 scale-in candidates (v2_scale_in_round1)
+
+With discretion to pursue any direction under proper versioning, the second pre-registered round (`scale_in_lab.py`) tested the one structural idea the consumed ledger directly motivates: stops hit within two hours cost about $4.8k of the $9.4k total stop losses at a 5% win rate, while trades that progress are strongly positive. Six fixed candidates keep every frozen v1.11 entry, filter, target and 3 ATR trailing rule and change only how the $100 planned risk is deployed: a $50 core leg at the signal and a $50 add-on leg after price closes 0.5/1.0/1.5 initial-risk units in favour, either moving the core stop to breakeven with the add-on stopped at the core entry, or keeping the original stop for both. Both legs fill at the next open; two independent Broker sub-accounts are summed, so fees, financing, margin and stop-first handling are the shared frozen code and v1.11 is untouched.
+
+Chronology was the same as the earlier labs: 2020-2023 annual training at 8bp fills against a same-budget v1.11 replica, the top eligible candidate per add-on-stop group checked on 2024 after a seven-day gap, selection frozen, then 2025, 2026 and 2023-2026 at 2/4/8bp fills. Moving the core stop to breakeven failed training at 0.5R and 1.0R (breakeven exits cut the trend winners the strategy depends on); keeping the original stop with a 0.5R add-on (`scalein_t0.5_original`) was eligible in training (score 517 against 410) and in 2024 ($2,079 closed, 1.25% drawdown, against v1.11's $2,855) and was selected before audit. On 2023-2026 it made $9,733 at 2bp and $7,924 at 8bp against v1.11's $13,167 and $10,858, with lower drawdown (2.11% and 2.30% upper bounds against 3.03% and 3.46%) and 501 legs against 312 trades. Deferring half the risk reduced losses on fast stop-outs but gave up more on the winners that run straight from entry, so the historical comparison failed and no v2.0 candidate was registered or promoted. `reports/v2_scale_in_round1.md` and the dashboard keep every candidate, including the failed ones.
+
+Together with robust_structure_round1 and Codex's filter, exit, timeframe and funding labs, every reasonable structural change to the v1.11 breakout has now underperformed the frozen rules on the consumed history. The honest reading is that v1.11's fast stop-outs are the price of its trend capture rather than a removable defect, that further search on 2020-2026 mostly adds selection exposure (848 logged slots plus 62 lab candidates), and that the sealed 2026-11-04 to 2027-05-03 forward test remains the only admissible evidence of generalization. A future v2.0 should come from a genuinely different return source evaluated under its own pre-registered protocol, not from more variations of this breakout.
+
+## v2 funding-crowding fade (v2_funding_fade_round1)
+
+The third pre-registered round left the breakout alone and tested a different return source: positioning crowding measured from settled perpetual funding (`funding_fade_lab.py`). Six fixed candidates fade the crowd when the 24-hour mean of the last settled 8h rate ranks at or above the 90th/95th/98th percentile of its trailing 30 days, with or without a same-direction break of the prior 24-hour range, using fixed geometry (2 ATR stop, 3R target, 96-hour time stop, no trail). Signals use settlements published at least one hour earlier and completed hourly candles; execution is the shared next-open Broker. As a new source it only had to be positive standalone on 2020-2023, then positive on 2024, then beat v1.11 as an added $100-risk sleeve.
+
+Every candidate failed training: penalized scores ranged from -1,133 to -2,653 (41 to 254 entries), the two per-group shortlist entries also lost on 2024 (-$761 and -$1,241), and so nothing reached the portfolio audit, was registered or promoted. Fading extreme funding into a price failure loses money in this execution model: win rates near 30% at 3R are insufficient once fees, slippage and financing are charged. `reports/v2_funding_fade_round1.md` and the dashboard retain every candidate.
+
+After three rounds (robust_structure_round1, v2_scale_in_round1, v2_funding_fade_round1: 22 lab candidates) on top of Codex's labs and the 848 logged search slots, no change to the breakout and no second return source has beaten the frozen v1.11 on the consumed history. The research budget on 2020-2026 is spent; the sealed 2026-11-04 to 2027-05-03 forward test is the only remaining admissible evidence, and any future v2.0 must come from a new, pre-registered idea evaluated on data that has not been inspected.
+
+## Historical selection diagnostics
 
 The one-sided historical block-bootstrap p-value is approximately 0.00020 before multiplicity adjustment. Using 848 logged slots gives approximately **0.170**, or **0.236** using the upper Monte Carlo bound. This does not establish an edge at a 0.05 threshold. It is not a probability of overfitting or of future success; bootstrap and trial-count assumptions remain material.
 
@@ -98,12 +141,3 @@ The Generalization tab includes **Collect completed ETH days without evaluating 
 
 The collector computes data quality only; it does not run signals, trades, equity or performance selection. Content-addressed snapshots and source provenance are retained rather than overwritten as the period grows. A later unavailable source day can change the coverage report without altering the last complete price snapshot. An operating-system writer lock prevents concurrent collections from replacing each other's source pins and releases automatically if the process exits. The final evaluator can use the retained snapshot path shown by the dashboard. No collection is scheduled in the background; the button or command must be run explicitly.
 
-The initial November 3 collection retained **14,424 verified warm-up rows from 51 daily archives**, with **zero forward-test rows**. The source archive for **2026-10-28 remains unavailable**, leaving **288 missing five-minute candles**. November 2's daily source is now available. The warm-up runs from September 12, 2026 at 22:00 UTC. The locked evaluation still requires complete coverage; this unresolved source gap can make the test insufficient even after the scheduled end. The window and rules are not moved to avoid the problem, and another venue's prices are not substituted.
-
-## Dashboard and files
-
-Refresh the dashboard. **Generalization** shows the lock, chronological diagnostics, sensitivity and the additional ETH test. **BTC transfer test** is a separate tab with equity, drawdown, monthly P&L, trade inspection and cost-stress results. Its rules are fixed independently of sidebar selections.
-
-The protocol is in `configs/generalization_policy.json`. Audit manifests, source hashes, actual data exposure, segment ledgers and results are in `artifacts/generalization/`. Earlier strategy configurations, metadata and Pine files remain unchanged. Original reproduction certificates are preserved when verifier code changes; rechecks receive separate files.
-
-Exact copies of the two native ETH input datasets are retained under `artifacts/generalization/frozen_inputs/`. A later archive update cannot silently change an old replay: the verifier uses a matching original snapshot or refuses the run.
