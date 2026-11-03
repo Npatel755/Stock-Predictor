@@ -64,6 +64,18 @@ Insufficient trades/data or failed checks remain insufficient/failed. The parame
 
 Before May 3, 2027 this returns `awaiting_future_window` without reading test prices. No forward-validation certificate currently exists. New candidate parameters need a separately registered prospective protocol; they cannot inherit v1.11's test.
 
+## Blinded source collection and readiness
+
+The Generalization tab includes **Collect completed ETH days without evaluating returns**. It retrieves only fully completed UTC daily ETHUSDT perpetual archives, verifies their published checksums and pins each first successfully captured source. Missing archives are retried on a later manual collection. Replacing a pinned ZIP, even together with its checksum, is rejected. First-seen source data is not revised based on strategy outcomes.
+
+```powershell
+.ethvenv/Scripts/python.exe -m backtesting.forward_collection
+```
+
+The collector computes data quality only; it does not run signals, trades, equity or performance selection. Content-addressed snapshots and source provenance are retained rather than overwritten as the period grows. A later unavailable source day can change the coverage report without altering the last complete price snapshot. An operating-system writer lock prevents concurrent collections from replacing each other's source pins and releases automatically if the process exits. The final evaluator can use the retained snapshot path shown by the dashboard. No collection is scheduled in the background; the button or command must be run explicitly.
+
+The initial November 3 collection retained **14,424 verified warm-up rows from 51 daily archives**, with **zero forward-test rows**. The source archive for **2026-10-28 remains unavailable**, leaving **288 missing five-minute candles**. November 2's daily source is now available. The warm-up runs from September 12, 2026 at 22:00 UTC. The locked evaluation still requires complete coverage; this unresolved source gap can make the test insufficient even after the scheduled end. The window and rules are not moved to avoid the problem, and another venue's prices are not substituted.
+
 ## Dashboard and files
 
 Refresh the dashboard. **Generalization** shows the lock, chronological diagnostics, sensitivity and the additional ETH test. **BTC transfer test** is a separate tab with equity, drawdown, monthly P&L, trade inspection and cost-stress results. Its rules are fixed independently of sidebar selections.

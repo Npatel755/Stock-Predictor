@@ -32,7 +32,29 @@ def render(root):
             st.plotly_chart(fig,width='stretch',key='locked_forward_equity')
             st.plotly_chart(monthly_chart(curve,50000.),width='stretch',key='locked_forward_monthly')
     else:st.info('Locked future evaluation: pending. There is no forward-validation certificate yet.')
-    future_path=st.text_input('Forward ETH Parquet path',str(root/'data/generalization/forward_eth.parquet'))
+    from .forward_collection import collect,latest
+    st.subheader('Blinded forward-data collection')
+    st.caption('Collect completed UTC source days and coverage only. No strategy signals, trades or returns are calculated. This is a manual collector; no background schedule is running.')
+    if st.button('Collect completed ETH days without evaluating returns'):
+        try:
+            with st.spinner('Verifying source checksums and retaining data snapshots…'):collect(root)
+        except (ValueError,RuntimeError,OSError) as exc:st.error(str(exc))
+    try:collection=latest(root)
+    except (ValueError,OSError) as exc:st.error(str(exc));collection=None
+    if collection:
+        st.write('Collection status:',collection['state'])
+        a,b,c=st.columns(3)
+        a.metric('Verified five-minute source rows',f"{collection['rows']:,}")
+        b.metric('Collected forward-test rows',f"{collection['forward_rows']:,}")
+        c.metric('Missing completed source intervals',f"{collection.get('missing_bars',0):,}")
+        st.caption(f"Coverage checked as of {collection['as_of_utc']}. Completed days through {collection['completed_data_end_exclusive_utc']} exclusive. First-seen daily sources and every retained snapshot are hash-pinned.")
+        if collection.get('gaps'):
+            st.warning('The required data coverage is incomplete. No source gap is filled or replaced. Final evaluation cannot pass with missing required candles.')
+            st.dataframe(pd.DataFrame(collection['gaps']),hide_index=True)
+        with st.expander('Forward collection provenance'):
+            st.json(collection)
+    default_path=root/collection['snapshot_path'] if collection and collection.get('snapshot_path') else root/'data/generalization/forward_eth.parquet'
+    future_path=st.text_input('Forward ETH Parquet path',str(default_path))
     complete=pd.Timestamp.now(tz='UTC')>=pd.Timestamp(p['future_end_exclusive_utc'])
     if st.button('Run final locked forward evaluation',disabled=not complete):
         from .forward_validation import evaluate
