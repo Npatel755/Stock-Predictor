@@ -58,7 +58,8 @@ def replay_independent(selected_bars, rule, config, metadata):
         raise ValueError("Visual equity does not reconcile with the broker result")
     curve.to_parquet(location / "equity.parquet", index=False)
     st.session_state["independent_v13_result"] = {"metrics": metrics, "trades": trades, "events": events, "period": period,
-                                                 "equity": curve, "rule": asdict(rule), "execution": asdict(config)}
+                                                 "equity": curve, "rule": asdict(rule), "execution": asdict(config),
+                                                 "profile_sha256": metadata['configuration_sha256']}
 
 
 def display_independent_result(key):
@@ -69,6 +70,10 @@ def display_independent_result(key):
     m = replay["metrics"]
     st.subheader("Completed run · Research · ETH v1.3")
     st.caption(f"Completed v1.3 replay: {replay['period'][0]} to {replay['period'][1]} exclusive. Sidebar changes require another run.")
+    current_rule, current_cfg, current_meta, _ = load_profile(ROOT)
+    if (replay.get('rule', asdict(current_rule)) != asdict(current_rule)
+            or replay.get('execution', asdict(current_cfg)) != asdict(current_cfg)):
+        st.warning("The saved v1.3 strategy has been refined since this replay. Run v1.3 again to see the updated strategy's results; the charts below show your previous run.")
     a, b, c = st.columns(3)
     a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
     b.metric("Entries", m["entries"])
@@ -151,7 +156,7 @@ with st.sidebar:
                           key=f"dvs_{selected_version.replace('.', '_')}_mode" if saved_profile else "dvs_manual_mode")
     mode = "parity" if mode_label.startswith("A") else "research"
     if independent_selected:
-        st.caption("v1.3 loads the saved independent hourly channel strategy in Research mode. Its 2026 audit lost money; TradingView parity is unverified.")
+        st.caption("v1.3 loads the saved independent hourly channel strategy in Research mode. Historical research only; TradingView parity is unverified.")
     elif saved_profile:
         st.caption("v1.2 uses its saved Research configuration automatically. Choose v1.1 or v1 to use parity mode or manual settings.")
         st.caption("Historical research only: earlier-regime and slippage failures are retained in the reports.")
@@ -356,17 +361,24 @@ with research_tab:
             from backtesting.research_display import search_status, overview_rows, training_overview
             status = search_status(ROOT / "artifacts/optimization" / chosen_run)
             plan, training, validation, summary = [status[k] for k in ["manifest", "training", "validation", "summary"]]
+            historical_profit_search = plan.get("name") == "Explicit historical net-profit improvement"
             st.progress(min(1., len(training) / plan["candidate_count"]), text=f"Recorded training: {len(training)} / {plan['candidate_count']} candidates")
             st.caption(f"Validation checkpoints: {len(validation)}. Checkpoints show saved work, not whether a process is still running.")
-            training_period = plan.get("training", plan.get("train", ["2023-01-01", "2025-01-01"]))
-            st.write(f"Training windows: {training_period}. Selection uses chronological 2025 halves. Historical data was previously inspected; this is not a fresh holdout.")
+            training_period = plan.get("training", plan.get("train", [plan.get("start", "2023-01-01"), plan.get("end_exclusive", "2025-01-01")]))
+            if historical_profit_search:
+                st.write(f"Profit-selection window: {training_period}. The entire inspected period, including 2026, selects parameters. Additional checks reuse 2025 halves, earlier regimes and higher costs; they are not independent validation.")
+            else:
+                st.write(f"Training windows: {training_period}. Selection uses chronological 2025 halves. Historical data was previously inspected; this is not a fresh holdout.")
             if summary:
                 selection = summary["selection"]
                 candidate = selection["candidate"]
                 gate = selection["passed_predeclared_validation_gate"]
-                st.write(f"Frozen selection: **{candidate['label']}**. Passed the predefined validation gate: **{gate}**.")
+                gate_label = "historical-profit checks" if selection.get('selection_is_historical_profit_optimization') else "predefined historical validation gate"
+                st.write(f"Frozen selection: **{candidate['label']}**. Passed {gate_label}: **{gate}**.")
+                if selection.get('selection_is_historical_profit_optimization'):
+                    st.caption("The 2023–2026 period, including 2026, was used to select this candidate for higher historical net P&L. These results are not independent validation.")
                 st.dataframe(pd.DataFrame(overview_rows(summary)), width="stretch", hide_index=True)
-                st.json({"validation": selection["validation"], "retrospective_audit": summary.get("audit", summary.get("evaluation"))}, expanded=False)
+                st.json({"selection_checks": selection["validation"], "historical_replays" if historical_profit_search else "retrospective_audit": summary.get("audit", summary.get("evaluation"))}, expanded=False)
                 independent = "rule" in candidate
                 payload = {"rule": candidate["rule"], "execution": selection["execution_config"]} if independent else candidate["config"]
                 st.download_button("Download experimental configuration", json.dumps(payload, indent=2),
@@ -374,7 +386,7 @@ with research_tab:
                 with st.expander("Selected research rules"):
                     st.json(payload)
                 if independent:
-                    st.caption("Independent hourly signals use five-minute execution. These saved replays are separate from DVS. v1.3 remains experimental, including the negative 2026 audit.")
+                    st.caption("Independent hourly signals use five-minute execution. These saved replays are separate from DVS. Repeated historical selection does not establish future profitability; prior failures remain in the research record.")
                     text_path = ROOT / "downloads/ETH_Strategy_v1_3.txt"
                     metadata_path = ROOT / "configs/eth_strategy_v1_3.metadata.json"
                     if text_path.exists() and metadata_path.exists() and json.loads(metadata_path.read_text(encoding="utf-8")).get("experiment") == chosen_run:
@@ -391,7 +403,7 @@ with research_tab:
                         st.rerun()
             elif training:
                 top = sorted(training, key=lambda r: -r["score"])[:10]
-                st.caption("Provisional training leaders only. Selection waits for chronological validation.")
+                st.caption("Provisional historical-profit leaders only. Selection waits for the fixed cost/regime checks." if historical_profit_search else "Provisional training leaders only. Selection waits for chronological validation.")
                 st.dataframe(pd.DataFrame([training_overview(r) for r in top]),
                              width="stretch", hide_index=True)
         except (ValueError, KeyError, OSError) as exc:
@@ -399,14 +411,16 @@ with research_tab:
 
 with independent_tab:
     st.subheader("ETH v1.3 · Independent hourly channel breakout")
-    st.write("This alternative uses an 80-hour channel, 200-hour EMA filter, 2 ATR initial stop, 3R target and 3 ATR trailing stop. Signals confirm hourly; execution uses five-minute candles.")
-    st.caption("v1.2 remains a separate DVS strategy. The v1.3 historical gate passed on reused data, but its 2026 audit lost money. Pine compilation and trade matching remain unverified.")
     try:
         rule, independent_cfg, independent_meta, pine_path = load_profile(ROOT)
+        st.write(f"This alternative uses a {rule.lookback}-hour channel, {rule.slow}-hour EMA filter, {rule.stop_atr:g} ATR initial stop, {rule.reward_r:g}R target and {rule.trail_atr:g} ATR trailing stop. Signals confirm hourly; execution uses five-minute candles.")
+        st.caption("v1.2 remains a separate DVS strategy. Reused historical data is not independent forward validation. Pine compilation and trade matching remain unverified.")
+        if independent_meta.get('selection_is_historical_profit_optimization'):
+            st.caption(independent_meta['selection_note'])
         st.download_button("Download ETH v1.3 text for Pine Editor", pine_path.read_bytes(), "ETH_Strategy_v1_3.txt", "text/plain")
         with st.expander("v1.3 saved rules and execution assumptions"):
             st.json({"rule": asdict(rule), "execution": asdict(independent_cfg), "metadata": independent_meta})
-        st.caption("Replay uses the UTC dates selected in the sidebar and the saved v1.3 settings. DVS risk/version controls do not alter this profile. Indicators initialize at the selected start; allow at least 200 hours for warm-up. Missing candle ranges are rejected.")
+        st.caption(f"Replay uses the UTC dates selected in the sidebar and the saved v1.3 settings. DVS risk/version controls do not alter this profile. Indicators initialize at the selected start; allow at least {rule.slow} hours for warm-up. Missing candle ranges are rejected.")
         if st.button("Run independent v1.3 on selected dates", disabled=bool(selection_error or selected_quality is None or selected_quality.get("missing_bars", 0))):
             with st.spinner("Replaying hourly channel signals on five-minute candles…"):
                 replay_independent(selected_bars, rule, independent_cfg, independent_meta)

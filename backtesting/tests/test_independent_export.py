@@ -54,9 +54,14 @@ def test_independent_export_preserves_v12_and_archives_changed_v13(tmp_path, mon
     export(experiment)
     assert not (tmp_path/'reference/revisions').exists()
     selection['candidate']['rule']['lookback'] = 55
+    selection['selection_is_historical_profit_optimization'] = True
     path.write_text(json.dumps(selection))
     export(experiment)
     archives = list((tmp_path/'reference/revisions').iterdir())
     assert len(archives) == 1
     assert (archives[0]/pine.name).read_bytes() == original
     assert old.read_text() == 'saved v1.2'
+    changed_meta = json.loads((configs/'eth_strategy_v1_3.metadata.json').read_text())
+    assert changed_meta['selection_is_historical_profit_optimization'] is True
+    assert '2026' in changed_meta['selection_note'] and 'not an untouched audit' in changed_meta['selection_note']
+    assert '2026 is selection data' in pine.read_text(encoding='utf-8')

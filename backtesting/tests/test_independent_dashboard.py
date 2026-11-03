@@ -109,6 +109,20 @@ def test_dashboard_shows_modern_experiment_and_runs_independent_profile(tmp_path
     saved = json.loads((tmp_path/'artifacts/independent/v1_3_dashboard/results.json').read_text())
     assert saved['rule'] == asdict(rule) and saved['execution'] == asdict(cfg)
     assert 'dvs_result' not in app.session_state
+    # A refined profile cannot silently relabel a previous browser replay.
+    import backtesting.export_independent as exporter
+    selection['candidate']['rule']['lookback'] = 64
+    selection['selection_is_historical_profit_optimization'] = True
+    (directory/'selection.json').write_text(json.dumps(selection))
+    exporter.export(directory)
+    app.run()
+    assert not app.exception and not app.error
+    assert any('refined since this replay' in w.value for w in app.warning)
+    assert app.session_state['independent_v13_result']['rule']['lookback'] == 80
+    next(b for b in app.sidebar.button if b.label == 'Run v1.3 backtest').click().run()
+    assert not app.exception and not app.error
+    assert not any('refined since this replay' in w.value for w in app.warning)
+    assert app.session_state['independent_v13_result']['rule']['lookback'] == 64
     picker().set_value('v1.1').run()
     assert not app.exception and not app.error
     assert any(b.label == 'Run DVS backtest' for b in app.button)

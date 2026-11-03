@@ -41,6 +41,9 @@ def export(directory: Path):
     rule = SignalRule(**selected['candidate']['rule'])
     cfg = StrategyConfig(**selected['execution_config'])
     text, payload, digest = render(rule, cfg)
+    historical_profit = selected.get('selection_is_historical_profit_optimization', False)
+    if historical_profit:
+        text = text.replace('//@version=6\n', '//@version=6\n// Selected by historical 2023-2026 net-profit optimization; 2026 is selection data.\n// This export has no independent forward validation.\n', 1)
     pine = ROOT/'reference/ETH_Strategy_v1_3.pine'
     config_path = ROOT/'configs/eth_strategy_v1_3.json'
     meta_path = ROOT/'configs/eth_strategy_v1_3.metadata.json'
@@ -59,6 +62,9 @@ def export(directory: Path):
                               pine_sha256=hashlib.sha256(pine.read_bytes()).hexdigest(),
                               selection_sha256=hashlib.sha256(selected_path.read_bytes()).hexdigest(),
                               passed_predeclared_validation_gate=selected['passed_predeclared_validation_gate'],
+                              selection_is_historical_profit_optimization=historical_profit,
+                              selection_note=('2023-2026, including 2026, participated in historical net-profit selection; not an untouched audit.'
+                                              if historical_profit else 'Historical reused-data selection; inspected 2026 retrospective audit.'),
                               ready_for_funded_trading=False, independent_forward_validation=False,
                               tradingview_parity_verified=False, pine_compilation_verified=False,
                               execution_differences=['Pine omits extra basis-point fill slippage and financing',
