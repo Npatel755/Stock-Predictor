@@ -22,7 +22,7 @@ from backtesting.market_data import download_history, load_history
 from backtesting.paths import PARQUET, RUNS, ROOT
 from backtesting.reporting import chart, save_result, safe_value
 from backtesting.profiles import attach_research_profile
-from backtesting.versioned_profiles import load_profile
+from backtesting.numbered_profiles import load_profile
 
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
@@ -30,7 +30,7 @@ st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exch
 baseline_path=ROOT/'configs/research_baseline.json'
 if baseline_path.exists():
     current_target=json.loads(baseline_path.read_text(encoding='utf-8'))
-    st.info(f"Choose v1.5 for the saved strategy. The research baseline is ${current_target['requested_net_profit_usd']:,.0f}; a replacement must beat the exact ${current_target['prior_reference_net_profit_usd']:,.2f} reference on the same dates and costs. TradingView parity remains unverified.")
+    st.info(f"Choose {current_target['reference_version']} for the baseline strategy. The research baseline is ${current_target['requested_net_profit_usd']:,.2f}; an improvement must beat that exact result on the same dates and costs. TradingView parity remains unverified.")
 else:
     st.info("Choose a saved strategy version to replay its fixed rules. TradingView parity remains unverified.")
 
@@ -99,9 +99,9 @@ def display_independent_result(key, version='v1.3'):
         actual_period = [pd.Timestamp(t) for t in replay['period']]
         if actual_period == expected_period:
             gain = m['final_equity']-m['initial_capital']-target['net']
-            st.metric(f"Above current ${target['net']:,.0f} baseline", f'${gain:,.2f}')
+            st.metric(f"Above current ${target['net']:,.2f} baseline", f'${gain:,.2f}')
         else:
-            st.caption(f"The ${target['net']:,.0f} baseline applies to January 1, 2023 through October 27, 2026 UTC at $100 risk. This replay uses different dates.")
+            st.caption(f"The ${target['net']:,.2f} baseline applies to January 1, 2023 through October 27, 2026 UTC at $100 risk. This replay uses different dates.")
         if target['reference_net'] is not None:
             st.caption(f"New candidates must beat {target['reference']}'s exact ${target['reference_net']:,.2f} result; exceeding the rounded baseline alone does not count as improvement.")
     from backtesting.independent_visuals import equity_curve, performance_chart, monthly_chart, trade_chart
@@ -161,12 +161,15 @@ with st.sidebar:
         st.stop()
     profile_path = ROOT / "configs/dvs_eth_v1_2.json"
     version_options = ["v1.1", "v1.2", "v1"] if profile_path.exists() else ["v1.1", "v1"]
-    for version in ['v1.3', 'v1.4', 'v1.5']:
+    independent_versions = sorted(
+        [p.stem.removeprefix('eth_strategy_').replace('_', '.') for p in (ROOT/'configs').glob('eth_strategy_v1_*.json')
+         if not p.name.endswith('.metadata.json')], key=lambda v: int(v.split('.')[1]))
+    for version in independent_versions:
         if (ROOT / f"configs/eth_strategy_{version.replace('.', '_')}.json").exists():
             version_options.insert(-1, version)
     selected_version = st.selectbox("Pine strategy version", version_options, key="pine_strategy_version")
-    independent_selected = selected_version in {'v1.3', 'v1.4', 'v1.5'}
-    independent_version = selected_version if independent_selected else next((v for v in ['v1.5', 'v1.4', 'v1.3'] if v in version_options), 'v1.3')
+    independent_selected = selected_version in independent_versions
+    independent_version = selected_version if independent_selected else next(iter(reversed(independent_versions)), 'v1.3')
     saved_profile = None
     if independent_selected:
         try:
@@ -435,7 +438,7 @@ with research_tab:
                     st.json(payload)
                 if independent:
                     st.caption("Independent hourly signals use five-minute execution. These saved replays are separate from DVS. Repeated historical selection does not establish future profitability; prior failures remain in the research record.")
-                    for exported_version in ['v1.3', 'v1.4', 'v1.5']:
+                    for exported_version in independent_versions:
                         suffix = exported_version.replace('.', '_')
                         text_path = ROOT / f"downloads/ETH_Strategy_{suffix}.txt"
                         metadata_path = ROOT / f"configs/eth_strategy_{suffix}.metadata.json"
@@ -471,7 +474,7 @@ with independent_tab:
                 st.write(f"Entry trend filter: the hourly close must be at least {gap:g}bp ({gap/100:g}%) beyond EMA{rule.slow} in the trade's direction.")
             from backtesting.profit_baseline import current_baseline
             target = current_baseline(ROOT, independent_meta)
-            st.caption(f"Current baseline: ${target['net']:,.0f} net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.")
+            st.caption(f"Current baseline: ${target['net']:,.2f} net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.")
         st.caption("v1.2 remains a separate DVS strategy. Reused historical data is not independent forward validation. Pine compilation and trade matching remain unverified.")
         if independent_meta.get('selection_is_historical_profit_optimization'):
             st.caption(independent_meta['selection_note'])

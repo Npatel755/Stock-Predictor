@@ -52,7 +52,7 @@
     "direction": "both",
     "min_atr_bps": 0.0,
     "max_atr_bps": 0.0,
-    "min_trend_gap_bps": 200.0,
+    "min_trend_gap_bps": 0.0,
     "min_signed_slope_bps": null,
     "min_rvol": 2.0,
     "weekends": true

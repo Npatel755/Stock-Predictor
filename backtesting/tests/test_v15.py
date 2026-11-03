@@ -157,9 +157,18 @@ def test_v15_refinement_must_beat_exact_current_reference_and_export_its_trend_f
     # idempotent and does not rewrite its historical comparison benchmark.
     baseline['prior_reference_net_profit_usd']=10089.87
     baseline_path.write_text(json.dumps(baseline))
+    baseline['requested_net_profit_usd']=10799.67
+    baseline_path.write_text(json.dumps(baseline))
+    preserved={p:p.read_bytes() for p in [tmp_path/'configs/eth_strategy_v1_5.json',tmp_path/'configs/eth_strategy_v1_5.metadata.json',pine,tmp_path/'downloads/ETH_Strategy_v1_5.txt']}
     save(experiment)
     _,_,again,_=load_profile(tmp_path,version='v1.5')
     assert again['exact_reference_at_selection']==9971.427110129662
+    assert all(p.read_bytes()==content for p,content in preserved.items())
+    selection['candidate']['filters']['min_rvol']=2.4
+    (experiment/'selection.json').write_text(json.dumps(selection))
+    with pytest.raises(ValueError,match='immutable'):
+        save(experiment)
+    assert all(p.read_bytes()==content for p,content in preserved.items())
 
 
 def test_dashboard_v15_selector_applies_filters_and_retains_v14(tmp_path,monkeypatch):

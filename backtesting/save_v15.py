@@ -36,6 +36,15 @@ def save(selection_directory):
     existing_meta=ROOT/'configs/eth_strategy_v1_5.metadata.json'
     prior=json.loads(existing_meta.read_text(encoding='utf-8')) if existing_meta.exists() else {}
     same_selection=(prior.get('selection_sha256')==hashlib.sha256(path.read_bytes()).hexdigest() and prior.get('configuration_sha256')==digest)
+    if prior and not same_selection:
+        raise ValueError('Saved v1.5 is immutable; use save_numbered with the next version')
+    if prior:
+        from .numbered_profiles import load_profile
+        load_profile(ROOT, version='v1.5')
+        print('ETH v1.5 already saved; existing files and historical metadata preserved.')
+        return
+    if any((ROOT/name).exists() for name in ['configs/eth_strategy_v1_5.json','reference/ETH_Strategy_v1_5.pine']):
+        raise ValueError('Existing v1.5 files must be preserved; use the next version')
     if net<=max(requested,reference) and not same_selection:
         raise ValueError('v1.5 must exceed both the current requested baseline and the exact saved reference')
     selection_requested=selection.get('requested_baseline',requested)
@@ -47,12 +56,6 @@ def save(selection_directory):
     pine = ROOT/'reference/ETH_Strategy_v1_5.pine'
     config_path = ROOT/'configs/eth_strategy_v1_5.json'
     meta_path = ROOT/'configs/eth_strategy_v1_5.metadata.json'
-    if pine.exists() and pine.read_text(encoding='utf-8') != text:
-        archive = ROOT/'reference/revisions'/hashlib.sha256(pine.read_bytes()).hexdigest()[:16]
-        archive.mkdir(parents=True, exist_ok=True)
-        for previous in [pine, config_path, meta_path,ROOT/'V1_5.md',ROOT/'downloads/ETH_Strategy_v1_5.txt',ROOT/'downloads/ETH_Strategy_v1_5_README.txt']:
-            if previous.exists():
-                (archive/previous.name).write_bytes(previous.read_bytes())
     pine.parent.mkdir(parents=True, exist_ok=True)
     config_path.parent.mkdir(parents=True, exist_ok=True)
     pine.write_text(text, encoding='utf-8')
