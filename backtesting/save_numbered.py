@@ -43,6 +43,15 @@ def save(directory: Path, version: str, root: Path = ROOT):
     net = metrics['final_equity']-metrics['initial_capital']
     if net <= max(target['requested_net_profit_usd'], target['prior_reference_net_profit_usd']):
         raise ValueError('Must beat the exact current baseline and saved reference')
+    verification_path = directory/'verification.json'
+    if not verification_path.exists():
+        raise ValueError('A fresh reproduction verification is required before saving a version')
+    verified = json.loads(verification_path.read_text(encoding='utf-8'))
+    selection_digest = hashlib.sha256(selection_path.read_bytes()).hexdigest()
+    if (not verified.get('reproduced_exactly') or not verified.get('passed_frozen_gate')
+            or verified.get('selection_sha256') != selection_digest
+            or verified.get('metrics', {}).get('full_period') != metrics):
+        raise ValueError('A matching fresh reproduction verification is required')
     cfg = StrategyConfig(**selection['execution_config'])
     if (cfg.risk_usd, cfg.initial_capital, cfg.max_leverage, cfg.commission_bps,
             cfg.slippage_ticks, cfg.slippage_bps, cfg.swap_daily_bps) != (100.,50000.,5.,4.,2,2.,3.3):
@@ -56,7 +65,9 @@ def save(directory: Path, version: str, root: Path = ROOT):
     meta = dict(strategy_name=f'ETH {version}', experiment=directory.name,
                 selected_candidate=selection['candidate']['label'], configuration_sha256=digest,
                 pine_sha256=hashlib.sha256(text.encode()).hexdigest(),
-                selection_sha256=hashlib.sha256(selection_path.read_bytes()).hexdigest(),
+                selection_sha256=selection_digest,
+                reproduction_verification_sha256=hashlib.sha256(verification_path.read_bytes()).hexdigest(),
+                computational_reproduction_verified=True,
                 entry_filters=payload['filters'], same_period_net_usd=net,
                 baseline_net_usd=target['requested_net_profit_usd'], baseline_period=['2023-01-01','2026-10-28'],
                 baseline_risk_usd=100., exact_reference_at_selection=target['prior_reference_net_profit_usd'],

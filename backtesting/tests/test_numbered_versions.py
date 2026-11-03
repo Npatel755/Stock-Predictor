@@ -46,10 +46,19 @@ def test_next_numbered_save_preserves_prior_version_and_rejects_overwrite_and_sk
     selection=write_selection(experiment,net=10500.)
     selection['candidate']['filters']['min_trend_gap_bps']=200.
     (experiment/'selection.json').write_text(json.dumps(selection))
+    summary=json.loads((experiment/'summary.json').read_text())
+    proof=dict(reproduced_exactly=True,passed_frozen_gate=True,
+               selection_sha256=hashlib.sha256((experiment/'selection.json').read_bytes()).hexdigest(),
+               metrics={'full_period':summary['evaluation']['full_period']})
+    with pytest.raises(ValueError,match='fresh reproduction'): save(experiment,'v1.7',tmp_path)
+    (experiment/'verification.json').write_text(json.dumps({**proof,'selection_sha256':'stale_other_selection'}))
+    with pytest.raises(ValueError,match='matching fresh reproduction'): save(experiment,'v1.7',tmp_path)
+    (experiment/'verification.json').write_text(json.dumps(proof))
     with pytest.raises(ValueError,match='consecutive'): save(experiment,'v1.8',tmp_path)
     save(experiment,'v1.7',tmp_path)
     _,_,meta,pine=load_profile(tmp_path,'v1.7')
     assert meta['same_period_net_usd']==10500. and meta['entry_filters']['min_trend_gap_bps']==200.
+    assert meta['computational_reproduction_verified']
     assert 'ETH v1.7' in pine.read_text()
     assert pine.read_bytes()==(tmp_path/'downloads/ETH_Strategy_v1_7.txt').read_bytes()
     assert 'ETH_Strategy_v1_7.pine -text' in (tmp_path/'reference/.gitattributes').read_text()
