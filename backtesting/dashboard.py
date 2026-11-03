@@ -14,8 +14,9 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from backtesting.config import StrategyConfig
+from backtesting.date_ranges import default_dates, select_dates
 from backtesting.engine import backtest
-from backtesting.market_data import clean_candles, download_history, load_history, utc
+from backtesting.market_data import download_history, load_history
 from backtesting.paths import PARQUET, RUNS
 from backtesting.reporting import chart, save_result, safe_value
 
@@ -28,6 +29,10 @@ st.info("The available source is DVS ETH v1. TradingView parity is a candidate i
 @st.cache_data(show_spinner=False)
 def cached_data(path: str, modified: float):
     return load_history(Path(path))
+
+
+def use_complete_range(key, dates):
+    st.session_state[key] = dates
 
 
 with st.sidebar:
@@ -50,8 +55,24 @@ with st.sidebar:
         st.stop()
     mode_label = st.radio("Mode", ["A · TradingView parity candidate", "B · Research"])
     mode = "parity" if mode_label.startswith("A") else "research"
-    period = st.date_input("Backtest UTC dates", value=(bars.timestamp.min().date(), bars.timestamp.max().date()),
+    try:
+        suggested_dates = default_dates(bars, mode)
+    except ValueError as exc:
+        st.warning(str(exc))
+        st.stop()
+    period_key = f"dvs_period_{mode}"
+    if period_key not in st.session_state:
+        st.session_state[period_key] = suggested_dates
+    period = st.date_input("Backtest UTC dates", value=None, key=period_key,
                            min_value=bars.timestamp.min().date(), max_value=bars.timestamp.max().date())
+    if mode == "parity":
+        st.caption(f"Complete parity range: {suggested_dates[0]} through {suggested_dates[1]} UTC. Later candles remain available in Research mode.")
+        st.button("Use complete parity range", on_click=use_complete_range, args=(period_key, suggested_dates))
+    selected_bars, selected_quality, selection_error = None, None, None
+    try:
+        selected_bars, selected_quality = select_dates(bars, period)
+    except ValueError as exc:
+        selection_error = str(exc)
     risk = st.number_input("Planned risk / trade ($)", min_value=1., value=100., step=25.)
     reward = st.number_input("Reward / risk", min_value=1., value=2., step=.25)
     max_daily = st.number_input("Personal daily loss gate ($)", min_value=1., value=300., step=50.)
@@ -69,22 +90,35 @@ with st.sidebar:
                         intrabar_policy="stop_first" if pessimistic else "tradingview", swap_daily_bps=swap)
     else:
         st.caption("Pine-fixed properties: 0.05% per side, 2 ticks slippage, 20% margin, close-of-bar entry. Gap ranges are rejected.")
-    run = st.button("Run DVS backtest", type="primary", width="stretch")
+    gap_blocked = selected_quality is not None and selected_quality["missing_bars"] > 0 and research.get("gap_policy", "reject") == "reject"
+    if selection_error:
+        st.warning(selection_error)
+    elif gap_blocked:
+        st.warning(f"This range contains {selected_quality['missing_bars']:,} missing candles. Choose the complete parity range or use Research with gap segmentation.")
+    run = st.button("Run DVS backtest", type="primary", width="stretch", disabled=bool(selection_error or gap_blocked))
 
 quality_tab, strategy_tab, models_tab = st.tabs(["Data quality", "DVS backtest", "ML experiments"])
 with quality_tab:
+    display_quality = selected_quality or quality
+    st.subheader("Selected backtest range")
     a, b, c, d = st.columns(4)
-    a.metric("Five-minute candles", f"{quality['rows']:,}")
-    b.metric("Missing candles", f"{quality['missing_bars']:,}")
-    c.metric("Duplicates removed", quality["true_duplicates_removed"])
-    d.metric("Zero-volume candles", quality["zero_volume_bars"])
-    st.write(f"Available history: {quality['first_open_utc']} → {quality['last_close_exclusive_utc']}")
+    a.metric("Five-minute candles", f"{display_quality['rows']:,}")
+    b.metric("Missing candles", f"{display_quality['missing_bars']:,}")
+    c.metric("Duplicates removed", display_quality["true_duplicates_removed"])
+    d.metric("Zero-volume candles", display_quality["zero_volume_bars"])
+    st.write(f"Selected coverage: {display_quality['first_open_utc']} → {display_quality['last_close_exclusive_utc']}")
     st.caption("Exchange open times remain unchanged. Exchange close times and the exclusive information-availability boundary are stored separately.")
-    if quality["gaps"]:
-        st.warning("Some requested candles are unavailable. No candles were fabricated or forward-filled.")
-        st.dataframe(pd.DataFrame(quality["gaps"]), width="stretch", hide_index=True)
-    st.dataframe(bars.tail(12), width="stretch", hide_index=True)
+    if display_quality["gaps"]:
+        st.warning("The selected range contains unavailable candles. No candles were fabricated or forward-filled.")
+        st.dataframe(pd.DataFrame(display_quality["gaps"]), width="stretch", hide_index=True)
+    elif selected_quality is not None:
+        st.success("The selected range has complete five-minute candles and is ready to backtest.")
+    st.dataframe((selected_bars if selected_bars is not None else bars).tail(12), width="stretch", hide_index=True)
     with st.expander("Archive manifest and checksum audit"):
+        st.write(f"All downloaded history: {quality['first_open_utc']} → {quality['last_close_exclusive_utc']}")
+        if quality["gaps"]:
+            st.caption("Unavailable periods across the original download request, including dates outside the selected range:")
+            st.dataframe(pd.DataFrame(quality["gaps"]), width="stretch", hide_index=True)
         st.json(quality)
 
 if run:
@@ -95,10 +129,7 @@ if run:
             try:
                 cfg = StrategyConfig(mode=mode, risk_usd=float(risk), reward_r=float(reward),
                                       max_daily_loss=float(max_daily), max_trades_day=int(maximum_entries), **research)
-                start, end = utc(period[0]), utc(period[1]) + pd.Timedelta(days=1)
-                subset = bars[(bars.timestamp >= start) & (bars.available_at <= end)]
-                subset, run_quality = clean_candles(subset, start, end)
-                result = backtest(subset, cfg, quality=run_quality)
+                result = backtest(selected_bars, cfg, quality=selected_quality)
                 location = RUNS / f"dashboard_{mode}"
                 save_result(result, location, PARQUET)
                 st.session_state["dvs_result"] = result

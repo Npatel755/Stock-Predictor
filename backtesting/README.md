@@ -36,7 +36,9 @@ backtesting/.venv/Scripts/python.exe -m backtesting run --end 2026-10-28 --outpu
 backtesting/.venv/Scripts/python.exe -m backtesting run --mode research --gap-policy segment --config backtesting/configs/research_breakout.json
 ```
 
-The default full-history parity run intentionally rejects missing data. It never hides gaps or switches modes automatically. Date filters reseed the simulation and indicators from the selected dataset start; match the TradingView chart history and settings when comparing outputs.
+The CLI's default full-history parity run intentionally rejects missing data. The dashboard instead starts Mode A on the longest contiguous range of complete UTC days. With the current data that is January 1, 2023 through October 27, 2026. The selected dates are visible; the dashboard does not silently shorten a user-selected range or switch modes. If a selected range contains gaps, the run button is disabled and **Use complete parity range** restores the valid selection. Research mode starts with the full available history and can explicitly segment gaps.
+
+Data-quality metrics describe the selected backtest range. The archive audit separately retains all unavailable dates from the original download request, including unpublished days beyond the available data. No candles are invented or forward-filled. Date filters reseed the simulation and indicators from the selected dataset start; match the TradingView chart history and settings when comparing outputs.
 
 ## Strategy implementation
 
