@@ -77,3 +77,26 @@ def test_dashboard_defaults_to_valid_parity_and_offers_recovery_for_invalid_sele
     assert not app.exception and not app.error
     assert app.session_state["dvs_result"].config["mode"] == "parity"
     assert app.session_state["dvs_result"].quality["missing_bars"] == 0
+
+
+def test_dashboard_loads_with_old_cached_reporting_module_without_new_profile_helper(tmp_path, monkeypatch):
+    """Reproduce a long-running Streamlit process predating the new helper."""
+    from streamlit.testing.v1 import AppTest
+    import backtesting.paths as paths
+    import backtesting.reporting as reporting
+
+    monkeypatch.delattr(reporting, "attach_research_profile")
+    with pytest.raises(ImportError):
+        exec("from backtesting.reporting import attach_research_profile", {})
+    bars, quality = clean_candles(history())
+    path = tmp_path / "candles.parquet"
+    bars.to_parquet(path, index=False)
+    quality["parquet_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    path.with_suffix(".quality.json").write_text(json.dumps(quality), encoding="utf-8")
+    monkeypatch.setattr(paths, "PARQUET", path)
+    monkeypatch.setattr(paths, "RUNS", tmp_path / "runs")
+    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "dashboard.py"), default_timeout=30).run()
+    assert not app.exception and not app.error
+    next(button for button in app.sidebar.button if button.label == "Run DVS backtest").click().run()
+    assert not app.exception and not app.error
+    assert "dvs_result" in app.session_state

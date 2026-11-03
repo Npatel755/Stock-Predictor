@@ -19,7 +19,8 @@ from backtesting.date_ranges import default_dates, select_dates
 from backtesting.engine import backtest
 from backtesting.market_data import download_history, load_history
 from backtesting.paths import PARQUET, RUNS, ROOT
-from backtesting.reporting import chart, save_result, safe_value, attach_research_profile
+from backtesting.reporting import chart, save_result, safe_value
+from backtesting.profiles import attach_research_profile
 
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")

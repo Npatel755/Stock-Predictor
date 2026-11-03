@@ -10,7 +10,8 @@ from .config import StrategyConfig
 from .engine import backtest
 from .market_data import download_history, load_history, utc
 from .paths import PARQUET, RUNS
-from .reporting import save_result, safe_value, attach_research_profile
+from .reporting import save_result, safe_value
+from .profiles import attach_research_profile
 
 
 def main():
