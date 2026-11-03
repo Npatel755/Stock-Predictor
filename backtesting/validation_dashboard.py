@@ -51,3 +51,5 @@ def render(root):
         st.write('Parameter-neighborhood stability',result['parameter_stability'])
     from .external_validation import render as show_external
     show_external('eth2017',root)
+    from .kraken_validation import render as show_kraken
+    show_kraken(root)
