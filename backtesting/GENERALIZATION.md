@@ -36,6 +36,30 @@ Both newly inspected datasets are now marked **consumed diagnostic data**. They 
 
 No statistical independence between ETH and BTC is assumed. A cross-asset transfer result is not a substitute for the fixed prospective ETH test.
 
+## Direct Coinbase ETH/USD and BTC/USD tests
+
+To test another venue without using Binance candles, the frozen rules were run on the public [Coinbase Exchange candle feed](https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-candles). Both datasets cover January 1, 2023 through October 27, 2026 UTC. Coinbase prices and volumes are source-specific, but same-asset market prices across venues remain related. This is venue/asset transfer evidence, not fresh chronological validation.
+
+| Coinbase product | Actual five-minute rows | Main-cost sum of reset-account net | At 4bp extra slippage | At 8bp extra slippage | Entries / reset segments |
+| --- | ---: | ---: | ---: | ---: | --- |
+| ETH/USD | 401,804 | +$7,951.24 | +$7,001.00 | +$5,260.77 | 284 / 10 |
+| BTC/USD | 401,812 | −$20.60 | −$961.44 | −$2,652.20 | 284 / 8 |
+
+These sums are **not continuous returns**, are not added to the Binance development score, and use hypothetical controlled execution costs rather than actual Coinbase spot fees or observed Breakout fills. The ETH candidate is unchanged: 72-hour channel, EMA250, signed 200bp gap, RVOL2.8, 1.5 ATR initial stop, 5.5R target and 3 ATR trail. Coinbase's quote tick is modeled at $0.01 for both assets; quantity rounding and the other research cost/risk assumptions remain fixed.
+
+The 2,792 original daily API responses are retained with local SHA-256 hashes. Coinbase does not publish a separate checksum for these API responses, so no independent feed-integrity verification is claimed. API candle order is time, low, high, open, close, volume; inclusive end records are explicitly excluded. Gaps of 244 ETH candles and 236 BTC candles remain unfilled. After short-segment exclusion and minimum indicator warm-up, at most 92.5% of ETH rows and 94.0% of BTC rows remain eligible for execution.
+
+Coinbase ETH stayed positive across these modeled cost scenarios, but Coinbase BTC did not. That is a generalization limitation, not a reason to retune the consumed BTC test until it passes. Every fixed main/stressed replay is freshly reproduced from the pinned responses before being described as computationally verified. The strategy stays experimental and the prospective lock is unchanged. See [full Coinbase results](reports/generalization_coinbase.md).
+
+The dashboard places Coinbase ETH/USD under **Generalization**. **BTC transfer test** has separate **Coinbase BTC/USD** and **Earlier Binance BTC transfer** sub-tabs, each with equity, monthly P&L and candle-level trade inspection.
+
+```powershell
+.ethvenv/Scripts/python.exe -m backtesting.coinbase_validation
+.ethvenv/Scripts/python.exe -m backtesting.coinbase_verification
+```
+
+The first command returns an existing consumed audit after checking its pinned sources; it does not fetch a revised feed or choose new parameters. The second rebuilds inputs and replays the recorded costs. These operations do not create a forward-validation certificate or promote a strategy version.
+
 ## Historical warning signs
 
 The one-sided historical block-bootstrap p-value is approximately 0.00020 before multiplicity adjustment. Using 848 logged slots gives approximately **0.170**, or **0.236** using the upper Monte Carlo bound. This does not establish an edge at a 0.05 threshold. It is not a probability of overfitting or of future success; bootstrap and trial-count assumptions remain material.

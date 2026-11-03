@@ -515,5 +515,10 @@ with generalization_tab:
     show_generalization(ROOT)
 
 with btc_tab:
-    from backtesting.external_validation import render as show_btc_validation
-    show_btc_validation("btc",ROOT)
+    coinbase_btc_tab,binance_btc_tab=st.tabs(['Coinbase BTC/USD · direct exchange data','Earlier Binance BTC transfer'])
+    with coinbase_btc_tab:
+        from backtesting.coinbase_validation import render as show_coinbase_btc
+        show_coinbase_btc('BTC-USD',ROOT)
+    with binance_btc_tab:
+        from backtesting.external_validation import render as show_btc_validation
+        show_btc_validation("btc",ROOT)

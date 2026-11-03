@@ -75,3 +75,5 @@ def render(root):
     show_external('eth2017',root)
     from .kraken_validation import render as show_kraken
     show_kraken(root)
+    from .coinbase_validation import render as show_coinbase
+    show_coinbase('ETH-USD',root)
