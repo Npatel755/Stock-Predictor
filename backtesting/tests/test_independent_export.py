@@ -65,3 +65,30 @@ def test_independent_export_preserves_v12_and_archives_changed_v13(tmp_path, mon
     assert changed_meta['selection_is_historical_profit_optimization'] is True
     assert '2026' in changed_meta['selection_note'] and 'not an untouched audit' in changed_meta['selection_note']
     assert '2026 is selection data' in pine.read_text(encoding='utf-8')
+
+
+def test_v14_is_a_separate_export_and_keeps_v13_intact(tmp_path, monkeypatch):
+    import backtesting.export_independent as module
+    from backtesting.independent_profiles import load_profile
+    monkeypatch.setattr(module, 'ROOT', tmp_path)
+    experiment = tmp_path/'experiment'
+    experiment.mkdir()
+    cfg = replace(baseline(), risk_includes_costs=True)
+    rule = SignalRule('channel_breakout', lookback=80, slow=200, reward_r=3., trail_atr=3.)
+    selection = dict(candidate=dict(label='old', rule=asdict(rule)), execution_config=asdict(cfg), passed_predeclared_validation_gate=True)
+    path = experiment/'selection.json'
+    path.write_text(json.dumps(selection))
+    export(experiment)
+    previous = {p: p.read_bytes() for p in [tmp_path/'reference/ETH_Strategy_v1_3.pine', tmp_path/'configs/eth_strategy_v1_3.json',
+                                           tmp_path/'configs/eth_strategy_v1_3.metadata.json', tmp_path/'downloads/ETH_Strategy_v1_3.txt']}
+    selection['candidate']['rule'].update(lookback=96, slow=150, stop_atr=1.5, reward_r=4.5)
+    selection['selection_is_historical_profit_optimization'] = True
+    path.write_text(json.dumps(selection))
+    export(experiment, version='v1.4')
+    assert all(p.read_bytes() == content for p, content in previous.items())
+    new_rule, _, meta, pine = load_profile(tmp_path, version='v1.4')
+    assert new_rule.lookback == 96 and meta['strategy_name'] == 'ETH v1.4'
+    assert 'strategy("ETH v1.4 |' in pine.read_text(encoding='utf-8')
+    assert pine.read_bytes() == (tmp_path/'downloads/ETH_Strategy_v1_4.txt').read_bytes()
+    with pytest.raises(ValueError, match='Unsupported'):
+        render(new_rule, cfg, version='../v1.4')

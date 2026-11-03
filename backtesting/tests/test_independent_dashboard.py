@@ -127,6 +127,24 @@ def test_dashboard_shows_modern_experiment_and_runs_independent_profile(tmp_path
     assert not app.exception and not app.error
     assert any(b.label == 'Run DVS backtest' for b in app.button)
     assert not app.sidebar.radio[0].disabled
+    # v1.4 has a distinct selector route, ledger directory and session result.
+    selection['candidate']['rule'].update(lookback=96, slow=150, stop_atr=1.5, reward_r=4.5)
+    (directory/'selection.json').write_text(json.dumps(selection))
+    exporter.export(directory, version='v1.4')
+    app.run()
+    assert 'v1.4' in picker().options
+    picker().set_value('v1.4').run()
+    assert not app.exception and not app.error
+    assert next(w for w in app.sidebar.number_input if w.label == 'Reward / risk').value == 4.5
+    next(b for b in app.sidebar.button if b.label == 'Run v1.4 backtest').click().run()
+    assert not app.exception and not app.error
+    assert app.session_state['independent_v14_result']['rule']['lookback'] == 96
+    assert app.session_state['independent_v13_result']['rule']['lookback'] == 64
+    assert (tmp_path/'artifacts/independent/v1_4_dashboard/results.json').exists()
+    assert any('Completed run' in h.value and 'v1.4' in h.value for h in app.subheader)
+    picker().set_value('v1.3').run()
+    assert not app.exception and not app.error
+    assert app.session_state['independent_v13_result']['rule']['lookback'] == 64
 
 
 def test_research_display_handles_older_cached_checkpoint_module(tmp_path, monkeypatch):

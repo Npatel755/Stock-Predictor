@@ -14,7 +14,9 @@ from .paths import ROOT
 
 TEMPLATE = ROOT/'reference/templates/independent_eth.pine'
 
-def render(rule: SignalRule, config: StrategyConfig):
+def render(rule: SignalRule, config: StrategyConfig, version='v1.3'):
+    if version not in {'v1.3', 'v1.4'}:
+        raise ValueError('Unsupported independent strategy version')
     if (config.mode != 'research' or config.entry_timing != 'next_open'
             or config.margin_ratio != .2 or not config.risk_includes_costs):
         raise ValueError('Independent export requires cost-aware next-open Research and 20% margin')
@@ -26,6 +28,7 @@ def render(rule: SignalRule, config: StrategyConfig):
               'config_hash': digest, 'family_title': rule.family.replace('_', ' ').title(),
               'commission_percent': config.commission_bps/100}
     text = TEMPLATE.read_text(encoding='utf-8')
+    text = text.replace('ETH v1.3 |', f'ETH {version} |', 1)
     for token in set(re.findall(r'\{\{(\w+)\}\}', text)):
         value = values[token]
         encoded = json.dumps(value) if token == 'family' else str(value)
@@ -35,18 +38,19 @@ def render(rule: SignalRule, config: StrategyConfig):
     return text, payload, digest
 
 
-def export(directory: Path):
+def export(directory: Path, version='v1.3'):
     selected_path = directory/'selection.json'
     selected = json.loads(selected_path.read_text(encoding='utf-8'))
     rule = SignalRule(**selected['candidate']['rule'])
     cfg = StrategyConfig(**selected['execution_config'])
-    text, payload, digest = render(rule, cfg)
+    text, payload, digest = render(rule, cfg, version=version)
     historical_profit = selected.get('selection_is_historical_profit_optimization', False)
     if historical_profit:
         text = text.replace('//@version=6\n', '//@version=6\n// Selected by historical 2023-2026 net-profit optimization; 2026 is selection data.\n// This export has no independent forward validation.\n', 1)
-    pine = ROOT/'reference/ETH_Strategy_v1_3.pine'
-    config_path = ROOT/'configs/eth_strategy_v1_3.json'
-    meta_path = ROOT/'configs/eth_strategy_v1_3.metadata.json'
+    suffix = version.replace('.', '_')
+    pine = ROOT/f'reference/ETH_Strategy_{suffix}.pine'
+    config_path = ROOT/f'configs/eth_strategy_{suffix}.json'
+    meta_path = ROOT/f'configs/eth_strategy_{suffix}.metadata.json'
     if pine.exists() and pine.read_text(encoding='utf-8') != text:
         archive = ROOT/'reference/revisions'/hashlib.sha256(pine.read_bytes()).hexdigest()[:16]
         archive.mkdir(parents=True, exist_ok=True)
@@ -57,7 +61,7 @@ def export(directory: Path):
     config_path.parent.mkdir(parents=True, exist_ok=True)
     pine.write_text(text, encoding='utf-8')
     write_json(config_path, payload)
-    write_json(meta_path, dict(strategy_name='ETH v1.3', family=rule.family, experiment=directory.name,
+    write_json(meta_path, dict(strategy_name=f'ETH {version}', family=rule.family, experiment=directory.name,
                               selected_candidate=selected['candidate']['label'], configuration_sha256=digest,
                               pine_sha256=hashlib.sha256(pine.read_bytes()).hexdigest(),
                               selection_sha256=hashlib.sha256(selected_path.read_bytes()).hexdigest(),
@@ -72,11 +76,13 @@ def export(directory: Path):
                                                      'Time-exit recalculation and symbol quantity/tick rounding remain unreconciled']))
     downloads = ROOT/'downloads'
     downloads.mkdir(exist_ok=True)
-    (downloads/'ETH_Strategy_v1_3.txt').write_bytes(pine.read_bytes())
-    print(f'Exported experimental independent v1.3: {pine}')
+    (downloads/f'ETH_Strategy_{suffix}.txt').write_bytes(pine.read_bytes())
+    print(f'Exported experimental independent {version}: {pine}')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory', type=Path)
-    export(parser.parse_args().directory)
+    parser.add_argument('--version', choices=['v1.3', 'v1.4'], default='v1.3')
+    args = parser.parse_args()
+    export(args.directory, version=args.version)

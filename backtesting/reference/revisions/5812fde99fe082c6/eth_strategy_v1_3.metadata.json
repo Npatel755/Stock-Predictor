@@ -1,0 +1,21 @@
+{
+  "strategy_name": "ETH v1.3",
+  "family": "channel_breakout",
+  "experiment": "round6_profit_refinement",
+  "selected_candidate": "channel96_ema150_stop1.5_rr4.5_trail3.0",
+  "configuration_sha256": "64069de573085e340450639408b079f66a5c8120e125ec6226f57ff8d33c5b22",
+  "pine_sha256": "5812fde99fe082c671a9e45f026e6c607b4dfec38a0f1b23d6c29fc41fc5c887",
+  "selection_sha256": "b69fa7c0e1d46371a0326be3956ccc0fb8a75c4d47e4b70c14b23f6c58a757a7",
+  "passed_predeclared_validation_gate": true,
+  "selection_is_historical_profit_optimization": true,
+  "selection_note": "2023-2026, including 2026, participated in historical net-profit selection; not an untouched audit.",
+  "ready_for_funded_trading": false,
+  "independent_forward_validation": false,
+  "tradingview_parity_verified": false,
+  "pine_compilation_verified": false,
+  "execution_differences": [
+    "Pine omits extra basis-point fill slippage and financing",
+    "Pine broker path differs from Python stop-first handling",
+    "Time-exit recalculation and symbol quantity/tick rounding remain unreconciled"
+  ]
+}

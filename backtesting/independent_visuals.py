@@ -54,7 +54,7 @@ def equity_curve(bars, events, config):
                              position_qty=state.position_qty.to_numpy(), close_drawdown_pct=(equity/peak-1)*100))
 
 
-def performance_chart(curve, initial_capital):
+def performance_chart(curve, initial_capital, version='v1.3'):
     # Daily extrema preserve visible equity troughs/peaks in long replays.
     work = curve.copy()
     work['day'] = work.timestamp.dt.floor('D')
@@ -71,7 +71,7 @@ def performance_chart(curve, initial_capital):
     fig.add_hline(y=initial_capital, line_dash='dot', line_color='#64748b', row=1, col=1)
     fig.add_trace(go.Scatter(x=display.timestamp, y=display.close_drawdown_pct, name='Drawdown at candle close',
                              fill='tozeroy', line=dict(color='#fb7185'), hovertemplate='%{x}<br>%{y:.2f}%<extra>Close drawdown</extra>'), row=2, col=1)
-    fig.update_layout(template='plotly_dark', height=610, title='ETH v1.3 · Equity and drawdown',
+    fig.update_layout(template='plotly_dark', height=610, title=f'ETH {version} · Equity and drawdown',
                       margin=dict(l=25, r=20, t=55, b=25), legend=dict(orientation='h'), hovermode='x unified')
     fig.update_yaxes(title_text='Equity ($)', row=1, col=1)
     fig.update_yaxes(title_text='Drawdown (%)', row=2, col=1)
