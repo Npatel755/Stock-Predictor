@@ -100,3 +100,45 @@ def test_dashboard_loads_with_old_cached_reporting_module_without_new_profile_he
     next(button for button in app.sidebar.button if button.label == "Run DVS backtest").click().run()
     assert not app.exception and not app.error
     assert "dvs_result" in app.session_state
+
+
+def test_main_version_selector_exposes_v12_and_uses_saved_research_rules(tmp_path, monkeypatch):
+    from dataclasses import asdict
+    from pathlib import Path
+    from streamlit.testing.v1 import AppTest
+    import backtesting.paths as paths
+    from backtesting.config import StrategyConfig
+
+    bars, quality = clean_candles(history())
+    path = tmp_path / "candles.parquet"
+    bars.to_parquet(path, index=False)
+    quality["parquet_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    path.with_suffix(".quality.json").write_text(json.dumps(quality), encoding="utf-8")
+    config = StrategyConfig(mode="research", reward_r=4.5, stop_atr=.4, min_atr_bps=10, risk_includes_costs=True,
+                            slippage_bps=2, entry_timing="next_open", intrabar_policy="stop_first", swap_daily_bps=3.3)
+    preset = tmp_path / "configs/dvs_eth_v1_2.json"
+    preset.parent.mkdir()
+    preset.write_text(json.dumps(asdict(config)), encoding="utf-8")
+    monkeypatch.setattr(paths, "ROOT", tmp_path)
+    monkeypatch.setattr(paths, "PARQUET", path)
+    monkeypatch.setattr(paths, "RUNS", tmp_path / "runs")
+    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "dashboard.py"), default_timeout=30).run()
+
+    def version_picker():
+        return next(item for item in app.sidebar.selectbox if item.label == "Pine strategy version")
+
+    assert "v1.2" in version_picker().options
+    version_picker().set_value("v1.2").run()
+    assert not app.exception and not app.error
+    assert app.sidebar.radio[0].value.startswith("B")
+    assert app.sidebar.radio[0].disabled
+    reward = next(item for item in app.sidebar.number_input if item.label == "Reward / risk")
+    assert reward.value == 4.5 and reward.disabled
+    next(item for item in app.sidebar.button if item.label == "Run DVS backtest").click().run()
+    assert not app.exception and not app.error
+    assert app.session_state["dvs_result"].config == asdict(config)
+    version_picker().set_value("v1.1").run()
+    assert not app.exception and not app.error
+    assert not app.sidebar.radio[0].disabled
+    assert app.sidebar.radio[0].value.startswith("A")
+    assert not next(item for item in app.sidebar.number_input if item.label == "Reward / risk").disabled

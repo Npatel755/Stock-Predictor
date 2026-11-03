@@ -102,6 +102,6 @@ The original v1 results in that report are historical. See [reports/tradingview_
 
 Ongoing strategy-improvement experiments use the separate [research protocol](RESEARCH_PROTOCOL.md). The dashboard's **Strategy research** tab shows checkpoint progress, validation results and downloadable experimental configurations.
 
-The saved **DVS ETH v1.2** derivative, reproduction command and limitations are in [V1_2.md](V1_2.md). Select it under **B · Research → Research preset**. The refined candidate passes the reused historical 2025 gate but fails earlier-regime transfer in 2021–2022, and its small 2025 H1 profit is sensitive to slippage. It remains experimental.
+The saved **DVS ETH v1.2** derivative, reproduction command and limitations are in [V1_2.md](V1_2.md). Select **v1.2** directly under **Pine strategy version**; its saved Research configuration loads automatically. The refined candidate passes the reused historical 2025 gate but fails earlier-regime transfer in 2021–2022, and its small 2025 H1 profit is sensitive to slippage. It remains experimental.
 
 References: [Binance public futures data](https://github.com/binance/binance-public-data), [TradingView strategy broker semantics](https://www.tradingview.com/pine-script-docs/concepts/strategies/), [TradingView higher-timeframe data](https://www.tradingview.com/pine-script-docs/concepts/other-timeframes-and-data/), [Breakout fees](https://www.breakoutprop.com/symbols/).

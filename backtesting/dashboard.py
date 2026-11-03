@@ -25,7 +25,7 @@ from backtesting.profiles import attach_research_profile
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
 st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exchange execution")
-st.info("DVS ETH v1.1 is the default source; the original v1 is also available. TradingView parity has not yet been verified against exported trades.")
+st.info("Choose v1.2 for the saved experimental strategy, or v1.1/v1 for the supplied Pine versions. TradingView parity remains unverified.")
 
 
 @st.cache_data(show_spinner=False)
@@ -57,23 +57,25 @@ with st.sidebar:
     except Exception as exc:
         st.error(str(exc))
         st.stop()
-    mode_label = st.radio("Mode", ["A · TradingView parity candidate", "B · Research"])
-    mode = "parity" if mode_label.startswith("A") else "research"
-    saved_profile = None
     profile_path = ROOT / "configs/dvs_eth_v1_2.json"
-    if mode == "research" and profile_path.exists():
-        profile = st.selectbox("Research preset", ["Manual settings", "DVS ETH v1.2 (experimental)"])
-        if profile.startswith("DVS ETH v1.2"):
-            saved_profile = json.loads(profile_path.read_text(encoding="utf-8"))
-            st.caption("Saved v1.2 research rules; the original v1.1 parity source stays separate.")
-            st.caption("Historical research only: passing a reused-data gate does not establish future profitability. Earlier-regime and slippage failures are in the reports.")
-            profile_metadata = profile_path.with_name("dvs_eth_v1_2.metadata.json")
-            if profile_metadata.exists() and not json.loads(profile_metadata.read_text(encoding="utf-8")).get("passed_predeclared_validation_gate", False):
-                st.caption("v1.2 has not passed the strict validation gate. Results and failed checks are retained in Strategy research.")
-    if saved_profile is None:
-        strategy_version = st.selectbox("Pine strategy version", ["v1.1", "v1"], key="pine_strategy_version")
-    else:
+    version_options = ["v1.1", "v1.2", "v1"] if profile_path.exists() else ["v1.1", "v1"]
+    selected_version = st.selectbox("Pine strategy version", version_options, key="pine_strategy_version")
+    saved_profile = None
+    if selected_version == "v1.2":
+        saved_profile = json.loads(profile_path.read_text(encoding="utf-8"))
         strategy_version = saved_profile["strategy_version"]
+    else:
+        strategy_version = selected_version
+    mode_label = st.radio("Mode", ["A · TradingView parity candidate", "B · Research"],
+                          index=1 if saved_profile else 0, disabled=saved_profile is not None,
+                          key="dvs_v1_2_mode" if saved_profile else "dvs_manual_mode")
+    mode = "parity" if mode_label.startswith("A") else "research"
+    if saved_profile:
+        st.caption("v1.2 uses its saved Research configuration automatically. Choose v1.1 or v1 to use parity mode or manual settings.")
+        st.caption("Historical research only: earlier-regime and slippage failures are retained in the reports.")
+        profile_metadata = profile_path.with_name("dvs_eth_v1_2.metadata.json")
+        if profile_metadata.exists() and not json.loads(profile_metadata.read_text(encoding="utf-8")).get("passed_predeclared_validation_gate", False):
+            st.caption("v1.2 has not passed the strict validation gate. Results and failed checks are retained in Strategy research.")
     try:
         requires_complete = mode == "parity" or (saved_profile is not None and saved_profile["gap_policy"] == "reject")
         suggested_dates = default_dates(bars, "parity" if requires_complete else mode)
@@ -111,7 +113,7 @@ with st.sidebar:
                         intrabar_policy="stop_first" if pessimistic else "tradingview", swap_daily_bps=swap)
     elif saved_profile:
         research = {"gap_policy": saved_profile["gap_policy"]}
-        st.caption("The saved preset uses fixed experimental settings. Choose Manual settings to change inputs.")
+        st.caption("The saved v1.2 preset uses fixed experimental settings.")
         with st.expander("v1.2 configuration"):
             st.json(saved_profile)
     else:
