@@ -42,7 +42,7 @@ def chart(result: BacktestResult):
     dd = curve.equity / curve.equity.cummax() - 1
     fig.add_trace(go.Scatter(x=display.timestamp, y=dd.iloc[::step] * 100, name="Close drawdown %", fill="tozeroy",
                              line={"color": "#fb7185"}), row=2, col=1)
-    fig.update_layout(template="plotly_dark", title=f"DVS ETH · {result.config['mode']} · parity unverified",
+    fig.update_layout(template="plotly_dark", title=f"DVS ETH {result.config['strategy_version']} · {result.config['mode']} · parity unverified",
                       height=650, margin=dict(l=30, r=30, t=65, b=30), legend=dict(orientation="h"))
     fig.update_yaxes(title_text="USD", row=1, col=1)
     fig.update_yaxes(title_text="%", row=2, col=1)
@@ -66,12 +66,12 @@ def save_result(result: BacktestResult, directory: Path, data_path: Path) -> Pat
     chart(result).write_html(directory / "equity.html", include_plotlyjs=True)
     fig, ax = plt.subplots(figsize=(11, 4), constrained_layout=True)
     ax.plot(result.equity.timestamp, result.equity.equity, color="#0284c7", linewidth=.8)
-    ax.set(title=f"DVS ETH — {result.config['mode']} (TradingView parity unverified)", ylabel="Equity (USD)")
+    ax.set(title=f"DVS ETH {result.config['strategy_version']} — {result.config['mode']} (TradingView parity unverified)", ylabel="Equity (USD)")
     ax.grid(alpha=.2)
     fig.savefig(directory / "equity.png", dpi=150)
     plt.close(fig)
     m = result.metrics
-    summary = f"""# DVS ETH backtest — {result.config['mode']}
+    summary = f"""# DVS ETH {result.config['strategy_version']} backtest — {result.config['mode']}
 
 Source: **{provenance['pine_title']}**. TradingView parity remains **unverified**.
 Period: {result.equity.timestamp.iloc[0]} through {result.equity.timestamp.iloc[-1]}.
@@ -84,6 +84,7 @@ Period: {result.equity.timestamp.iloc[0]} through {result.equity.timestamp.iloc[
 | Entries | {m['entries']} |
 | Closed trade legs | {m['closed_trade_legs']} |
 | Maximum modeled intrabar drawdown | {m['max_intrabar_drawdown']:.2%} |
+| Drawdown from prior closed-equity peak | ${m['max_closed_equity_drawdown_usd']:,.2f} ({m['max_closed_equity_drawdown_fraction']:.2%}) |
 | Commission | ${m['total_commission']:,.2f} |
 | Financing | ${m['total_swap']:,.2f} |
 | Margin call events | {m['margin_call_events']} |
@@ -94,9 +95,9 @@ Open positions remain marked at the final close; they are not silently liquidate
 Partial margin liquidations appear as separate trade legs; entry count is distinct.
 Intrabar fill timestamps are upper bounds; use `exit_bar_open` and `exit_phase` for reconciliation.
 
-The source file is v1; the supplied brief names v1.1. No v1.1 source was provided.
+The selected source version is {result.config['strategy_version']}; both original supplied files are preserved under `backtesting/reference/`.
 Run configuration, data/source hashes and library versions are in `results.json`.
-Mode A uses Pine's 0.05% commission, two instrument ticks slippage, and no financing.
+This run uses {result.config['commission_bps'] / 100:.2f}% commission per side, {result.config['slippage_ticks']} instrument ticks slippage, and {result.config['swap_daily_bps']}bp/day financing.
 Mode B changes are listed explicitly in the configuration and must not be interpreted as TradingView parity.
 Personal Pine loss/entry limits are not a test of a funded account's contractual rules.
 

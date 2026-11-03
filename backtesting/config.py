@@ -6,6 +6,7 @@ from typing import Literal
 @dataclass(frozen=True)
 class StrategyConfig:
     mode: Literal["parity", "research"] = "parity"
+    strategy_version: Literal["v1", "v1.1"] = "v1.1"
     initial_capital: float = 50000.
     risk_usd: float = 100.
     reward_r: float = 2.
@@ -18,7 +19,8 @@ class StrategyConfig:
     retest_atr: float = .25
     stop_atr: float = .1
     tick_size: float = .01
-    commission_bps: float = 5.
+    commission_bps: float | None = None
+    point_value: float = 1.
     slippage_ticks: int = 2
     margin_ratio: float = .2
     entry_timing: Literal["signal_close", "next_open"] = "signal_close"
@@ -29,11 +31,16 @@ class StrategyConfig:
     profit_share: float = .9
 
     def __post_init__(self):
+        if self.strategy_version not in {"v1", "v1.1"}:
+            raise ValueError("Unknown Pine strategy version")
+        expected_commission = 4. if self.strategy_version == "v1.1" else 5.
+        if self.commission_bps is None:
+            object.__setattr__(self, "commission_bps", expected_commission)
         if self.mode not in {"parity", "research"} or self.entry_timing not in {"signal_close", "next_open"}:
             raise ValueError("Unknown strategy mode or entry timing")
         if self.intrabar_policy not in {"tradingview", "stop_first"} or self.gap_policy not in {"reject", "segment"}:
             raise ValueError("Unknown execution or gap policy")
-        if min(self.initial_capital, self.risk_usd, self.max_daily_loss, self.tick_size) <= 0:
+        if min(self.initial_capital, self.risk_usd, self.max_daily_loss, self.tick_size, self.point_value) <= 0:
             raise ValueError("Capital, risk, loss limit and tick size must be positive")
         if not 1 <= self.max_leverage <= 5 or self.reward_r < 1 or not 0 < self.margin_ratio <= 1:
             raise ValueError("Invalid leverage, reward or margin")
@@ -44,7 +51,7 @@ class StrategyConfig:
             raise ValueError("Invalid thresholds or costs")
         if not 0 < self.profit_share <= 1:
             raise ValueError("Profit share must be a fraction")
-        if self.mode == "parity" and (self.commission_bps != 5 or self.slippage_ticks != 2 or self.margin_ratio != .2
+        if self.mode == "parity" and (self.commission_bps != expected_commission or self.slippage_ticks != 2 or self.margin_ratio != .2
                                       or self.entry_timing != "signal_close" or self.intrabar_policy != "tradingview"
                                       or self.gap_policy != "reject" or self.slippage_bps or self.swap_daily_bps):
             raise ValueError("Pine-fixed execution settings cannot be changed in parity mode; use research mode")

@@ -22,6 +22,7 @@ def main():
     run = sub.add_parser("run", help="Run DVS event-driven strategy")
     run.add_argument("--data", type=Path, default=PARQUET)
     run.add_argument("--mode", choices=["parity", "research"], default="parity")
+    run.add_argument("--strategy-version", choices=["v1", "v1.1"], help="Pine source version; defaults to v1.1")
     run.add_argument("--config", type=Path, help="JSON StrategyConfig; CLI mode/gap policy override it")
     run.add_argument("--gap-policy", choices=["reject", "segment"], default="reject")
     run.add_argument("--start", help="Inclusive UTC date; indicators initialize at this data start")
@@ -35,6 +36,8 @@ def main():
         return
     values = json.loads(args.config.read_text(encoding="utf-8")) if args.config else {}
     values.update(mode=args.mode, gap_policy=args.gap_policy)
+    if args.strategy_version:
+        values["strategy_version"] = args.strategy_version
     cfg = StrategyConfig(**values)
     bars, quality = load_history(args.data)
     if args.start or args.end:
@@ -45,7 +48,7 @@ def main():
         bars, quality = clean_candles(bars, start, end)
     logging.info("Starting %s DVS run: %s bars", cfg.mode, len(bars))
     result = backtest(bars, cfg, quality=quality)
-    out = args.output or RUNS / cfg.mode
+    out = args.output or RUNS / f"{cfg.mode}_{cfg.strategy_version.replace('.', '_')}"
     report = save_result(result, out, args.data)
     print(json.dumps(safe_value({"report": report, **result.metrics}), indent=2, allow_nan=False))
 

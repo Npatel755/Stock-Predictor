@@ -1,5 +1,6 @@
 {
   "mode": "research",
+  "strategy_version": "v1.1",
   "initial_capital": 50000,
   "risk_usd": 100,
   "reward_r": 2,

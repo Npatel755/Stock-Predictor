@@ -49,8 +49,8 @@ def test_future_mutations_do_not_change_indicators_or_strategy_prefix():
     altered.loc[2400:, ["open", "high", "low", "close", "volume"]] *= 2
     second = prepare_indicators(altered)
     pd.testing.assert_frame_equal(baseline.iloc[:2400], second.iloc[:2400])
-    a = backtest(bars)
-    b = backtest(altered)
+    a = backtest(bars, StrategyConfig(strategy_version="v1"))
+    b = backtest(altered, StrategyConfig(strategy_version="v1"))
     pd.testing.assert_frame_equal(a.signals.iloc[:2400], b.signals.iloc[:2400])
     pd.testing.assert_frame_equal(a.equity.iloc[:2400], b.equity.iloc[:2400])
 
@@ -106,7 +106,7 @@ def test_rvol_excludes_current_candle_from_both_denominators():
 
 def test_retest_may_confirm_on_same_bar_but_never_on_breakout_bar():
     bars, indicators = state_fixture()
-    result = backtest(bars, indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1"), indicators=indicators)
     assert not result.signals.iloc[0].retested
     assert result.signals.iloc[1].entered
     assert result.metrics["entries"] == 1
@@ -120,7 +120,7 @@ def test_retest_may_confirm_on_same_bar_but_never_on_breakout_bar():
 @pytest.mark.parametrize("confirm_at,entries", [(24, 1), (25, 0)])
 def test_retest_timeout_is_strictly_greater_than_window(confirm_at, entries):
     bars, indicators = state_fixture(confirm_at=confirm_at)
-    result = backtest(bars, indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1"), indicators=indicators)
     assert result.metrics["entries"] == entries
 
 
@@ -128,7 +128,7 @@ def test_failed_setup_is_cancelled_before_confirmation():
     bars, indicators = state_fixture(confirm_at=2)
     bars.loc[1, ["open", "close", "low"]] = [101., 99., 98.]
     indicators.loc[1, ["open", "close", "low"]] = [101., 99., 98.]
-    result = backtest(bars, indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1"), indicators=indicators)
     assert result.signals.iloc[1].failed
     assert result.metrics["entries"] == 0
 
@@ -142,7 +142,7 @@ def test_short_setup_mirrors_long_retest_and_stop_buffer():
     indicators["bull_bias"], indicators["bear_bias"] = False, True
     indicators["sup15"], indicators["p15"], indicators["c15"] = 100., 101., 99.
     indicators["previous_low"] = 98.
-    result = backtest(bars, indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1"), indicators=indicators)
     position = result.metrics["open_position"]
     assert result.metrics["entries"] == 1
     assert position["direction"] == -1
@@ -152,7 +152,7 @@ def test_short_setup_mirrors_long_retest_and_stop_buffer():
 
 def test_daily_loss_rule_gates_entries_without_flattening_existing_position():
     bars, indicators = state_fixture(n=300)
-    result = backtest(bars, StrategyConfig(max_daily_loss=1.), indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1", max_daily_loss=1.), indicators=indicators)
     assert not result.signals.iloc[2].can_trade
     assert result.equity.iloc[2].position_qty > 0  # gate does not force liquidation
     assert result.signals.iloc[288].can_trade  # UTC daily equity anchor resets
@@ -162,7 +162,7 @@ def test_daily_loss_rule_gates_entries_without_flattening_existing_position():
 def test_bias_invalidation_precedes_retest_confirmation():
     bars, indicators = state_fixture()
     indicators.loc[1, "bull_bias"] = False
-    result = backtest(bars, indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1"), indicators=indicators)
     assert result.signals.iloc[1].expired
     assert result.metrics["entries"] == 0
 
@@ -177,7 +177,7 @@ def test_daily_entry_limit_blocks_new_setups_after_completed_trade(limit, expect
         indicators[column] = bars[column]
     indicators.loc[2, "new15"] = True
     indicators.loc[3, ["rv5", "previous_high"]] = [2., 110.]
-    result = backtest(bars, StrategyConfig(max_trades_day=limit), indicators=indicators)
+    result = backtest(bars, StrategyConfig(strategy_version="v1", max_trades_day=limit), indicators=indicators)
     assert result.metrics["entries"] == expected
     assert bool(result.signals.iloc[2].can_trade) == (limit == 2)
 
@@ -188,7 +188,7 @@ def broker_row(op=104., high=111., low=89., close=100.):
 
 @pytest.mark.parametrize("op,reason,fill", [(104., "target", 110.), (96., "stop", 89.98), (85., "stop", 84.98), (115., "target", 115.)])
 def test_broker_path_and_gap_execution(op, reason, fill):
-    broker = Broker(StrategyConfig())
+    broker = Broker(StrategyConfig(strategy_version="v1"))
     t = pd.Timestamp("2025-01-01", tz="UTC")
     broker.enter(1, 1., 100., 90., 110., t, t + pd.Timedelta(minutes=5))
     broker.bar(broker_row(op, high=max(111., op), low=min(89., op)))
@@ -200,8 +200,8 @@ def test_broker_path_and_gap_execution(op, reason, fill):
 
 def test_research_stop_first_is_explicit_and_parity_rejects_it():
     with pytest.raises(ValueError):
-        StrategyConfig(intrabar_policy="stop_first")
-    broker = Broker(StrategyConfig(mode="research", intrabar_policy="stop_first"))
+        StrategyConfig(strategy_version="v1", intrabar_policy="stop_first")
+    broker = Broker(StrategyConfig(strategy_version="v1", mode="research", intrabar_policy="stop_first"))
     t = pd.Timestamp("2025-01-01", tz="UTC")
     broker.enter(1, 1., 100., 90., 110., t, t)
     broker.bar(broker_row())
@@ -209,7 +209,7 @@ def test_research_stop_first_is_explicit_and_parity_rejects_it():
 
 
 def test_margin_call_uses_four_times_truncated_cover_and_records_partial_leg():
-    broker = Broker(StrategyConfig(initial_capital=1000.))
+    broker = Broker(StrategyConfig(strategy_version="v1", initial_capital=1000.))
     t = pd.Timestamp("2025-01-01", tz="UTC")
     broker.enter(1, 50., 100., 80., 120., t, t)
     deficit = 50 * 100 * .2 - broker.equity_at(100)
@@ -224,7 +224,7 @@ def test_gap_rejected_in_parity_and_segmented_only_in_research():
     bars = candles(100).drop(index=50)
     with pytest.raises(ValueError, match="Missing candles"):
         backtest(bars)
-    research = backtest(bars, StrategyConfig(mode="research", gap_policy="segment"))
+    research = backtest(bars, StrategyConfig(strategy_version="v1", mode="research", gap_policy="segment"))
     assert research.quality["missing_bars"] == 1
 
 

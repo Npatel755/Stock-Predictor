@@ -22,15 +22,15 @@ The current session uses the existing `.ethvenv` runtime; substitute `.ethvenv/S
 
 ## Source of truth and modes
 
-`reference/DVS_ETH_v1.pine` is the exact supplied strategy. The brief calls it **v1.1**, but the actual file is titled **DVS ETH v1 | Bias + Structure + Volume**. No v1.1 source or TradingView trade export was provided. The original request is preserved in `reference/build_brief.md`; it ends at section 9.
+`reference/DVS_ETH_v1_1_fixed.pine` is the supplied **v1.1** source and is now the default. `reference/DVS_ETH_v1.pine` preserves the originally supplied v1. Both files retain their original content. No TradingView trade export has been supplied. The original request is preserved in `reference/build_brief.md`; it ends at section 9.
 
-**Mode A — TradingView parity candidate** implements that supplied v1 file, including its indexing and unusual state behavior. It is **not a certified TradingView match**. The Pine-fixed settings are 50,000 initial capital, 0.05% commission per side, two instrument ticks of adverse market/stop slippage, 20% margin, no pyramiding, and orders processed on the signal close. Initial capital and the named `input.*` risk/strategy parameters are exposed; execution changes are rejected in parity mode. Tick size defaults to 0.01 and must match the chart's instrument settings.
+**Mode A — TradingView parity candidate** implements the selected supplied version, including its indexing and state behavior. It is **not a certified TradingView match**. Defaults are 50,000 initial capital, **0.04% commission per side for v1.1** (0.05% for v1), two instrument ticks of adverse market/stop slippage, 20% margin, no pyramiding, and orders processed on the signal close. Initial capital and the named `input.*` risk/strategy parameters are exposed; execution changes are rejected in parity mode. Tick size defaults to 0.01 and point value to 1, matching this ETH instrument. Select a version in the dashboard or pass `--strategy-version v1`/`v1.1` to the CLI. Commission defaults resolve by version; a supplied JSON with incompatible commission is rejected.
 
 **Mode B — Research** permits explicitly recorded changes: next-open entries, extra basis-point slippage, alternative commission, financing, stop-first treatment of ambiguous bars, and gap segmentation. `configs/research_breakout.json` is an illustrative Breakout cost scenario, not a certified account-rules simulator. It keeps the DVS signals and changes execution. The 90/10 share is only an illustrative share of positive marked net profit; it is not an actual payable payout.
 
 ```powershell
 # Parity candidate on the currently available gap-free prefix.
-backtesting/.venv/Scripts/python.exe -m backtesting run --end 2026-10-28 --output backtesting/artifacts/dvs/parity_candidate
+backtesting/.venv/Scripts/python.exe -m backtesting run --end 2026-10-28 --output backtesting/artifacts/dvs/parity_v1_1_full
 
 # Entire available history, with explicit research changes and gap handling.
 backtesting/.venv/Scripts/python.exe -m backtesting run --mode research --gap-policy segment --config backtesting/configs/research_breakout.json
@@ -47,9 +47,9 @@ Data-quality metrics describe the selected backtest range. The archive audit sep
 - Fifteen-minute resistance/support use confirmed-pivot `valuewhen(...)[2]`; breakout close uses `[1]`, earlier close `[2]`, and relative volume is `volume[1] / sma(volume,20)[2]`.
 - Higher-timeframe expressions map to the **5m bar-open bucket**, then the strategy evaluates at that bar's close. No unfinished higher-timeframe values are used. Prefix-equivalence tests cover incomplete 15m/4h/daily boundaries.
 - Five-minute ATR uses SMA-seeded Wilder smoothing. Five-minute RVOL excludes the current volume from its 20-bar denominator.
-- Setups may be replaced by another breakout, expire only when age is **greater than** 24 bars, and invalidate on loss of bias or failure through the level. A retest cannot occur on the breakout-detection bar. A retest and confirmation **can** occur on the same later bar, matching the source. The retest extreme updates only on qualifying retest bars.
-- Stop/target and risk sizing are calculated from the signal close, even though fills include slippage. Quantity floors to 0.001 ETH, capped by both planned dollar risk and the input leverage limit. Targets remain tied to the original signal price.
-- The personal daily loss condition gates entries, uses marked equity at the first calculated bar of each UTC day, and does not flatten an existing position. Entry counters reset at UTC midnight. It is separate from Breakout contractual limits.
+- Setups may be replaced by another breakout, expire only when age is **greater than** 24 bars, and invalidate on loss of bias or failure through the level. A retest cannot occur on the breakout-detection bar. **v1.1 forbids confirmation on a retest bar:** its persistent `lastRetestBar` advances whenever `nearLevel and retested` holds, including subsequent nearby bars. Confirmation requires a strictly later bar. v1 preserves same-bar retest/confirmation. The retest extreme updates only on qualifying retest bars, and the last retest index is not reset when the source leaves it stale.
+- Stop/target and risk sizing are calculated from the signal close, even though fills include slippage. Quantity floors to 0.001 ETH, capped by both planned dollar risk and the input leverage limit. v1.1 includes `syminfo.pointvalue` in both sizing denominators; broker P&L/notional costs use the configured point value. Targets remain tied to the original signal price.
+- The personal daily loss condition gates entries, uses marked equity at the first calculated bar of each UTC day, and does not flatten an existing position. **v1.1 latches a daily lock after a breach, even if equity recovers, and clears setups whenever entries are blocked.** v1's loss gate can recover intraday. Entry counters and the v1.1 lock reset at UTC midnight. These are separate from Breakout contractual limits.
 
 ## Execution assumptions and parity limits
 
@@ -69,7 +69,7 @@ At the initial import (November 2, 2026 in New York / November 3 UTC), 403,200 c
 
 ## Outputs and reconciliation
 
-Each run writes `results.json`, full-resolution `equity/signals/events/trades.parquet`, trade/event CSVs, a standalone interactive `equity.html`, `equity.png`, and `report.md` under `artifacts/dvs/`. Results include source and implementation hashes, configuration, data hash, library versions, assumptions, and data quality. The chart's close drawdown is distinct from the modeled intrabar drawdown metric.
+Each run writes `results.json`, full-resolution `equity/signals/events/trades.parquet`, trade/event CSVs, a standalone interactive `equity.html`, `equity.png`, and `report.md` under `artifacts/dvs/`. Output directories include strategy versions, preserving old results. Results include source and implementation hashes, configuration, data hash, library versions, assumptions, and data quality. The chart's close drawdown is distinct from both intrabar metrics. `max_intrabar_drawdown` uses a running unrealized equity peak; `max_closed_equity_drawdown_usd/fraction` uses the prior closed-equity peak, corresponding to TradingView's published convention. Both remain export-unverified, especially for partial margin liquidations.
 
 The dashboard displays data quality, mode/risk settings, equity/drawdown, trades, candle-level trade inspection, setup events, assumptions, and saved ML reports. It also compares an explicitly normalized TradingView CSV against local trade legs. Required columns:
 
@@ -98,5 +98,6 @@ backtesting/
 Previous classifier results and reproduction commands are in [ML_RESEARCH.md](ML_RESEARCH.md). Their next-bar directional accuracy does not measure this DVS strategy's trade win rate. The relocated models still use the same saved weights and dataset snapshots.
 
 The completed DVS runs and validation record are summarized in [reports/dvs_comparison.md](reports/dvs_comparison.md).
+The original v1 results in that report are historical. See [reports/tradingview_discrepancy.md](reports/tradingview_discrepancy.md) for the v1.1 correction and current comparison.
 
 References: [Binance public futures data](https://github.com/binance/binance-public-data), [TradingView strategy broker semantics](https://www.tradingview.com/pine-script-docs/concepts/strategies/), [TradingView higher-timeframe data](https://www.tradingview.com/pine-script-docs/concepts/other-timeframes-and-data/), [Breakout fees](https://www.breakoutprop.com/symbols/).

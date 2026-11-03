@@ -15,7 +15,7 @@ import pandas as pd
 from .config import StrategyConfig
 from .indicators import prepare_indicators
 from .market_data import BAR, clean_candles
-from .paths import PINE
+from .paths import PINE, PINE_V1
 
 
 @dataclass
@@ -65,19 +65,29 @@ class Broker:
         self.events: list[dict] = []
         self.peak = config.initial_capital
         self.max_drawdown = 0.
+        self.closed_equity_peak = config.initial_capital
+        self.closed_equity_drawdown_usd = 0.
+        self.closed_equity_drawdown_fraction = 0.
         self.total_commission = self.total_swap = 0.
         self.margin_calls = 0
         self.bar_worst = config.initial_capital
 
     def equity_at(self, price: float) -> float:
         p = self.position
-        return self.cash + (p.direction * p.quantity * (price - p.entry_price) if p else 0.)
+        return self.cash + (p.direction * p.quantity * (price - p.entry_price) * self.cfg.point_value if p else 0.)
 
     def mark(self, price: float):
         equity = self.equity_at(price)
         self.peak = max(self.peak, equity)
         self.bar_worst = min(self.bar_worst, equity)
         self.max_drawdown = max(self.max_drawdown, (self.peak - equity) / self.peak)
+        # TradingView's intrabar metric anchors to equity before trades, not
+        # an unrealized intratrade high-water mark. Preserve both conventions.
+        if self.position is None:
+            self.closed_equity_peak = max(self.closed_equity_peak, self.cash)
+        deficit = max(0., self.closed_equity_peak - equity)
+        self.closed_equity_drawdown_usd = max(self.closed_equity_drawdown_usd, deficit)
+        self.closed_equity_drawdown_fraction = max(self.closed_equity_drawdown_fraction, deficit / self.closed_equity_peak)
 
     def market_price(self, price: float, order_direction: int) -> float:
         return price + order_direction * (self.cfg.slippage_ticks * self.cfg.tick_size + price * self.cfg.slippage_bps / 10000)
@@ -87,7 +97,7 @@ class Broker:
         if self.position is not None or quantity <= 0:
             raise ValueError("Pyramiding is disabled")
         fill = self.market_price(close, direction)
-        commission = quantity * fill * self.cfg.commission_bps / 10000
+        commission = quantity * fill * self.cfg.point_value * self.cfg.commission_bps / 10000
         self.cash -= commission
         self.total_commission += commission
         self.position = Position(direction, quantity, fill, stop, target, bar_open, fill_time, commission)
@@ -100,11 +110,11 @@ class Broker:
             return
         quantity = min(p.quantity, quantity if quantity is not None else p.quantity)
         fill = price if reason == "target" else self.market_price(price, -p.direction)
-        commission = quantity * fill * self.cfg.commission_bps / 10000
+        commission = quantity * fill * self.cfg.point_value * self.cfg.commission_bps / 10000
         fraction = quantity / p.quantity
         entry_commission = p.entry_commission_remaining * fraction
         swap = p.swap_remaining * fraction
-        gross = p.direction * quantity * (fill - p.entry_price)
+        gross = p.direction * quantity * (fill - p.entry_price) * self.cfg.point_value
         self.cash += gross - commission
         self.total_commission += commission
         self.trades.append({"entry_bar_open": p.entry_bar_open, "entry_time": p.entry_time,
@@ -126,8 +136,8 @@ class Broker:
         p = self.position
         if p is None:
             return
-        deficit = p.quantity * price * self.cfg.margin_ratio - self.equity_at(price)
-        cover = math.floor(max(0., deficit) / self.cfg.margin_ratio / price * 1000 + 1e-8) / 1000
+        deficit = p.quantity * price * self.cfg.point_value * self.cfg.margin_ratio - self.equity_at(price)
+        cover = math.floor(max(0., deficit) / self.cfg.margin_ratio / (price * self.cfg.point_value) * 1000 + 1e-8) / 1000
         if cover > 0:
             self.margin_calls += 1
             self.exit(price, bar_open, "margin_call", phase, quantity=min(p.quantity, 4 * cover))
@@ -137,7 +147,7 @@ class Broker:
         if p is None:
             return None
         denominator = p.direction * p.quantity - self.cfg.margin_ratio * max(0., p.quantity - .001)
-        level = (p.direction * p.quantity * p.entry_price - self.cash) / denominator
+        level = (p.direction * p.quantity * p.entry_price - self.cash / self.cfg.point_value) / denominator
         # First adverse instrument tick at which at least .001 ETH can be covered.
         units = level / self.cfg.tick_size
         return (math.floor(units) if p.direction == 1 else math.ceil(units)) * self.cfg.tick_size
@@ -149,7 +159,7 @@ class Broker:
             self.mark(row.open)
             return
         if self.cfg.swap_daily_bps and row.timestamp.hour % 4 == 0 and row.timestamp.minute == 0:
-            cost = p.quantity * row.open * self.cfg.swap_daily_bps / 6 / 10000
+            cost = p.quantity * row.open * self.cfg.point_value * self.cfg.swap_daily_bps / 6 / 10000
             self.cash -= cost
             self.total_swap += cost
             p.swap_remaining += cost
@@ -207,6 +217,7 @@ class Broker:
 def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
              indicators: pd.DataFrame | None = None, quality: dict | None = None) -> BacktestResult:
     cfg = config or StrategyConfig()
+    v11 = cfg.strategy_version == "v1.1"
     bars, actual_quality = clean_candles(bars)
     quality = quality or actual_quality
     if cfg.gap_policy == "reject" and (actual_quality["missing_bars"] or quality.get("missing_bars", 0)):
@@ -216,6 +227,8 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
         raise ValueError("Indicator rows must match candle timestamps exactly")
     broker, setup = Broker(cfg), Setup()
     entries_today, day_start_equity, day, previous_row, pending = 0, cfg.initial_capital, None, None, None
+    daily_locked = False
+    last_retest_bar = -1  # Pine's var persists across setup resets.
     trace, curve = [], []
     for i, row in enumerate(frame.itertuples(index=False)):
         gap = previous_row is not None and row.timestamp - previous_row.timestamp != BAR
@@ -234,14 +247,17 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
         equity = broker.equity_at(row.close)
         if row.timestamp.date() != day:
             day, day_start_equity, entries_today = row.timestamp.date(), equity, 0
-        can_trade = equity > day_start_equity - cfg.max_daily_loss and entries_today < cfg.max_trades_day
+            daily_locked = False
+        if v11 and equity <= day_start_equity - cfg.max_daily_loss:
+            daily_locked = True
+        can_trade = (not daily_locked if v11 else equity > day_start_equity - cfg.max_daily_loss) and entries_today < cfg.max_trades_day
         long_break = bool(row.new15 and row.bull_bias and pd.notna(row.res15) and row.p15 <= row.res15
                           and row.c15 > row.res15 and row.v15 >= cfg.breakout_rvol)
         short_break = bool(row.new15 and row.bear_bias and pd.notna(row.sup15) and row.p15 >= row.sup15
                            and row.c15 < row.sup15 and row.v15 >= cfg.breakout_rvol)
         expired = setup.direction != 0 and (i - setup.bar > cfg.max_setup_bars or
                   (setup.direction == 1 and not row.bull_bias) or (setup.direction == -1 and not row.bear_bias))
-        if expired:
+        if expired or (v11 and not can_trade):
             setup.clear()
         if broker.position is None and can_trade:
             if long_break or short_break:
@@ -256,15 +272,22 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
                              (setup.direction == -1 and row.close > setup.level + cfg.retest_atr * row.atr5))
         if failed:
             setup.clear()
-        confirm_long = active and setup.direction == 1 and setup.retested and row.close > row.open and row.close > row.previous_high and row.rv5 >= cfg.entry_rvol
-        confirm_short = active and setup.direction == -1 and setup.retested and row.close < row.open and row.close < row.previous_low and row.rv5 >= cfg.entry_rvol
+        # Preserve Pine statement order: nearLevel was computed before failure
+        # clearing; lastRetestBar updates whenever nearLevel AND retested holds,
+        # including later nearby candles that do not update the extreme.
+        if v11 and near and setup.retested:
+            last_retest_bar = i
+        after_retest = not v11 or i > last_retest_bar
+        confirm_long = active and setup.direction == 1 and setup.retested and after_retest and row.close > row.open and row.close > row.previous_high and row.rv5 >= cfg.entry_rvol
+        confirm_short = active and setup.direction == -1 and setup.retested and after_retest and row.close < row.open and row.close < row.previous_low and row.rv5 >= cfg.entry_rvol
         entered = False
         if confirm_long or confirm_short:
             direction = 1 if confirm_long else -1
             stop = setup.extreme - direction * cfg.stop_atr * row.atr5
             distance = abs(row.close - stop)
             valid = stop < row.close if direction == 1 else stop > row.close
-            quantity = math.floor(min(cfg.risk_usd / distance, equity * cfg.max_leverage / row.close) * 1000) / 1000 if distance > 0 else 0.
+            sizing_multiplier = cfg.point_value if v11 else 1.
+            quantity = math.floor(min(cfg.risk_usd / (distance * sizing_multiplier), equity * cfg.max_leverage / (row.close * sizing_multiplier)) * 1000) / 1000 if distance > 0 else 0.
             target = row.close + direction * cfg.reward_r * distance
             if valid and distance > cfg.tick_size and quantity > 0:
                 if cfg.entry_timing == "signal_close":
@@ -282,7 +305,8 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
                       "setup_direction": setup.direction, "setup_level": setup.level, "retested": setup.retested,
                       "retest_extreme": setup.extreme, "expired": expired, "failed": failed,
                       "confirm_long": bool(confirm_long), "confirm_short": bool(confirm_short),
-                      "entered": entered, "entries_today": entries_today, "day_start_equity": day_start_equity})
+                      "entered": entered, "entries_today": entries_today, "day_start_equity": day_start_equity,
+                      "daily_locked": daily_locked, "last_retest_bar": last_retest_bar if last_retest_bar >= 0 else None})
         previous_row = row
     trades = pd.DataFrame(broker.trades)
     equity_curve = pd.DataFrame(curve)
@@ -296,16 +320,24 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
                "win_rate": float((net > 0).mean()) if len(net) else None,
                "profit_factor": float(gains / losses) if losses else None,
                "max_intrabar_drawdown": broker.max_drawdown, "total_commission": broker.total_commission,
+               "max_closed_equity_drawdown_usd": broker.closed_equity_drawdown_usd,
+               "max_closed_equity_drawdown_fraction": broker.closed_equity_drawdown_fraction,
                "total_swap": broker.total_swap, "margin_call_events": broker.margin_calls,
                "daily_sharpe": float(daily_returns.mean() / daily_returns.std() * np.sqrt(365)) if daily_returns.std() > 0 else None,
                "open_position": asdict(broker.position) if broker.position else None,
                "illustrative_90pct_profit_share": max(0., final - cfg.initial_capital) * cfg.profit_share if cfg.mode == "research" else None}
-    provenance = {"source": "Binance ETHUSDT USD-M perpetual futures", "pine_file": str(PINE),
-                  "pine_sha256": hashlib.sha256(PINE.read_bytes()).hexdigest(),
-                  "pine_title": "DVS ETH v1 | Bias + Structure + Volume (provided file; v1.1 not supplied)",
+    pine_source = PINE if v11 else PINE_V1
+    provenance = {"source": "Binance ETHUSDT USD-M perpetual futures", "pine_file": str(pine_source),
+                  "pine_sha256": hashlib.sha256(pine_source.read_bytes()).hexdigest(),
+                  "pine_title": f"DVS ETH {cfg.strategy_version} | Bias + Structure + Volume",
                   "parity_status": "unverified: requires TradingView signal/trade export reconciliation",
                   "execution": "OHLC path; no bar magnifier; equal-distance path uses low first; intrabar timestamps are bounds",
+                  "drawdown": "both unrealized running-peak and closed-trade-equity-peak conventions; neither export-verified",
                   "margin": "documented four-times truncated cover quantity; broker ordering remains unverified",
                   "funded_account_compliance": "not assessed; personal Pine risk controls are not prop-firm rules"}
-    return BacktestResult(metrics, trades, equity_curve, pd.DataFrame(trace), pd.DataFrame(broker.events),
+    signal_frame = pd.DataFrame(trace)
+    # Fixed nullable integer schema; future retests must not change the dtype
+    # of an earlier all-NA prefix during replay/export.
+    signal_frame["last_retest_bar"] = pd.array(signal_frame.last_retest_bar, dtype="Int64")
+    return BacktestResult(metrics, trades, equity_curve, signal_frame, pd.DataFrame(broker.events),
                           asdict(cfg), quality, provenance)

@@ -1,5 +1,6 @@
 {
   "mode": "parity",
+  "strategy_version": "v1.1",
   "initial_capital": 50000,
   "risk_usd": 100,
   "reward_r": 2,
@@ -12,7 +13,7 @@
   "retest_atr": 0.25,
   "stop_atr": 0.1,
   "tick_size": 0.01,
-  "commission_bps": 5,
+  "commission_bps": 4,
   "slippage_ticks": 2,
   "margin_ratio": 0.2,
   "gap_policy": "reject"

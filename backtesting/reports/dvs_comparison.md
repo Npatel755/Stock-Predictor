@@ -1,5 +1,7 @@
 # DVS ETH initial backtest results
 
+**Historical v1 results.** The supplied v1.1 source is now implemented and is the default. Its recent-window result is +$370.79 (two winners), and the full-history parity candidate is +$513.09. See [the updated comparison](tradingview_discrepancy.md). The figures below are preserved as the original v1 baseline.
+
 Run date: November 2, 2026 (New York). Source: supplied **DVS ETH v1**, not an independently supplied v1.1. TradingView parity remains **unverified**.
 
 | Run | Available candle period (UTC, end exclusive) | Entries | Net return | Final equity | Modeled intrabar drawdown |

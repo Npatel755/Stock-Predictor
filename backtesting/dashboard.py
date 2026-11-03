@@ -23,7 +23,7 @@ from backtesting.reporting import chart, save_result, safe_value
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
 st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exchange execution")
-st.info("The available source is DVS ETH v1. TradingView parity is a candidate implementation and has not been verified against exported trades.")
+st.info("DVS ETH v1.1 is the default source; the original v1 is also available. TradingView parity has not yet been verified against exported trades.")
 
 
 @st.cache_data(show_spinner=False)
@@ -57,6 +57,7 @@ with st.sidebar:
         st.stop()
     mode_label = st.radio("Mode", ["A · TradingView parity candidate", "B · Research"])
     mode = "parity" if mode_label.startswith("A") else "research"
+    strategy_version = st.selectbox("Pine strategy version", ["v1.1", "v1"], key="pine_strategy_version")
     try:
         suggested_dates = default_dates(bars, mode)
     except ValueError as exc:
@@ -90,7 +91,8 @@ with st.sidebar:
                         slippage_bps=slip, entry_timing="next_open" if next_open else "signal_close",
                         intrabar_policy="stop_first" if pessimistic else "tradingview", swap_daily_bps=swap)
     else:
-        st.caption("Pine-fixed properties: 0.05% per side, 2 ticks slippage, 20% margin, close-of-bar entry. Gap ranges are rejected.")
+        pine_commission = "0.04%" if strategy_version == "v1.1" else "0.05%"
+        st.caption(f"Pine {strategy_version} properties: {pine_commission} per side, 2 ticks slippage, 20% margin, close-of-bar entry. Gap ranges are rejected.")
     gap_blocked = selected_quality is not None and selected_quality["missing_bars"] > 0 and research.get("gap_policy", "reject") == "reject"
     if selection_error:
         st.warning(selection_error)
@@ -128,15 +130,24 @@ if run:
     else:
         with st.spinner("Replaying DVS signals and order events…"):
             try:
-                cfg = StrategyConfig(mode=mode, risk_usd=float(risk), reward_r=float(reward),
+                cfg = StrategyConfig(mode=mode, strategy_version=strategy_version, risk_usd=float(risk), reward_r=float(reward),
                                       max_daily_loss=float(max_daily), max_trades_day=int(maximum_entries), **research)
                 result = backtest(selected_bars, cfg, quality=selected_quality)
-                location = RUNS / f"dashboard_{mode}"
+                location = RUNS / f"dashboard_{mode}_{strategy_version.replace('.', '_')}"
                 save_result(result, location, PARQUET)
                 st.session_state["dvs_result"] = result
                 st.session_state["dvs_location"] = str(location)
             except Exception as exc:
                 st.error(str(exc))
+
+# Existing browser sessions may hold a result from the pre-versioned engine.
+# Keep its disk artifact, but do not render it as a new v1.1 result.
+stored_result = st.session_state.get("dvs_result")
+if stored_result is not None and ("strategy_version" not in stored_result.config or
+                                   "max_closed_equity_drawdown_usd" not in stored_result.metrics):
+    del st.session_state["dvs_result"]
+    st.session_state.pop("dvs_location", None)
+    st.info("The strategy implementation has been updated. Run the selected Pine version to refresh the displayed result.")
 
 with strategy_tab:
     if "dvs_result" not in st.session_state:
@@ -145,13 +156,16 @@ with strategy_tab:
     else:
         result = st.session_state["dvs_result"]
         m = result.metrics
-        st.subheader(f"Completed run · {result.config['mode']}")
+        st.subheader(f"Completed run · {result.config['mode']} · {result.config['strategy_version']}")
         st.caption(f"Saved to {st.session_state['dvs_location']}. Sidebar changes take effect only after another run.")
         cols = st.columns(4)
         cols[0].metric("Final equity", f"${m['final_equity']:,.2f}")
         cols[1].metric("Net return", f"{m['net_return']:.2%}")
         cols[2].metric("Entries", m["entries"])
-        cols[3].metric("Modeled intrabar drawdown", f"{m['max_intrabar_drawdown']:.2%}")
+        cols[3].metric("Drawdown from closed-equity peak", f"${m['max_closed_equity_drawdown_usd']:,.2f}",
+                       help="TradingView-style anchor to prior closed-trade equity; still unverified against an export.")
+        st.caption(f"Drawdown from closed-equity peak: {m['max_closed_equity_drawdown_fraction']:.2%}. "
+                   f"Drawdown from running unrealized equity peak: {m['max_intrabar_drawdown']:.2%}. These are different measures.")
         st.plotly_chart(chart(result), width="stretch")
         trade_tab, signal_tab, settings_tab, compare_tab = st.tabs(["Trade ledger", "Signal audit", "Run assumptions", "TradingView reconciliation"])
         with trade_tab:
