@@ -58,17 +58,32 @@ with st.sidebar:
         st.stop()
     mode_label = st.radio("Mode", ["A · TradingView parity candidate", "B · Research"])
     mode = "parity" if mode_label.startswith("A") else "research"
-    strategy_version = st.selectbox("Pine strategy version", ["v1.1", "v1"], key="pine_strategy_version")
+    saved_profile = None
+    profile_path = ROOT / "configs/dvs_eth_v1_2.json"
+    if mode == "research" and profile_path.exists():
+        profile = st.selectbox("Research preset", ["Manual settings", "DVS ETH v1.2 (experimental)"])
+        if profile.startswith("DVS ETH v1.2"):
+            saved_profile = json.loads(profile_path.read_text(encoding="utf-8"))
+            st.caption("Saved v1.2 research rules; the original v1.1 parity source stays separate.")
+            profile_metadata = profile_path.with_name("dvs_eth_v1_2.metadata.json")
+            if profile_metadata.exists() and not json.loads(profile_metadata.read_text(encoding="utf-8")).get("passed_predeclared_validation_gate", False):
+                st.caption("v1.2 has not passed the strict validation gate. Results and failed checks are retained in Strategy research.")
+    if saved_profile is None:
+        strategy_version = st.selectbox("Pine strategy version", ["v1.1", "v1"], key="pine_strategy_version")
+    else:
+        strategy_version = saved_profile["strategy_version"]
     try:
-        suggested_dates = default_dates(bars, mode)
+        requires_complete = mode == "parity" or (saved_profile is not None and saved_profile["gap_policy"] == "reject")
+        suggested_dates = default_dates(bars, "parity" if requires_complete else mode)
     except ValueError as exc:
         st.warning(str(exc))
         st.stop()
-    revision_key = f"dvs_period_revision_{mode}"
-    period_key = f"dvs_period_{mode}_{st.session_state.get(revision_key, 0)}"
+    range_label = "v1_2" if saved_profile else mode
+    revision_key = f"dvs_period_revision_{range_label}"
+    period_key = f"dvs_period_{range_label}_{st.session_state.get(revision_key, 0)}"
     period = st.date_input("Backtest UTC dates", value=suggested_dates, key=period_key,
                            min_value=bars.timestamp.min().date(), max_value=bars.timestamp.max().date())
-    if mode == "parity":
+    if requires_complete:
         st.caption(f"Complete parity range: {suggested_dates[0]} through {suggested_dates[1]} UTC. Later candles remain available in Research mode.")
         st.button("Use complete parity range", on_click=use_complete_range, args=(revision_key,))
     selected_bars, selected_quality, selection_error = None, None, None
@@ -76,12 +91,13 @@ with st.sidebar:
         selected_bars, selected_quality = select_dates(bars, period)
     except ValueError as exc:
         selection_error = str(exc)
-    risk = st.number_input("Planned risk / trade ($)", min_value=1., value=100., step=25.)
-    reward = st.number_input("Reward / risk", min_value=1., value=2., step=.25)
-    max_daily = st.number_input("Personal daily loss gate ($)", min_value=1., value=300., step=50.)
-    maximum_entries = st.number_input("Daily entry limit", min_value=1, value=3, step=1)
+    values = saved_profile or {}
+    risk = st.number_input("Planned risk / trade ($)", min_value=1., value=float(values.get("risk_usd", 100.)), step=25., disabled=saved_profile is not None)
+    reward = st.number_input("Reward / risk", min_value=1., value=float(values.get("reward_r", 2.)), step=.25, disabled=saved_profile is not None)
+    max_daily = st.number_input("Personal daily loss gate ($)", min_value=1., value=float(values.get("max_daily_loss", 300.)), step=50., disabled=saved_profile is not None)
+    maximum_entries = st.number_input("Daily entry limit", min_value=1, value=int(values.get("max_trades_day", 3)), step=1, disabled=saved_profile is not None)
     research = {}
-    if mode == "research":
+    if mode == "research" and saved_profile is None:
         segment = st.checkbox("Split at data gaps; close at last known price", value=True)
         commission = st.number_input("Commission (basis points / side)", min_value=0., value=4., step=.5)
         slip = st.number_input("Extra slippage (basis points)", min_value=0., value=2., step=.5)
@@ -91,6 +107,11 @@ with st.sidebar:
         research = dict(gap_policy="segment" if segment else "reject", commission_bps=commission,
                         slippage_bps=slip, entry_timing="next_open" if next_open else "signal_close",
                         intrabar_policy="stop_first" if pessimistic else "tradingview", swap_daily_bps=swap)
+    elif saved_profile:
+        research = {"gap_policy": saved_profile["gap_policy"]}
+        st.caption("The saved preset uses fixed experimental settings. Choose Manual settings to change inputs.")
+        with st.expander("v1.2 configuration"):
+            st.json(saved_profile)
     else:
         pine_commission = "0.04%" if strategy_version == "v1.1" else "0.05%"
         st.caption(f"Pine {strategy_version} properties: {pine_commission} per side, 2 ticks slippage, 20% margin, close-of-bar entry. Gap ranges are rejected.")
@@ -131,10 +152,13 @@ if run:
     else:
         with st.spinner("Replaying DVS signals and order events…"):
             try:
-                cfg = StrategyConfig(mode=mode, strategy_version=strategy_version, risk_usd=float(risk), reward_r=float(reward),
-                                      max_daily_loss=float(max_daily), max_trades_day=int(maximum_entries), **research)
+                cfg = (StrategyConfig(**saved_profile) if saved_profile else
+                       StrategyConfig(mode=mode, strategy_version=strategy_version, risk_usd=float(risk), reward_r=float(reward),
+                                      max_daily_loss=float(max_daily), max_trades_day=int(maximum_entries), **research))
                 result = backtest(selected_bars, cfg, quality=selected_quality)
-                location = RUNS / f"dashboard_{mode}_{strategy_version.replace('.', '_')}"
+                if saved_profile:
+                    result.provenance["research_profile"] = "DVS ETH v1.2 (experimental)"
+                location = RUNS / ("dashboard_v1_2" if saved_profile else f"dashboard_{mode}_{strategy_version.replace('.', '_')}")
                 save_result(result, location, PARQUET)
                 st.session_state["dvs_result"] = result
                 st.session_state["dvs_location"] = str(location)
@@ -157,7 +181,8 @@ with strategy_tab:
     else:
         result = st.session_state["dvs_result"]
         m = result.metrics
-        st.subheader(f"Completed run · {result.config['mode']} · {result.config['strategy_version']}")
+        displayed_version = result.provenance.get("research_profile", result.config["strategy_version"])
+        st.subheader(f"Completed run · {result.config['mode']} · {displayed_version}")
         st.caption(f"Saved to {st.session_state['dvs_location']}. Sidebar changes take effect only after another run.")
         cols = st.columns(4)
         cols[0].metric("Final equity", f"${m['final_equity']:,.2f}")

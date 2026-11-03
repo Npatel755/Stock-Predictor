@@ -102,4 +102,6 @@ The original v1 results in that report are historical. See [reports/tradingview_
 
 Ongoing strategy-improvement experiments use the separate [research protocol](RESEARCH_PROTOCOL.md). The dashboard's **Strategy research** tab shows checkpoint progress, validation results and downloadable experimental configurations.
 
+The saved **DVS ETH v1.2** derivative, reproduction command and validation limitations are in [V1_2.md](V1_2.md). Select it under **B · Research → Research preset** in the dashboard. It remains experimental because one validation half was negative.
+
 References: [Binance public futures data](https://github.com/binance/binance-public-data), [TradingView strategy broker semantics](https://www.tradingview.com/pine-script-docs/concepts/strategies/), [TradingView higher-timeframe data](https://www.tradingview.com/pine-script-docs/concepts/other-timeframes-and-data/), [Breakout fees](https://www.breakoutprop.com/symbols/).

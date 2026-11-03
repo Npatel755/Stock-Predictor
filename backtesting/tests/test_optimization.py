@@ -116,3 +116,39 @@ def test_dashboard_replays_frozen_candidate_without_mutating_parity_settings(tmp
     assert app.session_state["dvs_result"].config == asdict(cfg)
     assert app.sidebar.radio[0].value.startswith("A")  # run labels identify actual research config
     assert StrategyConfig().mode == "parity" and StrategyConfig().min_stop_bps == 0
+
+
+def test_v1_2_export_saves_matching_config_and_honest_failed_gate_metadata(tmp_path, monkeypatch):
+    import hashlib
+    import backtesting.export_candidate as module
+    from dataclasses import asdict, replace
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    (tmp_path / "configs").mkdir()
+    directory = tmp_path / "experiment"
+    directory.mkdir()
+    cfg = replace(baseline(), reward_r=4, stop_atr=.5, min_atr_bps=10, risk_includes_costs=True)
+    selection = {"candidate": {"label": "frozen_v1_2", "config": asdict(cfg)},
+                 "passed_predeclared_validation_gate": False}
+    (directory / "selection.json").write_text(json.dumps(selection), encoding="utf-8")
+    output = tmp_path / "reference/DVS_ETH_v1_2.pine"
+    module.export(directory, output)
+    saved = json.loads((tmp_path / "configs/dvs_eth_v1_2.json").read_text())
+    metadata = json.loads((tmp_path / "configs/dvs_eth_v1_2.metadata.json").read_text())
+    assert saved == asdict(cfg)
+    assert metadata["strategy_name"] == "DVS ETH v1.2"
+    assert metadata["passed_predeclared_validation_gate"] is False
+    assert metadata["pine_compilation_verified"] is False
+    assert metadata["pine_sha256"] == hashlib.sha256(output.read_bytes()).hexdigest()
+
+
+def test_refinement_keeps_baseline_parent_and_deterministic_bounded_neighborhood():
+    from dataclasses import replace
+    from backtesting.refine import refinement_configs, strict_validation_score
+    cfg = replace(baseline(), reward_r=4., min_atr_bps=10., stop_atr=.5, risk_includes_costs=True)
+    candidates = refinement_configs(cfg)
+    assert len(candidates) == 128
+    assert candidates == refinement_configs(cfg)
+    assert candidates[0]["config"] == asdict(baseline())
+    assert candidates[1]["config"] == asdict(cfg)
+    assert strict_validation_score([metrics(-1), metrics(10000)]) == -1e9
+    assert strict_validation_score([metrics(500), metrics(500)]) > -1e8

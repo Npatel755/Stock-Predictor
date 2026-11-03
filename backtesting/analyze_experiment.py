@@ -76,7 +76,7 @@ def analyze(directory: Path, data_path=PARQUET):
                                 "entries": metrics["entries"], "max_drawdown": metrics["max_closed_equity_drawdown_usd"]})
     neighborhoods = []
     neighbors = [("selected", selected)]
-    for key in ["reward_r", "breakout_rvol", "entry_rvol", "min_stop_bps", "min_stop_atr", "stop_atr"]:
+    for key in ["reward_r", "breakout_rvol", "entry_rvol", "min_stop_bps", "min_stop_atr", "stop_atr", "min_atr_bps"]:
         value = getattr(selected, key)
         if not value:
             continue
