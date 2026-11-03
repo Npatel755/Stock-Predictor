@@ -72,11 +72,13 @@ def prepare_signals(bars: pd.DataFrame, rule: SignalRule) -> pd.DataFrame:
     return output
 
 
-def simulate(bars: pd.DataFrame, rule: SignalRule, config: StrategyConfig, signals=None):
+def simulate(bars: pd.DataFrame, rule: SignalRule, config: StrategyConfig, signals=None, *, validator=None):
     """Shared Broker costs, OHLC path, financing and margin; independent signals."""
     if config.mode != "research" or config.entry_timing != "next_open":
         raise ValueError("Independent strategies require next-open Research execution")
-    bars, quality = clean_candles(bars)
+    # A separate, explicit validator lets proxy-feed audits retain their true
+    # ticker/provenance. The default native-perpetual path is unchanged.
+    bars, quality = (clean_candles if validator is None else validator)(bars)
     if quality["missing_bars"]:
         raise ValueError("Independent strategy research rejects missing candles")
     frame = prepare_signals(bars, rule) if signals is None else signals.reset_index(drop=True)

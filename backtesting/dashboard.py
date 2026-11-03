@@ -22,12 +22,12 @@ from backtesting.market_data import download_history, load_history
 from backtesting.paths import PARQUET, RUNS, ROOT
 from backtesting.reporting import chart, save_result, safe_value
 from backtesting.profiles import attach_research_profile
-from backtesting.independent_profiles import load_profile
+from backtesting.versioned_profiles import load_profile
 
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
 st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exchange execution")
-st.info("Choose v1.4 for the higher-profit research strategy, v1.3 for its previous channel version, v1.2 for experimental DVS, or v1.1/v1 for the supplied Pine versions. TradingView parity remains unverified.")
+st.info("Choose v1.5 for the volume-filter strategy with a $6,000 historical baseline. Earlier versions remain available. TradingView parity remains unverified.")
 
 
 @st.cache_data(show_spinner=False)
@@ -45,12 +45,18 @@ def replay_independent(selected_bars, rule, config, metadata, version='v1.3'):
     from backtesting.alternative_strategies import simulate
     from backtesting.independent_visuals import equity_curve
     from backtesting.optimize import write_json
-    metrics, trades, events = simulate(selected_bars, rule, config)
+    filters = metadata.get('entry_filters')
+    if filters:
+        from backtesting.regime_filters import RegimeFilter, apply_filter, prepare_features
+        signals = apply_filter(prepare_features(selected_bars, rule), RegimeFilter(**filters))
+    else:
+        signals = None
+    metrics, trades, events = simulate(selected_bars, rule, config, signals=signals)
     period = [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]
     location = ROOT / f"artifacts/independent/{version.replace('.', '_')}_dashboard"
     location.mkdir(parents=True, exist_ok=True)
     write_json(location / "results.json", {"metrics": metrics, "rule": asdict(rule), "execution": asdict(config),
-                                           "profile": metadata, "period": period})
+                                           "profile": metadata, "period": period, "filters": filters})
     trades.to_csv(location / "trades.csv", index=False)
     events.to_csv(location / "events.csv", index=False)
     curve = equity_curve(selected_bars, events, config)
@@ -59,6 +65,7 @@ def replay_independent(selected_bars, rule, config, metadata, version='v1.3'):
     curve.to_parquet(location / "equity.parquet", index=False)
     st.session_state[f"independent_{version.replace('.', '')}_result"] = {"metrics": metrics, "trades": trades, "events": events, "period": period,
                                                  "equity": curve, "rule": asdict(rule), "execution": asdict(config),
+                                                 "filters": filters,
                                                  "profile_sha256": metadata['configuration_sha256']}
 
 
@@ -73,12 +80,21 @@ def display_independent_result(key, version='v1.3'):
     st.caption(f"Completed {version} replay: {replay['period'][0]} to {replay['period'][1]} exclusive. Sidebar changes require another run.")
     current_rule, current_cfg, current_meta, _ = load_profile(ROOT, version=version)
     if (replay.get('rule', asdict(current_rule)) != asdict(current_rule)
-            or replay.get('execution', asdict(current_cfg)) != asdict(current_cfg)):
+            or replay.get('execution', asdict(current_cfg)) != asdict(current_cfg)
+            or replay.get('filters') != current_meta.get('entry_filters')):
         st.warning(f"The saved {version} strategy has been refined since this replay. Run {version} again to see the updated strategy's results; the charts below show your previous run.")
     a, b, c = st.columns(3)
     a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
     b.metric("Entries", m["entries"])
     c.metric("Running-peak drawdown", f"{m['max_intrabar_drawdown']:.2%}")
+    if current_meta.get('baseline_net_usd') is not None:
+        expected_period = [pd.Timestamp(t, tz='UTC') for t in current_meta['baseline_period']]
+        actual_period = [pd.Timestamp(t) for t in replay['period']]
+        if actual_period == expected_period:
+            gain = m['final_equity']-m['initial_capital']-current_meta['baseline_net_usd']
+            st.metric('Above requested $6,000 baseline', f'${gain:,.2f}')
+        else:
+            st.caption('The $6,000 baseline applies to January 1, 2023 through October 27, 2026 UTC at $100 risk. This replay uses different dates.')
     from backtesting.independent_visuals import equity_curve, performance_chart, monthly_chart, trade_chart
     replay_bars = bars[(bars.timestamp >= pd.Timestamp(replay['period'][0])) &
                        (bars.timestamp < pd.Timestamp(replay['period'][1]))]
@@ -136,12 +152,12 @@ with st.sidebar:
         st.stop()
     profile_path = ROOT / "configs/dvs_eth_v1_2.json"
     version_options = ["v1.1", "v1.2", "v1"] if profile_path.exists() else ["v1.1", "v1"]
-    for version in ['v1.3', 'v1.4']:
+    for version in ['v1.3', 'v1.4', 'v1.5']:
         if (ROOT / f"configs/eth_strategy_{version.replace('.', '_')}.json").exists():
             version_options.insert(-1, version)
     selected_version = st.selectbox("Pine strategy version", version_options, key="pine_strategy_version")
-    independent_selected = selected_version in {'v1.3', 'v1.4'}
-    independent_version = selected_version if independent_selected else ('v1.4' if 'v1.4' in version_options else 'v1.3')
+    independent_selected = selected_version in {'v1.3', 'v1.4', 'v1.5'}
+    independent_version = selected_version if independent_selected else next((v for v in ['v1.5', 'v1.4', 'v1.3'] if v in version_options), 'v1.3')
     saved_profile = None
     if independent_selected:
         try:
@@ -208,7 +224,7 @@ with st.sidebar:
         research = {"gap_policy": saved_profile["gap_policy"]}
         st.caption(f"The saved {selected_version} preset uses fixed experimental settings.")
         with st.expander(f"{selected_version} configuration"):
-            st.json({"rule": asdict(selected_rule), "execution": saved_profile} if independent_selected else saved_profile)
+            st.json({"rule": asdict(selected_rule), "execution": saved_profile, "filters": selected_independent_meta.get('entry_filters')} if independent_selected else saved_profile)
     else:
         pine_commission = "0.04%" if strategy_version == "v1.1" else "0.05%"
         st.caption(f"Pine {strategy_version} properties: {pine_commission} per side, 2 ticks slippage, 20% margin, close-of-bar entry. Gap ranges are rejected.")
@@ -355,7 +371,8 @@ with models_tab:
 with research_tab:
     st.subheader("Strategy improvement experiments")
     st.write("Candidates use fixed $100 planned risk, next-open execution, 0.04% fees per side, two ticks plus two basis points assumed slippage, and financing. Parity mode stays separate.")
-    runs = sorted((ROOT / "artifacts/optimization").glob("*/manifest.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+    from backtesting.research_inventory import search_manifests
+    runs = search_manifests(ROOT)
     if not runs:
         st.caption("No experiment checkpoints have been saved yet.")
     else:
@@ -409,7 +426,7 @@ with research_tab:
                     st.json(payload)
                 if independent:
                     st.caption("Independent hourly signals use five-minute execution. These saved replays are separate from DVS. Repeated historical selection does not establish future profitability; prior failures remain in the research record.")
-                    for exported_version in ['v1.3', 'v1.4']:
+                    for exported_version in ['v1.3', 'v1.4', 'v1.5']:
                         suffix = exported_version.replace('.', '_')
                         text_path = ROOT / f"downloads/ETH_Strategy_{suffix}.txt"
                         metadata_path = ROOT / f"configs/eth_strategy_{suffix}.metadata.json"
@@ -438,6 +455,9 @@ with independent_tab:
     try:
         rule, independent_cfg, independent_meta, pine_path = load_profile(ROOT, version=independent_version)
         st.write(f"This alternative uses a {rule.lookback}-hour channel, {rule.slow}-hour EMA filter, {rule.stop_atr:g} ATR initial stop, {rule.reward_r:g}R target and {rule.trail_atr:g} ATR trailing stop. Signals confirm hourly; execution uses five-minute candles.")
+        if independent_meta.get('entry_filters'):
+            st.write(f"Entry volume filter: completed-hour volume must be at least {independent_meta['entry_filters']['min_rvol']:g} times the mean of the preceding 20 completed hours.")
+            st.caption('Requested baseline: $6,000 net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.')
         st.caption("v1.2 remains a separate DVS strategy. Reused historical data is not independent forward validation. Pine compilation and trade matching remain unverified.")
         if independent_meta.get('selection_is_historical_profit_optimization'):
             st.caption(independent_meta['selection_note'])
