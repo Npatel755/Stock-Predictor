@@ -1,6 +1,6 @@
 # Stock Predictor API
 
-ETHUSD five-minute model research is available on this branch. See [ETH_RESEARCH.md](ETH_RESEARCH.md) for data provenance, training commands, deep-learning comparisons, and Breakout cost assumptions.
+The local ETH futures backtester and model experiments live in [backtesting/](backtesting/README.md).
 
 A machine learning-powered stock prediction API that predicts whether a stock's price is likely to move **UP** or **DOWN** on the next trading day using technical indicators and gradient boosting.
 

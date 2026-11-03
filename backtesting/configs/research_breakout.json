@@ -1,0 +1,17 @@
+{
+  "mode": "research",
+  "initial_capital": 50000,
+  "risk_usd": 100,
+  "reward_r": 2,
+  "max_leverage": 5,
+  "max_daily_loss": 300,
+  "max_trades_day": 3,
+  "commission_bps": 4,
+  "slippage_ticks": 2,
+  "slippage_bps": 2,
+  "swap_daily_bps": 3.3,
+  "entry_timing": "next_open",
+  "intrabar_policy": "stop_first",
+  "gap_policy": "segment",
+  "profit_share": 0.9
+}

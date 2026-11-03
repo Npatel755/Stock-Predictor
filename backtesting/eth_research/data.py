@@ -36,7 +36,7 @@ def write_csv_atomic(frame, path):
 
 class MassiveClient:
     def __init__(self, min_interval=12.5):
-        load_dotenv(ROOT / ".env")
+        load_dotenv(ROOT.parent / ".env")
         key = os.getenv("MASSIVE_API_KEY") or os.getenv("POLYGON_API_KEY")
         if not key:
             raise ValueError("Configure MASSIVE_API_KEY in .env")
@@ -93,7 +93,8 @@ def validate_bars(frame, start=None, end=None, expected_ticker=TICKER):
     frame = frame.sort_values("timestamp").reset_index(drop=True)
     if frame["timestamp"].duplicated().any():
         raise ValueError("Duplicate ETHUSD timestamps")
-    if (frame.timestamp.dt.minute.mod(BAR_MINUTES).ne(0) | frame.timestamp.dt.second.ne(0)).any():
+    if (frame.timestamp.dt.minute.mod(BAR_MINUTES).ne(0) | frame.timestamp.dt.second.ne(0) |
+            frame.timestamp.dt.microsecond.ne(0) | frame.timestamp.dt.nanosecond.ne(0)).any():
         raise ValueError("Bars must align to five-minute boundaries")
     values = frame[["open", "high", "low", "close", "volume"]].to_numpy(dtype=float)
     if not np.isfinite(values).all() or (values[:, :4] <= 0).any() or (values[:, 4] < 0).any():

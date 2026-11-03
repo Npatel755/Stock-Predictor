@@ -7,4 +7,8 @@ data.db
 .ethvenv/
 artifacts/ethusd/
 data/ethusd/
+backtesting/data/
+backtesting/artifacts/
+backtesting/.venv/
+.pytest_cache/
 *.pyc

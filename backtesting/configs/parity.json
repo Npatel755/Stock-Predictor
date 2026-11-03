@@ -1,0 +1,19 @@
+{
+  "mode": "parity",
+  "initial_capital": 50000,
+  "risk_usd": 100,
+  "reward_r": 2,
+  "max_leverage": 5,
+  "max_daily_loss": 300,
+  "max_trades_day": 3,
+  "max_setup_bars": 24,
+  "breakout_rvol": 1.5,
+  "entry_rvol": 1.2,
+  "retest_atr": 0.25,
+  "stop_atr": 0.1,
+  "tick_size": 0.01,
+  "commission_bps": 5,
+  "slippage_ticks": 2,
+  "margin_ratio": 0.2,
+  "gap_policy": "reject"
+}

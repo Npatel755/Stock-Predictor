@@ -1,4 +1,9 @@
 import unittest
+try:
+    import torch
+    import sklearn
+except ImportError:
+    raise unittest.SkipTest("Optional ML tests require requirements-ml.txt")
 from unittest.mock import Mock, patch
 from pathlib import Path
 import tempfile
@@ -6,11 +11,11 @@ import tempfile
 import numpy as np
 import pandas as pd
 
-from eth_research.backtest import Assumptions, simulate
-from eth_research.data import TICKER, validate_bars, write_csv_atomic
-from eth_research.features import build_features, eligible_indices
-from eth_research.neural import TorchClassifier
-from eth_research.perpetual_data import TICKER as PERPETUAL_TICKER, archive
+from backtesting.eth_research.backtest import Assumptions, simulate
+from backtesting.eth_research.data import TICKER, validate_bars, write_csv_atomic
+from backtesting.eth_research.features import build_features, eligible_indices
+from backtesting.eth_research.neural import TorchClassifier
+from backtesting.eth_research.perpetual_data import TICKER as PERPETUAL_TICKER, archive
 
 
 def sample_bars(n=500):

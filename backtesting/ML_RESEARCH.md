@@ -6,17 +6,19 @@ The user's confirmed instrument is **ETHUSD on Breakout**. The reference screens
 
 ## Run on Windows
 
+Run these commands from the repository root. All data, artifacts and reports named below are now inside `backtesting/`.
+
 ```powershell
 python -m venv .ethvenv
-.ethvenv/Scripts/python.exe -m pip install -r requirements-eth.txt
-.ethvenv/Scripts/python.exe -m eth_research.data --start 2024-11-03 --end 2026-11-02
-.ethvenv/Scripts/python.exe -m eth_research.perpetual_data --start 2024-11-03 --end 2026-11-02
-.ethvenv/Scripts/python.exe -m unittest discover -s tests -v
-.ethvenv/Scripts/python.exe -m eth_research.train
-.ethvenv/Scripts/python.exe -m eth_research.predict
+.ethvenv/Scripts/python.exe -m pip install -r backtesting/requirements-ml.txt
+.ethvenv/Scripts/python.exe -m backtesting.eth_research.data --start 2024-11-03 --end 2026-11-02
+.ethvenv/Scripts/python.exe -m backtesting.eth_research.perpetual_data --start 2024-11-03 --end 2026-11-02
+.ethvenv/Scripts/python.exe -m unittest discover -s backtesting/tests -v
+.ethvenv/Scripts/python.exe -m backtesting.eth_research.train
+.ethvenv/Scripts/python.exe -m backtesting.eth_research.predict
 
 # Independent comparison using your Massive key; not a futures dataset.
-.ethvenv/Scripts/python.exe -m eth_research.train --market massive_spot_proxy --bars data/ethusd/bars.csv --output artifacts/ethusd/massive_proxy --publish-report reports/ethusd_massive_proxy_comparison.md
+.ethvenv/Scripts/python.exe -m backtesting.eth_research.train --market massive_spot_proxy --bars backtesting/data/ethusd/bars.csv --output backtesting/artifacts/ethusd/massive_proxy --publish-report backtesting/reports/ethusd_massive_proxy_comparison.md
 ```
 
 The configured `MASSIVE_API_KEY` is read from the existing `.env`; `POLYGON_API_KEY` is a fallback. No new secret is required. Downloads are read-only, paginate, throttle to five requests per minute, retry temporary errors, and resume cached 28-day chunks. Dates are UTC, end exclusive. Only finished five-minute bars are accepted. Cached raw data and model binaries are Git-ignored.
@@ -45,7 +47,7 @@ The specific plan and balance remain unknown, so daily/total rule checks default
 
 ```powershell
 # Replace fractions with the limits in your actual agreement.
-.ethvenv/Scripts/python.exe -m eth_research.train --daily-loss-limit 0.03 --total-loss-limit 0.06
+.ethvenv/Scripts/python.exe -m backtesting.eth_research.train --daily-loss-limit 0.03 --total-loss-limit 0.06
 ```
 
 The simulation uses a 00:30 UTC daily reset and a static total-equity floor; it does not implement Spark trailing rules, payouts during the run, or other plan-specific terms. It cannot certify a funded account. If changing assumptions or models after viewing this report, obtain a new untouched test period before drawing conclusions.
