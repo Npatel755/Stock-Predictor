@@ -73,6 +73,12 @@ def save(directory: Path, version: str, root: Path = ROOT):
             'selection is not independent forward validation.\n')
     for path in destinations:
         path.parent.mkdir(parents=True,exist_ok=True)
+    # Git's Windows newline conversion must not invalidate the saved Pine hash.
+    attributes = root/'reference/.gitattributes'
+    existing_attributes = attributes.read_text(encoding='utf-8') if attributes.exists() else ''
+    rule_line = f'ETH_Strategy_{suffix}.pine -text'
+    if rule_line not in existing_attributes.splitlines():
+        attributes.write_text(existing_attributes.rstrip()+'\n'+rule_line+'\n',encoding='utf-8')
     write_json(destinations[0],payload)
     write_json(destinations[1],meta)
     destinations[2].write_bytes(text.encode('utf-8'))

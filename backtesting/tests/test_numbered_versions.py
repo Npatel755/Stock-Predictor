@@ -52,6 +52,7 @@ def test_next_numbered_save_preserves_prior_version_and_rejects_overwrite_and_sk
     assert meta['same_period_net_usd']==10500. and meta['entry_filters']['min_trend_gap_bps']==200.
     assert 'ETH v1.7' in pine.read_text()
     assert pine.read_bytes()==(tmp_path/'downloads/ETH_Strategy_v1_7.txt').read_bytes()
+    assert 'ETH_Strategy_v1_7.pine -text' in (tmp_path/'reference/.gitattributes').read_text()
     assert old.read_text()=='preserve this saved profile'
     assert json.loads((config/'research_baseline.json').read_text())['reference_version']=='v1.7'
     assert json.loads((config/'research_baseline.json').read_text())['requested_net_profit_usd']==10500.

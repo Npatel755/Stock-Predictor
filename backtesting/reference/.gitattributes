@@ -1,0 +1,2 @@
+# Preserve exact bytes for hash-verified numbered exports.
+ETH_Strategy_v1_7.pine -text
