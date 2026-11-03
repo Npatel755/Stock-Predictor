@@ -42,6 +42,7 @@ class Position:
     entry_time: pd.Timestamp
     entry_commission_remaining: float
     swap_remaining: float = 0.
+    initial_risk: float = 0.
 
 
 @dataclass
@@ -101,6 +102,7 @@ class Broker:
         self.cash -= commission
         self.total_commission += commission
         self.position = Position(direction, quantity, fill, stop, target, bar_open, fill_time, commission)
+        self.position.initial_risk = abs(fill - stop)
         self.events.append({"bar_open": bar_open, "event": "entry", "direction": direction, "quantity": quantity, "price": fill})
         self.mark(close)
 
@@ -215,7 +217,8 @@ class Broker:
 
 
 def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
-             indicators: pd.DataFrame | None = None, quality: dict | None = None) -> BacktestResult:
+             indicators: pd.DataFrame | None = None, quality: dict | None = None,
+             capture_details: bool = True) -> BacktestResult:
     cfg = config or StrategyConfig()
     v11 = cfg.strategy_version == "v1.1"
     bars, actual_quality = clean_candles(bars)
@@ -230,6 +233,9 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
     daily_locked = False
     last_retest_bar = -1  # Pine's var persists across setup resets.
     trace, curve = [], []
+    daily_equity, total_entries = {}, 0
+    last_exit_bar = -10**9
+    filtered_entries = 0
     for i, row in enumerate(frame.itertuples(index=False)):
         gap = previous_row is not None and row.timestamp - previous_row.timestamp != BAR
         if gap:
@@ -237,6 +243,7 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
                 broker.exit(previous_row.close, previous_row.timestamp, "gap_boundary", "research_close")
             setup.clear()
             pending = None
+        exits_before_bar = len(broker.trades)
         broker.bar(row)
         if pending is not None and broker.position is None:
             direction, quantity, stop, target = pending
@@ -244,6 +251,28 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
             # Next-open mode participates in this bar's subsequent range.
             broker.bar(row)
             pending = None
+        if broker.position is not None and cfg.mode == "research":
+            p = broker.position
+            held_bars = (row.timestamp + BAR - p.entry_time) / BAR
+            if cfg.max_holding_bars and held_bars >= cfg.max_holding_bars:
+                broker.exit(row.close, row.timestamp, "time_stop", "research_close")
+            else:
+                favorable = p.direction * (row.close - p.entry_price)
+                proposed_stop = p.stop
+                if cfg.breakeven_r and favorable >= cfg.breakeven_r * p.initial_risk:
+                    cost = estimated_round_trip_cost(cfg, p.entry_price)
+                    proposed_stop = p.entry_price + p.direction * cost
+                if cfg.trail_atr and favorable >= max(1., cfg.breakeven_r) * p.initial_risk:
+                    trailing = row.close - p.direction * cfg.trail_atr * row.atr5
+                    proposed_stop = max(proposed_stop, trailing) if p.direction == 1 else min(proposed_stop, trailing)
+                tighter = proposed_stop > p.stop if p.direction == 1 else proposed_stop < p.stop
+                placeable = p.direction * (row.close - proposed_stop) > cfg.tick_size
+                if tighter and placeable:
+                    p.stop = proposed_stop
+                    broker.events.append({"bar_open": row.timestamp, "event": "stop_update", "price": proposed_stop,
+                                          "effective_at": row.timestamp + BAR})
+        if len(broker.trades) > exits_before_bar and broker.position is None:
+            last_exit_bar = i
         equity = broker.equity_at(row.close)
         if row.timestamp.date() != day:
             day, day_start_equity, entries_today = row.timestamp.date(), equity, 0
@@ -286,21 +315,33 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
             stop = setup.extreme - direction * cfg.stop_atr * row.atr5
             distance = abs(row.close - stop)
             valid = stop < row.close if direction == 1 else stop > row.close
+            allowed = research_entry_allowed(cfg, row, direction) and i - last_exit_bar >= cfg.cooldown_bars
+            if cfg.mode == "research":
+                distance = max(distance, cfg.min_stop_bps / 10000 * row.close, cfg.min_stop_atr * row.atr5)
+                stop = row.close - direction * distance
             sizing_multiplier = cfg.point_value if v11 else 1.
-            quantity = math.floor(min(cfg.risk_usd / (distance * sizing_multiplier), equity * cfg.max_leverage / (row.close * sizing_multiplier)) * 1000) / 1000 if distance > 0 else 0.
+            estimated_cost = estimated_round_trip_cost(cfg, row.close)
+            risk_distance = distance + (estimated_cost if cfg.risk_includes_costs else 0.)
+            quantity = math.floor(min(cfg.risk_usd / (risk_distance * sizing_multiplier), equity * cfg.max_leverage / (row.close * sizing_multiplier)) * 1000) / 1000 if risk_distance > 0 else 0.
             target = row.close + direction * cfg.reward_r * distance
-            if valid and distance > cfg.tick_size and quantity > 0:
+            allowed = allowed and cfg.reward_r * distance >= cfg.min_reward_cost_ratio * estimated_cost
+            if valid and distance > cfg.tick_size and quantity > 0 and allowed:
                 if cfg.entry_timing == "signal_close":
                     broker.enter(direction, quantity, row.close, stop, target, row.timestamp, row.timestamp + BAR)
                 else:
                     pending = (direction, quantity, stop, target)
                 entries_today += 1
+                total_entries += 1
                 entered = True
+            elif not allowed:
+                filtered_entries += 1
             setup.clear()
         broker.mark(row.close)
-        curve.append({"timestamp": row.timestamp + BAR, "cash": broker.cash, "equity": broker.equity_at(row.close),
+        daily_equity[(row.timestamp + BAR).date()] = broker.equity_at(row.close)
+        if capture_details:
+            curve.append({"timestamp": row.timestamp + BAR, "cash": broker.cash, "equity": broker.equity_at(row.close),
                       "intrabar_worst_equity": broker.bar_worst, "position_qty": broker.position.quantity * broker.position.direction if broker.position else 0.})
-        trace.append({"timestamp": row.timestamp, "bull_bias": row.bull_bias, "bear_bias": row.bear_bias,
+            trace.append({"timestamp": row.timestamp, "bull_bias": row.bull_bias, "bear_bias": row.bear_bias,
                       "long_break": long_break, "short_break": short_break, "can_trade": can_trade,
                       "setup_direction": setup.direction, "setup_level": setup.level, "retested": setup.retested,
                       "retest_extreme": setup.extreme, "expired": expired, "failed": failed,
@@ -312,11 +353,11 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
     equity_curve = pd.DataFrame(curve)
     net = trades.net_pnl if len(trades) else pd.Series(dtype=float)
     gains, losses = net.clip(lower=0).sum(), -net.clip(upper=0).sum()
-    daily_returns = equity_curve.set_index("timestamp").equity.resample("1D").last().pct_change().dropna()
-    final = float(equity_curve.equity.iloc[-1])
+    daily_returns = pd.Series(daily_equity).pct_change().dropna()
+    final = float(broker.equity_at(previous_row.close))
     metrics = {"initial_capital": cfg.initial_capital, "final_equity": final, "final_cash": broker.cash,
                "net_return": final / cfg.initial_capital - 1, "closed_trade_legs": len(trades),
-               "entries": sum(record["entered"] for record in trace),
+               "entries": total_entries, "filtered_entry_signals": filtered_entries,
                "win_rate": float((net > 0).mean()) if len(net) else None,
                "profit_factor": float(gains / losses) if losses else None,
                "max_intrabar_drawdown": broker.max_drawdown, "total_commission": broker.total_commission,
@@ -338,6 +379,37 @@ def backtest(bars: pd.DataFrame, config: StrategyConfig | None = None,
     signal_frame = pd.DataFrame(trace)
     # Fixed nullable integer schema; future retests must not change the dtype
     # of an earlier all-NA prefix during replay/export.
-    signal_frame["last_retest_bar"] = pd.array(signal_frame.last_retest_bar, dtype="Int64")
+    if capture_details:
+        signal_frame["last_retest_bar"] = pd.array(signal_frame.last_retest_bar, dtype="Int64")
     return BacktestResult(metrics, trades, equity_curve, signal_frame, pd.DataFrame(broker.events),
                           asdict(cfg), quality, provenance)
+
+
+def estimated_round_trip_cost(cfg: StrategyConfig, price: float) -> float:
+    """Cost per unit of quoted price, excluding unknowable future financing."""
+    return 2 * price * (cfg.commission_bps + cfg.slippage_bps) / 10000 + 2 * cfg.slippage_ticks * cfg.tick_size
+
+
+def research_entry_allowed(cfg: StrategyConfig, row, direction: int) -> bool:
+    if cfg.mode != "research":
+        return True
+    if cfg.trade_direction != "both" and direction != (1 if cfg.trade_direction == "long" else -1):
+        return False
+    if not cfg.allow_weekends and row.timestamp.dayofweek >= 5:
+        return False
+    hour = row.timestamp.hour
+    if cfg.session == "europe_us" and not 7 <= hour < 21:
+        return False
+    if cfg.session == "us" and not 13 <= hour < 21:
+        return False
+    if cfg.session == "asia" and not 0 <= hour < 8:
+        return False
+    atr_bps = row.atr5 / row.close * 10000
+    if atr_bps < cfg.min_atr_bps or (cfg.max_atr_bps and atr_bps > cfg.max_atr_bps):
+        return False
+    if cfg.min_trend_gap_bps:
+        if not hasattr(row, "close4h") or not hasattr(row, "ema4h") or not math.isfinite(row.ema4h):
+            return False
+        if direction * (row.close4h / row.ema4h - 1) * 10000 < cfg.min_trend_gap_bps:
+            return False
+    return True

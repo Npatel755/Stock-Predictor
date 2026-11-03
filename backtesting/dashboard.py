@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import sys
 
 # Streamlit executes this file as a script rather than a Python module.
@@ -17,7 +18,7 @@ from backtesting.config import StrategyConfig
 from backtesting.date_ranges import default_dates, select_dates
 from backtesting.engine import backtest
 from backtesting.market_data import download_history, load_history
-from backtesting.paths import PARQUET, RUNS
+from backtesting.paths import PARQUET, RUNS, ROOT
 from backtesting.reporting import chart, save_result, safe_value
 
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
@@ -100,7 +101,7 @@ with st.sidebar:
         st.warning(f"This range contains {selected_quality['missing_bars']:,} missing candles. Choose the complete parity range or use Research with gap segmentation.")
     run = st.button("Run DVS backtest", type="primary", width="stretch", disabled=bool(selection_error or gap_blocked))
 
-quality_tab, strategy_tab, models_tab = st.tabs(["Data quality", "DVS backtest", "ML experiments"])
+quality_tab, strategy_tab, models_tab, research_tab = st.tabs(["Data quality", "DVS backtest", "ML experiments", "Strategy research"])
 with quality_tab:
     display_quality = selected_quality or quality
     st.subheader("Selected backtest range")
@@ -220,3 +221,54 @@ with models_tab:
         with st.expander(label):
             report = Path(__file__).parent / "reports" / path
             st.markdown(report.read_text(encoding="utf-8") if report.exists() else "No saved model benchmark.")
+
+with research_tab:
+    st.subheader("Strategy improvement experiments")
+    st.write("Candidates use fixed $100 planned risk, next-open execution, 0.04% fees per side, two ticks plus two basis points assumed slippage, and financing. Parity mode stays separate.")
+    runs = sorted((ROOT / "artifacts/optimization").glob("*/manifest.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not runs:
+        st.caption("No experiment checkpoints have been saved yet.")
+    else:
+        chosen_run = st.selectbox("Research experiment", [p.parent.name for p in runs])
+        if st.button("Refresh research results"):
+            st.rerun()
+        try:
+            from backtesting.search_results import search_status
+            status = search_status(ROOT / "artifacts/optimization" / chosen_run)
+            plan, training, validation, summary = [status[k] for k in ["manifest", "training", "validation", "summary"]]
+            st.progress(min(1., len(training) / plan["candidate_count"]), text=f"Recorded training: {len(training)} / {plan['candidate_count']} candidates")
+            st.caption(f"Validation checkpoints: {len(validation)}. Checkpoints show saved work, not whether a process is still running.")
+            st.write("Search: 2023–2024 training, two chronological validation halves in 2025. The 2026 audit was previously inspected and is not a fresh holdout.")
+            if summary:
+                selection = summary["selection"]
+                candidate = selection["candidate"]
+                gate = selection["passed_predeclared_validation_gate"]
+                st.write(f"Frozen selection: **{candidate['label']}**. Passed the predefined validation gate: **{gate}**.")
+                rows = []
+                for name, values in summary["full_history"].items():
+                    rows.append({"scenario": name, "net_pnl": values["final_equity"] - values["initial_capital"],
+                                 "trades": values["entries"], "intrabar_drawdown": values["max_intrabar_drawdown"]})
+                st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
+                st.json({"validation": selection["validation"], "retrospective_2026_audit": summary["audit"]}, expanded=False)
+                st.download_button("Download experimental configuration", json.dumps(candidate["config"], indent=2),
+                                   "dvs_research_candidate.json", "application/json")
+                with st.expander("Selected research rules"):
+                    st.json(candidate["config"])
+                st.caption("The experimental run uses the frozen configuration above and the selected UTC dates; the manual sidebar risk inputs do not change it.")
+                if st.button("Backtest experimental candidate on selected dates", disabled=bool(selection_error)):
+                    with st.spinner("Replaying the frozen research configuration…"):
+                        cfg = StrategyConfig(**candidate["config"])
+                        result = backtest(selected_bars, cfg, quality=selected_quality)
+                        location = RUNS / f"experiment_{chosen_run}"
+                        save_result(result, location, PARQUET)
+                        st.session_state["dvs_result"] = result
+                        st.session_state["dvs_location"] = str(location)
+                        st.rerun()
+            elif training:
+                top = sorted(training, key=lambda r: -r["score"])[:10]
+                st.caption("Provisional training leaders only. Selection waits for chronological validation.")
+                st.dataframe(pd.DataFrame([{"candidate": r["label"], "training_pnl": r["metrics"]["final_equity"] - 50000,
+                                            "entries": r["metrics"]["entries"], "score": r["score"]} for r in top]),
+                             width="stretch", hide_index=True)
+        except (ValueError, KeyError, OSError) as exc:
+            st.warning(f"Could not read this experiment: {exc}")

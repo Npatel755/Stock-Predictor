@@ -29,6 +29,21 @@ class StrategyConfig:
     slippage_bps: float = 0.
     swap_daily_bps: float = 0.
     profit_share: float = .9
+    # Experimental changes are available only in Research mode.
+    min_stop_bps: float = 0.
+    min_stop_atr: float = 0.
+    risk_includes_costs: bool = False
+    min_reward_cost_ratio: float = 0.
+    min_atr_bps: float = 0.
+    max_atr_bps: float = 0.  # zero disables the upper bound
+    min_trend_gap_bps: float = 0.
+    trade_direction: Literal["both", "long", "short"] = "both"
+    session: Literal["all", "europe_us", "us", "asia"] = "all"
+    allow_weekends: bool = True
+    cooldown_bars: int = 0
+    breakeven_r: float = 0.  # close-based activation, effective next bar
+    trail_atr: float = 0.
+    max_holding_bars: int = 0
 
     def __post_init__(self):
         if self.strategy_version not in {"v1", "v1.1"}:
@@ -51,6 +66,18 @@ class StrategyConfig:
             raise ValueError("Invalid thresholds or costs")
         if not 0 < self.profit_share <= 1:
             raise ValueError("Profit share must be a fraction")
+        research_numbers = [self.min_stop_bps, self.min_stop_atr, self.min_reward_cost_ratio, self.min_atr_bps,
+                            self.max_atr_bps, self.min_trend_gap_bps, self.cooldown_bars,
+                            self.breakeven_r, self.trail_atr, self.max_holding_bars]
+        if min(research_numbers) < 0:
+            raise ValueError("Research thresholds cannot be negative")
+        if self.max_atr_bps and self.max_atr_bps < self.min_atr_bps:
+            raise ValueError("Maximum ATR must be >= minimum ATR")
+        if self.trade_direction not in {"both", "long", "short"} or self.session not in {"all", "europe_us", "us", "asia"}:
+            raise ValueError("Unknown research direction or session")
+        if self.mode == "parity" and (any(research_numbers) or self.risk_includes_costs or
+                                       self.trade_direction != "both" or self.session != "all" or not self.allow_weekends):
+            raise ValueError("Experimental signal and risk rules require research mode")
         if self.mode == "parity" and (self.commission_bps != expected_commission or self.slippage_ticks != 2 or self.margin_ratio != .2
                                       or self.entry_timing != "signal_close" or self.intrabar_policy != "tradingview"
                                       or self.gap_policy != "reject" or self.slippage_bps or self.swap_daily_bps):

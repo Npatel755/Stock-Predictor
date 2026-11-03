@@ -100,4 +100,6 @@ Previous classifier results and reproduction commands are in [ML_RESEARCH.md](ML
 The completed DVS runs and validation record are summarized in [reports/dvs_comparison.md](reports/dvs_comparison.md).
 The original v1 results in that report are historical. See [reports/tradingview_discrepancy.md](reports/tradingview_discrepancy.md) for the v1.1 correction and current comparison.
 
+Ongoing strategy-improvement experiments use the separate [research protocol](RESEARCH_PROTOCOL.md). The dashboard's **Strategy research** tab shows checkpoint progress, validation results and downloadable experimental configurations.
+
 References: [Binance public futures data](https://github.com/binance/binance-public-data), [TradingView strategy broker semantics](https://www.tradingview.com/pine-script-docs/concepts/strategies/), [TradingView higher-timeframe data](https://www.tradingview.com/pine-script-docs/concepts/other-timeframes-and-data/), [Breakout fees](https://www.breakoutprop.com/symbols/).
