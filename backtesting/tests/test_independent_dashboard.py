@@ -84,3 +84,33 @@ def test_dashboard_shows_modern_experiment_and_runs_independent_profile(tmp_path
     saved = json.loads((tmp_path/'artifacts/independent/v1_3_dashboard/results.json').read_text())
     assert saved['rule'] == asdict(rule) and saved['execution'] == asdict(cfg)
     assert app.sidebar.selectbox[0].value == 'v1.1'
+    picker = lambda: next(s for s in app.sidebar.selectbox if s.label == 'Pine strategy version')
+    assert 'v1.3' in picker().options
+    picker().set_value('v1.3').run()
+    assert not app.exception and not app.error
+    assert app.sidebar.radio[0].value.startswith('B') and app.sidebar.radio[0].disabled
+    assert next(w for w in app.sidebar.number_input if w.label == 'Reward / risk').value == 3.
+    assert all(w.disabled for w in app.sidebar.number_input)
+    assert any(tab.label == 'v1.3 backtest' for tab in app.tabs)
+    assert not any(b.label == 'Run DVS backtest' for b in app.button)
+    next(b for b in app.button if b.label == 'Run v1.3 backtest').click().run()
+    assert not app.exception and not app.error
+    assert any('Completed run' in h.value and 'v1.3' in h.value for h in app.subheader)
+    saved = json.loads((tmp_path/'artifacts/independent/v1_3_dashboard/results.json').read_text())
+    assert saved['rule'] == asdict(rule) and saved['execution'] == asdict(cfg)
+    assert 'dvs_result' not in app.session_state
+    picker().set_value('v1.1').run()
+    assert not app.exception and not app.error
+    assert any(b.label == 'Run DVS backtest' for b in app.button)
+    assert not app.sidebar.radio[0].disabled
+
+
+def test_research_display_handles_older_cached_checkpoint_module(tmp_path, monkeypatch):
+    import backtesting.search_results as cached
+    from backtesting.research_display import search_status, overview_rows, training_overview
+    for name in ['overview_rows', 'training_overview', 'search_status']:
+        monkeypatch.delattr(cached, name)
+    (tmp_path/'manifest.json').write_text(json.dumps(dict(candidates=[{}, {}])))
+    assert search_status(tmp_path)['manifest']['candidate_count'] == 2
+    assert overview_rows(dict(evaluation={'audit': metrics(50)}))[0]['net_pnl'] == 50
+    assert training_overview(dict(label='trial', folds=[metrics()], score=1))['entries'] == 2

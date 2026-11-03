@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from dataclasses import asdict
 import json
 import sys
 
@@ -21,11 +22,12 @@ from backtesting.market_data import download_history, load_history
 from backtesting.paths import PARQUET, RUNS, ROOT
 from backtesting.reporting import chart, save_result, safe_value
 from backtesting.profiles import attach_research_profile
+from backtesting.independent_profile import load_profile
 
 st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide")
 st.title("DVS ETH · Futures research")
 st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exchange execution")
-st.info("Choose v1.2 for the saved experimental strategy, or v1.1/v1 for the supplied Pine versions. TradingView parity remains unverified.")
+st.info("Choose v1.3 for the independent channel strategy, v1.2 for experimental DVS, or v1.1/v1 for the supplied Pine versions. TradingView parity remains unverified.")
 
 
 @st.cache_data(show_spinner=False)
@@ -37,6 +39,38 @@ def use_complete_range(revision_key):
     # Recreate the date widget with its range default rather than assigning a
     # widget value after construction or changing its single-date/range type.
     st.session_state[revision_key] = st.session_state.get(revision_key, 0) + 1
+
+
+def replay_independent(selected_bars, rule, config, metadata):
+    from backtesting.alternative_strategies import simulate
+    from backtesting.optimize import write_json
+    metrics, trades, events = simulate(selected_bars, rule, config)
+    period = [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]
+    location = ROOT / "artifacts/independent/v1_3_dashboard"
+    location.mkdir(parents=True, exist_ok=True)
+    write_json(location / "results.json", {"metrics": metrics, "rule": asdict(rule), "execution": asdict(config),
+                                           "profile": metadata, "period": period})
+    trades.to_csv(location / "trades.csv", index=False)
+    events.to_csv(location / "events.csv", index=False)
+    st.session_state["independent_v13_result"] = {"metrics": metrics, "trades": trades, "events": events, "period": period}
+
+
+def display_independent_result(key):
+    if "independent_v13_result" not in st.session_state:
+        st.write("Choose UTC dates and run v1.3. Results will appear here.")
+        return
+    replay = st.session_state["independent_v13_result"]
+    m = replay["metrics"]
+    st.subheader("Completed run · Research · ETH v1.3")
+    st.caption(f"Completed v1.3 replay: {replay['period'][0]} to {replay['period'][1]} exclusive. Sidebar changes require another run.")
+    a, b, c = st.columns(3)
+    a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
+    b.metric("Entries", m["entries"])
+    c.metric("Running-peak drawdown", f"{m['max_intrabar_drawdown']:.2%}")
+    st.dataframe(replay["trades"], width="stretch", hide_index=True)
+    st.download_button("Download v1.3 replay trades", replay["trades"].to_csv(index=False), "eth_v1_3_trades.csv", "text/csv", key=f"v13_trades_{key}")
+    if m["open_position"]:
+        st.json(safe_value(m["open_position"]))
 
 
 with st.sidebar:
@@ -59,18 +93,31 @@ with st.sidebar:
         st.stop()
     profile_path = ROOT / "configs/dvs_eth_v1_2.json"
     version_options = ["v1.1", "v1.2", "v1"] if profile_path.exists() else ["v1.1", "v1"]
+    if (ROOT / "configs/eth_strategy_v1_3.json").exists():
+        version_options.insert(-1, "v1.3")
     selected_version = st.selectbox("Pine strategy version", version_options, key="pine_strategy_version")
+    independent_selected = selected_version == "v1.3"
     saved_profile = None
-    if selected_version == "v1.2":
+    if independent_selected:
+        try:
+            selected_rule, selected_independent_cfg, selected_independent_meta, _ = load_profile(ROOT)
+            saved_profile = asdict(selected_independent_cfg)
+            strategy_version = selected_independent_cfg.strategy_version
+        except (ValueError, KeyError, OSError) as exc:
+            st.error(f"Could not load saved v1.3: {exc}")
+            st.stop()
+    elif selected_version == "v1.2":
         saved_profile = json.loads(profile_path.read_text(encoding="utf-8"))
         strategy_version = saved_profile["strategy_version"]
     else:
         strategy_version = selected_version
     mode_label = st.radio("Mode", ["A · TradingView parity candidate", "B · Research"],
                           index=1 if saved_profile else 0, disabled=saved_profile is not None,
-                          key="dvs_v1_2_mode" if saved_profile else "dvs_manual_mode")
+                          key=f"dvs_{selected_version.replace('.', '_')}_mode" if saved_profile else "dvs_manual_mode")
     mode = "parity" if mode_label.startswith("A") else "research"
-    if saved_profile:
+    if independent_selected:
+        st.caption("v1.3 loads the saved independent hourly channel strategy in Research mode. Its 2026 audit lost money; TradingView parity is unverified.")
+    elif saved_profile:
         st.caption("v1.2 uses its saved Research configuration automatically. Choose v1.1 or v1 to use parity mode or manual settings.")
         st.caption("Historical research only: earlier-regime and slippage failures are retained in the reports.")
         profile_metadata = profile_path.with_name("dvs_eth_v1_2.metadata.json")
@@ -82,13 +129,14 @@ with st.sidebar:
     except ValueError as exc:
         st.warning(str(exc))
         st.stop()
-    range_label = "v1_2" if saved_profile else mode
+    range_label = selected_version.replace(".", "_") if saved_profile else mode
     revision_key = f"dvs_period_revision_{range_label}"
     period_key = f"dvs_period_{range_label}_{st.session_state.get(revision_key, 0)}"
     period = st.date_input("Backtest UTC dates", value=suggested_dates, key=period_key,
                            min_value=bars.timestamp.min().date(), max_value=bars.timestamp.max().date())
     if requires_complete:
-        st.caption(f"Complete parity range: {suggested_dates[0]} through {suggested_dates[1]} UTC. Later candles remain available in Research mode.")
+        range_name = "Complete data range" if independent_selected else "Complete parity range"
+        st.caption(f"{range_name}: {suggested_dates[0]} through {suggested_dates[1]} UTC. Later candles remain available in Research mode.")
         st.button("Use complete parity range", on_click=use_complete_range, args=(revision_key,))
     selected_bars, selected_quality, selection_error = None, None, None
     try:
@@ -97,7 +145,7 @@ with st.sidebar:
         selection_error = str(exc)
     values = saved_profile or {}
     risk = st.number_input("Planned risk / trade ($)", min_value=1., value=float(values.get("risk_usd", 100.)), step=25., disabled=saved_profile is not None)
-    reward = st.number_input("Reward / risk", min_value=1., value=float(values.get("reward_r", 2.)), step=.25, disabled=saved_profile is not None)
+    reward = st.number_input("Reward / risk", min_value=1., value=float(selected_rule.reward_r if independent_selected else values.get("reward_r", 2.)), step=.25, disabled=saved_profile is not None)
     max_daily = st.number_input("Personal daily loss gate ($)", min_value=1., value=float(values.get("max_daily_loss", 300.)), step=50., disabled=saved_profile is not None)
     maximum_entries = st.number_input("Daily entry limit", min_value=1, value=int(values.get("max_trades_day", 3)), step=1, disabled=saved_profile is not None)
     research = {}
@@ -113,9 +161,9 @@ with st.sidebar:
                         intrabar_policy="stop_first" if pessimistic else "tradingview", swap_daily_bps=swap)
     elif saved_profile:
         research = {"gap_policy": saved_profile["gap_policy"]}
-        st.caption("The saved v1.2 preset uses fixed experimental settings.")
-        with st.expander("v1.2 configuration"):
-            st.json(saved_profile)
+        st.caption(f"The saved {selected_version} preset uses fixed experimental settings.")
+        with st.expander(f"{selected_version} configuration"):
+            st.json({"rule": asdict(selected_rule), "execution": saved_profile} if independent_selected else saved_profile)
     else:
         pine_commission = "0.04%" if strategy_version == "v1.1" else "0.05%"
         st.caption(f"Pine {strategy_version} properties: {pine_commission} per side, 2 ticks slippage, 20% margin, close-of-bar entry. Gap ranges are rejected.")
@@ -124,9 +172,9 @@ with st.sidebar:
         st.warning(selection_error)
     elif gap_blocked:
         st.warning(f"This range contains {selected_quality['missing_bars']:,} missing candles. Choose the complete parity range or use Research with gap segmentation.")
-    run = st.button("Run DVS backtest", type="primary", width="stretch", disabled=bool(selection_error or gap_blocked))
+    run = st.button("Run v1.3 backtest" if independent_selected else "Run DVS backtest", type="primary", width="stretch", disabled=bool(selection_error or gap_blocked))
 
-quality_tab, strategy_tab, models_tab, research_tab, independent_tab = st.tabs(["Data quality", "DVS backtest", "ML experiments", "Strategy research", "ETH v1.3"])
+quality_tab, strategy_tab, models_tab, research_tab, independent_tab = st.tabs(["Data quality", "v1.3 backtest" if independent_selected else "DVS backtest", "ML experiments", "Strategy research", "ETH v1.3"])
 with quality_tab:
     display_quality = selected_quality or quality
     st.subheader("Selected backtest range")
@@ -150,7 +198,13 @@ with quality_tab:
             st.dataframe(pd.DataFrame(quality["gaps"]), width="stretch", hide_index=True)
         st.json(quality)
 
-if run:
+if run and independent_selected:
+    with st.spinner("Replaying independent v1.3 hourly signals on five-minute candles…"):
+        try:
+            replay_independent(selected_bars, selected_rule, selected_independent_cfg, selected_independent_meta)
+        except Exception as exc:
+            st.error(str(exc))
+elif run:
     if not isinstance(period, (tuple, list)) or len(period) != 2:
         st.error("Select a start and end date.")
     else:
@@ -179,7 +233,9 @@ if stored_result is not None and ("strategy_version" not in stored_result.config
     st.info("The strategy implementation has been updated. Run the selected Pine version to refresh the displayed result.")
 
 with strategy_tab:
-    if "dvs_result" not in st.session_state:
+    if independent_selected:
+        display_independent_result("main")
+    elif "dvs_result" not in st.session_state:
         st.write("Choose a UTC date range and run the strategy. Indicators initialize from that range's first candle.")
         st.caption("Parity mode requires a range without the missing periods listed under Data quality.")
     else:
@@ -262,7 +318,7 @@ with research_tab:
         if st.button("Refresh research results"):
             st.rerun()
         try:
-            from backtesting.search_results import search_status, overview_rows, training_overview
+            from backtesting.research_display import search_status, overview_rows, training_overview
             status = search_status(ROOT / "artifacts/optimization" / chosen_run)
             plan, training, validation, summary = [status[k] for k in ["manifest", "training", "validation", "summary"]]
             st.progress(min(1., len(training) / plan["candidate_count"]), text=f"Recorded training: {len(training)} / {plan['candidate_count']} candidates")
@@ -311,9 +367,6 @@ with independent_tab:
     st.write("This alternative uses an 80-hour channel, 200-hour EMA filter, 2 ATR initial stop, 3R target and 3 ATR trailing stop. Signals confirm hourly; execution uses five-minute candles.")
     st.caption("v1.2 remains a separate DVS strategy. The v1.3 historical gate passed on reused data, but its 2026 audit lost money. Pine compilation and trade matching remain unverified.")
     try:
-        from backtesting.independent_profile import load_profile
-        from backtesting.alternative_strategies import simulate
-        from dataclasses import asdict
         rule, independent_cfg, independent_meta, pine_path = load_profile(ROOT)
         st.download_button("Download ETH v1.3 text for Pine Editor", pine_path.read_bytes(), "ETH_Strategy_v1_3.txt", "text/plain")
         with st.expander("v1.3 saved rules and execution assumptions"):
@@ -321,28 +374,11 @@ with independent_tab:
         st.caption("Replay uses the UTC dates selected in the sidebar and the saved v1.3 settings. DVS risk/version controls do not alter this profile. Indicators initialize at the selected start; allow at least 200 hours for warm-up. Missing candle ranges are rejected.")
         if st.button("Run independent v1.3 on selected dates", disabled=bool(selection_error or selected_quality is None or selected_quality.get("missing_bars", 0))):
             with st.spinner("Replaying hourly channel signals on five-minute candles…"):
-                metrics, trades, events = simulate(selected_bars, rule, independent_cfg)
-                location = ROOT / "artifacts/independent/v1_3_dashboard"
-                location.mkdir(parents=True, exist_ok=True)
-                from backtesting.optimize import write_json
-                write_json(location / "results.json", {"metrics": metrics, "rule": asdict(rule), "execution": asdict(independent_cfg), "profile": independent_meta,
-                                                       "period": [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]})
-                trades.to_csv(location / "trades.csv", index=False)
-                events.to_csv(location / "events.csv", index=False)
-                st.session_state["independent_v13_result"] = {"metrics": metrics, "trades": trades, "events": events,
-                                                              "period": [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]}
-        if "independent_v13_result" in st.session_state:
-            replay = st.session_state["independent_v13_result"]
-            m = replay["metrics"]
-            st.caption(f"Completed v1.3 replay: {replay['period'][0]} to {replay['period'][1]} exclusive. Sidebar changes require another run.")
-            a, b, c = st.columns(3)
-            a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
-            b.metric("Entries", m["entries"])
-            c.metric("Running-peak drawdown", f"{m['max_intrabar_drawdown']:.2%}")
-            st.dataframe(replay["trades"], width="stretch", hide_index=True)
-            st.download_button("Download v1.3 replay trades", replay["trades"].to_csv(index=False), "eth_v1_3_trades.csv", "text/csv")
-            if m["open_position"]:
-                st.json(safe_value(m["open_position"]))
+                replay_independent(selected_bars, rule, independent_cfg, independent_meta)
+                if independent_selected:
+                    st.rerun()
+        if not independent_selected:
+            display_independent_result("independent_tab")
         report = ROOT / "V1_3.md"
         if report.exists():
             st.markdown(report.read_text(encoding="utf-8"))
