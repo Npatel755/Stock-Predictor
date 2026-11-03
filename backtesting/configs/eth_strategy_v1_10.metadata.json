@@ -1,0 +1,34 @@
+{
+  "strategy_name": "ETH v1.10",
+  "experiment": "round16_v1_9_filters",
+  "selected_candidate": "min_rvol=2.8_min_trend_gap_bps=200.0",
+  "configuration_sha256": "36682ee1d7d39f653a4383cbf776632985c4e886c025e64d5c37893e811319c5",
+  "pine_sha256": "9b8ac54b3d958e3ab12c05ab5ccfb39afb62641cbe8728db409282ce1bccc969",
+  "selection_sha256": "4536a45d1aa3479ddb26e015f15b116d5ad07890bba8f0effb3734cc2609256d",
+  "reproduction_verification_sha256": "b49aa0a95269345d56b914e481bb8424105e8d202371f6a4a449df77e074044b",
+  "computational_reproduction_verified": true,
+  "entry_filters": {
+    "direction": "both",
+    "min_atr_bps": 0.0,
+    "max_atr_bps": 0.0,
+    "min_trend_gap_bps": 200.0,
+    "min_signed_slope_bps": null,
+    "min_rvol": 2.8,
+    "weekends": true
+  },
+  "same_period_net_usd": 12690.411143678102,
+  "baseline_net_usd": 12113.219880592173,
+  "baseline_period": [
+    "2023-01-01",
+    "2026-10-28"
+  ],
+  "baseline_risk_usd": 100.0,
+  "exact_reference_at_selection": 12113.219880592173,
+  "passed_predeclared_validation_gate": true,
+  "selection_is_historical_profit_optimization": true,
+  "selection_note": "All 2023-2026 data participated in historical selection; no fresh forward-validation claim.",
+  "independent_forward_validation": false,
+  "ready_for_funded_trading": false,
+  "pine_compilation_verified": false,
+  "tradingview_parity_verified": false
+}

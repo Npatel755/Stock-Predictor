@@ -1,0 +1,10 @@
+{
+  "name": "ETH v1.9 frozen volume and trend filter follow-up",
+  "parent_version": "v1.9",
+  "prior_search_slots": 808,
+  "rule_dimensions": {},
+  "filter_dimensions": {
+    "min_rvol": [2.0, 2.2, 2.4, 2.6, 2.8, 3.0],
+    "min_trend_gap_bps": [100.0, 200.0, 300.0, 400.0]
+  }
+}

@@ -1,0 +1,2 @@
+# Campaign bytes are pinned by frozen manifests and source snapshots.
+*.json -text

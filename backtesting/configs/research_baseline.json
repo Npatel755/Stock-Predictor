@@ -1,6 +1,6 @@
 {
-  "requested_net_profit_usd": 12113.219880592173,
-  "previous_requested_net_profit_usd": 11541.236806198183,
+  "requested_net_profit_usd": 12690.411143678102,
+  "previous_requested_net_profit_usd": 12113.219880592173,
   "period_start_utc": "2023-01-01",
   "period_end_exclusive_utc": "2026-10-28",
   "initial_capital_usd": 50000.0,
@@ -10,11 +10,11 @@
   "slippage_ticks": 2,
   "extra_adverse_slippage_bps": 2.0,
   "financing_bps_per_day": 3.3,
-  "prior_reference": "ETH v1.9",
-  "prior_reference_net_profit_usd": 12113.219880592173,
-  "previous_reference_net_profit_usd": 11541.236806198183,
+  "prior_reference": "ETH v1.10",
+  "prior_reference_net_profit_usd": 12690.411143678102,
+  "previous_reference_net_profit_usd": 12113.219880592173,
   "comparison_rule": "Beat the exact current reference on the same 2023-01-01 to 2026-10-28 exclusive perpetual data at unchanged $100 risk and costs. Save every qualifying improvement under the next consecutive minor version; never overwrite a numbered strategy. Additional dates and spot P&L do not inflate this comparison.",
-  "reference_version": "v1.9",
+  "reference_version": "v1.10",
   "historical_optimization_is_forward_validation": false,
-  "versioning_policy": "Immutable numbered strategies; next qualifying improvement is v1.10."
+  "versioning_policy": "Immutable numbered strategies; next qualifying improvement is v1.11."
 }
