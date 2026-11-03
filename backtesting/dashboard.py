@@ -43,6 +43,7 @@ def use_complete_range(revision_key):
 
 def replay_independent(selected_bars, rule, config, metadata):
     from backtesting.alternative_strategies import simulate
+    from backtesting.independent_visuals import equity_curve
     from backtesting.optimize import write_json
     metrics, trades, events = simulate(selected_bars, rule, config)
     period = [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]
@@ -52,7 +53,12 @@ def replay_independent(selected_bars, rule, config, metadata):
                                            "profile": metadata, "period": period})
     trades.to_csv(location / "trades.csv", index=False)
     events.to_csv(location / "events.csv", index=False)
-    st.session_state["independent_v13_result"] = {"metrics": metrics, "trades": trades, "events": events, "period": period}
+    curve = equity_curve(selected_bars, events, config)
+    if abs(curve.equity.iloc[-1]-metrics['final_equity']) > 1e-6:
+        raise ValueError("Visual equity does not reconcile with the broker result")
+    curve.to_parquet(location / "equity.parquet", index=False)
+    st.session_state["independent_v13_result"] = {"metrics": metrics, "trades": trades, "events": events, "period": period,
+                                                 "equity": curve, "rule": asdict(rule), "execution": asdict(config)}
 
 
 def display_independent_result(key):
@@ -67,8 +73,37 @@ def display_independent_result(key):
     a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
     b.metric("Entries", m["entries"])
     c.metric("Running-peak drawdown", f"{m['max_intrabar_drawdown']:.2%}")
-    st.dataframe(replay["trades"], width="stretch", hide_index=True)
-    st.download_button("Download v1.3 replay trades", replay["trades"].to_csv(index=False), "eth_v1_3_trades.csv", "text/csv", key=f"v13_trades_{key}")
+    from backtesting.independent_visuals import equity_curve, performance_chart, monthly_chart, trade_chart
+    replay_bars = bars[(bars.timestamp >= pd.Timestamp(replay['period'][0])) &
+                       (bars.timestamp < pd.Timestamp(replay['period'][1]))]
+    # Upgrade an existing browser result directly from its fill/financing events.
+    # Changing the sidebar dates must not change a previously completed chart.
+    if "equity" not in replay:
+        rule, config, _, _ = load_profile(ROOT)
+        curve = equity_curve(replay_bars, replay["events"], config)
+        if abs(curve.equity.iloc[-1]-m['final_equity']) > 1e-6:
+            st.warning("This older result cannot be reconciled for charting. Run v1.3 again to refresh it.")
+            return
+        replay.update(equity=curve, rule=asdict(rule), execution=asdict(config))
+    curve = replay["equity"]
+    st.plotly_chart(performance_chart(curve, m["initial_capital"]), width="stretch", key=f"v13_equity_{key}")
+    st.caption("The chart marks open positions at each candle close and includes actual simulated fees and financing. Its close-based drawdown differs from the intrabar drawdown metric above.")
+    monthly, trade_view, ledger_view = st.tabs(["Monthly P&L", "Trade chart", "Trade ledger"])
+    with monthly:
+        st.plotly_chart(monthly_chart(curve, m["initial_capital"]), width="stretch", key=f"v13_monthly_{key}")
+    with trade_view:
+        trades = replay["trades"]
+        if len(trades):
+            chosen = st.selectbox("Inspect v1.3 trade", list(range(len(trades))), key=f"v13_trade_{key}",
+                                  format_func=lambda i: f"{i+1} · {trades.iloc[i].direction} · {trades.iloc[i].entry_bar_open} · ${trades.iloc[i].net_pnl:,.2f}")
+            fig, resolution = trade_chart(replay_bars, trades.iloc[chosen], replay["events"], replay["rule"]["reward_r"])
+            st.plotly_chart(fig, width="stretch", key=f"v13_price_{key}")
+            st.caption(f"{resolution} candles; fill markers use candle-open timestamps. Intrabar exit times are bounds. Stops move only after completed candles.")
+        else:
+            st.info("No closed trades in this replay yet.")
+    with ledger_view:
+        st.dataframe(replay["trades"], width="stretch", hide_index=True)
+        st.download_button("Download v1.3 replay trades", replay["trades"].to_csv(index=False), "eth_v1_3_trades.csv", "text/csv", key=f"v13_trades_{key}")
     if m["open_position"]:
         st.json(safe_value(m["open_position"]))
 

@@ -81,6 +81,16 @@ def test_dashboard_shows_modern_experiment_and_runs_independent_profile(tmp_path
     assert not app.exception and not app.error
     result = app.session_state['independent_v13_result']
     assert result['metrics']['initial_capital'] == cfg.initial_capital
+    assert 'equity' in result and len(app.get('plotly_chart')) >= 2
+    assert result['equity'].equity.iloc[-1] == result['metrics']['final_equity']
+    assert (tmp_path/'artifacts/independent/v1_3_dashboard/equity.parquet').exists()
+    # A browser session holding the earlier table-only result upgrades from
+    # its original event ledger when the dashboard reruns.
+    older = {k: v for k, v in result.items() if k not in {'equity', 'rule', 'execution'}}
+    app.session_state['independent_v13_result'] = older
+    app.run()
+    assert not app.exception and not app.error
+    assert 'equity' in app.session_state['independent_v13_result']
     saved = json.loads((tmp_path/'artifacts/independent/v1_3_dashboard/results.json').read_text())
     assert saved['rule'] == asdict(rule) and saved['execution'] == asdict(cfg)
     assert app.sidebar.selectbox[0].value == 'v1.1'
