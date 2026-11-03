@@ -23,3 +23,7 @@ The v1.10 search tested 24 volume/trend filters with v1.9's 5R target. Two candi
 The trend-filter improvement was initially written over v1.5. It is now v1.6; original v1.5 was restored byte-for-byte from its verified archive. This labeling correction adds no performance gain. Original research filenames retain their historical labels.
 
 Repeated historical selection is not independent forward validation. Pine compilation and TradingView trade matching remain unverified.
+
+## crypto_v0_1 (candidate, 2026-11-03)
+
+Separate instrument line, not an ETH version. Pre-registered 8-coin lab (`backtesting/crypto_research/`): 25 fixed candidates per coin (6 signal families x 1h/4h x two exit geometries, plus ETH v1.11's rules transplanted), train 2021-23 as annual folds, validation 2024, one held-out look at 2025-2026-10-28 for the single selected pair. Drawdown is penalized in the score and capped at 5% in every gate. Selected: BNB, time_series_momentum, 4h, 3 ATR stop / 5R / 4 ATR trail. Held-out: +$972 (2025) and +$300 (2026) at 8bp, drawdown under 1.7%. Registered as `candidates/crypto_v0_1` (unpromoted). ETH v1.11 unchanged. Absent whole UTC days in Binance monthly archives (LTC/SOL/XRP, Feb/Apr 2022) are repaired from daily archives, never synthesized.
