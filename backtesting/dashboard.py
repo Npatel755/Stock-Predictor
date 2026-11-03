@@ -405,7 +405,7 @@ with research_tab:
                 payload = {"rule": candidate["rule"], "execution": selection["execution_config"]} if independent else candidate["config"]
                 if 'filters' in candidate:
                     payload['filters'] = candidate['filters']
-                    st.caption("This is an entry-filter experiment. Saved v1.4 remains unchanged; these filters are not omitted when comparing results or exporting settings.")
+                    st.caption("This experiment includes entry filters. Saved numbered strategies remain unchanged; these filters are included when comparing results or exporting settings.")
                     preview = ROOT / 'reference/experimental/ETH_Volume_Research.pine'
                     preview_metadata = preview.with_suffix('.metadata.json')
                     if preview.exists() and preview_metadata.exists() and json.loads(preview_metadata.read_text(encoding='utf-8')).get('experiment') == chosen_run:
