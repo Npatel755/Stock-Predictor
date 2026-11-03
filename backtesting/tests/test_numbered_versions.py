@@ -93,3 +93,21 @@ def test_restored_v15_and_v16_are_separate_verified_real_profiles():
     archived=root/'reference/revisions/13e35043f30af183'
     assert (root/'reference/ETH_Strategy_v1_5.pine').read_bytes()==(archived/'ETH_Strategy_v1_5.pine').read_bytes()
     assert hashlib.sha256(pine.read_bytes()).hexdigest()==new['pine_sha256']
+
+
+def test_version_after_v19_is_v110_and_keeps_numeric_order(tmp_path):
+    folder=tmp_path/'configs'
+    folder.mkdir()
+    for minor in [9,8]: (folder/f'eth_strategy_v1_{minor}.json').write_text(f'preserved {minor}')
+    (folder/'research_baseline.json').write_text(json.dumps(dict(requested_net_profit_usd=12000.,prior_reference_net_profit_usd=12000.,prior_reference='ETH v1.9')))
+    experiment=tmp_path/'experiment'
+    write_selection(experiment,net=13000.)
+    summary=json.loads((experiment/'summary.json').read_text())
+    (experiment/'verification.json').write_text(json.dumps(dict(reproduced_exactly=True,passed_frozen_gate=True,
+        selection_sha256=hashlib.sha256((experiment/'selection.json').read_bytes()).hexdigest(),metrics={'full_period':summary['evaluation']['full_period']})))
+    save(experiment,'v1.10',tmp_path)
+    _,_,meta,pine=load_profile(tmp_path,'v1.10')
+    assert meta['strategy_name']=='ETH v1.10' and 'ETH v1.10' in pine.read_text()
+    assert json.loads((folder/'research_baseline.json').read_text())['versioning_policy'].endswith('v1.11.')
+    assert (folder/'eth_strategy_v1_9.json').read_text()=='preserved 9'
+    with pytest.raises(ValueError,match='consecutive'): save(experiment,'v1.12',tmp_path)

@@ -1,0 +1,10 @@
+{
+  "parent_version": "v1.8",
+  "exact_reference_net": 11541.236806198183,
+  "campaigns": ["v1_8_exit_geometry.json", "v1_8_entry_filters.json"],
+  "selection_rule": "Finish both fixed campaigns against the same v1.8 reference before promotion. Choose the highest-net complete-gate pass across both. Freshly reproduce that selection before saving v1.9. Do not combine the two separately chosen parameter changes without another full test.",
+  "candidate_slots": 60,
+  "prior_search_slots": 748,
+  "risk_usd": 100.0,
+  "fresh_forward_validation": false
+}

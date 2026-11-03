@@ -1,0 +1,11 @@
+{
+  "name": "ETH v1.8 frozen exit-geometry follow-up",
+  "parent_version": "v1.8",
+  "prior_search_slots": 748,
+  "rule_dimensions": {
+    "stop_atr": [1.25, 1.5, 1.75],
+    "reward_r": [4.0, 4.5, 5.0],
+    "trail_atr": [2.5, 3.0, 3.5, 4.0]
+  },
+  "filter_dimensions": {}
+}
