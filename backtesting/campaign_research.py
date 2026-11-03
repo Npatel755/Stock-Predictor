@@ -81,6 +81,8 @@ def protected_profiles(root, manifest_path):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     output = args.output
     output.mkdir(parents=True, exist_ok=True)
     campaign=json.loads(args.campaign.read_text(encoding='utf-8'))

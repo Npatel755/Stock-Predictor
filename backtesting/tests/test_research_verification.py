@@ -4,6 +4,18 @@ import pandas as pd
 import pytest
 
 from backtesting.verify_numbered_research import exact, verify
+from backtesting.verify_numbered_research import preserve_verification
+
+
+def test_rechecking_keeps_the_original_pinned_certificate_immutable(tmp_path):
+    original=dict(selection_sha256='selection',metrics={'full_period':{'net':100}},benchmark={},verifier_source_sha256='old')
+    path=tmp_path/'verification.json';path.write_text(json.dumps(original))
+    before=path.read_bytes()
+    updated={**original,'verifier_source_sha256':'new'}
+    new=preserve_verification(tmp_path,updated)
+    assert path.read_bytes()==before and new.parent.name=='verification_rechecks'
+    with pytest.raises(ValueError,match='immutable original'):
+        preserve_verification(tmp_path,{**updated,'metrics':{'full_period':{'net':200}}})
 
 
 def test_reproduction_compares_timestamp_positions_without_rounding_profit():

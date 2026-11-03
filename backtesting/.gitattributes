@@ -1,0 +1,5 @@
+# Research manifests pin exact source/configuration/Pine bytes. A checkout
+# must not invalidate those hashes through automatic line-ending conversion.
+*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.pine -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

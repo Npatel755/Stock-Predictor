@@ -39,6 +39,8 @@ def eligible(metrics, checks, benchmark, requested):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     args.output.mkdir(parents=True,exist_ok=True)
     for source,name in [(ROOT/'configs/eth_strategy_v1_6.json','parent_v1_6.json'),(ROOT/'configs/research_baseline.json','baseline.json')]:
         path=args.output/name

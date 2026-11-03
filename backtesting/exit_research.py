@@ -77,6 +77,8 @@ def freeze(path, plan):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     args.output.mkdir(parents=True, exist_ok=True)
     parent_path = args.output / "parent_config.json"
     if not parent_path.exists():

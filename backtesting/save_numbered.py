@@ -58,6 +58,9 @@ def save(directory: Path, version: str, root: Path = ROOT):
         raise ValueError('Keep capital, risk, leverage and costs unchanged')
     rule = SignalRule(**selection['candidate']['rule'])
     filters = RegimeFilter(**selection['candidate']['filters'])
+    from .generalization_policy import assert_promotion_allowed
+    from dataclasses import asdict
+    assert_promotion_allowed(directory,dict(rule=asdict(rule),execution=asdict(cfg),filters=asdict(filters)),root)
     text, payload, digest = (render_trend if filters.min_trend_gap_bps else render_volume)(rule,cfg,filters)
     text = text.replace('ETH Volume Research | Experimental candidate', f'ETH {version} | Channel research', 1)
     text = text.replace('Experimental filtered candidate; saved v1.4 is unchanged.',

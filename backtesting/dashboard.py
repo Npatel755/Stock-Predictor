@@ -28,7 +28,12 @@ st.set_page_config(page_title="DVS ETH Research", page_icon="◇", layout="wide"
 st.title("DVS ETH · Futures research")
 st.caption("Five-minute Binance ETHUSDT perpetuals · local backtests · no exchange execution")
 baseline_path=ROOT/'configs/research_baseline.json'
-if baseline_path.exists():
+from backtesting.generalization_policy import policy as generalization_policy
+validation_policy=generalization_policy(ROOT)
+if validation_policy:
+    from backtesting.generalization_policy import forward_status
+    st.warning(f"{validation_policy['frozen_version']} is frozen for generalization checks. Historical P&L is a reused development score. Forward status: {forward_status(ROOT)}. See Generalization and BTC transfer test.")
+elif baseline_path.exists():
     current_target=json.loads(baseline_path.read_text(encoding='utf-8'))
     st.info(f"Choose {current_target['reference_version']} for the baseline strategy. The research baseline is ${current_target['requested_net_profit_usd']:,.2f}; an improvement must beat that exact result on the same dates and costs. TradingView parity remains unverified.")
 else:
@@ -47,6 +52,8 @@ def use_complete_range(revision_key):
 
 
 def replay_independent(selected_bars, rule, config, metadata, version='v1.3'):
+    from backtesting.generalization_policy import assert_historical_period
+    assert_historical_period(selected_bars.available_at.max(),ROOT)
     from backtesting.alternative_strategies import simulate
     from backtesting.independent_visuals import equity_curve
     from backtesting.optimize import write_json
@@ -99,10 +106,13 @@ def display_independent_result(key, version='v1.3'):
         actual_period = [pd.Timestamp(t) for t in replay['period']]
         if actual_period == expected_period:
             gain = m['final_equity']-m['initial_capital']-target['net']
-            st.metric(f"Above current ${target['net']:,.2f} baseline", f'${gain:,.2f}')
+            label=f"Historical difference from ${target['net']:,.2f} development score" if validation_policy else f"Above current ${target['net']:,.2f} baseline"
+            st.metric(label, f'${gain:,.2f}')
         else:
             st.caption(f"The ${target['net']:,.2f} baseline applies to January 1, 2023 through October 27, 2026 UTC at $100 risk. This replay uses different dates.")
-        if target['reference_net'] is not None:
+        if validation_policy:
+            st.caption('This comparison is a reused historical development score. Historical profit cannot promote a strategy under the locked generalization protocol.')
+        elif target['reference_net'] is not None:
             st.caption(f"New candidates must beat {target['reference']}'s exact ${target['reference_net']:,.2f} result; exceeding the rounded baseline alone does not count as improvement.")
     from backtesting.independent_visuals import equity_curve, performance_chart, monthly_chart, trade_chart
     replay_bars = bars[(bars.timestamp >= pd.Timestamp(replay['period'][0])) &
@@ -146,7 +156,7 @@ with st.sidebar:
     if st.button("Update public archives", help="Downloads completed UTC days from Binance; no account credentials"):
         with st.spinner("Checking public archive cache and importing completed days…"):
             try:
-                download_history()
+                download_history(end=validation_policy['future_start_utc'] if validation_policy and pd.Timestamp.now(tz='UTC').floor('D')>=pd.Timestamp(validation_policy['future_start_utc']) else None)
                 st.cache_data.clear()
                 st.success("Data import complete")
             except Exception as exc:
@@ -156,6 +166,8 @@ with st.sidebar:
         st.stop()
     try:
         bars, quality = cached_data(str(PARQUET), PARQUET.stat().st_mtime)
+        if validation_policy:
+            bars=bars[bars.available_at<=pd.Timestamp(validation_policy['future_start_utc'])].reset_index(drop=True)
     except Exception as exc:
         st.error(str(exc))
         st.stop()
@@ -247,7 +259,7 @@ with st.sidebar:
         st.warning(f"This range contains {selected_quality['missing_bars']:,} missing candles. Choose the complete parity range or use Research with gap segmentation.")
     run = st.button(f"Run {selected_version} backtest" if independent_selected else "Run DVS backtest", type="primary", width="stretch", disabled=bool(selection_error or gap_blocked))
 
-quality_tab, strategy_tab, models_tab, research_tab, independent_tab = st.tabs(["Data quality", f"{selected_version} backtest" if independent_selected else "DVS backtest", "ML experiments", "Strategy research", f"ETH {independent_version}"])
+quality_tab, strategy_tab, models_tab, research_tab, independent_tab, generalization_tab, btc_tab = st.tabs(["Data quality", f"{selected_version} backtest" if independent_selected else "DVS backtest", "ML experiments", "Strategy research", f"ETH {independent_version}", "Generalization", "BTC transfer test"])
 with quality_tab:
     display_quality = selected_quality or quality
     st.subheader("Selected backtest range")
@@ -381,6 +393,8 @@ with models_tab:
             st.markdown(report.read_text(encoding="utf-8") if report.exists() else "No saved model benchmark.")
 
 with research_tab:
+    if validation_policy:
+        st.warning('Archived experiments used inspected data. Their historical gates are not forward-validation certificates. Further whole-history profit optimization is disabled.')
     st.subheader("Strategy improvement experiments")
     st.write("Candidates use fixed $100 planned risk, next-open execution, 0.04% fees per side, two ticks plus two basis points assumed slippage, and financing. Parity mode stays separate.")
     from backtesting.research_inventory import search_manifests
@@ -474,7 +488,7 @@ with independent_tab:
                 st.write(f"Entry trend filter: the hourly close must be at least {gap:g}bp ({gap/100:g}%) beyond EMA{rule.slow} in the trade's direction.")
             from backtesting.profit_baseline import current_baseline
             target = current_baseline(ROOT, independent_meta)
-            st.caption(f"Current baseline: ${target['net']:,.2f} net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.")
+            st.caption(f"Historical development score: ${target['net']:,.2f}. Forward status: {forward_status(ROOT)}. This score alone does not establish future usability." if validation_policy else f"Current baseline: ${target['net']:,.2f} net on the original 2023-2026 perpetual period at unchanged $100 risk. Additional spot data is a separate transfer test and does not inflate that comparison.")
         st.caption("v1.2 remains a separate DVS strategy. Reused historical data is not independent forward validation. Pine compilation and trade matching remain unverified.")
         if independent_meta.get('selection_is_historical_profit_optimization'):
             st.caption(independent_meta['selection_note'])
@@ -494,3 +508,12 @@ with independent_tab:
             st.markdown(report.read_text(encoding="utf-8"))
     except (ValueError, KeyError, OSError) as exc:
         st.info(f"{independent_version} profile unavailable: {exc}")
+
+
+with generalization_tab:
+    from backtesting.validation_dashboard import render as show_generalization
+    show_generalization(ROOT)
+
+with btc_tab:
+    from backtesting.external_validation import render as show_btc_validation
+    show_btc_validation("btc",ROOT)

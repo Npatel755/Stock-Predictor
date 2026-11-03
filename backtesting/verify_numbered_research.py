@@ -10,6 +10,8 @@ from pathlib import Path
 from .alternative_strategies import SignalRule, simulate
 from .config import StrategyConfig
 from .entry_neighborhood import eligible
+from .exit_research import freeze
+from .frozen_inputs import recorded_path
 from .independent_visuals import equity_curve
 from .market_data import load_history, utc
 from .optimize import pnl, subset, write_json
@@ -25,6 +27,24 @@ def exact(actual, expected, label):
         raise ValueError(f'Fresh replay differs from the frozen metrics: {label}')
 
 
+def preserve_verification(directory,verification):
+    path=directory/'verification.json'
+    if path.exists():
+        original=json.loads(path.read_text(encoding='utf-8'))
+        current=safe_value(verification)
+        if original==current:return path
+        for key in ['selection_sha256','metrics','benchmark']:
+            if original.get(key)!=current.get(key):raise ValueError('Fresh recheck differs from the immutable original certificate')
+        # Numbered metadata pins the original certificate hash. A verifier-code
+        # update must not silently overwrite that historical evidence.
+        digest=hashlib.sha256(json.dumps(current,sort_keys=True).encode()).hexdigest()
+        path=directory/'verification_rechecks'/f'{digest}.json'
+        path.parent.mkdir(exist_ok=True)
+        freeze(path,current)
+    else:write_json(path,verification)
+    return path
+
+
 def verify(directory: Path, root: Path = ROOT):
     plan = json.loads((directory/'manifest.json').read_text(encoding='utf-8'))
     selected = json.loads((directory/'selection.json').read_text(encoding='utf-8'))
@@ -33,10 +53,27 @@ def verify(directory: Path, root: Path = ROOT):
         raise ValueError('A failed historical gate cannot be verified as a promotable improvement')
     if plan['selection_window'] != ['2023-01-01', '2026-10-28']:
         raise ValueError('Verification requires the unchanged baseline period')
-    for section in ['source_hashes', 'data_hashes', 'protected_profile_hashes']:
+    for section in ['source_hashes', 'protected_profile_hashes']:
         for name, digest in plan[section].items():
             if hashlib.sha256((root/name).read_bytes()).hexdigest() != digest:
-                raise ValueError(f'Frozen {section} input changed: {name}')
+                # The selection driver is not executed by this verifier. Keep
+                # its frozen provenance when a later safety guard disables it;
+                # the actual execution/feature implementations must still match.
+                archived=directory/'sources'/name
+                if not archived.exists():archived=root/'reference/source_revisions'/digest/name
+                guarded_drivers={'campaign_research.py','entry_neighborhood.py','optimize.py','exit_research.py',
+                                 'alternative_research.py','channel_period_research.py','numbered_research.py',
+                                 'management_research.py','net_profit_research.py','trend_research.py','filter_research.py'}
+                # The only accepted difference is the added entry-point guard;
+                # helper functions used in this replay must be byte-equivalent.
+                guard='    from .generalization_policy import assert_search_allowed\n    assert_search_allowed(ROOT)\n'
+                guarded_original=archived.read_text(encoding='utf-8') if archived.exists() else ''
+                current=(root/name).read_text(encoding='utf-8')
+                guard_only=current.replace(guard,'',1)==guarded_original
+                if not (section=='source_hashes' and name in guarded_drivers and archived.exists()
+                        and hashlib.sha256(archived.read_bytes()).hexdigest()==digest and guard_only):
+                    raise ValueError(f'Frozen {section} input changed: {name}')
+    data_paths={name.replace('\\','/'):recorded_path(root,name,value) for name,value in plan['data_hashes'].items()}
     for filename, key in [('parent.json', 'parent_sha256'), ('baseline.json', 'baseline_sha256')]:
         if hashlib.sha256((directory/filename).read_bytes()).hexdigest() != plan[key]:
             raise ValueError(f'Frozen snapshot changed: {filename}')
@@ -48,7 +85,7 @@ def verify(directory: Path, root: Path = ROOT):
     parent_filters = RegimeFilter(**parent['filters'])
     rule = SignalRule(**selected['candidate']['rule'])
     filters = RegimeFilter(**selected['candidate']['filters'])
-    bars, _ = load_history(root/'data/ethusd/perpetual/candles.parquet')
+    bars, _ = load_history(data_paths['data/ethusd/perpetual/candles.parquet'])
     bars = bars[(bars.timestamp >= utc('2023-01-01')) & (bars.timestamp < utc('2026-10-28'))].reset_index(drop=True)
     signals = apply_filter(prepare_features(bars, rule), filters)
     parent_signals = apply_filter(prepare_features(bars, parent_rule), parent_filters)
@@ -76,7 +113,7 @@ def verify(directory: Path, root: Path = ROOT):
     weak_bars, weak_signals = subset(bars, signals, '2026-01-01', '2026-07-01')
     evaluation['2026_h1_4bp'] = simulate(weak_bars, rule, replace(cfg, slippage_bps=4.), signals=weak_signals)[0]
     exact(evaluation['2026_h1_4bp'], summary['evaluation']['2026_h1_4bp'], '2026_h1_4bp')
-    earlier, _ = load_history(root/'data/ethusd/perpetual_2020_2022/candles.parquet')
+    earlier, _ = load_history(data_paths['data/ethusd/perpetual_2020_2022/candles.parquet'])
     evaluation['earlier_2020_2022'] = simulate(earlier, rule, cfg, signals=apply_filter(prepare_features(earlier, rule), filters))[0]
     exact(evaluation['earlier_2020_2022'], summary['evaluation']['earlier_2020_2022'], 'earlier_2020_2022')
     checks = {k: v for k, v in evaluation.items() if k != 'full_period'}
@@ -90,7 +127,7 @@ def verify(directory: Path, root: Path = ROOT):
                         verifier_source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                         protected_versions_unchanged=True, passed_frozen_gate=True,
                         forward_validation=False, pine_compiled=False, tradingview_matched=False)
-    write_json(directory/'verification.json', verification)
+    preserve_verification(directory,verification)
     print(f"VERIFICATION COMPLETE: net=${pnl(evaluation['full_period']):.2f}; weak-half 8bp diagnostic=${pnl(weak8):.2f}", flush=True)
     return verification
 

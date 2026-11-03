@@ -41,6 +41,8 @@ def sha(path):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     output = args.output
     output.mkdir(parents=True, exist_ok=True)
     suffix = args.parent.replace('.', '_')

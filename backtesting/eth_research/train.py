@@ -94,6 +94,10 @@ def write_json(path, value):
 
 
 def train(args):
+    from backtesting.generalization_policy import assert_historical_period
+    # Model selection must never read the locked prospective window.
+    dates=pd.read_csv(args.bars,usecols=['timestamp'])['timestamp']
+    assert_historical_period(pd.to_datetime(dates,utc=True).max()+pd.Timedelta(minutes=5),ROOT)
     # Bound native thread pools, including sklearn histogram boosting.
     from threadpoolctl import threadpool_limits
     threadpool_limits(limits=4)
@@ -149,6 +153,12 @@ def train(args):
                 "selection_metric": "mean purged walk-forward validation accuracy; holdout never selects model or threshold",
                 "cost_assumptions": asdict(cfg), "python": platform.python_version(),
                 "versions": {p: importlib.metadata.version(p) for p in ["numpy", "pandas", "scikit-learn", "xgboost", "torch", "joblib"]}}
+    from backtesting.generalization_policy import policy,digest
+    validation_policy=policy(ROOT)
+    if validation_policy:
+        metadata.update(holdout_is_genuinely_unseen=False,
+                        validation_status='Historical development: these dates were previously inspected',
+                        generalization_protocol_sha256=digest(validation_policy))
     write_json(out / "run_metadata.json", metadata)
     cv_results, oof = [], {}
     for name, factory in factories.items():

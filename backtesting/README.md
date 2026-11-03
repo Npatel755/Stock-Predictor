@@ -4,6 +4,8 @@ All ETH strategy research, trained-model artifacts, data, reports and tests live
 
 This is a local research platform with an event-driven order simulator and a Streamlit dashboard. It has no live order routing, exchange credentials, exchange deployment, or real-money execution.
 
+**Current status: v1.11 is frozen and experimental.** Repeated historical tuning exposed the development data to selection. Profit-only optimization and historical-only promotions are now disabled. See [Generalization](GENERALIZATION.md) for the new ETH/BTC transfer findings, purged chronological diagnostics, data locks and the pending fixed future test. The dashboard has separate **Generalization** and **BTC transfer test** tabs. Archived strategy scores are not certificates of future usability.
+
 ## Quick start — Windows / PowerShell
 
 Run these commands **from the repository root**. Python 3.11+ and a CPU are sufficient.

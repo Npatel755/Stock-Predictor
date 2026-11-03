@@ -33,6 +33,8 @@ def candidates():
 
 
 def run(args, *, candidate_universe=None, followup_protocol=None):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     args.output.mkdir(parents=True, exist_ok=True)
     parent_path = args.output/'parent_config.json'
     if not parent_path.exists():

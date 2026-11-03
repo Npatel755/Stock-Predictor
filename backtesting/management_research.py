@@ -39,6 +39,8 @@ def eligible(metrics, checks, parent, parent_stress):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     args.output.mkdir(parents=True, exist_ok=True)
     snapshot = args.output/'parent_v1_5.json'
     if not snapshot.exists():

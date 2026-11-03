@@ -52,6 +52,8 @@ def eligible(metrics, checks, benchmark):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     args.output.mkdir(parents=True, exist_ok=True)
     parent_snapshot = args.output/'parent_v13.json'
     baseline_snapshot = args.output/'baseline_v12.json'

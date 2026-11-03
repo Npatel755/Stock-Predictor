@@ -11,9 +11,12 @@ from .config import StrategyConfig
 from .independent_visuals import equity_curve, monthly_chart, performance_chart, trade_chart
 from .optimize import write_json
 from .regime_filters import RegimeFilter, apply_filter, prepare_features
+from .paths import ROOT
 
 
 def replay(bars, candidate, execution, directory: Path):
+    from .generalization_policy import assert_historical_period
+    assert_historical_period(pd.to_datetime(bars.timestamp,utc=True).max()+pd.Timedelta(minutes=5),ROOT)
     rule = SignalRule(**candidate['rule'])
     filters = RegimeFilter(**candidate['filters'])
     cfg = StrategyConfig(**execution)

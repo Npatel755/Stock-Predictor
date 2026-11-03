@@ -137,6 +137,8 @@ def append(path, row):
 
 
 def run(args):
+    from .generalization_policy import assert_search_allowed
+    assert_search_allowed(ROOT)
     args.output.mkdir(parents=True, exist_ok=True)
     candidates = candidate_configs(args.candidates, args.seed)
     plan = {"seed": args.seed, "candidate_count": len(candidates), "finalists": args.finalists,
