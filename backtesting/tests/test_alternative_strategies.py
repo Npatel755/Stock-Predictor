@@ -119,3 +119,15 @@ def test_independent_universe_is_small_fixed_and_contains_three_families():
     assert len(universe) == 12 and universe == candidates()
     assert {row['rule']['family'] for row in universe} == {'ema_cross', 'channel_breakout', 'bollinger_reversion'}
     assert len({tuple(sorted(row['rule'].items())) for row in universe}) == 12
+
+
+def test_channel_followup_retains_parent_and_varies_only_bounded_exit_geometry():
+    from backtesting.channel_refine import channel_candidates
+    universe = channel_candidates()
+    assert len(universe) == 24 and universe == channel_candidates()
+    assert universe[0]['rule'] == candidates()[7]['rule']
+    assert len({tuple(sorted(row['rule'].items())) for row in universe}) == 24
+    for row in universe:
+        r = SignalRule(**row['rule'])
+        assert r.family == 'channel_breakout' and r.lookback in {40, 55, 80}
+        assert r.stop_atr in {2., 3.} and r.reward_r in {2., 3., 4.} and r.trail_atr in {2., 3., 4.}

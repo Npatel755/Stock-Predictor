@@ -126,7 +126,7 @@ with st.sidebar:
         st.warning(f"This range contains {selected_quality['missing_bars']:,} missing candles. Choose the complete parity range or use Research with gap segmentation.")
     run = st.button("Run DVS backtest", type="primary", width="stretch", disabled=bool(selection_error or gap_blocked))
 
-quality_tab, strategy_tab, models_tab, research_tab = st.tabs(["Data quality", "DVS backtest", "ML experiments", "Strategy research"])
+quality_tab, strategy_tab, models_tab, research_tab, independent_tab = st.tabs(["Data quality", "DVS backtest", "ML experiments", "Strategy research", "ETH v1.3"])
 with quality_tab:
     display_quality = selected_quality or quality
     st.subheader("Selected backtest range")
@@ -262,29 +262,34 @@ with research_tab:
         if st.button("Refresh research results"):
             st.rerun()
         try:
-            from backtesting.search_results import search_status
+            from backtesting.search_results import search_status, overview_rows, training_overview
             status = search_status(ROOT / "artifacts/optimization" / chosen_run)
             plan, training, validation, summary = [status[k] for k in ["manifest", "training", "validation", "summary"]]
             st.progress(min(1., len(training) / plan["candidate_count"]), text=f"Recorded training: {len(training)} / {plan['candidate_count']} candidates")
             st.caption(f"Validation checkpoints: {len(validation)}. Checkpoints show saved work, not whether a process is still running.")
-            st.write("Search: 2023–2024 training, two chronological validation halves in 2025. The 2026 audit was previously inspected and is not a fresh holdout.")
+            training_period = plan.get("training", plan.get("train", ["2023-01-01", "2025-01-01"]))
+            st.write(f"Training windows: {training_period}. Selection uses chronological 2025 halves. Historical data was previously inspected; this is not a fresh holdout.")
             if summary:
                 selection = summary["selection"]
                 candidate = selection["candidate"]
                 gate = selection["passed_predeclared_validation_gate"]
                 st.write(f"Frozen selection: **{candidate['label']}**. Passed the predefined validation gate: **{gate}**.")
-                rows = []
-                for name, values in summary["full_history"].items():
-                    rows.append({"scenario": name, "net_pnl": values["final_equity"] - values["initial_capital"],
-                                 "trades": values["entries"], "intrabar_drawdown": values["max_intrabar_drawdown"]})
-                st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
-                st.json({"validation": selection["validation"], "retrospective_2026_audit": summary["audit"]}, expanded=False)
-                st.download_button("Download experimental configuration", json.dumps(candidate["config"], indent=2),
-                                   "dvs_research_candidate.json", "application/json")
+                st.dataframe(pd.DataFrame(overview_rows(summary)), width="stretch", hide_index=True)
+                st.json({"validation": selection["validation"], "retrospective_audit": summary.get("audit", summary.get("evaluation"))}, expanded=False)
+                independent = "rule" in candidate
+                payload = {"rule": candidate["rule"], "execution": selection["execution_config"]} if independent else candidate["config"]
+                st.download_button("Download experimental configuration", json.dumps(payload, indent=2),
+                                   "eth_independent_candidate.json" if independent else "dvs_research_candidate.json", "application/json")
                 with st.expander("Selected research rules"):
-                    st.json(candidate["config"])
+                    st.json(payload)
+                if independent:
+                    st.caption("Independent hourly signals use five-minute execution. These saved replays are separate from DVS. v1.3 remains experimental, including the negative 2026 audit.")
+                    text_path = ROOT / "downloads/ETH_Strategy_v1_3.txt"
+                    metadata_path = ROOT / "configs/eth_strategy_v1_3.metadata.json"
+                    if text_path.exists() and metadata_path.exists() and json.loads(metadata_path.read_text(encoding="utf-8")).get("experiment") == chosen_run:
+                        st.download_button("Download v1.3 Pine Editor text", text_path.read_bytes(), "ETH_Strategy_v1_3.txt", "text/plain")
                 st.caption("The experimental run uses the frozen configuration above and the selected UTC dates; the manual sidebar risk inputs do not change it.")
-                if st.button("Backtest experimental candidate on selected dates", disabled=bool(selection_error)):
+                if not independent and st.button("Backtest experimental candidate on selected dates", disabled=bool(selection_error)):
                     with st.spinner("Replaying the frozen research configuration…"):
                         cfg = StrategyConfig(**candidate["config"])
                         result = backtest(selected_bars, cfg, quality=selected_quality)
@@ -296,8 +301,50 @@ with research_tab:
             elif training:
                 top = sorted(training, key=lambda r: -r["score"])[:10]
                 st.caption("Provisional training leaders only. Selection waits for chronological validation.")
-                st.dataframe(pd.DataFrame([{"candidate": r["label"], "training_pnl": r["metrics"]["final_equity"] - 50000,
-                                            "entries": r["metrics"]["entries"], "score": r["score"]} for r in top]),
+                st.dataframe(pd.DataFrame([training_overview(r) for r in top]),
                              width="stretch", hide_index=True)
         except (ValueError, KeyError, OSError) as exc:
             st.warning(f"Could not read this experiment: {exc}")
+
+with independent_tab:
+    st.subheader("ETH v1.3 · Independent hourly channel breakout")
+    st.write("This alternative uses an 80-hour channel, 200-hour EMA filter, 2 ATR initial stop, 3R target and 3 ATR trailing stop. Signals confirm hourly; execution uses five-minute candles.")
+    st.caption("v1.2 remains a separate DVS strategy. The v1.3 historical gate passed on reused data, but its 2026 audit lost money. Pine compilation and trade matching remain unverified.")
+    try:
+        from backtesting.independent_profile import load_profile
+        from backtesting.alternative_strategies import simulate
+        from dataclasses import asdict
+        rule, independent_cfg, independent_meta, pine_path = load_profile(ROOT)
+        st.download_button("Download ETH v1.3 text for Pine Editor", pine_path.read_bytes(), "ETH_Strategy_v1_3.txt", "text/plain")
+        with st.expander("v1.3 saved rules and execution assumptions"):
+            st.json({"rule": asdict(rule), "execution": asdict(independent_cfg), "metadata": independent_meta})
+        st.caption("Replay uses the UTC dates selected in the sidebar and the saved v1.3 settings. DVS risk/version controls do not alter this profile. Indicators initialize at the selected start; allow at least 200 hours for warm-up. Missing candle ranges are rejected.")
+        if st.button("Run independent v1.3 on selected dates", disabled=bool(selection_error or selected_quality is None or selected_quality.get("missing_bars", 0))):
+            with st.spinner("Replaying hourly channel signals on five-minute candles…"):
+                metrics, trades, events = simulate(selected_bars, rule, independent_cfg)
+                location = ROOT / "artifacts/independent/v1_3_dashboard"
+                location.mkdir(parents=True, exist_ok=True)
+                from backtesting.optimize import write_json
+                write_json(location / "results.json", {"metrics": metrics, "rule": asdict(rule), "execution": asdict(independent_cfg), "profile": independent_meta,
+                                                       "period": [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]})
+                trades.to_csv(location / "trades.csv", index=False)
+                events.to_csv(location / "events.csv", index=False)
+                st.session_state["independent_v13_result"] = {"metrics": metrics, "trades": trades, "events": events,
+                                                              "period": [str(selected_bars.timestamp.min()), str(selected_bars.available_at.max())]}
+        if "independent_v13_result" in st.session_state:
+            replay = st.session_state["independent_v13_result"]
+            m = replay["metrics"]
+            st.caption(f"Completed v1.3 replay: {replay['period'][0]} to {replay['period'][1]} exclusive. Sidebar changes require another run.")
+            a, b, c = st.columns(3)
+            a.metric("Net P&L", f"${m['final_equity'] - m['initial_capital']:,.2f}")
+            b.metric("Entries", m["entries"])
+            c.metric("Running-peak drawdown", f"{m['max_intrabar_drawdown']:.2%}")
+            st.dataframe(replay["trades"], width="stretch", hide_index=True)
+            st.download_button("Download v1.3 replay trades", replay["trades"].to_csv(index=False), "eth_v1_3_trades.csv", "text/csv")
+            if m["open_position"]:
+                st.json(safe_value(m["open_position"]))
+        report = ROOT / "V1_3.md"
+        if report.exists():
+            st.markdown(report.read_text(encoding="utf-8"))
+    except (ValueError, KeyError, OSError) as exc:
+        st.info(f"v1.3 profile unavailable: {exc}")

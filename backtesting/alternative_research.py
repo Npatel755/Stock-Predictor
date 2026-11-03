@@ -32,13 +32,15 @@ def candidates():
     return [dict(id=i, label=f'{r.family}_{i}', rule=asdict(r)) for i, r in enumerate(rules)]
 
 
-def run(args):
+def run(args, *, candidate_universe=None, followup_protocol=None):
     args.output.mkdir(parents=True, exist_ok=True)
     parent_path = args.output/'parent_config.json'
     if not parent_path.exists():
         parent_path.write_bytes((ROOT/'configs/dvs_eth_v1_2.json').read_bytes())
     parent = StrategyConfig(**json.loads(parent_path.read_text(encoding='utf-8')))
-    universe = candidates()
+    universe = candidates() if candidate_universe is None else candidate_universe
+    if not universe or [r['id'] for r in universe] != list(range(len(universe))):
+        raise ValueError('Candidates require nonempty consecutive IDs')
     earlier = ROOT/'data/ethusd/perpetual_2020_2022/candles.parquet'
     cfg = replace(baseline(), risk_includes_costs=True)
     plan = dict(name='Independent ETH strategy families for v1.3 research', candidates=universe,
@@ -55,6 +57,13 @@ def run(args):
                 gate='Same annual-regime, validation, trade-count, margin and 4bp stress gates as exit_research.passes_gate.',
                 combined_v13_decision='If either experiment passes its gate, prefer highest 2025 score among passing winners; otherwise retain DVS exit candidate as unpromoted experimental v1.3. 2026 cannot select the strategy family.',
                 warning='All historical years are reused/inspected; this is additional model selection, not untouched forward validation. Independent signal families still share market exposure and broker assumptions.')
+    if followup_protocol is not None:
+        plan['followup'] = followup_protocol
+        plan['name'] = followup_protocol['name']
+        plan['finalists'] = followup_protocol['finalists']
+        plan['prior_search_slots'] = followup_protocol['prior_search_slots']
+        plan['other_current_search_slots'] = 0
+        plan['combined_v13_decision'] = 'This is a new search after both first v1.3 experiments failed. Historical gate remains unchanged; a failed gate cannot be represented as promotion. Audit cannot select or replace the chosen candidate.'
     freeze(args.output/'manifest.json', plan)
     old, _ = load_history(earlier)
     new, _ = load_history(args.data)
@@ -140,8 +149,9 @@ def run(args):
             item.update(validation_h1=pnl(v['folds'][0]), validation_h2=pnl(v['folds'][1]))
         rows.append(item)
     pd.DataFrame(rows).to_csv(args.output/'leaderboard.csv', index=False)
-    lines = ['# Independent ETH strategy-family experiment', '', plan['warning'], '',
-             f"Screened {len(universe)} fixed configurations across EMA crossover, channel breakout and Bollinger reversion. Selected **{candidate['label']}** using training shortlist and reused 2025 selection, before the 2026 audit.", '',
+    families = ', '.join(sorted({row['rule']['family'] for row in universe}))
+    lines = [f"# {plan['name']}", '', plan['warning'], '',
+             f"Screened {len(universe)} fixed configurations across {families}. Selected **{candidate['label']}** using training shortlist and reused 2025 selection, before the 2026 audit.", '',
              f"Historical promotion gate passed: **{selection['passed_predeclared_validation_gate']}**.", '',
              '| Period | DVS v1.2 | Independent candidate |', '| --- | ---: | ---: |']
     for year, p, s in zip(range(2020, 2025), parent_train, train_by_id[winner['id']]['folds']):
@@ -156,7 +166,8 @@ def run(args):
                   'Stops/targets are based on the hourly signal close and ATR, not a future fill. Trailing updates occur only after the current five-minute candle closes. There are no DVS pivot/bias/retest requirements. No independent strategy is promoted solely for winning this reused-data search. Signals, fills and Pine compilation still require external reconciliation. No live orders or v1.2 edits occur.', ''])
     report = '\n'.join(lines)
     (args.output/'report.md').write_text(report, encoding='utf-8')
-    (ROOT/'reports/independent_eth_strategies.md').write_text(report, encoding='utf-8')
+    report_name = 'v1_3_channel_refinement.md' if followup_protocol else 'independent_eth_strategies.md'
+    (ROOT/'reports'/report_name).write_text(report, encoding='utf-8')
     print(f"ALT FINISHED selected={candidate['label']} historical_gate={selection['passed_predeclared_validation_gate']}", flush=True)
 
 

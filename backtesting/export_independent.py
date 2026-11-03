@@ -1,0 +1,76 @@
+"""Export a frozen independent strategy as experimental ETH v1.3 Pine."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import re
+
+from .alternative_strategies import SignalRule
+from .config import StrategyConfig
+from .optimize import write_json
+from .paths import ROOT
+
+TEMPLATE = ROOT/'reference/templates/independent_eth.pine'
+
+def render(rule: SignalRule, config: StrategyConfig):
+    if (config.mode != 'research' or config.entry_timing != 'next_open'
+            or config.margin_ratio != .2 or not config.risk_includes_costs):
+        raise ValueError('Independent export requires cost-aware next-open Research and 20% margin')
+    from dataclasses import asdict
+    payload = dict(rule=asdict(rule), execution=asdict(config))
+    digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+    values = {**asdict(rule), **asdict(config), 'stop_atr': rule.stop_atr, 'reward_r': rule.reward_r,
+              'trail_atr': rule.trail_atr, 'max_holding_bars': rule.max_holding_bars,
+              'config_hash': digest, 'family_title': rule.family.replace('_', ' ').title(),
+              'commission_percent': config.commission_bps/100}
+    text = TEMPLATE.read_text(encoding='utf-8')
+    for token in set(re.findall(r'\{\{(\w+)\}\}', text)):
+        value = values[token]
+        encoded = json.dumps(value) if token == 'family' else str(value)
+        text = text.replace('{{'+token+'}}', encoded)
+    if '{{' in text:
+        raise ValueError('Unresolved Pine template token')
+    return text, payload, digest
+
+
+def export(directory: Path):
+    selected_path = directory/'selection.json'
+    selected = json.loads(selected_path.read_text(encoding='utf-8'))
+    rule = SignalRule(**selected['candidate']['rule'])
+    cfg = StrategyConfig(**selected['execution_config'])
+    text, payload, digest = render(rule, cfg)
+    pine = ROOT/'reference/ETH_Strategy_v1_3.pine'
+    config_path = ROOT/'configs/eth_strategy_v1_3.json'
+    meta_path = ROOT/'configs/eth_strategy_v1_3.metadata.json'
+    if pine.exists() and pine.read_text(encoding='utf-8') != text:
+        archive = ROOT/'reference/revisions'/hashlib.sha256(pine.read_bytes()).hexdigest()[:16]
+        archive.mkdir(parents=True, exist_ok=True)
+        for p in [pine, config_path, meta_path]:
+            if p.exists():
+                (archive/p.name).write_bytes(p.read_bytes())
+    pine.parent.mkdir(parents=True, exist_ok=True)
+    config_path.parent.mkdir(parents=True, exist_ok=True)
+    pine.write_text(text, encoding='utf-8')
+    write_json(config_path, payload)
+    write_json(meta_path, dict(strategy_name='ETH v1.3', family=rule.family, experiment=directory.name,
+                              selected_candidate=selected['candidate']['label'], configuration_sha256=digest,
+                              pine_sha256=hashlib.sha256(pine.read_bytes()).hexdigest(),
+                              selection_sha256=hashlib.sha256(selected_path.read_bytes()).hexdigest(),
+                              passed_predeclared_validation_gate=selected['passed_predeclared_validation_gate'],
+                              ready_for_funded_trading=False, independent_forward_validation=False,
+                              tradingview_parity_verified=False, pine_compilation_verified=False,
+                              execution_differences=['Pine omits extra basis-point fill slippage and financing',
+                                                     'Pine broker path differs from Python stop-first handling',
+                                                     'Time-exit recalculation and symbol quantity/tick rounding remain unreconciled']))
+    downloads = ROOT/'downloads'
+    downloads.mkdir(exist_ok=True)
+    (downloads/'ETH_Strategy_v1_3.txt').write_bytes(pine.read_bytes())
+    print(f'Exported experimental independent v1.3: {pine}')
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('directory', type=Path)
+    export(parser.parse_args().directory)
