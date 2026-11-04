@@ -1,0 +1,22 @@
+{
+  "tests_passed": 76,
+  "tests_failed": 0,
+  "audited_replays": 316,
+  "ledger_failures": 0,
+  "accepted_candidates": 0,
+  "nominal_final": "CONTAMINATED_NOT_EVALUATED",
+  "frozen_code_unchanged": true,
+  "postprocess_source_sha256": "c0e8395997cd19f0f830ccdb601a3a20fcd31c1931eb8b868d1b215b9d1ca878",
+  "outputs": {
+    "manifest.json": "c6901c3e8334c169cd1409e63f7cbc72d0b87d14f391d999574d5a1737d6d33c",
+    "validation_shortlist.json": "e4f210f2fef97c51f826cccf55f41979653e20eeb303f33ab1e87612d2de0a96",
+    "experiment_registry.csv": "726855a27a1544ce050f7c9263c1fb904c56b261b69b53708b1c1252ff6b3c91",
+    "validation_results.json": "eacac952b947f175658891e692a31fde3ece096eab41cd4c8b7ad4fb4c4e70fe",
+    "diagnostic_configurations.json": "f31bbad34eba99db4d554527f4b8ee3da5b614654919174cb7c3357aa2b92e41",
+    "report.md": "3385293491c0bbd5e7d0c7f8f23b793dd86a6e92ce53e3c23860e93628cc466c",
+    "accounting_audit.json": "f049b475ad167314e1789aeb6f88afb14d0f3a1fa4ee9dcb05cac9a51a8d632f",
+    "eth_head_shoulders_example.png": "fc4478b31e45c2fee43ea7abd0fc59a6e247cbb07213dbb43401e01727b61824",
+    "bnb_head_shoulders_example.png": "ac948f54f5fef3e8aa9e07ef1bf02507c23b3b24a32a6d4b74270ea33137e2a1",
+    "validation_comparison.png": "a2acd98fc4dc14f918f537d9c00288ce47aeb5e46f86bc867379003677906d40"
+  }
+}

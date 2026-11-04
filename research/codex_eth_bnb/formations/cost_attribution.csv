@@ -1,0 +1,7 @@
+symbol,strategy_id,phase,entries,trades_per_week,net_pnl,fees,signed_funding,pnl_after_fill_costs_before_fees_funding,note
+ETH,triangle_30m_responsive,VALIDATION,177,2.9698876404494383,-8.348186476730916,1940.8939877499993,32.819598726795704,1965.365400000064,Before explicit fees/funding only; fills STILL include spread/slippage.
+ETH,rectangle_15m_selective,VALIDATION,350,5.872659176029963,-1062.34143397546,3225.7183604300017,19.567793545462102,2182.9447200000036,Before explicit fees/funding only; fills STILL include spread/slippage.
+ETH,head_shoulders_15m_responsive,VALIDATION,223,3.7417228464419474,-3332.132275467411,2861.3109498349986,-15.077444367494904,-485.89876999990736,Before explicit fees/funding only; fills STILL include spread/slippage.
+BNB,pattern_mix_1h_selective,VALIDATION,187,3.1378345984818217,196.54337170207145,1214.6388471000002,1.6453811979200035,1412.8275999999917,Before explicit fees/funding only; fills STILL include spread/slippage.
+BNB,double_top_bottom_30m_selective,VALIDATION,172,2.885992509363296,-1768.5136946411294,967.4630152500005,10.801179391147006,-790.2494999999819,Before explicit fees/funding only; fills STILL include spread/slippage.
+BNB,head_shoulders_15m_responsive,VALIDATION,213,3.573932584269663,-1680.8416109809987,921.2478283000002,0.0809826810699999,-759.5127999999285,Before explicit fees/funding only; fills STILL include spread/slippage.
