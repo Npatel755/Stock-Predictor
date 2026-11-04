@@ -42,10 +42,11 @@ class Research:
         self.code=hashes();self.frames={};self.events={}
         self.commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
         self.sources={s:load(s) for s in ['ETH','BNB']}
-        freeze(ROOT/'manifest.json',dict(specifications=library(),primary_trials=64,baseline_trials=8,cumulative_holm_slots=280,
+        freeze(ROOT/'manifest.json',dict(specifications=library(),primary_trials=64,baseline_trials=8,cumulative_holm_slots=298,
                seed=SEED,bootstrap_draws=4999,code_hashes=self.code,research_plan_sha256=sha(ROOT/'research_plan.md'),
                data_manifest_sha256=sha(HERE/'data_manifest.json'),funding_manifest_sha256=sha(HERE/'funding_manifest.json'),
-               split_manifest_sha256=sha(HERE/'split_manifest.json'),tests_before_search=84,
+               split_manifest_sha256=sha(HERE/'split_manifest.json'),tests_before_search=85,
+               correction_sha256=sha(ROOT/'protocol_correction.md'),superseded_registry_sha256=sha(ROOT/'superseded_registry.csv'),
                final_access='CONTAMINATED_NOT_PERMITTED',prospective_data='SEALED_NO_ACCESS'))
 
     def features(self,symbol,timeframe):
@@ -135,7 +136,14 @@ class Research:
                 write(ROOT/'outputs/status.json',dict(stage='training',symbol=symbol,completed=number+1,per_asset=len(specs)))
         previous=json.loads((HERE/'training_results.json').read_text())+json.loads((HERE/'formations/training_results.json').read_text())
         old=[r['train_block_p'] for r in previous]
-        adjusted=holm(old+[r['train_block_p'] for r in rows],family_size=280)
+        superseded=pd.read_csv(ROOT/'superseded_registry.csv')
+        for _,group in superseded.groupby(['symbol','strategy_id'],sort=False):
+            series=[]
+            for key in group.trial_key:
+                curve=pd.read_parquet(ROOT/'outputs'/key/'equity.parquet')
+                series.append(daily_returns(curve))
+            old.append(block_statistics(pd.concat(series),seed=SEED)['pvalue_centered_1s'])
+        adjusted=holm(old+[r['train_block_p'] for r in rows],family_size=298)
         for row,p in zip(rows,adjusted[len(old):]):
             row['cumulative_holm_p']=p
         write(ROOT/'training_results.json',rows)
@@ -226,6 +234,7 @@ class Research:
 
     def audit(self):
         registry=pd.read_csv(ROOT/'experiment_registry.csv');weeks=[];calendar=[];costs=[]
+        superseded=set(pd.read_csv(ROOT/'superseded_registry.csv').trial_key)
         if registry.trial_key.duplicated().any():
             raise ValueError('Duplicate registry replay identities')
         for trial in registry.itertuples(index=False):
@@ -238,18 +247,18 @@ class Research:
             if (curve.intrabar_worst_equity>curve.equity+1e-6).any():
                 raise ValueError('Adverse equity bound exceeds close')
             for r in pd.read_csv(folder/'weekly_activity.csv').to_dict('records'):
-                weeks.append(dict(symbol=trial.symbol,id=trial.strategy_id,phase=trial.phase,**r))
+                weeks.append(dict(symbol=trial.symbol,id=trial.strategy_id,phase=trial.phase,implementation_status='superseded' if trial.trial_key in superseded else 'current',**r))
             attribution=json.loads((folder/'attribution.json').read_text())
             for frequency in ['monthly','quarterly']:
                 for r in attribution[frequency]:
-                    calendar.append(dict(symbol=trial.symbol,id=trial.strategy_id,phase=trial.phase,frequency=frequency,**r))
-            costs.append(dict(symbol=trial.symbol,id=trial.strategy_id,phase=trial.phase,net_pnl=m['net_pnl'],
+                    calendar.append(dict(symbol=trial.symbol,id=trial.strategy_id,phase=trial.phase,frequency=frequency,implementation_status='superseded' if trial.trial_key in superseded else 'current',**r))
+            costs.append(dict(symbol=trial.symbol,id=trial.strategy_id,phase=trial.phase,implementation_status='superseded' if trial.trial_key in superseded else 'current',net_pnl=m['net_pnl'],
                               fees=m['total_fees'],signed_funding=m['total_funding'],
                               pnl_before_explicit_fees_funding=m['net_pnl']+m['total_fees']+m['total_funding']))
         pd.DataFrame(weeks).to_csv(ROOT/'weekly_activity.csv',index=False)
         pd.DataFrame(calendar).to_csv(ROOT/'calendar_performance.csv',index=False)
         pd.DataFrame(costs).to_csv(ROOT/'cost_attribution.csv',index=False)
-        write(ROOT/'accounting_audit.json',dict(audited_replays=len(registry),ledger_failures=0,final_performance_access=False,
+        write(ROOT/'accounting_audit.json',dict(audited_replays=len(registry),superseded_replays=len(superseded),current_replays=len(registry)-len(superseded),ledger_failures=0,final_performance_access=False,
                  registry_sha256=sha(ROOT/'experiment_registry.csv'),code_unchanged=hashes()==self.code))
 
 
@@ -273,7 +282,7 @@ def report(training,validated,robust):
             'The terms sweep/liquidity/fair-value gap are OHLCV proxies; no actual stop order, liquidation tape, institutional flow or fundamental fair value is observed. UTC session definitions are fixed conventions for24/7 crypto. Some mechanisms overlap prior research, so they are not eight independent sources of evidence.','',
             'Capital$50k; fractional stop risk0.25%,maximum1x entry notional. Fees5bp/side,slippage2bp/side,spread1bp; actual signed funding. Adverse7/8/4bp and crisis10/20/10bp. Partial capacity-limited exits retain risk; synthetic terminal closes are flagged. Fixed precision, unavailable market depth and last-price proxies are limitations. Cost attribution before explicit fees/funding STILL includes spread/slippage in fills.','',
             'Weekly target:average>=2 executed entries/week and>=50%full UTC weeks with2+entries in every fold and validation. Zero weeks count; partial exits do not. Infrequent training survivors are diagnostic slots only, never a relaxed gate.','',
-            'Holm correction includes280 cumulative slots;4,999circular7-day bootstrap draws,seed20261105. The unknown larger inherited adaptive search remains extra exposure. No adjusted statistic can convert this reused history into independent validation.','',
+            'Holm correction includes298 cumulative slots:prior208,new72,and18superseded preliminary implementation variants. The preliminary54replays are retained and explicitly labeled superseded; only corrected code contributes to the current scoreboard. See protocol_correction.md.4,999circular7-day bootstrap draws,seed20261105. The unknown larger inherited adaptive search remains extra exposure. No adjusted statistic can convert this reused history into independent validation.','',
             '## Outputs and reproduction','',
             '`python -m research.codex_eth_bnb.price_action.run` from the dedicated worktree. Read manifest.json, validation_shortlist.json, strategy_comparison.csv, walkforward_results.csv, validation_scoreboard.csv, robustness_report.md and accounting_audit.json. Full trade/equity/daily/weekly/calendar/regime ledgers are under outputs/. Registry is append-only. Frozen diagnostics remain unapproved for live trading. No production integration, services, schedules or orders are added.','',
             'Sources motivate hypotheses, not crypto profits: [CME support/resistance](https://www.cmegroup.com/education/courses/technical-analysis/support-and-resistance), [Fidelity support/resistance](https://www.fidelity.com/learning-center/trading-investing/technical-analysis/support-and-resistance), [NY Fed intraday pattern research](https://libertystreeteconomics.newyorkfed.org/2021/05/the-overnight-drift-in-us-equity-returns/) and [later disappearance](https://libertystreeteconomics.newyorkfed.org/2026/07/the-disappearing-overnight-drift/).']

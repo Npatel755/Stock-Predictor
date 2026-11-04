@@ -75,6 +75,16 @@ def test_two_exit_profiles_share_raw_entry_but_have_different_fixed_targets():
     assert signals[1].planned_target.iloc[210]<signals[0].planned_target.iloc[210]
 
 
+def test_expired_range_excursion_requires_fresh_cross_not_continuing_outside_close():
+    out=frame();i=128
+    for j in range(i,i+6):
+        candle(out,j,101.5,101.7,101.3,101.5,150.)
+    candle(out,i+6,100.2,100.3,99.7,99.9)
+    # Six bars later is beyond the four-bar fade window. Merely remaining
+    # outside cannot restart that clock and turn this late return into a setup.
+    assert detect(out).query("family=='opening_fade'").empty
+
+
 def test_all_rules_are_prefix_equivalent_and_immune_to_future_price_poisoning():
     rng=np.random.default_rng(29);out=frame(1500)
     close=100*np.exp(np.cumsum(rng.normal(0,.004,len(out))))

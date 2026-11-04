@@ -109,7 +109,8 @@ def detect(frame):
                 elif bd*(c[i]-b['level'])<-.05*a[i]:
                     emit(i,'opening_fade',-bd,b['extreme'],b['index'],day+pd.Timedelta(hours=16))
                     range_fade_used=True;range_excursion=None
-            if d and not range_excursion and not range_fade_used:
+            fresh_cross=d and d*(c[i-1]-(range_high if d==1 else range_low))<=.1*a[i]
+            if fresh_cross and not range_excursion and not range_fade_used:
                 range_excursion=dict(index=i,direction=d,level=range_high if d==1 else range_low,extreme=h[i] if d==1 else l[i])
         # Existing three-candle zone must be touched on a LATER completed candle.
         if gap:
