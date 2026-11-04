@@ -55,9 +55,9 @@ Stress/ablation runs are diagnostics, never replacements or new accepted winners
 
 ## Fitted components and ensemble
 
-- ETH logistic, SKIPPED: Simple1h momentum failed training eligibility; no legitimate baseline established.. 
+- ETH logistic, SKIPPED: Simple1h momentum failed training eligibility; no legitimate baseline established.
 - ETH ensemble, VALIDATION: $357. Weights fitted only to internal TRAIN returns; diagnostic, not independent significance.
-- BNB logistic, SKIPPED: Simple1h momentum failed training eligibility; no legitimate baseline established.. 
+- BNB logistic, SKIPPED: Simple1h momentum failed training eligibility; no legitimate baseline established.
 - BNB ensemble, VALIDATION: $-496. Weights fitted only to internal TRAIN returns; diagnostic, not independent significance.
 
 ## Combined ETH/BNB VALIDATION portfolio
