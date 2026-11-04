@@ -1,0 +1,48 @@
+{
+  "code_hashes": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "analytics.py": "d4daca53148c17a7df0622aba477ae5f08c9683e796410373b3be2033fee1296",
+    "data_pipeline.py": "4b851b4549f613b67af448d21c45456057d53fdc70b39636fb878247c1524e8c",
+    "execution.py": "66a54c4f798358fb0cc176be3e6142bcdc01a1779b2064f6c8fe521155e3e0c8",
+    "fitted.py": "ac9b45ffa7ed48c5b4bee0480004d7b2336b1172daaf2021c5e44dd95f8058e3",
+    "legacy.py": "1051dc798a1ed965bd9a7f404c45defcb3b259db83f38750bb9557a92eeb18f1",
+    "paper.py": "fb2694d5bc201f0df787e68ca6ce593f71c34c77bedf1748a059cee306da2c54",
+    "reporting.py": "91b4a8c8491807ee1cef4caacdd527a24e44e550d3846555cc8f3e964d55b981",
+    "runner.py": "9c1ee3c99cceb74e8625f43ace0829425280d77c5d40f3f17eb56df858f18b71",
+    "strategies.py": "a22388b6653df00c1d11b5330be04bb958ecf14bac1a8baf2a2841c68a4f806f"
+  },
+  "no_replacements": true,
+  "selected": [
+    {
+      "family": "channel",
+      "id": "channel_4h_lookback20",
+      "symbol": "ETH"
+    },
+    {
+      "family": "tsmom",
+      "id": "tsmom_4h_lookback96_threshold0.35",
+      "symbol": "ETH"
+    },
+    {
+      "family": "trend_pullback",
+      "id": "trend_pullback_4h_fast20_slow80_pullback_atr0.5",
+      "symbol": "ETH"
+    },
+    {
+      "family": "tsmom",
+      "id": "tsmom_4h_lookback96_threshold0.35",
+      "symbol": "BNB"
+    },
+    {
+      "family": "funding_fade",
+      "id": "funding_fade_4h_threshold0.0005",
+      "symbol": "BNB"
+    },
+    {
+      "family": "channel",
+      "id": "channel_4h_lookback55",
+      "symbol": "BNB"
+    }
+  ],
+  "training_sha256": "e8a695f228e156801130ba453b6ecfb005ff0b92621d425de961dbdca0286bd7"
+}

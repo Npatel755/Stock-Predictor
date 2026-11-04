@@ -1,0 +1,8 @@
+{
+  "audited_replays": 452,
+  "ledger_failures": 0,
+  "final_period_access": false,
+  "postprocess_sha256": "915e173b530b526d6b718230381407f7be0c4cd524ced75056cfb9c6e2271544",
+  "registry_sha256": "2910e5874af8f95ea46b6681fb957732a0a8b2bad3b92de48cdf1b2367d7e241",
+  "note": "Calendar-correct volatility/Sortino companion; frozen ranking used correct calendar Sharpe already. No selection changes."
+}

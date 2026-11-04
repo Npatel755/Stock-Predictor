@@ -1,0 +1,72 @@
+[
+  {
+    "kind": "logistic",
+    "phase": "SKIPPED",
+    "reason": "Simple1h momentum failed training eligibility; no legitimate baseline established.",
+    "symbol": "ETH"
+  },
+  {
+    "accepted": false,
+    "bootstrap": {
+      "annual_mean_daily_lower": -0.04314625448335753,
+      "annual_mean_daily_upper": 0.05961111680479909,
+      "block_days": 7,
+      "draws": 4999,
+      "insufficient_evidence": false,
+      "mean_daily": 1.7801402382977718e-05,
+      "mean_daily_lower": -0.00011812800679906236,
+      "mean_daily_upper": 0.00016320634306584282,
+      "method": "centered one-sided circular day-block bootstrap; percentile mean interval",
+      "observations": 418,
+      "pvalue_centered_1s": 0.3914,
+      "seed": 20261103
+    },
+    "kind": "ensemble",
+    "max_drawdown": 0.024342110423739904,
+    "net_pnl": 356.8944720112049,
+    "net_return": 0.007137889440224088,
+    "note": "Weights fitted only to internal TRAIN returns; diagnostic, not independent significance.",
+    "phase": "VALIDATION",
+    "symbol": "ETH",
+    "weights": {
+      "channel_4h_lookback20": 0.33462237194573635,
+      "trend_pullback_4h_fast20_slow80_pullback_atr0.5": 0.35925872458787295,
+      "tsmom_4h_lookback96_threshold0.35": 0.3061189034663907
+    }
+  },
+  {
+    "kind": "logistic",
+    "phase": "SKIPPED",
+    "reason": "Simple1h momentum failed training eligibility; no legitimate baseline established.",
+    "symbol": "BNB"
+  },
+  {
+    "accepted": false,
+    "bootstrap": {
+      "annual_mean_daily_lower": -0.022567883823777078,
+      "annual_mean_daily_upper": 0.0061451608636109364,
+      "block_days": 7,
+      "draws": 4999,
+      "insufficient_evidence": false,
+      "mean_daily": -2.3752958488701442e-05,
+      "mean_daily_lower": -6.17874984908339e-05,
+      "mean_daily_upper": 1.6824533507490586e-05,
+      "method": "centered one-sided circular day-block bootstrap; percentile mean interval",
+      "observations": 418,
+      "pvalue_centered_1s": 0.8824,
+      "seed": 20261103
+    },
+    "kind": "ensemble",
+    "max_drawdown": 0.014775796126666574,
+    "net_pnl": -496.0851848157545,
+    "net_return": -0.009921703696315065,
+    "note": "Weights fitted only to internal TRAIN returns; diagnostic, not independent significance.",
+    "phase": "VALIDATION",
+    "symbol": "BNB",
+    "weights": {
+      "channel_4h_lookback55": 0.18686357032978917,
+      "funding_fade_4h_threshold0.0005": 0.6492396976150014,
+      "tsmom_4h_lookback96_threshold0.35": 0.1638967320552094
+    }
+  }
+]

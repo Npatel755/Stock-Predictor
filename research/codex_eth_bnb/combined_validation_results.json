@@ -1,0 +1,67 @@
+{
+  "bootstrap": {
+    "annual_mean_daily_lower": -0.05976984941570538,
+    "annual_mean_daily_upper": 0.02975367421349232,
+    "block_days": 7,
+    "draws": 4999,
+    "insufficient_evidence": false,
+    "mean_daily": -4.502261172972943e-05,
+    "mean_daily_lower": -0.00016364092926955613,
+    "mean_daily_upper": 8.146112036548205e-05,
+    "method": "centered one-sided circular day-block bootstrap; percentile mean interval",
+    "observations": 418,
+    "pvalue_centered_1s": 0.758,
+    "seed": 20261103
+  },
+  "correlation": {
+    "sleeve_0": {
+      "sleeve_0": 1.0,
+      "sleeve_1": 0.20187879615298424
+    },
+    "sleeve_1": {
+      "sleeve_0": 0.20187879615298424,
+      "sleeve_1": 1.0
+    }
+  },
+  "drawdown_halt_diagnostic": {
+    "adverse_bound_note": "sum of same-day component minima; troughs need not be simultaneous",
+    "covariance_assumption": "none; observed sleeve returns correlated on common dates",
+    "days_all_sleeves_exposed": 117,
+    "final_equity": 49480.28319943396,
+    "initial_capital": 50000.0,
+    "max_drawdown": 0.027151582119189555,
+    "max_intrabar_drawdown_bound": 0.027501505177553676,
+    "mean_sleeve_exposure_fraction": 0.44577352472089316,
+    "net_pnl": -519.7168005660424,
+    "net_return": -0.010394336011320893,
+    "omitted_noncommon_days": 0
+  },
+  "drawdown_halt_note": "5% per-sleeve entry lock; combined policy is conservative separate sleeve halt, exits continue. Trigger based on prior observed baseline path until first halt.",
+  "members": [
+    {
+      "allocated_initial_capital": 25000.0,
+      "id": "channel_4h_lookback20",
+      "symbol": "ETH"
+    },
+    {
+      "allocated_initial_capital": 25000.0,
+      "id": "tsmom_4h_lookback96_threshold0.35",
+      "symbol": "BNB"
+    }
+  ],
+  "metrics": {
+    "adverse_bound_note": "sum of same-day component minima; troughs need not be simultaneous",
+    "covariance_assumption": "none; observed sleeve returns correlated on common dates",
+    "days_all_sleeves_exposed": 255,
+    "final_equity": 49052.570143972756,
+    "initial_capital": 50000.0,
+    "max_drawdown": 0.038894847161734414,
+    "max_intrabar_drawdown_bound": 0.039599037042477137,
+    "mean_sleeve_exposure_fraction": 0.6485247208931421,
+    "net_pnl": -947.4298560272437,
+    "net_return": -0.018948597120544863,
+    "omitted_noncommon_days": 0
+  },
+  "phase": "VALIDATION",
+  "selection": "First frozen training-selected candidate per asset; no validation replacements."
+}

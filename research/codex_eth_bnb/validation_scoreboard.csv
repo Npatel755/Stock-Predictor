@@ -1,0 +1,7 @@
+accepted,family,id,output,phase,symbol,timeframe,net_pnl,net_return,adverse_net,failed_gates
+False,channel,channel_4h_lookback20,outputs\3b3ee05e6820cdef3c87,VALIDATION,ETH,4h,1424.7717664745214,0.028495435329490393,738.966238582856,"block_lower_positive,training_holm"
+False,tsmom,tsmom_4h_lookback96_threshold0.35,outputs\6d5946a024eb7ab68700,VALIDATION,ETH,4h,-189.85979150061758,-0.0037971958300123676,-972.5710699105693,"block_lower_positive,positive_adverse,positive_base,training_holm"
+False,trend_pullback,trend_pullback_4h_fast20_slow80_pullback_atr0.5,outputs\cf34a668f40b5cd34ef6,VALIDATION,ETH,4h,-174.03147401384922,-0.003480629480276942,-598.31067226296,"block_lower_positive,positive_adverse,positive_base,training_holm"
+False,tsmom,tsmom_4h_lookback96_threshold0.35,outputs\a26e699b62e32c567a7b,VALIDATION,BNB,4h,-3326.556125439587,-0.06653112250879178,-4349.297122211341,"block_lower_positive,positive_adverse,positive_base,training_holm"
+False,funding_fade,funding_fade_4h_threshold0.0005,outputs\f26e6049912fbbc9fa9d,VALIDATION,BNB,4h,73.77482105060335,0.001475496421011968,41.24773059498693,"block_lower_positive,minimum_trades,training_holm"
+False,channel,channel_4h_lookback55,outputs\fc6b5a00903a53b5c602,VALIDATION,BNB,4h,-17.703186941427703,-0.00035406373882851394,-609.0828944075838,"block_lower_positive,positive_adverse,positive_base,training_holm"

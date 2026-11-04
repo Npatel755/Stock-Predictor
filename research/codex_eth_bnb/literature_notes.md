@@ -1,0 +1,13 @@
+# Mechanisms and primary-source checks
+
+These sources motivate hypotheses; they do not establish an ETH/BNB intraday edge or justify importing reported Sharpe ratios into this study.
+
+- [Moskowitz, Ooi and Pedersen, Time Series Momentum](https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum): original research distinguishes persistence in an instrument's own returns from cross-sectional relative performance. Our coarse volatility-normalized momentum, channel and pullback variants test related persistence mechanisms at different, much shorter horizons. The original evidence does not validate these crypto parameters.
+- [Bailey, Borwein, López de Prado and Zhu, The Probability of Backtest Overfitting](https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf): selecting among many tested rules can produce misleading apparent performance. The inherited adaptive experiments mean no complete independent trial history is available here. This project logs its own fixed trials, reports Holm-adjusted dependent-return diagnostics, and does not claim an independent PBO or Deflated-Sharpe certificate.
+- [Binance official public data repository](https://github.com/binance/binance-public-data): source for exchange-native monthly/daily raw archives and published checksums. Raw timestamp units and market type must be verified; spot and perpetual histories are not interchangeable. Local snapshots preserve the linear USD-M market distinction.
+- [Binance funding-rate explanation](https://www.binance.com/en/support/faq/detail/360033525031): signed periodic transfers are economically different from a financing cost charged to both sides. This project's observed settlements retain their signs; settlement signals wait a full hour after the exact recorded timestamp.
+- [Binance USD-M market-data API documentation](https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data): historical funding and open-interest endpoints have different histories and availability conventions. No complete point-in-time open-interest series is present, so the OI hypothesis is untested rather than reconstructed from current observations.
+
+Mean reversion hypotheses rely on temporary liquidity imbalance in range regimes; daily UTC VWAP is an explicit convention for this 24/7 market, not an exchange opening session. BTC-relative and ETH/BNB relative signals test leadership without assuming these correlated assets diversify. Funding fade tests already-observed crowded positioning, not an advance forecast of the next settlement. All mechanisms can fail after fees, spread, funding, capacity limits or a regime change.
+
+Checked November 3, 2026, America/New_York.
