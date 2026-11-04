@@ -38,6 +38,15 @@ on all eight.
 Static floor is $3,000 below start; daily loss limit ~$1,500. Recommended $200 (2.2x buffer to the floor on history);
 $150 if the account must survive a drawdown twice as deep as anything seen.
 
+## Neighbourhood check (crypto_round2_bnb, 2026-11-03)
+A pre-registered 240-rule grid around this candidate (`backtesting/crypto_research/round2.py`, artifacts under
+`artifacts/crypto_research/crypto_round2_bnb/`) ranked rules by the median training score of each rule and its one-step
+neighbours. This candidate ranks 11 of 240 with 4 of 8 neighbours passing the training gate; 55 of 240 grid points
+have a positive training score, concentrated on 4h bars, lookback 10-20, volume gate on, patient/wide exits.
+The grid's top plateau rule (lookback 15, EMA100, 3 ATR / 8R / 4 ATR) lost $914 in 2024 validation, so nothing replaced
+this candidate and no crypto_v0_2 exists. Read this as: the edge is narrow, and the 2024-26 numbers above could be a
+favourable draw from that narrow region. Forward paper evidence decides, not further historical tuning.
+
 ## What this is not
 - Not promoted. Selection used 2021-24 data; the 2025-26 numbers are one pre-registered look, not forward evidence.
 - Modest: about $1.3k/yr per $100 risk, 40% win rate, longest losing streak 6. Expect flat quarters.
