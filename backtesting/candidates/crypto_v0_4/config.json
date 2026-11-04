@@ -1,0 +1,26 @@
+{
+  "version": "crypto_v0_4",
+  "symbol": "SOL",
+  "breakout": {
+    "breakout": "SOLUSD",
+    "leverage": 5,
+    "max_usd": 500000
+  },
+  "candidate": {
+    "id": "keltner_4h_patient",
+    "kind": "family_grid",
+    "rule": {
+      "family": "keltner",
+      "timeframe": "4h",
+      "stop_atr": 3.0,
+      "reward_r": 5.0,
+      "trail_atr": 4.0
+    }
+  },
+  "risk_usd": 100.0,
+  "initial_capital": 50000.0,
+  "slippage_budget_bps": 8.0,
+  "commission_bps": 4.0,
+  "promoted": false,
+  "evidence": "train 2021-23 / validation 2024 / single-look test 2025-2026-10-28 (round 3); no forward evidence yet"
+}
