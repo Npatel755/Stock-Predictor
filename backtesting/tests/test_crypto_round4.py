@@ -58,3 +58,11 @@ def test_exit_signal_closes_only_matching_direction():
     metrics, trades, _ = round4.simulate(bars, rule, cfg, frame, validator=validator('BNB'))
     assert len(trades) == 1 and trades.iloc[0]['reason'] == 'signal_exit'
     assert pd.Timestamp(trades.iloc[0]['exit_bar_open']) == bars.timestamp[5020]
+
+
+def test_detailed_reconciles_signal_exits_with_equity_curve(tmp_path):
+    bars = synthetic_bars(days=200)
+    cfg = replace(frozen_profile(ROOT)[2], slippage_bps=8.)
+    rule = round4.YouTubeRule('yt_cci14', '4h')
+    result = round4.detailed('BNB', bars, round4.Features(bars).signals(rule), rule.execution_rule(), cfg, tmp_path)
+    assert result['metrics']['closed_trade_legs'] > 0 and (tmp_path/'equity.parquet').exists()

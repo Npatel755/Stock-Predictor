@@ -209,7 +209,8 @@ def evaluate(symbol, bars, signals, rule, cfg, sizing=8.):
 def detailed(symbol, bars, signals, rule, cfg, out, sizing=8.):
     out.mkdir(parents=True, exist_ok=True)
     result, trades, events = evaluate(symbol, bars, signals, rule, cfg, sizing)
-    curve = equity_curve(bars, events, cfg)
+    # The visual replay knows the frozen exit kinds only; a signal exit is a research close like time_stop.
+    curve = equity_curve(bars, events.replace({'event': {'signal_exit': 'time_stop'}}) if len(events) else events, cfg)
     if abs(curve.equity.iloc[-1]-result['metrics']['final_equity']) > 1e-6:
         raise ValueError('Equity curve does not reconcile with fills')
     trades.to_csv(out/'trades.csv', index=False)
