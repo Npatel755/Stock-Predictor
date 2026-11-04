@@ -1,0 +1,1061 @@
+{
+  "baseline_trials": 24,
+  "bootstrap_draws": 4999,
+  "conditional_ensemble_slots": 2,
+  "conditional_model_slots": 2,
+  "holm_family_size": 124,
+  "plan_sha256": "7c1e4e9370a71a46441d943c79bc5d772dff79d71c911e35767d2498216e50ea",
+  "primary_trials": 96,
+  "seed": 20261103,
+  "specifications": [
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_5m_lookback32_threshold0.35",
+      "mechanism": "Persistent directional returns may reflect gradual information diffusion.",
+      "parameters": {
+        "lookback": 32,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_5m_lookback96_threshold0.35",
+      "mechanism": "A slower return horizon tests persistence outside short-term noise.",
+      "parameters": {
+        "lookback": 96,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_5m_lookback20",
+      "mechanism": "Breaks of previously completed price extremes may initiate persistent trends.",
+      "parameters": {
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_5m_lookback55",
+      "mechanism": "A slower channel tests whether large structural breakouts persist.",
+      "parameters": {
+        "lookback": 55
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_5m_lookback20_entry2_exit0.25",
+      "mechanism": "Range-conditioned stretched prices may revert toward a local mean.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_5m_lookback60_entry2_exit0.25",
+      "mechanism": "A slower mean tests range reversion at a different memory scale.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 60
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "trend_pullback",
+      "id": "trend_pullback_5m_fast20_slow80_pullback_atr0.5",
+      "mechanism": "Pullbacks in an already completed higher-timeframe trend may resume.",
+      "parameters": {
+        "fast": 20,
+        "pullback_atr": 0.5,
+        "slow": 80
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vol_momentum",
+      "id": "vol_momentum_5m_lookback48_threshold0.35_maximum_rv_ratio1.5",
+      "mechanism": "Moderate-volatility trends may survive costs better than crisis chasing.",
+      "parameters": {
+        "lookback": 48,
+        "maximum_rv_ratio": 1.5,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vwap_reversion",
+      "id": "vwap_reversion_5m_entry_atr1.5_exit_atr0.25",
+      "mechanism": "Range-regime displacement from UTC-session traded-volume value may mean revert.",
+      "parameters": {
+        "entry_atr": 1.5,
+        "exit_atr": 0.25
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "btc_relative",
+      "id": "btc_relative_5m_lookback48",
+      "mechanism": "Asset returns stronger than BTC may reflect persistent asset-specific demand.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "cross_relative",
+      "id": "cross_relative_5m_lookback48",
+      "mechanism": "ETH versus BNB leadership may persist after controlling for the common directional trend.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "funding_fade",
+      "id": "funding_fade_5m_threshold0.0005",
+      "mechanism": "Extreme already-settled funding may identify crowded positioning vulnerable to reversal.",
+      "parameters": {
+        "threshold": 0.0005
+      },
+      "requires_funding": true,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "flat",
+      "id": "flat_5m",
+      "mechanism": "Cash benchmark with zero turnover.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "buy_hold",
+      "id": "buy_hold_5m",
+      "mechanism": "Unlevered long exposure benchmark, including perpetual funding.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "simple_momentum",
+      "id": "simple_momentum_5m",
+      "mechanism": "Unfiltered trailing-return direction benchmark.",
+      "parameters": {
+        "lookback": 32
+      },
+      "requires_funding": false,
+      "timeframe": "5m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_15m_lookback32_threshold0.35",
+      "mechanism": "Persistent directional returns may reflect gradual information diffusion.",
+      "parameters": {
+        "lookback": 32,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_15m_lookback96_threshold0.35",
+      "mechanism": "A slower return horizon tests persistence outside short-term noise.",
+      "parameters": {
+        "lookback": 96,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_15m_lookback20",
+      "mechanism": "Breaks of previously completed price extremes may initiate persistent trends.",
+      "parameters": {
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_15m_lookback55",
+      "mechanism": "A slower channel tests whether large structural breakouts persist.",
+      "parameters": {
+        "lookback": 55
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_15m_lookback20_entry2_exit0.25",
+      "mechanism": "Range-conditioned stretched prices may revert toward a local mean.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_15m_lookback60_entry2_exit0.25",
+      "mechanism": "A slower mean tests range reversion at a different memory scale.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 60
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "trend_pullback",
+      "id": "trend_pullback_15m_fast20_slow80_pullback_atr0.5",
+      "mechanism": "Pullbacks in an already completed higher-timeframe trend may resume.",
+      "parameters": {
+        "fast": 20,
+        "pullback_atr": 0.5,
+        "slow": 80
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vol_momentum",
+      "id": "vol_momentum_15m_lookback48_threshold0.35_maximum_rv_ratio1.5",
+      "mechanism": "Moderate-volatility trends may survive costs better than crisis chasing.",
+      "parameters": {
+        "lookback": 48,
+        "maximum_rv_ratio": 1.5,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vwap_reversion",
+      "id": "vwap_reversion_15m_entry_atr1.5_exit_atr0.25",
+      "mechanism": "Range-regime displacement from UTC-session traded-volume value may mean revert.",
+      "parameters": {
+        "entry_atr": 1.5,
+        "exit_atr": 0.25
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "btc_relative",
+      "id": "btc_relative_15m_lookback48",
+      "mechanism": "Asset returns stronger than BTC may reflect persistent asset-specific demand.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "cross_relative",
+      "id": "cross_relative_15m_lookback48",
+      "mechanism": "ETH versus BNB leadership may persist after controlling for the common directional trend.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "funding_fade",
+      "id": "funding_fade_15m_threshold0.0005",
+      "mechanism": "Extreme already-settled funding may identify crowded positioning vulnerable to reversal.",
+      "parameters": {
+        "threshold": 0.0005
+      },
+      "requires_funding": true,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "flat",
+      "id": "flat_15m",
+      "mechanism": "Cash benchmark with zero turnover.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "buy_hold",
+      "id": "buy_hold_15m",
+      "mechanism": "Unlevered long exposure benchmark, including perpetual funding.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "simple_momentum",
+      "id": "simple_momentum_15m",
+      "mechanism": "Unfiltered trailing-return direction benchmark.",
+      "parameters": {
+        "lookback": 32
+      },
+      "requires_funding": false,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_1h_lookback32_threshold0.35",
+      "mechanism": "Persistent directional returns may reflect gradual information diffusion.",
+      "parameters": {
+        "lookback": 32,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_1h_lookback96_threshold0.35",
+      "mechanism": "A slower return horizon tests persistence outside short-term noise.",
+      "parameters": {
+        "lookback": 96,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_1h_lookback20",
+      "mechanism": "Breaks of previously completed price extremes may initiate persistent trends.",
+      "parameters": {
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_1h_lookback55",
+      "mechanism": "A slower channel tests whether large structural breakouts persist.",
+      "parameters": {
+        "lookback": 55
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_1h_lookback20_entry2_exit0.25",
+      "mechanism": "Range-conditioned stretched prices may revert toward a local mean.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_1h_lookback60_entry2_exit0.25",
+      "mechanism": "A slower mean tests range reversion at a different memory scale.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 60
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "trend_pullback",
+      "id": "trend_pullback_1h_fast20_slow80_pullback_atr0.5",
+      "mechanism": "Pullbacks in an already completed higher-timeframe trend may resume.",
+      "parameters": {
+        "fast": 20,
+        "pullback_atr": 0.5,
+        "slow": 80
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vol_momentum",
+      "id": "vol_momentum_1h_lookback48_threshold0.35_maximum_rv_ratio1.5",
+      "mechanism": "Moderate-volatility trends may survive costs better than crisis chasing.",
+      "parameters": {
+        "lookback": 48,
+        "maximum_rv_ratio": 1.5,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vwap_reversion",
+      "id": "vwap_reversion_1h_entry_atr1.5_exit_atr0.25",
+      "mechanism": "Range-regime displacement from UTC-session traded-volume value may mean revert.",
+      "parameters": {
+        "entry_atr": 1.5,
+        "exit_atr": 0.25
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "btc_relative",
+      "id": "btc_relative_1h_lookback48",
+      "mechanism": "Asset returns stronger than BTC may reflect persistent asset-specific demand.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "cross_relative",
+      "id": "cross_relative_1h_lookback48",
+      "mechanism": "ETH versus BNB leadership may persist after controlling for the common directional trend.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "funding_fade",
+      "id": "funding_fade_1h_threshold0.0005",
+      "mechanism": "Extreme already-settled funding may identify crowded positioning vulnerable to reversal.",
+      "parameters": {
+        "threshold": 0.0005
+      },
+      "requires_funding": true,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "flat",
+      "id": "flat_1h",
+      "mechanism": "Cash benchmark with zero turnover.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "buy_hold",
+      "id": "buy_hold_1h",
+      "mechanism": "Unlevered long exposure benchmark, including perpetual funding.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "simple_momentum",
+      "id": "simple_momentum_1h",
+      "mechanism": "Unfiltered trailing-return direction benchmark.",
+      "parameters": {
+        "lookback": 32
+      },
+      "requires_funding": false,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_4h_lookback32_threshold0.35",
+      "mechanism": "Persistent directional returns may reflect gradual information diffusion.",
+      "parameters": {
+        "lookback": 32,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "tsmom",
+      "id": "tsmom_4h_lookback96_threshold0.35",
+      "mechanism": "A slower return horizon tests persistence outside short-term noise.",
+      "parameters": {
+        "lookback": 96,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_4h_lookback20",
+      "mechanism": "Breaks of previously completed price extremes may initiate persistent trends.",
+      "parameters": {
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "channel",
+      "id": "channel_4h_lookback55",
+      "mechanism": "A slower channel tests whether large structural breakouts persist.",
+      "parameters": {
+        "lookback": 55
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_4h_lookback20_entry2_exit0.25",
+      "mechanism": "Range-conditioned stretched prices may revert toward a local mean.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 20
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "zscore",
+      "id": "zscore_4h_lookback60_entry2_exit0.25",
+      "mechanism": "A slower mean tests range reversion at a different memory scale.",
+      "parameters": {
+        "entry": 2.0,
+        "exit": 0.25,
+        "lookback": 60
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "trend_pullback",
+      "id": "trend_pullback_4h_fast20_slow80_pullback_atr0.5",
+      "mechanism": "Pullbacks in an already completed higher-timeframe trend may resume.",
+      "parameters": {
+        "fast": 20,
+        "pullback_atr": 0.5,
+        "slow": 80
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vol_momentum",
+      "id": "vol_momentum_4h_lookback48_threshold0.35_maximum_rv_ratio1.5",
+      "mechanism": "Moderate-volatility trends may survive costs better than crisis chasing.",
+      "parameters": {
+        "lookback": 48,
+        "maximum_rv_ratio": 1.5,
+        "threshold": 0.35
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "vwap_reversion",
+      "id": "vwap_reversion_4h_entry_atr1.5_exit_atr0.25",
+      "mechanism": "Range-regime displacement from UTC-session traded-volume value may mean revert.",
+      "parameters": {
+        "entry_atr": 1.5,
+        "exit_atr": 0.25
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "btc_relative",
+      "id": "btc_relative_4h_lookback48",
+      "mechanism": "Asset returns stronger than BTC may reflect persistent asset-specific demand.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "cross_relative",
+      "id": "cross_relative_4h_lookback48",
+      "mechanism": "ETH versus BNB leadership may persist after controlling for the common directional trend.",
+      "parameters": {
+        "lookback": 48
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": false,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "funding_fade",
+      "id": "funding_fade_4h_threshold0.0005",
+      "mechanism": "Extreme already-settled funding may identify crowded positioning vulnerable to reversal.",
+      "parameters": {
+        "threshold": 0.0005
+      },
+      "requires_funding": true,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "flat",
+      "id": "flat_4h",
+      "mechanism": "Cash benchmark with zero turnover.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 0,
+        "reward_r": 0.0,
+        "stop_atr": 0.0,
+        "trail_atr": 0.0
+      },
+      "family": "buy_hold",
+      "id": "buy_hold_4h",
+      "mechanism": "Unlevered long exposure benchmark, including perpetual funding.",
+      "parameters": {},
+      "requires_funding": false,
+      "timeframe": "4h"
+    },
+    {
+      "baseline": true,
+      "execution": {
+        "max_hold_bars": 48,
+        "reward_r": 3.0,
+        "stop_atr": 2.0,
+        "trail_atr": 0.0
+      },
+      "family": "simple_momentum",
+      "id": "simple_momentum_4h",
+      "mechanism": "Unfiltered trailing-return direction benchmark.",
+      "parameters": {
+        "lookback": 32
+      },
+      "requires_funding": false,
+      "timeframe": "4h"
+    }
+  ],
+  "split_sha256": "ef1ac443fc78c0b854b80401b6a069325c4e4984947e11076b52dae64f89f3c5"
+}

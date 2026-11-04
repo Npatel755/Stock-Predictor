@@ -1,0 +1,1400 @@
+{
+  "assets": {
+    "BNB": {
+      "end_exclusive": "2026-10-28 00:00:00+00:00",
+      "exact_duplicates_removed": 0,
+      "first_open": "2021-01-01 00:00:00+00:00",
+      "inputs": [
+        {
+          "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\candles.parquet",
+          "sha256": "eacd2af3ba1a88dcf91d4b5fb7323b849f4223749638689ad2816ea1ad685d74"
+        }
+      ],
+      "missing_candles": 0,
+      "rows": 612288,
+      "snapshot": "data\\BNB_5m.parquet",
+      "snapshot_sha256": "0d12496c2f1ae4206694c4700b2c4e6eec53f614c08d83e47418bdfae60c836c",
+      "zero_volume_bars": 47
+    },
+    "BTC": {
+      "end_exclusive": "2026-10-28 00:00:00+00:00",
+      "exact_duplicates_removed": 0,
+      "first_open": "2021-01-01 00:00:00+00:00",
+      "inputs": [
+        {
+          "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\candles.parquet",
+          "sha256": "59911bcf4f7fb72e5f102a5e9ce6b569de7d0504470e6230a8cfbabb164617b2"
+        }
+      ],
+      "missing_candles": 0,
+      "rows": 612288,
+      "snapshot": "data\\BTC_5m.parquet",
+      "snapshot_sha256": "0c0a308351986c4bef9e73e62f3d03b3b8a2a31fd015b956c371474c6e387187",
+      "zero_volume_bars": 66
+    },
+    "ETH": {
+      "end_exclusive": "2026-10-28 00:00:00+00:00",
+      "exact_duplicates_removed": 0,
+      "first_open": "2021-01-01 00:00:00+00:00",
+      "inputs": [
+        {
+          "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\candles.parquet",
+          "sha256": "cc77d4ef470ff9ea7f27855b986e25b90f62b8ebaf9d15d9af1e896c7742ef4c"
+        },
+        {
+          "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\candles.parquet",
+          "sha256": "84a07312c5e136d1032adc7a6182d667b37e91a74ca8c78eb5f8f4bbbaf21574"
+        }
+      ],
+      "missing_candles": 0,
+      "rows": 612288,
+      "snapshot": "data\\ETH_5m.parquet",
+      "snapshot_sha256": "487bf5623daeeda0fc42f2ad94f88b07234c1a712852b8036f8d497631b3eeb3",
+      "zero_volume_bars": 47
+    }
+  },
+  "base_commit": "432e7bf5ba434644375f4fe6ca9cb8909091b402",
+  "end_exclusive": "2026-10-28 00:00:00+00:00",
+  "market": "Binance USD-M linear USDT perpetual",
+  "raw_archives": [
+    {
+      "checksum_sha256": "4cfdfe6a0f0d86a61bd8e293a018801c20d31d1f11688747d80cc473061aec9c",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-01.zip",
+      "read_only_external": true,
+      "sha256": "2b031a0d0d79587f262eac1f479a878d1b2622ac09ad85de1847494f1f80f36e"
+    },
+    {
+      "checksum_sha256": "8507a336997cca32137c13f82b49654b0b2d4c9ebe437488159708888e642fb9",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-02.zip",
+      "read_only_external": true,
+      "sha256": "0716741e1f3871bca3adfed35584a53a2a75e613de30c3fb604559757e2d0d58"
+    },
+    {
+      "checksum_sha256": "4f07013c3a0ad53bfd1cea5f385a5294e9adc0975283c795d356164a12dde77e",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-03.zip",
+      "read_only_external": true,
+      "sha256": "471e1ed0d5573c81777902947a2cf53e26bbca6e6da50fd609ffedb7b2d88eaf"
+    },
+    {
+      "checksum_sha256": "e6a0bd9f71f0b8b704f9be3950e91c63533ed9114d1e4513d328dcd672190521",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-04.zip",
+      "read_only_external": true,
+      "sha256": "ce834f0d1588826a638b75846452d0dbf62db8da8cc02115d6fcc2aa533570a6"
+    },
+    {
+      "checksum_sha256": "2ad04f887ba4f024a9bd6054b1447c712ea0b0bd9aae7693220fa27ce1d28a86",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-05.zip",
+      "read_only_external": true,
+      "sha256": "82bf04619aab859ef754b413e96fc337a47208cdfe9fea59a74b31cf539afdf3"
+    },
+    {
+      "checksum_sha256": "0be9cac6aec0d27a8f001e9cd219879e308fbab96311d62a23a1d574a36ee520",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-06.zip",
+      "read_only_external": true,
+      "sha256": "f838577a0ea8d2221443982e7fad25ec63d408095d6d9756fc8e360ea675a5e0"
+    },
+    {
+      "checksum_sha256": "3a77cf4cc4e65e20002bec698d5ab203cd2a15145381592c31f05918f92c5b47",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-07.zip",
+      "read_only_external": true,
+      "sha256": "e0261d69cd0285dc84008060fc6a91e2db262d3ac416d6f5d992cc2583b1800f"
+    },
+    {
+      "checksum_sha256": "96d53607cb4082325f05d612683816e26d4bf610987c1209dea9267ebd46310b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-08.zip",
+      "read_only_external": true,
+      "sha256": "867a7893f0f4ff3613d02f6b414173cfd74b8c957668b88f15127c14d938d9f0"
+    },
+    {
+      "checksum_sha256": "ff185f49d24bcbc3c4cf0f763fd2bce6369a34f446c4a618435de607a2c6b8b9",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-09.zip",
+      "read_only_external": true,
+      "sha256": "2ffa332df46bf70645e6f5f9b866fc1b23e84730e85cea7b27d409ed0de70ec4"
+    },
+    {
+      "checksum_sha256": "dbc036cd12e9654a4d5312f361a4a9a4460986f2a96ac86658963152e65cb75b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-10.zip",
+      "read_only_external": true,
+      "sha256": "adedfefa4868e3518ee4ee386f02e29fcdc8a46b241480e1abef706bd22659a0"
+    },
+    {
+      "checksum_sha256": "8f51c0a6cce95b88e2839138af2dadfadae374af43eca3dec43ce95d2ab0c139",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-11.zip",
+      "read_only_external": true,
+      "sha256": "35de4fbcfcc1cd9ad47475222feb546ec881d6e9cedde55b2ed2f856f2281916"
+    },
+    {
+      "checksum_sha256": "d1bb5d543f81eed86181f866cbafaa528f64c02b809b3b7f948b07ba028542cf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2021-12.zip",
+      "read_only_external": true,
+      "sha256": "20e9b84239396758547c38b946f496b0461f01ecbe3209fe4d8c232434d5f375"
+    },
+    {
+      "checksum_sha256": "2c243da1ffebb2687d96433431ec27d88d889588e1ecf9998c0c8400b0dc2f8d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-01.zip",
+      "read_only_external": true,
+      "sha256": "712790fe221568f8118da65048b42cb6881691a027e82f8eba195eacf6dd1b35"
+    },
+    {
+      "checksum_sha256": "8dd5f82240b03a073b2d5e0f8ff04f470146f64fcd0efe31b065d36b5fdfd1be",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-02.zip",
+      "read_only_external": true,
+      "sha256": "1937efc84df24c7199e1855969c6437dd606a8ebfeeb7030c3cad64b84b35a5c"
+    },
+    {
+      "checksum_sha256": "ab6754a95d4818cbd1f9f9d4623e48e666de09ead7c237ad898f76eef0a3f6f6",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-03.zip",
+      "read_only_external": true,
+      "sha256": "2dfa3de3bed9d5efa50d535c23312b3ea3f70e557196f3764c6919ee0df4b365"
+    },
+    {
+      "checksum_sha256": "03f806f18388a3cead60fc3c719406c841a56335caff1af308fdb5ef1bc217c8",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-04.zip",
+      "read_only_external": true,
+      "sha256": "1f98608ccc058c77827700c2bc92a901f5d220e1fd7dfc0ad1baf160b8f73bfe"
+    },
+    {
+      "checksum_sha256": "d17ab807f8ab3c63d4ef5a1adf99df73ffe899805caba843938c406cde92a29b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-05.zip",
+      "read_only_external": true,
+      "sha256": "962c56d4f963cce612a876ce6bf5e6f7170edb3836097ad1ff381b3632ad1619"
+    },
+    {
+      "checksum_sha256": "0556d5f91f05582cea49743ebd1f1f5d5f9dc15d210c91365059d4ea15db91d9",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-06.zip",
+      "read_only_external": true,
+      "sha256": "469bad315d7c13e07b57517cec9b85a63b0cd5f7e2a289b2db1928e028e6fd7b"
+    },
+    {
+      "checksum_sha256": "08b3cc6750d1d669bc9453f10b7c384981a5678a0b74086dae3e20fb61f01620",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-07.zip",
+      "read_only_external": true,
+      "sha256": "2ce9c301905a2da91816a9157d1f99c0fe2ca38db4ad878a6e903a7408d0893b"
+    },
+    {
+      "checksum_sha256": "77c085dcb0d4409a6b78560f027eaca4e763b6120fed95e038931b79a737828d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-08.zip",
+      "read_only_external": true,
+      "sha256": "b9af24a42a52fc7ee7c54c98089c7e3e90a49043da49c979c6d839e6ecc88077"
+    },
+    {
+      "checksum_sha256": "c5fdb03d52d2d5b68f4b1fe881a3d4b0d736ac83f903f69639f119fbc5eeca59",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-09.zip",
+      "read_only_external": true,
+      "sha256": "abd4477c5f56f635028f2d633296f2e2abcd426a9fba7d29821515d29edf0431"
+    },
+    {
+      "checksum_sha256": "a00ce3b265b5826371ce2ccaba428f5aa94d877bd74c2520dbc30da771bc50de",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-10.zip",
+      "read_only_external": true,
+      "sha256": "8269a05be1ff0e79c5ed7717d8d7615167a5e6077f7047bbe01767b5e589dede"
+    },
+    {
+      "checksum_sha256": "bca01544dfec54308ccf2b62f8483aae698101b879c18e469065b78e4aeb8bbf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-11.zip",
+      "read_only_external": true,
+      "sha256": "0a4cf749380a3094ade5a2e3af6fcc60891bdb9e5ce877207ecf8f4fa85df98e"
+    },
+    {
+      "checksum_sha256": "943748c91fa2263c71da64776852f0f0ce1fdca12eebefd9faca1e7ab43efa74",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2022-12.zip",
+      "read_only_external": true,
+      "sha256": "da8ac7a30a1e03ed1309733569949c36ee63654b065e56a86f7c4474bb59b8b2"
+    },
+    {
+      "checksum_sha256": "ea9092258dc7242a538cfb00a1dd8ebb6c53c37ed56e9ce6dc1b1a617f814359",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-01.zip",
+      "read_only_external": true,
+      "sha256": "712cdc323bf7312c9e6a160bd5da2729e6bd5ad8a1dd8b8d62857114a358a8a4"
+    },
+    {
+      "checksum_sha256": "364b96b3bcbf74d71ec1a91e2b6b869850a93db00fcb843ed8b03e961bf41d90",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-02.zip",
+      "read_only_external": true,
+      "sha256": "4ba950632b4884577df5236a0e992b58913cfb5cbb1fd4b95d6838ccef6d8c9c"
+    },
+    {
+      "checksum_sha256": "cc6d8263bf10ffc197a0f89dbcf0b682e539caf8006157e8481da1500893bb71",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-03.zip",
+      "read_only_external": true,
+      "sha256": "a03d6aeb629ab1a5060172ef9ae6e54eca63f95072729a14240fd89e65cb8d90"
+    },
+    {
+      "checksum_sha256": "38e45999887b9720aeb04d56119c6f179ee671b5e159494bb69f66fd3927b145",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-04.zip",
+      "read_only_external": true,
+      "sha256": "3d965fde53841afd19694658d817aa033113ff322ced4cf1175bf41bf8b04947"
+    },
+    {
+      "checksum_sha256": "ce6d2f0d126e18aa87ad2366a058023d80a30dcee66aa9104a2a728849b1ae1e",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-05.zip",
+      "read_only_external": true,
+      "sha256": "60c7099372a3ca33d5bfc6fc036585ccf8646d9780f6445fa92b0df385a6047c"
+    },
+    {
+      "checksum_sha256": "93ce67a16dc2275751b887c545c9b798a3a260fa8064f2d409e4cbc10263702f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-06.zip",
+      "read_only_external": true,
+      "sha256": "4371bddd4a3499447932c05a284b09e92243389ed4c2d356d3152c2df4c75441"
+    },
+    {
+      "checksum_sha256": "b053cc9bb5f6ac8a029335d587178a9ff3ceff7ddf07d32d15c046f505444131",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-07.zip",
+      "read_only_external": true,
+      "sha256": "af01f2bc447367984cb55c4cf62c5e11910f1329a6f040d888ef9d470551647f"
+    },
+    {
+      "checksum_sha256": "563d5a2332701b5de3dab0a94452276e318062bf5733c7002e66d1a5eaf473b6",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-08.zip",
+      "read_only_external": true,
+      "sha256": "aff8d803f20eb30dc7aca805203a598b8432fdc0d5db38651867c829c6e20ad4"
+    },
+    {
+      "checksum_sha256": "dea24754a1dd25919d2016f519eb7af34ccd63df37bcbce9eb0d6c2565c83a57",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-09.zip",
+      "read_only_external": true,
+      "sha256": "306de1395acd186ed4032e0d951ba6d166ea70fa2616de96ac80a8cd762bd0f0"
+    },
+    {
+      "checksum_sha256": "ba99bca7f12b2e5bfa1e26ec137cfe067a0b41df1fa7d32f14456cf3295bced8",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-10.zip",
+      "read_only_external": true,
+      "sha256": "d653548fd25c4d31771a7f9987992acc772cc0f5489e3a922361b6581f572f94"
+    },
+    {
+      "checksum_sha256": "85e16f2451de5cf3c0c55c10005b9fafac2bc9483d68f76e7a8a1d3212b59ae7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-11.zip",
+      "read_only_external": true,
+      "sha256": "0b43fb366d834386f75fec34b21056be3050d1401f4a589ebdcd1e39051aa386"
+    },
+    {
+      "checksum_sha256": "5615d0b5bb3a1e21be5bc69ca5f81235f1ca3fa6a2b6392d7d38345cf50056fe",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2023-12.zip",
+      "read_only_external": true,
+      "sha256": "fd7cd2a31f3e5f9178c4bc4f386f106fa365e1c0ae1b477c90d91cdd9fc8a058"
+    },
+    {
+      "checksum_sha256": "00b643e7a1d91f82c2016fbd4656bb550a56a2ad0557ccee7140ee57709ef640",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-01.zip",
+      "read_only_external": true,
+      "sha256": "63bac6f46fb24d9c2523c2bf3b5c79a03b7f6b35d04b28089242853cba18e721"
+    },
+    {
+      "checksum_sha256": "8b9ec0662323b0dd304ebb61df3d5c8481c3ed0905d5625f092702a171652d05",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-02.zip",
+      "read_only_external": true,
+      "sha256": "44dd459aaed3c3a2916e364c1c7e8f70ac0a935f4f785512277a5f882b68a5f7"
+    },
+    {
+      "checksum_sha256": "cb981899e470806100177b33c8155d34766e9c6536b8fe40784ef2830843bb85",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-03.zip",
+      "read_only_external": true,
+      "sha256": "f496a58f081366b1a607ce221b8c55e2c48ec957252b09f127e5aec948173897"
+    },
+    {
+      "checksum_sha256": "e14dd8bca6c560439136a0a6a16503a6371dd95f5df2835d6c5f45215f9c0e8b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-04.zip",
+      "read_only_external": true,
+      "sha256": "5101781889554b8a06dce51d2445fbf08da45df9ba11198abe6aa8dcfbbec078"
+    },
+    {
+      "checksum_sha256": "cf724193dee64b607ca928f293a45a0ad813d0a1ab04fc4f9a729bcbf8f6ab69",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-05.zip",
+      "read_only_external": true,
+      "sha256": "c2aef4d97a57227de3e13f282558ceb03b2d87d24fcdbc129c4f64915f6f5f14"
+    },
+    {
+      "checksum_sha256": "713f3137da8d64882af5efb4bde455d621f81f05e09c33ce71e0989e1736b618",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-06.zip",
+      "read_only_external": true,
+      "sha256": "5c3f9920c1594d8da6b29ff063c8faaa67b60a772ca436c4dd06a977da700f55"
+    },
+    {
+      "checksum_sha256": "524ff0c7bbed3dcfe212f443ba9912d67f96b46d54e870b7a99a5520c133b616",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-07.zip",
+      "read_only_external": true,
+      "sha256": "0a1b19d45607a0d22a030a0575d3758c6c2fbc85be2ae4af4c4c485e1aca0eae"
+    },
+    {
+      "checksum_sha256": "6c810c8e7a10ac1db0a5900219a5949770af92c975b9d4b1e74bef9a5a416795",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-08.zip",
+      "read_only_external": true,
+      "sha256": "9ea3fe3f6952157a662bba7e0e01ca9b4ff30955096fa8a8c7b31a8581a2e5d8"
+    },
+    {
+      "checksum_sha256": "a1fa3d653ef2664f6fae6e76647abc2f1da9cbf95a38d7941639022aa44d2dee",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-09.zip",
+      "read_only_external": true,
+      "sha256": "b294e501b93be46093c2478e841e4b79cb051d28011a5b2b3667c1f18acdf4e2"
+    },
+    {
+      "checksum_sha256": "9c4ef7d832b3aa511bc2d573d5cb12ef7a78bb6785db9dfe43b9f979717c7642",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-10.zip",
+      "read_only_external": true,
+      "sha256": "d019b4b304ea4ae96cd6ae80caef349d332cb0af5941c12fbf2ef0f795033aaa"
+    },
+    {
+      "checksum_sha256": "6edd1f6582b709305d9b33928c74c4603eb2e48498023d029ce77e6fde925288",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-11.zip",
+      "read_only_external": true,
+      "sha256": "d276958ca6e52d8eed106baf9435f4b04c5f1c15ed2dee9f52329a13435580d8"
+    },
+    {
+      "checksum_sha256": "60a56a5edbb032f2365f1150195f9ecfe4f0d9996eb79de6b024c21736260269",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2024-12.zip",
+      "read_only_external": true,
+      "sha256": "eb29e8aef4a3218928b42ae8cca70b0baac63739dd30062f4a77595b3c9ef659"
+    },
+    {
+      "checksum_sha256": "ce8907ead09faa80b957298f6d74ce9dec8f4671ab9d0c7b8f748ca3fc32186b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-01.zip",
+      "read_only_external": true,
+      "sha256": "b74f33eb86c083f7304d03635479502af5ca0f96eb3fc2ebb67b295e20b75b6e"
+    },
+    {
+      "checksum_sha256": "f37fee26553da4697e74eb62de0536c8b528d80769fab08d81155d22f37d2c18",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-02.zip",
+      "read_only_external": true,
+      "sha256": "11d76f5a67f7600741da753949d07a4e3f34f6876a9e85a0a8f108fd4b3f6b61"
+    },
+    {
+      "checksum_sha256": "a14b2decf54cb593c26df25d43ed7c68d07ee34673c7c2aad7633dd56d5a945f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-03.zip",
+      "read_only_external": true,
+      "sha256": "e295e714a074cb6f0761759d64a8065d53f392637697ef0f04450c4b12a08552"
+    },
+    {
+      "checksum_sha256": "39e3bf06cb2fb674efcd24ed424d155b01b4aca3f7d2e682ea22002933a25df7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-04.zip",
+      "read_only_external": true,
+      "sha256": "7735dfca3dd690825a743f816be5c3039cd626867eeccf46a3f5e0fd2d8a7683"
+    },
+    {
+      "checksum_sha256": "3b3b9da9f74e92f1bb96d27633c2ea37a6a93a8c84fcc17488c34ebcba8295e1",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-05.zip",
+      "read_only_external": true,
+      "sha256": "6ed5a2bb6143a1c09680b473408b6628663bc7ecad62322d8c1a34532e557941"
+    },
+    {
+      "checksum_sha256": "604445279ded02b670531576a438c4a812cfb18b01c65f0a7712bae6656f248b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-06.zip",
+      "read_only_external": true,
+      "sha256": "e683588f2be6c2835a95cc9bfa60616f66e0dd227ebd32c515f677d4ad63e906"
+    },
+    {
+      "checksum_sha256": "3096d2aff49a3c504152eef8fe059f499573db1d0ae3f5fc15e59bb9e3c81ef8",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-07.zip",
+      "read_only_external": true,
+      "sha256": "a2f6d98970824eed785fac826f4d4b817409685c601dc9e14bce9eb0aabf321a"
+    },
+    {
+      "checksum_sha256": "fb7501b89f492506a192e4c670526e4ed58b730f8eb1184f1e9013858d9b655e",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-08.zip",
+      "read_only_external": true,
+      "sha256": "78f8b628e7f22f8b31bad7b00cffeab2b5220dd1ee3fb7582ae4015020f455ca"
+    },
+    {
+      "checksum_sha256": "54582e2073e4c6b90cba65c51b5f4806621d34245ca53da127986e607cad90c3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-09.zip",
+      "read_only_external": true,
+      "sha256": "5ce670f46a3c87d5770d6d584b66cc2252b5db0f86510ccee12cb8c665059ab3"
+    },
+    {
+      "checksum_sha256": "66eae441f87550ebaa41e15a31e303a08c7e81fd63fc369baaec1f886783e701",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-10.zip",
+      "read_only_external": true,
+      "sha256": "688f1b22151e44487f0966566b02c5f8d30207a8cac32232830da864d40f3d50"
+    },
+    {
+      "checksum_sha256": "00ac6893b996e8657634df89077292d2d3390123258804a1436088cf86e46b95",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-11.zip",
+      "read_only_external": true,
+      "sha256": "170e786f15bc6a367a18ba1f636134db7477b3930108860d414e6775e960f78f"
+    },
+    {
+      "checksum_sha256": "f71fe90ac5c4e80125de7df851ace514898091aca73fe0b02b30d4cddaca94ef",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2025-12.zip",
+      "read_only_external": true,
+      "sha256": "fcc7a8f8657fc1d9ae7ad2f41464eac7d4ed1299035aca99479c67d01ee24250"
+    },
+    {
+      "checksum_sha256": "d0bad3255918ddff6bb6e2829d8d9c90921551a2c9da18cbf65f930376549008",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-01.zip",
+      "read_only_external": true,
+      "sha256": "c7f246c1b5ce4e56db910d110914aa01aad24d1d37fe7f4b0783dfa95c477a8f"
+    },
+    {
+      "checksum_sha256": "018a41d1ea74f9040ac9b56a81d79fd9a0670ed915b36780f56de8003025168b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-02.zip",
+      "read_only_external": true,
+      "sha256": "e751e108a6d4ddbab3fa190995b145a36f859fa31327f10d23cf1ff6897b11a7"
+    },
+    {
+      "checksum_sha256": "34896b190ea2072f6f115c1afde395cd6e350a042afedbcd78f31a6dda3aa058",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-03.zip",
+      "read_only_external": true,
+      "sha256": "703903aa8d76b80dc9e4ac5e9f6ed3e4abab478227b0f687312f32872f2853ca"
+    },
+    {
+      "checksum_sha256": "1bc83fa78687fccf2377d3a71bfc59749fbc2a929b1eb24cc44683bb1d2e7ec0",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-04.zip",
+      "read_only_external": true,
+      "sha256": "bb7773b1f101e4c401118c0d2fe568616d0986398f3747f4762da053e22f1c52"
+    },
+    {
+      "checksum_sha256": "48637d6ce3e87fe0b62640bf16f7a9a643bdf9f37eea3759acdf1c6b00c00e72",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-05.zip",
+      "read_only_external": true,
+      "sha256": "5743a5b7e2b32f5ffad9ccf25dc8e9a57bed3f1a7900f5e477392adf2f44fdc2"
+    },
+    {
+      "checksum_sha256": "6fdc3dc766bdb4441a622025b5fe44c90c537da167fe10edbf2c4b745436e7fe",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-06.zip",
+      "read_only_external": true,
+      "sha256": "80af68e445cbe8bea60bda211dbc9e83ed3faf938350501ea7fa365277b6e932"
+    },
+    {
+      "checksum_sha256": "8e65e39c8b524b4a402d60306eba5b925a9a9ce3fb9848970276476ffd0befbe",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-07.zip",
+      "read_only_external": true,
+      "sha256": "8d1adb01e3f352cce6cb4d89ac7ffd38783817306b4f84e3ba5475e2fb22ce0f"
+    },
+    {
+      "checksum_sha256": "dd3257ef7e7a42fbccd44064dec08dbb54e852c60713c73d6762aad3c48e6161",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-08.zip",
+      "read_only_external": true,
+      "sha256": "c9fa90c4b7572627338c05defbb8ac59ddf57dd63bdb8c588456498b54ad4dcf"
+    },
+    {
+      "checksum_sha256": "da911de84bfba34664db9e093522c196e76313243664892a293691a67b40ec39",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-09.zip",
+      "read_only_external": true,
+      "sha256": "411a9b7027b663898e1eaf9f25251e41578100b9023faf8016e5d7b0b71d9ade"
+    },
+    {
+      "checksum_sha256": "511dd1d629593b6ad2ce3962813790c1a8aaed6e09ad4d4cee6ecc6dfc78d2c5",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\bnb\\BNBUSDT-5m-2026-10.zip",
+      "read_only_external": true,
+      "sha256": "f55d0c88568e8c3f17bd8833fd644300f30c328408715c59572db06d7e9f4c15"
+    },
+    {
+      "checksum_sha256": "c7132a617f104e30c78ae61394794e62788536a23e2ea30047a7d499cc0ca484",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-01.zip",
+      "read_only_external": true,
+      "sha256": "121bc9248a2be75f5a3e0bb53ec00ae3a0fbd23cede41d6998073818438d5eb4"
+    },
+    {
+      "checksum_sha256": "db182067fd3787956316af1c0d3c23abe5c9ed349eefd86df88b05daef6ced2f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-02.zip",
+      "read_only_external": true,
+      "sha256": "ddbde3144a64213c84aa79e67ae034f9811e78b36e59c1090780e37529097c14"
+    },
+    {
+      "checksum_sha256": "f1a39c8357cdcb8562b3fe02b1ceaa50f69c5532afbbc0339e68b815c4e6b81a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-03.zip",
+      "read_only_external": true,
+      "sha256": "1e0fd641ec408939e73f4c534de2c2319087071fd9d2cc90c1b97a9d0ebd9b33"
+    },
+    {
+      "checksum_sha256": "1a7b6b935f4ea8313711fb59c57c11490e6ffb3458919f13a2e7693fb1325c0d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-04.zip",
+      "read_only_external": true,
+      "sha256": "da129801ed2f00ba8221b12671705bef80beba69db396c3151f645a0732c6e5e"
+    },
+    {
+      "checksum_sha256": "5db44bcfd4e4b824b2f5a0fcb17191167bdbac8cb2ccc4c39b772545b2d0aa6e",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-05.zip",
+      "read_only_external": true,
+      "sha256": "428263c2f50edb06a169cba58b6d9a39ab739ca23d97bbad00fd1080e04a0a09"
+    },
+    {
+      "checksum_sha256": "b9bf0d6529eccbbf1811debe5a287af783ba9062d8000366f5889d297c004baf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-06.zip",
+      "read_only_external": true,
+      "sha256": "7efaefaa65732c36e21f346cb7e15a75cea427c99f927fed9556ea637829f231"
+    },
+    {
+      "checksum_sha256": "39a3e4df7209b98beeeab89934acd959fdee8aa33c855848520526d7da43daae",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-07.zip",
+      "read_only_external": true,
+      "sha256": "327d4f4df85f6f04e0ca2b46ccaf1d2481f47a91d34f79e98c978d21abe9c4ac"
+    },
+    {
+      "checksum_sha256": "051e73f6823d26eac46315ce407936cd13210cec67a9c06efad994f87b009d91",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-08.zip",
+      "read_only_external": true,
+      "sha256": "fc1a03e5be460ddb7af70cc7dd48a5d5ede5ddbe51ccac5f7959ffd67eb8a68a"
+    },
+    {
+      "checksum_sha256": "c3b7502962967bcdc039dfd33be065aa00225735fe54b1f98b926e10f9ee27bd",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-09.zip",
+      "read_only_external": true,
+      "sha256": "fa29041cdda0decb7ab16ff3c98709459bbcb999761897ef4417d96dfcd23295"
+    },
+    {
+      "checksum_sha256": "5493f3c4fd3e7e00854eb7e81071234443a0ff41157fd2760ae7ffd788d77d4a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-10.zip",
+      "read_only_external": true,
+      "sha256": "f21933019b6d1a328843ec09f6b4f2e646e006965300851d1b94f451e2d3cd18"
+    },
+    {
+      "checksum_sha256": "a4f4f324479997716e63eb97c6e1cb4c74d162418b4e24ec46d79ad66d574562",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-11.zip",
+      "read_only_external": true,
+      "sha256": "d41d8bafe40585dc42fe0c05232b0cfc32edbc2b670daa8bef6410453991b1dd"
+    },
+    {
+      "checksum_sha256": "599524e718868a019b018fd41b2a84e3cbae4a9dd14a5b3487859f6b4d310038",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2021-12.zip",
+      "read_only_external": true,
+      "sha256": "fdde03f0cd8b608b82319e08b3e4d1e21810aebbf84a2cc10a913ed811ec105b"
+    },
+    {
+      "checksum_sha256": "cdb183cce82ef0370de54f39a38cc554d87fa3e5b3f82a1a183a2d154153a2e5",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-01.zip",
+      "read_only_external": true,
+      "sha256": "b2ff8cd047d5ca6177a26cb1c2942e35550f0ebbfcb872921feb49dd570d02ee"
+    },
+    {
+      "checksum_sha256": "ba7c75ac7e448bd365da3448b42259ce163576e100e71a166ba42a935ebc06c9",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-02.zip",
+      "read_only_external": true,
+      "sha256": "ec30e9e7f6591ec291223aaaf3b477f09524ac0bdd6b299da513fb489463bdb7"
+    },
+    {
+      "checksum_sha256": "cc1966cd3477640a83f59eedb2811d8b3eed443fe6c8b1b00ebb06e50ff514e2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-03.zip",
+      "read_only_external": true,
+      "sha256": "63a72d0c0fcbeeb4e790cc9ef0e78eecfc44246ceb1f23fd19ed16860e5e6830"
+    },
+    {
+      "checksum_sha256": "5c4dbbf34153f6abec6f0eaa3c13ac475139c4b9f1eeed5d221eead819a7f75a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-04.zip",
+      "read_only_external": true,
+      "sha256": "346ca3f3996b08b4e92e206cce36abbcb0b168f9654150664c61a6d957d6c086"
+    },
+    {
+      "checksum_sha256": "f4dc5fec331c16f2465cf4d5932b4210a005de8b92d1595a13cd11ad40abaa4a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-05.zip",
+      "read_only_external": true,
+      "sha256": "ec60078c916ea98658765941bd2ab795fd27f594f1dae6e121d5e6ae59b6b1ee"
+    },
+    {
+      "checksum_sha256": "81e53062f8818aabbc102ca4abb497fb64cd1e37676e316a6710e8f07ce1e525",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-06.zip",
+      "read_only_external": true,
+      "sha256": "9481735add90721ba8ab745ef95807cf16d2a9dad736998a4f5cfc41d82da657"
+    },
+    {
+      "checksum_sha256": "30c6ad3fbe64025781a861ad88938ea40cc6bb1fa6429f01dfcc67130d040a7d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-07.zip",
+      "read_only_external": true,
+      "sha256": "8b4ab117b3abb19f9a23decf76fd090c7e25c7875ab3a951b03fa761847fe416"
+    },
+    {
+      "checksum_sha256": "b7195cac39c0fde8a5ffc816a3547c42c736d550e54d413ac8f812fb75f76c41",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-08.zip",
+      "read_only_external": true,
+      "sha256": "9ef0dc1f953cb61abfd1584245e9a99afa44d1b9fbabba73de647239870e51cb"
+    },
+    {
+      "checksum_sha256": "a1710ea563e25a1db2d42bc7500c9700deae8202413e5821ac60b1430db9cf30",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-09.zip",
+      "read_only_external": true,
+      "sha256": "a9c069838ca77434a529dcb4bc6653e92e27b8dc85232a1c89fb647e03a22ec9"
+    },
+    {
+      "checksum_sha256": "64e74659393f50687a82baeb9ca4a5dd1e7a6c449a1c6bb135014e8df3c39fc2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-10.zip",
+      "read_only_external": true,
+      "sha256": "7fa18fa46d73ae9d5ebab357fffe96a507176322166cd2476fd889be495e99bf"
+    },
+    {
+      "checksum_sha256": "69a01ac83786e041fcb6fd0abdd51d336990785dc23cc4227fa94afd6a82b9c4",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-11.zip",
+      "read_only_external": true,
+      "sha256": "a5c3ad428d15aec6f91580f061c66928a6af5925f7bd0e80d404787da936c43a"
+    },
+    {
+      "checksum_sha256": "a9f416f3971095a196bdb4dd47eec667a2ebf6a6c07f6103ebcdc59d820029c5",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2022-12.zip",
+      "read_only_external": true,
+      "sha256": "a633f5abbfdeb0ac0a3d183d81c06401d1a6541a3da666a73ca54ecdfcfd7294"
+    },
+    {
+      "checksum_sha256": "7bd9d405c55e091927552380285aa5a156298e80bbc11300ca774cbfc3169063",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-01.zip",
+      "read_only_external": true,
+      "sha256": "583e2d1f1779434d0876ac5c84a55dd5c9e8700f21420762fe50483fab839dd0"
+    },
+    {
+      "checksum_sha256": "f239b59de3dc6787ad3e036d1a598b0383e9b11323b54fbd707c9321b3502f47",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-02.zip",
+      "read_only_external": true,
+      "sha256": "23afe68a8d8fb826b86a174fdefdb42aa750504221092c9456ad770935feeed2"
+    },
+    {
+      "checksum_sha256": "a8ca01b36bb794fdb9320425c08faddacaa96c955a822ff6f6be54bc3f1a8e63",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-03.zip",
+      "read_only_external": true,
+      "sha256": "2ea92cf315951301af005c4cd14ade06d7bd2dba546eb088f43773c52c85eaee"
+    },
+    {
+      "checksum_sha256": "54fe99ab8ba5a50c98a4530765808dd4ec9c77b81d94a3e231c927eaffae2a5a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-04.zip",
+      "read_only_external": true,
+      "sha256": "9fc287898ccd0c82506dd82e57faf1d0d9ae6102555af21364a36dea1b42d817"
+    },
+    {
+      "checksum_sha256": "3b035fac0a22950d7693c4a55c738bb29753bb54ecda6ef903d149a8791f1e6f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-05.zip",
+      "read_only_external": true,
+      "sha256": "def79dfc73dc7031f961a7cdd83eb9f815a0775502829201e793876b61065eeb"
+    },
+    {
+      "checksum_sha256": "04ffc22c5b3214d193d8008dacad95620819a83297e627a028d3e37392362387",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-06.zip",
+      "read_only_external": true,
+      "sha256": "daa3032bf548140b54baeb8515c1801e46af1cf3d8a9546d66e0e9c4e3adcbe7"
+    },
+    {
+      "checksum_sha256": "3c27f80f3870edad62261209aeb150a770483d3220678b2987d052f069a6e4ab",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-07.zip",
+      "read_only_external": true,
+      "sha256": "0054f032805e0e903cb2c73212a5d271dc2c1cd6fba4a74729587b8ad08c27fb"
+    },
+    {
+      "checksum_sha256": "dab8269d6c825bbef5c342344cf5deafa2ade22eaba284cb4715a61e759549e7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-08.zip",
+      "read_only_external": true,
+      "sha256": "92635591e3c813ff17a3d3c55dbef62e7379f6f17a54b0bcbe64f909f0fc052b"
+    },
+    {
+      "checksum_sha256": "8945fc0883f789bc388d79e94943b618214d9d5dbe4211eef0818c6fce814236",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-09.zip",
+      "read_only_external": true,
+      "sha256": "7f44a35a1dc7f23c82a35c9afcaa8c64bf533734c913ab7c5f85eb0e5fbc76e1"
+    },
+    {
+      "checksum_sha256": "9837df65eb2e5a320fb69e354e695a4886640e01c50610839317fd129dbf89fc",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-10.zip",
+      "read_only_external": true,
+      "sha256": "41fd943f5349a7417b17684c3d0fd1c13df779fea921a00742f3f4af3986f8ba"
+    },
+    {
+      "checksum_sha256": "0cda8ef99a14cf398be45d9f68cca29be1b7a16ce3aa7e30a79707a07a24602d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-11.zip",
+      "read_only_external": true,
+      "sha256": "c386879e037bdac37634b2cfd43d0e00033bcf9eef5d8a42284927314d727cfb"
+    },
+    {
+      "checksum_sha256": "429f5127a9e43442125c3484d72a48ceb3728796713e82d46be7301823c3bd24",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2023-12.zip",
+      "read_only_external": true,
+      "sha256": "2c6f4d22a095de8df65e7661231eaeb8344345674e65c478ba1efa2f1e0fb5c5"
+    },
+    {
+      "checksum_sha256": "07f7c95569606a76984981ff1da0fc3a4f2eaf7a2391e15775afdfb72bee0fbb",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-01.zip",
+      "read_only_external": true,
+      "sha256": "b04981f250c65b97b7fc1b4b699401c0f54b46e98c2f2e30bb14a387a45e9a82"
+    },
+    {
+      "checksum_sha256": "62303d0a92e8d32d64686b9e5f5e57951cfffd791183ca653a700db83e33973e",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-02.zip",
+      "read_only_external": true,
+      "sha256": "1f55bd1995df1173ca96d430b485b721554aca5eaa4d7c644ab4afd695990c2f"
+    },
+    {
+      "checksum_sha256": "779a4db25b926a78539065ca623ff1f600eecb81cc626937793a41b0d53c32b2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-03.zip",
+      "read_only_external": true,
+      "sha256": "e58017be4762e3b93511dc5ca255c1ddf7c1c4ccbbbb1c313b174e033e2b891e"
+    },
+    {
+      "checksum_sha256": "ada21fe80f8ee831fd4a0738cf088819b3aeca4f7fee6097d77930f65abf9d2e",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-04.zip",
+      "read_only_external": true,
+      "sha256": "ea177b76e07782ae13e2a26f4a262296e89b3ffd549947c3d6d8bd0c07e3fc2b"
+    },
+    {
+      "checksum_sha256": "a6e3bffa8a47e768178219c98fa22f2507dec4100202d773324fc5635ef8611d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-05.zip",
+      "read_only_external": true,
+      "sha256": "219ce6bc8e85a9fa9088eda56a92f5c56361751dd8301dff5ed9fc1232b5c1a2"
+    },
+    {
+      "checksum_sha256": "e874045da8a17da4d83851bca9d805f6887c8b011c57b79fd596329e9152571c",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-06.zip",
+      "read_only_external": true,
+      "sha256": "f49fdf9f3add26ba70f301cac7d9d3b2e0211eeaaf99f32fa1c92730deae6e8d"
+    },
+    {
+      "checksum_sha256": "4a22e4b05b3b405e8cdee8f55eddf2183b48d2e6e4c9926df42e8a913da3453f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-07.zip",
+      "read_only_external": true,
+      "sha256": "657f79d55b809ca18f242e950c916bbbe93c3d09697f0e330ba26b5a6a75a4e6"
+    },
+    {
+      "checksum_sha256": "26e44c5e396b6f6cfc377cfd147aa1aeac6d9aa7d1da5895e8a45f21c63b38eb",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-08.zip",
+      "read_only_external": true,
+      "sha256": "5804758756c980445eb6bbba96f10bd98bb7da471b6041bc31337cb0c7236a16"
+    },
+    {
+      "checksum_sha256": "e49a46150a13a482a5c8b718a49a77569ce63771170ca56ab4be910b6dfdbfa2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-09.zip",
+      "read_only_external": true,
+      "sha256": "15ffdcf3d23f9fb6743c54d9d783cdc20373aaf8f60fd949a85653e7bee29170"
+    },
+    {
+      "checksum_sha256": "80bb90417a284b4a37fdc6b4199a51cb6a79844d4f4971ecbb1408c791245d63",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-10.zip",
+      "read_only_external": true,
+      "sha256": "024d574aec22d830443dfe557c12137d24423c18b228e2c10045851cd056434d"
+    },
+    {
+      "checksum_sha256": "25f663ddbd196df9156dd6fe9b51d13e4bef692904f9a39dd67f86ec0c0ef6c3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-11.zip",
+      "read_only_external": true,
+      "sha256": "bf2ff598c07f5f78a4265c376b3a8f3277e39b42d66bf79610b8b3199a34fa45"
+    },
+    {
+      "checksum_sha256": "a12fefa52b13015b33562e2dd432e2227c548cf9acf987ec4128a63102805829",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2024-12.zip",
+      "read_only_external": true,
+      "sha256": "261ced4d4a389f680ae730c53ba82b42f97f656b630352713e2d7fd738f57b8c"
+    },
+    {
+      "checksum_sha256": "bf5093de64bc724528ed72231ce96a2cee221d79938d759445755f2f1b79a756",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-01.zip",
+      "read_only_external": true,
+      "sha256": "0c99422d64fa3cc58564cf77969fc5a96d6f44783c79ecfcf94b103753bf7570"
+    },
+    {
+      "checksum_sha256": "21e9e31cf9caaf72b230c20ee403850d07902b1128c2edf4814ec82ff8fa2efa",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-02.zip",
+      "read_only_external": true,
+      "sha256": "fdd6fb92b75bae5c02dd583b5be44ca6673d1807ce4b0c08160d3c5cf7677a46"
+    },
+    {
+      "checksum_sha256": "25ef400843b145b847bcb54744ff810396d70749f4c9b12cf3e89c4ed57caaf5",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-03.zip",
+      "read_only_external": true,
+      "sha256": "46f83773b9cec38a09be429727a5a300ccca6d11c8e8ca5fa9545fad6eda131f"
+    },
+    {
+      "checksum_sha256": "7777aa35967a44f3c4d98ce372023d1e011287cd6b85ce7bf509b5922b61e37d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-04.zip",
+      "read_only_external": true,
+      "sha256": "9eda69fd858e9ced7e72cfbb75bffe34458763c37c8ee73910e572b4baba21ed"
+    },
+    {
+      "checksum_sha256": "43d1a7f5de03f507b6c0351081146c74f59a9eb96e2b851f9949daf170795a35",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-05.zip",
+      "read_only_external": true,
+      "sha256": "073da284f178e72777abbfbcf79faa99fcf77bd69c4a678938abbf6cd7d14f5b"
+    },
+    {
+      "checksum_sha256": "92638ef9dd02b5e20c481f6fb7b3d646961e39b85f5de47ab921dfcade36c915",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-06.zip",
+      "read_only_external": true,
+      "sha256": "da39c04e24a90c87406b9030e1aaf376655ad59d4bc0496f38e4162a9babf514"
+    },
+    {
+      "checksum_sha256": "9505aadaed8d846912807102f0345cf21a10b9e092b01f4911b3901662123477",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-07.zip",
+      "read_only_external": true,
+      "sha256": "2cea4750d51d9c064d674ec8d0d8d1f39448960284272fdc74698562c873bf0f"
+    },
+    {
+      "checksum_sha256": "fd02761bba126513143f8f6c4a7abe28c921a7b44714ad92da80f6db4f646064",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-08.zip",
+      "read_only_external": true,
+      "sha256": "7f78f6f88ae1946f8bd8312a37d1d74b24e24d6b13bc37d2909ad7c8c0c7e9ae"
+    },
+    {
+      "checksum_sha256": "ebdfd5fb13971cf99cedeacf5040266bd0e07afbd410a0b0bb374a7900dc35dc",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-09.zip",
+      "read_only_external": true,
+      "sha256": "dbfb8bc2f9343107c7a702acd6919d77060a8f7ea4b25359c71e5fc018a85209"
+    },
+    {
+      "checksum_sha256": "b0ee470e402ebf68518a776eb96b937978c154651296f9a882950733b4dcf32f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-10.zip",
+      "read_only_external": true,
+      "sha256": "fab262ca4318f8f65164ae33a020458439adc6f7bc2e59bbfce1886118d05a48"
+    },
+    {
+      "checksum_sha256": "4bdebb07d8f869cc2e046b8c9eec03b1a55ba76c3c1bfafd9c3bdd2e8d2d080a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-11.zip",
+      "read_only_external": true,
+      "sha256": "2759d4be0fe68cc2be3d4d91940fcd95abc69f0c31f25d0b6cb5e0629c625d2d"
+    },
+    {
+      "checksum_sha256": "343fbc7ab5f3389f15db91790772c3bc694a4167d8c39b3e1cb32861c22d8530",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2025-12.zip",
+      "read_only_external": true,
+      "sha256": "0e923a3d2ac4f6711d8c841220f4e5d2e479c1bdb40b41515eb250e16808304f"
+    },
+    {
+      "checksum_sha256": "62c324044576bab89212e2834bea656d8301d18614e511179a1df09d8d0facb4",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-01.zip",
+      "read_only_external": true,
+      "sha256": "c092f3b26036f203bb5b11c28958574aa8501315ed26dd0f8c017051b9fb3abf"
+    },
+    {
+      "checksum_sha256": "4e1db2d9061e503f3fc3eb2b9fd3c914b01e929ad313bdd302593831ba443760",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-02.zip",
+      "read_only_external": true,
+      "sha256": "8be83befce2cd9bf0959c872d91108debd03e1b51a451bac3a56b8ddca196bb4"
+    },
+    {
+      "checksum_sha256": "9f60b89529cd68fc015a11599b67b7aa7033fe324c7dc4e34f797daa32b4a724",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-03.zip",
+      "read_only_external": true,
+      "sha256": "0302ccef9b3e5e38c35bc8667a1e890138c9136e89145688220eea99b748200e"
+    },
+    {
+      "checksum_sha256": "a55dc372bb608be92737180ae2d70dd692205aaf3edbc558a36844f129d2d76d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-04.zip",
+      "read_only_external": true,
+      "sha256": "e2934467bdb6a000124948f4c8fef176e2066520a6b2e5a0522450fed51396f7"
+    },
+    {
+      "checksum_sha256": "e53cbaedbc1541fbf6e1a6bbb55d2933bcd53a7adbfe7e43f956bb9402efb32a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-05.zip",
+      "read_only_external": true,
+      "sha256": "b1a73378796bb62084c32ca5865903beeaf87d521d950d5e7776343f682dea93"
+    },
+    {
+      "checksum_sha256": "e36f9f8c0e3b2c7dc7e87b58ced1fb3957f444cf21ea862967224fb8c71d3f8d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-06.zip",
+      "read_only_external": true,
+      "sha256": "782c555963c852ca768335de21d5743147e5d50bff449600f8fceb9ebe5273de"
+    },
+    {
+      "checksum_sha256": "5c3978162b190cad8788ff60af1ad208e3cd99095fedcc4c30fc2da51e29434b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-07.zip",
+      "read_only_external": true,
+      "sha256": "ec750f7aa69c8f842fa1464a90ad4aa92452cfa767df9e8d70dc484e466c8fc3"
+    },
+    {
+      "checksum_sha256": "e738b939a13dcfc1800b1742165b906a3aaec70e38b3d6395e02d1f3c11dced7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-08.zip",
+      "read_only_external": true,
+      "sha256": "14fd408e5d2902665c66b701e861b173568b66399e3fa462b94c766d209567d1"
+    },
+    {
+      "checksum_sha256": "afd13724ab9ce6131e0456b06233947f66d751104a71ebceff7af0c893d96dd1",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-09.zip",
+      "read_only_external": true,
+      "sha256": "3a2d163a2bd28ca614fa0840a92ecbcde0d9c4962b278dd619d5bf81a9918e26"
+    },
+    {
+      "checksum_sha256": "3c63d1f8930f6951a2d76a5a35b72008bf68fdb98319461087d5a329bc2e79c2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\crypto\\btc\\BTCUSDT-5m-2026-10.zip",
+      "read_only_external": true,
+      "sha256": "29bab99404f13d37ec119c0609775483c2e2e89bfaf2844a342f814246748e80"
+    },
+    {
+      "checksum_sha256": "c7747c455d11ea5532adba7d19c18eb539ec0e8b2f6de57cf987f7b055914123",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-01.zip",
+      "read_only_external": true,
+      "sha256": "35559dbeb0ada2a911c393195ee093be3b75af182c86db7606fb675b4fc8069b"
+    },
+    {
+      "checksum_sha256": "787c254496091ad01c9a4f33d2b4422a54581cccb795ddaa50a79598a703b70f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-02.zip",
+      "read_only_external": true,
+      "sha256": "35450928b97ee857c3141bf12b3ab6e5def5ed5948efd47a2925ab24c378aa3d"
+    },
+    {
+      "checksum_sha256": "d31dcde13a1ed0622198e333e86b1dfa4f6f03589724cb0d600a5a44937f963b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-03.zip",
+      "read_only_external": true,
+      "sha256": "f89bb4b01e41fe8f4810c0e4b9de57ff7b475899c6a22073d1aaf423e1d22032"
+    },
+    {
+      "checksum_sha256": "abfa8bada319071b975d4369cfb93f1a21d8b5b7772f8978709bdb7f817d57af",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-04.zip",
+      "read_only_external": true,
+      "sha256": "4ba229c7197ebe93f03040b2c7a20d87b1d8bffc34e238dbe4c6d4cf59a2bef8"
+    },
+    {
+      "checksum_sha256": "6847c0be7e1779aca39d45e93d6de1211c7e6a1843b10bb8a9d3ed495446b0c3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-05.zip",
+      "read_only_external": true,
+      "sha256": "264912ea6a47169a50f3cc32b68f80777a508e6080e7c47d430e25e631f7bbef"
+    },
+    {
+      "checksum_sha256": "669d2337a1fb2f352ef4fe4e959f1740eb2cfac73c2e91e4dc37b2aa7caf65db",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-06.zip",
+      "read_only_external": true,
+      "sha256": "602809959313359c392a4e6f4444abb8fa28101b88654aa96db92e80453273be"
+    },
+    {
+      "checksum_sha256": "08a51b1a5e6edd9d87f53acdd491d4134ff057020e5ce175d4cdd42d3e4e2cae",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-07.zip",
+      "read_only_external": true,
+      "sha256": "ab52d58c4fd0107c1e5cf464cf139e99ea23333867761b4b9660910897749cd6"
+    },
+    {
+      "checksum_sha256": "761d9311b392f96606e7a691f8c528d07be051508b71f399f0e5dcc6bb0f6b8f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-08.zip",
+      "read_only_external": true,
+      "sha256": "cbf366e29906887a278a2cf43a1592ef3c0c52b01dc5c3bad637d3ab6356d56d"
+    },
+    {
+      "checksum_sha256": "18a7f7e6612255e37b7da0d955a027a219907f8daddf33d6fb6087332f8450d3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-09.zip",
+      "read_only_external": true,
+      "sha256": "a0c54377ba4b17c4e1016770cee160c71a5fb0b6fd1041cd5f626e7575f89afa"
+    },
+    {
+      "checksum_sha256": "fc61803df54a59175a085998c22160a80d6e6e5478511faba23ca044cdf30a53",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-10.zip",
+      "read_only_external": true,
+      "sha256": "86f85f8e53cf2ab27f7c06589fede27d4329d78b2c7d23de06caece7664dc995"
+    },
+    {
+      "checksum_sha256": "2e0bcee4d3c7a65f7b0ce99a3a9c4f46c728e2fc831921813043c07ea2c48d77",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-11.zip",
+      "read_only_external": true,
+      "sha256": "17de88d37e1f3c1c583a2caa2822d9875f6c937470ec05607285854b95a92eb6"
+    },
+    {
+      "checksum_sha256": "1b749a1851626658d36dfb667aea17c5f819f9709d3c6876b0f06890e6d537b2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2023-12.zip",
+      "read_only_external": true,
+      "sha256": "df31bb309cdecc733892da2317a121af11a05fdeaf134f84de2e64acb661a429"
+    },
+    {
+      "checksum_sha256": "0d6c7d7c5ae6276f96d2f93707cc5e7ecb8b93cbc312d91b84b82c08f4cbc08b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-01.zip",
+      "read_only_external": true,
+      "sha256": "ee18594550f61949407da03e79ff4107c3eb528316b6bba47a395e727b2382c1"
+    },
+    {
+      "checksum_sha256": "58b196d715fd48169fc847de132fffaa581508e42b13a7419403f726a8cc68d5",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-02.zip",
+      "read_only_external": true,
+      "sha256": "a9a23201cd264997e556edce2a043c96935b6a6c36a36ccc20866bb53c7e6bc2"
+    },
+    {
+      "checksum_sha256": "62ccb2a75a79c8525fe055b55f30607bf359621b83a8a82d71c43ad979e9049c",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-03.zip",
+      "read_only_external": true,
+      "sha256": "7f76bd08e541a8364672afab2446a563a549be51ae5066b806d01fffed3691a6"
+    },
+    {
+      "checksum_sha256": "e25dad067c3065ff5560196e97dd92e13a88d03d132a1e2998a3c9a56ce1a190",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-04.zip",
+      "read_only_external": true,
+      "sha256": "635ec4eca93d49d9352f13e142f73e706b4823411373fd4d10c862d4fa19bba2"
+    },
+    {
+      "checksum_sha256": "16438e7c1bdc23eeca12ce4f3e1b9b496801d388bac7738208e779d1992dd18d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-05.zip",
+      "read_only_external": true,
+      "sha256": "c89304e9ea46bb4c164bd239593587d40b7b4ccc8bcf41159f7c035cd4f7e61a"
+    },
+    {
+      "checksum_sha256": "ebb24503c268b3e31846e601b41c4859f2c3453f441cb829f09525b97cf0c966",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-06.zip",
+      "read_only_external": true,
+      "sha256": "8687fe1dec24ec105776408c1e2009f7bce8f3055067504b7fd8366e8992ed67"
+    },
+    {
+      "checksum_sha256": "6feb1e662e10bcb45dbeb5eba85f3f0281ac8737638ad10c51ae468057ee3114",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-07.zip",
+      "read_only_external": true,
+      "sha256": "6232f987221a762ced83e01a342e20efd1c2512006c3179ce720249f4dcae34e"
+    },
+    {
+      "checksum_sha256": "dc58fc7720d784230252c1719372029d38ef78aa49add23accee4e11fe950f56",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-08.zip",
+      "read_only_external": true,
+      "sha256": "ac7339c51ee1ddfb193a2ed60b94c37f26fd992153697cec5dfd7b3fe8442b7f"
+    },
+    {
+      "checksum_sha256": "74a19674b72ef4cda92abc962ce045abe36d87d74e9d634bad232e607a1878a7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-09.zip",
+      "read_only_external": true,
+      "sha256": "eada3d2be75540fcb1b5c460ae54dd8e6d19acf663999d1e74588f540af5c3ac"
+    },
+    {
+      "checksum_sha256": "2a8ffa3d933528b22f0413f593fc33b0cf32dd87c0e42436786438e436360cd3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-10.zip",
+      "read_only_external": true,
+      "sha256": "62b30d2d48ce556936a33c7b524dfe2ccf257c514bfd548986da837c4b641e8c"
+    },
+    {
+      "checksum_sha256": "4ae6f7cbc5289da96bebe83bfb9ab44a76be2724c90daa77070e011d600762ad",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-11.zip",
+      "read_only_external": true,
+      "sha256": "f6d6855da5a73afba5e8e6b349fbeb7dd676ba7799583c1652032843230b9310"
+    },
+    {
+      "checksum_sha256": "d6d5262cb147c25822405f83b7ed2a1f91812191734771caa86761eaf864d757",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2024-12.zip",
+      "read_only_external": true,
+      "sha256": "13f2c88d1a8a110262deae477c45b90550f1dbc3d74e3ad93fdc76232562d763"
+    },
+    {
+      "checksum_sha256": "774c5df084ee43997553b4168ec9e0d1bb55daf4175026fd705f891c69cda30c",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-01.zip",
+      "read_only_external": true,
+      "sha256": "eca9862b43bf3acaf341334d1b2297f800e62ba083ebdd063fc3e01d1c3416cf"
+    },
+    {
+      "checksum_sha256": "bc63e6f3092374b62e974e2a4160c6826746fa54057887e21a370ea279ab80c4",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-02.zip",
+      "read_only_external": true,
+      "sha256": "fd6d5b1919b937798227d73f96ee87c33f0181dd279df4652f2c626344ced507"
+    },
+    {
+      "checksum_sha256": "34372e715d6b2608701ea30108f330ac3c1f6b3c3433a0ceaaca6121a8bf4d06",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-03.zip",
+      "read_only_external": true,
+      "sha256": "9f73747db3c7dd2e48574ddb8696dd2a7b685760ffc62a735d04b758afd09d8b"
+    },
+    {
+      "checksum_sha256": "3315adef2bb62a0654dab1540debb23fae757d72fc06c76682f9501f3f138cd9",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-04.zip",
+      "read_only_external": true,
+      "sha256": "08402491b8db2e1e7dcb20cef48fb670706640f1ba5345b366de3522a57d3782"
+    },
+    {
+      "checksum_sha256": "82d9be56a26ff93cb870da35f0dfefe34edcdac227cbd426df0e17cbcb62593a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-05.zip",
+      "read_only_external": true,
+      "sha256": "478f3a5333295e8a28864ed3561f5597acdc9d2017077d2e9850ea30e435d2a6"
+    },
+    {
+      "checksum_sha256": "6fb2240e907235bd03d7991dc779e2777b0027b512f19bb9c09747f98bdce3f6",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-06.zip",
+      "read_only_external": true,
+      "sha256": "a546295240e8786b3f48670ae5e24f79381b338af97ed904de02adc73c03ce83"
+    },
+    {
+      "checksum_sha256": "0ae2afe165921739e342e6a3aefed271484f8831f763d57070c023b22e8011f7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-07.zip",
+      "read_only_external": true,
+      "sha256": "fd2af89a8b6dfddd3a2769bb5bd0244454340487a513ba99c86bb7425979c4d6"
+    },
+    {
+      "checksum_sha256": "d50be454e17a40ecb6bb1327029751c0f5b0ead1913ab8d60609d59c14187c64",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-08.zip",
+      "read_only_external": true,
+      "sha256": "f2d7687eecda432ce840b1320f868f56ab9ea0c2304b5fc83cefc5684696b344"
+    },
+    {
+      "checksum_sha256": "f786f1730b58a55bda282e9c8f3fe8ff3bf508f68d136f1c7d85dbff1b2913a6",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-09.zip",
+      "read_only_external": true,
+      "sha256": "71ee9f99652c07dcea827cd8f870cce49e77203d4c938f80b1c15ac9a4cef473"
+    },
+    {
+      "checksum_sha256": "dbe7333179203842480128720756e326504603143c7e42b180b2de4ceed937d0",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-10.zip",
+      "read_only_external": true,
+      "sha256": "597747fb89e6a6d2ed8029663a7f6310a5b8044b756cc59f4ce83dd3c34e95b2"
+    },
+    {
+      "checksum_sha256": "c10f167ba575ae125ade47435e67269523ac5695353113da06a0f8328cc0ab66",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-11.zip",
+      "read_only_external": true,
+      "sha256": "49d6fe077f2f2da4febe18952866ff1b607d72a390306cd9fc74863dbfde4b89"
+    },
+    {
+      "checksum_sha256": "cd613d7fee4a16237d0ac875f47b8f12285387b15c3da0e7bd3477fbd8600315",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2025-12.zip",
+      "read_only_external": true,
+      "sha256": "0723e20236ff44ecc65bc98b7e344fe6d1bcefd204e72684054064c295ca5c5e"
+    },
+    {
+      "checksum_sha256": "bc14ad8b3da2e3bbe9a9532949a383ee1f1576444df22ecefea8f5a1c7651677",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-01.zip",
+      "read_only_external": true,
+      "sha256": "c0bd8615649919f64250f8a254b4a282933117e203f8cc9a831d3efd5a4e59d0"
+    },
+    {
+      "checksum_sha256": "5b7170a0159bcd2400526fd11d1c01eb3df0022eb7ca14506e38c17a77f202ab",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-02.zip",
+      "read_only_external": true,
+      "sha256": "606781a505c76025b1be3e7c4a375037f63510293402775efed87a23801398b5"
+    },
+    {
+      "checksum_sha256": "a2f85bfa678945069518c2e93f9c6e85f22096690ba46fcfc5541b051ffe0364",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-03.zip",
+      "read_only_external": true,
+      "sha256": "ec2694016c1d41b815e9c403519c8971a454ef2276987f4ec5ad949bd33674eb"
+    },
+    {
+      "checksum_sha256": "48f7c5ea5e8d09d6d974e4addc1ee754ee9cb821ff81dd5bf5ff47e50829e5e9",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-04.zip",
+      "read_only_external": true,
+      "sha256": "94c890bf844ef6c289bcf6d126869a39bbc457aac139a5e0b8cebdf2bef2e078"
+    },
+    {
+      "checksum_sha256": "9d42c9771ee5b968e28eb10316b7dcea9f5d0baf17647552738c47e2764fd6ac",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-05.zip",
+      "read_only_external": true,
+      "sha256": "3a642e9db105c9002210fc4d7f5a99a527d6b52d63823ae17076c1e2d2578eda"
+    },
+    {
+      "checksum_sha256": "03aa45699a3a2c7cde89fbc01538f47d21f0056719e1093813f5b87d99820990",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-06.zip",
+      "read_only_external": true,
+      "sha256": "f26819283e11870b0b206acea9e084bcd7e3c6a5fb2abb8800ac5a424959e49d"
+    },
+    {
+      "checksum_sha256": "fe61903514ee19708e3cdf2719b1399899986f98205c2ce4e1aab55244bf1cee",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-07.zip",
+      "read_only_external": true,
+      "sha256": "2e9ba157f21fbcb97f108dd263d572cd0b4d6cc1db7cd54446f762f4ce3e6dda"
+    },
+    {
+      "checksum_sha256": "237b42d22035e41e3356490aa628bdad99ed136784118b1cdaec72b88feed160",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-08.zip",
+      "read_only_external": true,
+      "sha256": "c7ac44cb1ac58dd231b1a94c9d68907e2b3a8079dbf2dd8a5e744a6234766d47"
+    },
+    {
+      "checksum_sha256": "418bf665a42ed3ecda5e2feb9f8705391a2f267172249dddad398b8a288b5099",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-09.zip",
+      "read_only_external": true,
+      "sha256": "143312487ffcc01c174156343fbf05ea48cbfa4e4602937caafb3e0ad3dbca9a"
+    },
+    {
+      "checksum_sha256": "51c818776ccdca8827c8b83de161c205828229c9b8aefd59180476c598027d75",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-10.zip",
+      "read_only_external": true,
+      "sha256": "a1feb7cee9f3ed8229d67d4895d3acef7f4788c5f8875dd253c5e6818b7ac164"
+    },
+    {
+      "checksum_sha256": "94f08b25f27fd56180b565d6e94178db09bb8300b27fe3efb671d130ddd2f8e2",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual\\ETHUSDT-5m-2026-11-01.zip",
+      "read_only_external": true,
+      "sha256": "1752bdbd9a329241f4e85651fc17850a3db709f8ba0ddca8ba1e51645f39b804"
+    },
+    {
+      "checksum_sha256": "75b073d27c2cbb23627b223d087f45e8c01dc77bd8bc70134a7208fd02454eb1",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-01.zip",
+      "read_only_external": true,
+      "sha256": "4112e85c5af9820042ee25549595c001e75d027e1c7e219c6f22a84cffa0f7d0"
+    },
+    {
+      "checksum_sha256": "26b4e545392511133296e20609b27dece95aa663b0ea6d3b47eeeea8970a82fb",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-02.zip",
+      "read_only_external": true,
+      "sha256": "e6296db60366f2993959560a159a5fa80de52b6bb3443c4a304a6d755685c631"
+    },
+    {
+      "checksum_sha256": "e17cd433d8ecde025e21be742e316f06706b523bb0e6df0b913ccb361ea31743",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-03.zip",
+      "read_only_external": true,
+      "sha256": "3e887a347ce3742d23539fb7d26ed01892f54bea24db7ffb0db7e96739d832a5"
+    },
+    {
+      "checksum_sha256": "d8b645a42a2dc06308090e8997072bc4ccb7465dbb7fbdf732716040dbb93ecf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-04.zip",
+      "read_only_external": true,
+      "sha256": "ade829ccbfcb11d6415bc2b7223756d46f1264a425fcc516c3a9045dad13c2ac"
+    },
+    {
+      "checksum_sha256": "46be311662efd5a31c1b8cc7b4f8525cf891d679886c2791be854478412b7532",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-05.zip",
+      "read_only_external": true,
+      "sha256": "1e37fb36087fe4d92954a7ac2aa123e0e1e4475987aa5c02aecf0e1496e1e1bd"
+    },
+    {
+      "checksum_sha256": "6e371f279ecd00c11391710e87bb7f09ec90a7ef3b517a25ce6ca4301f1ae294",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-06.zip",
+      "read_only_external": true,
+      "sha256": "3149794997cd15fa1e1508b320aad6d7fdfdf9d13b536d50964c2eedde923d67"
+    },
+    {
+      "checksum_sha256": "8d2fb186d21298b47e778f24c896e9dd2c1d900814d12d593b91192331e08e5d",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-07.zip",
+      "read_only_external": true,
+      "sha256": "e25ba6c6a8298ff1cb1f2951e7707536232a6236102476789bab050964a7d62a"
+    },
+    {
+      "checksum_sha256": "c07b3d3f60dc5663c5554e295e5f76713700657a094e644a1fda625c499b07d3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-08.zip",
+      "read_only_external": true,
+      "sha256": "c12064c6cdf84616039035be71792fb61b57715e9fb9a828d1e85b8bc0667303"
+    },
+    {
+      "checksum_sha256": "8671a549d8165a9d1196e5d0ffd794835526d200e62b4e8990efe10e2f237817",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-09.zip",
+      "read_only_external": true,
+      "sha256": "4e32c60c5eeb35a13e2e027157483f1f32097c285e1eb75a11d3988785d4e5c1"
+    },
+    {
+      "checksum_sha256": "d8467003fcac9adabb471116ac85d698ea0f191ff8a869dd984f75a157d16502",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-10.zip",
+      "read_only_external": true,
+      "sha256": "b15dcd667491f7a5529b296f70515b312474d6bc0c2cd8263059c386a0c2b135"
+    },
+    {
+      "checksum_sha256": "df657c229b25f9228edf7f18e0530c6aa742d22a718460c9e9552544e787847a",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-11.zip",
+      "read_only_external": true,
+      "sha256": "059f6b8585dd66322bdfb1f8c8f75077a9e66c0def11631f225468bcaefbc472"
+    },
+    {
+      "checksum_sha256": "b077b13577028a3e8508c9da1dd4bb9fb57fcecd79a6b830cc4e671151bcea8f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2020-12.zip",
+      "read_only_external": true,
+      "sha256": "2c097c2db6f33d4517f5ab1a6f43140538b752bb7d1a7f48337b478e12cbdeb2"
+    },
+    {
+      "checksum_sha256": "ce196f3c210dbdba9df90f91de3622f10bb7708e1d39dec821ddb8dc070e3efb",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-01.zip",
+      "read_only_external": true,
+      "sha256": "8dc831f63e33755739d465e586cbe3e520c1bbe1227b1790b17cd21bb9a547cd"
+    },
+    {
+      "checksum_sha256": "053c11e7c61e2d806ad704741831f10e637f06bc4de8a6375897f02bd0d2317b",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-02.zip",
+      "read_only_external": true,
+      "sha256": "4fc5a26b0132d58de647b392826fd56edf4e627d83d1ddb8fb0c06c25afd1fa6"
+    },
+    {
+      "checksum_sha256": "056772e1f9b2efafcce6300ae1c198f1e9bad87b8656cb86b32939c4eed443a0",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-03.zip",
+      "read_only_external": true,
+      "sha256": "524028d905ad2ed73ed6bb38d16191741c8338a48d1765310f25b567e2837723"
+    },
+    {
+      "checksum_sha256": "67b912eb426e64fe16d8693790a4c759694df42438460472bdaf090e61654dcd",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-04.zip",
+      "read_only_external": true,
+      "sha256": "312d810fa2e03b6640aeceab01cfc95ad64a3333ccf9c353950c08ae3a125e16"
+    },
+    {
+      "checksum_sha256": "bc01d44ed194856d53f810bbb0a7147ce188f4b3de324be1dbe87da9dc80d973",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-05.zip",
+      "read_only_external": true,
+      "sha256": "37072bf05f50f78cb73f81918a864718aadae38f74195e0e19348e9eae085cbe"
+    },
+    {
+      "checksum_sha256": "5f774180f8c1c165bafd938f3a123850ba567fabf47ec35119aa948952ce2d43",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-06.zip",
+      "read_only_external": true,
+      "sha256": "005912a99d12ce0f09310d63b8c98563db2befad017ecf2b2b1776c047cff39f"
+    },
+    {
+      "checksum_sha256": "a96a099d7273f36d5675321868e4cba2abf2efb26c79806df262bcd156c2d0ba",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-07.zip",
+      "read_only_external": true,
+      "sha256": "2d13ae8d38a6c413d4f9d3627eb89e12396087742353ff8fd9190a534f0148d1"
+    },
+    {
+      "checksum_sha256": "cc69bab6e2f87f8051ad1694c52953db74113895b31bbe7a2d8cf1ba15b432a7",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-08.zip",
+      "read_only_external": true,
+      "sha256": "4d5138de39a1c8bc57f99a43f178994de3dbd8446f068d394861d4b2ac356460"
+    },
+    {
+      "checksum_sha256": "382749d7a5a8a0eff0b27c3a5fe2257dccd4aeef02d60f4caa9b43c2a2fc17b1",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-09.zip",
+      "read_only_external": true,
+      "sha256": "37b66bd6ea6139333d8beae841b02779bcfa48d04c5c4c960653f7c4616abbeb"
+    },
+    {
+      "checksum_sha256": "9b44791c3f3eea1f626e62160e4700897c8ed59a1e4fc2d892a4c71a61107bb3",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-10.zip",
+      "read_only_external": true,
+      "sha256": "f49d0dcda7d4569cfcdd9fbec1915d6b57f05249ee2d92f756578a1f68e34d41"
+    },
+    {
+      "checksum_sha256": "9d939b5b3725064c6f3066f655c68084000d2ad3c9f6207ac34290232ead97bf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-11.zip",
+      "read_only_external": true,
+      "sha256": "92612214268e486f1757bca694955b79702d26391891e43d817ae3e6ad81217a"
+    },
+    {
+      "checksum_sha256": "5e6e5b6ad4a06c5922ee7e26094de8ddd94ebb071fcd40ff26a0f4368490bf3c",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2021-12.zip",
+      "read_only_external": true,
+      "sha256": "c3f112a6f469d032544ad70e3dd79134bafa1e575ba93c840307f29bf3781c00"
+    },
+    {
+      "checksum_sha256": "17406c4fea20dd6bcee49ff3c80ddde04c01c7f9210ec77bce07fd5527add245",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-01.zip",
+      "read_only_external": true,
+      "sha256": "52edac4dd740a1473a60784e5386ecc5afe869c32bf3d14241f8592c61f2b87a"
+    },
+    {
+      "checksum_sha256": "479277133e7b6cc50f5bfb1f7bcc73881beac99b5d07a0b21bcf63861ce8c205",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-02.zip",
+      "read_only_external": true,
+      "sha256": "58ecd62425e420864ae10cdd360235baa62b0d06b27b3b9e3e3812af531c53a2"
+    },
+    {
+      "checksum_sha256": "eca87a302da4343e7725795d85a3a7de5612aebf6bca3bc232b0bc312346db30",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-03.zip",
+      "read_only_external": true,
+      "sha256": "dcafa67a48e69dd71503f57bada44466a2c4d189da65f712fd60114cbdb4865d"
+    },
+    {
+      "checksum_sha256": "db1a3fba67ca73ba995ab2cefae62bb2f64c668fa4c4d7ff709bf06706f3dcdf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-04.zip",
+      "read_only_external": true,
+      "sha256": "083b9d65a1037d2070e19ec143d28fc235956d998b317e9e77dd0ff860db97a3"
+    },
+    {
+      "checksum_sha256": "a3d7051e01b4f03657938d340a0770fcbaa7f80cf374a3883754276b06ae3cf6",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-05.zip",
+      "read_only_external": true,
+      "sha256": "389ba3691e715db0a97a41be127a9a7db1b69cf61107f7f3152105a2bc9e9dd4"
+    },
+    {
+      "checksum_sha256": "3fe02b8536a0199b6dfd3e1628ea2c588430ed2cce69a031921a8dbb9e46fe02",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-06.zip",
+      "read_only_external": true,
+      "sha256": "6cc0e7353832b0f010dcad1810004cbf4c1d5e3edf0060d1fb938c01ab1f8042"
+    },
+    {
+      "checksum_sha256": "1390da9a70693f61780abcae56d25e089699b60bb4a697d559e253cfc914c43f",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-07.zip",
+      "read_only_external": true,
+      "sha256": "02ec356ca96dafd9fb1d91ce6bd1423e51dd5fb7e9480c7e240fbd980a96b2c6"
+    },
+    {
+      "checksum_sha256": "0583ebd6b5142b8d9156f359354f87a17568208105ff28d416cfefba94cdaecf",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-08.zip",
+      "read_only_external": true,
+      "sha256": "41cc5b96d9b269f13f560360b3fb0266b2f4056ddf93e87012b5aa4b33b75895"
+    },
+    {
+      "checksum_sha256": "45e652962c4e2a7516ae243f346b4bcbfe61ee5af19d516e532f0a12a64cf7c1",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-09.zip",
+      "read_only_external": true,
+      "sha256": "484e19a5b151e8bb58313db8e2a6b52e5bafcbba2161627557299c09ac185160"
+    },
+    {
+      "checksum_sha256": "a817a5f99cbb306a0e38fadeb908d8f40829f08dde033ce2f45f05cc6fabf094",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-10.zip",
+      "read_only_external": true,
+      "sha256": "34186a7eeedaab16df560f181e9867dad615f7fc66132452fd0f189f6e0e016d"
+    },
+    {
+      "checksum_sha256": "53ea94dbac0645fc071d25353e610824326192472f6b971b0d8186ff7867b802",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-11.zip",
+      "read_only_external": true,
+      "sha256": "e52ec07a3f67635d8609462e30c61fcafed70283da3ce937a1bf95defcf602a3"
+    },
+    {
+      "checksum_sha256": "dffa2b87eed951a27ee8bac0417023d87c9c378cc142a21e3ff3a39fa6827a1c",
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor\\backtesting\\data\\ethusd\\perpetual_2020_2022\\ETHUSDT-5m-2022-12.zip",
+      "read_only_external": true,
+      "sha256": "994d8f327addb8e21befb2eb071154a6b7b437929185f31edd8e6b680503fff0"
+    }
+  ],
+  "start": "2021-01-01 00:00:00+00:00"
+}

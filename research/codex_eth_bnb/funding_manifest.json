@@ -1,0 +1,858 @@
+{
+  "BNB": {
+    "archives": [
+      {
+        "checksum_sha256": "0b1c854195869eab78f44160863f68ef7ec3b0ba8d9f5316eb33209b2d313c09",
+        "raw_sha256": "43cbedd92154495a5434b42ba1a53b22319b039564c84b4c73209944c2409051",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-01.zip"
+      },
+      {
+        "checksum_sha256": "b05f94223745a5e1b972a0393635670d64792882e6cc5424fc3cc18592f1c9f6",
+        "raw_sha256": "61ce56989aad647a6a45b73c91f1452eab7259ac7edf3f15eb68a1b1881e06a7",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-02.zip"
+      },
+      {
+        "checksum_sha256": "9834292d1c13231ebd68ed484e67f21a8c1b457e3ca6fe24cce7d1c298d541ae",
+        "raw_sha256": "f14f70cbb79e5fc11a4aa5156d381a4536086b86518da10a42b65ded61d15a1e",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-03.zip"
+      },
+      {
+        "checksum_sha256": "9b2296596408aee8450dcc6fa41963441f879952c2451e80a6a27b4ab5403a35",
+        "raw_sha256": "c5abc4309a82a971b3cbc8ed66d8c66170315dfc5bc2a7ef7c42e40e5ef527ed",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-04.zip"
+      },
+      {
+        "checksum_sha256": "19eb037d0de5a659523ea169739ec8c1d4cc2a784d272da5fae8213d11f1133b",
+        "raw_sha256": "e08391c3ac416df2bcebba182792fb8632a828b1f7bd3de02f0eba11607b6cb7",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-05.zip"
+      },
+      {
+        "checksum_sha256": "64a836a1e984a527fecaf9fa96d92adf061018a2fde47fb162fea6517f97f1e1",
+        "raw_sha256": "e51d259f86fb4ef4ae53127feb94a1f75b3535b3668ec8ef6ae644d833124f56",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-06.zip"
+      },
+      {
+        "checksum_sha256": "8a03957bd17268d9f5e27bc476dc9d0c551f03f96d1e0daf7e80f6b9ff123553",
+        "raw_sha256": "76880b69f8ed2ad5399471493080f9daa311004b0e48012fbe524c6ebe3d0869",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-07.zip"
+      },
+      {
+        "checksum_sha256": "fd5a7855ea61eb8c5aec133d9bcc47cf5fe377c8fc39e7d3659b4ba1a271467d",
+        "raw_sha256": "61df9c44a8a08b5a596fe33e49150ebf7b55bb733e389119b2538b18d2584f63",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-08.zip"
+      },
+      {
+        "checksum_sha256": "47c58fe48bf1a50165191a599430fa0c96b532ce734e3456bcc274fd8d76bccf",
+        "raw_sha256": "0afa14d51d0fabe16495b3e2b5ed3558b5bf4f23c5b9c92164a4f7d5f907ecad",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-09.zip"
+      },
+      {
+        "checksum_sha256": "8a44fbf58bb500f7b3612948584f77aac113a6daf428b267db4b145300a28617",
+        "raw_sha256": "a8556a173a1f7ab33d82b5538176aa396cfa0b7fab8f7b904009e9f9e2a1efe2",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-10.zip"
+      },
+      {
+        "checksum_sha256": "8f0dc24453f0b488c48fec7f0aa64bcbdefde655f09fed9272ceb65b85d2bde5",
+        "raw_sha256": "a9c846afb0ee66c67f14be211b9b7838dc97be156af549da477c28e805210393",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-11.zip"
+      },
+      {
+        "checksum_sha256": "9f27460137306b39d23e162dd69d84d05e3c510cad9a806de9bf1dcc8f6a7e02",
+        "raw_sha256": "d53711d34c24fef4df6147359811ecd0a747b5cc64dae1e30b92e3578cc41408",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2021-12.zip"
+      },
+      {
+        "checksum_sha256": "0c125896ea6fd04b5cb8e0daf038763c403fe9bf1dd8a1a16cf36acbec70d777",
+        "raw_sha256": "687891d67f99c3a622c44ed34413d65918fd96ea3a59d5e376af84d6d83f743b",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-01.zip"
+      },
+      {
+        "checksum_sha256": "7d29e8c42e73f03986ca67cc0ffa55ea425308251a6bc5bd6ba6be6e5528b2b5",
+        "raw_sha256": "4f7641f27333f9a55a8fdeb827387504984a8734a37ef73ab6e620db41fe0303",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-02.zip"
+      },
+      {
+        "checksum_sha256": "ba4ca65676b2fbda7895498b13291ed9f62f16ec5717679533893c6bafbdb142",
+        "raw_sha256": "96888f6eb25414b7095aaedbc7ad7410c315c4fd3cf92cbc41b02e5c4a942d84",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-03.zip"
+      },
+      {
+        "checksum_sha256": "69432b47e10a41da2f72323f5c3e6623ce3c606b2222a6e435bc2a96d5c207f8",
+        "raw_sha256": "697cb449545afb1281b9fa6c03d902515f7d909d96668f345f6dd053dfed7430",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-04.zip"
+      },
+      {
+        "checksum_sha256": "3676fa727eb146191d5d29a7acce654fe8023f01251637d46a34276088972485",
+        "raw_sha256": "b14eb3bf91a3cfaea1be24a2b9bf0d8991194f125b85f7bedc3c5ff4294845b2",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-05.zip"
+      },
+      {
+        "checksum_sha256": "8788b178a8fdaac10edeb1017379971aea8da9e44ee731e68787c2d33c5894d8",
+        "raw_sha256": "168a18066b384a4718ee9f6f659edb7edf713e6be5f8d798bcdf0525c42825f4",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-06.zip"
+      },
+      {
+        "checksum_sha256": "46a93c2e5fec16ee9874102451a887319da419f0f41dd015d1d12cfc37efd109",
+        "raw_sha256": "7bda335d67fa74ce7d034989298137161181dd5e54f4085e13f52f677c14fce7",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-07.zip"
+      },
+      {
+        "checksum_sha256": "f0913272d1c6a80911bda685f606651e9ab3a5ee51b14db9405c326f82bcaba0",
+        "raw_sha256": "9b5f26943c0b41dbabd37421aa7857851a7e3656646f5a1999568c1aee9a9111",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-08.zip"
+      },
+      {
+        "checksum_sha256": "c2a89498f7e2acda7e88db190e2982971e341794924a3f3a8ee90e587a9161b2",
+        "raw_sha256": "a61885f7b9705d335c4fabb6d2bf1bbd35af15615adfac0d49fdac3a95cba3ba",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-09.zip"
+      },
+      {
+        "checksum_sha256": "a59007c455a73af1bce07c10a58d0137cb28b4323f17a726c459704dbf9b491a",
+        "raw_sha256": "a899a77f378d0133a5837b4d7755fb1db9b8c8ca4e51ce94bc2f97e3a5928c25",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-10.zip"
+      },
+      {
+        "checksum_sha256": "1ae688150a2decf36aa8300ecb12539bb99dcd6e37d3cf48286dd962932899d6",
+        "raw_sha256": "1abb39471f3908ae91f4379500cbb24f5e7a487d004979719d19abff6f2ec2a9",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-11.zip"
+      },
+      {
+        "checksum_sha256": "d43a42e540424b4cdafdb1208c6ea81f38859cf79ac903a8bb43d764af0291fc",
+        "raw_sha256": "3291256d57eef23bcd663a547e537e762ee54d54b8959a983e6bc4738fe7ef4b",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2022-12.zip"
+      },
+      {
+        "checksum_sha256": "6f114a19d3856e867dcaae5d78cb55042d3ea915732e292da08fb9bedd873827",
+        "raw_sha256": "57926f802a5d97b17bb08f10539bf10e86bdb55caa1efed7b1e485ec0e4a3a27",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-01.zip"
+      },
+      {
+        "checksum_sha256": "27f8a8170f4dbb799f7bc3d69d903be8b78c1c1bb68c0253c8d8e27675b1fcbb",
+        "raw_sha256": "f5e3ce986788bef656363c2741e8f515f93e409c61e9b335bc714e528f4f8609",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-02.zip"
+      },
+      {
+        "checksum_sha256": "122e2044c87a7c8b5eb1f583ab199cd148859f4e58755e2b276a9b43148e45d8",
+        "raw_sha256": "0309e5d4202275f5657b2d5a400c77618f51090962e2945ab2305820f8fbf239",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-03.zip"
+      },
+      {
+        "checksum_sha256": "131af44f01e4b1bb816ccfe77a35c7e8b320e8e097be31894eedd54b66ddb3ec",
+        "raw_sha256": "7bbc666c3748ff43b5042acc77f9b158344d6b1e11f93c7de0c36c83affd7066",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-04.zip"
+      },
+      {
+        "checksum_sha256": "cd6fcc6e8a298c0d9640da9c19d59a5ef77ea3101630bd74ac813e62892e378a",
+        "raw_sha256": "bcf038a86d9f483fa4d1a9db6fa734cae54745409bcc083d3067670f76b4fb84",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-05.zip"
+      },
+      {
+        "checksum_sha256": "068c09dbe782ebed6fe2f50400a1aa3606c2813abddcf75c8d16046c84bb45d2",
+        "raw_sha256": "7a92bc9a9f03229509e2e34835c8cb4e05b8218cc82fe080443389d2ccbb1e98",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-06.zip"
+      },
+      {
+        "checksum_sha256": "54379a6b6a7fd6dcdf97986540330e0112bf8479b9d6ee68c904be145b16c146",
+        "raw_sha256": "38d044d00f3c81a8d201b9117f5f1f6559568db16561cf9ce8f0eccc02cddbc9",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-07.zip"
+      },
+      {
+        "checksum_sha256": "65575373826bee9f029ae96e091fb37da641842b8651da0d2c3db25427145d91",
+        "raw_sha256": "27621b8cfc274cba9882e08c61315433ea23f58d59eb83781b4e63f9ad685c13",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-08.zip"
+      },
+      {
+        "checksum_sha256": "6f190e6675be8b713a64d3c33702d807940427be061af42362e24017d3f8ce10",
+        "raw_sha256": "a0b6b5a900f40ebff05d1ec293685fd644f0ac26552c25a2801490d8d7178a21",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-09.zip"
+      },
+      {
+        "checksum_sha256": "4eac27f04680698e7a96a2884fffd9b0a98ddbafcd2f57e6318dd52e46265f4c",
+        "raw_sha256": "db8ae79ac84f006fdd9cd17d57f8ed28fc1a10f716c8483030693d87c830d411",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-10.zip"
+      },
+      {
+        "checksum_sha256": "e5f51813c48529a17e2fe7237c171d394c7af725b256c304d76215c0fd522612",
+        "raw_sha256": "65c9092766c696eddb155142379b696b78b6c48490d984b02976412380dc6df6",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-11.zip"
+      },
+      {
+        "checksum_sha256": "9a1a94be396cc2aa9ad1b7ecede03740d26da7e6ed6beef29cfc6d0923d6ab37",
+        "raw_sha256": "3292f306a22f3190315e71780b68b88a3ac5c8dda5a05e6f3d768ac21b3d6cf5",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2023-12.zip"
+      },
+      {
+        "checksum_sha256": "7ef4f010e2e5673140f363f68b9f212d42652648a54fbbe8aca847b6482b6f89",
+        "raw_sha256": "6ce71612fdc2c2d227b1431ea6c9aec07d6a46ebd7d7650aee5da1a09cd19f90",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-01.zip"
+      },
+      {
+        "checksum_sha256": "fab51d4e66568144b2b73c47faeca5ae695b914d4b3a59860365ccc7142367f3",
+        "raw_sha256": "1d99928f6340abc95946545f51fadb59f2183f984b8117d5ce39456d26884250",
+        "rows": 87,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-02.zip"
+      },
+      {
+        "checksum_sha256": "d1187814be02f183271986159ba394a947af998619fa38a3e9b8ffeb48d26edd",
+        "raw_sha256": "ae596433406d0e00bf66f4430c7f51f8d03b4d2a395949ce29d8765554ad7195",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-03.zip"
+      },
+      {
+        "checksum_sha256": "610ede4d8e593afb9cf02555d758d80e3e051d8e6aaae1499e1c68c198f3888d",
+        "raw_sha256": "97e66b580deae706cbf1b56b21a71668d5587a7db68bf69d01ef1db5045125bd",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-04.zip"
+      },
+      {
+        "checksum_sha256": "ddf871b69318a62c40c06e5e063afc9c9075aa351201752cb89aa829869e9c25",
+        "raw_sha256": "4ebe1a295be42c705739ff3717b113661513eee0560a17936697568cd2c06ae0",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-05.zip"
+      },
+      {
+        "checksum_sha256": "9e693f0a574e13e8e1c1fca2fdb72b5bdd61616017669f37833b1318f99580ce",
+        "raw_sha256": "bc5d4b47ffa9c6e6b30147dbb3c93f63a27b071428445ed6e57339a86745a9e0",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-06.zip"
+      },
+      {
+        "checksum_sha256": "f4ee3703179d26200cc7da2b6a3b319612a16da50428adc50eb16b68b9645be4",
+        "raw_sha256": "ba2e909430ca421202cc86b658d242bdcb03cf15f729fd5bdaf6b11bc7117243",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-07.zip"
+      },
+      {
+        "checksum_sha256": "91cb82271d1793170e9125e4f2bdd35b7618872be6fa4ebbc9fc98b28521e8d9",
+        "raw_sha256": "5b1c28afa6becb9c4303fb2438c39461b199a48a0992bccb5e1e4be344b7a931",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-08.zip"
+      },
+      {
+        "checksum_sha256": "5d0d9778c6712c777c45ca0739d75463012dc9479440a3f7d0d9915d85fe2860",
+        "raw_sha256": "2c9e13fa39b3956ea76d29074e26e0ccc6abbd3e235d752aa63b383de29a4d80",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-09.zip"
+      },
+      {
+        "checksum_sha256": "75cd0d4a486800fd4515c4468036e78ed2cdfe8720348e60eb32559319a4bfb5",
+        "raw_sha256": "ac53012800835002672b559455766f73eb30cce3b4b75a30e8d834f03cc3ba1c",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-10.zip"
+      },
+      {
+        "checksum_sha256": "da03e2f27606eefd2b6096b6ba4e9cc24926bbb6337ef95a0302193bd5579190",
+        "raw_sha256": "ca02937135f8d51991e96290cd527ba8cfba3e6ca6bdf08247c88bdc88fdfc09",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-11.zip"
+      },
+      {
+        "checksum_sha256": "5fa3019a9ca0ce480a8bb3c8d89c5dfee7d60b47710c61f17ee8b0e0cf0c5469",
+        "raw_sha256": "9bad523573121ac9a255adac4574e4ea8545ab77807d6ccd8ac132771b6f0c7b",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-12.zip"
+      },
+      {
+        "checksum_sha256": "49aa9e5ae79992f32040b0cb499873570d1459845a4992857aa5759dd06feb6a",
+        "raw_sha256": "74544eee335ba817f34c28bad187eabc9c19b730a84e875eb636499944198479",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-01.zip"
+      },
+      {
+        "checksum_sha256": "829bf19207c33f977eb791e684ca46172fefe8ca8da2f28367a91301cb12cae5",
+        "raw_sha256": "b5094d4dfe17e0b07b4a4cfeca6baef32a96711b824ea45e1c9bcf80db0d2b06",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-02.zip"
+      },
+      {
+        "checksum_sha256": "3852c2f019eeb93fca028c3d7c5c58b74374ffcdc8da4e137bd8ca40ca4aaa53",
+        "raw_sha256": "8bd05f64e15a3f1731d75ad21dea232b6ae9e93cff351a0699a4c1ab0dc0d2ea",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-03.zip"
+      },
+      {
+        "checksum_sha256": "92ee9ccd80630e55967a02dbc0f5a46c7ca4e69be12b0701c487c89ed670b345",
+        "raw_sha256": "d5b35805679bb3a410fce7ddb370ce4b6f69bc37233e4ffde4eec40f524e3ff2",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-04.zip"
+      },
+      {
+        "checksum_sha256": "f8cc14505436b91b2d56c5670ac2647d0f187d6def38ae92ab29d13e0fef43a9",
+        "raw_sha256": "fc9a418d195865c4a61e0c858c56dfa62dab80c4d5f0df37cd71aed1173fd37b",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-05.zip"
+      },
+      {
+        "checksum_sha256": "e9fc98dd018bde7a72741b81705a149e55bf51d1ac3035d1f2abab0363f66edb",
+        "raw_sha256": "2ea8b6a079ab89270eeeecee1bd47128cbf585ada1bc65a1b657b76061e12c04",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-06.zip"
+      },
+      {
+        "checksum_sha256": "69a9f65f44f8df3c3ce79165f45f5ece82ab1be456de5d82d1eb9132f4234066",
+        "raw_sha256": "014c717df6ca0fbc5c8850a22741cf07b425af5aeec07de42265f7a70aa9fd39",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-07.zip"
+      },
+      {
+        "checksum_sha256": "6cd4e686d528ac7736b668375b4d21d010cafa6f60ce4dbffd3d0284e83b3803",
+        "raw_sha256": "1ca07a28c070cd092a04c4e002f5d7ae123c45a149f385c3b316ba1b9cd0a7b6",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-08.zip"
+      },
+      {
+        "checksum_sha256": "858289e1244abacbc293c4665eb21b9131659c6c2a4eda8ad8fd6b7356d533da",
+        "raw_sha256": "e87adf5d21d31f7c49739eb0cffb7347284bdb2d981d4ab8d2cde6cdfe94d4af",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-09.zip"
+      },
+      {
+        "checksum_sha256": "c5e007cb164fa2a7542c92f91f9133787d79b2c552626e9330ba32f844320706",
+        "raw_sha256": "6c45db6d53c47e1413c842bffba176aa58d8fe5bef0b1326ce5a4acb5b9abaef",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-10.zip"
+      },
+      {
+        "checksum_sha256": "0cf3a6d4f161ae8f7fcf334d91b30e8bc74be99c42e51964f8779a85da659f8b",
+        "raw_sha256": "e1bb556f0d0b00f4615c41048dc71377b91ea43351100c90a3750efd519d7682",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-11.zip"
+      },
+      {
+        "checksum_sha256": "246754a22ff6b8b529011d3bd48845800fa20710a3a2732b010dae046fc4a3c2",
+        "raw_sha256": "18000c78612678f3daf1b493828f2c61f0e680f2a23f6bde34a4624504f228e5",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2025-12.zip"
+      },
+      {
+        "checksum_sha256": "4eae1f25e4b05c7f4a933b6fbd3d97467daf5f9a141dd0ae2fde290ef08f545b",
+        "raw_sha256": "b7fc86f2e15ed637796db819d03ec7fba66f2651ad1077cb143e2cd4bafc7e1d",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-01.zip"
+      },
+      {
+        "checksum_sha256": "23e2235f75d8496bb6387be100507a37e22986c4caab5521c04d1ce7021e2dff",
+        "raw_sha256": "1b474640f9646c08f2dac80db4b4716303972dbf35613f5c7da948e2f858b646",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-02.zip"
+      },
+      {
+        "checksum_sha256": "c0c508924bab3a1907349407a4e1ec3211e3926151209700273a85cdaff95d9d",
+        "raw_sha256": "19e6e88c1a0c318fee6b8c570ed39fbfd4e3dcbcd917e0738347c3b03fad52c3",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-03.zip"
+      },
+      {
+        "checksum_sha256": "657fc0b203502d81e4c94e6e35a209d4cc9a75c0c4b240318e932345f0f77573",
+        "raw_sha256": "64ad28743203161c89a5c64582ed14a599a5d47addcffc3f7e2f07063ef9bb2b",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-04.zip"
+      },
+      {
+        "checksum_sha256": "4a727f5ec3395ec0becafee70d346ea7ec10aa28e422888316b1e6aba49adc55",
+        "raw_sha256": "b62dd555a8c1ecc25644f529e4cd351a835aeabaa70258909d9f1c328f427cd8",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-05.zip"
+      },
+      {
+        "checksum_sha256": "edb681b2509c31c2d0c9de62b139586330d2f0e01618058dd6d6ce549863c5c5",
+        "raw_sha256": "fffa72378e35dd0fc6faf22e8e7b5b22794201124e4727da92d6cb2b591459be",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-06.zip"
+      },
+      {
+        "checksum_sha256": "95f9c306309091f6d580215febf22de37c0df598672325f4c209a8f2cf516213",
+        "raw_sha256": "0ff2884392a6efe9a33063971dd583090124e916a3c8b59dca6949cb6ed81124",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-07.zip"
+      },
+      {
+        "checksum_sha256": "081be111453644e56d097c3987f2d9648c28e80cc882f03e01bbe7f53c9011cc",
+        "raw_sha256": "153df2d91fbf1fb06106fcba4660640f6299f9debf661c4f29664bc52eb74136",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-08.zip"
+      },
+      {
+        "checksum_sha256": "cfdfbdeba73e8941a54ed28afcfb43d351d5ec8b69c836b6b731a377904fa1e6",
+        "raw_sha256": "127c24c4cd9d2f6504dff2a82747eafd57067fd6d27919b1e3ac05e198ed603f",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-09.zip"
+      },
+      {
+        "checksum_sha256": "20068c49917ec50adff347fdfda652a4bed691bb143f38d8ddf39637414dcccc",
+        "raw_sha256": "52012406e115a1f4966d729b1da32c9316bc2cc3d7dca26555259c88de37e939",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2026-10.zip"
+      }
+    ],
+    "cashflow": "Actual settled signed rate at event time, trade-price proxy for unavailable mark price.",
+    "rows": 6378,
+    "signal_publication_lag_hours": 1,
+    "snapshot_sha256": "5061d6b8f857564151d95b2a4937e63040db1dcb815a065af59231c62abd7a60"
+  },
+  "ETH": {
+    "archives": [
+      {
+        "checksum_sha256": "1949ca1eb3491f72bc69ab10d391d1bed77d7e694e3029c4d018cff8d48de1a5",
+        "raw_sha256": "4c18c1df8904dea9770aeba5326d26b3fa9a3ffac4891f5f7125d4be2da847c0",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-01.zip"
+      },
+      {
+        "checksum_sha256": "7c5344f2fbdb8a8d11662aa1ca4b1712c791eff4c16eb9c345d5290f6ff26878",
+        "raw_sha256": "15e9a939f253a11fc1af2858bb3844f3d39019ccf7efa66a9456f0f60afba3dd",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-02.zip"
+      },
+      {
+        "checksum_sha256": "945c4a37fe473f3e896d3c669eb11bc67a4dda4637538823046e7c63c2fe6931",
+        "raw_sha256": "2bcaadc8206cb8d76a26f0f3cbf97020b747545b0e75c3dd8a3b195b435478a5",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-03.zip"
+      },
+      {
+        "checksum_sha256": "f0a711de8fc4f8cc532ed34098da2da98d5526bf9907ff6e8de0fa7d32858629",
+        "raw_sha256": "2fee34e8b9b6e828d01bab0df1c67104f7a98f3c063668c8db627b802ffa5a95",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-04.zip"
+      },
+      {
+        "checksum_sha256": "aee42ba1af0274c16fc5558fc731f29c7bd805fc37e1a173d6c51f24bc7f1f99",
+        "raw_sha256": "21809ef6691a1441bd55ba4af4494a038d1a399ae0ae432e80cb41b47d71f3bd",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-05.zip"
+      },
+      {
+        "checksum_sha256": "5da9b8e2e640b09311a1cc41d5d17e9defef151ea565da0f5fe8f6896cb3e3c1",
+        "raw_sha256": "8e58ccf8f52c69c55754492daafadab92d4ca8c8bd027f4532582d06e9f36063",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-06.zip"
+      },
+      {
+        "checksum_sha256": "2c5eb1a685d45d655cfc456be5e23a8f7371c02f46dbc86deb2216429a6f1326",
+        "raw_sha256": "f8f538bedf642052e428cd25f3134784de6e62a136e76f6a07ea6e79dfc9c39d",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-07.zip"
+      },
+      {
+        "checksum_sha256": "5b1535a2f3defe31f401fc46c002f01fb0b708c7b4e05add890cb4ed6d7b7da2",
+        "raw_sha256": "0120b284bde23d077e1e26e5e4b56fd3e2d1d82a3a7fe0e9de26825b9fc9c0db",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-08.zip"
+      },
+      {
+        "checksum_sha256": "fe4259f9b55b647edac708239decb54588b24ea4109d901ce34b99c961bc4627",
+        "raw_sha256": "4b4a94cdafbb8fea7762c266aa79b183700b7c9dcf7e981f7fdbe9372f2eec66",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-09.zip"
+      },
+      {
+        "checksum_sha256": "dfabd0f0b334ee0605b5ee1939d6ebeaae79c6b30f753a0394505aeabcc306fb",
+        "raw_sha256": "4dfb8698f6951b2c66229e1c687977eae0778bb703d6268232da2ceb3e9b5e6d",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-10.zip"
+      },
+      {
+        "checksum_sha256": "114991343bf0932ef10b0d5e8092de5f0e46bed5384b8496c4a74b3e6dd5367c",
+        "raw_sha256": "d9a7e22a237717f23d4b0505f14613359b7ea7831b23a78653a891cbbe3d521c",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-11.zip"
+      },
+      {
+        "checksum_sha256": "c3480750c2695ce57223b2697be5a8d2505820b95304f8fcebc26c5ade5da74b",
+        "raw_sha256": "788d5c57e7cbc8e6b94ed4d7672618a85311edf1d7f0888083410d0d3389d811",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2021-12.zip"
+      },
+      {
+        "checksum_sha256": "fd7749afb1f4db8cd5205a13007e0da5542721fdf7ce9b7d867a1c8a5f6fa085",
+        "raw_sha256": "9f5bd01450b05a8c5e48cdc99fa147e85c82ecf7ee7919fa543a4e6039a2b98d",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-01.zip"
+      },
+      {
+        "checksum_sha256": "03d98d248ac5f5d6f20118418fea8d81b797500583c7cabcc29efa604c0b0b6b",
+        "raw_sha256": "9c35e30327ac8915cc1333415b7d5018425781c81918e349d26b734525fcdfe5",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-02.zip"
+      },
+      {
+        "checksum_sha256": "cd705bfb0f52eed39c0233027bcb5bd23fdeeb938466e18de93730df6a1360a2",
+        "raw_sha256": "3de0714a2b2582029b32147815298b6e67e972e776ca3f68a4208823b4109404",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-03.zip"
+      },
+      {
+        "checksum_sha256": "47ffe244fd670c940d6c5a005fc50b8740ec2d6eeb27cdd9f8a1b83599ecf6eb",
+        "raw_sha256": "7c306ac8b6275a857b064916080e0b6ec502b25a4501c84c3fd2c0b077425de3",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-04.zip"
+      },
+      {
+        "checksum_sha256": "e6d86dd415f80a6e6ed978c18f1ce1c78174e4b295f344f4e412541101e899f2",
+        "raw_sha256": "c458330243c9d8e048ffc7168c9e3c077c01bb82b1644097a4893fee34069b78",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-05.zip"
+      },
+      {
+        "checksum_sha256": "68741f4334438f6a642af63bd329907a16d9f55f0cd380f9c843a6d39aa03323",
+        "raw_sha256": "f6f3a69b656b91500b41501a230e663ccc3c1a65f46273595b00682d8f6fabb1",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-06.zip"
+      },
+      {
+        "checksum_sha256": "7ebba86440e2e1157d26050499c2c0fd8372326274d26b3922a6d2399c5b5269",
+        "raw_sha256": "17826e5591af8660a7fed74d60e24eee77c822cf0d901dd8af355a10a36699aa",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-07.zip"
+      },
+      {
+        "checksum_sha256": "adc45143dc70ae3fa28b082fed190066c8968f4b073cd038114e2c0cb4e23e14",
+        "raw_sha256": "a2680549de5e087566f4d323b3a812c2b9863528c6bc49b0e551cb42c381bb4d",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-08.zip"
+      },
+      {
+        "checksum_sha256": "9ddea5c845fc9b428ea88fd4494e770750b4bf0b9863e28b78e165263bf7c9d0",
+        "raw_sha256": "816e4de946d9f854cc457c86ca396b9cb49b46e80cf44941b59b9ad2124f2ef8",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-09.zip"
+      },
+      {
+        "checksum_sha256": "08f929de67a29836fc627da5be72f840e0f4c346df45cf39bb061d0d7945b2e4",
+        "raw_sha256": "e434c29eb544cc57ff574e38685535bb7d04703aee54bc5d52f53cea372810e6",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-10.zip"
+      },
+      {
+        "checksum_sha256": "2de29e6be6ae9f455626d40909a5f49ed1a227bab2b4fc9407cebece8e89a818",
+        "raw_sha256": "4f4e52f176f69e99353959d287874a4d4a135b5bb4ea85514dd5a3e65958b2d7",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-11.zip"
+      },
+      {
+        "checksum_sha256": "e7e28e86d9f8a5d9564a445d9182603755b7b14f35d9d1865eaaec068cc464de",
+        "raw_sha256": "8cd0e885d63b85ee602d80eaae956f9ee3e0e25db264eb5c74026a9ae0d71f4e",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2022-12.zip"
+      },
+      {
+        "checksum_sha256": "6b0deef20e42b5e1eab99f0e0f3433a7bb1a333c3699028de6d392fb38ec1a26",
+        "raw_sha256": "5647d5978092d220eb14e11c7854d86815d0eb6204197e37b4808cc599e986f3",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-01.zip"
+      },
+      {
+        "checksum_sha256": "cce15e497312f90f9a9faa5d26d9cbce61f8feedab11852edcd9d91ceb34fd03",
+        "raw_sha256": "7da37820c15fb08600ae668551d0b724326b8f71d761582990721059280a221b",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-02.zip"
+      },
+      {
+        "checksum_sha256": "037cb56d84a7e92424a16eca73c151c161b144c13ce80b06bdd7b576bf74637c",
+        "raw_sha256": "5110b60cbbc5f26048ce02575c26444ea2ed497baed9a5609e118359e1ca3b51",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-03.zip"
+      },
+      {
+        "checksum_sha256": "f4e6932a90cfce09eb9529fa91527e6ec9294ec5e022c66bea80b35af04bb697",
+        "raw_sha256": "fa3a3cf7c3b8285687ae8c8014eed8bc58ad3ceb33ccb62ff4298048213c0e6c",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-04.zip"
+      },
+      {
+        "checksum_sha256": "3986c7b70e2687bcd349ea791e9809392f608be71247117036b61f3cfbad3508",
+        "raw_sha256": "bf890ea68d979942ed296b058390eb98b0b495547fee2117d3b76d5e7f629b24",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-05.zip"
+      },
+      {
+        "checksum_sha256": "7b16c7a99ef71b4b6b52e2514da385ed52c2733f0caf6ebc0163de8801574848",
+        "raw_sha256": "b3ddac1309f9a684f4e811776a6c09fb2239bb8d1ae0ff4bd342a1c32a5e171f",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-06.zip"
+      },
+      {
+        "checksum_sha256": "5e493dd51654d3072314e974bf6b4b15f76f8a21153d8242afbaa8a943e0004e",
+        "raw_sha256": "82577976d8acd886fda84179ee38c9e7ef445732c3b6a062d6ffd2a9e3cc30bf",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-07.zip"
+      },
+      {
+        "checksum_sha256": "b19429eda48cded2b4214a33053d8b74581ae680b16dcd32a1df7b610eae8086",
+        "raw_sha256": "cf749429c366cef3302a804b3e702937e5f1a77aeddc5b628dca7da547a8935a",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-08.zip"
+      },
+      {
+        "checksum_sha256": "2db18ef50ca3c9a844ac246281703d1a1fd68c12f88a8f05b1c066c89e3abbc5",
+        "raw_sha256": "41ac7eb67a46d14d97daec4c37e8229df5ac6b165639ad4b2c54bc7374930341",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-09.zip"
+      },
+      {
+        "checksum_sha256": "0a2e54db5b8233977f5199bf864495b5868edbd90a414405e219f871b309811f",
+        "raw_sha256": "ccaf4474f0dc94adedd4330c14995f338186caa2cc9fd0d2e2c55f74cf263a5c",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-10.zip"
+      },
+      {
+        "checksum_sha256": "0d7047af9b409ba87eb1004af75c09d03d453a5b444f101b0cd23007bc29f79f",
+        "raw_sha256": "153ec1450eb5d999ce253e2c7ca2e81b79a523ff52dd18b14faefab8212b999b",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-11.zip"
+      },
+      {
+        "checksum_sha256": "33a2e8e15c1a7da9809ef32da7f989e1fdf2b0ddd11aef3c495b1bcdbd571b54",
+        "raw_sha256": "91bdf41566cebb86c6f0e3646b0037de9c22e14ee2f592c5722c7e4a19c91119",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2023-12.zip"
+      },
+      {
+        "checksum_sha256": "7084943d9f6ec1add74b6d0b49c916381067f9fe27d8ed7c6231681d077f304d",
+        "raw_sha256": "5a71469b0b363886df904e784dddefc484dd943334b1fb7454713ce4ed715a4b",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-01.zip"
+      },
+      {
+        "checksum_sha256": "f1ffc8ff1589639c0b3f46abe5c0dbd36c02376e2d525d9aea50deb35c49f60a",
+        "raw_sha256": "915fad950c48935f3875d88992b8d78290bc8a6fada44408e3ed14aef9a56670",
+        "rows": 87,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-02.zip"
+      },
+      {
+        "checksum_sha256": "696e47a60ab4a89c83833f2b1dc4f6dd4b79cb8e8aa5455148f3b5ca4e87af42",
+        "raw_sha256": "e9c1d0f3e7e3b493277c7f826afb223482d56bdc7611144d398ac10e47307907",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-03.zip"
+      },
+      {
+        "checksum_sha256": "39d9b08b65b94bfcf3bd8930577c6a224a343cc635c0ea9f4697117a13166ee6",
+        "raw_sha256": "b54c9f05af116ccd921b32b25960ae26954c4983992d44f2390bf1de08b2c724",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-04.zip"
+      },
+      {
+        "checksum_sha256": "53291b843dff1fb1d2ebe61284b41351bd84085b08b9af7e608f593193efd8b8",
+        "raw_sha256": "8350ab4d61b12ec61539611e30809039f54814213bc4c937609360b1ff28b5e0",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-05.zip"
+      },
+      {
+        "checksum_sha256": "c4761067769d7f6fea9aba1c2a459d5104d7d45809a139251bc582bf3704641c",
+        "raw_sha256": "def13f4a478c28b0111fb24c57f95fcee80e71982ed74f12e465d20d328e2275",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-06.zip"
+      },
+      {
+        "checksum_sha256": "66cbc897b9b49fbd98306f3248f4088f7c2b0e9ecfcbac84641e56c33d85f670",
+        "raw_sha256": "9d236281ab6430250ad2b472cbbf03812a40aed42e73c8339fc6be55a2417a82",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-07.zip"
+      },
+      {
+        "checksum_sha256": "ae8bac0a585edb0847658fa6f5f907e69ea882a4ec9eb8e61837cffcb0edd078",
+        "raw_sha256": "e17684bc761924eb5e1912c52cfa997eddeb99da303e68e28f6f37369f672b9d",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-08.zip"
+      },
+      {
+        "checksum_sha256": "3e8e33b9b21793d1ff4765bb326bd10d5a45dcadc7e7e4ab140c407000f60cdf",
+        "raw_sha256": "ffb6e7441053137cb7ca81cc83bcdd996612f7dbb15aa2e168a7ee521f8cbbca",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-09.zip"
+      },
+      {
+        "checksum_sha256": "3cbb38c65b044865adfb2856a0191a7530de67d26c25d34a9b5dd308d9c6213d",
+        "raw_sha256": "2124978c335473a5d9c0f0e9f238193d56c21ac7e250e065a36e9d1201beb049",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-10.zip"
+      },
+      {
+        "checksum_sha256": "262d2d639fb4c72934e3cee5c64a4f8d41da94235cdb169e4e8933dd0df1716c",
+        "raw_sha256": "636a4c7c86445c2774b4eae8598c480fcbc57de7dde5d40f6937c7fac510797c",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-11.zip"
+      },
+      {
+        "checksum_sha256": "d4dcff625e4d079e984b8ae12ffaaa8e21ce51034c12d29c31cd03a9c9ec32af",
+        "raw_sha256": "11a0847e8aacb32eeb725611fda4fe6a8419c03eb0c16e14dfc3b9287e78ecc9",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2024-12.zip"
+      },
+      {
+        "checksum_sha256": "6e0aa7904cb857a698689c0d5ad0a855784e40f97c5df0f92bf5e0700f1cf6dd",
+        "raw_sha256": "88c95b99d2784a7baac529fe578563d7e05038a1b8a498b2f59bf81b216fee20",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-01.zip"
+      },
+      {
+        "checksum_sha256": "da7feaa19da6ec30d1695032420ce59f606878a186bb50f785ca69e775482a11",
+        "raw_sha256": "9e116dd6754484a19ecc41ced40b8dfa7f62c33d41cdc3317336b1e1f043767f",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-02.zip"
+      },
+      {
+        "checksum_sha256": "3e0e42630eaa87eb23c79ef7f4b5ae6b769467cb91501fba72b7650eef059d53",
+        "raw_sha256": "62464a8bfb7ba515628acb76d3e2172d33b88805faa2e701a22537c51a17d139",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-03.zip"
+      },
+      {
+        "checksum_sha256": "2a654d7f548281a146422da8cfb720acf5bc9011ddd1d04f6fe34edbc41bc29d",
+        "raw_sha256": "7db62cb5e9f32397dacabb3d571b96397024bda3810bde0799c90f61cb773679",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-04.zip"
+      },
+      {
+        "checksum_sha256": "a9c99b19d1d1576d54430b072bac7aa69379daf396630350e0ca902688f53538",
+        "raw_sha256": "996aff38f046b50510301532ac5cbdca115afca971c49cb548f50e5d70e18d99",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-05.zip"
+      },
+      {
+        "checksum_sha256": "8d28f9cff6689aedf759967339850d271a8e894b0fea414ea2fb42563446836e",
+        "raw_sha256": "ae7ca242249ca3df06d1222a0c264fe83b18c4b2c19fe656e864f7d081d5e198",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-06.zip"
+      },
+      {
+        "checksum_sha256": "c6cdea45f491c9fcb59022c4e737a80abf08c2fb10633f731827253863466004",
+        "raw_sha256": "5f2d840c5669ca946529c33f6df32433c5d0cd973eb4adfd40459270c460e7f8",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-07.zip"
+      },
+      {
+        "checksum_sha256": "6e17faa87407500a552586907216a6362fb09a904f77d2ffddae4aa6ae799509",
+        "raw_sha256": "c3fca21c71afb4962e89f8e3d84afe5832019ed8f570ee7c7c299f2436a28b62",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-08.zip"
+      },
+      {
+        "checksum_sha256": "efa8037fb82542388fb0220b07748cd9976ebb7cccaee0925c7c81460838c47f",
+        "raw_sha256": "2fa09df245aadc73cf43f837a72c3009fcd7d10c8c4e3db48b2d1021c331841a",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-09.zip"
+      },
+      {
+        "checksum_sha256": "9fc5be172594b7209a8d74a8c333677e595fea3465d03392bf73d8cdae767c16",
+        "raw_sha256": "1ae86c5fb1f15d8792906b746cc7598ebe7e6e7194b74501db79c874e37d7e14",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-10.zip"
+      },
+      {
+        "checksum_sha256": "9fd9b52e8ddc85ada12c5555c15fc7c83c2bd42783ccea75c5a85e3c204de975",
+        "raw_sha256": "a3a8abb219373ec1e02e8d1a47015665d180d6130cfe1df71d2fa8fc9de59e59",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-11.zip"
+      },
+      {
+        "checksum_sha256": "4599bef569347f7ab0b97d6bbaa3ff73a874b59f95afe95670543473c81215d3",
+        "raw_sha256": "ef9e84f53a5fa07702958c8700077c8be0a90ec8b3e25110f5611109c3c0090c",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2025-12.zip"
+      },
+      {
+        "checksum_sha256": "cdc70bde542182ef031452673f4d8c9c902fbe81f76d2bdaf5d1f317af94bf9a",
+        "raw_sha256": "830cf7797ea6ecdc554ac2d9047a141df1a6a544f4ea58e7028227930462b139",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-01.zip"
+      },
+      {
+        "checksum_sha256": "9c348f1e515bd64fe830fdf5d91b6057aad92b736004bcd982dd3dfa062db5c0",
+        "raw_sha256": "e445f00c81a7fa8361d99b3660f24b4f58e5d952fe301d70bbc72c319bc01a77",
+        "rows": 84,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-02.zip"
+      },
+      {
+        "checksum_sha256": "bf7aac493ffc4d6a9bfcb8b27cc0230d9380ee69b25d57b4bf6348aa62a22d45",
+        "raw_sha256": "9f5625846c503a1e94fcdecd2deb37dc8852e341add353fa48c2b9a0cc70df6a",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-03.zip"
+      },
+      {
+        "checksum_sha256": "7493c06d8262aad7e168f685810d4b4fab567cbe284661b3f7b413c3eac16071",
+        "raw_sha256": "86160f455478a8b262d96d1516f583355e6e0cec7beeb5784e69dda76f599e98",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-04.zip"
+      },
+      {
+        "checksum_sha256": "8092234ece21a0d65dd3999fa4758c855050f37ab3ba84686a20d1eea3decf70",
+        "raw_sha256": "ff926ad3fc48493c26c85af16620b19c695cc1854faa1e7f0ea2ab9fdafc2084",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-05.zip"
+      },
+      {
+        "checksum_sha256": "da7bb1ac323331bcb54b5ccdc9b6c343ef25951fd4bbc2e942c6d745372639cb",
+        "raw_sha256": "cc6fb028a811bc423b711f6b89de067bf92a2eda61303e1ce0b219b5d3210e47",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-06.zip"
+      },
+      {
+        "checksum_sha256": "0324c615464d165ae508134173868add2490efd3af5c3e857e0199536a77af12",
+        "raw_sha256": "ece7f6c64d0e45fbd64929dec40bae525fe365381046e367de5ca0827bc623d3",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-07.zip"
+      },
+      {
+        "checksum_sha256": "1811f1eca0dc7190ae74b4934c4da22c2456f877ecd7e26c6070d6c19bd9f65c",
+        "raw_sha256": "8b843307038b3aedf725b1342003cce39f9526451ed92f407ca80bc637487839",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-08.zip"
+      },
+      {
+        "checksum_sha256": "6555fc6857e612ebf0c5073e784981c0d44aa0143b32ea96ce6b5742a9c6fa74",
+        "raw_sha256": "d1916b9181cf3507ad5a6522ac6587cd84a424941f1a2132ab887f768b5dd4de",
+        "rows": 90,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-09.zip"
+      },
+      {
+        "checksum_sha256": "86a01f19289bb1a17c3a4bf68e36b4509f0d86506335ca93254cb4702d8c1aaa",
+        "raw_sha256": "3aa5114f2e35dfd597354417de9bdb4622bf41e91e667169bd5366e6246e85bc",
+        "rows": 93,
+        "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/ETHUSDT/ETHUSDT-fundingRate-2026-10.zip"
+      }
+    ],
+    "cashflow": "Actual settled signed rate at event time, trade-price proxy for unavailable mark price.",
+    "rows": 6378,
+    "signal_publication_lag_hours": 1,
+    "snapshot_sha256": "27ca20ec67354ae7f8300540e383395abe2b66143fee9181a8a9135e334ea6e8"
+  }
+}

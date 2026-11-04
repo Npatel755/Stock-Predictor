@@ -1,0 +1,6 @@
+{
+  "before_search": true,
+  "command": "python -m pytest research/codex_eth_bnb/tests -q -p no:cacheprovider",
+  "tests_failed": 0,
+  "tests_passed": 63
+}
