@@ -1,4 +1,4 @@
-# Paper trading ETH v1.11 through TradingView alerts
+# Paper trading ETH v1.11 (and BNB crypto_v0_1) through TradingView alerts
 
 TradingView cannot auto-execute a strategy, not even on its Paper Trading account, and Breakout has no API. So the paper account lives here: the v1.11 Pine strategy fires an alert on each simulated order fill, TradingView POSTs it to your PC, and `backtesting/paper_webhook.py` appends it to an immutable ledger scored against the Breakout $50k 1-Step limits (static $47,000 floor, 3% daily loss from the 00:30 UTC balance). Nothing is routed to Breakout; mirror fills by hand in the Breakout Terminal if you want them live.
 
@@ -25,7 +25,16 @@ The receiver runs 24/7 on a DigitalOcean droplet (`eth-paper`, Ubuntu 24.04, $6/
 - HTTPS: Caddy with an automatic Let's Encrypt certificate for `https://143-198-126-83.sslip.io` (also plain `http://143.198.126.83`), firewall open on 22/80/443 only.
 - Webhook URL for the TradingView alert: `https://143-198-126-83.sslip.io/tradingview`; status page `https://143-198-126-83.sslip.io/status`; secret in `/opt/eth-paper/artifacts/paper_trading/secret.txt` on the server (never in this repo).
 - Ledger: `/opt/eth-paper/artifacts/paper_trading/fills.jsonl` and `state.json`. Reset = stop the service, delete those two files (keep `secret.txt`), start it again.
-- Updating the code: copy the new `paper_webhook.py` over, patch the ROOT line, `systemctl restart eth-paper`.
+- Updating the code: copy the new `paper_webhook.py` over, replace the `from .paths import ROOT` line with `from pathlib import Path` / `ROOT = Path('/opt/eth-paper')`, `systemctl restart eth-paper`.
+
+## Second account: BNB crypto_v0_1 (side experiment)
+
+The receiver keeps one paper account per strategy and routes each alert by its ticker: `ETHUSDT.P` -> ETH v1.11, `BNBUSDT.P` -> BNB crypto_v0_1 (ledger in `artifacts/paper_trading/bnb/`); any other ticker is rejected. Both alerts use the same webhook URL, secret and message JSON.
+
+- Chart **BINANCE:BNBUSDT.P, 5-minute, standard candles**; add `backtesting/reference/BNB_Strategy_crypto_v0_1.pine` (unpromoted candidate; defaults already encode the frozen rule and the **$200** joint-replay sizing from `reports/eth_bnb_joint_replay.md`).
+- Alert condition **BNB crypto_v0_1 | 4h momentum research**, same webhook URL and message as the ETH alert, 2-month expiry like ETH.
+- `/status` reports both accounts. Reset BNB alone = stop the service, delete the `bnb/` folder, start it again.
+- Expect ~2 trades a month; the 4h signal fires on the last 5-minute bar of a completed UTC-aligned 4h candle and fills on the next 5-minute open, as in the Python lab.
 
 ## Daily use
 

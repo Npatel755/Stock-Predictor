@@ -2,7 +2,18 @@ import json
 
 import pytest
 
-from backtesting.paper_webhook import RejectedAlert, apply_fill, new_state, parse_alert, summary
+from backtesting.paper_webhook import RejectedAlert, apply_fill, new_state, open_ledgers, parse_alert, route, status, summary
+
+
+def test_tickers_route_to_separate_accounts(tmp_path):
+    assert route('ETHUSDT.P') == 'ETHUSDT' and route('BINANCE:BNBUSDT.P') == 'BNBUSDT' and route('bnbusdt') == 'BNBUSDT'
+    with pytest.raises(RejectedAlert):
+        route('SOLUSDT.P')
+    ledgers = open_ledgers(tmp_path)
+    ledgers['BNBUSDT'].record(parse_alert(alert(ticker='BNBUSDT.P', contracts='3', price='700'), SECRET))
+    report = status(ledgers)
+    assert report['ETH v1.11']['fills'] == 0 and report['BNB crypto_v0_1']['position'] == 3.
+    assert (tmp_path/'bnb/fills.jsonl').exists() and not (tmp_path/'fills.jsonl').exists()
 
 SECRET = 'unit-secret'
 

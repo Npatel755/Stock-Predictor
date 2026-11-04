@@ -1,0 +1,95 @@
+//@version=6
+// BNB crypto_v0_1 (backtesting/candidates/crypto_v0_1): 4h time-series momentum, unpromoted research candidate.
+// Rules frozen from backtesting/crypto_research/lab.py (time_series_momentum_4h_patient):
+//   signal on a COMPLETED 4h candle: momentum = close/close[20]-1 crosses above 0 with close > EMA200 (long),
+//   crosses below 0 with close < EMA200 (short); 4h volume >= SMA of the prior 20 completed 4h volumes;
+//   entry at the next 5-minute open; stop 3 x ATR(14, 4h); target 5R; 4 x ATR trailing stop updated on 5m closes.
+// Trained 2021-23, validated 2024, one held-out look 2025-26. Pine/Python trade matching is unverified.
+// Python adds basis-point fill slippage, financing and stop-first ambiguity handling; Pine models fixed-tick slippage only.
+strategy("BNB crypto_v0_1 | 4h momentum research", overlay=true,
+     initial_capital=50000.0, currency=currency.USD, pyramiding=0,
+     process_orders_on_close=false, commission_type=strategy.commission.percent,
+     commission_value=0.04, slippage=2, margin_long=20, margin_short=20)
+
+// Use standard BINANCE:BNBUSDT.P candles, five-minute timeframe.
+lookback = input.int(20, "4h momentum lookback (completed candles)", minval=2)
+trendLength = input.int(200, "4h trend EMA", minval=3)
+stopATR = input.float(3.0, "Initial stop (4h ATR)", minval=0.1)
+rewardR = input.float(5.0, "Reward / risk", minval=0.1)
+trailATR = input.float(4.0, "Trailing 4h ATR; 0 disables", minval=0)
+riskUSD = input.float(200.0, "Planned risk per trade ($)", minval=1)
+maxLeverage = input.float(5.0, "Maximum notional leverage", minval=1, maxval=5)
+maxDailyLoss = input.float(300.0, "Personal daily loss gate ($)", minval=1)
+maxTradesDay = input.int(3, "Maximum entries per UTC day", minval=1)
+estimatedExtraBps = input.float(8.0, "Extra slippage estimate for sizing only (bp)", minval=0)
+useVolumeGate = input.bool(true, "Require 4h volume >= prior 20-candle mean")
+
+htfSignals() =>
+    momentum = close / close[lookback] - 1
+    trend = ta.ema(close, trendLength)
+    crossUp = momentum > 0 and momentum[1] <= 0
+    crossDown = momentum < 0 and momentum[1] >= 0
+    ready = bar_index + 1 >= 200
+    priorMeanVolume = ta.sma(volume[1], 20)
+    volumeOK = not useVolumeGate or volume >= priorMeanVolume
+    [ready and volumeOK and crossUp and close > trend, ready and volumeOK and crossDown and close < trend, ta.atr(14)]
+
+// lookahead_off exposes a 4h candle's result on its final 5m bar. We submit
+// signals only when BOTH that five-minute bar and the 4h candle are complete.
+[htfLong, htfShort, htfATR] = request.security(syminfo.tickerid, "240", htfSignals(), lookahead=barmerge.lookahead_off)
+previousATR = request.security(syminfo.tickerid, "240", ta.atr(14)[1], lookahead=barmerge.lookahead_on)
+htfClosed = time_close == time_close("240")
+managementATR = htfClosed ? htfATR : previousATR
+validChart = timeframe.in_seconds() == 300
+estimatedCosts(price) => 2 * price * (4.0 + estimatedExtraBps) / 10000 + 2 * 2 * syminfo.mintick
+
+var float activeStop = na
+var float activeTarget = na
+// Completed-close management changes orders for later ticks only.
+if barstate.isconfirmed and strategy.position_size != 0 and not na(activeStop) and trailATR > 0 and not na(managementATR)
+    direction = strategy.position_size > 0 ? 1 : -1
+    proposed = close - direction * trailATR * managementATR
+    tighter = direction == 1 ? proposed > activeStop : proposed < activeStop
+    placeable = direction * (close - proposed) > syminfo.mintick
+    if tighter and placeable
+        activeStop := proposed
+        if direction == 1
+            strategy.exit("Long bracket", "Long", stop=activeStop, limit=activeTarget)
+        else
+            strategy.exit("Short bracket", "Short", stop=activeStop, limit=activeTarget)
+
+var float dayStartEquity = na
+var int entriesToday = 0
+var bool dailyLocked = false
+if na(dayStartEquity) or timeframe.change("D")
+    dayStartEquity := strategy.equity
+    entriesToday := 0
+    dailyLocked := false
+if strategy.equity <= dayStartEquity - maxDailyLoss
+    dailyLocked := true
+
+longSignal = validChart and htfClosed and htfLong
+shortSignal = validChart and htfClosed and htfShort
+if barstate.isconfirmed and strategy.position_size == 0 and not dailyLocked and entriesToday < maxTradesDay and not na(htfATR) and (longSignal or shortSignal)
+    direction = longSignal ? 1 : -1
+    distance = stopATR * htfATR
+    sizeByRisk = riskUSD / ((distance + estimatedCosts(close)) * syminfo.pointvalue)
+    sizeByLeverage = strategy.equity * maxLeverage / (close * syminfo.pointvalue)
+    quantity = math.floor(math.min(sizeByRisk, sizeByLeverage) * 1000) / 1000
+    if distance > syminfo.mintick and quantity > 0
+        activeStop := close - direction * distance
+        activeTarget := close + direction * rewardR * distance
+        if direction == 1
+            strategy.entry("Long", strategy.long, qty=quantity)
+            strategy.exit("Long bracket", "Long", stop=activeStop, limit=activeTarget)
+        else
+            strategy.entry("Short", strategy.short, qty=quantity)
+            strategy.exit("Short bracket", "Short", stop=activeStop, limit=activeTarget)
+        entriesToday += 1
+
+plot(strategy.position_size != 0 ? activeStop : na, "Active stop", color=color.red, style=plot.style_linebr)
+plot(strategy.position_size != 0 ? activeTarget : na, "Active target", color=color.green, style=plot.style_linebr)
+plotshape(longSignal and barstate.isconfirmed, "4h long signal", shape.triangleup, location.belowbar, color=color.lime, size=size.tiny)
+plotshape(shortSignal and barstate.isconfirmed, "4h short signal", shape.triangledown, location.abovebar, color=color.red, size=size.tiny)
+if barstate.islast and not validChart
+    label.new(bar_index, high, "Requires standard 5-minute BNB perpetual candles", color=color.red, textcolor=color.white)

@@ -1,11 +1,16 @@
 """TradingView strategy-alert receiver with a Breakout-ruled paper ledger.
 
 TradingView cannot auto-trade its own Paper Trading account and Breakout has
-no API, so this process is the paper account: the ETH v1.11 Pine strategy
-fires an alert on every simulated order fill, TradingView POSTs it here, and
-the fill is appended to an immutable JSONL ledger and scored against the
-Breakout $50k 1-Step limits (static $47,000 floor, 3% daily loss measured
-from the balance at 00:30 UTC). Nothing here routes orders anywhere.
+no API, so this process is the paper account: a Pine strategy fires an alert
+on every simulated order fill, TradingView POSTs it here, and the fill is
+appended to an immutable JSONL ledger and scored against the Breakout $50k
+1-Step limits (static $47,000 floor, 3% daily loss measured from the balance
+at 00:30 UTC). Nothing here routes orders anywhere.
+
+One separate paper account per strategy, routed by the alert's ticker:
+ETHUSDT.P -> ETH v1.11 (artifacts/paper_trading), BNBUSDT.P -> BNB
+crypto_v0_1 (artifacts/paper_trading/bnb). Alerts for any other ticker are
+rejected. Both alerts share the secret.
 
 Alert message to paste into TradingView (valid JSON; placeholders are
 expanded by TradingView):
@@ -30,6 +35,7 @@ import urllib.request
 from .paths import ROOT
 
 DIRECTORY = ROOT/'artifacts/paper_trading'
+ACCOUNTS = {'ETHUSDT': dict(name='ETH v1.11', subdir=''), 'BNBUSDT': dict(name='BNB crypto_v0_1', subdir='bnb')}
 INITIAL_CAPITAL, STATIC_FLOOR, DAILY_LOSS_FRACTION, COMMISSION_BPS = 50000., 47000., .03, 4.
 DAY_RESET = timedelta(minutes=30)
 
@@ -70,6 +76,15 @@ def parse_alert(body, secret):
     return dict(ticker=str(payload.get('ticker', '')), action=action, contracts=contracts, price=price,
                 position_after=position, order_id=str(payload.get('id', '')), comment=str(payload.get('comment', '')),
                 time=when.isoformat(), received_at=datetime.now(timezone.utc).isoformat())
+
+
+def route(ticker):
+    """Account key for a TradingView ticker such as ETHUSDT.P or BINANCE:BNBUSDT.P."""
+    symbol = str(ticker).upper().split(':')[-1]
+    for key in ACCOUNTS:
+        if symbol.startswith(key):
+            return key
+    raise RejectedAlert(f'No paper account for ticker {ticker!r}')
 
 
 def fill_key(fill):
@@ -152,11 +167,11 @@ class Ledger:
             return closed
 
 
-def notify(url, fill, closed, state):
+def notify(url, fill, closed, state, name='ETH v1.11'):
     if not url:
         return
     side = fill['action'].upper()
-    text = f"ETH v1.11 paper {side} {fill['contracts']} @ {fill['price']:.2f} ({fill['comment'] or fill['order_id']})"
+    text = f"{name} paper {side} {fill['contracts']} @ {fill['price']:.2f} ({fill['comment'] or fill['order_id']})"
     if closed:
         text += f" | closed {closed['direction']} {closed['gross_pnl']:+.2f} gross"
     text += f" | balance {state['balance']:,.2f} | floor buffer {state['balance']-state['static_floor']:,.0f}"
@@ -169,7 +184,15 @@ def notify(url, fill, closed, state):
         print('notify failed:', error, flush=True)
 
 
-def make_handler(ledger, secret, notify_url):
+def open_ledgers(directory=DIRECTORY):
+    return {key: Ledger(directory/spec['subdir'] if spec['subdir'] else directory) for key, spec in ACCOUNTS.items()}
+
+
+def status(ledgers):
+    return {ACCOUNTS[key]['name']: summary(ledger.state) for key, ledger in ledgers.items()}
+
+
+def make_handler(ledgers, secret, notify_url):
     class Handler(BaseHTTPRequestHandler):
         def _send(self, code, payload):
             body = json.dumps(payload).encode()
@@ -181,7 +204,7 @@ def make_handler(ledger, secret, notify_url):
 
         def do_GET(self):
             if self.path.startswith('/status'):
-                self._send(200, summary(ledger.state))
+                self._send(200, status(ledgers))
             elif self.path.startswith('/health'):
                 self._send(200, dict(ok=True))
             else:
@@ -194,13 +217,15 @@ def make_handler(ledger, secret, notify_url):
             body = self.rfile.read(min(length, 65536))
             try:
                 fill = parse_alert(body, secret)
+                key = route(fill['ticker'])
             except RejectedAlert as error:
                 print('rejected alert:', error, flush=True)
                 return self._send(400, dict(error=str(error)))
+            ledger, name = ledgers[key], ACCOUNTS[key]['name']
             closed = ledger.record(fill)
-            print('fill', fill['time'], fill['action'], fill['contracts'], fill['price'], 'balance', round(ledger.state['balance'], 2), flush=True)
-            threading.Thread(target=notify, args=(notify_url, fill, closed, ledger.state), daemon=True).start()
-            self._send(200, dict(ok=True, balance=ledger.state['balance'], closed=closed))
+            print('fill', name, fill['time'], fill['action'], fill['contracts'], fill['price'], 'balance', round(ledger.state['balance'], 2), flush=True)
+            threading.Thread(target=notify, args=(notify_url, fill, closed, ledger.state, name), daemon=True).start()
+            self._send(200, dict(ok=True, account=name, balance=ledger.state['balance'], closed=closed))
 
         def log_message(self, *args):
             pass
@@ -219,9 +244,9 @@ def load_secret(directory=DIRECTORY):
 
 
 def serve(port, directory=DIRECTORY, notify_url=None):
-    ledger = Ledger(directory)
+    ledgers = open_ledgers(directory)
     secret = load_secret(directory)
-    server = ThreadingHTTPServer(('0.0.0.0', port), make_handler(ledger, secret, notify_url or os.environ.get('PAPER_NOTIFY_URL')))
+    server = ThreadingHTTPServer(('0.0.0.0', port), make_handler(ledgers, secret, notify_url or os.environ.get('PAPER_NOTIFY_URL')))
     print(f'paper webhook listening on port {port}; secret file {directory/"secret.txt"}; status at /status', flush=True)
     server.serve_forever()
 
@@ -232,6 +257,6 @@ if __name__ == '__main__':
     parser.add_argument('--status', action='store_true', help='print the ledger summary and exit')
     args = parser.parse_args()
     if args.status:
-        print(json.dumps(summary(Ledger().state), indent=2))
+        print(json.dumps(status(open_ledgers()), indent=2))
     else:
         serve(args.port)
