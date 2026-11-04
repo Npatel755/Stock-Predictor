@@ -1,0 +1,59 @@
+{
+  "code_hashes": {
+    "analytics.py": "d4daca53148c17a7df0622aba477ae5f08c9683e796410373b3be2033fee1296",
+    "data_pipeline.py": "4b851b4549f613b67af448d21c45456057d53fdc70b39636fb878247c1524e8c",
+    "formations/activity.py": "3162cddbbc2d7fb4ad38497f58b2b4daae3ed998c01b110e78eb714131da82c1",
+    "formations/execution.py": "4533e2fd166617e0dbe9a707460989db06d2b87777b9fbee4853241249a1ca57",
+    "price_action\\__init__.py": "872ff41fad31df7af8d936a7ecde4d3f6a176f154546f4ad01049e042a61c8e2",
+    "price_action\\run.py": "105043a1779975f621c5b7df3a479d12666bcd3bb2fc7f79c47cd30e1af42df2",
+    "price_action\\signals.py": "9838453cb984d6b0dff733bd17727ce3d9b19daaba2ae821a6d81efa477d32c6",
+    "runner.py": "9c1ee3c99cceb74e8625f43ace0829425280d77c5d40f3f17eb56df858f18b71",
+    "strategies.py": "a22388b6653df00c1d11b5330be04bb958ecf14bac1a8baf2a2841c68a4f806f"
+  },
+  "no_replacements": true,
+  "selected": [
+    {
+      "family": "failed_breakout",
+      "id": "failed_breakout_1h_R3",
+      "slot": "frequency_rank",
+      "symbol": "ETH"
+    },
+    {
+      "family": "imbalance_retest",
+      "id": "imbalance_retest_1h_R3",
+      "slot": "frequency_rank",
+      "symbol": "ETH"
+    },
+    {
+      "family": "vwap_trend_pullback",
+      "id": "vwap_trend_pullback_1h_R1.5",
+      "slot": "frequency_rank",
+      "symbol": "ETH"
+    },
+    {
+      "family": "shock_reversal",
+      "id": "shock_reversal_1h_R3",
+      "slot": "infrequent_performance_diagnostic",
+      "symbol": "ETH"
+    },
+    {
+      "family": "sweep_reclaim",
+      "id": "sweep_reclaim_1h_R3",
+      "slot": "frequency_rank",
+      "symbol": "BNB"
+    },
+    {
+      "family": "opening_fade",
+      "id": "opening_fade_15m_R1.5",
+      "slot": "frequency_rank",
+      "symbol": "BNB"
+    },
+    {
+      "family": "failed_breakout",
+      "id": "failed_breakout_1h_R1.5",
+      "slot": "frequency_rank",
+      "symbol": "BNB"
+    }
+  ],
+  "training_sha256": "f7a4208c61592e9cdc45a768d481d63bc4cd881d0f4f403c272d41def359ed4b"
+}

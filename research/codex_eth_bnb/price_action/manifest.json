@@ -1,0 +1,317 @@
+{
+  "baseline_trials": 8,
+  "bootstrap_draws": 4999,
+  "code_hashes": {
+    "analytics.py": "d4daca53148c17a7df0622aba477ae5f08c9683e796410373b3be2033fee1296",
+    "data_pipeline.py": "4b851b4549f613b67af448d21c45456057d53fdc70b39636fb878247c1524e8c",
+    "formations/activity.py": "3162cddbbc2d7fb4ad38497f58b2b4daae3ed998c01b110e78eb714131da82c1",
+    "formations/execution.py": "4533e2fd166617e0dbe9a707460989db06d2b87777b9fbee4853241249a1ca57",
+    "price_action\\__init__.py": "872ff41fad31df7af8d936a7ecde4d3f6a176f154546f4ad01049e042a61c8e2",
+    "price_action\\run.py": "105043a1779975f621c5b7df3a479d12666bcd3bb2fc7f79c47cd30e1af42df2",
+    "price_action\\signals.py": "9838453cb984d6b0dff733bd17727ce3d9b19daaba2ae821a6d81efa477d32c6",
+    "runner.py": "9c1ee3c99cceb74e8625f43ace0829425280d77c5d40f3f17eb56df858f18b71",
+    "strategies.py": "a22388b6653df00c1d11b5330be04bb958ecf14bac1a8baf2a2841c68a4f806f"
+  },
+  "correction_sha256": "7aac975c84d9d07cbffde808aa9ff72eedbab76cda03bff7e5c9f76ef73e9d8c",
+  "cumulative_holm_slots": 298,
+  "data_manifest_sha256": "dd0c4e1c5a850673f5e155e6fb1e24dd0fbb4c34ec804599e28a03581c986509",
+  "final_access": "CONTAMINATED_NOT_PERMITTED",
+  "funding_manifest_sha256": "983a04b201b9d6dbf419f73286be529f5d6f4b5b3fbc710aa3cdbdb2336d179d",
+  "primary_trials": 64,
+  "prospective_data": "SEALED_NO_ACCESS",
+  "research_plan_sha256": "12c806fa29565d2b27c0dc10772030f21c56029ad1712eced77e0fa4f0e14eec",
+  "seed": 20261105,
+  "specifications": [
+    {
+      "baseline": false,
+      "family": "sweep_reclaim",
+      "hold_bars": 24,
+      "id": "sweep_reclaim_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "sweep_reclaim",
+      "hold_bars": 24,
+      "id": "sweep_reclaim_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "failed_breakout",
+      "hold_bars": 24,
+      "id": "failed_breakout_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "failed_breakout",
+      "hold_bars": 24,
+      "id": "failed_breakout_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "break_retest",
+      "hold_bars": 24,
+      "id": "break_retest_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "break_retest",
+      "hold_bars": 24,
+      "id": "break_retest_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "opening_breakout",
+      "hold_bars": 24,
+      "id": "opening_breakout_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "opening_breakout",
+      "hold_bars": 24,
+      "id": "opening_breakout_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "opening_fade",
+      "hold_bars": 24,
+      "id": "opening_fade_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "opening_fade",
+      "hold_bars": 24,
+      "id": "opening_fade_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "imbalance_retest",
+      "hold_bars": 24,
+      "id": "imbalance_retest_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "imbalance_retest",
+      "hold_bars": 24,
+      "id": "imbalance_retest_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "shock_reversal",
+      "hold_bars": 24,
+      "id": "shock_reversal_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "shock_reversal",
+      "hold_bars": 24,
+      "id": "shock_reversal_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "vwap_trend_pullback",
+      "hold_bars": 24,
+      "id": "vwap_trend_pullback_15m_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "vwap_trend_pullback",
+      "hold_bars": 24,
+      "id": "vwap_trend_pullback_15m_R3",
+      "reward_r": 3.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": true,
+      "family": "flat",
+      "hold_bars": 24,
+      "id": "flat_15m",
+      "reward_r": 2.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": true,
+      "family": "momentum",
+      "hold_bars": 24,
+      "id": "momentum_15m",
+      "reward_r": 2.0,
+      "timeframe": "15m"
+    },
+    {
+      "baseline": false,
+      "family": "sweep_reclaim",
+      "hold_bars": 24,
+      "id": "sweep_reclaim_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "sweep_reclaim",
+      "hold_bars": 24,
+      "id": "sweep_reclaim_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "failed_breakout",
+      "hold_bars": 24,
+      "id": "failed_breakout_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "failed_breakout",
+      "hold_bars": 24,
+      "id": "failed_breakout_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "break_retest",
+      "hold_bars": 24,
+      "id": "break_retest_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "break_retest",
+      "hold_bars": 24,
+      "id": "break_retest_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "opening_breakout",
+      "hold_bars": 24,
+      "id": "opening_breakout_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "opening_breakout",
+      "hold_bars": 24,
+      "id": "opening_breakout_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "opening_fade",
+      "hold_bars": 24,
+      "id": "opening_fade_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "opening_fade",
+      "hold_bars": 24,
+      "id": "opening_fade_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "imbalance_retest",
+      "hold_bars": 24,
+      "id": "imbalance_retest_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "imbalance_retest",
+      "hold_bars": 24,
+      "id": "imbalance_retest_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "shock_reversal",
+      "hold_bars": 24,
+      "id": "shock_reversal_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "shock_reversal",
+      "hold_bars": 24,
+      "id": "shock_reversal_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "vwap_trend_pullback",
+      "hold_bars": 24,
+      "id": "vwap_trend_pullback_1h_R1.5",
+      "reward_r": 1.5,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": false,
+      "family": "vwap_trend_pullback",
+      "hold_bars": 24,
+      "id": "vwap_trend_pullback_1h_R3",
+      "reward_r": 3.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": true,
+      "family": "flat",
+      "hold_bars": 24,
+      "id": "flat_1h",
+      "reward_r": 2.0,
+      "timeframe": "1h"
+    },
+    {
+      "baseline": true,
+      "family": "momentum",
+      "hold_bars": 24,
+      "id": "momentum_1h",
+      "reward_r": 2.0,
+      "timeframe": "1h"
+    }
+  ],
+  "split_manifest_sha256": "ef1ac443fc78c0b854b80401b6a069325c4e4984947e11076b52dae64f89f3c5",
+  "superseded_registry_sha256": "f6609eb890b91fe099a81cd57c67a44ba0f0206be9e05c688b623e8ad15b301a",
+  "tests_before_search": 85
+}

@@ -1,0 +1,22 @@
+{
+  "tests_passed": 85,
+  "tests_failed": 0,
+  "accepted_candidates": 0,
+  "audited_replays": 310,
+  "code_unchanged": true,
+  "current_replays": 256,
+  "final_performance_access": false,
+  "ledger_failures": 0,
+  "registry_sha256": "b2fc0472d28ba6b456c64ef6463dec87dbb18acc89ecc6f97942d4cf94397fe9",
+  "superseded_replays": 54,
+  "outputs": {
+    "manifest.json": "b335bfb22c6cec94c24138ea50376715d39616f253bef7ddfc7445155b88f90d",
+    "protocol_correction.md": "7aac975c84d9d07cbffde808aa9ff72eedbab76cda03bff7e5c9f76ef73e9d8c",
+    "validation_shortlist.json": "de55741db6363557c7e44132ad62b11637b3c616998a62696511cd4c1ec94209",
+    "validation_results.json": "4f0db8caa2adc4a4a91e9360f846cdf84e8f7e55147e77002db561d99d13f6e2",
+    "diagnostic_configurations.json": "be4aae2853bccaf3fdb27423d40c61eb69425037c5976a9336e37e9c02bf9423",
+    "experiment_registry.csv": "b2fc0472d28ba6b456c64ef6463dec87dbb18acc89ecc6f97942d4cf94397fe9",
+    "validation_scoreboard.csv": "f93a14ef45b8c3f195a1903c3c7d2f7024f6ece1d5ed25c898319894c96b75c6",
+    "validation_performance.png": "9b069bc52b208453a8634b0153849e93e7c0ed98425c300c510929cb4288d6f6"
+  }
+}
