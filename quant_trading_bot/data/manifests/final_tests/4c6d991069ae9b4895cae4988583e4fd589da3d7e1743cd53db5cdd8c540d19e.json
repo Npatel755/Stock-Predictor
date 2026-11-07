@@ -1,0 +1,13 @@
+{
+  "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+  "dates": [
+    "2026-01-01 23:00:00+00:00",
+    "2026-11-05 23:59:00+00:00"
+  ],
+  "model_version": "7acf59951ff593129d378b6a84a568cb2737ae1d618d94acd3d2739f78453b6e",
+  "code_commit": "f4b7003dc8739ae2905828de07a934fba6c2e1a4",
+  "config_hash": "dc4b0df8f2b86e96374aced4112a1aebe13a5ab13651c288503fa9cbd1b72405",
+  "source_hash": "5dc324c80ec932932b3f24c6727f4873e7e6bcea24e49bc3c0c07b8f2af96f0d",
+  "evaluation_timestamp": "2026-11-06T22:37:09.628022+00:00",
+  "state": "reserved_once; failures also consume holdout"
+}

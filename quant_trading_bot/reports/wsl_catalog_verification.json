@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "source_catalog_sha256": "df7d66317a6963ff866906a4717e2ebf5a334c21e6f5544f8cd0a24b2c92c611",
+  "translated_catalog": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/manifests/wsl/catalog.json",
+  "transformation": "Path strings only; training/validation content hashes verified; no test price columns read",
+  "raw_data_modified": false
+}

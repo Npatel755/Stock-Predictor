@@ -1,0 +1,50 @@
+{
+  "kind": "partitioned_development",
+  "dataset_version": "47c9a19b498a071354480ee929c4a30c11a87ab21ae84d20b0df29971e12a4cf",
+  "provider": "User-provided Databento GLBX.MDP3 export",
+  "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+  "instrument": "ES",
+  "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+  "synthetic": false,
+  "raw_contract_prices": true,
+  "timestamp_semantics": "bar_open",
+  "split_role": "development",
+  "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+  "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+  "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+  "files": [
+    "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/train.parquet",
+    "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/validation.parquet"
+  ],
+  "file_hashes": {
+    "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/train.parquet": "b167a7bd2d1b45c33b6688cb863128484d0f3d34e13d8f8d36c859c75aecb2e7",
+    "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/validation.parquet": "9e2c308ac3026b5bfd6db107da6281a9c0e388dfd52c31e8f44f239806f9ab33"
+  },
+  "test_partition": {
+    "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/test.parquet",
+    "dataset_version": "471316da96add5019887cbbb8716e038159306fa730e6b9322933bfc6f465363",
+    "source_dataset_version": "303695f218917d993284c73cfebac2a1f655bb6294ed18c060915d61dc0a9393",
+    "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+    "synthetic": false,
+    "raw_contract_prices": true,
+    "provider": "User-provided Databento GLBX.MDP3 export",
+    "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+    "timestamp_semantics": "bar_open",
+    "instrument": "ES",
+    "split_role": "test",
+    "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+    "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+    "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+    "coverage": {
+      "rows": 301748,
+      "start": "2026-01-01 23:00:00+00:00",
+      "end": "2026-11-05 23:59:00+00:00"
+    },
+    "model_selection_access": false
+  },
+  "coverage": {
+    "rows": 5439458,
+    "start": "2010-06-06 22:00:00+00:00",
+    "end": "2025-12-31 21:59:00+00:00"
+  }
+}

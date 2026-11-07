@@ -1,0 +1,9 @@
+{
+  "net_equity_difference": 0.0,
+  "trade_count_difference": 0,
+  "accounting_matches": true,
+  "synthetic": true,
+  "full_equity_frames_equal": true,
+  "bars": 1440,
+  "source_hash": "2f36f6da9d65d0f73f5ce163248521afa45871f13f257f09abf762e7b878509d"
+}

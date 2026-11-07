@@ -1,0 +1,17 @@
+instrument: MNQ
+timeframe_minutes: 5
+validation_mode: fixed
+minimum_training_bars: 1000
+maximum_training_rows: 100000
+validation_bars: 18000
+maximum_trials: 24
+maximum_runtime_seconds: 3600
+maximum_disk_gb: 0.75
+models: [logistic, ridge, tree, lightgbm, xgboost]
+minimum_trades: 100
+minimum_oos_days: 60
+label_horizon: 5
+embargo_bars: 5
+execution:
+  max_gap_minutes: 5
+  session_flat_minute_et: 990

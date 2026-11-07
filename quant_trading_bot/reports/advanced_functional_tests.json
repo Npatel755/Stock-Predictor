@@ -1,0 +1,127 @@
+{
+  "synthetic": true,
+  "seed": 20261106,
+  "code_commit": "f4b7003dc8739ae2905828de07a934fba6c2e1a4",
+  "source_hash": "2f36f6da9d65d0f73f5ce163248521afa45871f13f257f09abf762e7b878509d",
+  "source_files": {
+    "__init__.py": "68156018c95283459d47f9e283101c10ac5c77546852e7539733801ff5853f94",
+    "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "advanced.py": "e942405bd99cde02396481e1d7ed2db16a1e3f64a44c1821c6de8f220db4fd11",
+    "backtest.py": "9fa94860474d34b37ac200d8c1b1d1b3f00b6674399f446df6c394be2fc2bfa7",
+    "cli.py": "c2b7eee2eff5babe9e20d7f258481e5b1ba8ca7a8fcb477b48341f1dfad8325c",
+    "config.py": "29c1f8fcc076c90d27fdcdde7e20a62b9ee56fb1f167e7c31b242d440d912d8b",
+    "contracts.py": "eda8419c1f5aafe44e7e4d1b5d62285b3f30589c035ec78751d150cb14c4f02c",
+    "data.py": "1e99b709640a7a8fc95c2210b6f7d70f88d757eb4e9fd2217312136eaf6b6076",
+    "execution.py": "b70aa4d582ed2e35431833e27145a702715aab659bf3fd8c83eaf04c93661178",
+    "features.py": "a231433a4dd24e5362be0cf72ee351e053fa7aad55e72f75f443bb592d815604",
+    "funded.py": "edd88ff7eda07cd0213a91626b382f2c9a92545ba8c3668fe79f590833d608ce",
+    "labels.py": "ae28dc5f92f0d94467f6d0f6aac9f91c71662a64be49654f250e6b15f6869993",
+    "metrics.py": "ae67226c12ef02eaa959971e04c0b796505fbe19d5c46a6ca4b1ef44e088b17c",
+    "models.py": "86350c5c3aa2e5ffa992ebab146f9be3ec2fdd6d16273a477aacb64c2b6a623b",
+    "optimization.py": "825009e99be6099bf9d110cd7d95eb5961f1802b8b8852858c1b84d2a4ce460f",
+    "paper.py": "855cd20d22963bcd4f7cb75f92bc79efcf97538060532123f02da28e8b540d22",
+    "providers.py": "60a11529299dc931a4d09737b2cb284dddeb46d4eec82d9f17f57662fd514a72",
+    "research.py": "586a5d0b375e41302e07de391c2182a1e70d07b7ddd9f46e10bd17958d8b93db",
+    "risk.py": "d9815cfaa5d9897b091656ccc4cd112544aa92874067186db12af8feb46d5db5",
+    "statistics.py": "0c5a75c3bb1e1953d02e250639678353e8ce3159628431cdd84bd5af74601dfa",
+    "strategies.py": "48ac99a0350ef55caf2859f386690261c4a477073877c3450f0a2826b082a1d2",
+    "validation.py": "1f3687b07a87d1e03912190faea502bd318b7d7ffeff7145600b58dda988071b"
+  },
+  "attempts": [
+    {
+      "model": "mlp",
+      "status": "functional_training_completed",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": 0.7119596004486084,
+          "validation_loss": 0.617405891418457
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.711059033870697,
+          "validation_loss": 0.6180897355079651
+        }
+      ]
+    },
+    {
+      "model": "tcn",
+      "status": "functional_training_completed",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": 0.6771697998046875,
+          "validation_loss": 0.7042645215988159
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.6756278872489929,
+          "validation_loss": 0.7043418884277344
+        }
+      ]
+    },
+    {
+      "model": "lstm",
+      "status": "functional_training_completed",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": 0.7078806161880493,
+          "validation_loss": 0.6997576951980591
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.706947386264801,
+          "validation_loss": 0.6987581253051758
+        }
+      ]
+    },
+    {
+      "model": "gru",
+      "status": "functional_training_completed",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": 0.6869394183158875,
+          "validation_loss": 0.6631458401679993
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.6861358284950256,
+          "validation_loss": 0.6629670858383179
+        }
+      ]
+    },
+    {
+      "model": "transformer",
+      "status": "functional_training_completed",
+      "history": [
+        {
+          "epoch": 0,
+          "train_loss": 0.734337568283081,
+          "validation_loss": 0.6850849986076355
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.7261636853218079,
+          "validation_loss": 0.6764451265335083
+        }
+      ]
+    },
+    {
+      "model": "ppo",
+      "status": "functional_training_completed",
+      "timesteps": 128,
+      "synthetic_reward_sum": 0.0,
+      "note": "Training-domain replay; no out-of-sample market inference"
+    },
+    {
+      "model": "dqn",
+      "status": "functional_training_completed",
+      "timesteps": 128,
+      "synthetic_reward_sum": -67.74459999995764,
+      "note": "Training-domain replay; no out-of-sample market inference"
+    }
+  ],
+  "deployment_eligible": false
+}

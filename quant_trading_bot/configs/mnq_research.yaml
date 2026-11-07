@@ -1,0 +1,5 @@
+instrument: MNQ
+minimum_training_bars: 480
+validation_bars: 120
+maximum_trials: 32
+models: [logistic, ridge, tree, lightgbm, xgboost]

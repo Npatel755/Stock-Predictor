@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/raw/
+data/processed/
+data/market/
+artifacts/
+runs/
+*.log
+.clean-check/
+.wsl-check/
+.pytest_tmp*/
+.pytest_*/
+.test-tmp-*/
+

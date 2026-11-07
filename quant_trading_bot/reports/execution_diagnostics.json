@@ -1,0 +1,1716 @@
+{
+  "test_accessed": false,
+  "interpretation": "Gross P&L already contains adverse execution prices; cash fees are separated. Ambiguous stops are conservative OHLC bounds, not observed tick paths. No-trade models have no estimated edge. Different participation is not evidence that ML adds alpha.",
+  "rows": [
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_tree",
+      "trades": 26,
+      "net_pnl": -226.78999999983353,
+      "gross_pnl": -173.75,
+      "cash_fees": 53.04,
+      "exposed_fraction": 0.00025550942190993294,
+      "exit_reasons": {
+        "stop": 15,
+        "target": 7,
+        "stop_ambiguous": 2,
+        "signal_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.07692307692307693
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_logistic",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_ridge",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_lightgbm",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_xgboost",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "meta_donchian_meta",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_sma",
+      "trades": 714,
+      "net_pnl": -5629.059999995428,
+      "gross_pnl": -4172.5,
+      "cash_fees": 1456.5599999999995,
+      "exposed_fraction": 0.03181092302778665,
+      "exit_reasons": {
+        "stop": 413,
+        "target": 204,
+        "signal_exit": 39,
+        "stop_ambiguous": 38,
+        "time_exit": 9,
+        "session_close": 5,
+        "gap_recovery": 3,
+        "risk_exit": 3
+      },
+      "ambiguous_stop_fraction": 0.05322128851540616
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_adx",
+      "trades": 663,
+      "net_pnl": -5772.519999995755,
+      "gross_pnl": -4420.0,
+      "cash_fees": 1352.5199999999998,
+      "exposed_fraction": 0.022037687639731716,
+      "exit_reasons": {
+        "stop": 388,
+        "target": 179,
+        "stop_ambiguous": 42,
+        "signal_exit": 37,
+        "session_close": 10,
+        "gap_recovery": 4,
+        "time_exit": 2,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.06334841628959276
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_multi_timeframe",
+      "trades": 703,
+      "net_pnl": -5511.619999995499,
+      "gross_pnl": -4077.5,
+      "cash_fees": 1434.1199999999994,
+      "exposed_fraction": 0.03157670605770255,
+      "exit_reasons": {
+        "stop": 399,
+        "target": 197,
+        "signal_exit": 66,
+        "stop_ambiguous": 27,
+        "session_close": 7,
+        "gap_recovery": 3,
+        "time_exit": 3,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.03840682788051209
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_previous_session",
+      "trades": 998,
+      "net_pnl": -7523.41999999361,
+      "gross_pnl": -5487.5,
+      "cash_fees": 2035.9199999999994,
+      "exposed_fraction": 0.022122857447035026,
+      "exit_reasons": {
+        "stop": 562,
+        "target": 310,
+        "stop_ambiguous": 79,
+        "signal_exit": 27,
+        "session_close": 16,
+        "time_exit": 2,
+        "risk_exit": 1,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.07915831663326653
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_donchian",
+      "trades": 909,
+      "net_pnl": -6980.60999999418,
+      "gross_pnl": -5126.25,
+      "cash_fees": 1854.3599999999992,
+      "exposed_fraction": 0.01217928244437347,
+      "exit_reasons": {
+        "signal_exit": 385,
+        "stop": 300,
+        "target": 156,
+        "stop_ambiguous": 58,
+        "session_close": 7,
+        "risk_exit": 2,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.0638063806380638
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_ema",
+      "trades": 675,
+      "net_pnl": -5741.999999995678,
+      "gross_pnl": -4365.0,
+      "cash_fees": 1376.9999999999995,
+      "exposed_fraction": 0.03302459278185883,
+      "exit_reasons": {
+        "stop": 403,
+        "target": 191,
+        "stop_ambiguous": 32,
+        "signal_exit": 30,
+        "time_exit": 7,
+        "session_close": 6,
+        "gap_recovery": 4,
+        "risk_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.047407407407407405
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_compression",
+      "trades": 907,
+      "net_pnl": -7085.279999994193,
+      "gross_pnl": -5235.0,
+      "cash_fees": 1850.2799999999993,
+      "exposed_fraction": 0.015117640796337699,
+      "exit_reasons": {
+        "signal_exit": 515,
+        "stop": 253,
+        "target": 107,
+        "stop_ambiguous": 28,
+        "session_close": 2,
+        "gap_recovery": 1,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.030871003307607496
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_momentum",
+      "trades": 673,
+      "net_pnl": -5739.169999995691,
+      "gross_pnl": -4366.25,
+      "cash_fees": 1372.9199999999996,
+      "exposed_fraction": 0.02851059299478335,
+      "exit_reasons": {
+        "stop": 309,
+        "signal_exit": 177,
+        "target": 152,
+        "stop_ambiguous": 17,
+        "risk_exit": 12,
+        "gap_recovery": 3,
+        "session_close": 3
+      },
+      "ambiguous_stop_fraction": 0.02526002971768202
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_opening_range",
+      "trades": 913,
+      "net_pnl": -7875.019999994154,
+      "gross_pnl": -6012.5,
+      "cash_fees": 1862.5199999999995,
+      "exposed_fraction": 0.01019908442457149,
+      "exit_reasons": {
+        "stop": 510,
+        "target": 262,
+        "stop_ambiguous": 95,
+        "session_close": 33,
+        "signal_exit": 12,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.10405257393209201
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_vol_momentum",
+      "trades": 566,
+      "net_pnl": -4840.889999996376,
+      "gross_pnl": -3686.25,
+      "cash_fees": 1154.6399999999996,
+      "exposed_fraction": 0.020930480144788672,
+      "exit_reasons": {
+        "stop": 255,
+        "signal_exit": 161,
+        "target": 121,
+        "stop_ambiguous": 18,
+        "gap_recovery": 5,
+        "risk_exit": 3,
+        "session_close": 3
+      },
+      "ambiguous_stop_fraction": 0.03180212014134275
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "ensemble_equal_weight",
+      "trades": 675,
+      "net_pnl": -5425.749999995678,
+      "gross_pnl": -4048.75,
+      "cash_fees": 1376.9999999999995,
+      "exposed_fraction": 0.024507612051527735,
+      "exit_reasons": {
+        "stop": 317,
+        "signal_exit": 168,
+        "target": 153,
+        "stop_ambiguous": 27,
+        "gap_recovery": 4,
+        "session_close": 4,
+        "risk_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.04
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "regime_regime_switch",
+      "trades": 617,
+      "net_pnl": -5479.929999996049,
+      "gross_pnl": -4221.25,
+      "cash_fees": 1258.6799999999998,
+      "exposed_fraction": 0.020696263174704566,
+      "exit_reasons": {
+        "stop": 343,
+        "target": 144,
+        "signal_exit": 87,
+        "stop_ambiguous": 29,
+        "session_close": 6,
+        "gap_recovery": 4,
+        "time_exit": 2,
+        "risk_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.04700162074554295
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_vol_reversion",
+      "trades": 731,
+      "net_pnl": -6072.4899999953195,
+      "gross_pnl": -4581.25,
+      "cash_fees": 1491.2399999999998,
+      "exposed_fraction": 0.01085915043117215,
+      "exit_reasons": {
+        "signal_exit": 308,
+        "stop": 285,
+        "target": 85,
+        "stop_ambiguous": 44,
+        "session_close": 5,
+        "gap_recovery": 3,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.060191518467852256
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_bollinger",
+      "trades": 775,
+      "net_pnl": -6680.999999995038,
+      "gross_pnl": -5100.0,
+      "cash_fees": 1580.9999999999995,
+      "exposed_fraction": 0.009091876929628446,
+      "exit_reasons": {
+        "stop": 341,
+        "signal_exit": 259,
+        "target": 108,
+        "stop_ambiguous": 57,
+        "session_close": 7,
+        "gap_recovery": 2,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.07354838709677419
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_vwap",
+      "trades": 817,
+      "net_pnl": -6722.929999994769,
+      "gross_pnl": -5056.25,
+      "cash_fees": 1666.6799999999994,
+      "exposed_fraction": 0.02256999893537741,
+      "exit_reasons": {
+        "stop": 446,
+        "target": 165,
+        "signal_exit": 148,
+        "stop_ambiguous": 47,
+        "session_close": 7,
+        "gap_recovery": 3,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.05752753977968176
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_rsi",
+      "trades": 870,
+      "net_pnl": -7087.2999999944295,
+      "gross_pnl": -5312.5,
+      "cash_fees": 1774.7999999999995,
+      "exposed_fraction": 0.012392206962631746,
+      "exit_reasons": {
+        "stop": 444,
+        "signal_exit": 200,
+        "target": 158,
+        "stop_ambiguous": 60,
+        "session_close": 6,
+        "risk_exit": 1,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.06896551724137931
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_volume_momentum",
+      "trades": 817,
+      "net_pnl": -7095.429999994769,
+      "gross_pnl": -5428.75,
+      "cash_fees": 1666.6799999999994,
+      "exposed_fraction": 0.014202065367827105,
+      "exit_reasons": {
+        "stop": 340,
+        "signal_exit": 283,
+        "target": 143,
+        "stop_ambiguous": 48,
+        "risk_exit": 2,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.0587515299877601
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_intraday_momentum",
+      "trades": 835,
+      "net_pnl": -7853.399999994654,
+      "gross_pnl": -6150.0,
+      "cash_fees": 1703.3999999999996,
+      "exposed_fraction": 0.009091876929628446,
+      "exit_reasons": {
+        "stop": 477,
+        "target": 220,
+        "stop_ambiguous": 82,
+        "signal_exit": 52,
+        "risk_exit": 3,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.09820359281437126
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_ridge",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_tree",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "meta_donchian_meta",
+      "trades": 2,
+      "net_pnl": -1.0799999999871943,
+      "gross_pnl": 3.0,
+      "cash_fees": 4.08,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "target": 1,
+        "stop_ambiguous": 1
+      },
+      "ambiguous_stop_fraction": 0.5
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_logistic",
+      "trades": 2,
+      "net_pnl": -22.079999999987194,
+      "gross_pnl": -18.0,
+      "cash_fees": 4.08,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop": 1,
+        "stop_ambiguous": 1
+      },
+      "ambiguous_stop_fraction": 0.5
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_xgboost",
+      "trades": 26,
+      "net_pnl": -224.03999999983353,
+      "gross_pnl": -171.0,
+      "cash_fees": 53.04,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop_ambiguous": 18,
+        "stop": 5,
+        "target": 3
+      },
+      "ambiguous_stop_fraction": 0.6923076923076923
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_momentum",
+      "trades": 1521,
+      "net_pnl": -7981.839999990261,
+      "gross_pnl": -4879.0,
+      "cash_fees": 3102.8399999999992,
+      "exposed_fraction": 0.004091583633665465,
+      "exit_reasons": {
+        "stop": 697,
+        "target": 411,
+        "stop_ambiguous": 390,
+        "signal_exit": 23
+      },
+      "ambiguous_stop_fraction": 0.2564102564102564
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_vol_momentum",
+      "trades": 1479,
+      "net_pnl": -8003.65999999053,
+      "gross_pnl": -4986.5,
+      "cash_fees": 3017.159999999999,
+      "exposed_fraction": 0.0043035827856688575,
+      "exit_reasons": {
+        "stop": 688,
+        "target": 382,
+        "stop_ambiguous": 377,
+        "signal_exit": 32
+      },
+      "ambiguous_stop_fraction": 0.2549019607843137
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_multi_timeframe",
+      "trades": 1475,
+      "net_pnl": -8004.999999990556,
+      "gross_pnl": -4996.0,
+      "cash_fees": 3008.999999999999,
+      "exposed_fraction": 0.004409582361670553,
+      "exit_reasons": {
+        "stop": 709,
+        "target": 386,
+        "stop_ambiguous": 360,
+        "signal_exit": 19,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.2440677966101695
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "ml_lightgbm",
+      "trades": 59,
+      "net_pnl": -546.3599999996222,
+      "gross_pnl": -426.0,
+      "cash_fees": 120.36,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop_ambiguous": 42,
+        "stop": 12,
+        "target": 5
+      },
+      "ambiguous_stop_fraction": 0.711864406779661
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_previous_session",
+      "trades": 1230,
+      "net_pnl": -7993.1999999921245,
+      "gross_pnl": -5484.0,
+      "cash_fees": 2509.1999999999994,
+      "exposed_fraction": 0.001483994064023744,
+      "exit_reasons": {
+        "stop_ambiguous": 547,
+        "stop": 417,
+        "target": 266
+      },
+      "ambiguous_stop_fraction": 0.44471544715447153
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_volume_momentum",
+      "trades": 1204,
+      "net_pnl": -8030.659999992291,
+      "gross_pnl": -5574.5,
+      "cash_fees": 2456.16,
+      "exposed_fraction": 0.0007631969472122112,
+      "exit_reasons": {
+        "stop_ambiguous": 479,
+        "stop": 459,
+        "target": 240,
+        "signal_exit": 26
+      },
+      "ambiguous_stop_fraction": 0.3978405315614618
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "ensemble_equal_weight",
+      "trades": 1448,
+      "net_pnl": -8021.919999990729,
+      "gross_pnl": -5068.0,
+      "cash_fees": 2953.919999999999,
+      "exposed_fraction": 0.0037947848208607165,
+      "exit_reasons": {
+        "stop": 690,
+        "target": 371,
+        "stop_ambiguous": 366,
+        "signal_exit": 21
+      },
+      "ambiguous_stop_fraction": 0.2527624309392265
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_sma",
+      "trades": 1483,
+      "net_pnl": -8009.819999990505,
+      "gross_pnl": -4984.5,
+      "cash_fees": 3025.3199999999993,
+      "exposed_fraction": 0.004430782276870893,
+      "exit_reasons": {
+        "stop": 745,
+        "target": 397,
+        "stop_ambiguous": 336,
+        "signal_exit": 5
+      },
+      "ambiguous_stop_fraction": 0.2265677680377613
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_bollinger",
+      "trades": 1026,
+      "net_pnl": -8021.539999993431,
+      "gross_pnl": -5928.5,
+      "cash_fees": 2093.04,
+      "exposed_fraction": 0.0005723977104091584,
+      "exit_reasons": {
+        "stop_ambiguous": 505,
+        "stop": 351,
+        "target": 145,
+        "signal_exit": 25
+      },
+      "ambiguous_stop_fraction": 0.4922027290448343
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "regime_regime_switch",
+      "trades": 1252,
+      "net_pnl": -8023.079999991984,
+      "gross_pnl": -5469.0,
+      "cash_fees": 2554.079999999999,
+      "exposed_fraction": 0.0018867924528301887,
+      "exit_reasons": {
+        "stop": 575,
+        "stop_ambiguous": 396,
+        "target": 270,
+        "signal_exit": 11
+      },
+      "ambiguous_stop_fraction": 0.31629392971246006
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_ema",
+      "trades": 1513,
+      "net_pnl": -8023.5199999903125,
+      "gross_pnl": -4937.0,
+      "cash_fees": 3086.519999999999,
+      "exposed_fraction": 0.004918380326478694,
+      "exit_reasons": {
+        "stop": 756,
+        "target": 412,
+        "stop_ambiguous": 341,
+        "signal_exit": 3,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.22538003965631195
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_intraday_momentum",
+      "trades": 889,
+      "net_pnl": -8029.559999994308,
+      "gross_pnl": -6216.0,
+      "cash_fees": 1813.5599999999995,
+      "exposed_fraction": 4.2399830400678394e-05,
+      "exit_reasons": {
+        "stop_ambiguous": 666,
+        "stop": 138,
+        "target": 85
+      },
+      "ambiguous_stop_fraction": 0.749156355455568
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_compression",
+      "trades": 1175,
+      "net_pnl": -8033.499999992477,
+      "gross_pnl": -5636.5,
+      "cash_fees": 2396.9999999999995,
+      "exposed_fraction": 0.0011023955904176383,
+      "exit_reasons": {
+        "stop_ambiguous": 477,
+        "stop": 437,
+        "target": 221,
+        "signal_exit": 39,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.40595744680851065
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_opening_range",
+      "trades": 881,
+      "net_pnl": -8037.239999994359,
+      "gross_pnl": -6240.0,
+      "cash_fees": 1797.2399999999993,
+      "exposed_fraction": 4.2399830400678394e-05,
+      "exit_reasons": {
+        "stop_ambiguous": 638,
+        "stop": 162,
+        "target": 80,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.7241770715096482
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_donchian",
+      "trades": 1134,
+      "net_pnl": -8040.359999992739,
+      "gross_pnl": -5727.0,
+      "cash_fees": 2313.359999999999,
+      "exposed_fraction": 0.0007207971168115328,
+      "exit_reasons": {
+        "stop_ambiguous": 531,
+        "stop": 372,
+        "target": 204,
+        "signal_exit": 27
+      },
+      "ambiguous_stop_fraction": 0.46825396825396826
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_vol_reversion",
+      "trades": 1197,
+      "net_pnl": -8045.879999992336,
+      "gross_pnl": -5604.0,
+      "cash_fees": 2441.8799999999997,
+      "exposed_fraction": 0.0013143947424210302,
+      "exit_reasons": {
+        "stop_ambiguous": 488,
+        "stop": 442,
+        "target": 224,
+        "signal_exit": 42,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.4076858813700919
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_rsi",
+      "trades": 1028,
+      "net_pnl": -8046.619999993418,
+      "gross_pnl": -5949.5,
+      "cash_fees": 2097.12,
+      "exposed_fraction": 0.0010175959296162816,
+      "exit_reasons": {
+        "stop_ambiguous": 538,
+        "stop": 328,
+        "target": 150,
+        "signal_exit": 12
+      },
+      "ambiguous_stop_fraction": 0.5233463035019456
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_vwap",
+      "trades": 1199,
+      "net_pnl": -8048.459999992323,
+      "gross_pnl": -5602.5,
+      "cash_fees": 2445.9599999999996,
+      "exposed_fraction": 0.0026075895696417214,
+      "exit_reasons": {
+        "stop": 558,
+        "stop_ambiguous": 387,
+        "target": 235,
+        "signal_exit": 19
+      },
+      "ambiguous_stop_fraction": 0.32276897414512096
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 15,
+      "candidate_id": "baseline_adx",
+      "trades": 1299,
+      "net_pnl": -8051.959999991683,
+      "gross_pnl": -5402.0,
+      "cash_fees": 2649.959999999999,
+      "exposed_fraction": 0.00211999152003392,
+      "exit_reasons": {
+        "stop": 557,
+        "stop_ambiguous": 441,
+        "target": 297,
+        "signal_exit": 4
+      },
+      "ambiguous_stop_fraction": 0.3394919168591224
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "meta_donchian_meta",
+      "trades": 79,
+      "net_pnl": -1094.9099999994942,
+      "gross_pnl": -933.75,
+      "cash_fees": 161.1599999999999,
+      "exposed_fraction": 4.954138829124674e-05,
+      "exit_reasons": {
+        "stop": 36,
+        "stop_ambiguous": 24,
+        "target": 14,
+        "signal_exit": 5
+      },
+      "ambiguous_stop_fraction": 0.3037974683544304
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_ridge",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_logistic",
+      "trades": 116,
+      "net_pnl": -1206.6399999992573,
+      "gross_pnl": -970.0,
+      "cash_fees": 236.6399999999999,
+      "exposed_fraction": 0.00012031480013588494,
+      "exit_reasons": {
+        "stop": 49,
+        "stop_ambiguous": 32,
+        "target": 28,
+        "signal_exit": 7
+      },
+      "ambiguous_stop_fraction": 0.27586206896551724
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_adx",
+      "trades": 895,
+      "net_pnl": -6912.0499999942695,
+      "gross_pnl": -5086.25,
+      "cash_fees": 1825.7999999999993,
+      "exposed_fraction": 0.02769363605480693,
+      "exit_reasons": {
+        "stop": 440,
+        "target": 198,
+        "signal_exit": 171,
+        "time_exit": 57,
+        "stop_ambiguous": 15,
+        "session_close": 6,
+        "risk_exit": 4,
+        "gap_recovery": 4
+      },
+      "ambiguous_stop_fraction": 0.01675977653631285
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_previous_session",
+      "trades": 911,
+      "net_pnl": -6757.189999994167,
+      "gross_pnl": -4898.75,
+      "cash_fees": 1858.4399999999996,
+      "exposed_fraction": 0.01858509795040199,
+      "exit_reasons": {
+        "stop": 513,
+        "target": 259,
+        "signal_exit": 75,
+        "time_exit": 36,
+        "stop_ambiguous": 14,
+        "session_close": 10,
+        "gap_recovery": 2,
+        "risk_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.015367727771679473
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_ema",
+      "trades": 517,
+      "net_pnl": -4414.67999999669,
+      "gross_pnl": -3360.0,
+      "cash_fees": 1054.6799999999998,
+      "exposed_fraction": 0.018903578303702866,
+      "exit_reasons": {
+        "stop": 265,
+        "target": 110,
+        "signal_exit": 61,
+        "time_exit": 60,
+        "risk_exit": 9,
+        "gap_recovery": 5,
+        "stop_ambiguous": 5,
+        "session_close": 2
+      },
+      "ambiguous_stop_fraction": 0.009671179883945842
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_multi_timeframe",
+      "trades": 686,
+      "net_pnl": -5546.939999995608,
+      "gross_pnl": -4147.5,
+      "cash_fees": 1399.4399999999996,
+      "exposed_fraction": 0.023383535273468464,
+      "exit_reasons": {
+        "stop": 336,
+        "target": 151,
+        "signal_exit": 133,
+        "time_exit": 49,
+        "stop_ambiguous": 8,
+        "gap_recovery": 3,
+        "session_close": 3,
+        "risk_exit": 3
+      },
+      "ambiguous_stop_fraction": 0.011661807580174927
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_lightgbm",
+      "trades": 230,
+      "net_pnl": -1841.6999999985273,
+      "gross_pnl": -1372.5,
+      "cash_fees": 469.1999999999998,
+      "exposed_fraction": 0.003623598686445476,
+      "exit_reasons": {
+        "signal_exit": 197,
+        "stop": 13,
+        "stop_ambiguous": 11,
+        "gap_recovery": 5,
+        "target": 4
+      },
+      "ambiguous_stop_fraction": 0.04782608695652174
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_xgboost",
+      "trades": 249,
+      "net_pnl": -1977.9599999984057,
+      "gross_pnl": -1470.0,
+      "cash_fees": 507.9599999999999,
+      "exposed_fraction": 0.003736836145396897,
+      "exit_reasons": {
+        "signal_exit": 236,
+        "stop_ambiguous": 9,
+        "gap_recovery": 2,
+        "stop": 2
+      },
+      "ambiguous_stop_fraction": 0.03614457831325301
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_vwap",
+      "trades": 680,
+      "net_pnl": -5199.699999995646,
+      "gross_pnl": -3812.5,
+      "cash_fees": 1387.1999999999996,
+      "exposed_fraction": 0.016624674442305514,
+      "exit_reasons": {
+        "stop": 303,
+        "signal_exit": 247,
+        "target": 83,
+        "time_exit": 25,
+        "stop_ambiguous": 15,
+        "gap_recovery": 4,
+        "risk_exit": 2,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.022058823529411766
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_opening_range",
+      "trades": 1181,
+      "net_pnl": -7865.489999992438,
+      "gross_pnl": -5456.25,
+      "cash_fees": 2409.2399999999993,
+      "exposed_fraction": 0.015449835805684521,
+      "exit_reasons": {
+        "stop": 682,
+        "target": 378,
+        "signal_exit": 49,
+        "stop_ambiguous": 39,
+        "session_close": 25,
+        "time_exit": 6,
+        "risk_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.03302286198137172
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_tree",
+      "trades": 233,
+      "net_pnl": -1927.8199999985081,
+      "gross_pnl": -1452.5,
+      "cash_fees": 475.3199999999998,
+      "exposed_fraction": 0.007898312761861623,
+      "exit_reasons": {
+        "signal_exit": 183,
+        "stop": 30,
+        "stop_ambiguous": 11,
+        "gap_recovery": 5,
+        "time_exit": 3,
+        "target": 1
+      },
+      "ambiguous_stop_fraction": 0.04721030042918455
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_rsi",
+      "trades": 1080,
+      "net_pnl": -8070.699999993085,
+      "gross_pnl": -5867.5,
+      "cash_fees": 2203.2,
+      "exposed_fraction": 0.009660570716793115,
+      "exit_reasons": {
+        "signal_exit": 513,
+        "stop": 435,
+        "target": 102,
+        "stop_ambiguous": 25,
+        "risk_exit": 3,
+        "session_close": 2
+      },
+      "ambiguous_stop_fraction": 0.023148148148148147
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "regime_regime_switch",
+      "trades": 956,
+      "net_pnl": -6496.489999993879,
+      "gross_pnl": -4546.25,
+      "cash_fees": 1950.2399999999993,
+      "exposed_fraction": 0.021833597554070886,
+      "exit_reasons": {
+        "signal_exit": 390,
+        "stop": 344,
+        "target": 158,
+        "time_exit": 40,
+        "stop_ambiguous": 13,
+        "risk_exit": 5,
+        "gap_recovery": 4,
+        "session_close": 2
+      },
+      "ambiguous_stop_fraction": 0.013598326359832637
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_vol_reversion",
+      "trades": 989,
+      "net_pnl": -6781.309999993668,
+      "gross_pnl": -4763.75,
+      "cash_fees": 2017.5599999999995,
+      "exposed_fraction": 0.008712206998074963,
+      "exit_reasons": {
+        "signal_exit": 719,
+        "stop": 208,
+        "target": 44,
+        "stop_ambiguous": 12,
+        "risk_exit": 4,
+        "gap_recovery": 2
+      },
+      "ambiguous_stop_fraction": 0.012133468149646108
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_bollinger",
+      "trades": 987,
+      "net_pnl": -7484.72999999368,
+      "gross_pnl": -5471.25,
+      "cash_fees": 2013.4799999999996,
+      "exposed_fraction": 0.007721379232250029,
+      "exit_reasons": {
+        "signal_exit": 654,
+        "stop": 259,
+        "target": 51,
+        "stop_ambiguous": 19,
+        "risk_exit": 3,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.019250253292806486
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_sma",
+      "trades": 621,
+      "net_pnl": -4753.089999996024,
+      "gross_pnl": -3486.25,
+      "cash_fees": 1266.8399999999997,
+      "exposed_fraction": 0.021904370965915524,
+      "exit_reasons": {
+        "stop": 308,
+        "target": 138,
+        "signal_exit": 81,
+        "time_exit": 68,
+        "stop_ambiguous": 10,
+        "risk_exit": 7,
+        "gap_recovery": 5,
+        "session_close": 4
+      },
+      "ambiguous_stop_fraction": 0.01610305958132045
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_intraday_momentum",
+      "trades": 1068,
+      "net_pnl": -8037.469999993162,
+      "gross_pnl": -5858.75,
+      "cash_fees": 2178.72,
+      "exposed_fraction": 0.009285471634016532,
+      "exit_reasons": {
+        "stop": 574,
+        "target": 302,
+        "signal_exit": 128,
+        "stop_ambiguous": 51,
+        "risk_exit": 12,
+        "time_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.047752808988764044
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_vol_momentum",
+      "trades": 800,
+      "net_pnl": -5934.499999994878,
+      "gross_pnl": -4302.5,
+      "cash_fees": 1631.9999999999995,
+      "exposed_fraction": 0.016461895595062847,
+      "exit_reasons": {
+        "signal_exit": 435,
+        "stop": 213,
+        "target": 126,
+        "stop_ambiguous": 11,
+        "risk_exit": 10,
+        "gap_recovery": 3,
+        "session_close": 1,
+        "time_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.01375
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "ensemble_equal_weight",
+      "trades": 756,
+      "net_pnl": -6148.489999995159,
+      "gross_pnl": -4606.25,
+      "cash_fees": 1542.2399999999996,
+      "exposed_fraction": 0.01509596874646133,
+      "exit_reasons": {
+        "signal_exit": 380,
+        "stop": 245,
+        "target": 108,
+        "stop_ambiguous": 10,
+        "risk_exit": 6,
+        "time_exit": 4,
+        "gap_recovery": 2,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.013227513227513227
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_momentum",
+      "trades": 890,
+      "net_pnl": -6455.5999999943015,
+      "gross_pnl": -4640.0,
+      "cash_fees": 1815.5999999999995,
+      "exposed_fraction": 0.019568848375042466,
+      "exit_reasons": {
+        "signal_exit": 423,
+        "stop": 254,
+        "target": 152,
+        "risk_exit": 46,
+        "stop_ambiguous": 8,
+        "time_exit": 4,
+        "gap_recovery": 2,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.008988764044943821
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_volume_momentum",
+      "trades": 908,
+      "net_pnl": -6568.569999994186,
+      "gross_pnl": -4716.25,
+      "cash_fees": 1852.3199999999993,
+      "exposed_fraction": 0.007601064432114143,
+      "exit_reasons": {
+        "signal_exit": 644,
+        "stop": 159,
+        "target": 81,
+        "stop_ambiguous": 13,
+        "risk_exit": 9,
+        "gap_recovery": 2
+      },
+      "ambiguous_stop_fraction": 0.014317180616740088
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_donchian",
+      "trades": 1055,
+      "net_pnl": -7809.699999993245,
+      "gross_pnl": -5657.5,
+      "cash_fees": 2152.2,
+      "exposed_fraction": 0.00746659494960933,
+      "exit_reasons": {
+        "signal_exit": 766,
+        "stop": 169,
+        "target": 90,
+        "stop_ambiguous": 25,
+        "risk_exit": 5
+      },
+      "ambiguous_stop_fraction": 0.023696682464454975
+    },
+    {
+      "instrument": "MES",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_compression",
+      "trades": 1035,
+      "net_pnl": -7972.649999993373,
+      "gross_pnl": -5861.25,
+      "cash_fees": 2111.3999999999996,
+      "exposed_fraction": 0.007176423961046314,
+      "exit_reasons": {
+        "signal_exit": 807,
+        "stop": 154,
+        "target": 58,
+        "stop_ambiguous": 10,
+        "risk_exit": 5,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.00966183574879227
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_xgboost",
+      "trades": 26,
+      "net_pnl": -182.03999999983353,
+      "gross_pnl": -129.0,
+      "cash_fees": 53.04,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop_ambiguous": 11,
+        "stop": 10,
+        "target": 5
+      },
+      "ambiguous_stop_fraction": 0.4230769230769231
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_ridge",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "gross_pnl": 0.0,
+      "cash_fees": 0.0,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {},
+      "ambiguous_stop_fraction": null
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_tree",
+      "trades": 102,
+      "net_pnl": -601.0799999993469,
+      "gross_pnl": -393.0,
+      "cash_fees": 208.0799999999999,
+      "exposed_fraction": 4.239563607585993e-05,
+      "exit_reasons": {
+        "stop": 47,
+        "stop_ambiguous": 30,
+        "target": 25
+      },
+      "ambiguous_stop_fraction": 0.29411764705882354
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "meta_donchian_meta",
+      "trades": 10,
+      "net_pnl": -110.39999999993597,
+      "gross_pnl": -90.0,
+      "cash_fees": 20.4,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop_ambiguous": 9,
+        "stop": 1
+      },
+      "ambiguous_stop_fraction": 0.9
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_logistic",
+      "trades": 11,
+      "net_pnl": -121.43999999992957,
+      "gross_pnl": -99.0,
+      "cash_fees": 22.439999999999998,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop_ambiguous": 11
+      },
+      "ambiguous_stop_fraction": 1.0
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "regime_regime_switch",
+      "trades": 1549,
+      "net_pnl": -7067.459999990082,
+      "gross_pnl": -3907.5,
+      "cash_fees": 3159.959999999999,
+      "exposed_fraction": 0.00536304796359628,
+      "exit_reasons": {
+        "stop": 845,
+        "target": 442,
+        "stop_ambiguous": 188,
+        "signal_exit": 71,
+        "risk_exit": 2,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.12136862491930278
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "ml_lightgbm",
+      "trades": 55,
+      "net_pnl": -376.19999999964784,
+      "gross_pnl": -264.0,
+      "cash_fees": 112.20000000000003,
+      "exposed_fraction": 0.0,
+      "exit_reasons": {
+        "stop_ambiguous": 23,
+        "stop": 21,
+        "target": 11
+      },
+      "ambiguous_stop_fraction": 0.41818181818181815
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_bollinger",
+      "trades": 1402,
+      "net_pnl": -8017.579999991023,
+      "gross_pnl": -5157.5,
+      "cash_fees": 2860.0799999999995,
+      "exposed_fraction": 0.002140979621830926,
+      "exit_reasons": {
+        "stop": 654,
+        "stop_ambiguous": 289,
+        "target": 243,
+        "signal_exit": 215,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.20613409415121256
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_adx",
+      "trades": 1769,
+      "net_pnl": -7049.759999988673,
+      "gross_pnl": -3441.0,
+      "cash_fees": 3608.759999999999,
+      "exposed_fraction": 0.0062745541392272685,
+      "exit_reasons": {
+        "stop": 959,
+        "target": 581,
+        "stop_ambiguous": 200,
+        "signal_exit": 28,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.11305822498586772
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_opening_range",
+      "trades": 914,
+      "net_pnl": -7068.559999994148,
+      "gross_pnl": -5204.0,
+      "cash_fees": 1864.5599999999995,
+      "exposed_fraction": 0.000183714422995393,
+      "exit_reasons": {
+        "stop_ambiguous": 467,
+        "stop": 302,
+        "target": 143,
+        "session_close": 1,
+        "gap_recovery": 1
+      },
+      "ambiguous_stop_fraction": 0.5109409190371991
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_rsi",
+      "trades": 1320,
+      "net_pnl": -8011.299999991548,
+      "gross_pnl": -5318.5,
+      "cash_fees": 2692.7999999999993,
+      "exposed_fraction": 0.0016392979282665837,
+      "exit_reasons": {
+        "stop": 609,
+        "stop_ambiguous": 358,
+        "target": 251,
+        "signal_exit": 102
+      },
+      "ambiguous_stop_fraction": 0.27121212121212124
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_previous_session",
+      "trades": 1479,
+      "net_pnl": -7982.65999999053,
+      "gross_pnl": -4965.5,
+      "cash_fees": 3017.159999999999,
+      "exposed_fraction": 0.003186738645035471,
+      "exit_reasons": {
+        "stop": 690,
+        "target": 395,
+        "stop_ambiguous": 385,
+        "signal_exit": 7,
+        "time_exit": 1,
+        "session_close": 1
+      },
+      "ambiguous_stop_fraction": 0.26031102096010816
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_vol_reversion",
+      "trades": 1616,
+      "net_pnl": -8001.139999989653,
+      "gross_pnl": -4704.5,
+      "cash_fees": 3296.639999999999,
+      "exposed_fraction": 0.0037944094287894635,
+      "exit_reasons": {
+        "stop": 761,
+        "signal_exit": 344,
+        "target": 292,
+        "stop_ambiguous": 218,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.1349009900990099
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_vwap",
+      "trades": 1561,
+      "net_pnl": -7997.939999990005,
+      "gross_pnl": -4813.5,
+      "cash_fees": 3184.439999999999,
+      "exposed_fraction": 0.006790367711483565,
+      "exit_reasons": {
+        "stop": 874,
+        "target": 346,
+        "stop_ambiguous": 188,
+        "signal_exit": 150,
+        "risk_exit": 3
+      },
+      "ambiguous_stop_fraction": 0.12043561819346572
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_intraday_momentum",
+      "trades": 800,
+      "net_pnl": -6741.499999994878,
+      "gross_pnl": -5109.5,
+      "cash_fees": 1631.9999999999995,
+      "exposed_fraction": 0.0002967694525310195,
+      "exit_reasons": {
+        "stop_ambiguous": 515,
+        "stop": 183,
+        "target": 98,
+        "signal_exit": 2,
+        "gap_recovery": 2
+      },
+      "ambiguous_stop_fraction": 0.64375
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_ema",
+      "trades": 1783,
+      "net_pnl": -7990.819999988584,
+      "gross_pnl": -4353.5,
+      "cash_fees": 3637.319999999999,
+      "exposed_fraction": 0.009906446963059269,
+      "exit_reasons": {
+        "stop": 1030,
+        "target": 551,
+        "stop_ambiguous": 181,
+        "signal_exit": 17,
+        "risk_exit": 4
+      },
+      "ambiguous_stop_fraction": 0.10151430173864273
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_donchian",
+      "trades": 1586,
+      "net_pnl": -8015.939999989845,
+      "gross_pnl": -4780.5,
+      "cash_fees": 3235.439999999999,
+      "exposed_fraction": 0.002148045561176903,
+      "exit_reasons": {
+        "stop": 675,
+        "target": 374,
+        "stop_ambiguous": 321,
+        "signal_exit": 215,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.20239596469104665
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_momentum",
+      "trades": 1581,
+      "net_pnl": -8016.739999989877,
+      "gross_pnl": -4791.5,
+      "cash_fees": 3225.2399999999993,
+      "exposed_fraction": 0.006557191713066335,
+      "exit_reasons": {
+        "stop": 858,
+        "target": 419,
+        "stop_ambiguous": 209,
+        "signal_exit": 90,
+        "risk_exit": 5
+      },
+      "ambiguous_stop_fraction": 0.13219481340923467
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_compression",
+      "trades": 1383,
+      "net_pnl": -8018.819999991145,
+      "gross_pnl": -5197.5,
+      "cash_fees": 2821.319999999999,
+      "exposed_fraction": 0.00194313332014358,
+      "exit_reasons": {
+        "stop": 600,
+        "stop_ambiguous": 305,
+        "target": 268,
+        "signal_exit": 209,
+        "risk_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.2205350686912509
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_multi_timeframe",
+      "trades": 1979,
+      "net_pnl": -8020.159999987329,
+      "gross_pnl": -3983.0,
+      "cash_fees": 4037.159999999999,
+      "exposed_fraction": 0.009213984907153557,
+      "exit_reasons": {
+        "stop": 1094,
+        "target": 640,
+        "stop_ambiguous": 201,
+        "signal_exit": 43,
+        "time_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.10156644770085901
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_vol_momentum",
+      "trades": 1574,
+      "net_pnl": -8020.959999989922,
+      "gross_pnl": -4810.0,
+      "cash_fees": 3210.959999999999,
+      "exposed_fraction": 0.005214663237330771,
+      "exit_reasons": {
+        "stop": 831,
+        "target": 409,
+        "stop_ambiguous": 221,
+        "signal_exit": 110,
+        "risk_exit": 3
+      },
+      "ambiguous_stop_fraction": 0.14040660736975857
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_sma",
+      "trades": 1860,
+      "net_pnl": -8034.899999988091,
+      "gross_pnl": -4240.5,
+      "cash_fees": 3794.3999999999987,
+      "exposed_fraction": 0.009553149995760436,
+      "exit_reasons": {
+        "stop": 1025,
+        "target": 581,
+        "stop_ambiguous": 221,
+        "signal_exit": 30,
+        "risk_exit": 2,
+        "time_exit": 1
+      },
+      "ambiguous_stop_fraction": 0.11881720430107527
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "ensemble_equal_weight",
+      "trades": 1626,
+      "net_pnl": -8045.539999989589,
+      "gross_pnl": -4728.5,
+      "cash_fees": 3317.039999999999,
+      "exposed_fraction": 0.006550125773720358,
+      "exit_reasons": {
+        "stop": 873,
+        "target": 434,
+        "stop_ambiguous": 216,
+        "signal_exit": 103
+      },
+      "ambiguous_stop_fraction": 0.13284132841328414
+    },
+    {
+      "instrument": "MNQ",
+      "timeframe_minutes": 5,
+      "candidate_id": "baseline_volume_momentum",
+      "trades": 1515,
+      "net_pnl": -8055.0999999903,
+      "gross_pnl": -4964.5,
+      "cash_fees": 3090.599999999999,
+      "exposed_fraction": 0.002897035131850428,
+      "exit_reasons": {
+        "stop": 716,
+        "signal_exit": 294,
+        "target": 291,
+        "stop_ambiguous": 212,
+        "risk_exit": 2
+      },
+      "ambiguous_stop_fraction": 0.13993399339933993
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mes-mnq-research"
+version = "0.1.0"
+description = "Chronological futures research and paper-only execution"
+requires-python = ">=3.11"
+dependencies = ["numpy", "pandas", "pyarrow", "scipy", "scikit-learn", "pydantic>=2", "PyYAML", "joblib", "tzdata", "requests"]
+
+[project.optional-dependencies]
+research = ["xgboost", "lightgbm", "optuna", "duckdb"]
+data = ["databento>=0.90,<1"]
+advanced = ["torch", "gymnasium", "stable-baselines3"]
+dashboard = ["streamlit", "plotly"]
+test = ["pytest"]
+
+[project.scripts]
+quant = "quant_futures.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "rows": 299805,
+  "start": "2010-06-06 22:00:00+00:00",
+  "end": "2023-12-29 21:45:00+00:00",
+  "timeframe_minutes": 15,
+  "instrument": "ES",
+  "role": "train",
+  "actual_market_data": true,
+  "test_prices_read": false
+}

@@ -1,0 +1,12 @@
+{
+  "source_job": "GLBX-20261106-FX6FM5XWUX",
+  "source_dataset_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+  "training_end_exclusive": "2024-01-01 00:00:00+00:00",
+  "validation_start_inclusive": "2024-01-01 00:00:00+00:00",
+  "validation_end_exclusive": "2026-01-01 00:00:00+00:00",
+  "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+  "method": "chronological calendar boundaries; never random shuffle",
+  "test_policy": "excluded from fitting, calibration, feature selection and hyperparameter/model selection",
+  "created_at": "2026-11-06T20:18:36.385239+00:00",
+  "protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33"
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "tables": 14,
+  "graphs": 5,
+  "metrics": 8,
+  "health_url": "http://127.0.0.1:8511/_stcore/health"
+}

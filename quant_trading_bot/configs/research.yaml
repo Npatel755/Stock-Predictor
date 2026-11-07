@@ -1,0 +1,45 @@
+seed: 20261106
+initial_balance: 50000
+instrument: MES
+timeframe_minutes: 1
+label_horizon: 5
+embargo_bars: 5
+holdout_fraction: 0.2
+minimum_training_bars: 240
+validation_bars: 120
+maximum_trials: 32
+maximum_runtime_seconds: 600
+maximum_parallel_jobs: 1
+maximum_disk_gb: 2
+minimum_trades: 100
+minimum_oos_days: 60
+models: [logistic, ridge, tree, lightgbm, xgboost]
+calibration: sigmoid
+probability_threshold: 0.57
+costs:
+  commission_per_side: 0.65
+  exchange_per_side: 0.35
+  regulatory_per_side: 0.02
+  spread_ticks: 1
+  slippage_ticks: 1
+  impact_ticks: 0
+execution:
+  delay_bars: 1
+  participation: 0.01
+  stop_ticks: 16
+  target_ticks: 24
+  max_hold_bars: 20
+  max_gap_minutes: 5
+  session_flat_minute_et: 1000
+  missed_entry_fraction: 0
+risk:
+  max_contracts: 1
+  max_trade_risk: 75
+  max_open_risk: 150
+  max_daily_loss: 300
+  max_drawdown: 1000
+  max_consecutive_losses: 5
+  max_orders_per_minute: 4
+  max_correlated_contracts: 1
+  max_slippage_ticks: 4
+

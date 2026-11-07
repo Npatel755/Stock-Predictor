@@ -1,0 +1,399 @@
+{
+  "active_job": "GLBX-20261106-FX6FM5XWUX",
+  "active_root": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3",
+  "dataset_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+  "synthetic": false,
+  "source_zip": "/mnt/c/Users/Nick/Downloads/GLBX-20261106-FX6FM5XWUX.zip",
+  "instruments": {
+    "MES": {
+      "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/manifests/wsl/MES.dataset.json",
+      "dataset_version": "db62a2f0ea16c354e7055c0d4a03f27df0e64927ccbb2cb41bbd6cfc34bc8844",
+      "source_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+      "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+      "provider": "User-provided Databento GLBX.MDP3 export",
+      "synthetic": false,
+      "raw_contract_prices": true,
+      "timestamp_semantics": "bar_open",
+      "timeframe_minutes": 1,
+      "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+      "instrument": "MES",
+      "coverage": {
+        "rows": 2646240,
+        "start": "2019-05-05 18:00:00-04",
+        "end": "2026-11-05 18:59:00-05",
+        "contracts": 31,
+        "flagged_rows": 0
+      },
+      "roll_schedule_hash": "7310bc2e12fc8bd27d9f031ad732e8d636a9a038493e9f92d9f7a939bfa28a44",
+      "selection_rule": "previous completed session volume; forward expiries only; no price filling or back adjustment",
+      "selector_version": 2,
+      "role": "primary_micro_futures",
+      "unsplit_dataset_version": "304c3072115c8d2671ab4b474ffa8f8842ff05acfcd09a87a2a57945220a85d4",
+      "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+      "splits": {
+        "train": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/MES/train.parquet",
+          "dataset_version": "93fb381d4f21ce1802979ffefa9f26c9a6419d370b22827e98caedf677ea2c0b",
+          "source_dataset_version": "304c3072115c8d2671ab4b474ffa8f8842ff05acfcd09a87a2a57945220a85d4",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "MES",
+          "split_role": "train",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 1637070,
+            "start": "2019-05-05 22:00:00+00:00",
+            "end": "2023-12-29 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "validation": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/MES/validation.parquet",
+          "dataset_version": "b45380bcdb44da33636872717dde16ac7713eabee60131b603de011b7ea62cdb",
+          "source_dataset_version": "304c3072115c8d2671ab4b474ffa8f8842ff05acfcd09a87a2a57945220a85d4",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "MES",
+          "split_role": "validation",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 707415,
+            "start": "2024-01-01 23:00:00+00:00",
+            "end": "2025-12-31 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "test": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/MES/test.parquet",
+          "dataset_version": "cc31e22695e012b9a0fd9524585f0b122fa365b04eb01f8508496ca55ccc39f4",
+          "source_dataset_version": "304c3072115c8d2671ab4b474ffa8f8842ff05acfcd09a87a2a57945220a85d4",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "MES",
+          "split_role": "test",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 301755,
+            "start": "2026-01-01 23:00:00+00:00",
+            "end": "2026-11-05 23:59:00+00:00"
+          },
+          "model_selection_access": false
+        }
+      }
+    },
+    "MNQ": {
+      "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/manifests/wsl/MNQ.dataset.json",
+      "dataset_version": "3e41dfab5871718d5b4037ec0f282f12350061a74ae385adab342936309a52c9",
+      "source_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+      "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+      "provider": "User-provided Databento GLBX.MDP3 export",
+      "synthetic": false,
+      "raw_contract_prices": true,
+      "timestamp_semantics": "bar_open",
+      "timeframe_minutes": 1,
+      "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+      "instrument": "MNQ",
+      "coverage": {
+        "rows": 2648080,
+        "start": "2019-05-05 18:03:00-04",
+        "end": "2026-11-05 18:59:00-05",
+        "contracts": 31,
+        "flagged_rows": 0
+      },
+      "roll_schedule_hash": "7310bc2e12fc8bd27d9f031ad732e8d636a9a038493e9f92d9f7a939bfa28a44",
+      "selection_rule": "previous completed session volume; forward expiries only; no price filling or back adjustment",
+      "selector_version": 2,
+      "role": "primary_micro_futures",
+      "unsplit_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+      "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+      "splits": {
+        "train": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/MNQ/train.parquet",
+          "dataset_version": "9ff96dc3b1814a7569724a360fbd6628674fd802c015e1d79cb230547ddc8381",
+          "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "MNQ",
+          "split_role": "train",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 1638673,
+            "start": "2019-05-05 22:03:00+00:00",
+            "end": "2023-12-29 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "validation": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/MNQ/validation.parquet",
+          "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+          "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "MNQ",
+          "split_role": "validation",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 707652,
+            "start": "2024-01-01 23:00:00+00:00",
+            "end": "2025-12-31 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "test": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/MNQ/test.parquet",
+          "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+          "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "MNQ",
+          "split_role": "test",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 301755,
+            "start": "2026-01-01 23:00:00+00:00",
+            "end": "2026-11-05 23:59:00+00:00"
+          },
+          "model_selection_access": false
+        }
+      }
+    },
+    "ES": {
+      "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/manifests/wsl/ES.dataset.json",
+      "dataset_version": "47c9a19b498a071354480ee929c4a30c11a87ab21ae84d20b0df29971e12a4cf",
+      "source_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+      "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+      "provider": "User-provided Databento GLBX.MDP3 export",
+      "synthetic": false,
+      "raw_contract_prices": true,
+      "timestamp_semantics": "bar_open",
+      "timeframe_minutes": 1,
+      "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+      "instrument": "ES",
+      "coverage": {
+        "rows": 5741206,
+        "start": "2010-06-06 18:00:00-04",
+        "end": "2026-11-05 18:59:00-05",
+        "contracts": 67,
+        "flagged_rows": 0
+      },
+      "roll_schedule_hash": "7310bc2e12fc8bd27d9f031ad732e8d636a9a038493e9f92d9f7a939bfa28a44",
+      "selection_rule": "previous completed session volume; forward expiries only; no price filling or back adjustment",
+      "selector_version": 2,
+      "role": "mini_reference_or_explicit_proxy_only",
+      "unsplit_dataset_version": "303695f218917d993284c73cfebac2a1f655bb6294ed18c060915d61dc0a9393",
+      "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+      "splits": {
+        "train": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/train.parquet",
+          "dataset_version": "b167a7bd2d1b45c33b6688cb863128484d0f3d34e13d8f8d36c859c75aecb2e7",
+          "source_dataset_version": "303695f218917d993284c73cfebac2a1f655bb6294ed18c060915d61dc0a9393",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "ES",
+          "split_role": "train",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 4732083,
+            "start": "2010-06-06 22:00:00+00:00",
+            "end": "2023-12-29 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "validation": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/validation.parquet",
+          "dataset_version": "9e2c308ac3026b5bfd6db107da6281a9c0e388dfd52c31e8f44f239806f9ab33",
+          "source_dataset_version": "303695f218917d993284c73cfebac2a1f655bb6294ed18c060915d61dc0a9393",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "ES",
+          "split_role": "validation",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 707375,
+            "start": "2024-01-01 23:00:00+00:00",
+            "end": "2025-12-31 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "test": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/ES/test.parquet",
+          "dataset_version": "471316da96add5019887cbbb8716e038159306fa730e6b9322933bfc6f465363",
+          "source_dataset_version": "303695f218917d993284c73cfebac2a1f655bb6294ed18c060915d61dc0a9393",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "ES",
+          "split_role": "test",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 301748,
+            "start": "2026-01-01 23:00:00+00:00",
+            "end": "2026-11-05 23:59:00+00:00"
+          },
+          "model_selection_access": false
+        }
+      }
+    },
+    "NQ": {
+      "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/manifests/wsl/NQ.dataset.json",
+      "dataset_version": "291413f28287e3686e50a89ecbf4b01cc8004ad746694409a4df3d9c30c3df3b",
+      "source_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+      "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+      "provider": "User-provided Databento GLBX.MDP3 export",
+      "synthetic": false,
+      "raw_contract_prices": true,
+      "timestamp_semantics": "bar_open",
+      "timeframe_minutes": 1,
+      "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+      "instrument": "NQ",
+      "coverage": {
+        "rows": 5567460,
+        "start": "2010-06-06 18:00:00-04",
+        "end": "2026-11-05 18:59:00-05",
+        "contracts": 67,
+        "flagged_rows": 0
+      },
+      "roll_schedule_hash": "7310bc2e12fc8bd27d9f031ad732e8d636a9a038493e9f92d9f7a939bfa28a44",
+      "selection_rule": "previous completed session volume; forward expiries only; no price filling or back adjustment",
+      "selector_version": 2,
+      "role": "mini_reference_or_explicit_proxy_only",
+      "unsplit_dataset_version": "3a198284fabbcf22223d7f39f084083075fe260d618968ecd92cd1ccc5fe3eec",
+      "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+      "splits": {
+        "train": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/NQ/train.parquet",
+          "dataset_version": "9319b0e81bba3d5b74c334b029b85ea3ba574642fbc17bbd3c6fa6f926094079",
+          "source_dataset_version": "3a198284fabbcf22223d7f39f084083075fe260d618968ecd92cd1ccc5fe3eec",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "NQ",
+          "split_role": "train",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 4558150,
+            "start": "2010-06-06 22:00:00+00:00",
+            "end": "2023-12-29 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "validation": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/NQ/validation.parquet",
+          "dataset_version": "ccf3acc38490f4094dd8ac789d5a314edbca302eb906bb4ebccff412c073ffd3",
+          "source_dataset_version": "3a198284fabbcf22223d7f39f084083075fe260d618968ecd92cd1ccc5fe3eec",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "NQ",
+          "split_role": "validation",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 707567,
+            "start": "2024-01-01 23:00:00+00:00",
+            "end": "2025-12-31 21:59:00+00:00"
+          },
+          "model_selection_access": true
+        },
+        "test": {
+          "path": "/mnt/c/Users/Nick/OneDrive/Attachments/Desktop/Stock Predictor Codex ETH BNB/quant_trading_bot/data/market/GLBX-20261106-FX6FM5XWUX-v3/splits/NQ/test.parquet",
+          "dataset_version": "fb804fed18296d5f74580a77917ce629ed2b7c4c73ab09d0a7160b0f4a64291b",
+          "source_dataset_version": "3a198284fabbcf22223d7f39f084083075fe260d618968ecd92cd1ccc5fe3eec",
+          "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+          "synthetic": false,
+          "raw_contract_prices": true,
+          "provider": "User-provided Databento GLBX.MDP3 export",
+          "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+          "timestamp_semantics": "bar_open",
+          "instrument": "NQ",
+          "split_role": "test",
+          "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+          "train_end_exclusive": "2024-01-01 00:00:00+00:00",
+          "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+          "coverage": {
+            "rows": 301743,
+            "start": "2026-01-01 23:00:00+00:00",
+            "end": "2026-11-05 23:59:00+00:00"
+          },
+          "model_selection_access": false
+        }
+      }
+    }
+  },
+  "supersedes": "All earlier synthetic and public-sample futures data",
+  "created_at": "2026-11-06T20:47:08.183990+00:00",
+  "split_protocol": {
+    "source_job": "GLBX-20261106-FX6FM5XWUX",
+    "source_dataset_version": "6251859ab76065e365c9afd4035277417fed21c31fedd4c6e2a4662c1924d0ab",
+    "training_end_exclusive": "2024-01-01 00:00:00+00:00",
+    "validation_start_inclusive": "2024-01-01 00:00:00+00:00",
+    "validation_end_exclusive": "2026-01-01 00:00:00+00:00",
+    "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+    "method": "chronological calendar boundaries; never random shuffle",
+    "test_policy": "excluded from fitting, calibration, feature selection and hyperparameter/model selection",
+    "created_at": "2026-11-06T20:18:36.385239+00:00",
+    "protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33"
+  }
+}

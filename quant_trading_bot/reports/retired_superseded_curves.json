@@ -1,0 +1,810 @@
+{
+  "files": [
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\ml_tree_equity.parquet",
+      "bytes": 395017,
+      "sha256": "669f1f1a5063d72fd092ab995992705bca0335644744a0dee4bd1071efe5c609",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.264515+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\ml_logistic_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.266580+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\ml_ridge_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.268503+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\ml_lightgbm_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.270503+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\ml_xgboost_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.274073+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\meta_donchian_meta_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.278404+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_sma_equity.parquet",
+      "bytes": 439239,
+      "sha256": "62e8ef1a28112df824422b93b718a18e1bc756893253bfaaa9cffc63cafb4e43",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.280558+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_adx_equity.parquet",
+      "bytes": 432090,
+      "sha256": "bd6c615fd1d703beb14e85037b6ac864553fe59a456766edc37e33525745eef9",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.283010+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_multi_timeframe_equity.parquet",
+      "bytes": 440696,
+      "sha256": "4d28c10afdc4832822a5fff587db3961614f55a670ecffcef410c34d8b53c2cf",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.285078+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_previous_session_equity.parquet",
+      "bytes": 446411,
+      "sha256": "fb1b916a1f0aa27c695eebb609536d7f997981ec48871206b942aa7ed8b4b23b",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.287055+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_donchian_equity.parquet",
+      "bytes": 448239,
+      "sha256": "5c9eb5b392803f8ff9d9ed1b58c2c9f4dac6c709bce29e013778d6fe010ba9de",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.289561+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_ema_equity.parquet",
+      "bytes": 436797,
+      "sha256": "9b5ef570957bef3f3e699380f457e33b1ac8f039476349a9d9ac276afd1ee046",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.291598+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_compression_equity.parquet",
+      "bytes": 453933,
+      "sha256": "a3cf3605314007d1d0f15ca77c40dad7b422fb5f35c299ee43d58545f8d6b2c5",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.293662+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_momentum_equity.parquet",
+      "bytes": 432622,
+      "sha256": "a3c6868279c347f17158cf3435adcb1e4b22df9a85c95aa0f7e6af51edf0521a",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.295683+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_opening_range_equity.parquet",
+      "bytes": 434898,
+      "sha256": "28a3c8ca578224327649164e873a7d1ac6e8af5aa40b375cbfffb3584d233f02",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.297735+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_vol_momentum_equity.parquet",
+      "bytes": 430956,
+      "sha256": "566fd5abe4c82ec8faeeef26de06199e9f8de3f7207f8a484f7b540e3e9ba49c",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.299783+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\regime_regime_switch_equity.parquet",
+      "bytes": 433738,
+      "sha256": "9ff75d1721692989293cd667aac1c76d170a430eeee00b757e41c1393c6909aa",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.301742+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\ensemble_equal_weight_equity.parquet",
+      "bytes": 438881,
+      "sha256": "0f1b399729c0d0e14d59c38bda51a89d094de2838dbf0785189a6277c2dff9e1",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.303522+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_vol_reversion_equity.parquet",
+      "bytes": 434850,
+      "sha256": "d40d4ae624f886792854a1b1dbf7a9cf25987654e51a6052baee4724b3178e12",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.305568+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_bollinger_equity.parquet",
+      "bytes": 436486,
+      "sha256": "933dcf2b53c666685c89276658fdc30266eb2f2f1578820d30f5906d904c0d53",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.308523+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_vwap_equity.parquet",
+      "bytes": 443067,
+      "sha256": "853a4a376046ff434d9f0a3f201516ae2c76bcfed1e7e26e23402131be20e7a0",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.310560+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_volume_momentum_equity.parquet",
+      "bytes": 437039,
+      "sha256": "b9cede27d3973486488fee060451fc950efd6478f2294782609246685f006ba4",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.312622+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_rsi_equity.parquet",
+      "bytes": 439850,
+      "sha256": "496cf480be0ce03ebd756a742b8d67d6c280ded03c46a83d187a8a004b5eb434",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.314864+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T203447Z\\baseline_intraday_momentum_equity.parquet",
+      "bytes": 428681,
+      "sha256": "e243f90bdc539d402209a56e76d2a07b0ee98f6aa0632f4e4fd10488913db755",
+      "metrics": "runs\\mes_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.317002+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\ml_xgboost_equity.parquet",
+      "bytes": 396563,
+      "sha256": "121f3cd691c1bf48c43ae0d82fc30bb9e0b732d0d5835b1c93dec582ad947c5e",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.323344+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\ml_ridge_equity.parquet",
+      "bytes": 395513,
+      "sha256": "b898550c1753930b02cce312545d57bdf89253ca60a8d31a0a1590bca4d26074",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.325560+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\ml_tree_equity.parquet",
+      "bytes": 395513,
+      "sha256": "b898550c1753930b02cce312545d57bdf89253ca60a8d31a0a1590bca4d26074",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.327716+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\meta_donchian_meta_equity.parquet",
+      "bytes": 395579,
+      "sha256": "787e945acef0520f092e5fafb63d38bf6f9affb6a48385f108c2662c43d41652",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.330469+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\ml_logistic_equity.parquet",
+      "bytes": 395576,
+      "sha256": "64eb6c872bf9e5cdcac37b18b67727af8ac96e5f30ab14aea24388c16aeefb8c",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.335038+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\ml_lightgbm_equity.parquet",
+      "bytes": 397619,
+      "sha256": "47410565307d6597dcb98205101e72279da4863d71d7378ecbf923091e886927",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.337481+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_momentum_equity.parquet",
+      "bytes": 445717,
+      "sha256": "f678c3500efeaa108c87389a0d7f58f7cbda2d85eacdabecf1ac8f71aa564cd5",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.340245+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_vol_momentum_equity.parquet",
+      "bytes": 446933,
+      "sha256": "c10bfa84b1422584f49e0bd5f94bddab0e2418cbe094ea5684267ddf4b9751bc",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.342290+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_multi_timeframe_equity.parquet",
+      "bytes": 445769,
+      "sha256": "f74b76b4719176c4bac3a6ed7b93b62a49825e882377163e298f3504d2e3beec",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.344399+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_previous_session_equity.parquet",
+      "bytes": 435753,
+      "sha256": "d019d4ca288ddbcbdaee916c43515cfac87b0e43f21a6b460b66832edd173181",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.346750+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_volume_momentum_equity.parquet",
+      "bytes": 436825,
+      "sha256": "7aa0846a5d0f3422a7aa34dd794f73bd78e1a609b27e492e3d0c82d334a5ccd5",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.349076+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\ensemble_equal_weight_equity.parquet",
+      "bytes": 446133,
+      "sha256": "35464ad0c9de866284cf4454c42a6c397dd2a195c28aa7ff94dfb1936582f1d7",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.351654+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_sma_equity.parquet",
+      "bytes": 445021,
+      "sha256": "b2c18ba5362737e9364fd5d012563a579fd5c98285210c589fb23898d6045e22",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.353869+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_bollinger_equity.parquet",
+      "bytes": 434275,
+      "sha256": "7a85619e7091ccd33b87ac6dbf98c6899fa389b7cb343ebefaa69ab750201ae4",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.355825+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\regime_regime_switch_equity.parquet",
+      "bytes": 438588,
+      "sha256": "57d26a7a55efc461e00cf4a1618db760b9bc5d5c57a688033c3806bb1dee27f7",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.357851+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_ema_equity.parquet",
+      "bytes": 446683,
+      "sha256": "3df69bfe9b79567aafe5e5a03a90055ff99c992f3cce6142ffd8a8a33bfffcf1",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.359856+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_intraday_momentum_equity.parquet",
+      "bytes": 423591,
+      "sha256": "6f595b00a75222ee238c530479abc35ad2d337308e7e3e3fc909b686a4e8cbbb",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.361873+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_donchian_equity.parquet",
+      "bytes": 440104,
+      "sha256": "f58d7526322c9d63c6447116f13f9e8e2bb6d9873860623ed155075963da78a2",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.363865+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_compression_equity.parquet",
+      "bytes": 442786,
+      "sha256": "29028ef84a58bd74d0f631f8e0d3a045091860e612c6fc1c4bcf7504307580c3",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.365959+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_opening_range_equity.parquet",
+      "bytes": 424489,
+      "sha256": "53e67fb1d892f9e9ae47fe1af79543eee8b84e29882c5dc89e3fafc09e03cb64",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.368116+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_vol_reversion_equity.parquet",
+      "bytes": 441393,
+      "sha256": "00eca103b523a9202d7bdb228208c4d48de5061c86ed03df646409cca43367f0",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.370490+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_rsi_equity.parquet",
+      "bytes": 432900,
+      "sha256": "924d377a9c90304483b2b4a98a461a2861ec5f155633509b29e3d106ff26f837",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.372683+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_vwap_equity.parquet",
+      "bytes": 438187,
+      "sha256": "07b9db228d0d72e65e886db22cfed50e7eb9e379c6e16f9865d4193be4aefbfd",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.375459+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T203447Z\\baseline_adx_equity.parquet",
+      "bytes": 438122,
+      "sha256": "69ad72dc05af96da663ca0581fb09806c0dde78438dd008b27453c06abf873bc",
+      "metrics": "runs\\mnq_market_20261106T203447Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.377882+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_sma_equity.parquet",
+      "bytes": 439153,
+      "sha256": "a897c44f737e3c39d4c39f15c159dab002cf9b0a31aa26cb3e87928b58b166cc",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.383537+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_ema_equity.parquet",
+      "bytes": 436858,
+      "sha256": "fdf02d2c2b3235d438eaad575b97fab2065c8401b177133e8fc61f0a8f38e46c",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.386136+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_adx_equity.parquet",
+      "bytes": 432101,
+      "sha256": "fcf6cb65a772861b10c0d71f9295f15dbea52758345dfc09eece3ba6e6ed1e56",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.388424+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_donchian_equity.parquet",
+      "bytes": 448239,
+      "sha256": "5c9eb5b392803f8ff9d9ed1b58c2c9f4dac6c709bce29e013778d6fe010ba9de",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.392479+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_multi_timeframe_equity.parquet",
+      "bytes": 440755,
+      "sha256": "78dac0ec2049c962576b41f65181650aff9dcf11e743d3e7323c38ce99b639f1",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.395054+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_rsi_equity.parquet",
+      "bytes": 439825,
+      "sha256": "2c41bf51041feac1706ad785acb47d529188669ae4b011a03ceec140dda46d17",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.397279+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_bollinger_equity.parquet",
+      "bytes": 436486,
+      "sha256": "933dcf2b53c666685c89276658fdc30266eb2f2f1578820d30f5906d904c0d53",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.400157+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_vwap_equity.parquet",
+      "bytes": 443067,
+      "sha256": "853a4a376046ff434d9f0a3f201516ae2c76bcfed1e7e26e23402131be20e7a0",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.402431+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_vol_reversion_equity.parquet",
+      "bytes": 434850,
+      "sha256": "d40d4ae624f886792854a1b1dbf7a9cf25987654e51a6052baee4724b3178e12",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.405048+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_opening_range_equity.parquet",
+      "bytes": 435236,
+      "sha256": "81830a25b3602819f5419a01949ca73f2792d37be545a98ab5d76a501b61ff31",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.407194+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_previous_session_equity.parquet",
+      "bytes": 446708,
+      "sha256": "0c1c399f6aab3d9be2fb872c03287d1b813330d9b28420bfe9c3326465a9e6f0",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.409389+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_compression_equity.parquet",
+      "bytes": 453933,
+      "sha256": "a3cf3605314007d1d0f15ca77c40dad7b422fb5f35c299ee43d58545f8d6b2c5",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.411621+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_momentum_equity.parquet",
+      "bytes": 432622,
+      "sha256": "a3c6868279c347f17158cf3435adcb1e4b22df9a85c95aa0f7e6af51edf0521a",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.414116+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_intraday_momentum_equity.parquet",
+      "bytes": 428681,
+      "sha256": "e243f90bdc539d402209a56e76d2a07b0ee98f6aa0632f4e4fd10488913db755",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.416349+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_volume_momentum_equity.parquet",
+      "bytes": 437039,
+      "sha256": "b9cede27d3973486488fee060451fc950efd6478f2294782609246685f006ba4",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.418482+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\baseline_vol_momentum_equity.parquet",
+      "bytes": 430956,
+      "sha256": "566fd5abe4c82ec8faeeef26de06199e9f8de3f7207f8a484f7b540e3e9ba49c",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.420602+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\regime_regime_switch_equity.parquet",
+      "bytes": 433738,
+      "sha256": "9ff75d1721692989293cd667aac1c76d170a430eeee00b757e41c1393c6909aa",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.423193+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\ensemble_equal_weight_equity.parquet",
+      "bytes": 438881,
+      "sha256": "0f1b399729c0d0e14d59c38bda51a89d094de2838dbf0785189a6277c2dff9e1",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.425451+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204147Z\\ml_logistic_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T204147Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.427557+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\ml_tree_equity.parquet",
+      "bytes": 395017,
+      "sha256": "669f1f1a5063d72fd092ab995992705bca0335644744a0dee4bd1071efe5c609",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.433627+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\ml_logistic_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.435546+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\ml_ridge_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.437353+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\ml_lightgbm_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.439138+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\ml_xgboost_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.440722+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\meta_donchian_meta_equity.parquet",
+      "bytes": 393863,
+      "sha256": "ced3b009642aa80edd4eadce0e61e40122750b59d174ac79edc786b5e56ad74b",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.442380+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_sma_equity.parquet",
+      "bytes": 439153,
+      "sha256": "a897c44f737e3c39d4c39f15c159dab002cf9b0a31aa26cb3e87928b58b166cc",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.444207+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_adx_equity.parquet",
+      "bytes": 432101,
+      "sha256": "fcf6cb65a772861b10c0d71f9295f15dbea52758345dfc09eece3ba6e6ed1e56",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.447725+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_multi_timeframe_equity.parquet",
+      "bytes": 440755,
+      "sha256": "78dac0ec2049c962576b41f65181650aff9dcf11e743d3e7323c38ce99b639f1",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.449639+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_previous_session_equity.parquet",
+      "bytes": 446708,
+      "sha256": "0c1c399f6aab3d9be2fb872c03287d1b813330d9b28420bfe9c3326465a9e6f0",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.452039+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_donchian_equity.parquet",
+      "bytes": 448239,
+      "sha256": "5c9eb5b392803f8ff9d9ed1b58c2c9f4dac6c709bce29e013778d6fe010ba9de",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.453885+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_ema_equity.parquet",
+      "bytes": 436858,
+      "sha256": "fdf02d2c2b3235d438eaad575b97fab2065c8401b177133e8fc61f0a8f38e46c",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.455567+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_compression_equity.parquet",
+      "bytes": 453933,
+      "sha256": "a3cf3605314007d1d0f15ca77c40dad7b422fb5f35c299ee43d58545f8d6b2c5",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.457422+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_momentum_equity.parquet",
+      "bytes": 432622,
+      "sha256": "a3c6868279c347f17158cf3435adcb1e4b22df9a85c95aa0f7e6af51edf0521a",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.459201+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_opening_range_equity.parquet",
+      "bytes": 435236,
+      "sha256": "81830a25b3602819f5419a01949ca73f2792d37be545a98ab5d76a501b61ff31",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.461100+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_vol_momentum_equity.parquet",
+      "bytes": 430956,
+      "sha256": "566fd5abe4c82ec8faeeef26de06199e9f8de3f7207f8a484f7b540e3e9ba49c",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.462985+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\regime_regime_switch_equity.parquet",
+      "bytes": 433738,
+      "sha256": "9ff75d1721692989293cd667aac1c76d170a430eeee00b757e41c1393c6909aa",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.464907+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\ensemble_equal_weight_equity.parquet",
+      "bytes": 438881,
+      "sha256": "0f1b399729c0d0e14d59c38bda51a89d094de2838dbf0785189a6277c2dff9e1",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.466938+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_vol_reversion_equity.parquet",
+      "bytes": 434850,
+      "sha256": "d40d4ae624f886792854a1b1dbf7a9cf25987654e51a6052baee4724b3178e12",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.468738+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_bollinger_equity.parquet",
+      "bytes": 436486,
+      "sha256": "933dcf2b53c666685c89276658fdc30266eb2f2f1578820d30f5906d904c0d53",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.472046+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_vwap_equity.parquet",
+      "bytes": 443067,
+      "sha256": "853a4a376046ff434d9f0a3f201516ae2c76bcfed1e7e26e23402131be20e7a0",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.473893+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_volume_momentum_equity.parquet",
+      "bytes": 437039,
+      "sha256": "b9cede27d3973486488fee060451fc950efd6478f2294782609246685f006ba4",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.475663+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_rsi_equity.parquet",
+      "bytes": 439825,
+      "sha256": "2c41bf51041feac1706ad785acb47d529188669ae4b011a03ceec140dda46d17",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.478118+00:00"
+    },
+    {
+      "path": "runs\\mes_market_20261106T204608Z\\baseline_intraday_momentum_equity.parquet",
+      "bytes": 428681,
+      "sha256": "e243f90bdc539d402209a56e76d2a07b0ee98f6aa0632f4e4fd10488913db755",
+      "metrics": "runs\\mes_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.480021+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\ml_ridge_equity.parquet",
+      "bytes": 395513,
+      "sha256": "b898550c1753930b02cce312545d57bdf89253ca60a8d31a0a1590bca4d26074",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.486736+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\ml_tree_equity.parquet",
+      "bytes": 395513,
+      "sha256": "b898550c1753930b02cce312545d57bdf89253ca60a8d31a0a1590bca4d26074",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.489062+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\meta_donchian_meta_equity.parquet",
+      "bytes": 395579,
+      "sha256": "787e945acef0520f092e5fafb63d38bf6f9affb6a48385f108c2662c43d41652",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.491213+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\ml_logistic_equity.parquet",
+      "bytes": 395576,
+      "sha256": "64eb6c872bf9e5cdcac37b18b67727af8ac96e5f30ab14aea24388c16aeefb8c",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.493327+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\ml_xgboost_equity.parquet",
+      "bytes": 396428,
+      "sha256": "2caa6da3149483ac1021a24c74d9d5d546831c5cb3511233796a8cebeb85978f",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.495106+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_momentum_equity.parquet",
+      "bytes": 445717,
+      "sha256": "f678c3500efeaa108c87389a0d7f58f7cbda2d85eacdabecf1ac8f71aa564cd5",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.496953+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_vol_momentum_equity.parquet",
+      "bytes": 446933,
+      "sha256": "c10bfa84b1422584f49e0bd5f94bddab0e2418cbe094ea5684267ddf4b9751bc",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.498872+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_multi_timeframe_equity.parquet",
+      "bytes": 445769,
+      "sha256": "f74b76b4719176c4bac3a6ed7b93b62a49825e882377163e298f3504d2e3beec",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.500705+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\ml_lightgbm_equity.parquet",
+      "bytes": 397712,
+      "sha256": "eb9097a2d646f620df52ef853370b814fff1f9b24c64758152fdcd7c435314c8",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.502438+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_previous_session_equity.parquet",
+      "bytes": 435753,
+      "sha256": "d019d4ca288ddbcbdaee916c43515cfac87b0e43f21a6b460b66832edd173181",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.504132+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_volume_momentum_equity.parquet",
+      "bytes": 436825,
+      "sha256": "7aa0846a5d0f3422a7aa34dd794f73bd78e1a609b27e492e3d0c82d334a5ccd5",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.505998+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\ensemble_equal_weight_equity.parquet",
+      "bytes": 446133,
+      "sha256": "35464ad0c9de866284cf4454c42a6c397dd2a195c28aa7ff94dfb1936582f1d7",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.508145+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_sma_equity.parquet",
+      "bytes": 445021,
+      "sha256": "b2c18ba5362737e9364fd5d012563a579fd5c98285210c589fb23898d6045e22",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.510191+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_bollinger_equity.parquet",
+      "bytes": 434275,
+      "sha256": "7a85619e7091ccd33b87ac6dbf98c6899fa389b7cb343ebefaa69ab750201ae4",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.512150+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\regime_regime_switch_equity.parquet",
+      "bytes": 438588,
+      "sha256": "57d26a7a55efc461e00cf4a1618db760b9bc5d5c57a688033c3806bb1dee27f7",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.514146+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_ema_equity.parquet",
+      "bytes": 446683,
+      "sha256": "3df69bfe9b79567aafe5e5a03a90055ff99c992f3cce6142ffd8a8a33bfffcf1",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.516065+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_intraday_momentum_equity.parquet",
+      "bytes": 423591,
+      "sha256": "6f595b00a75222ee238c530479abc35ad2d337308e7e3e3fc909b686a4e8cbbb",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.517978+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_donchian_equity.parquet",
+      "bytes": 440104,
+      "sha256": "f58d7526322c9d63c6447116f13f9e8e2bb6d9873860623ed155075963da78a2",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.520024+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_compression_equity.parquet",
+      "bytes": 442786,
+      "sha256": "29028ef84a58bd74d0f631f8e0d3a045091860e612c6fc1c4bcf7504307580c3",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.522457+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_opening_range_equity.parquet",
+      "bytes": 424489,
+      "sha256": "53e67fb1d892f9e9ae47fe1af79543eee8b84e29882c5dc89e3fafc09e03cb64",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.524906+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_vol_reversion_equity.parquet",
+      "bytes": 441393,
+      "sha256": "00eca103b523a9202d7bdb228208c4d48de5061c86ed03df646409cca43367f0",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.527147+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_rsi_equity.parquet",
+      "bytes": 432900,
+      "sha256": "924d377a9c90304483b2b4a98a461a2861ec5f155633509b29e3d106ff26f837",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.529390+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_vwap_equity.parquet",
+      "bytes": 438187,
+      "sha256": "07b9db228d0d72e65e886db22cfed50e7eb9e379c6e16f9865d4193be4aefbfd",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.531670+00:00"
+    },
+    {
+      "path": "runs\\mnq_market_20261106T204608Z\\baseline_adx_equity.parquet",
+      "bytes": 438122,
+      "sha256": "69ad72dc05af96da663ca0581fb09806c0dde78438dd008b27453c06abf873bc",
+      "metrics": "runs\\mnq_market_20261106T204608Z\\leaderboard.json",
+      "retired_at": "2026-11-06T20:52:00.537279+00:00"
+    }
+  ],
+  "rationale": "Bounded disk budget; keep current campaign and reconstruct superseded curves from retained source/data/config; no raw data deletion"
+}

@@ -1,0 +1,42 @@
+account_variant: LucidFlex 50K evaluation, 50 percent consistency, DLL off
+purchased_settings_confirmed_by_user: true
+access_date: '2026-11-06'
+effective_version: null
+nominal_size: 50000
+profit_target: 3000
+maximum_drawdown: 2000
+drawdown_method: eod_trailing
+drawdown_lock_floor: 50100
+drawdown_lock_trigger: 52100
+maximum_micro_contracts: 40
+consistency_fraction: 0.5
+consistency_scenarios: [0.4, 0.5]
+consistency_cushion_formula: null
+daily_loss_enabled: false
+daily_loss_amount: null
+minimum_trading_days: null
+evaluation_fee: null
+activation_fee: 0
+profit_split_trader: 0.9
+automation_permitted: true
+api_permitted: null
+news_restrictions: News trading allowed on Flex; general conduct restrictions still apply
+overnight_permitted: Evening-to-next-session allowed; mandatory flat by published cutoff and holiday closes
+trading_hours_verified: true
+trading_hours_note: Official page says 4:45 PM EST flat and 6 PM EST reopen; ET/DST interpretation and holiday schedule must be confirmed for execution
+funded_scaling_verified: true
+funded_50k_micro_tiers:
+  - {minimum_profit: 0, maximum_micro_contracts: 20}
+  - {minimum_profit: 1000, maximum_micro_contracts: 30}
+  - {minimum_profit: 2000, maximum_micro_contracts: 40}
+rule_conflict: Older evaluation page lists 50%; newer customization page says 40% standard, 50% add-on. Account settings required.
+sources:
+  evaluation: https://support.lucidtrading.com/en/articles/12945790-lucidflex-evaluation-account
+  customization: https://support.lucidtrading.com/en/articles/16226050-lucidflex-customization
+  consistency: https://support.lucidtrading.com/en/articles/12945805-lucidflex-consistency-percentage
+  drawdown: https://support.lucidtrading.com/en/articles/12945815-lucidflex-drawdown
+  payouts: https://support.lucidtrading.com/en/articles/12945796-lucidflex-payouts
+  activities: https://support.lucidtrading.com/en/articles/11404728-other-trading-activities
+  hours: https://support.lucidtrading.com/en/articles/11404729-allowed-trading-times
+  scaling: https://support.lucidtrading.com/en/articles/12945808-lucidflex-scaling-plan
+

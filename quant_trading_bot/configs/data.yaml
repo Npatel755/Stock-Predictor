@@ -1,0 +1,13 @@
+active_catalog: data/catalog.json
+source_job: GLBX-20261106-FX6FM5XWUX
+source_archive: C:/Users/Nick/Downloads/GLBX-20261106-FX6FM5XWUX.zip
+provider: Databento
+dataset: GLBX.MDP3
+schema: ohlcv-1m
+primary_instruments: [MES, MNQ]
+reference_instruments: [ES, NQ]
+price_basis: raw individual contracts
+selection_rule: previous_completed_session_volume_with_expiry_guard
+fill_missing_prices: false
+invent_quotes: false
+synthetic_market_data: false

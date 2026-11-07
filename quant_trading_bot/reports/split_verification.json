@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+  "catalog_sha256": "df7d66317a6963ff866906a4717e2ebf5a334c21e6f5544f8cd0a24b2c92c611",
+  "instruments": {
+    "MES": {
+      "total_rows": 2646240,
+      "partitions": {
+        "train": {
+          "rows": 1637070,
+          "sha256": "93fb381d4f21ce1802979ffefa9f26c9a6419d370b22827e98caedf677ea2c0b",
+          "timestamps_strictly_increasing": true
+        },
+        "validation": {
+          "rows": 707415,
+          "sha256": "b45380bcdb44da33636872717dde16ac7713eabee60131b603de011b7ea62cdb",
+          "timestamps_strictly_increasing": true
+        },
+        "test": {
+          "rows": 301755,
+          "sha256": "cc31e22695e012b9a0fd9524585f0b122fa365b04eb01f8508496ca55ccc39f4",
+          "timestamps_strictly_increasing": true
+        }
+      },
+      "overlap": false
+    },
+    "MNQ": {
+      "total_rows": 2648080,
+      "partitions": {
+        "train": {
+          "rows": 1638673,
+          "sha256": "9ff96dc3b1814a7569724a360fbd6628674fd802c015e1d79cb230547ddc8381",
+          "timestamps_strictly_increasing": true
+        },
+        "validation": {
+          "rows": 707652,
+          "sha256": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+          "timestamps_strictly_increasing": true
+        },
+        "test": {
+          "rows": 301755,
+          "sha256": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+          "timestamps_strictly_increasing": true
+        }
+      },
+      "overlap": false
+    },
+    "ES": {
+      "total_rows": 5741206,
+      "partitions": {
+        "train": {
+          "rows": 4732083,
+          "sha256": "b167a7bd2d1b45c33b6688cb863128484d0f3d34e13d8f8d36c859c75aecb2e7",
+          "timestamps_strictly_increasing": true
+        },
+        "validation": {
+          "rows": 707375,
+          "sha256": "9e2c308ac3026b5bfd6db107da6281a9c0e388dfd52c31e8f44f239806f9ab33",
+          "timestamps_strictly_increasing": true
+        },
+        "test": {
+          "rows": 301748,
+          "sha256": "471316da96add5019887cbbb8716e038159306fa730e6b9322933bfc6f465363",
+          "timestamps_strictly_increasing": true
+        }
+      },
+      "overlap": false
+    },
+    "NQ": {
+      "total_rows": 5567460,
+      "partitions": {
+        "train": {
+          "rows": 4558150,
+          "sha256": "9319b0e81bba3d5b74c334b029b85ea3ba574642fbc17bbd3c6fa6f926094079",
+          "timestamps_strictly_increasing": true
+        },
+        "validation": {
+          "rows": 707567,
+          "sha256": "ccf3acc38490f4094dd8ac789d5a314edbca302eb906bb4ebccff412c073ffd3",
+          "timestamps_strictly_increasing": true
+        },
+        "test": {
+          "rows": 301743,
+          "sha256": "fb804fed18296d5f74580a77917ce629ed2b7c4c73ab09d0a7160b0f4a64291b",
+          "timestamps_strictly_increasing": true
+        }
+      },
+      "overlap": false
+    }
+  },
+  "test_price_columns_read": false,
+  "market_holdout_evaluated": false
+}

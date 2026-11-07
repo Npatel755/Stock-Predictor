@@ -1,0 +1,25 @@
+# LucidFlex $50K rule audit
+
+Checked 2026-11-06, LucidFlex evaluation versus simulated funded account. The user confirmed the purchased settings: **50% consistency and DLL off**. An effective contractual rule version and purchase fee were not supplied. `configs/lucidflex.yaml` distinguishes sourced fields from unknowns. No account was purchased or activated by this agent.
+
+| Field | Finding | Primary source |
+|---|---|---|
+| Evaluation target / loss / maximum size | $3,000 target, $2,000 maximum loss, 4 minis or 40 micros | [Evaluation](https://support.lucidtrading.com/en/articles/12945790-lucidflex-evaluation-account) |
+| Activation | No activation fee to upgrade | [Evaluation](https://support.lucidtrading.com/en/articles/12945790-lucidflex-evaluation-account) |
+| Purchase fee | Unknown; varies with checkout customization; no current price assumed | [Customization](https://support.lucidtrading.com/en/articles/16226050-lucidflex-customization) |
+| Published MES/MNQ commission | $0.50 per contract per side. The page does not provide an exchange/regulatory breakdown; actual account charges still need confirmation | [Approved products and commissions](https://support.lucidtrading.com/en/articles/11508978-approved-products-and-commissions) |
+| Consistency | Current evaluation, customization and consistency pages agree: 40% standard or 50% add-on. The user confirmed the 50% add-on | [Customization](https://support.lucidtrading.com/en/articles/16226050-lucidflex-customization), [consistency](https://support.lucidtrading.com/en/articles/12945805-lucidflex-consistency-percentage) |
+| Consistency formula | Largest profitable day / account profit; evaluation only. 50% cushion exists but its exact general formula is not published on the inspected page | [Consistency](https://support.lucidtrading.com/en/articles/12945805-lucidflex-consistency-percentage) |
+| Drawdown | EOD trailing; $50K initial floor $48,000, trail balance $52,100, locked floor $50,100. Reaching MLL breaches the account; payout moves floor to locked balance | [Drawdown](https://support.lucidtrading.com/en/articles/12945815-lucidflex-drawdown) |
+| Daily loss | User selected DLL off; official customization page confirms no provider DLL in either phase. The independent research risk engine retains a conservative $300 daily stop, which is not a provider rule | [Customization](https://support.lucidtrading.com/en/articles/16226050-lucidflex-customization) |
+| Minimum evaluation days | No independent contractual minimum verified. Two-day path is described with the 50% add-on; this does not establish a universal minimum | [Evaluation](https://support.lucidtrading.com/en/articles/12945790-lucidflex-evaluation-account) |
+| Trading hours | Published flat cutoff 4:45 PM EST; reopen 6 PM EST; earlier holiday closes override. ET/DST interpretation must be confirmed before integration | [Allowed times](https://support.lucidtrading.com/en/articles/11404729-allowed-trading-times) |
+| News and automation | Flex news trading and automated systems permitted subject to all rules; exact broker/platform API integration authorization unverified | [Activities](https://support.lucidtrading.com/en/articles/11404728-other-trading-activities) |
+| Funded scaling | EOD profit tiers for $50K: initially 20 micros, $1K profit 30, $2K profit 40. Evaluation has no scaling restriction | [Scaling](https://support.lucidtrading.com/en/articles/12945808-lucidflex-scaling-plan) |
+| Funded payouts | 90% trader share; five days with $150 profit, positive cycle net; $500 minimum; up to half profit capped at $2,000; five payouts before live transition | [Payouts](https://support.lucidtrading.com/en/articles/12945796-lucidflex-payouts) |
+
+The simulator supports static, EOD trailing and intraday trailing floors, permanent maximum-loss breaches, optional daily soft lockouts and conservative exact consistency ratios. Its two DLL scenarios are **no DLL and an analyst-defined $300 DLL**, not a claim that LucidFlex's optional DLL is $300. Both 40% and 50% consistency scenarios are retained. No guessed 50% cushion is applied.
+
+Monte Carlo results are session block-resampling scenario frequencies with adverse intraday equity bounds. Synthetic runs and short public samples cannot establish reliable failure/pass odds. A target-plus-consistency event is labeled separately from official evaluation passage because independent minimum-days/settings verification remains incomplete. Evaluation fees are null, so net account economics cannot be asserted. Payout calculations do not grant approval to withdraw funds.
+
+General policy also prohibits HFT and abusive simulated-fill exploitation; see [HFT](https://support.lucidtrading.com/en/articles/11404736-prohibited-high-frequency-trading), [microscalping](https://support.lucidtrading.com/en/articles/11404742-prohibited-microscalping), and [hedging](https://support.lucidtrading.com/en/articles/11404734-prohibited-hedging). The bar simulator cannot certify subsecond conduct compliance. All scenarios remain operationally ineligible.

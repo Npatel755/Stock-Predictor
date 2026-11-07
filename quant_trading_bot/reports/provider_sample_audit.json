@@ -1,0 +1,60 @@
+[
+  {
+    "instrument": "MES",
+    "url": "https://frd001.s3.us-east-2.amazonaws.com/frd_sample_futures_MES.zip",
+    "accessed_at": "2026-11-06T15:03:43.528159+00:00",
+    "sha256": "ec5faa1a1d82b9e8fd396977fcd5c934bc104c76f5a3432f3968c055594866b2",
+    "zip_bytes": 240221,
+    "rows": 16235,
+    "start": "2026-10-21 04:00:00+00:00",
+    "end": "2026-11-05 23:34:00+00:00",
+    "columns": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "duplicates": 0,
+    "invalid_ohlc": 0,
+    "zero_volume": 0,
+    "gaps_over_one_minute": 12,
+    "quote_data_present": false,
+    "explicit_contract_identity_present": false,
+    "eligible_for_tradable_backtest": false,
+    "blocking_reason": "Continuous sample has no explicit contract or adjustment provenance; do not infer raw execution prices",
+    "license_url": "https://firstratedata.com/about/license",
+    "cost_paid_usd": 0,
+    "readme": "MES Futures Historical Dataset\r\n=================================== \r\n\r\nNOTE: Only intraday-bars with trading volume are included. Bars with zero volume are excluded.\r\n\r\nTimeframes : 1-minute, 5-minutes, 30-minutes, 1-hour, 1-day\r\n(individual contract data is only available in 1-min and 1-day timeframes).\r\n\r\n\r\nDates : \r\nContinuous Date - First Date - 2019-05-05   |   Last Date 2026-11-05\r\nIndividual Contracts : First Contract - MESZ19   |    Last Contract MESZ29\r\n\r\nAdjustments\r\n------------\r\n\r\nWe provide both continuous data (ie a single series of chained contracts) as well as individual contract data (ie data for each futures contract delivered in a single file per contract).\r\n\r\nWe provide three types of continuous data :\r\nUnadjusted - actual historic traded prices with no adjustments \r\nAbsolute-Adjusted - prices adjusted for price jumps on contract roll date by using the absolute value of the price movement\r\nRatio-Adjusted  - prices adjusted for price jumps on contract roll date by using the percentage movement.\r\n\r\nMore details on the adjustments are available at  https://firstratedata.com/about/price_adjustment#futures\r\n\r\nFormat\r\n-------\r\nIntraday Data is in the format : {DateTime (yyyy-MM-dd HH:mm:ss), Open, High, Low, Close, Volume}   \r\nDaily (1day) data is in the format : {DateTime (yyyy-MM-dd HH:mm:ss), Open, High, Low, Close, Volume, Open Interest}   \r\n\r\n- Volume Numbers are in units of futures\r\n- Timestamps run from the start of the period (eg 1min bars stamped 09:30 run from 09:30.00 to 09:30.59)\r\n- Times with zero volume are omitted (thus gaps in the data sequence are when there have been no trades)\r\n\r\n\r\nUpdates\r\n-------\r\nData is updated - (available by 11pm of the current trading day).   \r\n\r\nNotes\r\n-----\r\n \r\n- Timezone is US Eastern Time    \r\n- Excel will usually fail to open large files directly. \r\n  To use the data in Excel, open the files using notepad and then break into smaller files or copy/paste into Excel \r\n- Data license is available at https://firstratedata.com/about/license\r\n \r\n  \r\n* update times are approximate and may experience small delays in the event of a server or network outage.\r\n \r\n \r\n___________________________\r\ncopyright FirstRateData.com"
+  },
+  {
+    "instrument": "MNQ",
+    "url": "https://frd001.s3.us-east-2.amazonaws.com/frd_sample_futures_MNQ.zip",
+    "accessed_at": "2026-11-06T15:03:43.968808+00:00",
+    "sha256": "d2bb114b434a627d0f0701ea64bfede93b696ef467a8617d652e072172f1f899",
+    "zip_bytes": 304892,
+    "rows": 16236,
+    "start": "2026-10-21 04:00:00+00:00",
+    "end": "2026-11-05 23:35:00+00:00",
+    "columns": [
+      "timestamp",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "duplicates": 0,
+    "invalid_ohlc": 0,
+    "zero_volume": 0,
+    "gaps_over_one_minute": 12,
+    "quote_data_present": false,
+    "explicit_contract_identity_present": false,
+    "eligible_for_tradable_backtest": false,
+    "blocking_reason": "Continuous sample has no explicit contract or adjustment provenance; do not infer raw execution prices",
+    "license_url": "https://firstratedata.com/about/license",
+    "cost_paid_usd": 0,
+    "readme": "MNQ Futures Historical Dataset\r\n=================================== \r\n\r\nNOTE: Only intraday-bars with trading volume are included. Bars with zero volume are excluded.\r\n\r\nTimeframes : 1-minute, 5-minutes, 30-minutes, 1-hour, 1-day\r\n(individual contract data is only available in 1-min and 1-day timeframes).\r\n\r\n\r\nDates : \r\nContinuous Date - First Date - 2019-05-05   |   Last Date 2026-11-05\r\nIndividual Contracts : First Contract - MNQZ19   |    Last Contract MNQZ29\r\n\r\nAdjustments\r\n------------\r\n\r\nWe provide both continuous data (ie a single series of chained contracts) as well as individual contract data (ie data for each futures contract delivered in a single file per contract).\r\n\r\nWe provide three types of continuous data :\r\nUnadjusted - actual historic traded prices with no adjustments \r\nAbsolute-Adjusted - prices adjusted for price jumps on contract roll date by using the absolute value of the price movement\r\nRatio-Adjusted  - prices adjusted for price jumps on contract roll date by using the percentage movement.\r\n\r\nMore details on the adjustments are available at  https://firstratedata.com/about/price_adjustment#futures\r\n\r\nFormat\r\n-------\r\nIntraday Data is in the format : {DateTime (yyyy-MM-dd HH:mm:ss), Open, High, Low, Close, Volume}   \r\nDaily (1day) data is in the format : {DateTime (yyyy-MM-dd HH:mm:ss), Open, High, Low, Close, Volume, Open Interest}   \r\n\r\n- Volume Numbers are in units of futures\r\n- Timestamps run from the start of the period (eg 1min bars stamped 09:30 run from 09:30.00 to 09:30.59)\r\n- Times with zero volume are omitted (thus gaps in the data sequence are when there have been no trades)\r\n\r\n\r\nUpdates\r\n-------\r\nData is updated - (available by 11pm of the current trading day).   \r\n\r\nNotes\r\n-----\r\n \r\n- Timezone is US Eastern Time    \r\n- Excel will usually fail to open large files directly. \r\n  To use the data in Excel, open the files using notepad and then break into smaller files or copy/paste into Excel \r\n- Data license is available at https://firstratedata.com/about/license\r\n \r\n  \r\n* update times are approximate and may experience small delays in the event of a server or network outage.\r\n \r\n \r\n___________________________\r\ncopyright FirstRateData.com"
+  }
+]
