@@ -1,0 +1,23 @@
+{
+  "development": {
+    "source_rows": 78433,
+    "display_points": 409,
+    "bytes": 17030
+  },
+  "test": {
+    "source_rows": 33290,
+    "display_points": 348,
+    "bytes": 14812
+  },
+  "training-selected": {
+    "source_rows": 78433,
+    "display_points": 407,
+    "bytes": 16976
+  },
+  "training-test": {
+    "source_rows": 33290,
+    "display_points": 346,
+    "bytes": 14772
+  },
+  "strategy_replayed": false
+}

@@ -2,7 +2,7 @@
 
 The research found positive validation backtests below the requested $2,000 drawdown limit, but has **not established a dependable deployable trading edge**. The previously frozen candidate returned only $6.50 in its 2026 final test, with a confidence interval spanning zero. Subsequent improvements use reused selection data and have no independent final confirmation. No live trading is enabled.
 
-Tested **68 distinct strategy/model definitions**, **448 parameter/timeframe/feature configurations**, and **746 market/configuration cases**. **824 completed attempts** includes corrected and repeated runs; reruns do not increase the distinct-definition count. Approximate training screens are separately labeled. See [strategy count audit](reports/STRATEGY_COUNTS.md).
+Tested **69 distinct strategy/model definitions**, **622 parameter/timeframe/feature configurations**, and **920 market/configuration cases**. **1012 completed attempts** includes corrected and repeated runs; reruns do not increase the distinct-definition count. Approximate training screens are separately labeled. See [strategy count audit](reports/STRATEGY_COUNTS.md).
 
 ## Chronological split
 
@@ -69,6 +69,18 @@ The session/calendar and gap/structure batches were introduced after the frozen 
 Latest MNQ risk/exit research: **$4,451.00 net**, **$1,638.00 closing-equity drawdown**, **$1,649.00 adverse-intrabar bound**, **146 trades**. Improvement over the reproduced $1,635.50 one-contract baseline: **$2,815.50**. This is 2024–2025 reused selection data; the 2026 test was not reused.
 
 [Risk expansion report](reports/RISK_EXPANSION_RESEARCH.md) gives every tested sizing/exit case, permanent-shutdown failures, cost-stress results and the selection rule.
+
+## Entry-filter and protective-stop refinement
+
+MNQ entry-filter/protective-stop refinement: **160 reference settings screened, 14 selected MNQ replays**. The higher-profit/no-worse-drawdown goal was **not met**. Retained selection: **$4,451.00 net / $1,638.00 closing drawdown / $1,649.00 adverse-intrabar bound**. These are reused 2024–2025 selection results; no 2026 test prices were accessed.
+
+[Refinement report](reports/PARETO_REFINEMENT.md) records all selected replays, failed selection checks and retained benchmark.
+
+## Higher profit and lower drawdown follow-up
+
+MNQ profit/drawdown follow-up: **8 continuous reference replays and 8 MNQ replays**. The higher-profit/no-worse-drawdown goal was **met**. Retained selection: **$6,622.00 net / $1,386.00 closing drawdown / $1,419.00 adverse-intrabar bound**. These are reused 2024–2025 selection results; no 2026 test prices were accessed.
+
+[Follow-up results](reports/PROFIT_DRAWDOWN_FOLLOWUP.md) compare the saved candidates and causal sizing settings.
 
 ## Frozen candidate and final test
 

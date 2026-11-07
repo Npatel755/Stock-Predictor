@@ -1,0 +1,57 @@
+{
+  "candidate_id": "mass_40950c7086a169459879",
+  "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\saved_100k_candidate_mass_40950c7086a169459879",
+  "saved_candidate": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\reports\\saved_training_candidates\\mass_40950c7086a169459879\\candidate.json",
+  "training_base_net": 13920.5,
+  "training_base_intrabar_dd": 1593.0,
+  "phase_policy": {
+    "consistency_fraction": 0.5,
+    "applies_to_account_phases": [
+      "evaluation"
+    ],
+    "source": "User instruction 2026-11-07",
+    "contract_terms_independently_verified": false,
+    "data_split_is_not_account_phase": true,
+    "execution_changed": false,
+    "note": "Keep consistency as a diagnostic on every data split; apply it only to evaluation-phase qualification. No entry, exit, sizing, cost or risk change."
+  },
+  "frozen_candidate_hash": "4c9d6a7fb9703f7d0e19b5733d5aaeca96ef70eee2310a9a12d0d1fc676c20b1",
+  "validation": {
+    "metrics": {
+      "net_pnl": -777.0,
+      "realized_drawdown": 1845.5,
+      "max_drawdown": 1847.5,
+      "intrabar_drawdown": 1847.5,
+      "trades": 136,
+      "consistency": null,
+      "lock": 1
+    },
+    "checks": {
+      "positive_net": false,
+      "closing_dd_under_2000": true,
+      "cash_dd_under_2000": true,
+      "intrabar_dd_under_2000": true,
+      "minimum30_trades": true,
+      "no_permanent_lock": false,
+      "no_funded_scenario_breach": true
+    },
+    "profit_and_dd_pass": false,
+    "evaluation_phase_checks_pass": false,
+    "post_evaluation_scenario_checks_pass": false,
+    "lock_reason": "maximum drawdown",
+    "last_trade_exit": "2024-05-24 17:15:00+00:00",
+    "source_coverage": {
+      "rows": 707652,
+      "start": "2024-01-01 23:00:00+00:00",
+      "end": "2025-12-31 21:59:00+00:00"
+    }
+  },
+  "test_data_accessed": false,
+  "test_data_authorized": false,
+  "no_tuning": true,
+  "validation_evaluations": 1,
+  "parameters_identical": true,
+  "prior_artifacts_preserved": true,
+  "independent_confirmation": false,
+  "operational_eligibility": false
+}

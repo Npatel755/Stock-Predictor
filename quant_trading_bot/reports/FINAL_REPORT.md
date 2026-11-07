@@ -1,6 +1,6 @@
 # Current research handoff
 
-**68 strategy/model definitions, 448 configurations, 746 market/configuration cases and 824 completed attempts** are recorded. Reruns and training screens are explicitly separated. See [STRATEGY_COUNTS.md](STRATEGY_COUNTS.md).
+**69 strategy/model definitions, 622 configurations, 920 market/configuration cases and 1012 completed attempts** are recorded. Reruns and training screens are explicitly separated. See [STRATEGY_COUNTS.md](STRATEGY_COUNTS.md).
 
 ES/NQ original one-minute reference history from 2010–2023 was used for fitting and internal selection; actual MES/MNQ 2024–2025 was validation. Reference fitting uses all eligible observations, with per-contract shards and external-memory/batched learners. The longer reference history is not relabeled as pre-2019 micro P&L.
 
@@ -19,3 +19,11 @@ The additional opening-gap/prior-session-structure batch is recorded in [latest_
 Latest MNQ risk/exit research: **$4,451.00 net**, **$1,638.00 closing-equity drawdown**, **$1,649.00 adverse-intrabar bound**, **146 trades**. Improvement over the reproduced $1,635.50 one-contract baseline: **$2,815.50**. This is 2024–2025 reused selection data; the 2026 test was not reused.
 
 The [risk/exit improvement report](RISK_EXPANSION_RESEARCH.md) includes baseline comparisons and rejected risk-shutdown cases.
+
+MNQ entry-filter/protective-stop refinement: **160 reference settings screened, 14 selected MNQ replays**. The higher-profit/no-worse-drawdown goal was **not met**. Retained selection: **$4,451.00 net / $1,638.00 closing drawdown / $1,649.00 adverse-intrabar bound**. These are reused 2024–2025 selection results; no 2026 test prices were accessed.
+
+[Full refinement results](PARETO_REFINEMENT.md).
+
+MNQ profit/drawdown follow-up: **8 continuous reference replays and 8 MNQ replays**. The higher-profit/no-worse-drawdown goal was **met**. Retained selection: **$6,622.00 net / $1,386.00 closing drawdown / $1,419.00 adverse-intrabar bound**. These are reused 2024–2025 selection results; no 2026 test prices were accessed.
+
+[Full follow-up results](PROFIT_DRAWDOWN_FOLLOWUP.md).

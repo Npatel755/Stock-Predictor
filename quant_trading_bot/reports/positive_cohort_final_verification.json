@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "target": 3243,
+  "new_test_evaluations": 3242,
+  "existing_completed_result_reused": 1,
+  "no_candidate_failures": true,
+  "no_tuning": true,
+  "validation_accessed": false,
+  "prior_artifacts_preserved": true,
+  "frozen_cohort_unchanged": true,
+  "exclusive_reservations_verified": 3242,
+  "every_saved_curve_and_trade_reconciled": true,
+  "ledger_checks": 86385,
+  "shared_trade_samples": 10057,
+  "targeted_tests_passed": 64,
+  "top100_http_and_csv_counts_verified": true,
+  "top100_javascript_rankings_verified": true,
+  "independent_confirmation": false,
+  "operational_eligibility": false
+}

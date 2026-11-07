@@ -1,0 +1,15 @@
+{
+  "run_path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\training_search_200k_v1",
+  "target": 200000,
+  "completed": 143211,
+  "phase": "loading TRAIN NQ, lookback60",
+  "per_market": {
+    "ES": 36264,
+    "MES": 35631,
+    "MNQ": 35713,
+    "NQ": 35603
+  },
+  "validation_accessed": false,
+  "test_accessed": false,
+  "protected_result_files_read": false,
+  "updated_at": "2026-11-07T21:25:11.135395+0

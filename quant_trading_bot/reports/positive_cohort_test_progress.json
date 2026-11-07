@@ -1,0 +1,16 @@
+{
+  "target": 3243,
+  "completed": 3243,
+  "new_completed": 3242,
+  "cached": 1,
+  "failed": 0,
+  "phase": "all frozen cohort attempts recorded; no tuning",
+  "states": {
+    "cached": 1,
+    "completed": 3242
+  },
+  "run_path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\positive_training_cohort_test_v1",
+  "updated_at": "2026-11-07T17:59:22.987027+00:00",
+  "no_tuning": true,
+  "validation_accessed": false
+}

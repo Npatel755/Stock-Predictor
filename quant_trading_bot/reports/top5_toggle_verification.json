@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "show_only_and_checkbox_controls": true,
+  "both_equity_and_drawdown_synchronized": true,
+  "show_all_and_hide_all": true,
+  "delayed_chart_load_verified": true,
+  "legend_dimming": true,
+  "dashboard_http_verified": true,
+  "targeted_tests_passed": 5,
+  "strategy_replayed": false,
+  "parameters_changed": false
+}

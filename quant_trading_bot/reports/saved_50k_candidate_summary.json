@@ -1,0 +1,86 @@
+{
+  "candidate_id": "mass_ca28dbb9316d2d9ced10",
+  "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\saved_50k_candidate_mass_ca28dbb9316d2d9ced10",
+  "saved_candidate": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\reports\\saved_training_candidates\\mass_ca28dbb9316d2d9ced10\\candidate.json",
+  "training_base_net": 9972.5,
+  "training_base_intrabar_dd": 1478.0,
+  "phase_policy": {
+    "consistency_fraction": 0.5,
+    "applies_to_account_phases": [
+      "evaluation"
+    ],
+    "source": "User instruction2026-11-07",
+    "contract_terms_independently_verified": false,
+    "data_split_is_not_account_phase": true,
+    "execution_changed": false,
+    "note": "Keep consistency as a diagnostic on every data split; apply it only to evaluation-phase qualification. No entry, exit, sizing, cost or risk change."
+  },
+  "frozen_candidate_hash": "58729f597e86c94f5c3cf684f4087239179c8f494fcb7181be2e31f13fd7ebd7",
+  "validation": {
+    "metrics": {
+      "net_pnl": -1699.5,
+      "realized_drawdown": 1831.0,
+      "max_drawdown": 1833.0,
+      "intrabar_drawdown": 1833.0,
+      "trades": 40,
+      "consistency": null,
+      "lock": 1
+    },
+    "checks": {
+      "positive_net": false,
+      "closing_dd_under_2000": true,
+      "cash_dd_under_2000": true,
+      "intrabar_dd_under_2000": true,
+      "minimum30_trades": true,
+      "no_permanent_lock": false,
+      "no_funded_scenario_breach": true
+    },
+    "profit_and_dd_pass": false,
+    "evaluation_phase_checks_pass": false,
+    "post_evaluation_scenario_checks_pass": false,
+    "lock_reason": "maximum drawdown",
+    "last_trade_exit": "2024-05-08 15:00:00+00:00",
+    "source_coverage": {
+      "rows": 707652,
+      "start": "2024-01-01 23:00:00+00:00",
+      "end": "2025-12-31 21:59:00+00:00"
+    }
+  },
+  "test": {
+    "metrics": {
+      "net_pnl": 1784.0,
+      "realized_drawdown": 716.0,
+      "max_drawdown": 715.5,
+      "intrabar_drawdown": 768.5,
+      "trades": 77,
+      "consistency": 0.26681614349775784,
+      "lock": 0
+    },
+    "checks": {
+      "positive_net": true,
+      "closing_dd_under_2000": true,
+      "cash_dd_under_2000": true,
+      "intrabar_dd_under_2000": true,
+      "minimum30_trades": true,
+      "no_permanent_lock": true,
+      "no_funded_scenario_breach": true
+    },
+    "profit_and_dd_pass": true,
+    "evaluation_phase_checks_pass": true,
+    "post_evaluation_scenario_checks_pass": true,
+    "lock_reason": null,
+    "last_trade_exit": "2026-10-16 14:30:00+00:00",
+    "source_coverage": {
+      "rows": 301755,
+      "start": "2026-01-01 23:00:00+00:00",
+      "end": "2026-11-05 23:59:00+00:00"
+    }
+  },
+  "no_tuning": true,
+  "validation_evaluations": 1,
+  "test_evaluations": 1,
+  "parameters_identical": true,
+  "prior_artifacts_preserved": true,
+  "independent_confirmation": false,
+  "operational_eligibility": false
+}

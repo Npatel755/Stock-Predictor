@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "completed_new_unique": 50000,
+  "cumulative_unique": 70000,
+  "prior_training_artifacts_preserved": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "protected_result_files_read": false,
+  "publication_only_no_replay": true,
+  "ranked_sha256": "51e4874ba18cd3b5875d46c2083104f890193125df3c36f69cd8d8ebcfaff232",
+  "qualifying": 25,
+  "winner": "mass_e14ebd934d7e7f9172ba"
+}

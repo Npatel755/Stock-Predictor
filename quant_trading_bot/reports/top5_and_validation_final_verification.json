@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "top5_graph_http_ok": true,
+  "top5_same_as_displayed_ranking": true,
+  "top5_graph_strategy_replays": 0,
+  "validation_candidate": "mass_4a0b95329be1d0438243",
+  "validation_evaluations": 1,
+  "cost_cases": 1,
+  "no_tuning": true,
+  "test_replayed": false,
+  "frozen_parameters_unchanged": true,
+  "prior_test_artifacts_preserved": true,
+  "independent_confirmation": false,
+  "validation_scenario_pass": false,
+  "validation_lock": "gap in usable bars",
+  "validation_last_trade": "2024-12-01T23:00:00Z"
+}

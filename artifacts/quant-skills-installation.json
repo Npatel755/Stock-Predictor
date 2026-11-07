@@ -1,0 +1,204 @@
+{
+  "created_at": "2026-11-07T04:26:04.699386+00:00",
+  "source": "C:\\Users\\Nick\\Downloads\\devin-quant-skills-expanded.zip",
+  "source_sha256": "ca5ce9b81e2a9c7678f5f64d625c97b7523831c6dc14105287a791c45b76b70d",
+  "destination": "C:\\Users\\Nick\\.codex\\skills",
+  "skills": [
+    {
+      "name": "research-orchestrator",
+      "sha256": "8a71014979195bada7fe6bd7401b7876128aeb07c0b261e843c737e9a28572eb",
+      "bytes": 4314
+    },
+    {
+      "name": "strategy-discovery",
+      "sha256": "f185fcb3ffba757c228c193bec63ec661db0c3e2b03ed204ed368ab9bfdd69af",
+      "bytes": 1996
+    },
+    {
+      "name": "market-regime-analysis",
+      "sha256": "fa6537a73459c74b3556a706bc2bf7968539665e6120d7ab675cd048e36ff2e9",
+      "bytes": 1424
+    },
+    {
+      "name": "walk-forward-validation",
+      "sha256": "2f8b9038ae4ffe3f6db6296399a24a0037fb40299d9a5036818fd063ebf72333",
+      "bytes": 1631
+    },
+    {
+      "name": "risk-management",
+      "sha256": "16fb027d604911c3ab890813a93295b28a5c53266570a5bb9999f70449543e97",
+      "bytes": 2410
+    },
+    {
+      "name": "backtesting-engine",
+      "sha256": "dea7e6176655427d0223e2c4cb9efb7dd34886995b79b7251486bdc109f85962",
+      "bytes": 2008
+    },
+    {
+      "name": "overfitting-defense",
+      "sha256": "693a289d5078391a599f297be4fb93aec723b8ac7b4e21c75dd76cda5604ae72",
+      "bytes": 2155
+    },
+    {
+      "name": "execution-optimization",
+      "sha256": "5ebfbbc44f9f1adc05d440300f8abc8756242f131e31b3b871ef7f28cb936c23",
+      "bytes": 1668
+    },
+    {
+      "name": "portfolio-construction",
+      "sha256": "3215e56a1364cec66baea906f7f36a8797ecc849b3b5dee71bf0fd912dedc638",
+      "bytes": 1570
+    },
+    {
+      "name": "data-integrity",
+      "sha256": "94d59e5e718ffe58fb8e1c07c88a6a2d198d685929d18cfef2d3a1c2b5a94d93",
+      "bytes": 1977
+    },
+    {
+      "name": "cross-contract-transfer",
+      "sha256": "dc48de705e754f1af61929da70f10fa4d8ea922b41576991372c31112cf6d82a",
+      "bytes": 2707
+    },
+    {
+      "name": "deployment-safety-monitoring",
+      "sha256": "0c800b06378887570a84fa87041372f927e1ebd43c9cacd11da05c43dff4e15d",
+      "bytes": 2460
+    },
+    {
+      "name": "economic-event-research",
+      "sha256": "858def7015fc272553a478d17d7861b895d87ad32885c491cc218fcd10b82944",
+      "bytes": 3083
+    },
+    {
+      "name": "futures-contract-lifecycle",
+      "sha256": "5a790858136188cfc0e46a6be44b24a69d424390beb192577f1c3f215308d713",
+      "bytes": 3259
+    },
+    {
+      "name": "negative-control-testing",
+      "sha256": "5c75ca5c0b4812ea305703fd6bd6f60e7a90a93a5834e1d90bb91792f568d538",
+      "bytes": 2388
+    },
+    {
+      "name": "paper-trading-reconciliation",
+      "sha256": "241aa81b2408f50cf4fbe9a803135889a15f0ed54c54234a0f718fae2187115c",
+      "bytes": 2250
+    },
+    {
+      "name": "risk-of-ruin-monte-carlo",
+      "sha256": "d45f0ef57c3181594cc8aaed510effdd1e79adf07333b98841c7fbf1359faf5f",
+      "bytes": 2714
+    },
+    {
+      "name": "simulator-verification",
+      "sha256": "dd2cb87e104b25d8dfad1796ccc341cad8fc61626df2539c61c35347f704f763",
+      "bytes": 3080
+    }
+  ],
+  "validation": [
+    {
+      "name": "research-orchestrator",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "strategy-discovery",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "market-regime-analysis",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "walk-forward-validation",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "risk-management",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "backtesting-engine",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "overfitting-defense",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "execution-optimization",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "portfolio-construction",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "data-integrity",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "cross-contract-transfer",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "deployment-safety-monitoring",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "economic-event-research",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "futures-contract-lifecycle",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "negative-control-testing",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "paper-trading-reconciliation",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "risk-of-ruin-monte-carlo",
+      "passed": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "simulator-verification",
+      "passed": true,
+      "message": "Skill is valid!"
+    }
+  ],
+  "archive_scripts_executed": false,
+  "automatic_discovery": true,
+  "adaptations": [
+    "Codex naming",
+    "Sibling skill links",
+    "Finite search budget and protected-split rules",
+    "No implied live authorization",
+    "Fixed-fill versus changed-path cost checks",
+    "Dated reference caveats"
+  ],
+  "package": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\artifacts\\quant-skills-codex.zip",
+  "installed": 18,
+  "all_valid": true,
+  "hash_basis": "Exact installed bytes including platform newline encoding; reconciled to packaged ZIP"
+}

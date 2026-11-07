@@ -1,0 +1,32 @@
+{
+  "target": 3243,
+  "completed": 3243,
+  "val_positive_and_sub2k": 1107,
+  "both_val_and_test_pass": 423,
+  "top10_val": [
+    "mass_e0aac7b0fb35c788eae9",
+    "mass_31d1122b68eaa5cb0726",
+    "mass_4a0b95329be1d0438243",
+    "mass_c66ade7109abf047e3e4",
+    "mass_3f42bcddc9a30d686002",
+    "mass_9590d898d3d922b9d898",
+    "mass_85721bb33e324b248878",
+    "mass_87a9306831fc6fb89747",
+    "mass_17fd59cc76253abac1c4",
+    "mass_aa0559d329f520d66d8e"
+  ],
+  "top10_all_rounders": [
+    "mass_4a0b95329be1d0438243",
+    "mass_e0aac7b0fb35c788eae9",
+    "mass_87a9306831fc6fb89747",
+    "mass_31d1122b68eaa5cb0726",
+    "mass_c66ade7109abf047e3e4",
+    "mass_009d843e631eea1b01f3",
+    "mass_b0a5d764ee548a9c6971",
+    "mass_3f42bcddc9a30d686002",
+    "mass_d6739397c054eaa2dbbd",
+    "mass_ebf1aa6f14ebb8abd177"
+  ],
+  "results_csv_sha256": "ad86708981dbb728ea4a496e8a90a1f8f41dba797e05a8ae13855b603bdca5e3",
+  "report_sha256": "3b3a2e0093023d714fac8f798864dce9d3cf3da35b19dae18543391b34f7464a"
+}

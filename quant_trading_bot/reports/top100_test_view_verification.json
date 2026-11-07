@@ -1,0 +1,14 @@
+{
+  "display_only": true,
+  "strategy_replays": 0,
+  "parameter_changes": 0,
+  "positive_low_dd_cases": 1181,
+  "displayed_per_ranking": 100,
+  "source_results_sha256": "4ff973eacc4dfaa8a761290d8a009a3c2f363132a2ac1793e0b514a4d0a7eb64",
+  "ranking_modes": [
+    "net",
+    "lowest_drawdown",
+    "profit_to_drawdown"
+  ],
+  "html_bytes": 827647
+}

@@ -1,0 +1,66 @@
+{
+  "training_artifacts_only": true,
+  "protected_market_prices_read": false,
+  "outputs": [
+    {
+      "config_id": "mass_85721bb33e324b248878",
+      "plot": "mass_85721bb33e324b248878_curves.png",
+      "ledger": "mass_85721bb33e324b248878_trades.csv",
+      "trades": 354
+    },
+    {
+      "config_id": "mass_853576a710b834b0ad13",
+      "plot": "mass_853576a710b834b0ad13_curves.png",
+      "ledger": "mass_853576a710b834b0ad13_trades.csv",
+      "trades": 614
+    },
+    {
+      "config_id": "mass_a2ac4a632df00701ac49",
+      "plot": "mass_a2ac4a632df00701ac49_curves.png",
+      "ledger": "mass_a2ac4a632df00701ac49_trades.csv",
+      "trades": 567
+    },
+    {
+      "config_id": "mass_9c4239762fe64389ef65",
+      "plot": "mass_9c4239762fe64389ef65_curves.png",
+      "ledger": "mass_9c4239762fe64389ef65_trades.csv",
+      "trades": 689
+    },
+    {
+      "config_id": "mass_f00118a9502d5bf8e4ca",
+      "plot": "mass_f00118a9502d5bf8e4ca_curves.png",
+      "ledger": "mass_f00118a9502d5bf8e4ca_trades.csv",
+      "trades": 218
+    },
+    {
+      "config_id": "mass_db3be4b16e555f40dd81",
+      "plot": "mass_db3be4b16e555f40dd81_curves.png",
+      "ledger": "mass_db3be4b16e555f40dd81_trades.csv",
+      "trades": 297
+    },
+    {
+      "config_id": "mass_bef317dfc03e0aa8a0c6",
+      "plot": "mass_bef317dfc03e0aa8a0c6_curves.png",
+      "ledger": "mass_bef317dfc03e0aa8a0c6_trades.csv",
+      "trades": 222
+    },
+    {
+      "config_id": "mass_efc9160cb99fab8e80ea",
+      "plot": "mass_efc9160cb99fab8e80ea_curves.png",
+      "ledger": "mass_efc9160cb99fab8e80ea_trades.csv",
+      "trades": 194
+    },
+    {
+      "config_id": "mass_80a9938f1c35a22003d7",
+      "plot": "mass_80a9938f1c35a22003d7_curves.png",
+      "ledger": "mass_80a9938f1c35a22003d7_trades.csv",
+      "trades": 201
+    },
+    {
+      "config_id": "mass_f6a2bab65c0358d09639",
+      "plot": "mass_f6a2bab65c0358d09639_curves.png",
+      "ledger": "mass_f6a2bab65c0358d09639_trades.csv",
+      "trades": 127
+    }
+  ]
+}

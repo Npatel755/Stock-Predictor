@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-07T02:04:05.482553+00:00",
+  "verification_only_no_replay": true,
+  "frozen_source_and_parameters_verified": true,
+  "equity_and_trade_metrics_reconciled": true,
+  "original_test_artifacts_unchanged": true,
+  "one_parameter_version_one_cost_case": true,
+  "console_summary_error": "The evaluation completed and persisted results before numpy-bool console JSON serialization failed. No simulation rerun performed.",
+  "report_sha256": "54386ba81bdb9493c51fae17b09198aba8cb000228a65289696f3df3842e025f",
+  "frozen_candidate_hash": "451fae066c7c58172559b1a3d441ea6d20e204fb1ebb81b7d8dc57a9f5dfa540"
+}

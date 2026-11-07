@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "completed_at": "2026-11-07T01:12:13.168462+00:00",
+  "plot_containers": 119,
+  "latest_equity": 56622.0,
+  "saved_candidates_verified": [
+    "follow_0d4c377f32",
+    "follow_9f2b7f71a8",
+    "follow_cf9f62ca20",
+    "refine_1ea7bbf061",
+    "refine_41d93a46b7"
+  ],
+  "source_snapshots_verified": true,
+  "final_test_accessed_by_new_studies": false,
+  "chart_sha256": "0ae174a5dec057bae38926c4d188653f35a6390bec99f1582425b5ea50776157",
+  "test_receipt": {
+    "passed": true,
+    "source_hash": "5dc324c80ec932932b3f24c6727f4873e7e6bcea24e49bc3c0c07b8f2af96f0d",
+    "completed_at": "2026-11-07T01:11:25.773559+00:00",
+    "return_code": 0,
+    "command": "python -m pytest -q -p no:cacheprovider"
+  }
+}

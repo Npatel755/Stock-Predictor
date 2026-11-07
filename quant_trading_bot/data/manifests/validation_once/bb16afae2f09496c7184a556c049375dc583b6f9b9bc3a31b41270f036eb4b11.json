@@ -1,0 +1,11 @@
+{
+  "candidate_id": "mass_4a0b95329be1d0438243",
+  "candidate_hash": "0a96c4f8ff1faf0b1bc4e78ae51d7f7b879d89fb6d81c0472b2d4cb8a4886357",
+  "reserved_at": "2026-11-07T18:13:18.609926+00:00",
+  "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+  "no_tuning": true,
+  "failure_consumes_attempt": true,
+  "period_previously_observed": true,
+  "test_selected": true,
+  "independent_confirmation": false
+}

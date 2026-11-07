@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-07T03:35:27.876503+00:00",
+  "protocol_and_source_snapshots_verified": true,
+  "training_shortlist_rank_verified": true,
+  "selected_curve_metrics_verified": false,
+  "validation_prices_accessed": false,
+  "test_prices_accessed": false,
+  "qualified_candidates": 0,
+  "strategy_replayed": false,
+  "report_sha256": "ddbb37f76783c8042192af9a10832224fbd7ff7926d6b541aee6968b0089fba2"
+}

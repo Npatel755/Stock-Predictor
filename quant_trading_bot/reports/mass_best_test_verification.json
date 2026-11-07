@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "publication_only_no_replay": true,
+  "market_price_files_read": false,
+  "exact_training_parameters_preserved": true,
+  "prior_artifacts_preserved": true,
+  "curve_and_trades_reconciled": true,
+  "test_candidate_count": 1,
+  "test_cost_count": 1,
+  "validation_accessed": false,
+  "independent_confirmation": false,
+  "chart_display_points": 320,
+  "report_sha256": "fcc95b2f4d4f65927c92b2b5089067ecb1bb81fe1b85ab370cd60ad0f54a33ad"
+}

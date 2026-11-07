@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-07T02:34:28.925422+00:00",
+  "verification_only_no_replay": true,
+  "exact_parameters_match_training_and_validation": true,
+  "source_archive_verified": true,
+  "saved_curve_and_trade_metrics_reconciled": true,
+  "prior_artifacts_preserved": true,
+  "validation_replayed": false,
+  "test_parameter_versions": 1,
+  "test_cost_cases": 1,
+  "independent_confirmation": false,
+  "report_sha256": "b605c52526ae774c365ecca1ec6faad5cab807b022b889cde7566c6ffdef2ed7"
+}

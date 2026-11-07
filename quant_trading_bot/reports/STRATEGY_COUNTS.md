@@ -1,8 +1,8 @@
 # Strategies tested
 
-Distinct strategy/model definitions: **68**.
+Distinct strategy/model definitions: **69**.
 
-Unique parameter/timeframe/feature configurations: **448**. Unique market/configuration cases: **746**. Completed recorded attempts including reruns: **824**.
+Unique parameter/timeframe/feature configurations: **622**. Unique market/configuration cases: **920**. Completed recorded attempts including reruns: **1012**.
 
 A definition is a strategy/model rule name; changing market, parameters or rerunning does not create a new definition. Configurations include timeframe, feature-study and execution-session scope. Market cases additionally distinguish the instrument. Historical corrected/interrupted runs are retained. Training screens are approximate and separately labeled; pure model-fit/unit tests and cost-stress reruns are excluded.
 
@@ -25,6 +25,7 @@ Registered primary evaluations, reference candidate screening/selection grids, d
 | europe_trend_alignment | 4 | 8 | 8 |
 | external_xgboost | 4 | 8 | 8 |
 | failed_gap_breakout | 4 | 8 | 8 |
+| gap_continuation_refined | 174 | 174 | 188 |
 | gru | 1 | 2 | 2 |
 | inside_day_breakout | 4 | 8 | 8 |
 | intraday_momentum | 3 | 6 | 9 |

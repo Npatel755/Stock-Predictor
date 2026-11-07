@@ -19,6 +19,15 @@ latest_path = ROOT/"reports/post_final_research_summary.json"
 latest = json.loads(latest_path.read_text()) if latest_path.exists() else None
 risk_path = ROOT/"reports/latest_risk_expansion_study.json"
 risk_study = json.loads(risk_path.read_text()) if risk_path.exists() else None
+refinement_path = ROOT/"reports/latest_pareto_refinement.json"
+if refinement_path.exists():
+    risk_study = json.loads(refinement_path.read_text())
+followup_path = ROOT/"reports/latest_profit_drawdown_followup.json"
+if followup_path.exists():
+    risk_study = json.loads(followup_path.read_text())
+baseline_label = "Previous $4,451 benchmark" if risk_study and risk_study.get("pareto_refinement") else "Original one-contract baseline"
+if risk_study and risk_study.get("profit_drawdown_followup"):
+    baseline_label = "Saved $5,779.50 result (risk stopped)"
 if risk_study:
     latest = dict(studies=[risk_study["path"]], leading_observed_candidate=dict(transfer="NQ->MNQ", **risk_study["best_selected"]))
 latest_curve_html = None
@@ -95,7 +104,9 @@ for pattern, label in (("reference_transfer_*", "15-minute control"), ("minute_r
     ("adaptive_opening_minutes_*", "Volatility-scaled opening range"),
     ("session_window_minutes_*", "Session/calendar rules — post-final exploratory selection"),
     ("gap_structure_minutes_*", "Opening gaps/price structure — post-final exploratory selection"),
-    ("risk_expansion_*", "Higher-risk sizing and exits — reused-period selection")):
+    ("risk_expansion_*", "Higher-risk sizing and exits — reused-period selection"),
+    ("pareto_refinement_*", "Entry filters and protective stops — reused-period selection"),
+    ("profit_drawdown_followup_*", "Higher profit / lower drawdown — reused-period follow-up")):
     directories = sorted((ROOT/"runs").glob(pattern), key=lambda path:path.stat().st_mtime)
     if not directories:
         continue
@@ -115,7 +126,7 @@ for pattern, label in (("reference_transfer_*", "15-minute control"), ("minute_r
         figure.update_layout(template="plotly_white", title=label+" · reference-trained → actual micro validation", height=440,
             yaxis_title="Validation net P&L (simulated USD)")
         sections.append(pio.to_html(figure, full_html=False, include_plotlyjs=False))
-        if pattern.startswith(("session_window", "gap_structure", "risk_expansion")):
+        if pattern.startswith(("session_window", "gap_structure", "risk_expansion", "pareto_refinement", "profit_drawdown_followup")):
             risk_return = go.Figure()
             for pair in sorted(set(row["transfer"] for row in rows)):
                 selected = [row for row in rows if row["transfer"] == pair]
@@ -144,7 +155,7 @@ for pattern, label in (("reference_transfer_*", "15-minute control"), ("minute_r
                 base_curve = pd.read_parquet(directory/f"MNQ_{risk_study['baseline']['candidate_id']}_validation_equity.parquet")
                 base_ids = np.unique(np.linspace(0, len(base_curve)-1, min(3000, len(base_curve))).astype(int))
                 figure.add_scatter(x=base_curve.timestamp_utc.iloc[base_ids], y=base_curve.equity.iloc[base_ids],
-                    name="Original one-contract baseline", mode="lines", line=dict(color="#8892a2", dash="dot"), row=1, col=1)
+                    name=baseline_label, mode="lines", line=dict(color="#8892a2", dash="dot"), row=1, col=1)
             figure.add_scatter(x=curve.timestamp_utc.iloc[indexes], y=[50000]*len(indexes), name="Flat cash", mode="lines", line=dict(dash="dot"), row=1, col=1)
             figure.add_scatter(x=curve.timestamp_utc.iloc[indexes], y=-drawdown.iloc[indexes], name="Drawdown", mode="lines", fill="tozeroy", line=dict(color="#b64d59"), row=2, col=1)
             figure.add_hline(y=-2000, line_dash="dash", line_color="#922e36", annotation_text="$2,000 drawdown rejection limit", row=2, col=1)
@@ -177,6 +188,22 @@ if final:
     figure.update_yaxes(title_text="Simulated equity (USD)", row=1, col=1)
     figure.update_yaxes(title_text="Drawdown (USD)", row=2, col=1)
     sections.insert(1, pio.to_html(figure, full_html=False, include_plotlyjs=False))
+saved_test_path = ROOT/"reports/saved_version_reused_test.json"
+saved_test = json.loads(saved_test_path.read_text()) if saved_test_path.exists() else None
+saved_test_html = None
+if saved_test:
+    tc = pd.read_parquet(Path(saved_test["path"])/"test_equity.parquet")
+    ti = np.unique(np.linspace(0,len(tc)-1,min(3000,len(tc))).astype(int))
+    td = tc.equity.cummax().clip(lower=50000)-tc.equity
+    tf = make_subplots(rows=2,cols=1,shared_xaxes=True,vertical_spacing=.09)
+    tf.add_scatter(x=tc.timestamp_utc.iloc[ti],y=tc.equity.iloc[ti]-50000,name="Frozen-version test net P&L",row=1,col=1)
+    tf.add_scatter(x=tc.timestamp_utc.iloc[ti],y=-td.iloc[ti],name="Frozen-version test drawdown",fill="tozeroy",row=2,col=1)
+    tf.add_hline(y=-2000,line_dash="dash",row=2,col=1)
+    tm = saved_test["metrics"]
+    tf.update_layout(template="plotly_white",height=600,title=f"Frozen $6,622 development version · reused 2026 test · net ${tm['net_pnl']:,.2f} / close DD ${tm['max_drawdown']:,.2f}")
+    saved_test_html = pio.to_html(tf,full_html=False,include_plotlyjs=False)
+    sections.insert(0,saved_test_html)
+
 document = """<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MES / MNQ validation charts</title>
 <style>body{font:16px system-ui,sans-serif;background:#f3f5f9;color:#18243a;margin:0}main{max-width:1450px;margin:auto;padding:32px}header,section{background:white;border-radius:14px;padding:22px;margin-bottom:22px}p{max-width:1000px;line-height:1.6}h1{margin-top:0}a{color:#315c9d}</style></head><body><main><header>
 <h1>MES / MNQ validation research</h1><p>ES/NQ archive history begins in 2010. Actual MES/MNQ history begins in May 2019. Training ends in 2023 · validation 2024–2025 · 2026 test reserved.</p>
@@ -189,6 +216,11 @@ if final:
     document = document.replace("</h1>", f"</h1><p><strong>Frozen 2026 MNQ test: ${final['metrics']['net_pnl']:,.2f} net / ${final['metrics']['max_drawdown']:,.2f} max drawdown / {final['metrics']['trades']} trades.</strong> This thin positive result does not establish a dependable edge. The 2026 market period will not be reused as untouched test data.</p>", 1)
 document = document.replace("These historical curves reset risk and capital between folds; they are attribution views.",
     "Earlier micro comparison curves reset risk and capital between folds; the transfer studies use continuous one-account validation curves. New session/calendar and gap/structure studies reuse 2024–2025 for exploratory selection after the final test; they have no independent final confirmation.")
+document = document.replace("</h1>","</h1><p><strong>Research policy: no tuning against validation or test data.</strong> The 2024–2025 figures below were reused to choose parameters and are development results, not independent validation. Future parameter selection uses training history only.</p>",1)
+if saved_test:
+    tm = saved_test["metrics"]
+    test_card = f"<div style='border-left:5px solid #b64d59;padding:12px 20px;background:#fff1f2'><h2>Frozen saved version · 2026 reused-test evaluation</h2><p><strong>Net ${tm['net_pnl']:,.2f} · Closing drawdown ${tm['max_drawdown']:,.2f} · Intrabar drawdown ${tm['max_intraday_drawdown_bound']:,.2f} · {tm['trades']} trades.</strong> One fixed version and one base-cost case; no tuning. This period was previously consumed, so this is not independent confirmation. <a href='#frozen-version-test'>Test equity chart</a> · <a href='SAVED_VERSION_TEST.md'>Full outcome</a>.</p></div>"
+    document = document.replace("</h1>","</h1>"+test_card,1)
 if latest:
     leading = latest["leading_observed_candidate"]
     m = leading["metrics"]
@@ -197,6 +229,10 @@ if latest:
     if risk_study:
         params = leading["candidate"]
         extra = f"<p>Maximum {params['contracts']} contracts · {html.escape(params['sizing'])} sizing · {params['stop_points']}-point stop · {params['payoff']}:1 target. Net improvement over baseline: ${risk_study['pnl_improvement']:,.2f}. Permanent-lock and cost-stress checks are included in selection.</p>"
+        if risk_study.get("pareto_refinement"):
+            report_link = "PROFIT_DRAWDOWN_FOLLOWUP.md" if risk_study.get("profit_drawdown_followup") else "PARETO_REFINEMENT.md"
+            extra += f"<p>Refinement goal met: {risk_study['goal_met']}. {risk_study['selected_replays']} micro replays. <a href='{report_link}'>Full refinement results</a>.</p>"
+        extra += f"<p>Base-case permanent risk shutdown: {m['permanent_risk_lock']}; 2×-cost shutdown: {leading['stress']['2']['permanent_risk_lock']}. Cost-stress qualification is separate from the base profit/drawdown goal.</p>"
         if leading["stress"]["3"]["permanent_risk_lock"]:
             extra += "<p>3×-cost stress triggered permanent risk shutdown and failed; positive terminal profit in a stopped case is not a full-period pass.</p>"
     cost_factor = "2" if risk_study else "3"
@@ -207,7 +243,7 @@ if latest_curve_html:
     sections.insert(0, latest_curve_html)
 # Load the library before every chart so reordering cannot break first-chart rendering.
 document = document.replace("</head>", "<script>"+get_plotlyjs()+"</script></head>", 1)
-document += "".join(("<section id='latest-strategy'>" if index == 0 and latest_curve_html else "<section>")+section+"</section>" for index, section in enumerate(sections))
+document += "".join(("<section id='latest-strategy'>" if index == 0 and latest_curve_html else "<section id='frozen-version-test'>" if section == saved_test_html else "<section>")+section+"</section>" for index, section in enumerate(sections))
 document += "</main></body></html>"
 path = ROOT/"reports/research_charts.html"
 path.write_text(document, encoding="utf-8")

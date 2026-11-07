@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "completed_new": 50000,
+  "cumulative_unique": 70000,
+  "base_qualified": 25,
+  "full_budget_verified": true,
+  "primary_ranking": "training net descending under original full gates and strict2000 DD; first2x-cost survivor",
+  "highest_base_net": 9972.5,
+  "highest_base_cost_stress_pass": false,
+  "best_new_verified_net": 7999.5,
+  "prior_benchmark_net": 8421.0,
+  "improved_vs_prior_benchmark": false,
+  "prior_training_artifacts_preserved": true,
+  "source_identity_verified": true,
+  "resume_completed_count_unchanged": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "protected_result_files_read": false,
+  "independent_confirmation": false,
+  "operational_eligibility": false,
+  "ledger_checks": 322,
+  "shared_trade_samples": 100
+}

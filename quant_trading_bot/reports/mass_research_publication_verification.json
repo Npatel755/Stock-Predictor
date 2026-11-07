@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-07T16:59:45.147525+00:00",
+  "publication_only_no_price_reads": true,
+  "strategy_replayed": false,
+  "csv_rows": 10000,
+  "unique_ranked_ids": 10000,
+  "manifest_rows": 10000,
+  "top10_rows": 10,
+  "ranked_csv_sha256": "b50e1bc688d7136d6a3d281b5bfd870e4d46f8a6c66dc7c8cc5e6cb4f5374d57",
+  "configurations_sha256": "dad849cef982abdcd45ccf4b5bea77035a7b8594fd6d0b3275218770f1936171",
+  "source_result_sha256": "5ef20c94578ae104293d1596f8e8f22b7ffba8431c7455a761b86db0fcf1bbc4",
+  "validation_status": "blocked_previously_observed",
+  "test_status": "blocked_previously_observed",
+  "independent_confirmation": false,
+  "live_execution_enabled": false
+}

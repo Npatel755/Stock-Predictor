@@ -1,0 +1,32 @@
+{
+  "experiment_id": "EXAMPLE-RUN-001",
+  "strategy_id": "strategy-001",
+  "parent_experiment_id": null,
+  "hypothesis": "What specific causal market mechanism is being tested?",
+  "instrument": "MNQ",
+  "signal_instrument": "NQ",
+  "timeframe": "1m",
+  "data_sha256": "TO_BE_REPLACED",
+  "market_data_snapshot": "YYYY-MM-DD",
+  "split_role": "TRAIN",
+  "range_start": "YYYY-MM-DD",
+  "range_end": "YYYY-MM-DD",
+  "source_ids": [
+    "source-001"
+  ],
+  "code_commit": "TO_BE_REPLACED",
+  "parameters": {},
+  "order_timing": "signal at t close, entry after t",
+  "fee_model": "TO_BE_CONFIGURED",
+  "slippage_model": "TO_BE_CONFIGURED",
+  "assumed_funded_rules_version": "UNVERIFIED",
+  "trade_count": null,
+  "net_profit": null,
+  "max_drawdown": null,
+  "sharpe": null,
+  "profit_factor": null,
+  "confidence_interval": null,
+  "status": "NOT_RUN",
+  "lessons": [],
+  "consumed_holdout": false
+}

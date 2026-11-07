@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "additional_configurations": 10000,
+  "cumulative_distinct_active_configs": 20000,
+  "training_qualified": 6,
+  "cost_robust_training_candidates": 3,
+  "source_and_rank_hashes_verified": true,
+  "prior_training_and_test_artifacts_preserved": true,
+  "resume_count_unchanged": true,
+  "dashboard_http_verified": true,
+  "download_sha256_matches": true,
+  "targeted_tests_passed": 61,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "outcomes_used_for_selection": "training_only",
+  "independent_confirmation": false,
+  "operational_eligibility": false,
+  "ledger_checks": 4944,
+  "shared_trade_replays": 933
+}

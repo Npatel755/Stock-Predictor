@@ -1,346 +1,91 @@
-# Stock Predictor API
-
-The local ETH futures backtester and model experiments live in [backtesting/](backtesting/README.md).
-
-A machine learning-powered stock prediction API that predicts whether a stock's price is likely to move **UP** or **DOWN** on the next trading day using technical indicators and gradient boosting.
-
----
-
-## 🚀 Features
-
-- Downloads historical stock market data
-- Stores data in PostgreSQL
-- Calculates technical indicators automatically
-- Trains multiple machine learning models
-  - Logistic Regression
-  - Random Forest
-  - XGBoost
-- Hyperparameter tuning
-- REST API built with Flask
-- Dockerized for easy deployment
-- Predicts any supported stock ticker through a simple API request
-
----
-
-# Example Prediction
-
-Request
-
-```http
-GET /Ticker/AAPL
-```
-
-Response
-
-```json
-{
-  "ticker": "AAPL",
-  "latest_date": "2026-07-31",
-  "prediction": "UP",
-  "prediction_value": 1,
-  "probability_up": 0.822
-}
-```
-
----
-
-# Machine Learning Pipeline
-
-```
-Historical Market Data
-          │
-          ▼
-    Technical Indicators
-          │
-          ▼
-      PostgreSQL
-          │
-          ▼
- Feature Engineering
-          │
-          ▼
-   XGBoost Classifier
-          │
-          ▼
- Flask REST API
-          │
-          ▼
-      JSON Response
-```
-
----
-
-# Technical Indicators
-
-The model currently utilizes a variety of technical indicators including:
-
-- Simple Moving Average (SMA)
-- Exponential Moving Average (EMA)
-- MACD
-- RSI
-- Volume
-- VWAP
-- Daily Returns
-- High-Low %
-- Open-Close %
-- Additional engineered features
-
-More indicators can easily be added to improve performance.
-
----
-
-# Tech Stack
-
-| Category            | Technology     |
-| ------------------- | -------------- |
-| Language            | Python         |
-| API                 | Flask          |
-| Machine Learning    | Scikit-Learn   |
-| Gradient Boosting   | XGBoost        |
-| Database            | PostgreSQL     |
-| ORM                 | SQLAlchemy     |
-| Data Processing     | Pandas         |
-| Numerical Computing | NumPy          |
-| Containerization    | Docker         |
-| Market Data         | Polygon.io API |
-
----
-
-# Project Structure
-
-```
-Stock Predictor/
-│
-├── app.py
-├── database.py
-├── models/
-├── routes/
-├── schemas/
-├── database_models/
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-│
-├── MachineLearning/
-│   ├── LogisticRegression.py
-│   ├── RandomForestClassifier.py
-│   ├── xg_Boost.py
-│   └── train_model.py
-│
-├── Data/
-│   ├── download_data.py
-│   ├── indicators.py
-│   └── preprocessing.py
-│
-└── README.md
-```
-
----
-
-# Model Performance
-
-Current best model:
-
-| Model               | Accuracy |
-| ------------------- | -------- |
-| Logistic Regression | ~50%     |
-| Random Forest       | ~57%     |
-| **XGBoost**         | **~59%** |
-
-The XGBoost model currently provides the strongest predictive performance.
-
----
-
-# API Endpoints
-
-## Predict Stock Direction
-
-```http
-GET /Ticker/<ticker>
-```
-
-Example
-
-```http
-GET /Ticker/NVDA
-```
-
-Returns
-
-```json
-{
-  "ticker": "NVDA",
-  "prediction": "UP",
-  "prediction_value": 1,
-  "probability_up": 0.81
-}
-```
-
----
-
-# Environment Setup
-
-This project requires a PostgreSQL database and a Polygon.io API key.
-
----
-
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/StockPredictor.git
-cd StockPredictor
-```
-
----
-
-## 2. Create a `.env` File
-
-Create a `.env` file in the project root.
-
-Example:
-
-```env
-DATABASE_URL=postgresql://postgres:password@db:5432/stock_database
-POLYGON_API_KEY=YOUR_POLYGON_API_KEY
-```
-
-If running the application **outside Docker**, your database URL will typically look like:
-
-```env
-DATABASE_URL=postgresql://postgres:password@localhost:5432/stock_database
-```
-
----
-
-## 3. PostgreSQL Setup
-
-### Option A (Recommended) – Docker
-
-Start PostgreSQL with Docker Compose:
-
-```bash
-docker compose up --build
-```
-
-The application will automatically connect using the `DATABASE_URL` defined in your `.env` file.
-
----
-
-### Option B – Local PostgreSQL Installation
-
-1. Install PostgreSQL.
-2. Create a new database.
-
-Example:
-
-```sql
-CREATE DATABASE stock_database;
-```
-
-3. Update your `.env` file with your username, password, host, and database name.
-
-Example:
-
-```env
-DATABASE_URL=postgresql://postgres:password@localhost:5432/stock_database
-```
-
----
-
-## 4. Polygon.io API Key
-
-Historical market data is provided by Polygon.io.
-
-1. Create a free account at https://polygon.io/
-2. Navigate to your Dashboard.
-3. Copy your API Key.
-4. Add it to your `.env` file.
-
-Example:
-
-```env
-POLYGON_API_KEY=YOUR_API_KEY_HERE
-```
-
----
-
-## 5. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 6. Run Database Migrations
-
-```bash
-flask db upgrade
-```
-
----
-
-## 7. Start the Application
-
-```bash
-docker compose up
-```
-
-or locally
-
-```bash
-flask run
-```
-
----
-
-## Environment Variables
-
-| Variable          | Description                                                |
-| ----------------- | ---------------------------------------------------------- |
-| `DATABASE_URL`    | PostgreSQL connection string                               |
-| `POLYGON_API_KEY` | Polygon.io API key used to download historical market data |
-
----
-
-## Example `.env`
-
-```env
-DATABASE_URL=postgresql://postgres:password@db:5432/stock_database
-POLYGON_API_KEY=YOUR_POLYGON_API_KEY
-```
-
-# Future Improvements
-
-- Feature importance visualization
-- SHAP explanations
-- Walk-forward validation
-- Live market predictions
-- Automated model retraining
-- Web dashboard
-- User authentication
-- Prediction history
-- Portfolio tracking
-- Buy/Sell signal generation
-- Confidence calibration
-- Additional technical indicators
-- News sentiment analysis
-- LSTM and Transformer models
-
----
-
-# Disclaimer
-
-This project is intended for educational and research purposes only.
-
-The predictions generated by this model should **not** be considered financial advice. Stock markets are inherently unpredictable, and no machine learning model can guarantee future performance.
-
----
-
-# Author
-
-**Nick Patel**
-
-Machine Learning • Software Engineering • Data Engineering
-
-Built using Python, Flask, PostgreSQL, Docker, and XGBoost.
+# Devin Quant Trading Skills — Complete Research & Learning Pack
+
+**43 repository skills**: the prior 36 research skills plus 7 targeted market-data, statistical-audit, and deployment-parity skills. These are instruction files, **not** trained model weights, backtesting code, purchased datasets, or guaranteed-profit systems.
+
+## Added in v5 (7 additional skills)
+- `orderflow-microstructure`
+- `statistical-evidence-auditor`
+- `trade-edge-attribution`
+- `intraday-session-clock`
+- `point-in-time-feature-engineering`
+- `adversarial-stress-lab`
+- `batch-streaming-signal-parity`
+
+These are specialized additions, not replacements for the earlier 36. Use `intraday-session-clock` and `point-in-time-feature-engineering` for basic data correctness; `statistical-evidence-auditor` for independent credibility checks; and only use `orderflow-microstructure` when the actual dataset contains the requisite quote/order-book fields. See `research_skillpack/NEW_SKILLS_RESEARCH.md`.
+
+## Install
+Extract this archive **at the repository root** so the files appear under `.agents/skills/<skill-name>/SKILL.md`. Preserve existing files and review conflicts; do not indiscriminately overwrite existing skills. Commit changes and ask Devin to confirm discovery in its own environment. Current public documentation describes `@skills:<skill-name>` as an explicit invocation syntax, but confirm it works in your Devin version.
+
+**Never assume this archive is installed into Devin just because you downloaded it.** It must be added to a repository Devin can access.
+
+## Added learning/research skills (18)
+- `academic-paper-mining`
+- `champion-challenger`
+- `cross-source-triangulation`
+- `evidence-provenance`
+- `failure-learning`
+- `hypothesis-transfer`
+- `pinescript-strategy-porting`
+- `public-strategy-mining`
+- `quantconnect-deep-research` (expanded with source discovery, MCP-aware research, and reproducibility)
+- `quantconnect-strategy-forensics` (new source-to-trade audit and futures-transfer protocol)
+- `quantconnect-lean-replication`
+- `research-prioritization`
+- `research-source-ingestion`
+- `signal-ablation`
+- `strategy-decomposition`
+- `strategy-memory`
+- `strategy-replication`
+- `youtube-strategy-research`
+
+## Original 18 retained
+- `backtesting-engine`
+- `cross-contract-transfer`
+- `data-integrity`
+- `deployment-safety-monitoring`
+- `economic-event-research`
+- `execution-optimization`
+- `futures-contract-lifecycle`
+- `market-regime-analysis`
+- `negative-control-testing`
+- `overfitting-defense`
+- `paper-trading-reconciliation`
+- `portfolio-construction`
+- `research-orchestrator`
+- `risk-management`
+- `risk-of-ruin-monte-carlo`
+- `simulator-verification`
+- `strategy-discovery`
+- `walk-forward-validation`
+
+## Recommended order of operations
+1. `simulator-verification` + `data-integrity` — make sure the engine and data are not lying.
+2. `strategy-memory` + `failure-learning` — inventory prior experiments, including failures, and mark all touched holdouts as consumed.
+3. `research-prioritization` + `evidence-provenance` — plan bounded research on independent evidence.
+4. `quantconnect-deep-research`, `youtube-strategy-research`, `academic-paper-mining`, `public-strategy-mining` — source many distinct mechanisms, not repetitive indicator tweaks.
+5. `strategy-replication` and `quantconnect-lean-replication` — recreate the idea before modifying it.
+6. `strategy-decomposition`, `signal-ablation`, `hypothesis-transfer` — find useful components and transfer hypotheses to the actual executable contract.
+7. `overfitting-defense`, `walk-forward-validation`, `negative-control-testing` — estimate how likely the edge is to generalize.
+8. `risk-management`, `risk-of-ruin-monte-carlo`, `execution-optimization` — enforce real funded-account and tradability constraints.
+9. `champion-challenger` and `paper-trading-reconciliation` — compare prospectively before recommending real-money use.
+
+## Learning from previous strategies safely
+The pack writes durable experimental knowledge to the repo, not the AI model's parameters. Store code commits, configs, result records, negative results, and source provenance. **A test dataset that has influenced research decisions is no longer fresh**; never revisit it repeatedly to engineer a winning result. Use a new forward holdout or genuine prospective paper evidence.
+
+## QuantConnect usage
+The deep-research skill includes an annotated source map for Strategy Library, Research notebooks, LEAN docs, futures mapping, slippage, fill models, and LEAN CLI. Local LEAN CLI workflows may require Docker, licensed datasets, and an eligible paid organization plan. Do not automatically purchase or run costly cloud resources. Learn rules from examples and independently replicate them.
+
+## YouTube usage
+YouTube video research uses authorized available content, user-provided transcripts, timestamps and explicit provenance. The official captions download API is **not** an unrestricted transcript endpoint; its access permissions limit what can be retrieved. Never assume Devin can watch or transcribe every video automatically, or bypass rights/restrictions.
+
+## Research artifacts
+`research_skillpack/templates/` contains JSON starter schemas for source cards, strategy cards and experiment runs. Adapt to the existing project ledger rather than creating two sources of truth. `research_skillpack/SOURCES.md` lists primary URLs.
+
+## Safety and deployment
+No skill can guarantee profitability. Realistic fills, commissions, sample uncertainty and legal/account restrictions matter. Skills do not authorize live orders, purchases, new paid subscriptions, sharing account credentials, or violating platform terms. Confirm LucidFlex's currently applicable rules directly in the user's account/documents before modeling them as definitive.
+
+## QuantConnect forensic workflow (v4)
+Use `@skills:quantconnect-deep-research` for broad source mining and `@skills:quantconnect-strategy-forensics` when a specific strategy needs a deep code-level audit. Each audited source gets a dated source record, rule reconstruction, trade trace, reproducibility status, and independent test hypothesis. QuantConnect MCP/LEAN access is optional, requires actual availability, and does not grant permission for paid actions or live orders.
+
+## Additional verification before paper deployment (v5)
+`adversarial-stress-lab` explores deterministic market and infrastructure failures; `batch-streaming-signal-parity` checks bar-by-bar signal equivalence. A no-divergence result is a software integrity check, not evidence of profitable edge.

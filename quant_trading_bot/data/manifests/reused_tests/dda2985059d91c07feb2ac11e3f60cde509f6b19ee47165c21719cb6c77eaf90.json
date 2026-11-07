@@ -1,0 +1,9 @@
+{
+  "candidate_id": "train_725a5b5da1",
+  "candidate_hash": "181430ac22ad991871d8158feea5f102b1b62c3955885ec325e017bbd2307ac6",
+  "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+  "reserved_at": "2026-11-07T02:33:35.313953+00:00",
+  "no_tuning": true,
+  "failure_consumes_reservation": true,
+  "period_previously_consumed": true
+}

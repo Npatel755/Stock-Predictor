@@ -1,0 +1,11 @@
+{
+  "reserved_at": "2026-11-07T02:03:04.161814+00:00",
+  "candidate_id": "follow_cf9f62ca20",
+  "frozen_candidate_hash": "451fae066c7c58172559b1a3d441ea6d20e204fb1ebb81b7d8dc57a9f5dfa540",
+  "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+  "path": "runs\\reused_test_follow_cf9f62ca20",
+  "period_previously_consumed": true,
+  "independent_confirmation": false,
+  "no_tuning": true,
+  "state": "reserved; failure also consumes this frozen-version evaluation"
+}

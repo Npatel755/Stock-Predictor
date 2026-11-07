@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "publication_only_no_replay": true,
+  "parameters_match_frozen_test": true,
+  "saved_curve_and_trade_metrics_reconciled": true,
+  "prior_artifacts_preserved": true,
+  "validation_cases": 1,
+  "cost_cases": 1,
+  "test_replayed": false,
+  "independent_confirmation": false,
+  "result_sha256": "4293601bb327c59ff857c3bcb694de5f77900b4e45ade2758228e7cfa17e3385"
+}

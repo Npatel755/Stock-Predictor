@@ -1,0 +1,80 @@
+{
+  "strategy_replayed": false,
+  "market_prices_loaded": false,
+  "parameters_changed": false,
+  "ranking": "Same highest test-net ranking as the top100 display; DD ascending tie-break",
+  "source_results_sha256": "4ff973eacc4dfaa8a761290d8a009a3c2f363132a2ac1793e0b514a4d0a7eb64",
+  "records": [
+    {
+      "rank": 1,
+      "config_id": "mass_4a0b95329be1d0438243",
+      "instrument": "MNQ",
+      "family": "breakout",
+      "net_pnl": 3645.5,
+      "realized_drawdown": 896.5,
+      "intrabar_drawdown": 1124.5,
+      "trades": 81,
+      "display_points": 262,
+      "source_rows": 20117,
+      "source_sha256": "15263537beb0db8576059fe6c308341ed050ecf3a1eba421b92509c243705642",
+      "color": "#64d9b1"
+    },
+    {
+      "rank": 2,
+      "config_id": "mass_a5a31cd6626aa6c18f06",
+      "instrument": "MES",
+      "family": "breakout",
+      "net_pnl": 3555.5,
+      "realized_drawdown": 1039.0,
+      "intrabar_drawdown": 1108.75,
+      "trades": 141,
+      "display_points": 306,
+      "source_rows": 20117,
+      "source_sha256": "4abc7c5a2e6a091c90fd6129f5364a1faa384870f4c9251111cacc3cb1e717ef",
+      "color": "#73b4ff"
+    },
+    {
+      "rank": 3,
+      "config_id": "mass_2debfc973674283e0553",
+      "instrument": "MNQ",
+      "family": "momentum",
+      "net_pnl": 3447.5,
+      "realized_drawdown": 464.0,
+      "intrabar_drawdown": 590.875,
+      "trades": 146,
+      "display_points": 271,
+      "source_rows": 20117,
+      "source_sha256": "e6f8363a563f6769465a5ee71a6bcf08b8ec5801dc97ceaf41fc63767206b668",
+      "color": "#f3c773"
+    },
+    {
+      "rank": 4,
+      "config_id": "mass_dada123f2ce8019353d5",
+      "instrument": "MNQ",
+      "family": "hybrid",
+      "net_pnl": 3070.5,
+      "realized_drawdown": 1659.5,
+      "intrabar_drawdown": 1740.5,
+      "trades": 198,
+      "display_points": 315,
+      "source_rows": 20117,
+      "source_sha256": "be2bb0e9c7da196c1a7428f35b53968676e93a4ffc9d7807e3a1e3651531ad2b",
+      "color": "#c79aff"
+    },
+    {
+      "rank": 5,
+      "config_id": "mass_cdb9b5245fa1efa9b030",
+      "instrument": "MNQ",
+      "family": "hybrid",
+      "net_pnl": 2973.5,
+      "realized_drawdown": 1852.0,
+      "intrabar_drawdown": 1854.0,
+      "trades": 189,
+      "display_points": 300,
+      "source_rows": 20117,
+      "source_sha256": "4f8a5b369d73cf1ae567f6dea7922c1809895781a25ddeb2336af73523f89aa7",
+      "color": "#f18e9d"
+    }
+  ],
+  "svg_bytes": 92365
+}

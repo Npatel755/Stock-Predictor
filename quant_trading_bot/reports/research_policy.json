@@ -1,0 +1,14 @@
+{
+  "parameter_selection": "training_history_and_chronological_internal_folds_only",
+  "validation_tuning_allowed": false,
+  "test_tuning_allowed": false,
+  "prior_2024_2025_refinements": "validation_guided_reused_development_results",
+  "latest_user_requested_test": "saved_version_reused_test.json",
+  "test_candidate": "follow_cf9f62ca20",
+  "test_parameters_frozen_before_price_access": true,
+  "test_parameter_variants": 1,
+  "test_cost_cases": 1,
+  "further_test_driven_retuning_allowed": false,
+  "independent_confirmation": "requires_genuinely_untouched_forward_observations",
+  "persistent_project_instructions": "../AGENTS.md"
+}

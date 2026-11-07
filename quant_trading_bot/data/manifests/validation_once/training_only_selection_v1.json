@@ -1,0 +1,7 @@
+{
+  "reserved_at": "2026-11-07T02:26:48.332173+00:00",
+  "candidate_hash": "4b3dc0b21dbccda77f84dd80645b2d7fb886ed58ecefb5c9f3a564970ab67e79",
+  "candidate_id": "train_725a5b5da1",
+  "no_tuning": true,
+  "failure_consumes_reservation": true
+}

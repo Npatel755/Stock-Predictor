@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "additional_completed": 10000,
+  "cumulative_distinct_active_configurations": 20000,
+  "repeats_from_original": 0,
+  "training_qualified": 6,
+  "cost_robust_training_candidates": 3,
+  "prior_training_files_unchanged": true,
+  "publication_only_no_market_price_reads": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "outputs": [
+    {
+      "config_id": "mass_aade3d08eb001ccc3d3e",
+      "plot": "mass_aade3d08eb001ccc3d3e_curves.png",
+      "ledger": "mass_aade3d08eb001ccc3d3e_trades.csv",
+      "trades": 828
+    },
+    {
+      "config_id": "mass_2eafe88e993469aedb12",
+      "plot": "mass_2eafe88e993469aedb12_curves.png",
+      "ledger": "mass_2eafe88e993469aedb12_trades.csv",
+      "trades": 481
+    },
+    {
+      "config_id": "mass_4077260e9698c6a220bf",
+      "plot": "mass_4077260e9698c6a220bf_curves.png",
+      "ledger": "mass_4077260e9698c6a220bf_trades.csv",
+      "trades": 387
+    },
+    {
+      "config_id": "mass_8c8f64ec70a765ae6eb7",
+      "plot": "mass_8c8f64ec70a765ae6eb7_curves.png",
+      "ledger": "mass_8c8f64ec70a765ae6eb7_trades.csv",
+      "trades": 778
+    },
+    {
+      "config_id": "mass_44b8a3fc9ecea9420d38",
+      "plot": "mass_44b8a3fc9ecea9420d38_curves.png",
+      "ledger": "mass_44b8a3fc9ecea9420d38_trades.csv",
+      "trades": 707
+    },
+    {
+      "config_id": "mass_d744bdc7bca1b354a2ea",
+      "plot": "mass_d744bdc7bca1b354a2ea_curves.png",
+      "ledger": "mass_d744bdc7bca1b354a2ea_trades.csv",
+      "trades": 885
+    },
+    {
+      "config_id": "mass_2eeaa376331d39ed0cec",
+      "plot": "mass_2eeaa376331d39ed0cec_curves.png",
+      "ledger": "mass_2eeaa376331d39ed0cec_trades.csv",
+      "trades": 268
+    },
+    {
+      "config_id": "mass_a8b93c0634fd8efc35e4",
+      "plot": "mass_a8b93c0634fd8efc35e4_curves.png",
+      "ledger": "mass_a8b93c0634fd8efc35e4_trades.csv",
+      "trades": 225
+    },
+    {
+      "config_id": "mass_0046339b34ebad2db92f",
+      "plot": "mass_0046339b34ebad2db92f_curves.png",
+      "ledger": "mass_0046339b34ebad2db92f_trades.csv",
+      "trades": 205
+    },
+    {
+      "config_id": "mass_64d031af0fb83b2013fd",
+      "plot": "mass_64d031af0fb83b2013fd_curves.png",
+      "ledger": "mass_64d031af0fb83b2013fd_trades.csv",
+      "trades": 180
+    }
+  ],
+  "csv_rows": 10000,
+  "unique_ranked_ids": 10000,
+  "manifest_rows": 10000,
+  "top10_rows": 10,
+  "ranked_csv_sha256": "38b79eadbe110db2525eea9cae1403c9f6e879e2198df60ba56606b3b04c006c",
+  "configurations_sha256": "4377adc8281e695990f310c1c25de579d3b7999817f8793c4e9e57ec1ab578ea"
+}

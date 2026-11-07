@@ -1,0 +1,18 @@
+{
+  "run_path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\mass_training_continuation_v1",
+  "target": 10000,
+  "completed": 10000,
+  "unique_configs": 10000,
+  "prior_completed_unique": 10000,
+  "phase": "training complete; no validation/test evaluation",
+  "per_market": {
+    "ES": 2500,
+    "MES": 2500,
+    "MNQ": 2500,
+    "NQ": 2500
+  },
+  "updated_at": "2026-11-07T17:48:59.528969+00:00",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "validation_test_results_read": false
+}

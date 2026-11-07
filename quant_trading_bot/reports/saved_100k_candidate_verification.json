@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "publication_only_no_replay": true,
+  "frozen_parameters_identical": true,
+  "validation_evaluated_once": true,
+  "test_untouched": true,
+  "saved_curves_and_trades_reconciled": true,
+  "prior_artifacts_preserved": true,
+  "independent_confirmation": false
+}

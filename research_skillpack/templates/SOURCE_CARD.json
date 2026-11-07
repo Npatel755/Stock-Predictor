@@ -1,0 +1,20 @@
+{
+  "source_id": "source-001",
+  "source_type": "quantconnect|youtube|paper|github|forum|blog",
+  "url": "https://example.org",
+  "title": "EXAMPLE",
+  "author": "UNKNOWN",
+  "published_at": null,
+  "accessed_at": "YYYY-MM-DD",
+  "accessible_material": "metadata only|full article|authorized transcript|code",
+  "repo_commit_or_doi": null,
+  "license": "TO_VERIFY",
+  "original_origin_id": null,
+  "claim": "Unverified hypothesis",
+  "source_evidence": "DIRECT|INFERRED|PROMOTIONAL|UNKNOWN",
+  "timestamp_anchors": [],
+  "missing_information": [],
+  "disconfirming_evidence": [],
+  "derived_strategy_ids": [],
+  "replication_status": "NOT_ATTEMPTED"
+}

@@ -1,0 +1,25 @@
+{
+  "strategy_id": "strategy-001",
+  "parent_strategy_id": null,
+  "family": "breakout|trend|reversion|momentum|other",
+  "source_ids": [
+    "source-001"
+  ],
+  "market": "MNQ",
+  "timeframe": "1m",
+  "economic_mechanism": "",
+  "entry_rules": "",
+  "exit_rules": "",
+  "risk_rules": "",
+  "signal_availability_time": "",
+  "execution_time": "",
+  "cost_model": "",
+  "contract_mapping": "",
+  "parameters": {},
+  "train_range": "",
+  "validation_range": "",
+  "test_range": "SEALED",
+  "holdout_test_consumed": false,
+  "experiment_ids": [],
+  "failure_lessons": []
+}

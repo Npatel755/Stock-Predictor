@@ -5,6 +5,7 @@ import json
 from quant_futures.research import code_identity, json_write
 from quant_futures.config import file_hash, digest
 from research_inventory import inventory
+from publish_pareto_report import publish as publish_refinement
 
 ROOT = Path(__file__).resolve().parents[1]
 receipt = json.loads((ROOT/"reports/test_receipt.json").read_text())
@@ -22,6 +23,12 @@ gap_file = ROOT/"reports/latest_gap_structure_minutes_study.json"
 gap_study = json.loads(gap_file.read_text()) if gap_file.exists() else None
 risk_file = ROOT/"reports/latest_risk_expansion_study.json"
 risk_study = json.loads(risk_file.read_text()) if risk_file.exists() else None
+refinement_file = ROOT/"reports/latest_pareto_refinement.json"
+refinement = json.loads(refinement_file.read_text()) if refinement_file.exists() else None
+followup_file = ROOT/"reports/latest_profit_drawdown_followup.json"
+followup = json.loads(followup_file.read_text()) if followup_file.exists() else None
+saved_test_file = ROOT/"reports/saved_version_reused_test.json"
+saved_test = json.loads(saved_test_file.read_text()) if saved_test_file.exists() else None
 final = json.loads((ROOT/"reports/final_candidate_test.json").read_text())
 frozen_final = json.loads((ROOT/final["path"]/"frozen_candidate.json").read_text())
 reservation_path = ROOT/"data/manifests/final_tests"/(digest(dict(test_partition=final["test_dataset_version"]))+".json")
@@ -129,6 +136,14 @@ if risk_study:
         "The first stage completed all fourteen cases; a duplicate keyword prevented only final report serialization. Publication was recovered from the archived frozen parameters, matching source hashes and completed result files without rerunning the search.", "",
         "[Interactive charts](research_charts.html) · [Full machine-readable study](latest_risk_expansion_study.json) · [Published commission schedule](https://support.lucidtrading.com/en/articles/11508978-approved-products-and-commissions)", ""]
     (ROOT/"reports/RISK_EXPANSION_RESEARCH.md").write_text("\n".join(risk_lines), encoding="utf-8")
+if refinement:
+    refinement_text = publish_refinement(ROOT, refinement)
+    lines += ["", "## Entry-filter and protective-stop refinement", "", refinement_text, "",
+        "[Refinement report](reports/PARETO_REFINEMENT.md) records all selected replays, failed selection checks and retained benchmark."]
+if followup:
+    followup_text = publish_refinement(ROOT, followup)
+    lines += ["", "## Higher profit and lower drawdown follow-up", "", followup_text, "",
+        "[Follow-up results](reports/PROFIT_DRAWDOWN_FOLLOWUP.md) compare the saved candidates and causal sizing settings."]
 best = next(row for row in adaptive["pairs"]["NQ->MNQ"]["validation_results"] if row["candidate_id"] == final["candidate_id"])
 lines += ["", "## Frozen candidate and final test", "",
     "The selected conventional strategy uses a completed 30-minute opening range, at most one entry attempt per session, a stop based on four times the prior completed minute's 20-bar simple ATR, and a target three times that stop distance. It can trade long or short, stops new entry decisions at 11:30 ET, and has noon flattening. Entry size is one MNQ contract; the independent risk stop is $1,800 with a $2,000 measured-drawdown rejection limit. Price gaps can overshoot those thresholds.", "",
@@ -141,6 +156,10 @@ lines += ["", "## Frozen candidate and final test", "",
     "Windows tests, isolated dependency checks and WSL test receipts are retained with source identities. The WSL dependency closure is pinned separately. Models and checkpoints are trusted local artifacts. Paper checkpoint/restart parity is a historical software check, not forward paper evidence.", "",
     "Actual commissions are modeled from Lucid's [published per-side schedule](https://support.lucidtrading.com/en/articles/11508978-approved-products-and-commissions): $1.75 for minis and $0.50 for micros; unlisted pass-through charges still need confirmation. Spread/slippage and OHLC ambiguity are explicit assumptions. The historical exchange calendar, platform/API authorization, account-contract details and sustained real-feed paper review remain operational dependencies. User-confirmed settings are 50% evaluation consistency and provider DLL off; the research daily stop is independent.", "",
     "Early experiments were superseded after execution/label corrections and after the user changed the training scope to full reference history. A partial morning-search predecessor was stopped because an early holiday close caused permanent gap lockout; that failure was diagnosed and retained. A Windows checkpoint sharing-lock retry is recorded as an infrastructure-only compatibility patch. Every additional selection opportunity increases overfitting risk; bootstrap intervals and nominal adjusted p-values do not remove that uncertainty.", ""]
+if saved_test:
+    sm = saved_test["metrics"]
+    saved_test_text = f"The saved $6,622 development version was frozen and evaluated once, without tuning: **2026 reused-test net ${sm['net_pnl']:,.2f}, closing drawdown ${sm['max_drawdown']:,.2f}, intrabar drawdown ${sm['max_intraday_drawdown_bound']:,.2f}, {sm['trades']} trades**. It failed profitability. The period was already consumed by an earlier candidate, so this is not independent confirmation. Earlier 2024–2025 validation-guided refinements are development results; future selection must use training data only."
+    lines[2:2] = [saved_test_text,"","[Frozen saved-version outcome](reports/SAVED_VERSION_TEST.md)",""]
 (ROOT/"MODEL_COMPARISON.md").write_text("\n".join(lines), encoding="utf-8")
 summary = ["# Current research handoff", "",
     f"**{counts['distinct_strategy_definitions']} strategy/model definitions, {counts['unique_parameter_configurations']} configurations, {counts['unique_market_configuration_cases']} market/configuration cases and {counts['completed_run_attempts']} completed attempts** are recorded. Reruns and training screens are explicitly separated. See [STRATEGY_COUNTS.md](STRATEGY_COUNTS.md).", "",
@@ -155,15 +174,25 @@ if gap_study:
     summary += ["The additional opening-gap/prior-session-structure batch is recorded in [latest_gap_structure_minutes_study.json](latest_gap_structure_minutes_study.json), under the same post-final-test exploratory restriction.", ""]
 if risk_study:
     summary += [improvement_text, "", "The [risk/exit improvement report](RISK_EXPANSION_RESEARCH.md) includes baseline comparisons and rejected risk-shutdown cases.", ""]
+if refinement:
+    summary += [refinement_text, "", "[Full refinement results](PARETO_REFINEMENT.md).", ""]
+if followup:
+    summary += [followup_text, "", "[Full follow-up results](PROFIT_DRAWDOWN_FOLLOWUP.md).", ""]
+if saved_test:
+    summary[2:2] = [saved_test_text,"","[Frozen saved-version outcome](SAVED_VERSION_TEST.md)",""]
 (ROOT/"reports/FINAL_REPORT.md").write_text("\n".join(summary), encoding="utf-8")
 handoff = dict(created_at=datetime.now(timezone.utc).isoformat(), **code_identity(),
     status="research_completed_nominal_profitable_backtests_no_deployable_edge", original_request_operational_readiness=False,
     strategy_counts={k: counts[k] for k in ("distinct_strategy_definitions", "unique_parameter_configurations", "unique_market_configuration_cases", "completed_run_attempts", "by_method")},
     training="Original one-minute ES/NQ available 2010–2023", validation="Actual MES/MNQ 2024–2025",
     final_test_evaluated_once=True, final_test=final, test_period_consumed_for_model_selection=True,
+    saved_version_reused_test=saved_test, total_recorded_test_evaluations=1 if saved_test is None else 2,
+    research_policy="No validation/test tuning. Parameter selection must use training history only; prior validation-guided refinements remain disclosed development results.",
     post_final_test_exploratory_study=None if session_study is None else dict(path=session_study["path"], independent_confirmation=False, test_prices_accessed=False),
     post_final_test_gap_study=None if gap_study is None else dict(path=gap_study["path"], independent_confirmation=False, test_prices_accessed=False),
     post_final_test_risk_study=None if risk_study is None else dict(path=risk_study["path"], best_selected=risk_study["best_selected"], independent_confirmation=False, test_prices_accessed=False),
+    post_final_test_refinement=None if refinement is None else dict(path=refinement["path"], goal_met=refinement["goal_met"], best_selected=refinement["best_selected"], independent_confirmation=False, test_prices_accessed=False),
+    post_final_test_profit_drawdown_followup=None if followup is None else dict(path=followup["path"], goal_met=followup["goal_met"], best_selected=followup["best_selected"], independent_confirmation=False, test_prices_accessed=False),
     minute_training_rows={k: {field: v[field] for field in ("source_rows", "eligible_rows", "initial_fits", "final_fits")} for k, v in minute["pairs"].items()},
     windows_test_receipt=receipt, other_test_receipts=tests,
     dataset_catalog_sha256=file_hash(ROOT/"data/catalog.json"), live_execution_enabled=False,

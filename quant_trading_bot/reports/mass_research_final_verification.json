@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "completed_unique_active_configurations": 10000,
+  "training_qualified": 4,
+  "immutable_code_and_rankings_match": true,
+  "resume_count_unchanged": true,
+  "finalist_reproduction_and_replays_pass": true,
+  "dashboard_http_ok": true,
+  "download_matches_ranked_csv": true,
+  "reported_validation_access": false,
+  "reported_test_access": false,
+  "independent_confirmation": false,
+  "operational_eligibility": false,
+  "targeted_tests_passed": 56,
+  "ledger_trade_checks": 3483,
+  "shared_trade_replays": 909
+}

@@ -13,7 +13,16 @@ st.title("MES / MNQ Research")
 st.caption("Historical simulation and paper trading · Live execution is disabled")
 latest_file = ROOT/"reports/post_final_research_summary.json"
 risk_file = ROOT/"reports/latest_risk_expansion_study.json"
+refinement_file = ROOT/"reports/latest_pareto_refinement.json"
+if refinement_file.exists():
+    risk_file = refinement_file
+followup_file = ROOT/"reports/latest_profit_drawdown_followup.json"
+if followup_file.exists():
+    risk_file = followup_file
 risk_study = json.loads(risk_file.read_text()) if risk_file.exists() else None
+baseline_label = "Previous $4,451 benchmark" if risk_study and risk_study.get("pareto_refinement") else "Original one-contract baseline"
+if risk_study and risk_study.get("profit_drawdown_followup"):
+    baseline_label = "Saved $5,779.50 result (risk stopped)"
 latest = json.loads(latest_file.read_text()) if latest_file.exists() else None
 if risk_study:
     latest = dict(studies=[risk_study["path"]], leading_observed_candidate=dict(transfer="NQ->MNQ", **risk_study["best_selected"]))
@@ -23,21 +32,28 @@ if latest:
     instrument = leading["transfer"].split("->")[-1]
     title = leading["candidate"]["name"].replace("_", " ").title()
     st.subheader(f"Latest research · {instrument} {title}")
+    st.warning("Development result: the 2024–2025 validation results were reused to choose these parameters. These figures are not independent validation. Future parameter selection must use training data only.")
     if risk_study:
-        screening = f"{risk_study['reused_screen_cases']} original reference screens reused" if risk_study.get("followup_stage") else f"{risk_study['screen_attempts']} reference screens"
+        screening = (f"{risk_study['reused_screen_cases']} original reference screens reused" if "reused_screen_cases" in risk_study
+                     else f"{risk_study['selected_replays']} continuous reference replays" if risk_study.get("profit_drawdown_followup")
+                     else f"{risk_study['screen_attempts']} reference screens")
         st.caption(f"2024–2025 reused selection period · risk/exit study: {screening} / {risk_study['selected_replays']} selected micro replays")
     else:
         st.caption("2024–2025 reused selection period · latest batch: 16 new rule families / 128 reference screens")
-    panels = st.columns(4)
+    panels = st.columns(5)
     panels[0].metric("Latest strategy net P&L", f"${metrics['net_pnl']:,.2f}")
     panels[1].metric("Latest strategy max drawdown", f"${metrics['max_drawdown']:,.2f}")
-    panels[2].metric("Latest strategy trades", metrics["trades"])
+    panels[2].metric("Latest strategy intrabar drawdown", f"${metrics['max_intraday_drawdown_bound']:,.2f}")
+    panels[3].metric("Latest strategy trades", metrics["trades"])
     stress_factor = "2" if risk_study else "3"
-    panels[3].metric(f"Net at {stress_factor}× modeled costs", f"${leading['stress'][stress_factor]['net_pnl']:,.2f}")
+    panels[4].metric(f"Net at {stress_factor}× modeled costs", f"${leading['stress'][stress_factor]['net_pnl']:,.2f}")
     if risk_study:
         params = leading["candidate"]
-        st.caption(f"Sizing: {params['sizing'].replace('_', ' ')} · maximum {params['contracts']} contracts · {params['stop_points']}-point stop · {params['payoff']}:1 target · exit {params['exit_minute']//60:02d}:{params['exit_minute']%60:02d} ET. Net improvement over the one-contract baseline: ${risk_study['pnl_improvement']:,.2f}.")
-        st.caption(f"Adverse intrabar drawdown: ${metrics['max_intraday_drawdown_bound']:,.2f}; at 2× costs: ${leading['stress']['2']['max_intraday_drawdown_bound']:,.2f}. Both base and 2× cases completed without permanent risk shutdown.")
+        st.caption(f"Sizing: {params['sizing'].replace('_', ' ')} · maximum {params['contracts']} contracts · {params['stop_points']}-point stop · {params['payoff']}:1 target · exit {params['exit_minute']//60:02d}:{params['exit_minute']%60:02d} ET. Net improvement over {baseline_label.lower()}: ${risk_study['pnl_improvement']:,.2f}.")
+        if risk_study.get("pareto_refinement"):
+            report_name = "PROFIT_DRAWDOWN_FOLLOWUP.md" if risk_study.get("profit_drawdown_followup") else "PARETO_REFINEMENT.md"
+            st.caption(f"Refinement goal met: {risk_study['goal_met']}. See reports/{report_name} for all results.")
+        st.caption(f"Adverse intrabar drawdown: ${metrics['max_intraday_drawdown_bound']:,.2f}; at 2× costs: ${leading['stress']['2']['max_intraday_drawdown_bound']:,.2f}. Base permanent shutdown: {metrics['permanent_risk_lock']}; 2×-cost shutdown: {leading['stress']['2']['permanent_risk_lock']}.")
         unresolved = [name.replace('_', ' ') for name, passed in leading["evidence_checks"].items() if not passed]
         st.caption("Research candidate · unresolved evidence checks: "+(", ".join(unresolved) if unresolved else "new independent forward confirmation")+". Separate from the frozen 2026 final test below.")
         if leading["stress"]["3"]["permanent_risk_lock"]:
@@ -59,7 +75,7 @@ if latest:
             baseline_curve = pd.read_parquet(baseline_path)
             base_indexes = np.unique(np.linspace(0, len(baseline_curve)-1, min(2500, len(baseline_curve))).astype(int))
             chart.add_scatter(x=baseline_curve.timestamp_utc.iloc[base_indexes], y=baseline_curve.equity.iloc[base_indexes]-50000,
-                name="Original one-contract baseline", mode="lines", line=dict(color="#a3aab8", dash="dot"), row=1, col=1)
+                name=baseline_label, mode="lines", line=dict(color="#a3aab8", dash="dot"), row=1, col=1)
         chart.add_scatter(x=curve.timestamp_utc.iloc[indexes], y=-drawdown.iloc[indexes],
             name="Drawdown", mode="lines", fill="tozeroy", line=dict(color="#c65767"), row=2, col=1)
         chart.add_hline(y=-2000, line_dash="dash", annotation_text="$2,000 drawdown limit", row=2, col=1)
@@ -68,6 +84,28 @@ if latest:
         chart.update_yaxes(title_text="Drawdown (USD)", row=2, col=1)
         st.plotly_chart(chart, width="stretch", key="latest_strategy_equity")
         break
+saved_test_file = ROOT/"reports/saved_version_reused_test.json"
+if saved_test_file.exists():
+    saved_test = json.loads(saved_test_file.read_text(encoding="utf-8"))
+    tm = saved_test["metrics"]
+    st.subheader("Saved $6,622 version · frozen 2026 reused-test evaluation")
+    st.caption("One fixed version and one base-cost replay. No tuning against this test outcome. The period was previously used by an earlier strategy, so this is not independent confirmation.")
+    panels = st.columns(4)
+    panels[0].metric("Frozen-version test net P&L", f"${tm['net_pnl']:,.2f}")
+    panels[1].metric("Frozen-version test closing drawdown", f"${tm['max_drawdown']:,.2f}")
+    panels[2].metric("Frozen-version test intrabar drawdown", f"${tm['max_intraday_drawdown_bound']:,.2f}")
+    panels[3].metric("Frozen-version test trades", tm["trades"])
+    if tm["net_pnl"] <= 0:
+        st.warning("The frozen strategy lost money in this evaluation. It stayed below the $2,000 drawdown limit but failed the profitability check. Its parameters will not be retuned from this result.")
+    tc = pd.read_parquet(Path(saved_test["path"])/"test_equity.parquet")
+    ti = np.unique(np.linspace(0,len(tc)-1,min(2500,len(tc))).astype(int))
+    td = tc.equity.cummax().clip(lower=50000)-tc.equity
+    fig = make_subplots(rows=2,cols=1,shared_xaxes=True,vertical_spacing=.09)
+    fig.add_scatter(x=tc.timestamp_utc.iloc[ti],y=tc.equity.iloc[ti]-50000,name="Frozen-version test net P&L",row=1,col=1)
+    fig.add_scatter(x=tc.timestamp_utc.iloc[ti],y=-td.iloc[ti],name="Test drawdown",fill="tozeroy",row=2,col=1)
+    fig.add_hline(y=-2000,line_dash="dash",row=2,col=1)
+    fig.update_layout(title="Frozen saved version · 2026 reused-test outcome",height=470)
+    st.plotly_chart(fig,width="stretch",key="saved_version_reused_test")
 final_file = ROOT/"reports/final_candidate_test.json"
 final_test = json.loads(final_file.read_text()) if final_file.exists() else None
 if final_test:
@@ -119,7 +157,9 @@ transfer_studies = sorted(list((ROOT/"runs").glob("reference_transfer_*/protocol
     list((ROOT/"runs").glob("adaptive_opening_minutes_*/protocol.json"))+
     list((ROOT/"runs").glob("session_window_minutes_*/protocol.json"))+
     list((ROOT/"runs").glob("gap_structure_minutes_*/protocol.json"))+
-    list((ROOT/"runs").glob("risk_expansion_*/protocol.json")), key=lambda path: path.stat().st_mtime, reverse=True)
+    list((ROOT/"runs").glob("risk_expansion_*/protocol.json"))+
+    list((ROOT/"runs").glob("pareto_refinement_*/protocol.json"))+
+    list((ROOT/"runs").glob("profit_drawdown_followup_*/protocol.json")), key=lambda path: path.stat().st_mtime, reverse=True)
 if transfer_studies:
     st.subheader("ES/NQ training → later micro validation")
     observed_positive = []

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "new_completed_unique": 100000,
+  "cumulative_unique": 170000,
+  "repeats_from_prior": 0,
+  "research_qualified": 544,
+  "evaluation_phase_base_qualified": 53,
+  "prior_training_artifacts_preserved": true,
+  "publication_only_no_replay": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "protected_result_files_read": false,
+  "ranked_sha256": "d49b76ba588344ec5950cb80b54d9e32caef725e0259bcf45039e1293d9215a4",
+  "winner": "mass_40950c7086a169459879"
+}

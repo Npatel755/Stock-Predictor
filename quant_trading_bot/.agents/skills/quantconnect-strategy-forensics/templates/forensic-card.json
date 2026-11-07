@@ -1,0 +1,63 @@
+{
+  "strategy_id": "example-slug",
+  "source": {
+    "title": null,
+    "url": null,
+    "author": null,
+    "published_at": null,
+    "accessed_at": null,
+    "code_url": null,
+    "commit_sha": null,
+    "license": null,
+    "original_paper_url": null
+  },
+  "hypothesis": {
+    "market_mechanism": null,
+    "expected_failure_modes": [],
+    "asset_class": null,
+    "original_instrument": null,
+    "proposed_transfer_instrument": null
+  },
+  "specification": {
+    "resolution": null,
+    "time_zone": null,
+    "indicator_formula": null,
+    "signal_availability": null,
+    "execution_delay": null,
+    "entry_rule": null,
+    "exit_rule": null,
+    "order_type": null,
+    "stop_rule": null,
+    "position_sizing": null,
+    "roll_policy": null
+  },
+  "research_integrity": {
+    "published_date_ranges": [],
+    "touched_data_ranges": [],
+    "leakage_risks": [],
+    "test_independence": "unknown"
+  },
+  "execution": {
+    "data_source": null,
+    "brokerage_model": null,
+    "fee_assumption": null,
+    "slippage_assumption": null,
+    "tradable_contract": null
+  },
+  "reproduction": {
+    "status": "NOT_RUN",
+    "run_id": null,
+    "engine_version": null,
+    "dataset_fingerprint": null,
+    "trades_compared": 0,
+    "differences": [],
+    "independently_verified": false
+  },
+  "assessment": {
+    "decision": "UNVERIFIED",
+    "evidence_level": "SOURCE_CLAIM_ONLY",
+    "strengths": [],
+    "weaknesses": [],
+    "next_training_only_tests": []
+  }
+}

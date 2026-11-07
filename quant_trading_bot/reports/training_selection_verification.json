@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "verified_at": "2026-11-07T02:27:12.850591+00:00",
+  "frozen_parameters_verified": true,
+  "rank_recomputed_using_only_training_results": true,
+  "full_curve_metrics_reconciled": true,
+  "validation_candidates_evaluated": 1,
+  "test_prices_accessed": false,
+  "independent_confirmation": false,
+  "validation_result_sha256": "0379caeb332a42d203a5c05a558cbcfbcb6a970c852d7480b1bc62324ebc8407"
+}

@@ -142,6 +142,7 @@ def screen(c, features, candidate, cfg, broker):
 
 
 def main():
+    raise PermissionError("Validation-guided refinement is retired: select parameters on training data only. See AGENTS.md.")
     root = base.ROOT
     parent = json.loads((root/"reports/latest_risk_expansion_study.json").read_text())
     benchmark = parent["best_selected"]
