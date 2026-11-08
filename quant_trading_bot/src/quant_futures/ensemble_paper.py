@@ -24,6 +24,7 @@ import importlib.util
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -303,6 +304,21 @@ def combine(curves):
                 equity=pd.DataFrame(dict(ts=merged.ts, net=equity.to_numpy())))
 
 
+def notify(title, body):
+    """Push via ntfy.sh when NTFY_TOPIC is set; failures are logged, never raised."""
+    topic = os.environ.get("NTFY_TOPIC")
+    if not topic:
+        return False
+    try:
+        request = urllib.request.Request(f"https://ntfy.sh/{topic}", data=body.encode(), method="POST",
+                                         headers={"Title": title, "Tags": "chart_with_upwards_trend", "Priority": "default"})
+        urllib.request.urlopen(request, timeout=10).read()
+        return True
+    except Exception as error:  # noqa: BLE001
+        print(f"ntfy failed: {error}", file=sys.stderr)
+        return False
+
+
 # ---------------------------------------------------------------- ledger
 
 def read_ledger(path):
@@ -375,6 +391,17 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
                       divergences=len(missing) + len(late))
     records.append(run_record)
     append_records(ledger_path, records, next_seq)
+    previous_run = next((r for r in reversed(ledger) if r["kind"] == "run"), None)
+    for trade in new_trades:
+        notify(f"{spec['label'].split(' (')[0]}: {trade['sleeve']} closed {trade['net']:+,.2f}",
+               f"{'long' if trade['side'] > 0 else 'short'} x{trade['qty']} {trade['entry_price']:,.2f} -> {trade['exit_price']:,.2f} ({trade['reason']}); "
+               f"candidate net {portfolio['net']:+,.2f}, intrabar DD {portfolio['intrabar_drawdown']:,.2f}")
+    if previous_run is not None:
+        for name, pos in run_record["positions"].items():
+            before = previous_run.get("positions", {}).get(name, {}).get("quantity", 0)
+            if pos["quantity"] and pos["quantity"] != before:
+                notify(f"{spec['label'].split(' (')[0]}: {name} opened {'long' if pos['quantity'] > 0 else 'short'} x{abs(pos['quantity'])}",
+                       f"last close {pos['last_close']:,.2f}; candidate net {portfolio['net']:+,.2f}")
     total_divergences = sum(1 for r in ledger if r["kind"] == "divergence") + len(missing) + len(late)
     status = dict(candidate=key, version=spec["version"], label=spec["label"], provenance=spec["provenance"],
                   updated=now.isoformat(), source=source_name, start=run_record["start"], bars_through=run_record["bars_through"],
