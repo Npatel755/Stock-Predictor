@@ -1,0 +1,144 @@
+{
+ "AG_Regime_A": {
+  "params": {
+   "instrument": "MNQ",
+   "family": "regime",
+   "lookback": 24,
+   "threshold": 1.5,
+   "stop_atr": 2.0,
+   "target_r": 3.0,
+   "hold_bars": 24,
+   "session_start": 585,
+   "session_end": 945,
+   "max_contracts": 1,
+   "trailing_atr": 2.5
+  },
+  "train": {
+   "net": 5719.0,
+   "years_pos": 10,
+   "n_years": 14,
+   "worst_dd": 879.25,
+   "trades": 790,
+   "annual": {
+    "2010": -44.0,
+    "2011": 75.0,
+    "2012": 190.5,
+    "2013": -156.0,
+    "2014": -61.0,
+    "2015": 168.0,
+    "2016": 178.0,
+    "2017": 508.5,
+    "2018": 1497.0,
+    "2019": -30.5,
+    "2020": 35.0,
+    "2021": 1307.5,
+    "2022": 1840.5,
+    "2023": 210.5
+   }
+  },
+  "validation": {
+   "2024": {
+    "net": 2772.5,
+    "dd": 530.75,
+    "trades": 53,
+    "breach": false
+   },
+   "2025": {
+    "net": -872.0,
+    "dd": 1029.25,
+    "trades": 27,
+    "breach": false
+   }
+  },
+  "placebo": {
+   "real_train_net": 5719.0,
+   "placebo_nets": [
+    6178.5,
+    1496.0,
+    -3688.0,
+    6621.5,
+    -1276.5,
+    -1218.5,
+    2662.5,
+    -5455.0,
+    1580.0,
+    2618.5,
+    -1438.5,
+    -4050.5,
+    -1195.5,
+    2774.5,
+    6437.5,
+    -3227.0,
+    -3418.5,
+    7825.5,
+    -359.5,
+    3890.5
+   ],
+   "pct_beaten": 0.8,
+   "placebo_mean": 837.88
+  }
+ },
+ "AG_Trend_B": {
+  "params": {
+   "instrument": "MNQ",
+   "family": "trend",
+   "lookback": 16,
+   "threshold": 0.75,
+   "stop_atr": 2.0,
+   "target_r": 3.0,
+   "hold_bars": 8,
+   "session_start": 600,
+   "session_end": 720,
+   "max_contracts": 1,
+   "trailing_atr": 0.0
+  },
+  "train": {
+   "net": 5611.0,
+   "years_pos": 11,
+   "n_years": 14,
+   "worst_dd": 959.25,
+   "trades": 954,
+   "annual": {
+    "2010": 15.0,
+    "2011": 63.5,
+    "2012": -268.0,
+    "2013": -57.5,
+    "2014": -56.5,
+    "2015": 26.5,
+    "2016": 472.0,
+    "2017": 103.5,
+    "2018": 210.5,
+    "2019": 217.5,
+    "2020": 1050.5,
+    "2021": 2173.0,
+    "2022": 439.0,
+    "2023": 1222.0
+   }
+  },
+  "validation": {
+   "2024": {
+    "net": 1565.5,
+    "dd": 658.75,
+    "trades": 55,
+    "breach": false
+   },
+   "2025": {
+    "net": 146.5,
+    "dd": 654.25,
+    "trades": 26,
+    "breach": false
+   }
+  }
+ },
+ "Dual_Regime": {
+  "legs": [
+   "AG_Regime_A",
+   "AG_Trend_B"
+  ],
+  "val_net": 3612.5,
+  "val_eod_dd": 982.0,
+  "by_year": {
+   "1970": 3612.5
+  }
+ }
+}
