@@ -42,3 +42,10 @@
 
 ## 2026-11-08 mass_1m: 1-minute counter-trend search - negative
 198,720 configs (VWAP snap-back, volume exhaustion, ORB fade, RSI extreme, Keltner fade, stretch fade; 1/3/5-min; MES+MNQ; 14 train years, micro costs, early-close fix): 0 pass G1-G3, validation never run. Fast fades lose ~one round-trip of costs per trade (3-8k trades/14y, median net -$13k to -$28k). Only MNQ ORB fade has positive nets and its profit is entirely 2020-23. Lesson: 1-5 min mean reversion on MES/MNQ is cost-bound with OHLCV+volume inputs; do not re-run finer price/volume fade grids - need order-flow data or forward evidence. Report: reports/MASS_1M_TRAINING.md.
+
+## 2026-11-08 orderflow_1: L1 imbalance on MNQ (bbo-1s 2023) — REJECTED
+- Pre-registered (research/orderflow_1/PROTOCOL.md) before data was opened; ~$29 Databento spend (MNQ.c.0 bbo-1s 2023, bbo-1m 2019-25).
+- Predictive test: top-vs-bottom decile of 30 s mean L1 imbalance moves the forward mid by +0.07 / -0.02 / -0.40 ticks at 10 s / 60 s / 300 s (day-block |t| < 1.1) vs ~5.4-tick marketable round trip. No predictive content at the one-second L1 level.
+- Executable rule (36 configs incl. contra): |imb30| >= 0.3 fires ~1,350 times/yr and nets -$2.5 to -$3.4 per trade (= the round-trip cost); it beats same-count random entries by ~$7/trade, so there is some information, but it is smaller than spread+slippage+commission on a micro. q >= 0.5 fires 1-4 times a year.
+- Data facts worth keeping: MNQ RTH spread averages 1.5-2.0 ticks (1-tick only 18-48% of the time, 2019-2025) and median displayed L1 size is 3-6 contracts — the engine's 1-tick spread assumption is optimistic for MNQ; L1 imbalance is noisy at these sizes. Databento bbo sizes are uint32: cast before subtracting.
+- Lesson: do not re-run L1 imbalance variants on bbo-1s; the only untested order-flow class is true signed volume (trades/TBBO, ~$160+/yr), which is a separate decision for Nick. 2024-2026 bbo data untouched.
