@@ -16,3 +16,10 @@ Not searched (declared gap): QuantConnect forum posts, YouTube, SSRN full texts 
 Prior in-house coverage (research/strategy_memory/lessons.md): ~370k + 500k + 200k configurations across momentum,
 breakout, opening-range, trend, gap, VWAP, volatility, hybrid, auction/profile, CUSUM, entropy, analog mechanisms;
 three news rounds (blackouts, post-release continuation, FOMC fade) all negative.
+
+## Pass 2 — 2026-11-08 (Nick: "institutional strategies ... research strategies on quant connect")
+| Query / surface | Access | Result |
+|---|---|---|
+| api.github.com QuantConnect/Tutorials "04 Strategy Library" | OK (85 dirs) | full list triaged; intraday-index-relevant: 04, 05, 07, 1023, 1026, 198, 25, 58 — all but 25 (VRP) and 1023 (ETF arb, no data) already tested or duplicated in-house |
+| quantconnect.com strategy-library index | HTML 437 kB, no deep links (JS) | unusable via curl; GitHub tree used |
+| Jane Street / Citadel public material | not scraped (no primary source for proprietary edges) | framed as market making / latency / ETF arb; only the passive-execution style is transferable — research/qc_1/PROTOCOL.md T1 |
