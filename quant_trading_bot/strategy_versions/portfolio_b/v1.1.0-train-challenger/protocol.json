@@ -1,0 +1,226 @@
+{
+  "seed": 20261120,
+  "baseline": {
+    "name": "Portfolio B",
+    "version": "v1.0.0",
+    "user_designated_champion": true,
+    "legs": [
+      {
+        "instrument": "MES",
+        "family": "momentum",
+        "lookback": 16,
+        "threshold": 1.5,
+        "stop_atr": 1.75,
+        "target_r": 2.5,
+        "hold_bars": 32,
+        "session_start": 585,
+        "session_end": 945,
+        "max_contracts": 3,
+        "trailing_atr": 2.0,
+        "config_id": "m5_77fad21ad8460757ac0d",
+        "experiment_order": 3162589
+      },
+      {
+        "instrument": "MNQ",
+        "family": "breakout",
+        "lookback": 32,
+        "threshold": 0.75,
+        "stop_atr": 1.0,
+        "target_r": 3.0,
+        "hold_bars": 24,
+        "session_start": 600,
+        "session_end": 720,
+        "max_contracts": 1,
+        "trailing_atr": 2.0,
+        "config_id": "m2_eaa56d8ebf97ab0a5540",
+        "experiment_order": 247121
+      }
+    ],
+    "source_parameters": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\saved_portfolio_B_mes_mom_mnq_brk\\portfolio_config.json",
+    "source_parameters_sha256": "67ff52390ccd7aa17bb02fa8bfc5d17c4d35cb6fe6653eb8c7bdefea7ba9f777",
+    "source_training_csv_sha256": "40bfaedd25a6ca9627bf2dac63f6ec65fa07ce4c484478796ed6d4d8e2822042",
+    "source_hashes": {
+      "portfolio_b_train_refinement.py": "d8612d42d97f8b6a5d9f1a7f7bfe30f1c2aed54e88ad85570a049871b92d04f3",
+      "training_5m_policy.py": "a63987de7d34cb0c6ae0783ee93e290eec4c27a25fbb7f1a16c5a80d239211e9",
+      "mass_research.py": "35703d03706afd9c8767d2edf433d8987bc808aa9d64b29639a203180545f442",
+      "mass_configurations.py": "b0e0f8909c1df7db775f91899f45fdb56b4587362f59ac67d83653a6ef88cf91",
+      "mass_execution.py": "a31ef27f3df1e02fc59d4cb86ed9cbb512eec90ad5d361dcd202a5a6da9cd6af",
+      "mass_features.py": "a096e4d3e667d7eb042d411605e7969fb0675d1d034b261824a519b4e1c8aad5",
+      "mass_metrics.py": "11523f178f317d6fdb551f5171687f3b0d13c8246e3b6dec0dc20d08d52f18ff",
+      "mass_verify.py": "f00df91c30890e7f9621d1a35998c175dda3d11ea4bef5c22d38b8b2aa87b666"
+    },
+    "provenance": "User selected after observed historical outcomes; no fresh holdout claim. Screenshot values are not research objectives. Only TRAIN is used for challenger selection.",
+    "actual_bars": "15minute bars despite5m/2m strategy names",
+    "actual_saved_train_window": "2019-05-05 through2023-12-29,despite2020-2023 filename",
+    "execution_configs": [
+      {
+        "initial_balance": 50000.0,
+        "tick": 0.25,
+        "multiplier": 5.0,
+        "commission_per_side": 0.5,
+        "exchange_per_side": 0.0,
+        "regulatory_per_side": 0.0,
+        "spread_ticks": 1,
+        "slippage_ticks": 1,
+        "impact_ticks": 0.5,
+        "factor": 1,
+        "maxqty": 3,
+        "risk_per_trade": 450.0,
+        "max_open_risk": 450.0,
+        "daily_loss": 1200.0,
+        "hard_drawdown": 2000.0,
+        "stop_atr": 1.75,
+        "target_ratio": 2.5,
+        "hold_bars": 32,
+        "entry_start": 570,
+        "entry_end": 915,
+        "flat_minute": 945,
+        "max_gap_minutes": 20,
+        "participation": 0.01,
+        "trailing_atr": 2.0,
+        "max_consecutive_losses": 5,
+        "funded_drawdown": 2000.0,
+        "funded_cap": 50100.0
+      },
+      {
+        "initial_balance": 50000.0,
+        "tick": 0.25,
+        "multiplier": 2.0,
+        "commission_per_side": 0.5,
+        "exchange_per_side": 0.0,
+        "regulatory_per_side": 0.0,
+        "spread_ticks": 1,
+        "slippage_ticks": 1,
+        "impact_ticks": 0.0,
+        "factor": 1,
+        "maxqty": 1,
+        "risk_per_trade": 150.0,
+        "max_open_risk": 150.0,
+        "daily_loss": 400.0,
+        "hard_drawdown": 2000.0,
+        "stop_atr": 1.0,
+        "target_ratio": 3.0,
+        "hold_bars": 24,
+        "entry_start": 585,
+        "entry_end": 690,
+        "flat_minute": 720,
+        "max_gap_minutes": 20,
+        "participation": 0.01,
+        "trailing_atr": 2.0,
+        "max_consecutive_losses": 5,
+        "funded_drawdown": 2000.0,
+        "funded_cap": 50100.0
+      }
+    ],
+    "no_new_validation_or_test_evaluation": true
+  },
+  "source_hashes": {
+    "portfolio_b_train_refinement.py": "d8612d42d97f8b6a5d9f1a7f7bfe30f1c2aed54e88ad85570a049871b92d04f3",
+    "training_5m_policy.py": "a63987de7d34cb0c6ae0783ee93e290eec4c27a25fbb7f1a16c5a80d239211e9",
+    "mass_research.py": "35703d03706afd9c8767d2edf433d8987bc808aa9d64b29639a203180545f442",
+    "mass_configurations.py": "b0e0f8909c1df7db775f91899f45fdb56b4587362f59ac67d83653a6ef88cf91",
+    "mass_execution.py": "a31ef27f3df1e02fc59d4cb86ed9cbb512eec90ad5d361dcd202a5a6da9cd6af",
+    "mass_features.py": "a096e4d3e667d7eb042d411605e7969fb0675d1d034b261824a519b4e1c8aad5",
+    "mass_metrics.py": "11523f178f317d6fdb551f5171687f3b0d13c8246e3b6dec0dc20d08d52f18ff",
+    "mass_verify.py": "f00df91c30890e7f9621d1a35998c175dda3d11ea4bef5c22d38b8b2aa87b666"
+  },
+  "shared_scenario": {
+    "initial_balance": 50000.0,
+    "drawdown": 2000.0,
+    "daily_loss": 1600.0,
+    "max_contracts": 6,
+    "max_initial_stop_risk": 900.0,
+    "funded_cap": 50100.0
+  },
+  "allowed_data": "Physical TRAIN only; every observation timestamp strictly before2024-01-01. No validation/test prices,rankings,or outcome files may supply selection data.",
+  "periods": "Exact saved continuous2019May-2023TRAIN;four reset2020/21/22/23 internal forward folds with96bar entry embargo and40bar terminal entry purge. Indicators use causal earlierTRAIN warmup.",
+  "improvement": "Higher continuous TRAIN net than reproduced champion;cash/closing/intrabarDD strictly<2000;no sleeve locks/funded failure;no missing quoted open exposure;no joint daily/contract/initialrisk/floor breach. Annual folds positive,>=30combinedtrades each,aggregatePF>=1.30. Both base and2xcost paths must pass risk/stability;2xcostcontinuousnet must also beat champion2xcostnet. All selection is TRAIN-only.",
+  "search": "First sizing grid MES1..5/MNQ1..3,total<=6,ordered distance from champion. Then seeded new one-leg changes,alternating MES/MNQ;families momentum/breakout fixed. Continue until verified improvement;checkpoint every result.",
+  "domains": {
+    "lookbacks": [
+      8,
+      12,
+      16,
+      20,
+      24,
+      32,
+      40,
+      48,
+      64
+    ],
+    "thresholds": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0
+    ],
+    "stops": [
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0,
+      2.5
+    ],
+    "targets": [
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "holds": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      40
+    ],
+    "trails": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "sessions": [
+      [
+        585,
+        690
+      ],
+      [
+        600,
+        720
+      ],
+      [
+        720,
+        870
+      ],
+      [
+        840,
+        945
+      ],
+      [
+        585,
+        945
+      ]
+    ]
+  },
+  "economic_assumptions": "Original fee/tick/slippage/participation/risk-per-contract rules unchanged. Joint scenario is configurable research assumption,not verified account rules. Summing sleeve adverse bounds is conservative;actual intrabar order unknown.",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "automatic_holdout_stage": false,
+  "classification": "TRAIN_ONLY_RESEARCH",
+  "no_live_execution": true
+}

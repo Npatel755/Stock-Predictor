@@ -1,0 +1,138 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio B TRAIN improvement</title><style>body{font:16px/1.6 system-ui;max-width:1250px;padding:32px;margin:auto;background:#111820;color:#e8edf2}a{color:#92d6ff}table{border-collapse:collapse;font-size:14px}td,th{padding:10px;border-bottom:1px solid #465260;white-space:nowrap}img{width:100%}.scroll{overflow:auto}pre{white-space:pre-wrap}</style><h1>Portfolio B: verified TRAIN-only improvement</h1><p>Validation and test stayed closed. This is a research challenger, not unseen confirmation or live promotion.</p><p>The original portfolio is archived as portfolio_b/v1.0.0. Actual bars are15minutes. The saved TRAIN window startsMay2019 and endsDecember2023; file names previously described it as2020–2023. Four internal annual folds are evaluated separately with96/40 entry suppression.</p><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Period</th>
+      <th>Costs</th>
+      <th>Baseline_net</th>
+      <th>Challenger_net</th>
+      <th>Baseline_DD</th>
+      <th>Challenger_DD</th>
+      <th>Challenger_risk_pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>continuous</td>
+      <td>Base</td>
+      <td>$14,707.50</td>
+      <td>$18,642.25</td>
+      <td>$1,572.50</td>
+      <td>$1,588.75</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>continuous</td>
+      <td>2x costs</td>
+      <td>$4,343.25</td>
+      <td>$14,104.75</td>
+      <td>$1,672.00</td>
+      <td>$1,759.50</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Base</td>
+      <td>$355.00</td>
+      <td>$1,273.25</td>
+      <td>$1,572.50</td>
+      <td>$1,588.75</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>2x costs</td>
+      <td>$-120.00</td>
+      <td>$730.75</td>
+      <td>$1,728.25</td>
+      <td>$1,759.50</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Base</td>
+      <td>$2,019.25</td>
+      <td>$3,859.50</td>
+      <td>$747.00</td>
+      <td>$959.25</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>2x costs</td>
+      <td>$502.50</td>
+      <td>$2,385.00</td>
+      <td>$986.00</td>
+      <td>$1,093.75</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Base</td>
+      <td>$10,687.00</td>
+      <td>$11,240.00</td>
+      <td>$793.75</td>
+      <td>$811.75</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>2x costs</td>
+      <td>$9,807.75</td>
+      <td>$10,340.00</td>
+      <td>$903.75</td>
+      <td>$878.50</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Base</td>
+      <td>$1,407.50</td>
+      <td>$1,497.00</td>
+      <td>$1,246.25</td>
+      <td>$1,328.88</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>2x costs</td>
+      <td>$244.25</td>
+      <td>$425.50</td>
+      <td>$1,339.75</td>
+      <td>$1,558.75</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table></div><img src="PORTFOLIO_B_TRAIN_REFINEMENT.png" alt="TRAIN baseline and challenger equity/drawdown"><h2>Exact challenger legs</h2><pre>[
+  {
+    &quot;instrument&quot;: &quot;MES&quot;,
+    &quot;family&quot;: &quot;momentum&quot;,
+    &quot;lookback&quot;: 16,
+    &quot;threshold&quot;: 1.5,
+    &quot;stop_atr&quot;: 1.75,
+    &quot;target_r&quot;: 2.5,
+    &quot;hold_bars&quot;: 32,
+    &quot;session_start&quot;: 585,
+    &quot;session_end&quot;: 945,
+    &quot;max_contracts&quot;: 2,
+    &quot;trailing_atr&quot;: 2.0,
+    &quot;config_id&quot;: &quot;leg_dbb0c69bebe5a37a0ba7&quot;,
+    &quot;experiment_order&quot;: 3162589,
+    &quot;parent_config_id&quot;: &quot;m5_77fad21ad8460757ac0d&quot;
+  },
+  {
+    &quot;instrument&quot;: &quot;MNQ&quot;,
+    &quot;family&quot;: &quot;breakout&quot;,
+    &quot;lookback&quot;: 32,
+    &quot;threshold&quot;: 0.75,
+    &quot;stop_atr&quot;: 1.0,
+    &quot;target_r&quot;: 3.0,
+    &quot;hold_bars&quot;: 24,
+    &quot;session_start&quot;: 600,
+    &quot;session_end&quot;: 720,
+    &quot;max_contracts&quot;: 2,
+    &quot;trailing_atr&quot;: 2.0,
+    &quot;config_id&quot;: &quot;leg_b58de44d7f3a75dee02a&quot;,
+    &quot;experiment_order&quot;: 247121,
+    &quot;parent_config_id&quot;: &quot;m2_eaa56d8ebf97ab0a5540&quot;
+  }
+]</pre><h2>Risk and evidence</h2><p>Combined cash and mark-to-market equity share a50k initial balance. Candidate paths must never trigger combined daily,drawdown,contract,initial stop-risk,or EOD-floor controls. Candidates are rejected if joint controls would bind; no clipped-return overlay is treated as executable. Missing quotes while holding exposure are rejected. Sleeve adverse bounds are summed conservatively; precise intrabar order is unknown. Scenario rules are provisional,not verified contractual terms.50%consistency is account-evaluation-only and remains a diagnostic. Parent selection after historical holdout observations is retained as an inherited limitation.</p><p><a href="../runs/portfolio_b_train_refinement_v1/protocol.json">Frozen protocol</a> · <a href="PORTFOLIO_B_TRAIN_REFINEMENT.json">Full metrics and checks</a> · <a href="../runs/portfolio_b_train_refinement_v1/selected/pb_c04f92dec4c608ade5d8/frozen_candidate.json">Frozen challenger</a></p><h2>Interpretation of the improvement</h2><p>The sizing caps changed from3MES+1MNQ to2MES+2MNQ,with the same underlying signals,stops,targets,sessions,and trailing exits. Actual fills and contract quantities were resimulated. Base TRAIN profit increased by$3,934.75(26.75%);intrabar drawdown increased by$16.25 and remains below$2,000. Maximum observed simultaneous contracts stayed4 and allocated initial risk stayed$600. Every2020?2023 base and doubled-cost fold was profitable. The original baseline's continuous doubled-cost simulation triggered one sleeve risk lock; the challenger did not. Its stress-profit comparison therefore includes the original strategy's mandated lock,not an assumption of uninterrupted baseline trading. This is TRAIN-only selection and says nothing about future validation/test performance.</p></html>

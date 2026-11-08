@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "baseline_preserved": true,
+  "baseline_train_reproduced": true,
+  "all_sources_unchanged": true,
+  "quant_package_snapshot_matches": true,
+  "completed_training_trials": 5,
+  "selected": "pb_c04f92dec4c608ade5d8",
+  "candidate_paths_reconciled": [
+    {
+      "cost": "base",
+      "period": "continuous",
+      "reconciled": true
+    },
+    {
+      "cost": "base",
+      "period": "2020",
+      "reconciled": true
+    },
+    {
+      "cost": "base",
+      "period": "2021",
+      "reconciled": true
+    },
+    {
+      "cost": "base",
+      "period": "2022",
+      "reconciled": true
+    },
+    {
+      "cost": "base",
+      "period": "2023",
+      "reconciled": true
+    },
+    {
+      "cost": "cost2",
+      "period": "continuous",
+      "reconciled": true
+    },
+    {
+      "cost": "cost2",
+      "period": "2020",
+      "reconciled": true
+    },
+    {
+      "cost": "cost2",
+      "period": "2021",
+      "reconciled": true
+    },
+    {
+      "cost": "cost2",
+      "period": "2022",
+      "reconciled": true
+    },
+    {
+      "cost": "cost2",
+      "period": "2023",
+      "reconciled": true
+    }
+  ],
+  "shared_account_nonbinding_checks_passed": true,
+  "trade_ledgers_reconciled": true,
+  "independent_fill_replay_checks": 10,
+  "runtime_versions": {
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "numba": "0.68.1",
+    "duckdb": "2.0.0",
+    "pyarrow": "25.0.1",
+    "pydantic": "2.14.0"
+  },
+  "validation_evaluated": false,
+  "test_evaluated": false,
+  "selection_data": "TRAIN_ONLY",
+  "new_unseen_confirmation": false,
+  "base_net_gain": 3934.75,
+  "base_dd_change": 16.25
+}

@@ -1,0 +1,32 @@
+{
+  "leg1_config": {
+    "instrument": "MES",
+    "family": "momentum",
+    "lookback": 16,
+    "threshold": 1.5,
+    "stop_atr": 1.75,
+    "target_r": 2.5,
+    "hold_bars": 32,
+    "session_start": 585,
+    "session_end": 945,
+    "max_contracts": 3,
+    "trailing_atr": 2.0,
+    "config_id": "m5_77fad21ad8460757ac0d",
+    "experiment_order": 3162589
+  },
+  "leg2_config": {
+    "instrument": "MNQ",
+    "family": "breakout",
+    "lookback": 32,
+    "threshold": 0.75,
+    "stop_atr": 1.0,
+    "target_r": 3.0,
+    "hold_bars": 24,
+    "session_start": 600,
+    "session_end": 720,
+    "max_contracts": 1,
+    "trailing_atr": 2.0,
+    "config_id": "m2_eaa56d8ebf97ab0a5540",
+    "experiment_order": 247121
+  }
+}
