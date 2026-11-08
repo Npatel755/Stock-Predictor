@@ -15,7 +15,13 @@ import duckdb
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
+if (ROOT / 'quant_trading_bot').exists():
+    DATA_ROOT = ROOT / 'quant_trading_bot'
+elif (ROOT.parent / 'quant_trading_bot').exists():
+    DATA_ROOT = ROOT.parent / 'quant_trading_bot'
+else:
+    DATA_ROOT = ROOT
 
 
 def compute_atr(high, low, close, window=14):
@@ -124,14 +130,14 @@ def simulate_strategy(df, config, mult, tick=0.25, fee_per_side=0.50):
             elif (i - entry_bar) >= hold_bars:
                 exit_reason = 'time_exit'
                 exit_px = opens[i] - side * adverse
-            # Target check
-            elif (highs[i] >= target_px if side > 0 else lows[i] <= target_px):
-                exit_reason = 'target'
-                exit_px = target_px  # Limit order fill
-            # Stop check
+            # Conservative stop-first check (pessimistic bar resolution matching backtest.py)
             elif (lows[i] <= stop_px if side > 0 else highs[i] >= stop_px):
                 exit_reason = 'stop'
                 exit_px = stop_px - side * adverse
+            # Target check: requires trading through target by 1 tick to ensure limit order fill
+            elif (highs[i] >= target_px + tick if side > 0 else lows[i] <= target_px - tick):
+                exit_reason = 'target'
+                exit_px = target_px  # Limit order fill
 
             if exit_reason is not None:
                 gross_pnl = side * qty * (exit_px - entry_px) * mult
@@ -175,7 +181,7 @@ def main():
     print("Testing Standalone Reproducer...")
     # Read catalog to get splits
     import json
-    catalog = json.load(open(ROOT / 'data/catalog.json'))
+    catalog = json.load(open(DATA_ROOT / 'data/catalog.json'))
 
     query = """
     SELECT time_bucket(INTERVAL '15 minutes', CAST(timestamp_utc AS TIMESTAMPTZ)) AS timestamp_utc,
