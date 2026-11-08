@@ -59,3 +59,14 @@ How it works:
 Limitations: the bar source is a delayed public proxy, not licensed exchange data; roll handling of the continuous
 symbol is undisclosed (the engine sees a single contract label); fills are simulated at the research cost model;
 nothing here measures real broker fills, funded-account rule enforcement or platform latency.
+
+### TradingView overlay (`pine/mass_sleeve_15m_v1_0_0.pine`)
+
+A single Pine v5 strategy with a preset dropdown for the eight sleeve variants (MES_MOM_3c/2c/1c, MNQ_BRK_E_2c/1c,
+MNQ_VOL_1c, MNQ_HYB_C_1c, MNQ_E57_1c). It mirrors the engine's bar semantics (15-minute completed-close signal, next-open
+entry, ceil-to-tick ATR stop, target = stop x R, prior-close trail, hold-bar and 15:55 ET flat exits, $150-per-contract
+sizing) but it is a **non-authoritative overlay**: EMAs are not reset at the 17:00-18:00 ET break, targets fill on touch,
+slippage is TradingView's integer tick setting, and the daily-loss / five-loss locks are approximations. Its alert
+messages carry a JSON payload (`strategy`, `ticker`, `action`, `contracts`, `stop_distance`, `target_r`) so a future
+webhook bridge can consume them; no bridge or live routing exists in this version. Compare its Strategy Tester trades
+with `runs/paper_ensembles/<candidate>/ledger.jsonl` before trusting any number it shows.

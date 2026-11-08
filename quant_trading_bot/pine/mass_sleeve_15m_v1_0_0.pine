@@ -1,0 +1,208 @@
+// MES/MNQ mass-research sleeve, TradingView port v1.0.0 (non-authoritative overlay).
+// Source of truth is scripts/mass_features.py + scripts/mass_execution.py run by
+// quant_futures.ensemble_paper on the paper server. This port follows the engine's
+// bar semantics: signal at a completed 15m close, entry at the next bar's open,
+// stop = ceil(stop_atr*ATR/tick) ticks, target = stop*target_r, trail on prior close,
+// time exit after hold_bars, flat at the first bar opening 15:55 ET or later.
+// Known differences: ATR here is the 14-bar simple mean of true range (same as the
+// engine) but EMAs are not reset after the 17:00-18:00 ET break (negligible by 9:45);
+// targets fill when price touches them (engine needs one tick through); slippage is
+// TradingView's integer tick setting; the 1%-of-volume participation cap, daily-loss
+// lock and five-loss lock are approximated with the inputs below.
+// Chart: CME_MINI:MES1! or CME_MINI:MNQ1!, 15 minute, regular+extended hours.
+//@version=5
+strategy("Mass sleeve 15m v1.0.0", overlay=true, pyramiding=0, calc_on_every_tick=false,
+     default_qty_type=strategy.fixed, default_qty_value=1, initial_capital=50000,
+     commission_type=strategy.commission.cash_per_contract, commission_value=0.50,
+     slippage=2, process_orders_on_close=false)
+
+preset = input.string("MES_MOM_3c", "Sleeve preset", options=["MES_MOM_3c", "MES_MOM_2c", "MES_MOM_1c", "MNQ_BRK_E_2c", "MNQ_BRK_E_1c", "MNQ_VOL_1c", "MNQ_HYB_C_1c", "MNQ_E57_1c", "custom"])
+c_family = input.string("momentum", "custom: family", options=["momentum", "breakout", "volatility", "hybrid"])
+c_lookback = input.int(16, "custom: lookback", minval=2)
+c_threshold = input.float(1.5, "custom: threshold", step=0.05)
+c_stop_atr = input.float(1.75, "custom: stop ATR", step=0.05)
+c_target_r = input.float(2.5, "custom: target R", step=0.05)
+c_hold = input.int(32, "custom: hold bars", minval=1)
+c_sess_start = input.int(585, "custom: session start (ET minutes, bar close)")
+c_sess_end = input.int(945, "custom: session end (ET minutes, bar close, exclusive)")
+c_maxq = input.int(3, "custom: max contracts", minval=1)
+c_trail = input.float(2.0, "custom: trailing ATR (0 = none)", step=0.05)
+risk_per_contract = input.float(150.0, "Risk budget per max contract ($)")
+daily_loss_per_contract = input.float(400.0, "Daily loss lock per max contract ($)")
+max_losses = input.int(5, "Consecutive-loss lock")
+tag = input.string("", "Alert tag (strategy id for the webhook)")
+
+f_preset(p) =>
+    string fam = c_family
+    int lb = c_lookback
+    float thr = c_threshold
+    float sa = c_stop_atr
+    float tr = c_target_r
+    int hb = c_hold
+    int ss = c_sess_start
+    int se = c_sess_end
+    int mq = c_maxq
+    float ta_ = c_trail
+    if p == "MES_MOM_3c" or p == "MES_MOM_2c" or p == "MES_MOM_1c"
+        fam := "momentum"
+        lb := 16
+        thr := 1.5
+        sa := 1.75
+        tr := 2.5
+        hb := 32
+        ss := 585
+        se := 945
+        mq := p == "MES_MOM_3c" ? 3 : p == "MES_MOM_2c" ? 2 : 1
+        ta_ := 2.0
+    if p == "MNQ_BRK_E_2c" or p == "MNQ_BRK_E_1c"
+        fam := "breakout"
+        lb := 10
+        thr := 1.25
+        sa := 1.75
+        tr := 2.25
+        hb := 8
+        ss := 600
+        se := 720
+        mq := p == "MNQ_BRK_E_2c" ? 2 : 1
+        ta_ := 2.0
+    if p == "MNQ_VOL_1c"
+        fam := "volatility"
+        lb := 8
+        thr := 0.5
+        sa := 2.0
+        tr := 5.0
+        hb := 32
+        ss := 600
+        se := 720
+        mq := 1
+        ta_ := 4.0
+    if p == "MNQ_HYB_C_1c"
+        fam := "hybrid"
+        lb := 20
+        thr := 1.25
+        sa := 2.25
+        tr := 5.0
+        hb := 8
+        ss := 720
+        se := 945
+        mq := 1
+        ta_ := 0.0
+    if p == "MNQ_E57_1c"
+        fam := "momentum"
+        lb := 16
+        thr := 1.5
+        sa := 1.0
+        tr := 4.0
+        hb := 12
+        ss := 585
+        se := 945
+        mq := 1
+        ta_ := 2.0
+    [fam, lb, thr, sa, tr, hb, ss, se, mq, ta_]
+
+[family, lookback, threshold, stop_atr, target_r, hold_bars, sess_start, sess_end, max_contracts, trailing_atr] = f_preset(preset)
+
+tick = syminfo.mintick
+mult = syminfo.pointvalue
+fee = 0.50
+adverse_ticks = 1.0 + 0.5 + 0.25 * (max_contracts - 1)
+
+// ---- features (mass_features.py) ----
+atr = ta.sma(ta.tr(true), 14)
+fast = ta.ema(close, math.max(2, int(lookback / 2)))
+slow = ta.ema(close, lookback)
+trend = (fast - slow) / atr
+momentum = (close - close[lookback]) / (atr * math.sqrt(lookback))
+breakout_high = ta.highest(high[1], lookback)
+breakout_low = ta.lowest(low[1], lookback)
+ret = close / close[1] - 1
+vol_ratio = ta.stdev(ret, math.max(2, int(lookback / 4))) / ta.stdev(ret, lookback)
+htf = math.sign(close - close[lookback * 2])
+
+float value = na
+bool eligible = false
+if family == "momentum"
+    value := momentum
+    eligible := math.abs(momentum) >= threshold
+else if family == "breakout"
+    value := close > breakout_high + threshold * atr ? 1 : close < breakout_low - threshold * atr ? -1 : 0
+    eligible := not na(atr) and not na(breakout_high) and not na(breakout_low)
+else if family == "volatility"
+    value := momentum
+    eligible := vol_ratio >= threshold
+else if family == "hybrid"
+    value := trend
+    eligible := math.sign(trend) == htf and math.abs(momentum) >= threshold
+raw_signal = not na(value) and eligible ? math.sign(value) : 0
+
+// ---- session clock (ET) ----
+open_min = hour(time, "America/New_York") * 60 + minute(time, "America/New_York")
+close_min = open_min + 15
+dow = dayofweek(time, "America/New_York")
+weekday = dow >= dayofweek.monday and dow <= dayofweek.friday
+in_session = close_min >= sess_start and close_min < sess_end and weekday
+entry_window = open_min >= 570 and open_min <= 930
+no_entry_next = close_min >= 955 and close_min < 1080  // next bar opens in the flat window
+signal = in_session and entry_window and not no_entry_next ? raw_signal : 0
+
+// ---- risk locks (approximation of the engine's day_locked / losses / hard_dd) ----
+var float day_start_equity = strategy.equity
+var int losses = 0
+var int last_closed = 0
+new_day = ta.change(dayofmonth(time, "America/New_York")) != 0 or barstate.isfirst
+if new_day
+    day_start_equity := strategy.equity
+    losses := 0
+if strategy.closedtrades > last_closed
+    for i = last_closed to strategy.closedtrades - 1
+        losses := strategy.closedtrades.profit(i) < 0 ? losses + 1 : 0
+    last_closed := strategy.closedtrades
+day_locked = (day_start_equity - strategy.equity) >= daily_loss_per_contract * max_contracts or losses >= max_losses
+hard_killed = (strategy.max_drawdown >= 2000)
+
+// ---- orders (mass_execution.py) ----
+var float pending_stop = na
+var int entry_bar = na
+var float stop_price = na
+var float target_price = na
+var int side = 0
+
+if strategy.position_size == 0 and side != 0 and not na(entry_bar)
+    side := 0
+    entry_bar := na
+    stop_price := na
+    target_price := na
+
+flat_now = strategy.position_size == 0
+if flat_now and signal != 0 and not day_locked and not hard_killed and not na(atr) and atr > 0
+    distance = math.max(tick, math.ceil(stop_atr * atr / tick) * tick)
+    risk_per = distance * mult + 2 * fee + (2 * adverse_ticks + tick) * mult
+    qty = math.min(max_contracts, math.floor(risk_per_contract * max_contracts / risk_per))
+    if qty >= 1
+        pending_stop := distance
+        side := signal
+        entry_bar := bar_index + 1
+        msg = '{"strategy":"' + tag + '","ticker":"' + syminfo.ticker + '","action":"' + (signal > 0 ? "buy" : "sell") + '","contracts":' + str.tostring(qty) + ',"stop_distance":' + str.tostring(distance) + ',"target_r":' + str.tostring(target_r) + ',"bar_close":"' + str.format_time(time_close, "yyyy-MM-dd'T'HH:mm:ssZ", "UTC") + '"}'
+        if signal > 0
+            strategy.entry("L", strategy.long, qty=qty, alert_message=msg)
+        else
+            strategy.entry("S", strategy.short, qty=qty, alert_message=msg)
+        strategy.exit("X", loss=math.round(distance / tick), profit=math.round(distance * target_r / tick), alert_message='{"strategy":"' + tag + '","ticker":"' + syminfo.ticker + '","action":"exit","reason":"stop_or_target"}')
+
+if strategy.position_size != 0
+    avg = strategy.position_avg_price
+    if na(stop_price)
+        stop_price := avg - side * pending_stop
+        target_price := math.round((avg + side * pending_stop * target_r) / tick) * tick
+    if trailing_atr > 0 and not na(atr)
+        proposed = math.round((close - side * trailing_atr * atr) / tick) * tick
+        stop_price := side > 0 ? math.max(stop_price, proposed) : math.min(stop_price, proposed)
+    strategy.exit("X", stop=stop_price, limit=target_price, alert_message='{"strategy":"' + tag + '","ticker":"' + syminfo.ticker + '","action":"exit","reason":"stop_or_target"}')
+    time_exit = bar_index + 1 - entry_bar >= hold_bars
+    session_exit = close_min >= 955 and close_min < 1080
+    if time_exit or session_exit or day_locked or hard_killed or (dow == dayofweek.friday and close_min >= 955)
+        strategy.close_all(comment=time_exit ? "time_exit" : session_exit ? "session_exit" : "risk_exit", alert_message='{"strategy":"' + tag + '","ticker":"' + syminfo.ticker + '","action":"exit","reason":"' + (time_exit ? "time_exit" : session_exit ? "session_exit" : "risk_exit") + '"}')
+
+plot(strategy.position_size != 0 ? stop_price : na, "stop", color=color.red, style=plot.style_linebr)
+plot(strategy.position_size != 0 ? target_price : na, "target", color=color.green, style=plot.style_linebr)
+bgcolor(in_session ? color.new(color.blue, 96) : na)
