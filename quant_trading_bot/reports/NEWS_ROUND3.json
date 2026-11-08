@@ -1,0 +1,5257 @@
+{
+ "registered": "2026-11-08",
+ "grid": [
+  {
+   "direction": "cont",
+   "k": 0.0,
+   "target_r": 2.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "cont",
+   "k": 0.0,
+   "target_r": 2.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "cont",
+   "k": 0.0,
+   "target_r": 6.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "cont",
+   "k": 0.0,
+   "target_r": 6.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "cont",
+   "k": 1.0,
+   "target_r": 2.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "cont",
+   "k": 1.0,
+   "target_r": 2.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "cont",
+   "k": 1.0,
+   "target_r": 6.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "cont",
+   "k": 1.0,
+   "target_r": 6.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "fade",
+   "k": 0.0,
+   "target_r": 2.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "fade",
+   "k": 0.0,
+   "target_r": 2.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "fade",
+   "k": 0.0,
+   "target_r": 6.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "fade",
+   "k": 0.0,
+   "target_r": 6.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "fade",
+   "k": 1.0,
+   "target_r": 2.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "fade",
+   "k": 1.0,
+   "target_r": 2.0,
+   "hold_bars": 6
+  },
+  {
+   "direction": "fade",
+   "k": 1.0,
+   "target_r": 6.0,
+   "hold_bars": 3
+  },
+  {
+   "direction": "fade",
+   "k": 1.0,
+   "target_r": 6.0,
+   "hold_bars": 6
+  }
+ ],
+ "train": {
+  "MES/0": {
+   "total": -1716.5,
+   "pos_years": 1,
+   "worst_dd": 698.62,
+   "trades": 89,
+   "per_trade": -19.29,
+   "years": {
+    "2013": {
+     "net": 97.0,
+     "dd": 14.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -169.25,
+     "dd": 169.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -128.0,
+     "dd": 128.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -46.75,
+     "dd": 50.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -80.5,
+     "dd": 114.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -201.75,
+     "dd": 201.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -22.75,
+     "dd": 50.88,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -279.0,
+     "dd": 279.0,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -160.5,
+     "dd": 171.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": -481.75,
+     "dd": 698.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -243.25,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/1": {
+   "total": -1414.0,
+   "pos_years": 2,
+   "worst_dd": 698.62,
+   "trades": 89,
+   "per_trade": -15.89,
+   "years": {
+    "2013": {
+     "net": 129.5,
+     "dd": 11.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -165.5,
+     "dd": 165.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -9.25,
+     "dd": 16.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": 90.75,
+     "dd": 50.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -103.0,
+     "dd": 114.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -201.75,
+     "dd": 201.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -111.5,
+     "dd": 145.12,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -156.5,
+     "dd": 227.38,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -161.75,
+     "dd": 171.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": -481.75,
+     "dd": 698.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -243.25,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/2": {
+   "total": -1720.25,
+   "pos_years": 2,
+   "worst_dd": 698.62,
+   "trades": 89,
+   "per_trade": -19.33,
+   "years": {
+    "2013": {
+     "net": 128.25,
+     "dd": 14.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -169.25,
+     "dd": 169.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -128.0,
+     "dd": 128.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -64.25,
+     "dd": 64.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -110.5,
+     "dd": 131.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -223.0,
+     "dd": 223.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 72.25,
+     "dd": 22.88,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -279.0,
+     "dd": 279.0,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -151.75,
+     "dd": 183.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": -601.75,
+     "dd": 698.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -193.25,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/3": {
+   "total": -1662.75,
+   "pos_years": 2,
+   "worst_dd": 769.25,
+   "trades": 89,
+   "per_trade": -18.68,
+   "years": {
+    "2013": {
+     "net": 168.25,
+     "dd": 11.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -156.75,
+     "dd": 156.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -9.25,
+     "dd": 16.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": 72.0,
+     "dd": 50.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -133.0,
+     "dd": 133.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -245.5,
+     "dd": 245.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -16.5,
+     "dd": 124.38,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -156.5,
+     "dd": 227.38,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -144.25,
+     "dd": 215.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": -769.25,
+     "dd": 769.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -272.0,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/4": {
+   "total": -1529.25,
+   "pos_years": 2,
+   "worst_dd": 698.62,
+   "trades": 83,
+   "per_trade": -18.42,
+   "years": {
+    "2013": {
+     "net": 94.25,
+     "dd": 17.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -169.25,
+     "dd": 169.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -128.0,
+     "dd": 128.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -46.75,
+     "dd": 50.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -80.5,
+     "dd": 114.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -201.75,
+     "dd": 201.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 10.75,
+     "dd": 22.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -209.75,
+     "dd": 209.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -73.25,
+     "dd": 83.88,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": -481.75,
+     "dd": 698.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -243.25,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/5": {
+   "total": -1450.5,
+   "pos_years": 2,
+   "worst_dd": 698.62,
+   "trades": 83,
+   "per_trade": -17.48,
+   "years": {
+    "2013": {
+     "net": 105.5,
+     "dd": 22.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -165.5,
+     "dd": 165.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -9.25,
+     "dd": 16.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": 90.75,
+     "dd": 50.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -103.0,
+     "dd": 114.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -201.75,
+     "dd": 201.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -120.5,
+     "dd": 131.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -247.25,
+     "dd": 247.25,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -74.5,
+     "dd": 83.88,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": -481.75,
+     "dd": 698.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -243.25,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/6": {
+   "total": -1533.0,
+   "pos_years": 2,
+   "worst_dd": 698.62,
+   "trades": 83,
+   "per_trade": -18.47,
+   "years": {
+    "2013": {
+     "net": 125.5,
+     "dd": 17.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -169.25,
+     "dd": 169.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -128.0,
+     "dd": 128.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -64.25,
+     "dd": 64.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -110.5,
+     "dd": 131.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -223.0,
+     "dd": 223.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 105.75,
+     "dd": 22.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -209.75,
+     "dd": 209.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -64.5,
+     "dd": 96.62,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": -601.75,
+     "dd": 698.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -193.25,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/7": {
+   "total": -1698.0,
+   "pos_years": 2,
+   "worst_dd": 769.25,
+   "trades": 83,
+   "per_trade": -20.46,
+   "years": {
+    "2013": {
+     "net": 145.5,
+     "dd": 22.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -156.75,
+     "dd": 156.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -9.25,
+     "dd": 16.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": 72.0,
+     "dd": 50.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -133.0,
+     "dd": 133.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -245.5,
+     "dd": 245.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -25.5,
+     "dd": 124.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -247.25,
+     "dd": 247.25,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -57.0,
+     "dd": 127.88,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": -769.25,
+     "dd": 769.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -272.0,
+     "dd": 331.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/8": {
+   "total": -121.5,
+   "pos_years": 6,
+   "worst_dd": 280.38,
+   "trades": 89,
+   "per_trade": -1.37,
+   "years": {
+    "2013": {
+     "net": -108.0,
+     "dd": 110.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": 9.5,
+     "dd": 57.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 85.75,
+     "dd": 107.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -129.25,
+     "dd": 130.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -23.0,
+     "dd": 24.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 80.75,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -136.5,
+     "dd": 136.5,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 159.75,
+     "dd": 18.88,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 130.75,
+     "dd": 7.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": 19.5,
+     "dd": 168.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -210.75,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/9": {
+   "total": -229.0,
+   "pos_years": 6,
+   "worst_dd": 280.38,
+   "trades": 89,
+   "per_trade": -2.57,
+   "years": {
+    "2013": {
+     "net": -73.0,
+     "dd": 75.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": 3.25,
+     "dd": 97.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 82.0,
+     "dd": 135.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -138.0,
+     "dd": 139.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -55.5,
+     "dd": 55.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 117.0,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -179.0,
+     "dd": 179.0,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 97.25,
+     "dd": 58.62,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 73.25,
+     "dd": 7.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": 19.5,
+     "dd": 168.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -175.75,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/10": {
+   "total": -17.75,
+   "pos_years": 5,
+   "worst_dd": 280.38,
+   "trades": 89,
+   "per_trade": -0.2,
+   "years": {
+    "2013": {
+     "net": -128.0,
+     "dd": 128.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -0.5,
+     "dd": 67.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 90.75,
+     "dd": 107.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -129.25,
+     "dd": 130.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -24.25,
+     "dd": 24.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 65.75,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -159.0,
+     "dd": 159.0,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 161.0,
+     "dd": 18.88,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 113.25,
+     "dd": 6.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": 203.25,
+     "dd": 174.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -210.75,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/11": {
+   "total": -174.0,
+   "pos_years": 5,
+   "worst_dd": 280.38,
+   "trades": 89,
+   "per_trade": -1.96,
+   "years": {
+    "2013": {
+     "net": -103.0,
+     "dd": 103.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -129.25,
+     "dd": 129.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 83.25,
+     "dd": 135.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -138.0,
+     "dd": 139.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -75.5,
+     "dd": 75.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 127.0,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -154.0,
+     "dd": 154.0,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 9.75,
+     "dd": 73.38,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 13.25,
+     "dd": 6.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2022": {
+     "net": 325.75,
+     "dd": 168.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -133.25,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/12": {
+   "total": -326.75,
+   "pos_years": 5,
+   "worst_dd": 280.38,
+   "trades": 83,
+   "per_trade": -3.94,
+   "years": {
+    "2013": {
+     "net": -92.0,
+     "dd": 94.12,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": 9.5,
+     "dd": 57.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 85.75,
+     "dd": 107.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -129.25,
+     "dd": 130.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -23.0,
+     "dd": 24.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 80.75,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -158.0,
+     "dd": 158.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 126.5,
+     "dd": 14.12,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -35.75,
+     "dd": 174.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": 19.5,
+     "dd": 168.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -210.75,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/13": {
+   "total": -208.0,
+   "pos_years": 5,
+   "worst_dd": 280.38,
+   "trades": 83,
+   "per_trade": -2.51,
+   "years": {
+    "2013": {
+     "net": -57.0,
+     "dd": 59.12,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": 3.25,
+     "dd": 97.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 82.0,
+     "dd": 135.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -138.0,
+     "dd": 139.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -55.5,
+     "dd": 55.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 117.0,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -158.0,
+     "dd": 158.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 247.75,
+     "dd": 14.12,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -93.25,
+     "dd": 174.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": 19.5,
+     "dd": 168.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -175.75,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/14": {
+   "total": -228.0,
+   "pos_years": 4,
+   "worst_dd": 280.38,
+   "trades": 83,
+   "per_trade": -2.75,
+   "years": {
+    "2013": {
+     "net": -112.0,
+     "dd": 112.0,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -0.5,
+     "dd": 67.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 90.75,
+     "dd": 107.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -129.25,
+     "dd": 130.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -24.25,
+     "dd": 24.62,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 65.75,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -180.5,
+     "dd": 180.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 127.75,
+     "dd": 14.12,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -58.25,
+     "dd": 174.38,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": 203.25,
+     "dd": 174.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -210.75,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MES/15": {
+   "total": -218.0,
+   "pos_years": 4,
+   "worst_dd": 280.38,
+   "trades": 83,
+   "per_trade": -2.63,
+   "years": {
+    "2013": {
+     "net": -87.0,
+     "dd": 87.0,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -129.25,
+     "dd": 129.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 83.25,
+     "dd": 135.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2016": {
+     "net": -138.0,
+     "dd": 139.38,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -75.5,
+     "dd": 75.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 127.0,
+     "dd": 60.12,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -133.0,
+     "dd": 133.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 160.25,
+     "dd": 14.12,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -218.25,
+     "dd": 218.25,
+     "trades": 7,
+     "signals": 7
+    },
+    "2022": {
+     "net": 325.75,
+     "dd": 168.88,
+     "trades": 8,
+     "signals": 8
+    },
+    "2023": {
+     "net": -133.25,
+     "dd": 280.38,
+     "trades": 7,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/0": {
+   "total": -1434.0,
+   "pos_years": 1,
+   "worst_dd": 391.25,
+   "trades": 83,
+   "per_trade": -17.28,
+   "years": {
+    "2013": {
+     "net": 31.0,
+     "dd": 28.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -112.0,
+     "dd": 112.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -42.5,
+     "dd": 42.5,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -37.5,
+     "dd": 37.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -55.5,
+     "dd": 92.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -211.0,
+     "dd": 211.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -72.0,
+     "dd": 107.75,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -227.0,
+     "dd": 253.75,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -210.0,
+     "dd": 368.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -179.0,
+     "dd": 391.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/1": {
+   "total": -1348.0,
+   "pos_years": 3,
+   "worst_dd": 397.75,
+   "trades": 83,
+   "per_trade": -16.24,
+   "years": {
+    "2013": {
+     "net": 64.5,
+     "dd": 16.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -90.0,
+     "dd": 90.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 56.5,
+     "dd": 14.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": 49.5,
+     "dd": 37.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -31.5,
+     "dd": 62.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -178.0,
+     "dd": 178.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -184.5,
+     "dd": 232.25,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -311.0,
+     "dd": 311.0,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -226.0,
+     "dd": 397.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -179.0,
+     "dd": 391.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/2": {
+   "total": -1467.5,
+   "pos_years": 1,
+   "worst_dd": 421.25,
+   "trades": 83,
+   "per_trade": -17.68,
+   "years": {
+    "2013": {
+     "net": 29.5,
+     "dd": 28.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -112.0,
+     "dd": 112.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -25.0,
+     "dd": 41.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -49.0,
+     "dd": 49.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -55.5,
+     "dd": 92.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -273.5,
+     "dd": 273.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -72.0,
+     "dd": 107.75,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -227.0,
+     "dd": 253.75,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -146.0,
+     "dd": 368.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -218.5,
+     "dd": 421.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/3": {
+   "total": -1577.0,
+   "pos_years": 3,
+   "worst_dd": 493.25,
+   "trades": 83,
+   "per_trade": -19.0,
+   "years": {
+    "2013": {
+     "net": 94.0,
+     "dd": 16.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -90.0,
+     "dd": 90.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 18.0,
+     "dd": 14.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": 66.0,
+     "dd": 37.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -38.5,
+     "dd": 69.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -305.0,
+     "dd": 305.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -184.5,
+     "dd": 232.25,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": -311.0,
+     "dd": 311.0,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": -89.5,
+     "dd": 397.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -418.0,
+     "dd": 493.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/4": {
+   "total": -1344.0,
+   "pos_years": 1,
+   "worst_dd": 391.25,
+   "trades": 77,
+   "per_trade": -17.45,
+   "years": {
+    "2013": {
+     "net": 29.0,
+     "dd": 30.25,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -112.0,
+     "dd": 112.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -42.5,
+     "dd": 42.5,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -37.5,
+     "dd": 37.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -55.5,
+     "dd": 92.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -211.0,
+     "dd": 211.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -45.5,
+     "dd": 81.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -306.5,
+     "dd": 306.5,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -65.0,
+     "dd": 223.25,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -179.0,
+     "dd": 391.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/5": {
+   "total": -1279.5,
+   "pos_years": 3,
+   "worst_dd": 391.25,
+   "trades": 77,
+   "per_trade": -16.62,
+   "years": {
+    "2013": {
+     "net": 41.5,
+     "dd": 39.75,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -90.0,
+     "dd": 90.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 56.5,
+     "dd": 14.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": 49.5,
+     "dd": 37.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -31.5,
+     "dd": 62.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -178.0,
+     "dd": 178.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -200.0,
+     "dd": 224.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -349.0,
+     "dd": 349.0,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -81.0,
+     "dd": 252.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -179.0,
+     "dd": 391.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/6": {
+   "total": -1377.5,
+   "pos_years": 1,
+   "worst_dd": 421.25,
+   "trades": 77,
+   "per_trade": -17.89,
+   "years": {
+    "2013": {
+     "net": 27.5,
+     "dd": 30.25,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -112.0,
+     "dd": 112.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": -25.0,
+     "dd": 41.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -49.0,
+     "dd": 49.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -55.5,
+     "dd": 92.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -273.5,
+     "dd": 273.5,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -45.5,
+     "dd": 81.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -306.5,
+     "dd": 306.5,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -1.0,
+     "dd": 223.25,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -218.5,
+     "dd": 421.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/7": {
+   "total": -1509.0,
+   "pos_years": 4,
+   "worst_dd": 493.25,
+   "trades": 77,
+   "per_trade": -19.6,
+   "years": {
+    "2013": {
+     "net": 70.5,
+     "dd": 39.75,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -90.0,
+     "dd": 90.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 18.0,
+     "dd": 14.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": 66.0,
+     "dd": 37.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -38.5,
+     "dd": 69.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": -305.0,
+     "dd": 305.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -200.0,
+     "dd": 224.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": -349.0,
+     "dd": 349.0,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": 55.5,
+     "dd": 252.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": -318.5,
+     "dd": 341.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -418.0,
+     "dd": 493.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/8": {
+   "total": 611.5,
+   "pos_years": 5,
+   "worst_dd": 350.25,
+   "trades": 83,
+   "per_trade": 7.37,
+   "years": {
+    "2013": {
+     "net": -35.0,
+     "dd": 41.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -17.0,
+     "dd": 61.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 29.0,
+     "dd": 99.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -25.0,
+     "dd": 93.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -13.5,
+     "dd": 14.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 89.0,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -32.5,
+     "dd": 116.25,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 162.5,
+     "dd": 41.75,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 169.5,
+     "dd": 18.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": 320.5,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -36.0,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/9": {
+   "total": 576.5,
+   "pos_years": 5,
+   "worst_dd": 350.25,
+   "trades": 83,
+   "per_trade": 6.95,
+   "years": {
+    "2013": {
+     "net": -11.5,
+     "dd": 36.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -93.0,
+     "dd": 93.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 23.5,
+     "dd": 124.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -57.0,
+     "dd": 129.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -43.0,
+     "dd": 43.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 161.5,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -120.0,
+     "dd": 120.0,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 290.5,
+     "dd": 144.75,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 120.0,
+     "dd": 48.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": 320.5,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -15.0,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/10": {
+   "total": 1192.5,
+   "pos_years": 7,
+   "worst_dd": 350.25,
+   "trades": 83,
+   "per_trade": 14.37,
+   "years": {
+    "2013": {
+     "net": -29.0,
+     "dd": 41.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -17.0,
+     "dd": 61.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 35.5,
+     "dd": 99.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -46.5,
+     "dd": 93.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": 21.0,
+     "dd": 14.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 143.0,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 84.0,
+     "dd": 116.25,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 161.5,
+     "dd": 41.75,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 196.0,
+     "dd": 2.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": 723.5,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -79.5,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/11": {
+   "total": 1255.5,
+   "pos_years": 7,
+   "worst_dd": 350.25,
+   "trades": 83,
+   "per_trade": 15.13,
+   "years": {
+    "2013": {
+     "net": -24.0,
+     "dd": 36.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2014": {
+     "net": -93.0,
+     "dd": 93.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 94.0,
+     "dd": 124.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -93.0,
+     "dd": 129.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -9.0,
+     "dd": 30.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 200.5,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 57.5,
+     "dd": 116.25,
+     "trades": 9,
+     "signals": 9
+    },
+    "2020": {
+     "net": 362.0,
+     "dd": 140.25,
+     "trades": 9,
+     "signals": 11
+    },
+    "2021": {
+     "net": 74.0,
+     "dd": 2.75,
+     "trades": 7,
+     "signals": 8
+    },
+    "2022": {
+     "net": 613.0,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": 73.5,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/12": {
+   "total": 417.5,
+   "pos_years": 4,
+   "worst_dd": 350.25,
+   "trades": 77,
+   "per_trade": 5.42,
+   "years": {
+    "2013": {
+     "net": -21.0,
+     "dd": 27.25,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -17.0,
+     "dd": 61.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 29.0,
+     "dd": 99.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -25.0,
+     "dd": 93.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -13.5,
+     "dd": 14.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 89.0,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -53.0,
+     "dd": 116.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 260.0,
+     "dd": 20.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -115.5,
+     "dd": 303.25,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": 320.5,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -36.0,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/13": {
+   "total": 432.0,
+   "pos_years": 5,
+   "worst_dd": 350.25,
+   "trades": 77,
+   "per_trade": 5.61,
+   "years": {
+    "2013": {
+     "net": 2.5,
+     "dd": 22.75,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -93.0,
+     "dd": 93.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 23.5,
+     "dd": 124.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -57.0,
+     "dd": 129.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -43.0,
+     "dd": 43.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 161.5,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": -98.5,
+     "dd": 116.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 395.5,
+     "dd": 20.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -165.0,
+     "dd": 333.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": 320.5,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -15.0,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/14": {
+   "total": 939.5,
+   "pos_years": 6,
+   "worst_dd": 350.25,
+   "trades": 77,
+   "per_trade": 12.2,
+   "years": {
+    "2013": {
+     "net": -15.0,
+     "dd": 27.25,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -17.0,
+     "dd": 61.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 35.5,
+     "dd": 99.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -46.5,
+     "dd": 93.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": 21.0,
+     "dd": 14.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 143.0,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 63.5,
+     "dd": 116.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 259.0,
+     "dd": 20.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -148.0,
+     "dd": 303.25,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": 723.5,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": -79.5,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  },
+  "MNQ/15": {
+   "total": 955.0,
+   "pos_years": 6,
+   "worst_dd": 367.0,
+   "trades": 77,
+   "per_trade": 12.4,
+   "years": {
+    "2013": {
+     "net": -10.0,
+     "dd": 22.75,
+     "trades": 7,
+     "signals": 7
+    },
+    "2014": {
+     "net": -93.0,
+     "dd": 93.0,
+     "trades": 8,
+     "signals": 8
+    },
+    "2015": {
+     "net": 94.0,
+     "dd": 124.25,
+     "trades": 7,
+     "signals": 8
+    },
+    "2016": {
+     "net": -93.0,
+     "dd": 129.75,
+     "trades": 8,
+     "signals": 8
+    },
+    "2017": {
+     "net": -9.0,
+     "dd": 30.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2018": {
+     "net": 200.5,
+     "dd": 71.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2019": {
+     "net": 79.0,
+     "dd": 116.25,
+     "trades": 8,
+     "signals": 8
+    },
+    "2020": {
+     "net": 467.0,
+     "dd": 20.75,
+     "trades": 6,
+     "signals": 7
+    },
+    "2021": {
+     "net": -367.0,
+     "dd": 367.0,
+     "trades": 6,
+     "signals": 7
+    },
+    "2022": {
+     "net": 613.0,
+     "dd": 37.75,
+     "trades": 3,
+     "signals": 8
+    },
+    "2023": {
+     "net": 73.5,
+     "dd": 350.25,
+     "trades": 8,
+     "signals": 8
+    }
+   }
+  }
+ },
+ "placebo": {
+  "MES/0": {
+   "total": -13501.5,
+   "pos_years": 1,
+   "worst_dd": 1899.12,
+   "trades": 2469,
+   "per_trade": -5.47,
+   "years": {
+    "2013": {
+     "net": -1292.25,
+     "dd": 1306.62,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -1138.25,
+     "dd": 1156.12,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1238.25,
+     "dd": 1263.88,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1873.5,
+     "dd": 1899.12,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1518.75,
+     "dd": 1523.12,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -846.0,
+     "dd": 929.38,
+     "trades": 226,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1736.0,
+     "dd": 1744.12,
+     "trades": 231,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1708.75,
+     "dd": 1776.12,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1375.25,
+     "dd": 1545.62,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1047.25,
+     "dd": 1215.38,
+     "trades": 221,
+     "signals": 242
+    },
+    "2023": {
+     "net": 272.75,
+     "dd": 116.12,
+     "trades": 231,
+     "signals": 240
+    }
+   }
+  },
+  "MES/1": {
+   "total": -10620.0,
+   "pos_years": 2,
+   "worst_dd": 1915.75,
+   "trades": 2455,
+   "per_trade": -4.33,
+   "years": {
+    "2013": {
+     "net": -1438.5,
+     "dd": 1444.12,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -830.75,
+     "dd": 854.88,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1160.75,
+     "dd": 1193.88,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1874.75,
+     "dd": 1874.75,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1365.0,
+     "dd": 1365.0,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -589.75,
+     "dd": 599.12,
+     "trades": 226,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1915.75,
+     "dd": 1915.75,
+     "trades": 217,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1427.5,
+     "dd": 1484.62,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1497.75,
+     "dd": 1510.88,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": 466.5,
+     "dd": 842.38,
+     "trades": 221,
+     "signals": 242
+    },
+    "2023": {
+     "net": 1014.0,
+     "dd": 206.12,
+     "trades": 231,
+     "signals": 240
+    }
+   }
+  },
+  "MES/2": {
+   "total": -13622.75,
+   "pos_years": 1,
+   "worst_dd": 1899.12,
+   "trades": 2469,
+   "per_trade": -5.52,
+   "years": {
+    "2013": {
+     "net": -1289.75,
+     "dd": 1304.12,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -1143.25,
+     "dd": 1161.12,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1218.25,
+     "dd": 1243.88,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1873.5,
+     "dd": 1899.12,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1530.0,
+     "dd": 1534.38,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -917.25,
+     "dd": 1000.62,
+     "trades": 226,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1736.0,
+     "dd": 1744.12,
+     "trades": 231,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1780.0,
+     "dd": 1847.38,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1396.5,
+     "dd": 1566.88,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1069.75,
+     "dd": 1237.88,
+     "trades": 221,
+     "signals": 242
+    },
+    "2023": {
+     "net": 331.5,
+     "dd": 116.12,
+     "trades": 231,
+     "signals": 240
+    }
+   }
+  },
+  "MES/3": {
+   "total": -10314.5,
+   "pos_years": 2,
+   "worst_dd": 1918.5,
+   "trades": 2447,
+   "per_trade": -4.22,
+   "years": {
+    "2013": {
+     "net": -1477.25,
+     "dd": 1482.88,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -809.5,
+     "dd": 822.62,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1293.25,
+     "dd": 1326.38,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1891.5,
+     "dd": 1891.5,
+     "trades": 219,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1313.75,
+     "dd": 1314.62,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -287.25,
+     "dd": 296.62,
+     "trades": 226,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1918.5,
+     "dd": 1918.5,
+     "trades": 216,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1465.0,
+     "dd": 1523.38,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1425.25,
+     "dd": 1438.38,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": 791.5,
+     "dd": 666.12,
+     "trades": 221,
+     "signals": 242
+    },
+    "2023": {
+     "net": 775.25,
+     "dd": 206.12,
+     "trades": 231,
+     "signals": 240
+    }
+   }
+  },
+  "MES/4": {
+   "total": -6228.25,
+   "pos_years": 1,
+   "worst_dd": 1023.38,
+   "trades": 1077,
+   "per_trade": -5.78,
+   "years": {
+    "2013": {
+     "net": -641.75,
+     "dd": 641.75,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -479.5,
+     "dd": 500.62,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -691.25,
+     "dd": 716.88,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -888.5,
+     "dd": 914.12,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -562.25,
+     "dd": 595.62,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -467.0,
+     "dd": 548.88,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -564.75,
+     "dd": 575.38,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -954.25,
+     "dd": 1023.38,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -824.5,
+     "dd": 962.38,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": -500.0,
+     "dd": 871.62,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": 345.5,
+     "dd": 112.62,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/5": {
+   "total": -4584.5,
+   "pos_years": 2,
+   "worst_dd": 1052.38,
+   "trades": 1077,
+   "per_trade": -4.26,
+   "years": {
+    "2013": {
+     "net": -626.75,
+     "dd": 637.88,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -270.75,
+     "dd": 293.12,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -787.5,
+     "dd": 820.62,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -698.5,
+     "dd": 698.5,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -634.75,
+     "dd": 681.88,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -90.75,
+     "dd": 90.75,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -564.75,
+     "dd": 581.62,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -888.0,
+     "dd": 945.12,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -870.75,
+     "dd": 1052.38,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": 262.5,
+     "dd": 720.38,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": 585.5,
+     "dd": 161.38,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/6": {
+   "total": -6280.75,
+   "pos_years": 1,
+   "worst_dd": 1040.88,
+   "trades": 1077,
+   "per_trade": -5.83,
+   "years": {
+    "2013": {
+     "net": -639.25,
+     "dd": 639.25,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -479.5,
+     "dd": 500.62,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -711.25,
+     "dd": 736.88,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -888.5,
+     "dd": 914.12,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -573.5,
+     "dd": 600.62,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -505.75,
+     "dd": 587.62,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -564.75,
+     "dd": 575.38,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -971.75,
+     "dd": 1040.88,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -845.75,
+     "dd": 983.62,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": -522.5,
+     "dd": 889.12,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": 421.75,
+     "dd": 112.62,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/7": {
+   "total": -4117.0,
+   "pos_years": 3,
+   "worst_dd": 993.62,
+   "trades": 1077,
+   "per_trade": -3.82,
+   "years": {
+    "2013": {
+     "net": -676.75,
+     "dd": 687.88,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -225.75,
+     "dd": 265.38,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -860.0,
+     "dd": 893.12,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -792.25,
+     "dd": 792.25,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -587.25,
+     "dd": 636.88,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": 289.25,
+     "dd": 26.38,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -574.75,
+     "dd": 591.62,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -748.0,
+     "dd": 870.62,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -812.0,
+     "dd": 993.62,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": 450.0,
+     "dd": 544.12,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": 420.5,
+     "dd": 161.38,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/8": {
+   "total": -15267.25,
+   "pos_years": 0,
+   "worst_dd": 1969.25,
+   "trades": 2381,
+   "per_trade": -6.41,
+   "years": {
+    "2013": {
+     "net": -1442.25,
+     "dd": 1442.25,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -1417.0,
+     "dd": 1433.62,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1520.75,
+     "dd": 1520.75,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -889.75,
+     "dd": 889.75,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1228.75,
+     "dd": 1231.88,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -1557.25,
+     "dd": 1962.12,
+     "trades": 226,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1257.25,
+     "dd": 1266.62,
+     "trades": 231,
+     "signals": 240
+    },
+    "2020": {
+     "net": -770.0,
+     "dd": 770.0,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1780.25,
+     "dd": 1789.62,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1434.75,
+     "dd": 1601.38,
+     "trades": 221,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1969.25,
+     "dd": 1969.25,
+     "trades": 143,
+     "signals": 240
+    }
+   }
+  },
+  "MES/9": {
+   "total": -17697.25,
+   "pos_years": 0,
+   "worst_dd": 2063.25,
+   "trades": 2221,
+   "per_trade": -7.97,
+   "years": {
+    "2013": {
+     "net": -1586.0,
+     "dd": 1594.62,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -1252.0,
+     "dd": 1341.88,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1385.75,
+     "dd": 1390.38,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -958.5,
+     "dd": 958.88,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1632.5,
+     "dd": 1632.5,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -2063.25,
+     "dd": 2063.25,
+     "trades": 187,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1617.25,
+     "dd": 1660.38,
+     "trades": 231,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1880.0,
+     "dd": 1896.38,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1525.25,
+     "dd": 1591.62,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1852.25,
+     "dd": 1852.25,
+     "trades": 141,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1944.5,
+     "dd": 1944.5,
+     "trades": 102,
+     "signals": 240
+    }
+   }
+  },
+  "MES/10": {
+   "total": -15355.0,
+   "pos_years": 0,
+   "worst_dd": 1979.5,
+   "trades": 2380,
+   "per_trade": -6.45,
+   "years": {
+    "2013": {
+     "net": -1453.5,
+     "dd": 1453.5,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -1403.25,
+     "dd": 1427.38,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1545.75,
+     "dd": 1545.75,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -886.0,
+     "dd": 886.0,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1233.75,
+     "dd": 1236.88,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -1549.75,
+     "dd": 1960.88,
+     "trades": 226,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1307.25,
+     "dd": 1316.62,
+     "trades": 231,
+     "signals": 240
+    },
+    "2020": {
+     "net": -782.5,
+     "dd": 782.5,
+     "trades": 215,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1805.25,
+     "dd": 1814.62,
+     "trades": 239,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1408.5,
+     "dd": 1575.12,
+     "trades": 221,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1979.5,
+     "dd": 1979.5,
+     "trades": 142,
+     "signals": 240
+    }
+   }
+  },
+  "MES/11": {
+   "total": -18361.25,
+   "pos_years": 0,
+   "worst_dd": 2050.75,
+   "trades": 2165,
+   "per_trade": -8.48,
+   "years": {
+    "2013": {
+     "net": -1651.0,
+     "dd": 1659.62,
+     "trades": 216,
+     "signals": 241
+    },
+    "2014": {
+     "net": -1343.25,
+     "dd": 1433.12,
+     "trades": 222,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1437.0,
+     "dd": 1442.88,
+     "trades": 227,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1007.25,
+     "dd": 1007.25,
+     "trades": 226,
+     "signals": 243
+    },
+    "2017": {
+     "net": -1697.5,
+     "dd": 1697.5,
+     "trades": 215,
+     "signals": 241
+    },
+    "2018": {
+     "net": -2050.75,
+     "dd": 2050.75,
+     "trades": 187,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1768.5,
+     "dd": 1811.62,
+     "trades": 231,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1948.5,
+     "dd": 1948.5,
+     "trades": 191,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1618.75,
+     "dd": 1618.75,
+     "trades": 230,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1896.0,
+     "dd": 1896.0,
+     "trades": 121,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1942.75,
+     "dd": 1942.75,
+     "trades": 99,
+     "signals": 240
+    }
+   }
+  },
+  "MES/12": {
+   "total": -6454.5,
+   "pos_years": 0,
+   "worst_dd": 1194.12,
+   "trades": 1077,
+   "per_trade": -5.99,
+   "years": {
+    "2013": {
+     "net": -706.75,
+     "dd": 731.62,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -674.5,
+     "dd": 677.88,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -642.5,
+     "dd": 652.12,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -461.0,
+     "dd": 461.0,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -507.25,
+     "dd": 507.25,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -764.5,
+     "dd": 1186.88,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -583.5,
+     "dd": 589.88,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -305.5,
+     "dd": 305.5,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -428.25,
+     "dd": 488.12,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": -271.25,
+     "dd": 398.38,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": -1109.5,
+     "dd": 1194.12,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/13": {
+   "total": -7178.25,
+   "pos_years": 0,
+   "worst_dd": 1516.88,
+   "trades": 1077,
+   "per_trade": -6.67,
+   "years": {
+    "2013": {
+     "net": -833.0,
+     "dd": 885.62,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -540.75,
+     "dd": 589.12,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -441.25,
+     "dd": 445.88,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -598.5,
+     "dd": 620.12,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -522.25,
+     "dd": 522.25,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -583.25,
+     "dd": 1516.88,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -686.0,
+     "dd": 731.62,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -958.0,
+     "dd": 1141.12,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -462.0,
+     "dd": 657.12,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": -413.75,
+     "dd": 698.38,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": -1139.5,
+     "dd": 1283.12,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/14": {
+   "total": -6460.75,
+   "pos_years": 0,
+   "worst_dd": 1206.62,
+   "trades": 1077,
+   "per_trade": -6.0,
+   "years": {
+    "2013": {
+     "net": -718.0,
+     "dd": 742.88,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -669.5,
+     "dd": 672.88,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -642.5,
+     "dd": 652.12,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -457.25,
+     "dd": 457.25,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -512.25,
+     "dd": 512.25,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -758.25,
+     "dd": 1186.88,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -586.0,
+     "dd": 592.38,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -321.75,
+     "dd": 321.75,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -428.25,
+     "dd": 488.12,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": -245.0,
+     "dd": 398.38,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": -1122.0,
+     "dd": 1206.62,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MES/15": {
+   "total": -7978.25,
+   "pos_years": 0,
+   "worst_dd": 1440.62,
+   "trades": 1077,
+   "per_trade": -7.41,
+   "years": {
+    "2013": {
+     "net": -903.0,
+     "dd": 955.62,
+     "trades": 108,
+     "signals": 109
+    },
+    "2014": {
+     "net": -549.5,
+     "dd": 579.62,
+     "trades": 97,
+     "signals": 97
+    },
+    "2015": {
+     "net": -490.0,
+     "dd": 495.88,
+     "trades": 105,
+     "signals": 105
+    },
+    "2016": {
+     "net": -607.25,
+     "dd": 628.88,
+     "trades": 116,
+     "signals": 118
+    },
+    "2017": {
+     "net": -583.5,
+     "dd": 583.5,
+     "trades": 81,
+     "signals": 84
+    },
+    "2018": {
+     "net": -559.5,
+     "dd": 1440.62,
+     "trades": 112,
+     "signals": 115
+    },
+    "2019": {
+     "net": -721.0,
+     "dd": 766.62,
+     "trades": 86,
+     "signals": 88
+    },
+    "2020": {
+     "net": -1051.75,
+     "dd": 1153.62,
+     "trades": 113,
+     "signals": 121
+    },
+    "2021": {
+     "net": -477.0,
+     "dd": 672.12,
+     "trades": 92,
+     "signals": 94
+    },
+    "2022": {
+     "net": -753.75,
+     "dd": 885.88,
+     "trades": 85,
+     "signals": 90
+    },
+    "2023": {
+     "net": -1282.0,
+     "dd": 1305.12,
+     "trades": 82,
+     "signals": 82
+    }
+   }
+  },
+  "MNQ/0": {
+   "total": -6122.0,
+   "pos_years": 2,
+   "worst_dd": 1977.0,
+   "trades": 2270,
+   "per_trade": -2.7,
+   "years": {
+    "2013": {
+     "net": -789.5,
+     "dd": 798.25,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": -114.5,
+     "dd": 124.75,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -264.5,
+     "dd": 510.75,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1051.5,
+     "dd": 1077.25,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -881.0,
+     "dd": 969.25,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": -462.0,
+     "dd": 570.75,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1029.5,
+     "dd": 1046.75,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1977.0,
+     "dd": 1977.0,
+     "trades": 186,
+     "signals": 239
+    },
+    "2021": {
+     "net": 875.0,
+     "dd": 32.75,
+     "trades": 213,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1319.0,
+     "dd": 1447.75,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": 891.5,
+     "dd": 242.75,
+     "trades": 227,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/1": {
+   "total": -2838.0,
+   "pos_years": 4,
+   "worst_dd": 1549.0,
+   "trades": 2283,
+   "per_trade": -1.24,
+   "years": {
+    "2013": {
+     "net": -733.0,
+     "dd": 733.25,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": 111.0,
+     "dd": 44.75,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -276.5,
+     "dd": 580.25,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1198.5,
+     "dd": 1223.25,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -655.5,
+     "dd": 796.75,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": 94.5,
+     "dd": 236.75,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1549.0,
+     "dd": 1549.0,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1059.5,
+     "dd": 1327.75,
+     "trades": 199,
+     "signals": 239
+    },
+    "2021": {
+     "net": 1197.0,
+     "dd": 66.75,
+     "trades": 213,
+     "signals": 243
+    },
+    "2022": {
+     "net": -622.0,
+     "dd": 1206.25,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": 1853.5,
+     "dd": 363.75,
+     "trades": 227,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/2": {
+   "total": -6092.5,
+   "pos_years": 2,
+   "worst_dd": 1981.0,
+   "trades": 2266,
+   "per_trade": -2.69,
+   "years": {
+    "2013": {
+     "net": -801.0,
+     "dd": 809.75,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": -104.5,
+     "dd": 114.75,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -253.0,
+     "dd": 517.25,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1060.5,
+     "dd": 1086.25,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -869.0,
+     "dd": 957.25,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": -422.0,
+     "dd": 530.75,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1110.5,
+     "dd": 1127.75,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1981.0,
+     "dd": 1981.0,
+     "trades": 182,
+     "signals": 239
+    },
+    "2021": {
+     "net": 853.0,
+     "dd": 32.75,
+     "trades": 213,
+     "signals": 243
+    },
+    "2022": {
+     "net": -1304.0,
+     "dd": 1432.75,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": 960.0,
+     "dd": 242.75,
+     "trades": 227,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/3": {
+   "total": -2745.5,
+   "pos_years": 4,
+   "worst_dd": 1675.0,
+   "trades": 2283,
+   "per_trade": -1.2,
+   "years": {
+    "2013": {
+     "net": -762.0,
+     "dd": 762.25,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": 148.5,
+     "dd": 32.25,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -463.0,
+     "dd": 684.25,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -1216.5,
+     "dd": 1241.25,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -546.0,
+     "dd": 681.25,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": 383.5,
+     "dd": 236.75,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -1675.0,
+     "dd": 1675.0,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": -1018.0,
+     "dd": 1286.25,
+     "trades": 199,
+     "signals": 239
+    },
+    "2021": {
+     "net": 1125.0,
+     "dd": 66.75,
+     "trades": 213,
+     "signals": 243
+    },
+    "2022": {
+     "net": -494.5,
+     "dd": 1080.75,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": 1772.5,
+     "dd": 363.75,
+     "trades": 227,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/4": {
+   "total": -3658.0,
+   "pos_years": 1,
+   "worst_dd": 978.25,
+   "trades": 895,
+   "per_trade": -4.09,
+   "years": {
+    "2013": {
+     "net": -353.5,
+     "dd": 362.25,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -132.0,
+     "dd": 207.75,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -360.5,
+     "dd": 533.25,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -566.5,
+     "dd": 578.25,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -325.5,
+     "dd": 438.75,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": -67.0,
+     "dd": 169.75,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -257.0,
+     "dd": 271.25,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": -825.0,
+     "dd": 978.25,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": -605.0,
+     "dd": 741.25,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": -747.0,
+     "dd": 899.75,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": 581.0,
+     "dd": 125.75,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/5": {
+   "total": -1723.5,
+   "pos_years": 2,
+   "worst_dd": 1346.25,
+   "trades": 895,
+   "per_trade": -1.93,
+   "years": {
+    "2013": {
+     "net": -242.5,
+     "dd": 286.75,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -2.5,
+     "dd": 95.75,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -401.0,
+     "dd": 563.25,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -535.5,
+     "dd": 554.75,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -283.5,
+     "dd": 423.25,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": 531.5,
+     "dd": 15.75,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -213.0,
+     "dd": 241.75,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": -269.0,
+     "dd": 551.75,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": -279.5,
+     "dd": 732.75,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": -1076.0,
+     "dd": 1346.25,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": 1047.5,
+     "dd": 123.25,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/6": {
+   "total": -3669.5,
+   "pos_years": 1,
+   "worst_dd": 1080.25,
+   "trades": 895,
+   "per_trade": -4.1,
+   "years": {
+    "2013": {
+     "net": -355.5,
+     "dd": 364.25,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -145.0,
+     "dd": 212.25,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -372.0,
+     "dd": 542.75,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -575.5,
+     "dd": 587.25,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -313.5,
+     "dd": 426.75,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": -27.0,
+     "dd": 129.75,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -307.0,
+     "dd": 321.25,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": -927.0,
+     "dd": 1080.25,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": -605.0,
+     "dd": 741.25,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": -732.0,
+     "dd": 884.75,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": 690.0,
+     "dd": 125.75,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/7": {
+   "total": -1628.0,
+   "pos_years": 3,
+   "worst_dd": 1289.25,
+   "trades": 895,
+   "per_trade": -1.82,
+   "years": {
+    "2013": {
+     "net": -266.5,
+     "dd": 306.75,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": 30.5,
+     "dd": 101.25,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -457.5,
+     "dd": 561.25,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -528.0,
+     "dd": 547.25,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -205.0,
+     "dd": 350.25,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": 908.5,
+     "dd": 15.75,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -307.0,
+     "dd": 335.75,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": -207.0,
+     "dd": 551.75,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": -437.5,
+     "dd": 802.25,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": -1098.0,
+     "dd": 1289.25,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": 939.5,
+     "dd": 123.25,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/8": {
+   "total": -8134.5,
+   "pos_years": 2,
+   "worst_dd": 1989.5,
+   "trades": 2207,
+   "per_trade": -3.69,
+   "years": {
+    "2013": {
+     "net": -653.0,
+     "dd": 653.0,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": -527.0,
+     "dd": 550.25,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1174.0,
+     "dd": 1174.0,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -465.0,
+     "dd": 472.25,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -637.0,
+     "dd": 642.25,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": -1013.5,
+     "dd": 1452.25,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -612.5,
+     "dd": 730.75,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": 561.0,
+     "dd": 56.25,
+     "trades": 199,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1989.5,
+     "dd": 1989.5,
+     "trades": 205,
+     "signals": 243
+    },
+    "2022": {
+     "net": 314.5,
+     "dd": 324.25,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1938.5,
+     "dd": 1938.5,
+     "trades": 159,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/9": {
+   "total": -9044.0,
+   "pos_years": 1,
+   "worst_dd": 1954.5,
+   "trades": 2084,
+   "per_trade": -4.34,
+   "years": {
+    "2013": {
+     "net": -819.5,
+     "dd": 836.25,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": -563.5,
+     "dd": 609.25,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -959.5,
+     "dd": 965.25,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -648.0,
+     "dd": 662.75,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -865.0,
+     "dd": 887.75,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": -872.5,
+     "dd": 1896.75,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -917.0,
+     "dd": 1264.75,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": -547.5,
+     "dd": 1251.75,
+     "trades": 199,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1954.5,
+     "dd": 1954.5,
+     "trades": 112,
+     "signals": 243
+    },
+    "2022": {
+     "net": 986.0,
+     "dd": 539.75,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1883.0,
+     "dd": 1883.0,
+     "trades": 129,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/10": {
+   "total": -8313.0,
+   "pos_years": 2,
+   "worst_dd": 2002.5,
+   "trades": 2207,
+   "per_trade": -3.77,
+   "years": {
+    "2013": {
+     "net": -652.5,
+     "dd": 652.5,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": -525.0,
+     "dd": 548.25,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -1215.0,
+     "dd": 1215.0,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -468.5,
+     "dd": 475.75,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -668.0,
+     "dd": 673.25,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": -1013.5,
+     "dd": 1452.25,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -649.0,
+     "dd": 755.25,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": 476.5,
+     "dd": 66.25,
+     "trades": 199,
+     "signals": 239
+    },
+    "2021": {
+     "net": -2002.5,
+     "dd": 2002.5,
+     "trades": 205,
+     "signals": 243
+    },
+    "2022": {
+     "net": 353.5,
+     "dd": 324.25,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1949.0,
+     "dd": 1949.0,
+     "trades": 159,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/11": {
+   "total": -9993.5,
+   "pos_years": 1,
+   "worst_dd": 1975.5,
+   "trades": 2080,
+   "per_trade": -4.8,
+   "years": {
+    "2013": {
+     "net": -877.0,
+     "dd": 893.75,
+     "trades": 225,
+     "signals": 240
+    },
+    "2014": {
+     "net": -633.5,
+     "dd": 676.25,
+     "trades": 106,
+     "signals": 235
+    },
+    "2015": {
+     "net": -953.5,
+     "dd": 960.25,
+     "trades": 233,
+     "signals": 242
+    },
+    "2016": {
+     "net": -649.0,
+     "dd": 665.75,
+     "trades": 235,
+     "signals": 243
+    },
+    "2017": {
+     "net": -992.0,
+     "dd": 1014.75,
+     "trades": 235,
+     "signals": 241
+    },
+    "2018": {
+     "net": -751.0,
+     "dd": 1940.75,
+     "trades": 236,
+     "signals": 240
+    },
+    "2019": {
+     "net": -927.5,
+     "dd": 1299.25,
+     "trades": 239,
+     "signals": 240
+    },
+    "2020": {
+     "net": -908.0,
+     "dd": 1515.25,
+     "trades": 199,
+     "signals": 239
+    },
+    "2021": {
+     "net": -1975.5,
+     "dd": 1975.5,
+     "trades": 109,
+     "signals": 243
+    },
+    "2022": {
+     "net": 613.5,
+     "dd": 539.75,
+     "trades": 135,
+     "signals": 242
+    },
+    "2023": {
+     "net": -1940.0,
+     "dd": 1940.0,
+     "trades": 128,
+     "signals": 240
+    }
+   }
+  },
+  "MNQ/12": {
+   "total": -2112.5,
+   "pos_years": 3,
+   "worst_dd": 1177.75,
+   "trades": 895,
+   "per_trade": -2.36,
+   "years": {
+    "2013": {
+     "net": -229.0,
+     "dd": 229.0,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -310.5,
+     "dd": 312.25,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -276.0,
+     "dd": 276.0,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -128.5,
+     "dd": 132.75,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -142.5,
+     "dd": 146.25,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": -359.0,
+     "dd": 795.75,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -390.0,
+     "dd": 484.75,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": 394.5,
+     "dd": 291.25,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": 43.0,
+     "dd": 257.75,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": 288.0,
+     "dd": 276.25,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": -1002.5,
+     "dd": 1177.75,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/13": {
+   "total": -2758.5,
+   "pos_years": 2,
+   "worst_dd": 1802.25,
+   "trades": 895,
+   "per_trade": -3.08,
+   "years": {
+    "2013": {
+     "net": -395.0,
+     "dd": 395.0,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -100.0,
+     "dd": 204.25,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -339.5,
+     "dd": 339.5,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -205.5,
+     "dd": 282.25,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -114.0,
+     "dd": 120.25,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": -169.5,
+     "dd": 1233.25,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -545.5,
+     "dd": 678.75,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": 225.5,
+     "dd": 749.25,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": -381.0,
+     "dd": 770.25,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": 900.0,
+     "dd": 219.25,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": -1634.0,
+     "dd": 1802.25,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/14": {
+   "total": -2156.5,
+   "pos_years": 3,
+   "worst_dd": 1177.75,
+   "trades": 895,
+   "per_trade": -2.41,
+   "years": {
+    "2013": {
+     "net": -221.5,
+     "dd": 221.5,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -313.0,
+     "dd": 314.75,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -284.0,
+     "dd": 284.0,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -132.0,
+     "dd": 136.25,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -165.5,
+     "dd": 169.25,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": -359.0,
+     "dd": 795.75,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -390.0,
+     "dd": 484.75,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": 341.0,
+     "dd": 301.25,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": 43.0,
+     "dd": 257.75,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": 327.0,
+     "dd": 276.25,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": -1002.5,
+     "dd": 1177.75,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  },
+  "MNQ/15": {
+   "total": -3543.0,
+   "pos_years": 2,
+   "worst_dd": 1846.75,
+   "trades": 895,
+   "per_trade": -3.96,
+   "years": {
+    "2013": {
+     "net": -445.5,
+     "dd": 445.5,
+     "trades": 94,
+     "signals": 97
+    },
+    "2014": {
+     "net": -116.0,
+     "dd": 242.75,
+     "trades": 85,
+     "signals": 86
+    },
+    "2015": {
+     "net": -359.5,
+     "dd": 359.5,
+     "trades": 100,
+     "signals": 101
+    },
+    "2016": {
+     "net": -195.5,
+     "dd": 264.75,
+     "trades": 113,
+     "signals": 114
+    },
+    "2017": {
+     "net": -159.5,
+     "dd": 165.75,
+     "trades": 75,
+     "signals": 75
+    },
+    "2018": {
+     "net": -294.5,
+     "dd": 1276.25,
+     "trades": 90,
+     "signals": 91
+    },
+    "2019": {
+     "net": -540.0,
+     "dd": 673.25,
+     "trades": 80,
+     "signals": 80
+    },
+    "2020": {
+     "net": 79.5,
+     "dd": 809.75,
+     "trades": 85,
+     "signals": 101
+    },
+    "2021": {
+     "net": -399.0,
+     "dd": 777.25,
+     "trades": 73,
+     "signals": 82
+    },
+    "2022": {
+     "net": 705.0,
+     "dd": 219.25,
+     "trades": 39,
+     "signals": 74
+    },
+    "2023": {
+     "net": -1818.0,
+     "dd": 1846.75,
+     "trades": 61,
+     "signals": 65
+    }
+   }
+  }
+ },
+ "verdict": {
+  "MES/0": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/1": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/2": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/3": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/4": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/5": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/6": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/7": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/8": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/9": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/10": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/11": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/12": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/13": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MES/14": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MES/15": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/0": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/1": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/2": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/3": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/4": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/5": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/6": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/7": {
+   "passed": false,
+   "variant": {
+    "direction": "cont",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/8": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/9": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/10": {
+   "passed": true,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/11": {
+   "passed": true,
+   "variant": {
+    "direction": "fade",
+    "k": 0.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/12": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/13": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 2.0,
+    "hold_bars": 6
+   }
+  },
+  "MNQ/14": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 3
+   }
+  },
+  "MNQ/15": {
+   "passed": false,
+   "variant": {
+    "direction": "fade",
+    "k": 1.0,
+    "target_r": 6.0,
+    "hold_bars": 6
+   }
+  }
+ },
+ "validation": {
+  "MNQ/10": {
+   "2024": {
+    "event": {
+     "net": -460.5,
+     "dd": 460.5,
+     "trades": 6,
+     "signals": 8
+    },
+    "placebo": {
+     "net": 134.0,
+     "dd": 225.75,
+     "trades": 180,
+     "signals": 241
+    }
+   },
+   "2025": {
+    "event": {
+     "net": -263.0,
+     "dd": 263.75,
+     "trades": 4,
+     "signals": 8
+    },
+    "placebo": {
+     "net": 739.5,
+     "dd": 66.25,
+     "trades": 125,
+     "signals": 239
+    }
+   }
+  },
+  "MNQ/11": {
+   "2024": {
+    "event": {
+     "net": -466.5,
+     "dd": 466.5,
+     "trades": 6,
+     "signals": 8
+    },
+    "placebo": {
+     "net": -19.0,
+     "dd": 369.25,
+     "trades": 180,
+     "signals": 241
+    }
+   },
+   "2025": {
+    "event": {
+     "net": -263.0,
+     "dd": 263.75,
+     "trades": 4,
+     "signals": 8
+    },
+    "placebo": {
+     "net": 244.5,
+     "dd": 224.75,
+     "trades": 125,
+     "signals": 239
+    }
+   }
+  }
+ }
+}
