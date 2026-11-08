@@ -40,7 +40,7 @@ COMPLETION_GRACE = timedelta(minutes=2)
 WARMUP_BARS = 400  # 15-minute bars kept before the paper start for indicator warm-up
 INITIAL_BALANCE = 50000.0
 FUNDED_DRAWDOWN = 2000.0
-ENGINE_FILES = ("mass_research.py", "mass_execution.py", "mass_features.py", "mass_metrics.py",
+ENGINE_FILES = ("mass_research.py", "mass_execution.py", "mass_features.py", "mass_metrics.py", "mass_configurations.py",
                 "mass_verify.py", "training_5m_v2_policy.py")
 YAHOO_SYMBOLS = {"MES": "MES=F", "MNQ": "MNQ=F"}
 
