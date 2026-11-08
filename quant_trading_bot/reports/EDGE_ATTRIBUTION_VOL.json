@@ -1,0 +1,782 @@
+{
+ "vol_terciles": {
+  "MES": {
+   "cut_points": [
+    0.101,
+    0.156
+   ],
+   "sessions_by_decade_and_terc": {
+    "2010-19|high": 49,
+    "2010-19|low": 72,
+    "2010-19|mid": 50,
+    "2020-23|high": 61,
+    "2020-23|low": 43,
+    "2020-23|mid": 153
+   }
+  },
+  "MNQ": {
+   "cut_points": [
+    0.128,
+    0.19
+   ],
+   "sessions_by_decade_and_terc": {
+    "2010-19|high": 60,
+    "2010-19|low": 63,
+    "2010-19|mid": 48,
+    "2020-23|high": 88,
+    "2020-23|low": 9,
+    "2020-23|mid": 160
+   }
+  }
+ },
+ "MES_MOM_3c": {
+  "total": {
+   "net": 7110,
+   "trades": 406,
+   "per_trade": 17.5,
+   "win": 0.43
+  },
+  "by_decade_terc": {
+   "2010-19|high": {
+    "net": -250,
+    "trades": 56,
+    "per_trade": -4.5,
+    "win": 0.43
+   },
+   "2010-19|low": {
+    "net": -842,
+    "trades": 102,
+    "per_trade": -8.3,
+    "win": 0.32
+   },
+   "2010-19|mid": {
+    "net": -60,
+    "trades": 86,
+    "per_trade": -0.7,
+    "win": 0.4
+   },
+   "2020-23|high": {
+    "net": 6488,
+    "trades": 74,
+    "per_trade": 87.7,
+    "win": 0.53
+   },
+   "2020-23|low": {
+    "net": 1004,
+    "trades": 25,
+    "per_trade": 40.1,
+    "win": 0.6
+   },
+   "2020-23|mid": {
+    "net": 771,
+    "trades": 63,
+    "per_trade": 12.2,
+    "win": 0.44
+   }
+  },
+  "by_terc": {
+   "high": {
+    "net": 6238,
+    "trades": 130,
+    "per_trade": 48.0,
+    "win": 0.48
+   },
+   "low": {
+    "net": 161,
+    "trades": 127,
+    "per_trade": 1.3,
+    "win": 0.38
+   },
+   "mid": {
+    "net": 711,
+    "trades": 149,
+    "per_trade": 4.8,
+    "win": 0.42
+   }
+  },
+  "by_side": {
+   "-1": {
+    "net": 6427,
+    "trades": 123,
+    "per_trade": 52.3,
+    "win": 0.46
+   },
+   "1": {
+    "net": 683,
+    "trades": 283,
+    "per_trade": 2.4,
+    "win": 0.41
+   }
+  },
+  "by_reason": {
+   "flat_session_end": {
+    "net": 12035,
+    "trades": 207,
+    "per_trade": 58.1,
+    "win": 0.63
+   },
+   "stop": {
+    "net": -15538,
+    "trades": 171,
+    "per_trade": -90.9,
+    "win": 0.09
+   },
+   "target": {
+    "net": 10614,
+    "trades": 28,
+    "per_trade": 379.1,
+    "win": 1.0
+   }
+  },
+  "by_year": {
+   "2010": 132,
+   "2011": -223,
+   "2012": -282,
+   "2013": -426,
+   "2014": 179,
+   "2015": -335,
+   "2016": 201,
+   "2017": -504,
+   "2018": 877,
+   "2019": -771,
+   "2020": -538,
+   "2021": 574,
+   "2022": 7265,
+   "2023": 960
+  },
+  "concentration": {
+   "top5_sessions_share_of_gross_wins": 0.163,
+   "top5pct_trades_share_of_net": 1.54,
+   "gross_wins": 26973,
+   "gross_losses": -19863,
+   "fees": 1474
+  }
+ },
+ "MNQ_BRK_E_2c": {
+  "total": {
+   "net": 9075,
+   "trades": 616,
+   "per_trade": 14.7,
+   "win": 0.44
+  },
+  "by_decade_terc": {
+   "2010-19|high": {
+    "net": -1523,
+    "trades": 77,
+    "per_trade": -19.8,
+    "win": 0.35
+   },
+   "2010-19|low": {
+    "net": 175,
+    "trades": 204,
+    "per_trade": 0.9,
+    "win": 0.41
+   },
+   "2010-19|mid": {
+    "net": -548,
+    "trades": 167,
+    "per_trade": -3.3,
+    "win": 0.41
+   },
+   "2020-23|high": {
+    "net": 5741,
+    "trades": 88,
+    "per_trade": 65.2,
+    "win": 0.53
+   },
+   "2020-23|low": {
+    "net": 451,
+    "trades": 28,
+    "per_trade": 16.1,
+    "win": 0.46
+   },
+   "2020-23|mid": {
+    "net": 4930,
+    "trades": 47,
+    "per_trade": 104.9,
+    "win": 0.6
+   }
+  },
+  "by_terc": {
+   "high": {
+    "net": 4218,
+    "trades": 165,
+    "per_trade": 25.6,
+    "win": 0.45
+   },
+   "low": {
+    "net": 626,
+    "trades": 232,
+    "per_trade": 2.7,
+    "win": 0.42
+   },
+   "mid": {
+    "net": 4381,
+    "trades": 214,
+    "per_trade": 20.5,
+    "win": 0.45
+   }
+  },
+  "by_side": {
+   "-1": {
+    "net": 4097,
+    "trades": 363,
+    "per_trade": 11.3,
+    "win": 0.39
+   },
+   "1": {
+    "net": 4978,
+    "trades": 253,
+    "per_trade": 19.7,
+    "win": 0.5
+   }
+  },
+  "by_reason": {
+   "flat_session_end": {
+    "net": 10397,
+    "trades": 278,
+    "per_trade": 37.4,
+    "win": 0.63
+   },
+   "stop": {
+    "net": -18655,
+    "trades": 254,
+    "per_trade": -73.4,
+    "win": 0.03
+   },
+   "target": {
+    "net": 17333,
+    "trades": 84,
+    "per_trade": 206.3,
+    "win": 1.0
+   }
+  },
+  "by_year": {
+   "2010": -262,
+   "2011": -346,
+   "2012": -59,
+   "2013": -456,
+   "2014": 272,
+   "2015": 34,
+   "2016": -310,
+   "2017": 49,
+   "2018": -843,
+   "2019": -126,
+   "2020": 1641,
+   "2021": 3594,
+   "2022": 4074,
+   "2023": 1813
+  },
+  "concentration": {
+   "top5_sessions_share_of_gross_wins": 0.097,
+   "top5pct_trades_share_of_net": 1.4,
+   "gross_wins": 30903,
+   "gross_losses": -21828,
+   "fees": 1477
+  }
+ },
+ "MNQ_TRD8_1c": {
+  "total": {
+   "net": 4084,
+   "trades": 514,
+   "per_trade": 7.9,
+   "win": 0.48
+  },
+  "by_decade_terc": {
+   "2010-19|high": {
+    "net": 2,
+    "trades": 61,
+    "per_trade": 0.0,
+    "win": 0.43
+   },
+   "2010-19|low": {
+    "net": 31,
+    "trades": 192,
+    "per_trade": 0.2,
+    "win": 0.44
+   },
+   "2010-19|mid": {
+    "net": 467,
+    "trades": 130,
+    "per_trade": 3.6,
+    "win": 0.53
+   },
+   "2020-23|high": {
+    "net": 1589,
+    "trades": 55,
+    "per_trade": 28.9,
+    "win": 0.55
+   },
+   "2020-23|low": {
+    "net": 820,
+    "trades": 23,
+    "per_trade": 35.7,
+    "win": 0.57
+   },
+   "2020-23|mid": {
+    "net": 1189,
+    "trades": 51,
+    "per_trade": 23.3,
+    "win": 0.49
+   }
+  },
+  "by_terc": {
+   "high": {
+    "net": 1590,
+    "trades": 116,
+    "per_trade": 13.7,
+    "win": 0.48
+   },
+   "low": {
+    "net": 852,
+    "trades": 215,
+    "per_trade": 4.0,
+    "win": 0.45
+   },
+   "mid": {
+    "net": 1656,
+    "trades": 181,
+    "per_trade": 9.1,
+    "win": 0.52
+   }
+  },
+  "by_side": {
+   "-1": {
+    "net": 1923,
+    "trades": 261,
+    "per_trade": 7.4,
+    "win": 0.44
+   },
+   "1": {
+    "net": 2161,
+    "trades": 253,
+    "per_trade": 8.5,
+    "win": 0.52
+   }
+  },
+  "by_reason": {
+   "flat_session_end": {
+    "net": 4260,
+    "trades": 309,
+    "per_trade": 13.8,
+    "win": 0.6
+   },
+   "stop": {
+    "net": -6607,
+    "trades": 142,
+    "per_trade": -46.5,
+    "win": 0.0
+   },
+   "target": {
+    "net": 6431,
+    "trades": 63,
+    "per_trade": 102.1,
+    "win": 1.0
+   }
+  },
+  "by_year": {
+   "2010": -60,
+   "2011": 71,
+   "2012": -125,
+   "2013": 21,
+   "2014": -33,
+   "2015": 65,
+   "2016": 199,
+   "2017": -92,
+   "2018": 538,
+   "2019": -98,
+   "2020": 395,
+   "2021": 1580,
+   "2022": 960,
+   "2023": 663
+  },
+  "concentration": {
+   "top5_sessions_share_of_gross_wins": 0.121,
+   "top5pct_trades_share_of_net": 1.19,
+   "gross_wins": 12733,
+   "gross_losses": -8650,
+   "fees": 627
+  }
+ },
+ "AG_MNQ_Trend_1c": {
+  "total": {
+   "net": 6957,
+   "trades": 576,
+   "per_trade": 12.1,
+   "win": 0.48
+  },
+  "by_decade_terc": {
+   "2010-19|high": {
+    "net": 236,
+    "trades": 57,
+    "per_trade": 4.1,
+    "win": 0.49
+   },
+   "2010-19|low": {
+    "net": 580,
+    "trades": 234,
+    "per_trade": 2.5,
+    "win": 0.43
+   },
+   "2010-19|mid": {
+    "net": -26,
+    "trades": 137,
+    "per_trade": -0.2,
+    "win": 0.47
+   },
+   "2020-23|high": {
+    "net": 3335,
+    "trades": 66,
+    "per_trade": 50.5,
+    "win": 0.61
+   },
+   "2020-23|low": {
+    "net": 367,
+    "trades": 30,
+    "per_trade": 12.2,
+    "win": 0.47
+   },
+   "2020-23|mid": {
+    "net": 2515,
+    "trades": 49,
+    "per_trade": 51.3,
+    "win": 0.63
+   }
+  },
+  "by_terc": {
+   "high": {
+    "net": 3571,
+    "trades": 123,
+    "per_trade": 29.0,
+    "win": 0.55
+   },
+   "low": {
+    "net": 947,
+    "trades": 264,
+    "per_trade": 3.6,
+    "win": 0.44
+   },
+   "mid": {
+    "net": 2489,
+    "trades": 186,
+    "per_trade": 13.4,
+    "win": 0.52
+   }
+  },
+  "by_side": {
+   "-1": {
+    "net": 3355,
+    "trades": 337,
+    "per_trade": 10.0,
+    "win": 0.42
+   },
+   "1": {
+    "net": 3602,
+    "trades": 239,
+    "per_trade": 15.1,
+    "win": 0.58
+   }
+  },
+  "by_reason": {
+   "flat_session_end": {
+    "net": 186,
+    "trades": 23,
+    "per_trade": 8.1,
+    "win": 0.57
+   },
+   "hold_timeout": {
+    "net": 6020,
+    "trades": 244,
+    "per_trade": 24.7,
+    "win": 0.72
+   },
+   "stop": {
+    "net": -8857,
+    "trades": 218,
+    "per_trade": -40.6,
+    "win": 0.0
+   },
+   "target": {
+    "net": 9608,
+    "trades": 91,
+    "per_trade": 105.6,
+    "win": 1.0
+   }
+  },
+  "by_year": {
+   "2010": -82,
+   "2011": 17,
+   "2012": -58,
+   "2013": -158,
+   "2014": -20,
+   "2015": -158,
+   "2016": 213,
+   "2017": 224,
+   "2018": 544,
+   "2019": 217,
+   "2020": 433,
+   "2021": 2459,
+   "2022": 2051,
+   "2023": 1274
+  },
+  "concentration": {
+   "top5_sessions_share_of_gross_wins": 0.107,
+   "top5pct_trades_share_of_net": 0.92,
+   "gross_wins": 16853,
+   "gross_losses": -9896,
+   "fees": 703
+  }
+ },
+ "AG_MNQ_MornBrk_1c": {
+  "total": {
+   "net": 4317,
+   "trades": 536,
+   "per_trade": 8.1,
+   "win": 0.42
+  },
+  "by_decade_terc": {
+   "2010-19|high": {
+    "net": -809,
+    "trades": 63,
+    "per_trade": -12.8,
+    "win": 0.32
+   },
+   "2010-19|low": {
+    "net": -37,
+    "trades": 184,
+    "per_trade": -0.2,
+    "win": 0.39
+   },
+   "2010-19|mid": {
+    "net": -329,
+    "trades": 148,
+    "per_trade": -2.2,
+    "win": 0.39
+   },
+   "2020-23|high": {
+    "net": 3127,
+    "trades": 71,
+    "per_trade": 44.0,
+    "win": 0.56
+   },
+   "2020-23|low": {
+    "net": -11,
+    "trades": 26,
+    "per_trade": -0.4,
+    "win": 0.38
+   },
+   "2020-23|mid": {
+    "net": 2430,
+    "trades": 40,
+    "per_trade": 60.8,
+    "win": 0.62
+   }
+  },
+  "by_terc": {
+   "high": {
+    "net": 2319,
+    "trades": 134,
+    "per_trade": 17.3,
+    "win": 0.45
+   },
+   "low": {
+    "net": -48,
+    "trades": 210,
+    "per_trade": -0.2,
+    "win": 0.39
+   },
+   "mid": {
+    "net": 2101,
+    "trades": 188,
+    "per_trade": 11.2,
+    "win": 0.44
+   }
+  },
+  "by_side": {
+   "-1": {
+    "net": 1838,
+    "trades": 311,
+    "per_trade": 5.9,
+    "win": 0.36
+   },
+   "1": {
+    "net": 2479,
+    "trades": 225,
+    "per_trade": 11.0,
+    "win": 0.51
+   }
+  },
+  "by_reason": {
+   "flat_session_end": {
+    "net": 4804,
+    "trades": 230,
+    "per_trade": 20.9,
+    "win": 0.65
+   },
+   "stop": {
+    "net": -8418,
+    "trades": 231,
+    "per_trade": -36.4,
+    "win": 0.0
+   },
+   "target": {
+    "net": 7930,
+    "trades": 75,
+    "per_trade": 105.7,
+    "win": 1.0
+   }
+  },
+  "by_year": {
+   "2010": -85,
+   "2011": -99,
+   "2012": -69,
+   "2013": -200,
+   "2014": 45,
+   "2015": 51,
+   "2016": -134,
+   "2017": -73,
+   "2018": -339,
+   "2019": -327,
+   "2020": 943,
+   "2021": 1447,
+   "2022": 2112,
+   "2023": 1044
+  },
+  "concentration": {
+   "top5_sessions_share_of_gross_wins": 0.119,
+   "top5pct_trades_share_of_net": 1.35,
+   "gross_wins": 13743,
+   "gross_losses": -9427,
+   "fees": 654
+  }
+ },
+ "AG_MES_Mom_1c": {
+  "total": {
+   "net": 2304,
+   "trades": 232,
+   "per_trade": 9.9,
+   "win": 0.46
+  },
+  "by_decade_terc": {
+   "2010-19|high": {
+    "net": 141,
+    "trades": 26,
+    "per_trade": 5.4,
+    "win": 0.46
+   },
+   "2010-19|low": {
+    "net": -76,
+    "trades": 76,
+    "per_trade": -1.0,
+    "win": 0.39
+   },
+   "2010-19|mid": {
+    "net": 30,
+    "trades": 30,
+    "per_trade": 1.0,
+    "win": 0.43
+   },
+   "2020-23|high": {
+    "net": 1383,
+    "trades": 44,
+    "per_trade": 31.4,
+    "win": 0.5
+   },
+   "2020-23|low": {
+    "net": 530,
+    "trades": 26,
+    "per_trade": 20.4,
+    "win": 0.54
+   },
+   "2020-23|mid": {
+    "net": 328,
+    "trades": 29,
+    "per_trade": 11.3,
+    "win": 0.52
+   }
+  },
+  "by_terc": {
+   "high": {
+    "net": 1523,
+    "trades": 70,
+    "per_trade": 21.8,
+    "win": 0.49
+   },
+   "low": {
+    "net": 453,
+    "trades": 102,
+    "per_trade": 4.4,
+    "win": 0.43
+   },
+   "mid": {
+    "net": 358,
+    "trades": 59,
+    "per_trade": 6.1,
+    "win": 0.47
+   }
+  },
+  "by_side": {
+   "-1": {
+    "net": 1088,
+    "trades": 110,
+    "per_trade": 9.9,
+    "win": 0.41
+   },
+   "1": {
+    "net": 1216,
+    "trades": 122,
+    "per_trade": 10.0,
+    "win": 0.5
+   }
+  },
+  "by_reason": {
+   "flat_session_end": {
+    "net": 865,
+    "trades": 34,
+    "per_trade": 25.4,
+    "win": 0.79
+   },
+   "hold_timeout": {
+    "net": 1471,
+    "trades": 32,
+    "per_trade": 46.0,
+    "win": 0.84
+   },
+   "stop": {
+    "net": -4494,
+    "trades": 114,
+    "per_trade": -39.4,
+    "win": 0.0
+   },
+   "target": {
+    "net": 4463,
+    "trades": 52,
+    "per_trade": 85.8,
+    "win": 1.0
+   }
+  },
+  "by_year": {
+   "2010": 5,
+   "2011": -46,
+   "2012": -21,
+   "2013": -53,
+   "2014": -45,
+   "2015": 78,
+   "2016": -48,
+   "2017": -172,
+   "2018": 467,
+   "2019": -101,
+   "2020": 158,
+   "2021": 517,
+   "2022": 1416,
+   "2023": 150
+  },
+  "concentration": {
+   "top5_sessions_share_of_gross_wins": 0.217,
+   "top5pct_trades_share_of_net": 0.92,
+   "gross_wins": 6957,
+   "gross_losses": -4652,
+   "fees": 283
+  }
+ }
+}
