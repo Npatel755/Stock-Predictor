@@ -1,0 +1,4893 @@
+{
+ "registered": "2026-11-08",
+ "years": [
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019
+ ],
+ "sleeves": {
+  "strict/MES_MOM_3c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "trades": 9,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -38.25,
+      "trades": 4,
+      "r": -0.09,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": -237.75,
+      "trades": 28,
+      "r": -0.53,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": -361.5,
+      "trades": 18,
+      "r": -0.8,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 196.5,
+      "trades": 27,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": -440.25,
+      "trades": 28,
+      "r": -0.98,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 77.25,
+      "trades": 28,
+      "r": 0.17,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": -465.75,
+      "trades": 29,
+      "r": -1.03,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 897.0,
+      "trades": 31,
+      "r": 1.99,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -577.5,
+      "trades": 30,
+      "r": -1.28,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -812.25,
+    "years_positive": 4,
+    "r_per_year": -0.18,
+    "trades_per_year": 23.2
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 200.74,
+      "trades": 9,
+      "r": 0.45,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -0.92,
+      "trades": 4,
+      "r": -0.0,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": -9.06,
+      "trades": 28,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": -334.6,
+      "trades": 18,
+      "r": -0.74,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 229.87,
+      "trades": 27,
+      "r": 0.51,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": -409.31,
+      "trades": 28,
+      "r": -0.91,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 107.5,
+      "trades": 28,
+      "r": 0.24,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": -443.37,
+      "trades": 29,
+      "r": -0.99,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 912.18,
+      "trades": 31,
+      "r": 2.03,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -567.66,
+      "trades": 30,
+      "r": -1.26,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -314.63,
+    "years_positive": 4,
+    "r_per_year": -0.07,
+    "trades_per_year": 23.2
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 360.0,
+      "trades": 9,
+      "r": 0.8,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": 33.75,
+      "trades": 4,
+      "r": 0.07,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": 202.5,
+      "trades": 28,
+      "r": 0.45,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": 82.5,
+      "trades": 18,
+      "r": 0.18,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 637.5,
+      "trades": 27,
+      "r": 1.42,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": 18.75,
+      "trades": 28,
+      "r": 0.04,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 491.25,
+      "trades": 29,
+      "r": 1.09,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": 266.25,
+      "trades": 30,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 1458.75,
+      "trades": 31,
+      "r": 3.24,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -90.0,
+      "trades": 30,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 3461.25,
+    "years_positive": 9,
+    "r_per_year": 0.77,
+    "trades_per_year": 23.4
+   }
+  },
+  "strict/MNQ_BRK_E_2c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "trades": 10,
+      "r": -0.28,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 139.0,
+      "trades": 24,
+      "r": 0.46,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -240.0,
+      "trades": 24,
+      "r": -0.8,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -192.0,
+      "trades": 25,
+      "r": -0.64,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 233.0,
+      "trades": 31,
+      "r": 0.78,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 75.0,
+      "trades": 40,
+      "r": 0.25,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 61.0,
+      "trades": 52,
+      "r": 0.2,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": -87.0,
+      "trades": 44,
+      "r": -0.29,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -521.0,
+      "trades": 44,
+      "r": -1.74,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -996.0,
+      "trades": 38,
+      "r": -3.32,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -1612.0,
+    "years_positive": 4,
+    "r_per_year": -0.54,
+    "trades_per_year": 33.2
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -48.72,
+      "trades": 10,
+      "r": -0.16,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 211.36,
+      "trades": 24,
+      "r": 0.7,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -163.21,
+      "trades": 24,
+      "r": -0.54,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -117.47,
+      "trades": 25,
+      "r": -0.39,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 516.88,
+      "trades": 30,
+      "r": 1.72,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 176.84,
+      "trades": 40,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 196.74,
+      "trades": 52,
+      "r": 0.66,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 10.67,
+      "trades": 44,
+      "r": 0.04,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -492.09,
+      "trades": 44,
+      "r": -1.64,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -976.34,
+      "trades": 38,
+      "r": -3.25,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -685.34,
+    "years_positive": 5,
+    "r_per_year": -0.23,
+    "trades_per_year": 33.1
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -26.0,
+      "trades": 10,
+      "r": -0.09,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 270.0,
+      "trades": 24,
+      "r": 0.9,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -112.0,
+      "trades": 24,
+      "r": -0.37,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -61.0,
+      "trades": 25,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 585.0,
+      "trades": 30,
+      "r": 1.95,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 375.0,
+      "trades": 40,
+      "r": 1.25,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 317.0,
+      "trades": 52,
+      "r": 1.06,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 117.0,
+      "trades": 44,
+      "r": 0.39,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -307.0,
+      "trades": 44,
+      "r": -1.02,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -805.0,
+      "trades": 38,
+      "r": -2.68,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": 353.0,
+    "years_positive": 5,
+    "r_per_year": 0.12,
+    "trades_per_year": 33.1
+   }
+  },
+  "strict/MES_MOM_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "trades": 9,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -12.75,
+      "trades": 4,
+      "r": -0.09,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": -79.25,
+      "trades": 28,
+      "r": -0.53,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": -120.5,
+      "trades": 18,
+      "r": -0.8,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 65.5,
+      "trades": 27,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": -146.75,
+      "trades": 28,
+      "r": -0.98,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 25.75,
+      "trades": 28,
+      "r": 0.17,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": -155.25,
+      "trades": 29,
+      "r": -1.03,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 299.0,
+      "trades": 31,
+      "r": 1.99,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -192.5,
+      "trades": 30,
+      "r": -1.28,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -270.75,
+    "years_positive": 4,
+    "r_per_year": -0.18,
+    "trades_per_year": 23.2
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 66.91,
+      "trades": 9,
+      "r": 0.45,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -0.31,
+      "trades": 4,
+      "r": -0.0,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": -3.02,
+      "trades": 28,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": -54.03,
+      "trades": 18,
+      "r": -0.36,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 136.62,
+      "trades": 27,
+      "r": 0.91,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": -72.69,
+      "trades": 28,
+      "r": -0.48,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 86.44,
+      "trades": 29,
+      "r": 0.58,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": -147.79,
+      "trades": 29,
+      "r": -0.99,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 304.06,
+      "trades": 31,
+      "r": 2.03,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -189.22,
+      "trades": 30,
+      "r": -1.26,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 126.97,
+    "years_positive": 4,
+    "r_per_year": 0.09,
+    "trades_per_year": 23.3
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 120.0,
+      "trades": 9,
+      "r": 0.8,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": 11.25,
+      "trades": 4,
+      "r": 0.07,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": 67.5,
+      "trades": 28,
+      "r": 0.45,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": 27.5,
+      "trades": 18,
+      "r": 0.18,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 212.5,
+      "trades": 27,
+      "r": 1.42,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": 6.25,
+      "trades": 28,
+      "r": 0.04,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 163.75,
+      "trades": 29,
+      "r": 1.09,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": 88.75,
+      "trades": 30,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 486.25,
+      "trades": 31,
+      "r": 3.24,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -30.0,
+      "trades": 30,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 1153.75,
+    "years_positive": 9,
+    "r_per_year": 0.77,
+    "trades_per_year": 23.4
+   }
+  },
+  "strict/MNQ_VOL_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "trades": 25,
+      "r": -1.11,
+      "lock": "market_data_gap",
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -514.5,
+      "trades": 283,
+      "r": -3.43,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -992.0,
+      "trades": 307,
+      "r": -6.61,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -456.5,
+      "trades": 291,
+      "r": -3.04,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": -512.0,
+      "trades": 294,
+      "r": -3.41,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": -1163.5,
+      "trades": 345,
+      "r": -7.76,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": -492.0,
+      "trades": 41,
+      "r": -3.28,
+      "lock": "market_data_gap",
+      "factor": 0.435
+     },
+     "2017": {
+      "net": -889.0,
+      "trades": 347,
+      "r": -5.93,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -86.5,
+      "trades": 365,
+      "r": -0.58,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": 429.0,
+      "trades": 360,
+      "r": 2.86,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -4844.0,
+    "years_positive": 1,
+    "r_per_year": -3.23,
+    "trades_per_year": 265.8
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -124.47,
+      "trades": 24,
+      "r": -0.83,
+      "lock": "market_data_gap",
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -40.01,
+      "trades": 282,
+      "r": -0.27,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -495.31,
+      "trades": 306,
+      "r": -3.3,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": 33.35,
+      "trades": 289,
+      "r": 0.22,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": -34.52,
+      "trades": 293,
+      "r": -0.23,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": -479.75,
+      "trades": 339,
+      "r": -3.2,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": -434.84,
+      "trades": 41,
+      "r": -2.9,
+      "lock": "market_data_gap",
+      "factor": 0.435
+     },
+     "2017": {
+      "net": -396.91,
+      "trades": 345,
+      "r": -2.65,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 33.41,
+      "trades": 365,
+      "r": 0.22,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": 522.14,
+      "trades": 360,
+      "r": 3.48,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -1416.91,
+    "years_positive": 3,
+    "r_per_year": -0.95,
+    "trades_per_year": 264.4
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -99.5,
+      "trades": 24,
+      "r": -0.66,
+      "lock": "market_data_gap",
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 403.5,
+      "trades": 276,
+      "r": 2.69,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -36.5,
+      "trades": 302,
+      "r": -0.24,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": 448.5,
+      "trades": 285,
+      "r": 2.99,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 442.5,
+      "trades": 288,
+      "r": 2.95,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 0.5,
+      "trades": 335,
+      "r": 0.0,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": -383.0,
+      "trades": 41,
+      "r": -2.55,
+      "lock": "market_data_gap",
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 151.5,
+      "trades": 342,
+      "r": 1.01,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 988.5,
+      "trades": 362,
+      "r": 6.59,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": 1607.5,
+      "trades": 355,
+      "r": 10.72,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": 3523.5,
+    "years_positive": 7,
+    "r_per_year": 2.35,
+    "trades_per_year": 261.0
+   }
+  },
+  "strict/MNQ_E57_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "trades": 12,
+      "r": -0.34,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -48.0,
+      "trades": 30,
+      "r": -0.32,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -108.5,
+      "trades": 41,
+      "r": -0.72,
+      "lock": "market_data_gap",
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -81.0,
+      "trades": 27,
+      "r": -0.54,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 107.0,
+      "trades": 38,
+      "r": 0.71,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 16.5,
+      "trades": 47,
+      "r": 0.11,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 220.5,
+      "trades": 48,
+      "r": 1.47,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 236.5,
+      "trades": 48,
+      "r": 1.58,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 251.0,
+      "trades": 47,
+      "r": 1.67,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -681.0,
+      "trades": 55,
+      "r": -4.54,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -138.0,
+    "years_positive": 5,
+    "r_per_year": -0.09,
+    "trades_per_year": 39.3
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -29.73,
+      "trades": 12,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -0.65,
+      "trades": 30,
+      "r": -0.0,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -43.43,
+      "trades": 41,
+      "r": -0.29,
+      "lock": "market_data_gap",
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -24.03,
+      "trades": 26,
+      "r": -0.16,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 160.99,
+      "trades": 38,
+      "r": 1.07,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 99.58,
+      "trades": 49,
+      "r": 0.66,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 280.61,
+      "trades": 48,
+      "r": 1.87,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 292.09,
+      "trades": 48,
+      "r": 1.95,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 266.44,
+      "trades": 47,
+      "r": 1.78,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -666.77,
+      "trades": 55,
+      "r": -4.45,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": 335.1,
+    "years_positive": 5,
+    "r_per_year": 0.22,
+    "trades_per_year": 39.4
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -18.5,
+      "trades": 12,
+      "r": -0.12,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 30.0,
+      "trades": 30,
+      "r": 0.2,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -2.5,
+      "trades": 41,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.254
+     },
+     "2013": {
+      "net": 4.5,
+      "trades": 26,
+      "r": 0.03,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 205.0,
+      "trades": 38,
+      "r": 1.37,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 155.0,
+      "trades": 49,
+      "r": 1.03,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 335.0,
+      "trades": 48,
+      "r": 2.23,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 359.0,
+      "trades": 48,
+      "r": 2.39,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 393.5,
+      "trades": 47,
+      "r": 2.62,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -519.5,
+      "trades": 54,
+      "r": -3.46,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": 941.5,
+    "years_positive": 7,
+    "r_per_year": 0.63,
+    "trades_per_year": 39.3
+   }
+  },
+  "strict/MES_MOM_2c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "trades": 9,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -25.5,
+      "trades": 4,
+      "r": -0.09,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": -158.5,
+      "trades": 28,
+      "r": -0.53,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": -241.0,
+      "trades": 18,
+      "r": -0.8,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 131.0,
+      "trades": 27,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": -293.5,
+      "trades": 28,
+      "r": -0.98,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 51.5,
+      "trades": 28,
+      "r": 0.17,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": -310.5,
+      "trades": 29,
+      "r": -1.03,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 598.0,
+      "trades": 31,
+      "r": 1.99,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -385.0,
+      "trades": 30,
+      "r": -1.28,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -541.5,
+    "years_positive": 4,
+    "r_per_year": -0.18,
+    "trades_per_year": 23.2
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 133.83,
+      "trades": 9,
+      "r": 0.45,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -0.62,
+      "trades": 4,
+      "r": -0.0,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": -6.04,
+      "trades": 28,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": -108.07,
+      "trades": 18,
+      "r": -0.36,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 153.24,
+      "trades": 27,
+      "r": 0.51,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": -272.87,
+      "trades": 28,
+      "r": -0.91,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 71.67,
+      "trades": 28,
+      "r": 0.24,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": -295.58,
+      "trades": 29,
+      "r": -0.99,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 608.12,
+      "trades": 31,
+      "r": 2.03,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -378.44,
+      "trades": 30,
+      "r": -1.26,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -94.76,
+    "years_positive": 4,
+    "r_per_year": -0.03,
+    "trades_per_year": 23.2
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 240.0,
+      "trades": 9,
+      "r": 0.8,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": 22.5,
+      "trades": 4,
+      "r": 0.07,
+      "lock": "market_data_gap",
+      "factor": 0.389
+     },
+     "2012": {
+      "net": 135.0,
+      "trades": 28,
+      "r": 0.45,
+      "lock": "market_data_gap",
+      "factor": 0.42
+     },
+     "2013": {
+      "net": 55.0,
+      "trades": 18,
+      "r": 0.18,
+      "lock": null,
+      "factor": 0.502
+     },
+     "2014": {
+      "net": 425.0,
+      "trades": 27,
+      "r": 1.42,
+      "lock": null,
+      "factor": 0.588
+     },
+     "2015": {
+      "net": 12.5,
+      "trades": 28,
+      "r": 0.04,
+      "lock": null,
+      "factor": 0.632
+     },
+     "2016": {
+      "net": 327.5,
+      "trades": 29,
+      "r": 1.09,
+      "lock": null,
+      "factor": 0.64
+     },
+     "2017": {
+      "net": 177.5,
+      "trades": 30,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 972.5,
+      "trades": 31,
+      "r": 3.24,
+      "lock": null,
+      "factor": 0.837
+     },
+     "2019": {
+      "net": -60.0,
+      "trades": 30,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 2307.5,
+    "years_positive": 9,
+    "r_per_year": 0.77,
+    "trades_per_year": 23.4
+   }
+  },
+  "strict/MNQ_BRK_E_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "trades": 10,
+      "r": -0.28,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 69.5,
+      "trades": 24,
+      "r": 0.46,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -120.0,
+      "trades": 24,
+      "r": -0.8,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -96.0,
+      "trades": 25,
+      "r": -0.64,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 116.5,
+      "trades": 31,
+      "r": 0.78,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 37.5,
+      "trades": 40,
+      "r": 0.25,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 30.5,
+      "trades": 52,
+      "r": 0.2,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": -43.5,
+      "trades": 44,
+      "r": -0.29,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -260.5,
+      "trades": 44,
+      "r": -1.74,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -498.0,
+      "trades": 38,
+      "r": -3.32,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -806.0,
+    "years_positive": 4,
+    "r_per_year": -0.54,
+    "trades_per_year": 33.2
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -24.36,
+      "trades": 10,
+      "r": -0.16,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 105.68,
+      "trades": 24,
+      "r": 0.7,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -81.6,
+      "trades": 24,
+      "r": -0.54,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -58.74,
+      "trades": 25,
+      "r": -0.39,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 258.44,
+      "trades": 30,
+      "r": 1.72,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 88.42,
+      "trades": 40,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 98.37,
+      "trades": 52,
+      "r": 0.66,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 5.33,
+      "trades": 44,
+      "r": 0.04,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -246.05,
+      "trades": 44,
+      "r": -1.64,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -488.17,
+      "trades": 38,
+      "r": -3.25,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -342.68,
+    "years_positive": 5,
+    "r_per_year": -0.23,
+    "trades_per_year": 33.1
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -13.0,
+      "trades": 10,
+      "r": -0.09,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": 135.0,
+      "trades": 24,
+      "r": 0.9,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": -56.0,
+      "trades": 24,
+      "r": -0.37,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": -30.5,
+      "trades": 25,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 292.5,
+      "trades": 30,
+      "r": 1.95,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": 187.5,
+      "trades": 40,
+      "r": 1.25,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 158.5,
+      "trades": 52,
+      "r": 1.06,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 58.5,
+      "trades": 44,
+      "r": 0.39,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": -153.5,
+      "trades": 44,
+      "r": -1.02,
+      "lock": null,
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -402.5,
+      "trades": 38,
+      "r": -2.68,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": 176.5,
+    "years_positive": 5,
+    "r_per_year": 0.12,
+    "trades_per_year": 33.1
+   }
+  },
+  "strict/MNQ_HYB_C_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "trades": 1,
+      "r": 0.03,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -104.5,
+      "trades": 18,
+      "r": -0.7,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": 35.0,
+      "trades": 28,
+      "r": 0.23,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": 35.5,
+      "trades": 11,
+      "r": 0.24,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 4.5,
+      "trades": 28,
+      "r": 0.03,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": -288.5,
+      "trades": 38,
+      "r": -1.92,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 26.5,
+      "trades": 53,
+      "r": 0.18,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 131.5,
+      "trades": 41,
+      "r": 0.88,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 141.0,
+      "trades": 33,
+      "r": 0.94,
+      "lock": "market_data_gap",
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -370.5,
+      "trades": 74,
+      "r": -2.47,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -385.5,
+    "years_positive": 7,
+    "r_per_year": -0.26,
+    "trades_per_year": 32.5
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 5.81,
+      "trades": 1,
+      "r": 0.04,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -73.99,
+      "trades": 18,
+      "r": -0.49,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": 81.88,
+      "trades": 28,
+      "r": 0.55,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": 54.32,
+      "trades": 11,
+      "r": 0.36,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 47.18,
+      "trades": 28,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": -226.23,
+      "trades": 38,
+      "r": -1.51,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 106.44,
+      "trades": 53,
+      "r": 0.71,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 198.02,
+      "trades": 41,
+      "r": 1.32,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 151.84,
+      "trades": 33,
+      "r": 1.01,
+      "lock": "market_data_gap",
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -351.35,
+      "trades": 74,
+      "r": -2.34,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": -6.08,
+    "years_positive": 7,
+    "r_per_year": -0.0,
+    "trades_per_year": 32.5
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 7.0,
+      "trades": 1,
+      "r": 0.05,
+      "lock": null,
+      "factor": 0.186
+     },
+     "2011": {
+      "net": -49.0,
+      "trades": 18,
+      "r": -0.33,
+      "lock": null,
+      "factor": 0.222
+     },
+     "2012": {
+      "net": 115.0,
+      "trades": 28,
+      "r": 0.77,
+      "lock": null,
+      "factor": 0.254
+     },
+     "2013": {
+      "net": 68.5,
+      "trades": 11,
+      "r": 0.46,
+      "lock": null,
+      "factor": 0.289
+     },
+     "2014": {
+      "net": 82.5,
+      "trades": 28,
+      "r": 0.55,
+      "lock": null,
+      "factor": 0.369
+     },
+     "2015": {
+      "net": -172.0,
+      "trades": 38,
+      "r": -1.15,
+      "lock": null,
+      "factor": 0.427
+     },
+     "2016": {
+      "net": 190.5,
+      "trades": 53,
+      "r": 1.27,
+      "lock": null,
+      "factor": 0.435
+     },
+     "2017": {
+      "net": 261.0,
+      "trades": 41,
+      "r": 1.74,
+      "lock": null,
+      "factor": 0.561
+     },
+     "2018": {
+      "net": 235.0,
+      "trades": 33,
+      "r": 1.57,
+      "lock": "market_data_gap",
+      "factor": 0.671
+     },
+     "2019": {
+      "net": -156.5,
+      "trades": 74,
+      "r": -1.04,
+      "lock": null,
+      "factor": 0.741
+     }
+    },
+    "total": 582.0,
+    "years_positive": 7,
+    "r_per_year": 0.39,
+    "trades_per_year": 32.5
+   }
+  },
+  "lenient/MES_MOM_3c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "trades": 9,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -45.75,
+      "trades": 4,
+      "r": -0.1,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": -218.25,
+      "trades": 29,
+      "r": -0.48,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": -413.25,
+      "trades": 19,
+      "r": -0.92,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 196.5,
+      "trades": 27,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": -315.0,
+      "trades": 30,
+      "r": -0.7,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 221.25,
+      "trades": 30,
+      "r": 0.49,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": -483.75,
+      "trades": 30,
+      "r": -1.07,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 897.0,
+      "trades": 31,
+      "r": 1.99,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -577.5,
+      "trades": 30,
+      "r": -1.28,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -600.75,
+    "years_positive": 4,
+    "r_per_year": -0.13,
+    "trades_per_year": 23.9
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 200.73,
+      "trades": 9,
+      "r": 0.45,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -8.43,
+      "trades": 4,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": 15.88,
+      "trades": 29,
+      "r": 0.04,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": -384.9,
+      "trades": 19,
+      "r": -0.86,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 229.73,
+      "trades": 27,
+      "r": 0.51,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": -281.95,
+      "trades": 30,
+      "r": -0.63,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 253.56,
+      "trades": 30,
+      "r": 0.56,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": -460.65,
+      "trades": 30,
+      "r": -1.02,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 912.1,
+      "trades": 31,
+      "r": 2.03,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -567.71,
+      "trades": 30,
+      "r": -1.26,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -91.64,
+    "years_positive": 5,
+    "r_per_year": -0.02,
+    "trades_per_year": 23.9
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 360.0,
+      "trades": 9,
+      "r": 0.8,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": 26.25,
+      "trades": 4,
+      "r": 0.06,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": 236.25,
+      "trades": 29,
+      "r": 0.53,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": 48.75,
+      "trades": 19,
+      "r": 0.11,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 637.5,
+      "trades": 27,
+      "r": 1.42,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": 187.5,
+      "trades": 30,
+      "r": 0.42,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 705.0,
+      "trades": 31,
+      "r": 1.57,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": 266.25,
+      "trades": 31,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 1458.75,
+      "trades": 31,
+      "r": 3.24,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -90.0,
+      "trades": 30,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 3836.25,
+    "years_positive": 9,
+    "r_per_year": 0.85,
+    "trades_per_year": 24.1
+   }
+  },
+  "lenient/MNQ_BRK_E_2c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -181.0,
+      "trades": 32,
+      "r": -0.6,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -266.5,
+      "trades": 43,
+      "r": -0.89,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 22.0,
+      "trades": 40,
+      "r": 0.07,
+      "lock": null,
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -324.0,
+      "trades": 57,
+      "r": -1.08,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 370.0,
+      "trades": 48,
+      "r": 1.23,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 118.0,
+      "trades": 44,
+      "r": 0.39,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -188.0,
+      "trades": 66,
+      "r": -0.63,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 153.0,
+      "trades": 54,
+      "r": 0.51,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -434.0,
+      "trades": 45,
+      "r": -1.45,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -996.0,
+      "trades": 38,
+      "r": -3.32,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -1726.5,
+    "years_positive": 4,
+    "r_per_year": -0.58,
+    "trades_per_year": 46.7
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -76.13,
+      "trades": 32,
+      "r": -0.25,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -140.0,
+      "trades": 43,
+      "r": -0.47,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 241.53,
+      "trades": 40,
+      "r": 0.81,
+      "lock": null,
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -75.65,
+      "trades": 56,
+      "r": -0.25,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 697.22,
+      "trades": 47,
+      "r": 2.32,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 231.15,
+      "trades": 44,
+      "r": 0.77,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -19.02,
+      "trades": 66,
+      "r": -0.06,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 269.31,
+      "trades": 54,
+      "r": 0.9,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -404.78,
+      "trades": 45,
+      "r": -1.35,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -976.66,
+      "trades": 38,
+      "r": -3.26,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -253.03,
+    "years_positive": 4,
+    "r_per_year": -0.08,
+    "trades_per_year": 46.5
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -9.0,
+      "trades": 32,
+      "r": -0.03,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -46.5,
+      "trades": 43,
+      "r": -0.15,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 368.0,
+      "trades": 40,
+      "r": 1.23,
+      "lock": null,
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 44.0,
+      "trades": 57,
+      "r": 0.15,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 802.0,
+      "trades": 47,
+      "r": 2.67,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 440.0,
+      "trades": 44,
+      "r": 1.47,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 132.0,
+      "trades": 66,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 399.0,
+      "trades": 54,
+      "r": 1.33,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -214.0,
+      "trades": 45,
+      "r": -0.71,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -805.0,
+      "trades": 38,
+      "r": -2.68,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": 1110.5,
+    "years_positive": 6,
+    "r_per_year": 0.37,
+    "trades_per_year": 46.6
+   }
+  },
+  "lenient/MES_MOM_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "trades": 9,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -15.25,
+      "trades": 4,
+      "r": -0.1,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": -72.75,
+      "trades": 29,
+      "r": -0.48,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": -137.75,
+      "trades": 19,
+      "r": -0.92,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 65.5,
+      "trades": 27,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": -105.0,
+      "trades": 30,
+      "r": -0.7,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 73.75,
+      "trades": 30,
+      "r": 0.49,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": -161.25,
+      "trades": 30,
+      "r": -1.07,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 299.0,
+      "trades": 31,
+      "r": 1.99,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -192.5,
+      "trades": 30,
+      "r": -1.28,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -200.25,
+    "years_positive": 4,
+    "r_per_year": -0.13,
+    "trades_per_year": 23.9
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 66.91,
+      "trades": 9,
+      "r": 0.45,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -2.81,
+      "trades": 4,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": 5.29,
+      "trades": 29,
+      "r": 0.04,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": -68.3,
+      "trades": 19,
+      "r": -0.46,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 136.58,
+      "trades": 27,
+      "r": 0.91,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": -26.48,
+      "trades": 30,
+      "r": -0.18,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 138.88,
+      "trades": 31,
+      "r": 0.93,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": -153.55,
+      "trades": 30,
+      "r": -1.02,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 304.03,
+      "trades": 31,
+      "r": 2.03,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -189.24,
+      "trades": 30,
+      "r": -1.26,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 211.31,
+    "years_positive": 5,
+    "r_per_year": 0.14,
+    "trades_per_year": 24.0
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 120.0,
+      "trades": 9,
+      "r": 0.8,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": 8.75,
+      "trades": 4,
+      "r": 0.06,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": 78.75,
+      "trades": 29,
+      "r": 0.53,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": 16.25,
+      "trades": 19,
+      "r": 0.11,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 212.5,
+      "trades": 27,
+      "r": 1.42,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": 62.5,
+      "trades": 30,
+      "r": 0.42,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 235.0,
+      "trades": 31,
+      "r": 1.57,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": 88.75,
+      "trades": 31,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 486.25,
+      "trades": 31,
+      "r": 3.24,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -30.0,
+      "trades": 30,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 1278.75,
+    "years_positive": 9,
+    "r_per_year": 0.85,
+    "trades_per_year": 24.1
+   }
+  },
+  "lenient/MNQ_VOL_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -143.5,
+      "trades": 31,
+      "r": -0.96,
+      "lock": "market_data_gap",
+      "factor": 0.189
+     },
+     "2011": {
+      "net": 48.0,
+      "trades": 14,
+      "r": 0.32,
+      "lock": "market_data_gap",
+      "factor": 0.224
+     },
+     "2012": {
+      "net": -68.0,
+      "trades": 13,
+      "r": -0.45,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -731.0,
+      "trades": 392,
+      "r": -4.87,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": -844.5,
+      "trades": 375,
+      "r": -5.63,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": -1022.5,
+      "trades": 382,
+      "r": -6.82,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -866.0,
+      "trades": 386,
+      "r": -5.77,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": -747.5,
+      "trades": 378,
+      "r": -4.98,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -6.5,
+      "trades": 366,
+      "r": -0.04,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": 428.5,
+      "trades": 360,
+      "r": 2.86,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -3953.0,
+    "years_positive": 2,
+    "r_per_year": -2.63,
+    "trades_per_year": 269.7
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -98.68,
+      "trades": 30,
+      "r": -0.66,
+      "lock": "market_data_gap",
+      "factor": 0.189
+     },
+     "2011": {
+      "net": 78.09,
+      "trades": 13,
+      "r": 0.52,
+      "lock": "market_data_gap",
+      "factor": 0.224
+     },
+     "2012": {
+      "net": -47.33,
+      "trades": 13,
+      "r": -0.32,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -128.83,
+      "trades": 387,
+      "r": -0.86,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": -290.15,
+      "trades": 372,
+      "r": -1.93,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": -303.74,
+      "trades": 376,
+      "r": -2.02,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -278.36,
+      "trades": 383,
+      "r": -1.86,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": -232.8,
+      "trades": 376,
+      "r": -1.55,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 112.32,
+      "trades": 366,
+      "r": 0.75,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": 520.13,
+      "trades": 360,
+      "r": 3.47,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -669.35,
+    "years_positive": 3,
+    "r_per_year": -0.45,
+    "trades_per_year": 267.6
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -68.5,
+      "trades": 30,
+      "r": -0.46,
+      "lock": "market_data_gap",
+      "factor": 0.189
+     },
+     "2011": {
+      "net": 92.5,
+      "trades": 13,
+      "r": 0.62,
+      "lock": "market_data_gap",
+      "factor": 0.224
+     },
+     "2012": {
+      "net": -33.0,
+      "trades": 13,
+      "r": -0.22,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 408.0,
+      "trades": 380,
+      "r": 2.72,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 305.5,
+      "trades": 364,
+      "r": 2.04,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 257.0,
+      "trades": 370,
+      "r": 1.71,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 204.0,
+      "trades": 380,
+      "r": 1.36,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 303.5,
+      "trades": 373,
+      "r": 2.02,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 1070.5,
+      "trades": 363,
+      "r": 7.14,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": 1607.0,
+      "trades": 355,
+      "r": 10.71,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": 4146.5,
+    "years_positive": 8,
+    "r_per_year": 2.76,
+    "trades_per_year": 264.1
+   }
+  },
+  "lenient/MNQ_E57_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -94.5,
+      "trades": 17,
+      "r": -0.63,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -72.5,
+      "trades": 36,
+      "r": -0.48,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": -99.5,
+      "trades": 47,
+      "r": -0.66,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 12.0,
+      "trades": 39,
+      "r": 0.08,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 199.0,
+      "trades": 49,
+      "r": 1.33,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 71.5,
+      "trades": 53,
+      "r": 0.48,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 144.0,
+      "trades": 51,
+      "r": 0.96,
+      "lock": "market_data_gap",
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 174.5,
+      "trades": 59,
+      "r": 1.16,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 251.0,
+      "trades": 47,
+      "r": 1.67,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -681.0,
+      "trades": 55,
+      "r": -4.54,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -95.5,
+    "years_positive": 6,
+    "r_per_year": -0.06,
+    "trades_per_year": 45.3
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -65.72,
+      "trades": 17,
+      "r": -0.44,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -17.05,
+      "trades": 36,
+      "r": -0.11,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": -27.03,
+      "trades": 47,
+      "r": -0.18,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 83.63,
+      "trades": 39,
+      "r": 0.56,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 268.74,
+      "trades": 48,
+      "r": 1.79,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 160.34,
+      "trades": 55,
+      "r": 1.07,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 206.58,
+      "trades": 51,
+      "r": 1.38,
+      "lock": "market_data_gap",
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 288.34,
+      "trades": 59,
+      "r": 1.92,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 266.26,
+      "trades": 47,
+      "r": 1.78,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -667.0,
+      "trades": 55,
+      "r": -4.45,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": 497.09,
+    "years_positive": 6,
+    "r_per_year": 0.33,
+    "trades_per_year": 45.4
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -50.0,
+      "trades": 17,
+      "r": -0.33,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": 7.0,
+      "trades": 4,
+      "r": 0.05,
+      "lock": "market_data_gap",
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 18.5,
+      "trades": 47,
+      "r": 0.12,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 123.0,
+      "trades": 39,
+      "r": 0.82,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 336.5,
+      "trades": 48,
+      "r": 2.24,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 217.5,
+      "trades": 56,
+      "r": 1.45,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 263.0,
+      "trades": 51,
+      "r": 1.75,
+      "lock": "market_data_gap",
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 386.5,
+      "trades": 59,
+      "r": 2.58,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 393.5,
+      "trades": 47,
+      "r": 2.62,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -519.5,
+      "trades": 54,
+      "r": -3.46,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": 1176.0,
+    "years_positive": 8,
+    "r_per_year": 0.78,
+    "trades_per_year": 42.2
+   }
+  },
+  "lenient/MES_MOM_2c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "trades": 9,
+      "r": 0.31,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -30.5,
+      "trades": 4,
+      "r": -0.1,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": -145.5,
+      "trades": 29,
+      "r": -0.48,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": -275.5,
+      "trades": 19,
+      "r": -0.92,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 131.0,
+      "trades": 27,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": -210.0,
+      "trades": 30,
+      "r": -0.7,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 147.5,
+      "trades": 30,
+      "r": 0.49,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": -322.5,
+      "trades": 30,
+      "r": -1.07,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 598.0,
+      "trades": 31,
+      "r": 1.99,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -385.0,
+      "trades": 30,
+      "r": -1.28,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": -400.5,
+    "years_positive": 4,
+    "r_per_year": -0.13,
+    "trades_per_year": 23.9
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 133.82,
+      "trades": 9,
+      "r": 0.45,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": -5.62,
+      "trades": 4,
+      "r": -0.02,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": 10.59,
+      "trades": 29,
+      "r": 0.04,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": -136.6,
+      "trades": 19,
+      "r": -0.46,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 153.15,
+      "trades": 27,
+      "r": 0.51,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": -187.97,
+      "trades": 30,
+      "r": -0.63,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 169.04,
+      "trades": 30,
+      "r": 0.56,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": -307.1,
+      "trades": 30,
+      "r": -1.02,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 608.06,
+      "trades": 31,
+      "r": 2.03,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -378.48,
+      "trades": 30,
+      "r": -1.26,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 58.89,
+    "years_positive": 5,
+    "r_per_year": 0.02,
+    "trades_per_year": 23.9
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 240.0,
+      "trades": 9,
+      "r": 0.8,
+      "lock": null,
+      "factor": 0.343
+     },
+     "2011": {
+      "net": 17.5,
+      "trades": 4,
+      "r": 0.06,
+      "lock": "market_data_gap",
+      "factor": 0.39
+     },
+     "2012": {
+      "net": 157.5,
+      "trades": 29,
+      "r": 0.53,
+      "lock": "market_data_gap",
+      "factor": 0.421
+     },
+     "2013": {
+      "net": 32.5,
+      "trades": 19,
+      "r": 0.11,
+      "lock": null,
+      "factor": 0.503
+     },
+     "2014": {
+      "net": 425.0,
+      "trades": 27,
+      "r": 1.42,
+      "lock": null,
+      "factor": 0.59
+     },
+     "2015": {
+      "net": 125.0,
+      "trades": 30,
+      "r": 0.42,
+      "lock": null,
+      "factor": 0.633
+     },
+     "2016": {
+      "net": 470.0,
+      "trades": 31,
+      "r": 1.57,
+      "lock": null,
+      "factor": 0.641
+     },
+     "2017": {
+      "net": 177.5,
+      "trades": 31,
+      "r": 0.59,
+      "lock": null,
+      "factor": 0.743
+     },
+     "2018": {
+      "net": 972.5,
+      "trades": 31,
+      "r": 3.24,
+      "lock": null,
+      "factor": 0.838
+     },
+     "2019": {
+      "net": -60.0,
+      "trades": 30,
+      "r": -0.2,
+      "lock": null,
+      "factor": 0.891
+     }
+    },
+    "total": 2557.5,
+    "years_positive": 9,
+    "r_per_year": 0.85,
+    "trades_per_year": 24.1
+   }
+  },
+  "lenient/MNQ_BRK_E_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -90.5,
+      "trades": 32,
+      "r": -0.6,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -136.0,
+      "trades": 43,
+      "r": -0.91,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 11.0,
+      "trades": 40,
+      "r": 0.07,
+      "lock": null,
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -162.0,
+      "trades": 57,
+      "r": -1.08,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 185.0,
+      "trades": 48,
+      "r": 1.23,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 59.0,
+      "trades": 44,
+      "r": 0.39,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -94.0,
+      "trades": 66,
+      "r": -0.63,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 76.5,
+      "trades": 54,
+      "r": 0.51,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -217.0,
+      "trades": 45,
+      "r": -1.45,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -498.0,
+      "trades": 38,
+      "r": -3.32,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -866.0,
+    "years_positive": 4,
+    "r_per_year": -0.58,
+    "trades_per_year": 46.7
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -38.06,
+      "trades": 32,
+      "r": -0.25,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -72.11,
+      "trades": 43,
+      "r": -0.48,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 120.76,
+      "trades": 40,
+      "r": 0.81,
+      "lock": null,
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -37.83,
+      "trades": 56,
+      "r": -0.25,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 348.61,
+      "trades": 47,
+      "r": 2.32,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 115.57,
+      "trades": 44,
+      "r": 0.77,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -9.51,
+      "trades": 66,
+      "r": -0.06,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 134.65,
+      "trades": 54,
+      "r": 0.9,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -202.39,
+      "trades": 45,
+      "r": -1.35,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -488.33,
+      "trades": 38,
+      "r": -3.26,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -128.64,
+    "years_positive": 4,
+    "r_per_year": -0.08,
+    "trades_per_year": 46.5
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": -4.5,
+      "trades": 32,
+      "r": -0.03,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -25.0,
+      "trades": 43,
+      "r": -0.17,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 184.0,
+      "trades": 40,
+      "r": 1.23,
+      "lock": null,
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 22.0,
+      "trades": 57,
+      "r": 0.15,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 401.0,
+      "trades": 47,
+      "r": 2.67,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": 220.0,
+      "trades": 44,
+      "r": 1.47,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 66.0,
+      "trades": 66,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 199.5,
+      "trades": 54,
+      "r": 1.33,
+      "lock": null,
+      "factor": 0.562
+     },
+     "2018": {
+      "net": -107.0,
+      "trades": 45,
+      "r": -0.71,
+      "lock": null,
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -402.5,
+      "trades": 38,
+      "r": -2.68,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": 553.5,
+    "years_positive": 6,
+    "r_per_year": 0.37,
+    "trades_per_year": 46.6
+   }
+  },
+  "lenient/MNQ_HYB_C_1c": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -32.5,
+      "trades": 33,
+      "r": -0.22,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -251.5,
+      "trades": 85,
+      "r": -1.68,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": -42.5,
+      "trades": 75,
+      "r": -0.28,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -132.0,
+      "trades": 68,
+      "r": -0.88,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": -102.0,
+      "trades": 82,
+      "r": -0.68,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": -343.5,
+      "trades": 74,
+      "r": -2.29,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": -29.5,
+      "trades": 64,
+      "r": -0.2,
+      "lock": "market_data_gap",
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 181.0,
+      "trades": 35,
+      "r": 1.21,
+      "lock": "market_data_gap",
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 189.5,
+      "trades": 38,
+      "r": 1.26,
+      "lock": "market_data_gap",
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -373.0,
+      "trades": 75,
+      "r": -2.49,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -936.0,
+    "years_positive": 2,
+    "r_per_year": -0.62,
+    "trades_per_year": 62.9
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 28.75,
+      "trades": 33,
+      "r": 0.19,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": -100.5,
+      "trades": 85,
+      "r": -0.67,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 84.81,
+      "trades": 75,
+      "r": 0.57,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": -20.83,
+      "trades": 68,
+      "r": -0.14,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 25.16,
+      "trades": 82,
+      "r": 0.17,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": -227.83,
+      "trades": 74,
+      "r": -1.52,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 66.87,
+      "trades": 64,
+      "r": 0.45,
+      "lock": "market_data_gap",
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 229.83,
+      "trades": 35,
+      "r": 1.53,
+      "lock": "market_data_gap",
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 201.84,
+      "trades": 38,
+      "r": 1.35,
+      "lock": "market_data_gap",
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -353.91,
+      "trades": 75,
+      "r": -2.36,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": -65.81,
+    "years_positive": 6,
+    "r_per_year": -0.04,
+    "trades_per_year": 62.9
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 66.0,
+      "trades": 33,
+      "r": 0.44,
+      "lock": null,
+      "factor": 0.189
+     },
+     "2011": {
+      "net": 3.5,
+      "trades": 85,
+      "r": 0.02,
+      "lock": null,
+      "factor": 0.224
+     },
+     "2012": {
+      "net": 175.5,
+      "trades": 75,
+      "r": 1.17,
+      "lock": "market_data_gap",
+      "factor": 0.256
+     },
+     "2013": {
+      "net": 62.0,
+      "trades": 68,
+      "r": 0.41,
+      "lock": null,
+      "factor": 0.292
+     },
+     "2014": {
+      "net": 150.5,
+      "trades": 82,
+      "r": 1.0,
+      "lock": null,
+      "factor": 0.37
+     },
+     "2015": {
+      "net": -125.0,
+      "trades": 74,
+      "r": -0.83,
+      "lock": null,
+      "factor": 0.43
+     },
+     "2016": {
+      "net": 166.5,
+      "trades": 64,
+      "r": 1.11,
+      "lock": "market_data_gap",
+      "factor": 0.44
+     },
+     "2017": {
+      "net": 283.0,
+      "trades": 35,
+      "r": 1.89,
+      "lock": "market_data_gap",
+      "factor": 0.562
+     },
+     "2018": {
+      "net": 298.5,
+      "trades": 38,
+      "r": 1.99,
+      "lock": "market_data_gap",
+      "factor": 0.675
+     },
+     "2019": {
+      "net": -156.0,
+      "trades": 75,
+      "r": -1.04,
+      "lock": null,
+      "factor": 0.745
+     }
+    },
+    "total": 924.5,
+    "years_positive": 8,
+    "r_per_year": 0.62,
+    "trades_per_year": 62.9
+   }
+  }
+ },
+ "ensembles": {
+  "strict/portfolio_e": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 54.0,
+      "intrabar_dd": 203.75,
+      "breach": false
+     },
+     "2011": {
+      "net": 100.75,
+      "intrabar_dd": 277.0,
+      "breach": false
+     },
+     "2012": {
+      "net": -477.75,
+      "intrabar_dd": 649.5,
+      "breach": false
+     },
+     "2013": {
+      "net": -553.5,
+      "intrabar_dd": 603.75,
+      "breach": false
+     },
+     "2014": {
+      "net": 429.5,
+      "intrabar_dd": 449.5,
+      "breach": false
+     },
+     "2015": {
+      "net": -365.25,
+      "intrabar_dd": 852.75,
+      "breach": false
+     },
+     "2016": {
+      "net": 138.25,
+      "intrabar_dd": 711.5,
+      "breach": false
+     },
+     "2017": {
+      "net": -552.75,
+      "intrabar_dd": 966.75,
+      "breach": false
+     },
+     "2018": {
+      "net": 376.0,
+      "intrabar_dd": 1347.75,
+      "breach": false
+     },
+     "2019": {
+      "net": -1573.5,
+      "intrabar_dd": 1893.25,
+      "breach": false
+     }
+    },
+    "total": -2424.25,
+    "years_positive": 5,
+    "breach_years": 0,
+    "worst_dd": 1893.25
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 152.02,
+      "intrabar_dd": 185.57,
+      "breach": false
+     },
+     "2011": {
+      "net": 210.44,
+      "intrabar_dd": 250.71,
+      "breach": false
+     },
+     "2012": {
+      "net": -172.26,
+      "intrabar_dd": 421.33,
+      "breach": false
+     },
+     "2013": {
+      "net": -452.08,
+      "intrabar_dd": 538.26,
+      "breach": false
+     },
+     "2014": {
+      "net": 746.75,
+      "intrabar_dd": 416.47,
+      "breach": false
+     },
+     "2015": {
+      "net": -232.47,
+      "intrabar_dd": 809.05,
+      "breach": false
+     },
+     "2016": {
+      "net": 304.24,
+      "intrabar_dd": 658.33,
+      "breach": false
+     },
+     "2017": {
+      "net": -432.71,
+      "intrabar_dd": 850.35,
+      "breach": false
+     },
+     "2018": {
+      "net": 420.09,
+      "intrabar_dd": 1320.54,
+      "breach": false
+     },
+     "2019": {
+      "net": -1544.0,
+      "intrabar_dd": 1872.12,
+      "breach": false
+     }
+    },
+    "total": -999.98,
+    "years_positive": 5,
+    "breach_years": 0,
+    "worst_dd": 1872.12
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 334.0,
+      "intrabar_dd": 172.25,
+      "breach": false
+     },
+     "2011": {
+      "net": 303.75,
+      "intrabar_dd": 224.0,
+      "breach": false
+     },
+     "2012": {
+      "net": 90.5,
+      "intrabar_dd": 267.75,
+      "breach": false
+     },
+     "2013": {
+      "net": 21.5,
+      "intrabar_dd": 278.5,
+      "breach": false
+     },
+     "2014": {
+      "net": 1222.5,
+      "intrabar_dd": 341.25,
+      "breach": false
+     },
+     "2015": {
+      "net": 393.75,
+      "intrabar_dd": 580.75,
+      "breach": false
+     },
+     "2016": {
+      "net": 808.25,
+      "intrabar_dd": 601.25,
+      "breach": false
+     },
+     "2017": {
+      "net": 383.25,
+      "intrabar_dd": 447.0,
+      "breach": false
+     },
+     "2018": {
+      "net": 1151.75,
+      "intrabar_dd": 1018.25,
+      "breach": false
+     },
+     "2019": {
+      "net": -895.0,
+      "intrabar_dd": 1392.25,
+      "breach": false
+     }
+    },
+    "total": 3814.25,
+    "years_positive": 9,
+    "breach_years": 0,
+    "worst_dd": 1392.25
+   }
+  },
+  "strict/ensemble_epsilon": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -172.0,
+      "intrabar_dd": 217.12,
+      "breach": false
+     },
+     "2011": {
+      "net": -575.25,
+      "intrabar_dd": 849.25,
+      "breach": false
+     },
+     "2012": {
+      "net": -1179.75,
+      "intrabar_dd": 1207.75,
+      "breach": false
+     },
+     "2013": {
+      "net": -658.0,
+      "intrabar_dd": 685.5,
+      "breach": false
+     },
+     "2014": {
+      "net": -339.5,
+      "intrabar_dd": 1022.75,
+      "breach": false
+     },
+     "2015": {
+      "net": -1293.75,
+      "intrabar_dd": 1389.75,
+      "breach": false
+     },
+     "2016": {
+      "net": -245.75,
+      "intrabar_dd": 741.88,
+      "breach": false
+     },
+     "2017": {
+      "net": -807.75,
+      "intrabar_dd": 1166.75,
+      "breach": false
+     },
+     "2018": {
+      "net": 463.5,
+      "intrabar_dd": 1265.0,
+      "breach": false
+     },
+     "2019": {
+      "net": -444.5,
+      "intrabar_dd": 2035.25,
+      "breach": true
+     }
+    },
+    "total": -5252.75,
+    "years_positive": 1,
+    "breach_years": 1,
+    "worst_dd": 2035.25
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -87.29,
+      "intrabar_dd": 167.32,
+      "breach": false
+     },
+     "2011": {
+      "net": -40.97,
+      "intrabar_dd": 674.94,
+      "breach": false
+     },
+     "2012": {
+      "net": -541.75,
+      "intrabar_dd": 686.01,
+      "breach": false
+     },
+     "2013": {
+      "net": -44.71,
+      "intrabar_dd": 398.47,
+      "breach": false
+     },
+     "2014": {
+      "net": 263.09,
+      "intrabar_dd": 487.91,
+      "breach": false
+     },
+     "2015": {
+      "net": -452.85,
+      "intrabar_dd": 656.72,
+      "breach": false
+     },
+     "2016": {
+      "net": -67.79,
+      "intrabar_dd": 693.67,
+      "breach": false
+     },
+     "2017": {
+      "net": -252.61,
+      "intrabar_dd": 895.31,
+      "breach": false
+     },
+     "2018": {
+      "net": 603.91,
+      "intrabar_dd": 1249.97,
+      "breach": false
+     },
+     "2019": {
+      "net": -333.85,
+      "intrabar_dd": 1990.52,
+      "breach": false
+     }
+    },
+    "total": -954.82,
+    "years_positive": 2,
+    "breach_years": 0,
+    "worst_dd": 1990.52
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 2.0,
+      "intrabar_dd": 137.25,
+      "breach": false
+     },
+     "2011": {
+      "net": 444.75,
+      "intrabar_dd": 426.5,
+      "breach": false
+     },
+     "2012": {
+      "net": 28.5,
+      "intrabar_dd": 348.5,
+      "breach": false
+     },
+     "2013": {
+      "net": 480.5,
+      "intrabar_dd": 242.0,
+      "breach": false
+     },
+     "2014": {
+      "net": 860.0,
+      "intrabar_dd": 224.25,
+      "breach": false
+     },
+     "2015": {
+      "net": 161.75,
+      "intrabar_dd": 427.0,
+      "breach": false
+     },
+     "2016": {
+      "net": 115.75,
+      "intrabar_dd": 652.75,
+      "breach": false
+     },
+     "2017": {
+      "net": 599.25,
+      "intrabar_dd": 661.25,
+      "breach": false
+     },
+     "2018": {
+      "net": 1868.25,
+      "intrabar_dd": 1144.25,
+      "breach": false
+     },
+     "2019": {
+      "net": 1058.0,
+      "intrabar_dd": 1441.0,
+      "breach": false
+     }
+    },
+    "total": 5618.75,
+    "years_positive": 10,
+    "breach_years": 0,
+    "worst_dd": 1441.0
+   }
+  },
+  "strict/ensemble_beta": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": 54.0,
+      "intrabar_dd": 127.88,
+      "breach": false
+     },
+     "2011": {
+      "net": -60.5,
+      "intrabar_dd": 262.0,
+      "breach": false
+     },
+     "2012": {
+      "net": -243.5,
+      "intrabar_dd": 401.12,
+      "breach": false
+     },
+     "2013": {
+      "net": -301.5,
+      "intrabar_dd": 355.62,
+      "breach": false
+     },
+     "2014": {
+      "net": 252.0,
+      "intrabar_dd": 401.25,
+      "breach": false
+     },
+     "2015": {
+      "net": -544.5,
+      "intrabar_dd": 595.38,
+      "breach": false
+     },
+     "2016": {
+      "net": 108.5,
+      "intrabar_dd": 521.88,
+      "breach": false
+     },
+     "2017": {
+      "net": -222.5,
+      "intrabar_dd": 520.75,
+      "breach": false
+     },
+     "2018": {
+      "net": 478.5,
+      "intrabar_dd": 921.38,
+      "breach": false
+     },
+     "2019": {
+      "net": -1253.5,
+      "intrabar_dd": 1461.62,
+      "breach": false
+     }
+    },
+    "total": -1733.0,
+    "years_positive": 4,
+    "breach_years": 0,
+    "worst_dd": 1461.62
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 115.28,
+      "intrabar_dd": 116.47,
+      "breach": false
+     },
+     "2011": {
+      "net": 31.07,
+      "intrabar_dd": 222.43,
+      "breach": false
+     },
+     "2012": {
+      "net": -5.76,
+      "intrabar_dd": 234.0,
+      "breach": false
+     },
+     "2013": {
+      "net": -112.49,
+      "intrabar_dd": 264.38,
+      "breach": false
+     },
+     "2014": {
+      "net": 458.86,
+      "intrabar_dd": 374.47,
+      "breach": false
+     },
+     "2015": {
+      "net": -410.68,
+      "intrabar_dd": 561.09,
+      "breach": false
+     },
+     "2016": {
+      "net": 276.47,
+      "intrabar_dd": 401.16,
+      "breach": false
+     },
+     "2017": {
+      "net": -92.23,
+      "intrabar_dd": 422.36,
+      "breach": false
+     },
+     "2018": {
+      "net": 513.92,
+      "intrabar_dd": 902.95,
+      "breach": false
+     },
+     "2019": {
+      "net": -1217.96,
+      "intrabar_dd": 1434.32,
+      "breach": false
+     }
+    },
+    "total": -443.52,
+    "years_positive": 5,
+    "breach_years": 0,
+    "worst_dd": 1434.32
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 234.0,
+      "intrabar_dd": 108.0,
+      "breach": false
+     },
+     "2011": {
+      "net": 108.5,
+      "intrabar_dd": 185.5,
+      "breach": false
+     },
+     "2012": {
+      "net": 194.0,
+      "intrabar_dd": 162.5,
+      "breach": false
+     },
+     "2013": {
+      "net": 93.0,
+      "intrabar_dd": 180.5,
+      "breach": false
+     },
+     "2014": {
+      "net": 800.0,
+      "intrabar_dd": 320.5,
+      "breach": false
+     },
+     "2015": {
+      "net": 28.0,
+      "intrabar_dd": 422.0,
+      "breach": false
+     },
+     "2016": {
+      "net": 676.5,
+      "intrabar_dd": 348.0,
+      "breach": false
+     },
+     "2017": {
+      "net": 497.0,
+      "intrabar_dd": 198.5,
+      "breach": false
+     },
+     "2018": {
+      "net": 1054.0,
+      "intrabar_dd": 655.5,
+      "breach": false
+     },
+     "2019": {
+      "net": -619.0,
+      "intrabar_dd": 1007.5,
+      "breach": false
+     }
+    },
+    "total": 3066.0,
+    "years_positive": 9,
+    "breach_years": 0,
+    "worst_dd": 1007.5
+   }
+  },
+  "lenient/portfolio_e": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -43.0,
+      "intrabar_dd": 301.75,
+      "breach": false
+     },
+     "2011": {
+      "net": -312.25,
+      "intrabar_dd": 513.0,
+      "breach": false
+     },
+     "2012": {
+      "net": -196.25,
+      "intrabar_dd": 645.0,
+      "breach": false
+     },
+     "2013": {
+      "net": -737.25,
+      "intrabar_dd": 802.25,
+      "breach": false
+     },
+     "2014": {
+      "net": 566.5,
+      "intrabar_dd": 513.5,
+      "breach": false
+     },
+     "2015": {
+      "net": -197.0,
+      "intrabar_dd": 876.5,
+      "breach": false
+     },
+     "2016": {
+      "net": 33.25,
+      "intrabar_dd": 753.0,
+      "breach": false
+     },
+     "2017": {
+      "net": -330.75,
+      "intrabar_dd": 848.75,
+      "breach": false
+     },
+     "2018": {
+      "net": 463.0,
+      "intrabar_dd": 1347.75,
+      "breach": false
+     },
+     "2019": {
+      "net": -1573.5,
+      "intrabar_dd": 1893.25,
+      "breach": false
+     }
+    },
+    "total": -2327.25,
+    "years_positive": 3,
+    "breach_years": 0,
+    "worst_dd": 1893.25
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 124.6,
+      "intrabar_dd": 273.71,
+      "breach": false
+     },
+     "2011": {
+      "net": -148.43,
+      "intrabar_dd": 464.38,
+      "breach": false
+     },
+     "2012": {
+      "net": 257.4,
+      "intrabar_dd": 373.81,
+      "breach": false
+     },
+     "2013": {
+      "net": -460.55,
+      "intrabar_dd": 581.53,
+      "breach": false
+     },
+     "2014": {
+      "net": 926.95,
+      "intrabar_dd": 478.26,
+      "breach": false
+     },
+     "2015": {
+      "net": -50.81,
+      "intrabar_dd": 825.51,
+      "breach": false
+     },
+     "2016": {
+      "net": 234.54,
+      "intrabar_dd": 658.5,
+      "breach": false
+     },
+     "2017": {
+      "net": -191.34,
+      "intrabar_dd": 748.06,
+      "breach": false
+     },
+     "2018": {
+      "net": 507.31,
+      "intrabar_dd": 1320.8,
+      "breach": false
+     },
+     "2019": {
+      "net": -1544.37,
+      "intrabar_dd": 1872.37,
+      "breach": false
+     }
+    },
+    "total": -344.7,
+    "years_positive": 5,
+    "breach_years": 0,
+    "worst_dd": 1872.37
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 351.0,
+      "intrabar_dd": 254.25,
+      "breach": false
+     },
+     "2011": {
+      "net": -20.25,
+      "intrabar_dd": 421.0,
+      "breach": false
+     },
+     "2012": {
+      "net": 604.25,
+      "intrabar_dd": 239.5,
+      "breach": false
+     },
+     "2013": {
+      "net": 92.75,
+      "intrabar_dd": 252.75,
+      "breach": false
+     },
+     "2014": {
+      "net": 1439.5,
+      "intrabar_dd": 401.25,
+      "breach": false
+     },
+     "2015": {
+      "net": 627.5,
+      "intrabar_dd": 582.5,
+      "breach": false
+     },
+     "2016": {
+      "net": 837.0,
+      "intrabar_dd": 601.25,
+      "breach": false
+     },
+     "2017": {
+      "net": 665.25,
+      "intrabar_dd": 422.75,
+      "breach": false
+     },
+     "2018": {
+      "net": 1244.75,
+      "intrabar_dd": 1018.25,
+      "breach": false
+     },
+     "2019": {
+      "net": -895.0,
+      "intrabar_dd": 1392.25,
+      "breach": false
+     }
+    },
+    "total": 4946.75,
+    "years_positive": 8,
+    "breach_years": 0,
+    "worst_dd": 1392.25
+   }
+  },
+  "lenient/ensemble_epsilon": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -192.0,
+      "intrabar_dd": 209.12,
+      "breach": false
+     },
+     "2011": {
+      "net": -39.75,
+      "intrabar_dd": 148.0,
+      "breach": false
+     },
+     "2012": {
+      "net": -240.25,
+      "intrabar_dd": 357.12,
+      "breach": false
+     },
+     "2013": {
+      "net": -856.75,
+      "intrabar_dd": 878.0,
+      "breach": false
+     },
+     "2014": {
+      "net": -580.0,
+      "intrabar_dd": 1317.5,
+      "breach": false
+     },
+     "2015": {
+      "net": -1056.0,
+      "intrabar_dd": 1182.5,
+      "breach": false
+     },
+     "2016": {
+      "net": -648.25,
+      "intrabar_dd": 1507.0,
+      "breach": false
+     },
+     "2017": {
+      "net": -734.25,
+      "intrabar_dd": 1141.0,
+      "breach": false
+     },
+     "2018": {
+      "net": 543.5,
+      "intrabar_dd": 1265.0,
+      "breach": false
+     },
+     "2019": {
+      "net": -445.0,
+      "intrabar_dd": 2035.75,
+      "breach": true
+     }
+    },
+    "total": -4248.75,
+    "years_positive": 1,
+    "breach_years": 1,
+    "worst_dd": 2035.75
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": -97.5,
+      "intrabar_dd": 155.74,
+      "breach": false
+     },
+     "2011": {
+      "net": 58.24,
+      "intrabar_dd": 114.46,
+      "breach": false
+     },
+     "2012": {
+      "net": -69.06,
+      "intrabar_dd": 216.36,
+      "breach": false
+     },
+     "2013": {
+      "net": -113.5,
+      "intrabar_dd": 339.65,
+      "breach": false
+     },
+     "2014": {
+      "net": 115.16,
+      "intrabar_dd": 682.77,
+      "breach": false
+     },
+     "2015": {
+      "net": -169.88,
+      "intrabar_dd": 537.93,
+      "breach": false
+     },
+     "2016": {
+      "net": 67.1,
+      "intrabar_dd": 889.25,
+      "breach": false
+     },
+     "2017": {
+      "net": -98.01,
+      "intrabar_dd": 952.02,
+      "breach": false
+     },
+     "2018": {
+      "net": 682.61,
+      "intrabar_dd": 1250.15,
+      "breach": false
+     },
+     "2019": {
+      "net": -336.11,
+      "intrabar_dd": 1991.73,
+      "breach": false
+     }
+    },
+    "total": 39.05,
+    "years_positive": 4,
+    "breach_years": 0,
+    "worst_dd": 1991.73
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 1.5,
+      "intrabar_dd": 126.25,
+      "breach": false
+     },
+     "2011": {
+      "net": 108.25,
+      "intrabar_dd": 39.25,
+      "breach": false
+     },
+     "2012": {
+      "net": 64.25,
+      "intrabar_dd": 124.75,
+      "breach": false
+     },
+     "2013": {
+      "net": 547.25,
+      "intrabar_dd": 225.5,
+      "breach": false
+     },
+     "2014": {
+      "net": 854.5,
+      "intrabar_dd": 323.0,
+      "breach": false
+     },
+     "2015": {
+      "net": 537.0,
+      "intrabar_dd": 375.25,
+      "breach": false
+     },
+     "2016": {
+      "net": 702.0,
+      "intrabar_dd": 751.25,
+      "breach": false
+     },
+     "2017": {
+      "net": 778.75,
+      "intrabar_dd": 759.25,
+      "breach": false
+     },
+     "2018": {
+      "net": 1950.25,
+      "intrabar_dd": 1144.25,
+      "breach": false
+     },
+     "2019": {
+      "net": 1057.5,
+      "intrabar_dd": 1441.5,
+      "breach": false
+     }
+    },
+    "total": 6601.25,
+    "years_positive": 10,
+    "breach_years": 0,
+    "worst_dd": 1441.5
+   }
+  },
+  "lenient/ensemble_beta": {
+   "today": {
+    "years": {
+     "2010": {
+      "net": -31.0,
+      "intrabar_dd": 217.75,
+      "breach": false
+     },
+     "2011": {
+      "net": -418.0,
+      "intrabar_dd": 449.75,
+      "breach": false
+     },
+     "2012": {
+      "net": -177.0,
+      "intrabar_dd": 486.25,
+      "breach": false
+     },
+     "2013": {
+      "net": -569.5,
+      "intrabar_dd": 578.75,
+      "breach": false
+     },
+     "2014": {
+      "net": 214.0,
+      "intrabar_dd": 456.25,
+      "breach": false
+     },
+     "2015": {
+      "net": -494.5,
+      "intrabar_dd": 622.25,
+      "breach": false
+     },
+     "2016": {
+      "net": 24.0,
+      "intrabar_dd": 635.88,
+      "breach": false
+     },
+     "2017": {
+      "net": -65.0,
+      "intrabar_dd": 472.25,
+      "breach": false
+     },
+     "2018": {
+      "net": 570.5,
+      "intrabar_dd": 921.38,
+      "breach": false
+     },
+     "2019": {
+      "net": -1256.0,
+      "intrabar_dd": 1461.62,
+      "breach": false
+     }
+    },
+    "total": -2202.5,
+    "years_positive": 3,
+    "breach_years": 0,
+    "worst_dd": 1461.62
+   },
+   "restated": {
+    "years": {
+     "2010": {
+      "net": 124.5,
+      "intrabar_dd": 143.14,
+      "breach": false
+     },
+     "2011": {
+      "net": -178.23,
+      "intrabar_dd": 331.28,
+      "breach": false
+     },
+     "2012": {
+      "net": 216.15,
+      "intrabar_dd": 271.08,
+      "breach": false
+     },
+     "2013": {
+      "net": -195.25,
+      "intrabar_dd": 328.95,
+      "breach": false
+     },
+     "2014": {
+      "net": 526.92,
+      "intrabar_dd": 416.97,
+      "breach": false
+     },
+     "2015": {
+      "net": -300.23,
+      "intrabar_dd": 580.89,
+      "breach": false
+     },
+     "2016": {
+      "net": 226.4,
+      "intrabar_dd": 497.13,
+      "breach": false
+     },
+     "2017": {
+      "net": 57.39,
+      "intrabar_dd": 440.48,
+      "breach": false
+     },
+     "2018": {
+      "net": 607.51,
+      "intrabar_dd": 903.13,
+      "breach": false
+     },
+     "2019": {
+      "net": -1220.72,
+      "intrabar_dd": 1434.71,
+      "breach": false
+     }
+    },
+    "total": -135.56,
+    "years_positive": 6,
+    "breach_years": 0,
+    "worst_dd": 1434.71
+   },
+   "gross": {
+    "years": {
+     "2010": {
+      "net": 301.5,
+      "intrabar_dd": 114.0,
+      "breach": false
+     },
+     "2011": {
+      "net": -4.0,
+      "intrabar_dd": 269.5,
+      "breach": false
+     },
+     "2012": {
+      "net": 517.0,
+      "intrabar_dd": 174.0,
+      "breach": false
+     },
+     "2013": {
+      "net": 116.5,
+      "intrabar_dd": 217.5,
+      "breach": false
+     },
+     "2014": {
+      "net": 976.5,
+      "intrabar_dd": 352.5,
+      "breach": false
+     },
+     "2015": {
+      "net": 220.0,
+      "intrabar_dd": 444.5,
+      "breach": false
+     },
+     "2016": {
+      "net": 702.5,
+      "intrabar_dd": 348.0,
+      "breach": false
+     },
+     "2017": {
+      "net": 660.0,
+      "intrabar_dd": 213.0,
+      "breach": false
+     },
+     "2018": {
+      "net": 1164.0,
+      "intrabar_dd": 655.5,
+      "breach": false
+     },
+     "2019": {
+      "net": -618.5,
+      "intrabar_dd": 1007.5,
+      "breach": false
+     }
+    },
+    "total": 4035.5,
+    "years_positive": 8,
+    "breach_years": 0,
+    "worst_dd": 1007.5
+   }
+  }
+ },
+ "bars": {
+  "strict/ES/2010": 12131,
+  "strict/ES/2011": 22044,
+  "strict/ES/2012": 21393,
+  "strict/ES/2013": 20605,
+  "strict/ES/2014": 19625,
+  "strict/ES/2015": 21562,
+  "strict/ES/2016": 22373,
+  "strict/ES/2017": 20765,
+  "strict/ES/2018": 22703,
+  "strict/ES/2019": 22941,
+  "strict/NQ/2010": 7499,
+  "strict/NQ/2011": 14823,
+  "strict/NQ/2012": 14450,
+  "strict/NQ/2013": 14020,
+  "strict/NQ/2014": 14377,
+  "strict/NQ/2015": 16624,
+  "strict/NQ/2016": 18149,
+  "strict/NQ/2017": 19424,
+  "strict/NQ/2018": 22828,
+  "strict/NQ/2019": 23199,
+  "lenient/ES/2010": 13675,
+  "lenient/ES/2011": 23627,
+  "lenient/ES/2012": 23493,
+  "lenient/ES/2013": 23049,
+  "lenient/ES/2014": 22789,
+  "lenient/ES/2015": 23607,
+  "lenient/ES/2016": 23379,
+  "lenient/ES/2017": 23275,
+  "lenient/ES/2018": 23442,
+  "lenient/ES/2019": 23337,
+  "lenient/NQ/2010": 13647,
+  "lenient/NQ/2011": 23593,
+  "lenient/NQ/2012": 23441,
+  "lenient/NQ/2013": 23041,
+  "lenient/NQ/2014": 22775,
+  "lenient/NQ/2015": 23592,
+  "lenient/NQ/2016": 23375,
+  "lenient/NQ/2017": 23271,
+  "lenient/NQ/2018": 23413,
+  "lenient/NQ/2019": 23336
+ }
+}
