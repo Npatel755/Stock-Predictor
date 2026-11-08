@@ -39,3 +39,6 @@
 ## 2026-11-08 mass_v2 A2 (early-close fix applied; reports/MASS_V2_*_A2.md)
 - 74 strict / 237 lenient / 23 both -> 13 distinct frozen (all MNQ trend/regime/hybrid). Validation once: 1/13 holds (v2_7f233cc729959bec, +$437/2y). All-day regime rules: +$1.6-2.6k in 2024, -$0.6-0.9k in 2025. 15-min price-rule universe closed; no counter-trend family passes (mean_reversion/vwap/opening_range: 0 on both bar rules).
 - Next: 1-minute counter-trend search (VWAP snap-back, volume exhaustion, ORB fade) to pair with the morning trend runner.
+
+## 2026-11-08 mass_1m: 1-minute counter-trend search - negative
+198,720 configs (VWAP snap-back, volume exhaustion, ORB fade, RSI extreme, Keltner fade, stretch fade; 1/3/5-min; MES+MNQ; 14 train years, micro costs, early-close fix): 0 pass G1-G3, validation never run. Fast fades lose ~one round-trip of costs per trade (3-8k trades/14y, median net -$13k to -$28k). Only MNQ ORB fade has positive nets and its profit is entirely 2020-23. Lesson: 1-5 min mean reversion on MES/MNQ is cost-bound with OHLCV+volume inputs; do not re-run finer price/volume fade grids - need order-flow data or forward evidence. Report: reports/MASS_1M_TRAINING.md.
