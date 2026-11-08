@@ -31,7 +31,10 @@ from quant_futures import ensemble_paper as ep  # noqa: E402
 
 RUN = ROOT / "runs" / "mass_v2"
 RUN.mkdir(parents=True, exist_ok=True)
-DB = RUN / "results.sqlite"
+BAR_RULE = os.environ.get("MASS_V2_BARS", "strict")  # strict = all 15 source minutes; lenient = >= 1 (amendment A1)
+SUFFIX = "" if BAR_RULE == "strict" else "_" + BAR_RULE
+DB = RUN / f"results{SUFFIX}.sqlite"
+FROZEN = RUN / f"frozen_survivors{SUFFIX}.json"
 YEARS = list(range(2010, 2024))
 MINIS = ("ES", "NQ")
 MICRO = {"ES": "MES", "NQ": "MNQ"}
@@ -77,7 +80,7 @@ def unit_key(u):
 def load_training():
     eng = ep.engine()
     for mini in MINIS:
-        bars = uy.load(mini, "2009-12-01", "2024-01-01", "strict")
+        bars = uy.load(mini, "2009-12-01", "2024-01-01", BAR_RULE)
         data = eng["arrays"](bars)
         feats = {lb: eng["features"](bars, lb) for lb in set(LOOKBACKS) | set(OPENING_LOOKBACKS)}
         local = bars.timestamp_utc.dt.tz_convert("America/New_York")
@@ -293,7 +296,7 @@ def freeze(out):
             best[key] = (cid, pl)
     ranked = sorted(best.values(), key=lambda x: (-min(x[1]["annual"]), -(x[1]["dsr"] or 0)))[:MAX_FROZEN]
     frozen = [dict(config_id=cid, **pl) for cid, pl in ranked]
-    (RUN / "frozen_survivors.json").write_text(json.dumps(dict(frozen_at=pd.Timestamp.now('UTC').isoformat(), n_g4=len(cands),
+    FROZEN.write_text(json.dumps(dict(frozen_at=pd.Timestamp.now('UTC').isoformat(), n_g4=len(cands),
                                                               n_unique=len(best), frozen=frozen), indent=1))
     print(f"frozen {len(frozen)} of {len(best)} unique G4 survivors ({len(cands)} incl. duplicates)", flush=True)
 
@@ -305,7 +308,7 @@ def phase_report():
     by_fam = pd.read_sql("SELECT instrument, family, COUNT(*) n, SUM(g123) passed, AVG(net) avg_net, AVG(years_pos) avg_years_pos, MAX(net) max_net FROM results GROUP BY 1,2", con)
     plc = pd.read_sql("SELECT * FROM placebo", con)
     pl = [json.loads(x) for x in plc.payload] if len(plc) else []
-    frozen = json.loads((RUN / "frozen_survivors.json").read_text()) if (RUN / "frozen_survivors.json").exists() else {}
+    frozen = json.loads(FROZEN.read_text()) if FROZEN.exists() else {}
     rep = dict(protocol="research/mass_v2/PROTOCOL.md", scored=total, trials_planned=N_TRIALS, g123=g123, g4=sum(p["g4"] for p in pl),
                g5=sum(p["g5"] for p in pl), by_family=by_fam.to_dict(orient="records"), frozen=frozen)
     (ROOT / "reports" / "MASS_V2_TRAINING.json").write_text(json.dumps(rep, indent=1, default=float))
@@ -328,7 +331,7 @@ def phase_report():
 
 def phase_validate():
     """Run the frozen list once on MES/MNQ 2024-2025 from the validation partition. Never loads 2026."""
-    frozen = json.loads((RUN / "frozen_survivors.json").read_text())["frozen"]
+    frozen = json.loads(FROZEN.read_text())["frozen"]
     if (RUN / "validation_done.json").exists():
         raise SystemExit("validation already run once; refusing to re-run (protocol)")
     import duckdb

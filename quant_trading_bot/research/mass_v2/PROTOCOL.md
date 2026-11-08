@@ -46,3 +46,17 @@ research/strategy_memory/events.jsonl entry. Paper promotion is a separate decis
 
 Throughput measured on the VM: load 14y strict 0.7 s, features 2.5 s per lookback, execute 14y 0.14 s per config ->
 ~7 configs/s/core, 8 cores ~ 180k configs/hour -> full universe ~7 h.
+
+## Amendment A1 (2026-11-08, registered after the strict-bar training run, BEFORE any validation run)
+Finding during training QA: the strict 15-minute bar rule (all 15 source minutes present) drops ~40% of NQ bars before
+2018 (overnight minutes missing in the Databento export) and creates 1,700-2,100 feature-segment breaks per year vs
+~500 under the lenient rule. Rolling features with lookback >= 48 are therefore NaN for most of 2010-2017 on NQ, and
+several strict-run G1-G3 passers (MNQ momentum lb64) have 0-5 trades per year before 2018 - their "10 of 14 positive
+years" is not evidence over 14 years. Fix applied uniformly to every configuration, gate unchanged:
+- The full grid is re-run under the lenient bar rule (>= 1 source minute, the same rule used as a sensitivity variant
+  in reports/UNSEEN_YEARS_2010_2019.md). Results in runs/mass_v2/results_lenient.sqlite.
+- Freeze rule becomes: a configuration is frozen for validation only if it passes G1-G4 under BOTH bar rules
+  (robustness to bar construction), dedup by fingerprint, cap 20, ranking unchanged.
+- Additional reported statistic: trades per year; configurations with fewer than 5 trades in 4 or more years are
+  labelled "sparse" in the report (not a gate, since it was not pre-registered).
+2024-2025 and 2026 data have not been loaded at the time of this amendment.
