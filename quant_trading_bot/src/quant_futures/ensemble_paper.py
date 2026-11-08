@@ -76,6 +76,13 @@ CANDIDATES = {
         provenance="user screenshot numbers reproduced with MES_MOM_1c (scripts/evaluate_multi_strategy_ensembles.py "
                    "uses MES_MOM_2c); train +14,241.00/DD 2,186.00, validation +4,052.75/1,724.75, test(2026) +4,723.50/483.50",
     ),
+    "portfolio_e_scaled": dict(
+        version="1.0.0", label="Portfolio E Scaled (2 MES momentum + 2 MNQ breakout; research-grade)",
+        sleeves=[_sleeve("MES_MOM_2c", _MES_MOM, 2), _sleeve("MNQ_BRK_E_2c", _MNQ_BRK, 2)],
+        provenance="Codex 2026-11-08 size variant of portfolio_e chosen after the early-close fix; reproduced continuous "
+                   "validation 2024-25 +2,808.25 / 172 trades (MES_MOM_2c +329, MNQ_BRK_E_2c +2,480), combined intrabar DD ~1,755. "
+                   "Contract count was selected with validation in view: research-grade, not an independent candidate.",
+    ),
     "ensemble_beta": dict(
         version="1.0.0", label="Ensemble Beta (2 MES momentum + 1 MNQ breakout + 1 MNQ hybrid)",
         sleeves=[_sleeve("MES_MOM_2c", _MES_MOM, 2), _sleeve("MNQ_BRK_E_1c", _MNQ_BRK, 1), _sleeve("MNQ_HYB_C_1c", _MNQ_HYB, 1)],
