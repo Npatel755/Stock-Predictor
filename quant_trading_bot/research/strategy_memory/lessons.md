@@ -24,3 +24,9 @@
   only one compatible with a $2k trailing drawdown if the out-of-sample edge is near zero.
 - Working conclusion: at 15-min resolution with today's costs no additional filter class (news, calendar, VIX) improves
   the sleeves; remaining uncertainty is resolved only by the forward paper ledger (/futures).
+
+## 2026-11-08 peer review of the Codex/Antigravity overnight run on Nick's PC
+- Portfolio F (Beta + MNQ afternoon sleeve) and the 4-sleeve "institutional pod" both breach $2k in 2024-25 validation (DD $2,244 and $9,894). Not promotable. 2026 test was consumed for both.
+- MES-agreement filter on MNQ AM breakout, afternoon 13:00-15:45 MNQ momentum, MES->MNQ lead-lag: training-only wins that failed validation or exceed $2k DD at 2c. Tested-negative.
+- Portfolio E friction stress: validation DD $1,744 -> $1,946 at 2-tick slip + $1 fee. E is within $250 of the rule in 2024-25; Beta remains the only candidate sized for $2k.
+- See reports/PEER_REVIEW_OVERNIGHT_INSTITUTIONAL.md.
