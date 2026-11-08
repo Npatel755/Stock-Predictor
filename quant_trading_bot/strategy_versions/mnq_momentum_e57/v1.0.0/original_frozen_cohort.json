@@ -1,0 +1,587 @@
+{
+  "authorization": "User instruction: evaluate all 15 finalists on validation and test without tuning.",
+  "candidates": [
+    {
+      "config_id": "mass_da4b2da7ac857a8faa56",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_da4b2da7ac857a8faa56",
+        "experiment_order": 59712,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 2,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 4.0,
+        "threshold": 1.5,
+        "trailing_atr": 0.0
+      },
+      "rank": 1,
+      "training_metrics": {
+        "intrabar_drawdown": 471.375,
+        "max_drawdown": 438.0,
+        "net_pnl": 3073.5,
+        "profit_factor": 2.6326693227091633,
+        "realized_drawdown": 393.0,
+        "robustness_score": 10.036018326693227,
+        "trades": 102
+      }
+    },
+    {
+      "config_id": "mass_489c855396f8c5011677",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_489c855396f8c5011677",
+        "experiment_order": 269172,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 3,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 4.0,
+        "threshold": 1.5,
+        "trailing_atr": 0.0
+      },
+      "rank": 2,
+      "training_metrics": {
+        "intrabar_drawdown": 471.5,
+        "max_drawdown": 438.0,
+        "net_pnl": 3073.5,
+        "profit_factor": 2.6326693227091633,
+        "realized_drawdown": 393.0,
+        "robustness_score": 10.036018326693227,
+        "trades": 102
+      }
+    },
+    {
+      "config_id": "mass_c3cc1820a1dfec3418ec",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_c3cc1820a1dfec3418ec",
+        "experiment_order": 419136,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 2,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 1.0,
+        "threshold": 1.5,
+        "trailing_atr": 0.0
+      },
+      "rank": 3,
+      "training_metrics": {
+        "intrabar_drawdown": 416.875,
+        "max_drawdown": 394.0,
+        "net_pnl": 3075.0,
+        "profit_factor": 2.611635220125786,
+        "realized_drawdown": 359.5,
+        "robustness_score": 9.911556603773585,
+        "trades": 109
+      }
+    },
+    {
+      "config_id": "mass_bafb5efef1abe7bda10e",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_bafb5efef1abe7bda10e",
+        "experiment_order": 249468,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 3.0,
+        "threshold": 1.5,
+        "trailing_atr": 0.0
+      },
+      "rank": 4,
+      "training_metrics": {
+        "intrabar_drawdown": 471.25,
+        "max_drawdown": 438.0,
+        "net_pnl": 2927.0,
+        "profit_factor": 2.554847277556441,
+        "realized_drawdown": 393.0,
+        "robustness_score": 9.102075962815407,
+        "trades": 102
+      }
+    },
+    {
+      "config_id": "mass_66b04ece059553dcf9a0",
+      "family": "momentum",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_66b04ece059553dcf9a0",
+        "experiment_order": 1664,
+        "family": "momentum",
+        "hold_bars": 16,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 1.0,
+        "threshold": 1.5,
+        "trailing_atr": 0.0
+      },
+      "rank": 5,
+      "training_metrics": {
+        "intrabar_drawdown": 467.25,
+        "max_drawdown": 423.5,
+        "net_pnl": 3834.0,
+        "profit_factor": 2.151351351351351,
+        "realized_drawdown": 360.5,
+        "robustness_score": 8.82856216216216,
+        "trades": 109
+      }
+    },
+    {
+      "config_id": "mass_449f46d359f427350fca",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_449f46d359f427350fca",
+        "experiment_order": 279892,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 2.0,
+        "threshold": 1.5,
+        "trailing_atr": 0.0
+      },
+      "rank": 6,
+      "training_metrics": {
+        "intrabar_drawdown": 471.25,
+        "max_drawdown": 438.0,
+        "net_pnl": 2830.5,
+        "profit_factor": 2.4984118581259924,
+        "realized_drawdown": 393.0,
+        "robustness_score": 8.482509528851244,
+        "trades": 102
+      }
+    },
+    {
+      "config_id": "mass_2a7ad27564f6adb8b201",
+      "family": "momentum",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_2a7ad27564f6adb8b201",
+        "experiment_order": 451784,
+        "family": "momentum",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 1.0,
+        "threshold": 1.5,
+        "trailing_atr": 2.0
+      },
+      "rank": 7,
+      "training_metrics": {
+        "intrabar_drawdown": 409.25,
+        "max_drawdown": 386.5,
+        "net_pnl": 2920.0,
+        "profit_factor": 2.431021808380299,
+        "realized_drawdown": 352.0,
+        "robustness_score": 8.357167360940947,
+        "trades": 110
+      }
+    },
+    {
+      "config_id": "mass_3b5c5c79a1cca93fae90",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_3b5c5c79a1cca93fae90",
+        "experiment_order": 59492,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 3,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 4.0,
+        "threshold": 1.5,
+        "trailing_atr": 2.0
+      },
+      "rank": 8,
+      "training_metrics": {
+        "intrabar_drawdown": 439.0,
+        "max_drawdown": 405.5,
+        "net_pnl": 2900.0,
+        "profit_factor": 2.437066402378593,
+        "realized_drawdown": 360.5,
+        "robustness_score": 8.334985133795838,
+        "trades": 102
+      }
+    },
+    {
+      "config_id": "mass_a304d5feb29f080cc06a",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_a304d5feb29f080cc06a",
+        "experiment_order": 79288,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 1.0,
+        "threshold": 1.5,
+        "trailing_atr": 2.0
+      },
+      "rank": 9,
+      "training_metrics": {
+        "intrabar_drawdown": 409.25,
+        "max_drawdown": 386.5,
+        "net_pnl": 2862.5,
+        "profit_factor": 2.4028424405782896,
+        "realized_drawdown": 352.0,
+        "robustness_score": 8.031272972310708,
+        "trades": 109
+      }
+    },
+    {
+      "config_id": "mass_df8dec7746923f1b782c",
+      "family": "momentum",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_df8dec7746923f1b782c",
+        "experiment_order": 301176,
+        "family": "momentum",
+        "hold_bars": 12,
+        "instrument": "MNQ",
+        "lookback": 48,
+        "max_contracts": 1,
+        "session_end": 720,
+        "session_start": 600,
+        "stop_atr": 1.5,
+        "target_r": 4.0,
+        "threshold": 1.0,
+        "trailing_atr": 1.0
+      },
+      "rank": 10,
+      "training_metrics": {
+        "intrabar_drawdown": 422.25,
+        "max_drawdown": 368.5,
+        "net_pnl": 2909.5,
+        "profit_factor": 2.361169590643275,
+        "realized_drawdown": 359.5,
+        "robustness_score": 7.920645847953217,
+        "trades": 95
+      }
+    },
+    {
+      "config_id": "mass_8bd94e865854ee746283",
+      "family": "momentum",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_8bd94e865854ee746283",
+        "experiment_order": 361656,
+        "family": "momentum",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 4.0,
+        "threshold": 1.5,
+        "trailing_atr": 2.0
+      },
+      "rank": 11,
+      "training_metrics": {
+        "intrabar_drawdown": 438.75,
+        "max_drawdown": 405.5,
+        "net_pnl": 2804.5,
+        "profit_factor": 2.3897423191278495,
+        "realized_drawdown": 360.5,
+        "robustness_score": 7.795064667988108,
+        "trades": 103
+      }
+    },
+    {
+      "config_id": "mass_2f41b3bd02298beda570",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_2f41b3bd02298beda570",
+        "experiment_order": 299060,
+        "family": "hybrid",
+        "hold_bars": 4,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 2,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 3.0,
+        "target_r": 2.0,
+        "threshold": 1.5,
+        "trailing_atr": 2.0
+      },
+      "rank": 12,
+      "training_metrics": {
+        "intrabar_drawdown": 438.875,
+        "max_drawdown": 405.5,
+        "net_pnl": 2801.5,
+        "profit_factor": 2.383798468757718,
+        "realized_drawdown": 360.5,
+        "robustness_score": 7.753422820449494,
+        "trades": 102
+      }
+    },
+    {
+      "config_id": "mass_e57ba183f302b3ba886b",
+      "family": "momentum",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_e57ba183f302b3ba886b",
+        "experiment_order": 401804,
+        "family": "momentum",
+        "hold_bars": 12,
+        "instrument": "MNQ",
+        "lookback": 16,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 585,
+        "stop_atr": 1.0,
+        "target_r": 4.0,
+        "threshold": 1.5,
+        "trailing_atr": 2.0
+      },
+      "rank": 13,
+      "training_metrics": {
+        "intrabar_drawdown": 533.25,
+        "max_drawdown": 480.0,
+        "net_pnl": 4935.5,
+        "profit_factor": 1.8347568710359408,
+        "realized_drawdown": 446.5,
+        "robustness_score": 7.726099459911646,
+        "trades": 202
+      }
+    },
+    {
+      "config_id": "mass_f0e51652ed49a60492f7",
+      "family": "trend",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_f0e51652ed49a60492f7",
+        "experiment_order": 410760,
+        "family": "trend",
+        "hold_bars": 2,
+        "instrument": "MNQ",
+        "lookback": 8,
+        "max_contracts": 3,
+        "session_end": 690,
+        "session_start": 585,
+        "stop_atr": 2.0,
+        "target_r": 1.5,
+        "threshold": 1.0,
+        "trailing_atr": 0.0
+      },
+      "rank": 14,
+      "training_metrics": {
+        "intrabar_drawdown": 514.5,
+        "max_drawdown": 453.5,
+        "net_pnl": 3504.5,
+        "profit_factor": 2.1232371794871794,
+        "realized_drawdown": 405.5,
+        "robustness_score": 7.650893480102663,
+        "trades": 164
+      }
+    },
+    {
+      "config_id": "mass_5c0ca9b808275b8a44ce",
+      "family": "hybrid",
+      "instrument": "MNQ",
+      "parameters": {
+        "config_id": "mass_5c0ca9b808275b8a44ce",
+        "experiment_order": 459764,
+        "family": "hybrid",
+        "hold_bars": 16,
+        "instrument": "MNQ",
+        "lookback": 24,
+        "max_contracts": 1,
+        "session_end": 945,
+        "session_start": 840,
+        "stop_atr": 2.0,
+        "target_r": 1.5,
+        "threshold": 1.0,
+        "trailing_atr": 0.0
+      },
+      "rank": 15,
+      "training_metrics": {
+        "intrabar_drawdown": 568.25,
+        "max_drawdown": 546.0,
+        "net_pnl": 4733.5,
+        "profit_factor": 1.9090647205684654,
+        "realized_drawdown": 542.5,
+        "robustness_score": 7.57247312769174,
+        "trades": 274
+      }
+    }
+  ],
+  "core_hash": "5dc324c80ec932932b3f24c6727f4873e7e6bcea24e49bc3c0c07b8f2af96f0d",
+  "count": 15,
+  "created_at": "2026-11-08T00:01:12.194778+00:00",
+  "partitions": {
+    "test": {
+      "metadata": {
+        "coverage": {
+          "end": "2026-11-05 23:59:00+00:00",
+          "rows": 301755,
+          "start": "2026-01-01 23:00:00+00:00"
+        },
+        "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+        "instrument": "MNQ",
+        "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+        "model_selection_access": false,
+        "provider": "User-provided Databento GLBX.MDP3 export",
+        "raw_contract_prices": true,
+        "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+        "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+        "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+        "split_role": "test",
+        "synthetic": false,
+        "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+        "timestamp_semantics": "bar_open",
+        "train_end_exclusive": "2024-01-01 00:00:00+00:00"
+      },
+      "partition": {
+        "coverage": {
+          "end": "2026-11-05 23:59:00+00:00",
+          "rows": 301755,
+          "start": "2026-01-01 23:00:00+00:00"
+        },
+        "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+        "instrument": "MNQ",
+        "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+        "model_selection_access": false,
+        "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\market\\GLBX-20261106-FX6FM5XWUX-v3\\splits\\MNQ\\test.parquet",
+        "provider": "User-provided Databento GLBX.MDP3 export",
+        "raw_contract_prices": true,
+        "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+        "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+        "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+        "split_role": "test",
+        "synthetic": false,
+        "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+        "timestamp_semantics": "bar_open",
+        "train_end_exclusive": "2024-01-01 00:00:00+00:00"
+      }
+    },
+    "validation": {
+      "metadata": {
+        "coverage": {
+          "end": "2025-12-31 21:59:00+00:00",
+          "rows": 707652,
+          "start": "2024-01-01 23:00:00+00:00"
+        },
+        "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+        "instrument": "MNQ",
+        "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+        "model_selection_access": true,
+        "provider": "User-provided Databento GLBX.MDP3 export",
+        "raw_contract_prices": true,
+        "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+        "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+        "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+        "split_role": "validation",
+        "synthetic": false,
+        "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+        "timestamp_semantics": "bar_open",
+        "train_end_exclusive": "2024-01-01 00:00:00+00:00"
+      },
+      "partition": {
+        "coverage": {
+          "end": "2025-12-31 21:59:00+00:00",
+          "rows": 707652,
+          "start": "2024-01-01 23:00:00+00:00"
+        },
+        "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+        "instrument": "MNQ",
+        "license_note": "User-provided Databento export; user entitlement governs private use and redistribution. No paid API call made.",
+        "model_selection_access": true,
+        "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\market\\GLBX-20261106-FX6FM5XWUX-v3\\splits\\MNQ\\validation.parquet",
+        "provider": "User-provided Databento GLBX.MDP3 export",
+        "raw_contract_prices": true,
+        "source_dataset_version": "1f9a187e1a99c5be7b86d359ac6583b57b1703f4b2acab004bb008c9b2300c7f",
+        "source_job_id": "GLBX-20261106-FX6FM5XWUX",
+        "split_protocol_id": "4865072f60c7a5f588f5cf1086076ea5148e720f317a1ceb5c582f06891fdd33",
+        "split_role": "validation",
+        "synthetic": false,
+        "test_start_inclusive": "2026-01-01 00:00:00+00:00",
+        "timestamp_semantics": "bar_open",
+        "train_end_exclusive": "2024-01-01 00:00:00+00:00"
+      }
+    }
+  },
+  "reservations": {
+    "test": [
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\3c54801885618333aab5c806f6169dc708f6ec3cde2115db0d3939278893131e.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\9e7953f6ec512f9c95e05f762c8dbd071f9a80e596649eaeea10a531989985f3.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\dd5e0ce837403335b46e1ceaeed0ef6f90ef070bba2a36677038eb2d8e972371.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\cfcaacddddc16d6de7ed907a93f9ff969f3306e5c100945ce48a2e4051e2ee9d.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\6c3521f58bc9f4c008b6bbfb96815dd76f493a05afc18d5e52266802befb8d4c.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\cae51bda1062511add7c14caba92b763767e81f90094378a4a8859d8fef75cbb.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\20c97484b0fdb6cf4a9caf4e0048a73c8a91ef5d6d2c00f0356986306297094f.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\4dd6e05686b49f8bd48f96d11f2980c591635b17b9bbc364ac3afcfd8499fcaf.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\12ae3e470bb486a50ecc958a19e0337a44766d16c04f77d0357f9dfcc32a35e9.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\c0ffad02aedfcddbba6e90761fec05e143e0013d061bb60dab70f0c7749a9427.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\89308a0f3b6cab916d9763f08160998865f4946164f21370e05e8a1fe705a5ac.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\4331973d9c80de33d744cd9a056623cba69782f0aebf83d5535859940026d9d7.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\28b80959628a90d9c3971deea054b41a3b5806280b3f8c4fe9ef8c7d1f9cf8a6.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\4c176b7efef6d755671ce92ec09f6b340fc38b42080d83da893d58bbe194f25a.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\reused_tests\\c6f9ae5aeb151b51c7531fb51d20e4d0d747e78745e7351647820139f7b925da.json"
+    ],
+    "validation": [
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\7db5538c7107df2bcf582f08575fdbf2d44fd424e4489557030afbf76c4a8669.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\c5d330c9c1543886915660b0a6edda9728cc37ddbf1f0968d0f6ec8311a61af9.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\4db1c8c6dd470eb8b93d5af573f7861a4ee46b4272f16cf10837d8ac7d3c53b5.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\8f749128698988bbe316beb99d87fbe6949d1a70b527a54270097664fda6b925.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\f4fec52fa98a947b33af7d3c45fd870cab6e00cfc5d12e544180a5e0d362659c.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\7580a6aca80b9fc303e21d1aa4f67c74a9d688b557abe98ab619d4cf119bbf73.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\f30fefb7a0a9f0f3f4312e915699106951972718f9e9f3c03793d0b1b75b1bdf.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\f38797075db11e836e2af91650e865587e7a5b1c9ae52b524d9c87b58fffab7d.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\4eff9ee3fdb06f4b34ae1facce5f7a195859b8905c9dc4b05abbacc80a597d68.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\7ce476e0206d1a205d25ae1df3117c6853fc461398477b00a87ee74a75e64c6e.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\0ddd8029dbe80ee1ccfe6f100c6c7b4971e9cd481e1ffcfb286a2e1e2cb89744.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\19bde0e67daf68ae8e62189fdc06653d802f7cf5f5456bcd4f1f18ef2be9bd3c.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\f9c35535ad39e54dbe4674ac3722d1c20777fda932daa0642de22b7e8b3e24ed.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\32ac103c67ffa9f7a3ecb74982ebe105f02fe48cc72fec0af6734d668bab2326.json",
+      "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\manifests\\validation_once\\5ff77c8251469c44642c1bed22708c4884564e82b67fe516481be8f02e02889c.json"
+    ]
+  },
+  "runner_hash": "13a69a7b15ea1573ffc332a40bd3d615c0673076b508f2be8517d1674303f4f9"
+}

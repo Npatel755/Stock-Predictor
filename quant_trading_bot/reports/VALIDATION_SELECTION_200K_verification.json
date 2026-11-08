@@ -1,0 +1,240 @@
+{
+  "passed": true,
+  "config_train_validation_ids_match": true,
+  "unique_new_configs": 200000,
+  "prior_unique_excluded": 1769610,
+  "validation_attempts_done_once": 200000,
+  "all_trade_ledgers_reconciled": true,
+  "trades_audited": 8413841,
+  "top_case_curves_reconciled": true,
+  "fill_verifications": [
+    {
+      "config_id": "e57_5da75c28cba9a2d564b4",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 70,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_cb08c358a633a94ae5e3",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 226,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_6a8e88bd3e95ba12d4f1",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 52,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_2063ca7747e47b28138e",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 54,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_198e9087ae44de6abea1",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 49,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_1adb2ca385230c211431",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 55,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_209eebc88a969f1c531b",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 55,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_e88459134046b2ebf5f9",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 42,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_f48c34aee7c28e269c86",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 209,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_ec349142a1fc65e2fc38",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 55,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_417883996e3b58ba6306",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 149,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_60d45f89db7a9c8addbb",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 381,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_84877407093f2da1d7d9",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 340,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_43c9a9ea281b92f2a3fe",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 145,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_dda36944839dc8344891",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 177,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_94f189a62ad043cabd27",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 144,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_196e25e57d07bca63644",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 145,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_31d0fc770cf11a5cc35c",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 145,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_938e7ab449dd3afd0474",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 165,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    },
+    {
+      "config_id": "e57_e957c084da76ede4362b",
+      "verification": {
+        "passed": true,
+        "ledger_trades": 140,
+        "shared_simulator_replayed": 25,
+        "replay_sampling": "up to25 evenly spaced chronological trades per fold, fixed before research",
+        "account_path_equivalence": false,
+        "limitation": "Older simulator omits exit-bar adverse excursion and exit-cost reserves. Isolated trade replays verify fills; full risk-path equivalence is not claimed."
+      }
+    }
+  ],
+  "ranking_rule_verified": true,
+  "acceptance_policy_frozen_and_preserved": true,
+  "source_hashes_match": true,
+  "test_accessed": false,
+  "independent_confirmation": false,
+  "report_sha256": "70c8d0b94c9ca4732a1ea278f320840e37762abec65448e8f5074e574d158054",
+  "ranking_sha256": "385298fb4c23b21c16d711596c2859c044eb61f0eadf8ac94038b51a86266f11",
+  "completed_at": "2026-11-08T01:50:28.021410+00:00"
+}

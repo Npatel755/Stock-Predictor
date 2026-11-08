@@ -1,0 +1,31 @@
+{
+  "candidate_id": "e57_f62b1be4cfe9edf434d8",
+  "parameters": {
+    "config_id": "e57_f62b1be4cfe9edf434d8",
+    "experiment_order": 47329,
+    "family": "momentum",
+    "hold_bars": 16,
+    "instrument": "MNQ",
+    "lookback": 20,
+    "max_contracts": 2,
+    "pure_scaling_control": false,
+    "risk_scale": 1.0,
+    "session_end": 945,
+    "session_start": 585,
+    "stop_atr": 1.25,
+    "target_r": 4.0,
+    "threshold": 1.0,
+    "trailing_atr": 1.5
+  },
+  "phase": "validation",
+  "frozen_candidate_hash": "e442bc1ee10e8541640906e133d2432acf2ee06c70d51a436cc68b7425260d8c",
+  "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+  "reserved_at": "2026-11-08T01:00:59.761519+00:00",
+  "parameter_variants": 1,
+  "cost_variants": 1,
+  "no_tuning": true,
+  "failure_consumes_reservation": true,
+  "period_previously_observed": true,
+  "independent_confirmation": false,
+  "validation_result_sha256": null
+}

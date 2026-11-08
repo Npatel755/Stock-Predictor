@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "frozen_configuration_execution_and_source_unchanged": true,
+  "validation_before_test": true,
+  "validation_hash_preserved": true,
+  "each_split_once": true,
+  "ledger_curve_metrics_reconciled": true,
+  "version_archives_preserved": true,
+  "publication_only_no_replay": true,
+  "report_sha256": "ac5bf9821f99ddd190e91345515e4b82ba951e5f97ceab9bab10ee41c9aff5db",
+  "independent_confirmation": false
+}

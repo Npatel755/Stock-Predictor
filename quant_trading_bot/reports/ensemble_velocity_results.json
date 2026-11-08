@@ -1,0 +1,50 @@
+{
+  "MES Trend (2c) + MNQ Momentum (10R)": {
+    "net_pnl": 4158.5,
+    "max_dd": 1739.0,
+    "dd_cushion": 261.0,
+    "weekly_gain": 39.60476190476191,
+    "monthly_gain": 171.60743333333335,
+    "fastest_weeks": 4,
+    "median_weeks": 25.0,
+    "mean_weeks": 26.040816326530614,
+    "pass_rate_pct": 100.0,
+    "windows_tested": 49
+  },
+  "MES Trend (2c) + MNQ Hybrid (6R)": {
+    "net_pnl": 4045.0,
+    "max_dd": 865.0,
+    "dd_cushion": 1135.0,
+    "weekly_gain": 38.523809523809526,
+    "monthly_gain": 166.9236666666667,
+    "fastest_weeks": 8,
+    "median_weeks": 29.0,
+    "mean_weeks": 29.29787234042553,
+    "pass_rate_pct": 100.0,
+    "windows_tested": 47
+  },
+  "MNQ Momentum (10R) + MNQ Hybrid (6R)": {
+    "net_pnl": 3713.5,
+    "max_dd": 1455.0,
+    "dd_cushion": 545.0,
+    "weekly_gain": 35.36666666666667,
+    "monthly_gain": 153.2437666666667,
+    "fastest_weeks": 6,
+    "median_weeks": 25.0,
+    "mean_weeks": 25.74468085106383,
+    "pass_rate_pct": 100.0,
+    "windows_tested": 47
+  },
+  "Tri-Asset: MES Trend + MNQ Momentum + MNQ Breakout": {
+    "net_pnl": 5506.5,
+    "max_dd": 2361.0,
+    "dd_cushion": -361.0,
+    "weekly_gain": 52.44285714285714,
+    "monthly_gain": 227.2349,
+    "fastest_weeks": 4,
+    "median_weeks": 22.5,
+    "mean_weeks": 25.1,
+    "pass_rate_pct": 100.0,
+    "windows_tested": 50
+  }
+}

@@ -1,0 +1,79 @@
+# 200,000 new strategies: train, evaluate every configuration on validation, then rank
+
+**All200,000 frozen configurations completed TRAIN and exactly one base-cost VALIDATION evaluation each. Ranking uses validation outcomes, as requested; no parameters, indicators, filters, sizing, costs or risk rules were changed from those outcomes. No test data or test outcomes were opened by this batch.**
+
+Validation is explicitly used for model selection across200,000 correlated trials. Its top-ranked performance is therefore optimistically selected and is not independent confirmation of a profitable edge. These periods have been used in prior work; their independence cannot be restored by relabeling. The original parent was also selected after earlier holdout observations.
+
+## Counts
+
+| Check | Configurations |
+|---|---:|
+| Evaluated on validation | 200,000 |
+| Positive validation net | 73,742 |
+| Positive validation net + every DD strictly below$2,000 | 73,002 |
+| Validation scenario pass including>=30 trades/no locks/no funded breach | 14,942 |
+| Both TRAIN and validation qualification | 751 |
+| Both gates + validation net above original-v1 benchmark | 55 |
+| Evaluation-account scenario including50% consistency | 5,936 |
+| Permanent validation lock | 95,267 |
+| Zero validation trades | 13,336 |
+
+## Acceptance decision
+
+**BETTER_THAN_BASELINE_ON_VALIDATION_SELECTION_SET**. Original v1 archived validation net reference: **$2,605.00**. The acceptance threshold and validation ranking rules were frozen before either training or new validation prices.
+
+Best model passing both TRAIN and validation gates: `e57_417883996e3b58ba6306`, validation net **$4,121.00**, cash DD $1,348.00, closing DD $1,352.00, intrabar DD **$1,460.88**, 149 trades. TRAIN net $5,850.00 and worst annual TRAIN intrabar DD $1,678.75. Evaluation-account50% consistency diagnostic: True.
+
+## Top10 by validation results, with training flags
+
+| Order | ID | Validation net | Intrabar DD | Trades | TRAIN qualifies | Validation qualifies | Beats original validation net with both gates |
+|---:|---|---:|---:|---:|---|---|---|
+| 1 | `e57_5da75c28cba9a2d564b4` | $7,764.50 | $1,650.75 | 70 | False | True | False |
+| 2 | `e57_cb08c358a633a94ae5e3` | $6,775.00 | $1,535.00 | 226 | False | True | False |
+| 3 | `e57_6a8e88bd3e95ba12d4f1` | $6,760.00 | $1,780.25 | 52 | False | True | False |
+| 4 | `e57_2063ca7747e47b28138e` | $6,679.00 | $1,474.50 | 54 | False | True | False |
+| 5 | `e57_198e9087ae44de6abea1` | $6,533.50 | $1,673.75 | 49 | False | True | False |
+| 6 | `e57_1adb2ca385230c211431` | $6,369.00 | $1,772.25 | 55 | False | True | False |
+| 7 | `e57_209eebc88a969f1c531b` | $6,249.00 | $1,576.50 | 55 | False | True | False |
+| 8 | `e57_e88459134046b2ebf5f9` | $6,247.00 | $1,759.25 | 42 | False | True | False |
+| 9 | `e57_f48c34aee7c28e269c86` | $6,217.50 | $1,559.00 | 209 | False | True | False |
+| 10 | `e57_ec349142a1fc65e2fc38` | $6,176.50 | $1,772.25 | 55 | False | True | False |
+
+## Top10 meeting both training and validation gates
+
+| Order | ID | Validation net | Intrabar DD | Trades | TRAIN qualifies | Validation qualifies | Beats original validation net with both gates |
+|---:|---|---:|---:|---:|---|---|---|
+| 1 | `e57_417883996e3b58ba6306` | $4,121.00 | $1,460.88 | 149 | True | True | True |
+| 2 | `e57_60d45f89db7a9c8addbb` | $3,853.50 | $1,711.75 | 381 | True | True | True |
+| 3 | `e57_84877407093f2da1d7d9` | $3,767.00 | $1,412.25 | 340 | True | True | True |
+| 4 | `e57_43c9a9ea281b92f2a3fe` | $3,687.50 | $1,759.75 | 145 | True | True | True |
+| 5 | `e57_dda36944839dc8344891` | $3,656.00 | $1,682.75 | 177 | True | True | True |
+| 6 | `e57_94f189a62ad043cabd27` | $3,630.50 | $1,759.75 | 144 | True | True | True |
+| 7 | `e57_196e25e57d07bca63644` | $3,621.50 | $1,759.75 | 145 | True | True | True |
+| 8 | `e57_31d0fc770cf11a5cc35c` | $3,621.50 | $1,759.75 | 145 | True | True | True |
+| 9 | `e57_938e7ab449dd3afd0474` | $3,509.50 | $1,771.38 | 165 | True | True | True |
+| 10 | `e57_e957c084da76ede4362b` | $3,449.50 | $1,778.50 | 140 | True | True | True |
+
+## Frozen workflow and limits
+
+The new200k configurations are active-parameter/risk-budget unique and disjoint from1,769,610 prior completed/reserved configurations across1,770,000 raw prior records. Original prior files and the concurrently running job were preserved. Same previously registered MNQ momentum/risk domains, new seed20270301. All hypotheses, parameters, source hashes and ranking/acceptance criteria were frozen before prices. No training failure excluded a case from validation. All TRAIN results were sealed before validation prices were loaded.
+
+TRAIN: four annual2020–2023 accounts reset to$50,000, sum net and worst annual DD, with causal earlier TRAIN warmup and96/16 entry suppression. TRAIN qualification: all4 years positive,>=30trades/year,PF>=1.30,<=800total trades,no permanent/funded breach and allDD<2000. These are training metrics and historical development gates, not independent out-of-sample claims.
+
+VALIDATION: existing physical MNQ2024–2025 prices, one continuous$50,000 account per fixed case, split-local causal warmup and96/16 entry suppression. Rank validation-scenario passes first, then net descending,intrabarDD ascending,ID. Scenario pass requires positive net,all cash/closing/intrabar DD strictly<2000,>=30trades,no permanent lock and no funded-floor breach. Models failing training remain in the complete validation ranking with explicit flags. Good-model qualification additionally requires TRAIN qualification; superiority to baseline requires validation net above the frozen original-v1 validation reference. These are validation-selection criteria, not proof of future superiority.
+
+Execution and risk: unchanged completed15m raw-contract OHLCV, next-open entries, stops before ambiguous targets, strict target trade-through, adverse gaps, original volume/roll safeguards and modeled fees/spread/slippage/size impact. Registered risk scaling changes per-trade/open/daily budgets explicitly;1800 internal hard stop and2000 provisional funded floor remain. A permanent gap/risk lock fails qualification even if terminal profit is positive and DD remains below2000. Flat marks after a lock are not continued trading. Actual fees, holiday schedules and exact account contract permissions remain unverified.
+
+The user scopes50% consistency only to account evaluation phase; it is shown as a separate diagnostic and did not change executions. No doubled-cost validation variants were run. No follow-up configurations, retries for passing validation, or test evaluations are authorized/triggered by these rankings. The frozen selected model is RESEARCH-ONLY, not automatically promoted or deployed. Fresh forward observations are necessary for independent confirmation.
+
+All8,413,841 stored validation trades were independently reconciled to contract P&L minus fees and case totals. Exactly200,000 unique consumed SQLite attempt reservations are linked to the immutable cohort/global reservation and data version; all states are done. Ranked CSV/configuration/metadata/source/database identities reconcile. Raw account paths for final top10 overall and top10 both-qualified cases were captured during their single execution, not regenerated by backtesting. Their curves reconcile and up to25 fixed chronological shared-simulator fills were checked from saved outputs. Full risk-path equivalence to that older simulator is not claimed.
+
+## Artifacts
+
+- Full200k validation ranking: `../runs/validation_selection_200k_v1/validation_ranked.csv`
+- Top100 overall: `../runs/validation_selection_200k_v1/top100_validation.csv`
+- Top100 passing both sets of gates: `../runs/validation_selection_200k_v1/top100_train_and_validation.csv`
+- All detailed metrics and compressed trade ledgers: `../runs/validation_selection_200k_v1/checkpoints.sqlite` (`val.ledger` contains zlib-compressed JSON of frozen bar entry/exit indexes, side, quantity, prices, net and fees)
+- Frozen configurations, source, ranking/acceptance policy, phase seals and selected model: `../runs/validation_selection_200k_v1/`
+- Top model curves and trade CSVs: `../runs/validation_selection_200k_v1/selected_artifacts/`
+- Charts: `../runs/validation_selection_200k_v1/validation_top5.png` / `.svg`

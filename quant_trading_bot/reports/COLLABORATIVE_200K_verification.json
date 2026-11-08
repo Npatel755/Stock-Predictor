@@ -1,0 +1,97 @@
+{
+  "passed": true,
+  "completed": 200000,
+  "prior_reserved_unique_verified": 870000,
+  "new_active_unique_verified": 200000,
+  "total_reserved_unique": 1070000,
+  "manifest_csv_database_ids_match": true,
+  "counts_recomputed_from_csv": true,
+  "counts": {
+    "evaluated": 200000,
+    "positive_under_2000": 28737,
+    "positive_under_2000_no_locks": 15572,
+    "research_qualified": 2152,
+    "evaluation_phase_qualified": 138
+  },
+  "by_family": {
+    "trend": {
+      "evaluated": 20000,
+      "positive_under_2000": 4052,
+      "positive_under_2000_no_locks": 2091,
+      "research_qualified": 407,
+      "evaluation_phase_qualified": 36
+    },
+    "momentum": {
+      "evaluated": 20000,
+      "positive_under_2000": 4699,
+      "positive_under_2000_no_locks": 2976,
+      "research_qualified": 544,
+      "evaluation_phase_qualified": 32
+    },
+    "mean_reversion": {
+      "evaluated": 20000,
+      "positive_under_2000": 648,
+      "positive_under_2000_no_locks": 406,
+      "research_qualified": 0,
+      "evaluation_phase_qualified": 0
+    },
+    "breakout": {
+      "evaluated": 20000,
+      "positive_under_2000": 4572,
+      "positive_under_2000_no_locks": 2663,
+      "research_qualified": 318,
+      "evaluation_phase_qualified": 18
+    },
+    "vwap": {
+      "evaluated": 20000,
+      "positive_under_2000": 645,
+      "positive_under_2000_no_locks": 356,
+      "research_qualified": 0,
+      "evaluation_phase_qualified": 0
+    },
+    "opening_range": {
+      "evaluated": 20000,
+      "positive_under_2000": 4133,
+      "positive_under_2000_no_locks": 2107,
+      "research_qualified": 268,
+      "evaluation_phase_qualified": 21
+    },
+    "regime": {
+      "evaluated": 20000,
+      "positive_under_2000": 3514,
+      "positive_under_2000_no_locks": 1861,
+      "research_qualified": 209,
+      "evaluation_phase_qualified": 4
+    },
+    "volatility": {
+      "evaluated": 20000,
+      "positive_under_2000": 1168,
+      "positive_under_2000_no_locks": 467,
+      "research_qualified": 16,
+      "evaluation_phase_qualified": 0
+    },
+    "volume": {
+      "evaluated": 20000,
+      "positive_under_2000": 2205,
+      "positive_under_2000_no_locks": 709,
+      "research_qualified": 67,
+      "evaluation_phase_qualified": 2
+    },
+    "hybrid": {
+      "evaluated": 20000,
+      "positive_under_2000": 3101,
+      "positive_under_2000_no_locks": 1936,
+      "research_qualified": 323,
+      "evaluation_phase_qualified": 25
+    }
+  },
+  "frozen_sources_match": true,
+  "profit_rank_and_stress_selection_verified": true,
+  "selected_trade_curve_reconciliation": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "gemini_review_file_present": false,
+  "report_sha256": "9a51057c37b5584c4781e885c3c93f4c167e607fd08a3d8fb397ce72e0a46982",
+  "ranked_sha256": "61507061ea9ca2376289385efd64ada3a774da86dc54aad1a98ff7183a8106c8",
+  "verified_at": "2026-11-07T23:30:12.897963+00:00"
+}

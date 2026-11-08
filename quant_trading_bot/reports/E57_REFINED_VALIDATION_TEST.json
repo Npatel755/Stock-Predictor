@@ -1,0 +1,47 @@
+{
+  "candidate_id": "e57_f62b1be4cfe9edf434d8",
+  "version": "v1.2.0-risk-profit-research",
+  "frozen_candidate_hash": "e442bc1ee10e8541640906e133d2432acf2ee06c70d51a436cc68b7425260d8c",
+  "metrics": [
+    {
+      "phase": "validation",
+      "net_pnl": -8.0,
+      "realized_drawdown": 1398.5,
+      "max_drawdown": 1436.5,
+      "intrabar_drawdown": 1452.25,
+      "trades": 80,
+      "profit_factor": 0.9981663992665597,
+      "expectancy": -0.1,
+      "consistency": null,
+      "lock": 2,
+      "lock_reason": "gap in usable market data",
+      "last_trade_exit": "2024-05-27 22:00:00+00:00",
+      "profit_and_dd_pass": false,
+      "post_evaluation_scenario_checks_pass": false,
+      "evaluation_phase_checks_pass": false
+    },
+    {
+      "phase": "test",
+      "net_pnl": 1677.0,
+      "realized_drawdown": 782.0,
+      "max_drawdown": 882.5,
+      "intrabar_drawdown": 982.375,
+      "trades": 108,
+      "profit_factor": 1.316474806567277,
+      "expectancy": 15.527777777777779,
+      "consistency": 0.5271317829457365,
+      "lock": 0,
+      "lock_reason": "none",
+      "last_trade_exit": "2026-10-27 19:45:00+00:00",
+      "profit_and_dd_pass": true,
+      "post_evaluation_scenario_checks_pass": true,
+      "evaluation_phase_checks_pass": false
+    }
+  ],
+  "both_profit_dd_pass": false,
+  "no_tuning": true,
+  "validation_evaluations": 1,
+  "test_evaluations": 1,
+  "independent_confirmation": false,
+  "operational_eligibility": false
+}

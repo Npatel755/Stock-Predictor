@@ -1,0 +1,153 @@
+<!doctype html><meta charset="utf-8"><title>Frozen top five split evaluation</title><style>body{font:15px/1.6 system-ui;background:#111820;color:#e8eef5;max-width:1300px;margin:36px auto;padding:0 20px}table{border-collapse:collapse;width:100%}td,th{padding:10px;border-bottom:1px solid #3d4c60;text-align:left}img{width:100%;background:white}pre{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#9acbff}</style><h1>Five frozen strategies: validation and test</h1><p>No tuning. 1/5 passed positive net and all DD &lt;$2,000 on both splits; 1/5 also passed additional scenario checks on both. Previously observed periods; independent confirmation remains unavailable.</p><table><tr><th>Training rank</th><th>ID</th><th>Validation net</th><th>Val intrabar DD</th><th>Val lock</th><th>Test net</th><th>Test intrabar DD</th><th>Both profit/DD</th></tr><tr><td>1</td><td><code>mass_8190d72d308b603c1725</code></td><td>$-1,703.00</td><td>$1,834.00</td><td>maximum drawdown</td><td>$489.50</td><td>$1,150.88</td><td>FAIL</td></tr><tr><td>2</td><td><code>mass_74a481aa30c484a442b6</code></td><td>$1,390.50</td><td>$1,534.00</td><td>none</td><td>$812.00</td><td>$879.50</td><td>PASS</td></tr><tr><td>3</td><td><code>mass_b839a1ec768d3babc0b7</code></td><td>$-1,500.00</td><td>$1,814.00</td><td>maximum drawdown</td><td>$290.00</td><td>$1,005.50</td><td>FAIL</td></tr><tr><td>4</td><td><code>mass_6dfbc230bb4d7f9f0e83</code></td><td>$-1,735.50</td><td>$1,841.50</td><td>maximum drawdown</td><td>$28.50</td><td>$1,291.38</td><td>FAIL</td></tr><tr><td>5</td><td><code>mass_3f98bb0221b65643d358</code></td><td>$634.00</td><td>$1,823.50</td><td>maximum drawdown</td><td>$-2.00</td><td>$1,548.00</td><td>FAIL</td></tr></table><h2>Equity and drawdown curves</h2><img alt="Five frozen strategies: validation and test equity and drawdown" src="../runs/collaborative_top5_splits_v1/top5_split_curves.png"><details><summary>Complete report and audit details</summary><pre># Frozen top five: validation and test without tuning
+
+**All five displayed training candidates were frozen before new price access. Each was evaluated once on validation and once on test, at identical base costs. No parameter, feature, filter, sizing, stop, cost or candidate selection changed between stages.**
+
+Validation: existing2024–2025 physical MNQ partition. Test: existing2026 partition through its saved coverage end. Each candidate/split uses one continuous$50,000 account, split-local feature warmup and the original96-bar entry embargo/16-bar terminal entry purge. Training totals shown below sum four separate2020–2023 annual accounts; those training drawdowns are worst-year figures. Validation/test drawdown covers the entire respective continuous split account.
+
+**These periods have been observed in earlier work. This is an explicitly requested reused-period evaluation, not independent unseen confirmation.**
+
+| Training rank / ID | Family | Training net | Validation net | Validation intrabar DD | Val trades | Val permanent lock | Test net | Test intrabar DD | Test trades | Both profit/DD checks |
+|---|---|---:|---:|---:|---:|---|---:|---:|---:|---|
+| 1: `mass_8190d72d308b603c1725` | trend | $11,365.50 | $-1,703.00 | $1,834.00 | 28 | maximum drawdown | $489.50 | $1,150.88 | 66 | FAIL |
+| 2: `mass_74a481aa30c484a442b6` | breakout | $11,219.50 | $1,390.50 | $1,534.00 | 179 | none | $812.00 | $879.50 | 46 | PASS |
+| 3: `mass_b839a1ec768d3babc0b7` | trend | $10,938.00 | $-1,500.00 | $1,814.00 | 29 | maximum drawdown | $290.00 | $1,005.50 | 70 | FAIL |
+| 4: `mass_6dfbc230bb4d7f9f0e83` | trend | $10,913.50 | $-1,735.50 | $1,841.50 | 31 | maximum drawdown | $28.50 | $1,291.38 | 60 | FAIL |
+| 5: `mass_3f98bb0221b65643d358` | breakout | $10,765.00 | $634.00 | $1,823.50 | 200 | maximum drawdown | $-2.00 | $1,548.00 | 63 | FAIL |
+
+## Outcome
+
+Profitability plus all three drawdown measures strictly below$2,000: **2/5 on validation, 4/5 on test, 1/5 on both**. Additional scenario checks on both splits (at least30 trades, no permanent risk lock or funded-floor breach): **1/5**. Including the50% evaluation-account consistency diagnostic on both splits: **0/5**.
+
+All reported test outcomes were produced after every validation evaluation finished, on the same frozen versions, irrespective of validation gains/losses. A positive test does not erase a validation loss. The original$1,800 internal drawdown stop can lock an account before the outer$2,000 reporting threshold; a positive-net/sub-$2,000 case with a permanent lock still fails the additional scenario checks. Flat marks after a lock do not represent continued trading.
+
+## Complete split metrics
+
+| Rank | Split | Net | Cash DD | Closing DD | Intrabar DD | Trades | 50% consistency | Scenario without50% | Evaluation-account scenario | Last trade exit UTC |
+|---:|---|---:|---:|---:|---:|---:|---|---|---|---|
+| 1 | validation | $-1,703.00 | $1,832.00 | $1,834.00 | $1,834.00 | 28 | undefined | False | False | 2024-04-09 15:15:00+00:00 |
+| 1 | test | $489.50 | $999.00 | $1,098.00 | $1,150.88 | 66 | 99.90% | True | False | 2026-10-16 14:30:00+00:00 |
+| 2 | validation | $1,390.50 | $1,493.50 | $1,493.00 | $1,534.00 | 179 | 47.75% | True | True | 2025-12-24 17:00:00+00:00 |
+| 2 | test | $812.00 | $807.50 | $807.00 | $879.50 | 46 | 53.82% | True | False | 2026-10-22 16:00:00+00:00 |
+| 3 | validation | $-1,500.00 | $1,812.00 | $1,814.00 | $1,814.00 | 29 | undefined | False | False | 2024-04-09 15:00:00+00:00 |
+| 3 | test | $290.00 | $946.50 | $952.50 | $1,005.50 | 70 | 168.62% | True | False | 2026-10-16 14:30:00+00:00 |
+| 4 | validation | $-1,735.50 | $1,781.50 | $1,841.50 | $1,841.50 | 31 | undefined | False | False | 2024-05-08 15:00:00+00:00 |
+| 4 | test | $28.50 | $1,065.00 | $1,238.50 | $1,291.38 | 60 | 1715.79% | True | False | 2026-10-16 14:30:00+00:00 |
+| 5 | validation | $634.00 | $1,823.50 | $1,823.50 | $1,823.50 | 200 | 110.25% | False | False | 2025-11-06 15:15:00+00:00 |
+| 5 | test | $-2.00 | $1,476.00 | $1,475.50 | $1,548.00 | 63 | undefined | False | False | 2026-10-23 16:00:00+00:00 |
+
+The user-provided50% consistency rule applies only to the account evaluation phase. Chronological validation/test partitions are not account phases, so both account-phase interpretations are reported without modifying execution. Actual account contract terms, all-in fees, holidays and operational eligibility remain unverified.
+
+## Frozen rules and audit
+
+Original completed15-minute raw-contract bars, causal indicators, next-open fills, adverse stop gaps, conservative stop-first ambiguity, strict target trade-through, volume/contract safeguards and fees/spread/slippage remained unchanged. Each of the10 executions has an exclusive per-candidate/split reservation, trade ledger, equity/cash/intrabar curve, execution verification and result hash. Test reservations record all five completed validation-result hashes, verified again after testing. Frozen code/configuration hashes and prior training artifacts reconcile. No holdout result guided changes or further candidates.
+
+Cohort hash: `4bc3667c6c411528e31f1bb7024fb6fcd8568c701c093e69fbcdd5f9833e5084`. Three reservation/order/tamper guard tests passed before any evaluation. All10 ledgers and curves reconcile to their reported net and drawdowns. This publication only reads saved artifacts; it does not replay strategies.
+
+Test coverage: {&#x27;rows&#x27;: 301755, &#x27;start&#x27;: &#x27;2026-01-01 23:00:00+00:00&#x27;, &#x27;end&#x27;: &#x27;2026-11-05 23:59:00+00:00&#x27;}. Validation coverage: {&#x27;rows&#x27;: 707652, &#x27;start&#x27;: &#x27;2024-01-01 23:00:00+00:00&#x27;, &#x27;end&#x27;: &#x27;2025-12-31 21:59:00+00:00&#x27;}.
+
+Results retain the original training order. They do not authorize a new selection/tuning cycle on these observed periods. Fresh forward observations are required for independent confirmation.
+
+## Frozen configurations
+
+```json
+[
+  {
+    &quot;display_rank&quot;: 1,
+    &quot;candidate_id&quot;: &quot;mass_8190d72d308b603c1725&quot;,
+    &quot;parameters&quot;: {
+      &quot;config_id&quot;: &quot;mass_8190d72d308b603c1725&quot;,
+      &quot;experiment_order&quot;: 50560,
+      &quot;family&quot;: &quot;trend&quot;,
+      &quot;hold_bars&quot;: 12,
+      &quot;instrument&quot;: &quot;MNQ&quot;,
+      &quot;lookback&quot;: 8,
+      &quot;max_contracts&quot;: 2,
+      &quot;session_end&quot;: 720,
+      &quot;session_start&quot;: 600,
+      &quot;stop_atr&quot;: 1.0,
+      &quot;target_r&quot;: 4.0,
+      &quot;threshold&quot;: 0.75,
+      &quot;trailing_atr&quot;: 1.0
+    }
+  },
+  {
+    &quot;display_rank&quot;: 2,
+    &quot;candidate_id&quot;: &quot;mass_74a481aa30c484a442b6&quot;,
+    &quot;parameters&quot;: {
+      &quot;config_id&quot;: &quot;mass_74a481aa30c484a442b6&quot;,
+      &quot;experiment_order&quot;: 123840,
+      &quot;family&quot;: &quot;breakout&quot;,
+      &quot;hold_bars&quot;: 16,
+      &quot;instrument&quot;: &quot;MNQ&quot;,
+      &quot;lookback&quot;: 24,
+      &quot;max_contracts&quot;: 3,
+      &quot;session_end&quot;: 720,
+      &quot;session_start&quot;: 600,
+      &quot;stop_atr&quot;: 1.0,
+      &quot;target_r&quot;: 3.0,
+      &quot;threshold&quot;: 0.75,
+      &quot;trailing_atr&quot;: 2.0
+    }
+  },
+  {
+    &quot;display_rank&quot;: 3,
+    &quot;candidate_id&quot;: &quot;mass_b839a1ec768d3babc0b7&quot;,
+    &quot;parameters&quot;: {
+      &quot;config_id&quot;: &quot;mass_b839a1ec768d3babc0b7&quot;,
+      &quot;experiment_order&quot;: 30432,
+      &quot;family&quot;: &quot;trend&quot;,
+      &quot;hold_bars&quot;: 4,
+      &quot;instrument&quot;: &quot;MNQ&quot;,
+      &quot;lookback&quot;: 8,
+      &quot;max_contracts&quot;: 3,
+      &quot;session_end&quot;: 720,
+      &quot;session_start&quot;: 600,
+      &quot;stop_atr&quot;: 1.0,
+      &quot;target_r&quot;: 4.0,
+      &quot;threshold&quot;: 0.75,
+      &quot;trailing_atr&quot;: 1.0
+    }
+  },
+  {
+    &quot;display_rank&quot;: 4,
+    &quot;candidate_id&quot;: &quot;mass_6dfbc230bb4d7f9f0e83&quot;,
+    &quot;parameters&quot;: {
+      &quot;config_id&quot;: &quot;mass_6dfbc230bb4d7f9f0e83&quot;,
+      &quot;experiment_order&quot;: 190300,
+      &quot;family&quot;: &quot;trend&quot;,
+      &quot;hold_bars&quot;: 12,
+      &quot;instrument&quot;: &quot;MNQ&quot;,
+      &quot;lookback&quot;: 8,
+      &quot;max_contracts&quot;: 2,
+      &quot;session_end&quot;: 720,
+      &quot;session_start&quot;: 600,
+      &quot;stop_atr&quot;: 1.0,
+      &quot;target_r&quot;: 4.0,
+      &quot;threshold&quot;: 0.75,
+      &quot;trailing_atr&quot;: 0.0
+    }
+  },
+  {
+    &quot;display_rank&quot;: 5,
+    &quot;candidate_id&quot;: &quot;mass_3f98bb0221b65643d358&quot;,
+    &quot;parameters&quot;: {
+      &quot;config_id&quot;: &quot;mass_3f98bb0221b65643d358&quot;,
+      &quot;experiment_order&quot;: 63652,
+      &quot;family&quot;: &quot;breakout&quot;,
+      &quot;hold_bars&quot;: 12,
+      &quot;instrument&quot;: &quot;MNQ&quot;,
+      &quot;lookback&quot;: 8,
+      &quot;max_contracts&quot;: 3,
+      &quot;session_end&quot;: 720,
+      &quot;session_start&quot;: 600,
+      &quot;stop_atr&quot;: 1.0,
+      &quot;target_r&quot;: 3.0,
+      &quot;threshold&quot;: 0.75,
+      &quot;trailing_atr&quot;: 0.0
+    }
+  }
+]
+```
+
+Artifacts: `../runs/collaborative_top5_splits_v1/frozen_cohort.json`, `split_metrics.csv`, `all_trades.csv`, per-candidate result JSON/curve/trade Parquet, `top5_split_curves.png`, `top5_split_curves.svg`. Machine summary: `COLLABORATIVE_TOP5_SPLITS.json`. Verification: `COLLABORATIVE_TOP5_SPLITS_verification.json`.
+</pre></details>

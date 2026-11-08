@@ -1,0 +1,62 @@
+# Refined v1.2.0: validation then test without tuning
+
+Frozen strategy `e57_f62b1be4cfe9edf434d8` (`v1.2.0-risk-profit-research`). **Exactly one base-cost evaluation per split. No parameters, features, filters, sizing, costs, exits or risk limits changed between validation and test.**
+
+| Split | Net P&L | Realized-cash DD | Closing DD | Intrabar DD | Trades | Permanent lock | Profit/DD result |
+|---|---:|---:|---:|---:|---:|---|---|
+| validation | $-8.00 | $1,398.50 | $1,436.50 | $1,452.25 | 80 | gap in usable market data | FAIL |
+| test | $1,677.00 | $782.00 | $882.50 | $982.38 | 108 | none | PASS |
+
+## Conclusion
+
+Positive net P&L with cash, closing and intrabar DD each strictly below$2,000 on both splits: **FAIL**. A positive test does not cancel a validation loss or permanent data/risk lock.
+
+Validation ended with a small loss and a permanent market-data-gap lock. Flat equity after that lock does not represent continued trading. The frozen risk guard was preserved; it was not removed to obtain more trades or a better result. Test was run afterward on the same version regardless of validation outcome.
+
+| Split | Last trade exit UTC | 50% consistency ratio | Scenario without evaluation-only50% gate | Evaluation-account scenario |
+|---|---|---|---|
+| validation | 2024-05-27 22:00:00+00:00 | undefined (nonpositive net) | False | False |
+| test | 2026-10-27 19:45:00+00:00 | 52.71% | True | False |
+
+The50% consistency diagnostic applies only to the account evaluation phase, per user instruction; it does not define the chronological validation/test split. Both account-phase scenarios are reported on identical executions. Test consistency exceeds50%, so that evaluation-account scenario fails even though test profit/DD/no-lock checks pass. Actual account contract terms and all-in costs remain unverified.
+
+## Data separation and verification
+
+Validation uses the existing physical MNQ2024–2025 partition; test uses the existing physical MNQ2026 partition. Both periods were observed in earlier work and cannot provide independent unseen confirmation. The parent was selected after old holdout observations, and this refined version was selected using training only. No new outcome was used to change any rule or evaluate alternatives.
+
+Frozen parameters, execution settings, risk adapter, code hashes and both data identities were saved before split-price access. Exclusive per-split reservations record one parameter/cost case and consume the version even on failure. Validation completed before test prices were loaded; the validation result hash was recorded before test and verified afterward. Restart behavior reuses completed results. The immutable original/refined version archives remain unchanged.
+
+Each split uses one continuous$50,000 account, split-local causal indicator warmup, the original first96/last16 entry suppression, complete15-minute raw-contract bars and original next-open execution/fill/risk semantics. No annual resets occur within these split accounts. All saved net, cash/closing/intrabar drawdowns and trade counts reconcile to both ledgers and curves. Independent ledger/fill checks passed; full account-path equivalence with the older comparison simulator is not claimed. Two reservation/order/tamper guard tests passed before evaluation. This publication only reads saved results and does not replay trades.
+
+Coverage:
+
+- validation: {'rows': 707652, 'start': '2024-01-01 23:00:00+00:00', 'end': '2025-12-31 21:59:00+00:00'}
+- test: {'rows': 301755, 'start': '2026-01-01 23:00:00+00:00', 'end': '2026-11-05 23:59:00+00:00'}
+
+Frozen parameters:
+
+```json
+{
+  "config_id": "e57_f62b1be4cfe9edf434d8",
+  "experiment_order": 47329,
+  "family": "momentum",
+  "hold_bars": 16,
+  "instrument": "MNQ",
+  "lookback": 20,
+  "max_contracts": 2,
+  "pure_scaling_control": false,
+  "risk_scale": 1.0,
+  "session_end": 945,
+  "session_start": 585,
+  "stop_atr": 1.25,
+  "target_r": 4.0,
+  "threshold": 1.0,
+  "trailing_atr": 1.5
+}
+```
+
+Frozen candidate hash: `e442bc1ee10e8541640906e133d2432acf2ee06c70d51a436cc68b7425260d8c`.
+
+Artifacts: `../runs/e57_refined_validation_test_v1/frozen_candidate.json`, `validation_result.json`, `test_result.json`, `split_metrics.csv`, `validation_trades.csv`, `test_trades.csv`, `all_trades.csv`, `split_curves.png`, `split_curves.svg`, and archived code.
+
+**Status: RESEARCH-ONLY; fails profitability/no-lock requirements on validation. No strategy promotion or live execution. Further development must remain training-only and cannot use these consumed outcomes to tune.**

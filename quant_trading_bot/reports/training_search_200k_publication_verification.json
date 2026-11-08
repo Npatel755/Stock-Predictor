@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "new_completed_unique": 200000,
+  "cumulative_unique": 370000,
+  "research_qualified": 2131,
+  "prior_training_artifacts_preserved": true,
+  "publication_only_no_replay": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "protected_result_files_read": false,
+  "winner": "mass_7bf2833bf4365b60bedb"
+}

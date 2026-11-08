@@ -1,0 +1,32 @@
+{
+  "event_id": "EXAMPLE-ONLY-NOT-REAL-DATA",
+  "source_id": null,
+  "source_url": null,
+  "publisher": null,
+  "event_category": "FOMC|CPI|NFP|PCE|GDP|BREAKING|CRYPTO|OTHER",
+  "symbols_affected": [
+    "NQ",
+    "ES",
+    "MNQ",
+    "MES"
+  ],
+  "scheduled_time_utc": null,
+  "first_publication_time_utc": null,
+  "vendor_available_time_utc": null,
+  "local_ingest_time_utc": null,
+  "signal_ready_time_utc": null,
+  "order_arrival_time_utc": null,
+  "consensus_asof_utc": null,
+  "consensus_value": null,
+  "first_reported_actual": null,
+  "data_vintage": null,
+  "content_version": null,
+  "replaces_event_version": null,
+  "content_hash": null,
+  "headline_excerpt_permitted": null,
+  "verified_source": false,
+  "confidence_label": "unverified",
+  "time_precision": "unknown",
+  "access_rights": "unknown",
+  "notes": "Template: do not interpret fields as observations"
+}

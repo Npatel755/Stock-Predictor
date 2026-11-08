@@ -1,0 +1,35 @@
+{
+  "candidate_id": "mass_8190d72d308b603c1725",
+  "parameters": {
+    "config_id": "mass_8190d72d308b603c1725",
+    "experiment_order": 50560,
+    "family": "trend",
+    "hold_bars": 12,
+    "instrument": "MNQ",
+    "lookback": 8,
+    "max_contracts": 2,
+    "session_end": 720,
+    "session_start": 600,
+    "stop_atr": 1.0,
+    "target_r": 4.0,
+    "threshold": 0.75,
+    "trailing_atr": 1.0
+  },
+  "phase": "test",
+  "cohort_hash": "4bc3667c6c411528e31f1bb7024fb6fcd8568c701c093e69fbcdd5f9833e5084",
+  "dataset_version": "fe885d840f78d1998f4ac3fb1073803403b1c45ac2b3882560ec1fd27a3bef23",
+  "reserved_at": "2026-11-08T00:03:36.421344+00:00",
+  "no_tuning": true,
+  "parameter_variants": 1,
+  "cost_variants": 1,
+  "period_previously_observed": true,
+  "independent_confirmation": false,
+  "failure_consumes_reservation": true,
+  "validation_result_hashes": {
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\collaborative_top5_splits_v1\\mass_8190d72d308b603c1725_validation_result.json": "5ea855ee76e5220edc9293416113787e5b5a392108bc3fdabef4e68e8fc8ceaf",
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\collaborative_top5_splits_v1\\mass_74a481aa30c484a442b6_validation_result.json": "398903da476de7bf20a0c4059b38bea97c0ecf47afcc893209139f72cb3757d4",
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\collaborative_top5_splits_v1\\mass_b839a1ec768d3babc0b7_validation_result.json": "17eec8db31641b0183c8cbb6b157addfa7241fc1513191e074fe152794ecdff7",
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\collaborative_top5_splits_v1\\mass_6dfbc230bb4d7f9f0e83_validation_result.json": "44387fe3517311ff6c0fe4958a4754200988c4b1291f39c2ada41fe43e56d988",
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\collaborative_top5_splits_v1\\mass_3f98bb0221b65643d358_validation_result.json": "0574f3fe39119d8747e5635e856bed2675f135c916314b084b4e6b79f4d01f46"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_id": "mass_7bf2833bf4365b60bedb",
+  "candidate_hash": "1816f2407c63922fb3d7ca5f39820695c3dbca17486bf13d88d5c94f5dd659cf",
+  "phase": "validation",
+  "reserved_at": "2026-11-07T21:41:28.935161+00:00",
+  "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+  "no_tuning": true,
+  "parameter_variants": 1,
+  "cost_variants": 1,
+  "failure_consumes_reservation": true,
+  "period_previously_observed": true,
+  "independent_confirmation": false,
+  "test_data_accessed": false
+}

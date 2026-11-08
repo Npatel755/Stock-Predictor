@@ -1,0 +1,125 @@
+<!doctype html><meta charset="utf-8"><title>Versioned MNQ momentum refinement</title><style>body{font:15px/1.6 system-ui;background:#111820;color:#e8eef5;max-width:1200px;margin:40px auto;padding:0 24px}pre{white-space:pre-wrap;overflow-wrap:anywhere}img{width:100%;background:white}</style><h1>MNQ momentum: versioned training research</h1><pre># Versioned MNQ momentum: training-only refinement and scaling
+
+Original strategy `mass_e57ba183f302b3ba886b` is preserved as **v1.0.0**. Baseline training net **$4,935.50**, cash DD $446.50, closing DD $480.00, intrabar DD **$533.25**, 202 trades. Its existing validation/test results were archived without replay before research; they were not read by the training worker.
+
+**200,000 new configurations evaluated out of a frozen200,000 budget.** Stop reason: `200000_budget_completed_no_verified_dominance`. 3,661 met the stronger training quality gates. All200,000 planned active configurations are unique and disjoint from the prior1.07 million reserved configurations. Only completed cases count as experiments; unexecuted planned cases have no results.
+
+Each training account covers one year2020–2023 and resets to$50,000. Net sums those accounts; DD is the worst annual account, not continuous four-year DD. Original physical TRAIN split, completed15-minute raw-contract bars, past-only features, next-open fills, adverse gaps, stop-first ambiguity, target trade-through, volume/roll controls and96/16 entry suppression were retained.
+
+## Pure risk/position scaling: unchanged signal and exits
+
+| Risk multiple | Max MNQ | Per-trade/open risk | Daily loss budget | Training net | Intrabar DD | Base gates | 2x-cost net | 2x-cost intrabar DD | 2x-cost gates |
+|---:|---:|---:|---:|---:|---:|---|---:|---:|---|
+| 1.5x | 2 | $225 | $450 | $7,940.00 | $1,084.00 | True | $6,224.50 | $1,130.00 | True |
+| 2x | 2 | $300 | $600 | $9,511.00 | $1,153.75 | True | $8,308.00 | $1,196.50 | True |
+| 2x | 3 | $300 | $600 | $11,857.50 | $1,684.00 | True | $10,173.50 | $1,812.50 | False |
+| 3x | 3 | $450 | $900 | $7,872.00 | $1,811.00 | False | $6,308.50 | $1,822.50 | False |
+| 3x | 4 | $450 | $900 | $2,110.50 | $1,837.00 | False | $-12.00 | $1,909.00 | False |
+| 4x | 4 | $600 | $1,200 | $2,333.00 | $1,837.00 | False | $1,198.00 | $1,868.00 | False |
+| 4x | 6 | $600 | $1,200 | $2,543.00 | $1,930.00 | False | $1,863.50 | $1,938.00 | False |
+
+Scaling uses actual account simulations with size impact, fees, changed fills/risk sizing, daily stops and unchanged$1,800 permanent stop/$2,000 funded-floor scenario; results are not multiplied from the baseline curve. Larger budgets can change trade counts and cause locks. A sub-$2,000 DD case with a permanent lock fails the stronger gates. The daily-loss and position budgets are explicit research scenarios, not verified account permissions.
+
+## Best cost-qualified pure scaling
+
+`e57_606855d6e6251ba6c41c`: **$9,511.00 training net**, cash DD $1,084.00, closing DD $1,084.00, **$1,153.75 intrabar DD**, 204 trades. Doubled costs: **$8,308.00 net**, **$1,196.50 intrabar DD**, stronger gates True.
+
+Evaluation-account consistency diagnostic: base False, doubled costs False; it is scoped only to the account evaluation phase per user instruction. It did not change executions.
+
+```json
+{
+  &quot;config_id&quot;: &quot;e57_606855d6e6251ba6c41c&quot;,
+  &quot;experiment_order&quot;: 2,
+  &quot;family&quot;: &quot;momentum&quot;,
+  &quot;hold_bars&quot;: 12,
+  &quot;instrument&quot;: &quot;MNQ&quot;,
+  &quot;lookback&quot;: 16,
+  &quot;max_contracts&quot;: 2,
+  &quot;pure_scaling_control&quot;: true,
+  &quot;risk_scale&quot;: 2.0,
+  &quot;session_end&quot;: 945,
+  &quot;session_start&quot;: 585,
+  &quot;stop_atr&quot;: 1.0,
+  &quot;target_r&quot;: 4.0,
+  &quot;threshold&quot;: 1.5,
+  &quot;trailing_atr&quot;: 2.0
+}
+```
+
+| Year | Base net | Base intrabar DD | Base trades | Doubled-cost net | Doubled-cost intrabar DD |
+|---|---:|---:|---:|---:|---:|
+| 2020 | $292.00 | $1,084.00 | 40 | $110.00 | $1,130.00 |
+| 2021 | $2,351.00 | $946.75 | 59 | $1,854.00 | $991.50 |
+| 2022 | $5,286.00 | $1,153.75 | 51 | $5,036.00 | $1,196.50 |
+| 2023 | $1,582.00 | $762.75 | 54 | $1,308.00 | $802.50 |
+
+## Verified higher-profit challenger without additional drawdown
+
+No candidate met this category under the frozen criteria. The original baseline remains preserved.
+
+## Highest training profit under the2k risk cap, with doubled-cost verification
+
+`e57_f62b1be4cfe9edf434d8`: **$15,370.00 training net**, cash DD $1,426.00, closing DD $1,542.50, **$1,564.25 intrabar DD**, 735 trades. Doubled costs: **$10,463.50 net**, **$1,627.00 intrabar DD**, stronger gates True.
+
+Evaluation-account consistency diagnostic: base False, doubled costs False; it is scoped only to the account evaluation phase per user instruction. It did not change executions.
+
+```json
+{
+  &quot;config_id&quot;: &quot;e57_f62b1be4cfe9edf434d8&quot;,
+  &quot;experiment_order&quot;: 47329,
+  &quot;family&quot;: &quot;momentum&quot;,
+  &quot;hold_bars&quot;: 16,
+  &quot;instrument&quot;: &quot;MNQ&quot;,
+  &quot;lookback&quot;: 20,
+  &quot;max_contracts&quot;: 2,
+  &quot;pure_scaling_control&quot;: false,
+  &quot;risk_scale&quot;: 1.0,
+  &quot;session_end&quot;: 945,
+  &quot;session_start&quot;: 585,
+  &quot;stop_atr&quot;: 1.25,
+  &quot;target_r&quot;: 4.0,
+  &quot;threshold&quot;: 1.0,
+  &quot;trailing_atr&quot;: 1.5
+}
+```
+
+| Year | Base net | Base intrabar DD | Base trades | Doubled-cost net | Doubled-cost intrabar DD |
+|---|---:|---:|---:|---:|---:|
+| 2020 | $1,149.00 | $1,306.25 | 174 | $396.00 | $1,470.00 |
+| 2021 | $4,545.00 | $1,163.25 | 195 | $2,819.00 | $1,613.00 |
+| 2022 | $7,710.50 | $609.38 | 177 | $6,227.50 | $634.25 |
+| 2023 | $1,965.50 | $1,564.25 | 189 | $1,021.00 | $1,627.00 |
+
+## Continuous four-year TRAIN account check
+
+The same selected configurations were also evaluated unchanged on one continuous2020–2023 training account, at base and doubled costs, with no annual reset. This is a diagnostic of already selected configurations, not a new search or a new unique configuration. Only the outer entry boundaries use the96/16 suppression; differences in trades from the reset-account totals are disclosed. No validation/test access occurred.
+
+| Version / role | Continuous net | Intrabar DD | Trades | Permanent lock | Profit/DD/no-lock pass | 2x-cost continuous net | 2x-cost intrabar DD | 2x-cost pass |
+|---|---:|---:|---:|---:|---|---:|---:|---|
+| baseline | $5,142.00 | $533.25 | 204 | 0 | True | $4,790.00 | $551.00 | True |
+| scaling | $9,924.00 | $1,153.75 | 206 | 0 | True | $8,715.00 | $1,214.50 | True |
+| profit_with_risk_cap | $15,174.50 | $1,564.25 | 741 | 0 | True | $10,250.00 | $1,627.00 | True |
+
+Continuous results do not erase annual-fold failures or justify changing any candidate from later outcomes. Any continuous-account risk lock is a failed diagnostic even if terminal net is positive and outerDD remains below$2,000.
+
+## Search, exposure and promotion limits
+
+The user additionally authorized more risk for profit. A separate supplemental profit-first review was registered while the main search was running, before inspecting its highest-profit finalists. It froze the top20 completed quality-qualified configurations above baseline net in profit order before its own TRAIN price access, then checked them unchanged at base and doubled costs until the first survivor. It creates no new unique configurations and does not alter the original main-search stop rule. Greater drawdown than v1 is allowed in this category, always strictly below$2,000 and with no permanent/funded breach.
+
+A seeded, pre-frozen neighborhood explored only MNQ normalized momentum: horizons, thresholds, ATR stops/targets/trailing stops, holding caps, sessions, position caps and explicit risk multiples. Seven pure scaling controls were mandatory before early stop. Early stop required higher training net, no increase in any cash/closing/intrabar DD versus v1, all4 years positive with&gt;=30 trades each, PF&gt;=1.30,&lt;=800 trades, no risk/funded failure, strictDD&lt;2000 and survival under2x costs. Original signal and execution code stayed unchanged; the new scoped adapter changes only the explicitly registered risk budgets.
+
+The baseline was user-selected after historical validation/test outcomes were visible. That selection lineage cannot be erased. The refinement worker reads only the baseline TRAIN artifact and TRAIN prices, not its holdout archive; no new validation/test evaluation, protected-outcome inspection or holdout-guided parameter adjustment occurred in the search. New versions have NOT been evaluated on validation or test. No automatic baseline replacement or live deployment is authorized.
+
+Hundreds of thousands of correlated parameter trials entail selection bias. These are research candidates, not independent evidence of future profitability. Fresh forward observations under a frozen plan are needed for independent confirmation. Original holiday schedules, actual all-in costs and exact funded-account terms remain unverified. The50% consistency phase scope is user-provided.
+
+Base candidates reproduce and pass independent ledger arithmetic plus up to25 fixed chronological shared-simulator trade replays per year. Full account-path equivalence to that older simulator is not claimed. All scaling-control and selected challenger base/stress equity, cash, intrabar curves and ledgers reconcile. The200k manifest, completed-result database and CSV reconcile; no extra unique trials are counted for verification or stress runs.
+
+## Versions and artifacts
+
+- Original v1.0.0: `../strategy_versions/mnq_momentum_e57/v1.0.0/`
+- scaling: `C:\Users\Nick\OneDrive\Attachments\Desktop\Stock Predictor Codex ETH BNB\quant_trading_bot\strategy_versions\mnq_momentum_e57\v1.0.1-scaled-research`
+- profit_with_risk_cap: `C:\Users\Nick\OneDrive\Attachments\Desktop\Stock Predictor Codex ETH BNB\quant_trading_bot\strategy_versions\mnq_momentum_e57\v1.2.0-risk-profit-research`
+- Frozen search and completed ranked results: `../runs/e57_training_refinement_v1/protocol.json`, `configurations.jsonl`, `ranked.csv`
+- Curves/trade logs and checks: `../runs/e57_training_refinement_v1/`
+- This report reads saved artifacts only; no strategy replay.
+</pre><h2>Scaling</h2><img alt="Annual training equity and intrabar drawdown" src="../runs/e57_training_refinement_v1/scaled_training_curves.png"><h2>Highest profit under the drawdown cap</h2><img alt="Annual training equity and intrabar drawdown" src="../runs/e57_training_refinement_v1/risk_profit_training_curves.png">

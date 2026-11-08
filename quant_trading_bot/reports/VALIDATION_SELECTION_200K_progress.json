@@ -1,0 +1,9 @@
+{
+  "target": 200000,
+  "training_completed": 200000,
+  "validation_completed": 200000,
+  "phase": "All200k TRAIN and all200k VALIDATION complete; ranking ready",
+  "validation_used_for_model_selection": true,
+  "test_accessed": false,
+  "updated_at": "2026-11-08T01:48:46.169513+00:00"
+}

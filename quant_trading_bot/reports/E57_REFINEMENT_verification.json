@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "new_completed": 200000,
+  "planned_unique": 200000,
+  "prior_unique_excluded": 1070000,
+  "manifest_csv_database_match": true,
+  "frozen_sources_match": true,
+  "all_scaling_controls_base_stress_reconciled": true,
+  "verified_early_stop": false,
+  "training_baseline_reproduced": true,
+  "versions": {
+    "scaling": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\strategy_versions\\mnq_momentum_e57\\v1.0.1-scaled-research",
+    "profit_with_risk_cap": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\strategy_versions\\mnq_momentum_e57\\v1.2.0-risk-profit-research"
+  },
+  "validation_accessed": false,
+  "test_accessed": false,
+  "protected_outcome_files_read": false,
+  "independent_confirmation": false,
+  "report_sha256": "236f6654944e383236fe3ffbc389b38e6ef4660cb195e6e73bddedf5523d19ba",
+  "verified_at": "2026-11-08T00:42:27.996613+00:00",
+  "continuous_train_curves_and_ledgers_reconciled": true,
+  "registered_profit_review_verified": true,
+  "targeted_tests_passed": 32
+}

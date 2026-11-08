@@ -1,0 +1,188 @@
+[
+  {
+    "id": "mass_4a0b95329be1d0438243",
+    "name": "Strategy #2 (Breakout Benchmark 3c)",
+    "total_net": 8271.0,
+    "total_trades": 261,
+    "trades_per_week": 0.7,
+    "trades_per_active_week": 2.7,
+    "avg_weekly_gain": 21.47,
+    "avg_active_weekly_gain": 87.06,
+    "weekly_win_rate": 55.8,
+    "win_rate": 39.5,
+    "profit_factor": 1.56,
+    "win_loss_ratio": 2.39,
+    "expectancy": 31.69,
+    "max_consec_losses": 7,
+    "target_3k_by_split": {
+      "train": {
+        "passed": false,
+        "max_pnl_reached": 519.0,
+        "total_split_trades": 32
+      },
+      "validation": {
+        "passed": true,
+        "calendar_days": 299,
+        "calendar_weeks": 42.7,
+        "trades_to_hit": 134,
+        "final_pnl_at_hit": 3125.5
+      },
+      "test": {
+        "passed": true,
+        "calendar_days": 218,
+        "calendar_weeks": 31.1,
+        "trades_to_hit": 65,
+        "final_pnl_at_hit": 3069.0
+      }
+    },
+    "rolling_eval": {
+      "attempts": 49,
+      "passes": 44,
+      "pass_rate_pct": 89.8,
+      "median_days_to_pass": 214.0,
+      "median_weeks_to_pass": 30.6,
+      "fastest_days_to_pass": 62,
+      "median_trades_to_pass": 66
+    }
+  },
+  {
+    "id": "mass_e57_scaled_2c",
+    "name": "Strategy #5 Scaled (Momentum 2c, ~$1.5k DD)",
+    "total_net": 12990.5,
+    "total_trades": 328,
+    "trades_per_week": 0.8,
+    "trades_per_active_week": 1.6,
+    "avg_weekly_gain": 33.32,
+    "avg_active_weekly_gain": 63.37,
+    "weekly_win_rate": 51.7,
+    "win_rate": 48.8,
+    "profit_factor": 1.88,
+    "win_loss_ratio": 1.96,
+    "expectancy": 39.61,
+    "max_consec_losses": 12,
+    "target_3k_by_split": {
+      "train": {
+        "passed": true,
+        "calendar_days": 1207,
+        "calendar_weeks": 172.4,
+        "trades_to_hit": 172,
+        "final_pnl_at_hit": 3539.0
+      },
+      "validation": {
+        "passed": true,
+        "calendar_days": 338,
+        "calendar_weeks": 48.3,
+        "trades_to_hit": 50,
+        "final_pnl_at_hit": 3346.5
+      },
+      "test": {
+        "passed": true,
+        "calendar_days": 252,
+        "calendar_weeks": 36.0,
+        "trades_to_hit": 30,
+        "final_pnl_at_hit": 3191.5
+      }
+    },
+    "rolling_eval": {
+      "attempts": 62,
+      "passes": 60,
+      "pass_rate_pct": 96.8,
+      "median_days_to_pass": 486.0,
+      "median_weeks_to_pass": 69.4,
+      "fastest_days_to_pass": 203,
+      "median_trades_to_pass": 66
+    }
+  },
+  {
+    "id": "mass_e57ba183f302b3ba886b",
+    "name": "Strategy #5 Original (Momentum 1c, Low-DD King)",
+    "total_net": 9997.0,
+    "total_trades": 328,
+    "trades_per_week": 0.8,
+    "trades_per_active_week": 1.6,
+    "avg_weekly_gain": 25.64,
+    "avg_active_weekly_gain": 48.77,
+    "weekly_win_rate": 51.7,
+    "win_rate": 48.8,
+    "profit_factor": 2.0,
+    "win_loss_ratio": 2.09,
+    "expectancy": 30.48,
+    "max_consec_losses": 12,
+    "target_3k_by_split": {
+      "train": {
+        "passed": true,
+        "calendar_days": 1245,
+        "calendar_weeks": 177.9,
+        "trades_to_hit": 175,
+        "final_pnl_at_hit": 3033.5
+      },
+      "validation": {
+        "passed": false,
+        "max_pnl_reached": 2605.0,
+        "total_split_trades": 55
+      },
+      "test": {
+        "passed": true,
+        "calendar_days": 252,
+        "calendar_weeks": 36.0,
+        "trades_to_hit": 30,
+        "final_pnl_at_hit": 3044.5
+      }
+    },
+    "rolling_eval": {
+      "attempts": 62,
+      "passes": 60,
+      "pass_rate_pct": 96.8,
+      "median_days_to_pass": 673.0,
+      "median_weeks_to_pass": 96.1,
+      "fastest_days_to_pass": 298,
+      "median_trades_to_pass": 82
+    }
+  },
+  {
+    "id": "mass_149930dc7532c363d0a6",
+    "name": "Strategy #4 (Momentum 1c, Fixed Exit)",
+    "total_net": 10237.0,
+    "total_trades": 328,
+    "trades_per_week": 0.8,
+    "trades_per_active_week": 1.6,
+    "avg_weekly_gain": 26.26,
+    "avg_active_weekly_gain": 49.94,
+    "weekly_win_rate": 52.2,
+    "win_rate": 49.1,
+    "profit_factor": 2.01,
+    "win_loss_ratio": 2.07,
+    "expectancy": 31.21,
+    "max_consec_losses": 12,
+    "target_3k_by_split": {
+      "train": {
+        "passed": true,
+        "calendar_days": 1245,
+        "calendar_weeks": 177.9,
+        "trades_to_hit": 175,
+        "final_pnl_at_hit": 3000.0
+      },
+      "validation": {
+        "passed": false,
+        "max_pnl_reached": 2738.5,
+        "total_split_trades": 55
+      },
+      "test": {
+        "passed": true,
+        "calendar_days": 251,
+        "calendar_weeks": 35.9,
+        "trades_to_hit": 29,
+        "final_pnl_at_hit": 3023.0
+      }
+    },
+    "rolling_eval": {
+      "attempts": 62,
+      "passes": 60,
+      "pass_rate_pct": 96.8,
+      "median_days_to_pass": 651.0,
+      "median_weeks_to_pass": 93.0,
+      "fastest_days_to_pass": 298,
+      "median_trades_to_pass": 83
+    }
+  }
+]

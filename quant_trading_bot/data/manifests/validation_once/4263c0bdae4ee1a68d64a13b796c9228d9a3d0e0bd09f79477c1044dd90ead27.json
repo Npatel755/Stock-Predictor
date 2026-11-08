@@ -1,0 +1,13 @@
+{
+  "candidate_id": "mass_7b8108e3f464dd0a513d",
+  "phase": "validation",
+  "reserved_at": "2026-11-08T01:28:19.899198+00:00",
+  "dataset_version": "e3559b2859bfb04afbb6048335ab5d589c7db3e36a9556575d3339ef2e96dee7",
+  "no_tuning": true,
+  "parameter_variants": 1,
+  "cost_variants": 1,
+  "failure_consumes_reservation": true,
+  "period_previously_observed": true,
+  "independent_confirmation": false,
+  "test_data_accessed": false
+}

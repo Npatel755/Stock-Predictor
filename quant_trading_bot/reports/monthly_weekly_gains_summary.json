@@ -1,0 +1,296 @@
+[
+  {
+    "id": "highr_67706898fdef6762c15a",
+    "name": "#1 MNQ Regime (4.0R, 3c)",
+    "instrument": "MNQ",
+    "splits": {
+      "validation": {
+        "net_pnl": 5849.5,
+        "drawdown": 1241.0,
+        "profit_factor": 1.625380873469824,
+        "trades": 151,
+        "avg_monthly_gain": 243.73,
+        "avg_weekly_gain": 56.08,
+        "avg_active_weekly_gain": 132.94,
+        "trades_per_cal_week": 1.4,
+        "trades_per_active_week": 3.4,
+        "monthly_win_rate_pct": 83.3,
+        "weekly_win_rate_pct": 56.8,
+        "best_month": 2045.5,
+        "worst_month": -669.5
+      },
+      "test": {
+        "net_pnl": 1805.0,
+        "drawdown": 1314.5,
+        "profit_factor": 1.2942375091694516,
+        "trades": 87,
+        "avg_monthly_gain": 176.96,
+        "avg_weekly_gain": 40.74,
+        "avg_active_weekly_gain": 64.46,
+        "trades_per_cal_week": 2.0,
+        "trades_per_active_week": 3.1,
+        "monthly_win_rate_pct": 54.5,
+        "weekly_win_rate_pct": 42.9,
+        "best_month": 835.5,
+        "worst_month": -369.5
+      }
+    },
+    "combined_oos": {
+      "total_net": 7654.5,
+      "avg_monthly_gain": 223.82,
+      "avg_weekly_gain": 51.51
+    }
+  },
+  {
+    "id": "highr_45f2f82f59bf5698c173",
+    "name": "#2 MNQ Regime (4.0R, 3c)",
+    "instrument": "MNQ",
+    "splits": {
+      "validation": {
+        "net_pnl": 5818.5,
+        "drawdown": 1241.0,
+        "profit_factor": 1.6200117214555916,
+        "trades": 151,
+        "avg_monthly_gain": 242.44,
+        "avg_weekly_gain": 55.79,
+        "avg_active_weekly_gain": 132.24,
+        "trades_per_cal_week": 1.4,
+        "trades_per_active_week": 3.4,
+        "monthly_win_rate_pct": 83.3,
+        "weekly_win_rate_pct": 56.8,
+        "best_month": 2045.5,
+        "worst_month": -669.5
+      },
+      "test": {
+        "net_pnl": 1764.0,
+        "drawdown": 1324.5,
+        "profit_factor": 1.2856448870536799,
+        "trades": 87,
+        "avg_monthly_gain": 172.94,
+        "avg_weekly_gain": 39.82,
+        "avg_active_weekly_gain": 63.0,
+        "trades_per_cal_week": 2.0,
+        "trades_per_active_week": 3.1,
+        "monthly_win_rate_pct": 54.5,
+        "weekly_win_rate_pct": 42.9,
+        "best_month": 835.5,
+        "worst_month": -377.0
+      }
+    },
+    "combined_oos": {
+      "total_net": 7582.5,
+      "avg_monthly_gain": 221.71,
+      "avg_weekly_gain": 51.03
+    }
+  },
+  {
+    "id": "highr_5c3efc5187d6d1adc70d",
+    "name": "#3 MNQ Opening Range (4.0R, 3c)",
+    "instrument": "MNQ",
+    "splits": {
+      "validation": {
+        "net_pnl": 2058.5,
+        "drawdown": 1125.5,
+        "profit_factor": 1.154588465004506,
+        "trades": 267,
+        "avg_monthly_gain": 85.77,
+        "avg_weekly_gain": 19.74,
+        "avg_active_weekly_gain": 22.13,
+        "trades_per_cal_week": 2.6,
+        "trades_per_active_week": 2.9,
+        "monthly_win_rate_pct": 58.3,
+        "weekly_win_rate_pct": 44.1,
+        "best_month": 1133.0,
+        "worst_month": -652.0
+      },
+      "test": {
+        "net_pnl": 702.5,
+        "drawdown": 888.5,
+        "profit_factor": 1.4954160789844853,
+        "trades": 31,
+        "avg_monthly_gain": 68.87,
+        "avg_weekly_gain": 15.86,
+        "avg_active_weekly_gain": 50.18,
+        "trades_per_cal_week": 0.7,
+        "trades_per_active_week": 2.2,
+        "monthly_win_rate_pct": 66.7,
+        "weekly_win_rate_pct": 42.9,
+        "best_month": 560.5,
+        "worst_month": -530.5
+      }
+    },
+    "combined_oos": {
+      "total_net": 2761.0,
+      "avg_monthly_gain": 80.73,
+      "avg_weekly_gain": 18.58
+    }
+  },
+  {
+    "id": "highr_521471bd6e4c6a4d8622",
+    "name": "#4 MES Trend (6.0R, 3c)",
+    "instrument": "MES",
+    "splits": {
+      "validation": {
+        "net_pnl": 2147.5,
+        "drawdown": 1082.5,
+        "profit_factor": 1.5459861437742326,
+        "trades": 58,
+        "avg_monthly_gain": 89.48,
+        "avg_weekly_gain": 20.59,
+        "avg_active_weekly_gain": 69.27,
+        "trades_per_cal_week": 0.6,
+        "trades_per_active_week": 1.9,
+        "monthly_win_rate_pct": 50.0,
+        "weekly_win_rate_pct": 45.2,
+        "best_month": 1287.25,
+        "worst_month": -383.25
+      },
+      "test": {
+        "net_pnl": 1305.25,
+        "drawdown": 1291.0,
+        "profit_factor": 1.5765875207067919,
+        "trades": 33,
+        "avg_monthly_gain": 127.97,
+        "avg_weekly_gain": 29.46,
+        "avg_active_weekly_gain": 59.33,
+        "trades_per_cal_week": 0.7,
+        "trades_per_active_week": 1.5,
+        "monthly_win_rate_pct": 36.4,
+        "weekly_win_rate_pct": 22.7,
+        "best_month": 1088.0,
+        "worst_month": -296.5
+      }
+    },
+    "combined_oos": {
+      "total_net": 3452.75,
+      "avg_monthly_gain": 100.96,
+      "avg_weekly_gain": 23.24
+    }
+  },
+  {
+    "id": "highr_9cd4acba4cbb1a864e7f",
+    "name": "#5 MES Trend (8.0R, 3c)",
+    "instrument": "MES",
+    "splits": {
+      "validation": {
+        "net_pnl": 2264.25,
+        "drawdown": 1368.25,
+        "profit_factor": 1.5302072356866878,
+        "trades": 63,
+        "avg_monthly_gain": 94.34,
+        "avg_weekly_gain": 21.71,
+        "avg_active_weekly_gain": 73.04,
+        "trades_per_cal_week": 0.6,
+        "trades_per_active_week": 2.0,
+        "monthly_win_rate_pct": 58.3,
+        "weekly_win_rate_pct": 41.9,
+        "best_month": 2088.25,
+        "worst_month": -501.0
+      },
+      "test": {
+        "net_pnl": 1793.5,
+        "drawdown": 1629.0,
+        "profit_factor": 1.6060657261130353,
+        "trades": 37,
+        "avg_monthly_gain": 175.83,
+        "avg_weekly_gain": 40.49,
+        "avg_active_weekly_gain": 81.52,
+        "trades_per_cal_week": 0.8,
+        "trades_per_active_week": 1.7,
+        "monthly_win_rate_pct": 36.4,
+        "weekly_win_rate_pct": 22.7,
+        "best_month": 1524.5,
+        "worst_month": -447.0
+      }
+    },
+    "combined_oos": {
+      "total_net": 4057.75,
+      "avg_monthly_gain": 118.65,
+      "avg_weekly_gain": 27.31
+    }
+  },
+  {
+    "id": "mass_4a0b95329be1d0438243",
+    "name": "Benchmark: #2 Breakout (3c)",
+    "instrument": "MNQ",
+    "splits": {
+      "validation": {
+        "net_pnl": 4434.0,
+        "drawdown": 1290.0,
+        "profit_factor": 1.5175674098284113,
+        "trades": 148,
+        "avg_monthly_gain": 184.75,
+        "avg_weekly_gain": 42.51,
+        "avg_active_weekly_gain": 94.34,
+        "trades_per_cal_week": 1.4,
+        "trades_per_active_week": 3.1,
+        "monthly_win_rate_pct": 83.3,
+        "weekly_win_rate_pct": 57.4,
+        "best_month": 2040.5,
+        "worst_month": -411.5
+      },
+      "test": {
+        "net_pnl": 3645.5,
+        "drawdown": 1124.5,
+        "profit_factor": 1.808583786181657,
+        "trades": 81,
+        "avg_monthly_gain": 357.4,
+        "avg_weekly_gain": 82.29,
+        "avg_active_weekly_gain": 101.26,
+        "trades_per_cal_week": 1.8,
+        "trades_per_active_week": 2.2,
+        "monthly_win_rate_pct": 70.0,
+        "weekly_win_rate_pct": 52.8,
+        "best_month": 1096.5,
+        "worst_month": -637.5
+      }
+    },
+    "combined_oos": {
+      "total_net": 8079.5,
+      "avg_monthly_gain": 236.24,
+      "avg_weekly_gain": 54.37
+    }
+  },
+  {
+    "id": "mass_e57_scaled_2c",
+    "name": "Low-DD: #5 Momentum Scaled (2c)",
+    "instrument": "MNQ",
+    "splits": {
+      "validation": {
+        "net_pnl": 4162.0,
+        "drawdown": 652.875,
+        "profit_factor": 2.7878006872852232,
+        "trades": 55,
+        "avg_monthly_gain": 173.42,
+        "avg_weekly_gain": 39.9,
+        "avg_active_weekly_gain": 122.41,
+        "trades_per_cal_week": 0.5,
+        "trades_per_active_week": 1.6,
+        "monthly_win_rate_pct": 83.3,
+        "weekly_win_rate_pct": 64.7,
+        "best_month": 1663.5,
+        "worst_month": -46.0
+      },
+      "test": {
+        "net_pnl": 3045.5,
+        "drawdown": 394.375,
+        "profit_factor": 3.3970877607241245,
+        "trades": 31,
+        "avg_monthly_gain": 298.58,
+        "avg_weekly_gain": 68.75,
+        "avg_active_weekly_gain": 160.29,
+        "trades_per_cal_week": 0.7,
+        "trades_per_active_week": 1.6,
+        "monthly_win_rate_pct": 80.0,
+        "weekly_win_rate_pct": 52.6,
+        "best_month": 872.0,
+        "worst_month": -146.0
+      }
+    },
+    "combined_oos": {
+      "total_net": 7207.5,
+      "avg_monthly_gain": 210.75,
+      "avg_weekly_gain": 48.5
+    }
+  }
+]
