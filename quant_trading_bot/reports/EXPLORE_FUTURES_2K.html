@@ -1,0 +1,193 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Another2,000 futures configurations</title><style>body{font:16px/1.6 system-ui;background:#10151c;color:#e9edf2;max-width:1350px;margin:auto;padding:32px}h1{font-size:34px}h2{margin-top:32px}a{color:#91d5ff}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px;border-bottom:1px solid #34455b;text-align:left;white-space:nowrap}th{background:#1c2531}.scroll{overflow:auto}.notice{background:#332a1b;padding:20px;border-left:4px solid #e7bb62}img{width:100%}pre{white-space:pre-wrap;font:14px/1.7 system-ui}</style><h1>Another 2,000 futures configurations</h1><p>MNQ and MES Â· Five new entry mechanisms Â· 400 configurations per mechanism</p><p class="notice"><strong>No qualifying replacement.</strong> TRAIN: 120 positive-net/sub-$2,000-DD cases and 0 full qualifiers. VALIDATION: 333 positive-net/sub-$2,000-DD cases and 78 scenario qualifiers. Both: 59 basic profit/DD passers, 0 full qualifiers.</p><p>All parameters and analog-training examples were frozen before validation prices were loaded. Validation remains previously observed model-selection data, not independent confirmation. TEST stayed closed. No model was deployed or automatically promoted.</p><h2>Results by mechanism</h2><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>family</th>
+      <th>configurations</th>
+      <th>train_positive_dd</th>
+      <th>train_qualified</th>
+      <th>validation_positive_dd</th>
+      <th>validation_qualified</th>
+      <th>both</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>direction_probability</td>
+      <td>400</td>
+      <td>38</td>
+      <td>0</td>
+      <td>84</td>
+      <td>18</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>cross_index_equilibrium</td>
+      <td>400</td>
+      <td>1</td>
+      <td>0</td>
+      <td>35</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>wavelet_reversal</td>
+      <td>400</td>
+      <td>8</td>
+      <td>0</td>
+      <td>15</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ordinal_entropy_persistence</td>
+      <td>400</td>
+      <td>52</td>
+      <td>0</td>
+      <td>97</td>
+      <td>21</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>run_duration_expectation</td>
+      <td>400</td>
+      <td>21</td>
+      <td>0</td>
+      <td>102</td>
+      <td>36</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div><h2>Top models passing both sets of gates, ranked on validation</h2><div class="scroll"><p>No candidates passed both sets of gates.</p></div><h2>Top validation qualifiers, with training results</h2><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ID</th>
+      <th>Market</th>
+      <th>Mechanism</th>
+      <th>TRAIN net</th>
+      <th>TRAIN intrabar DD</th>
+      <th>VAL net</th>
+      <th>VAL intrabar DD</th>
+      <th>VAL trades</th>
+      <th>TRAIN qualified</th>
+      <th>VAL qualified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>explore_95e3cde42cbdbc24cbc2</td>
+      <td>MNQ</td>
+      <td>ordinal_entropy_persistence</td>
+      <td>$141.00</td>
+      <td>$1,773.75</td>
+      <td>$5,191.50</td>
+      <td>$976.25</td>
+      <td>240</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>explore_37c5e3d5f1533ce61db4</td>
+      <td>MNQ</td>
+      <td>run_duration_expectation</td>
+      <td>$990.50</td>
+      <td>$1,875.00</td>
+      <td>$3,478.00</td>
+      <td>$1,181.38</td>
+      <td>363</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>explore_00b64d6d4f95e6970dc9</td>
+      <td>MNQ</td>
+      <td>ordinal_entropy_persistence</td>
+      <td>$725.50</td>
+      <td>$1,583.75</td>
+      <td>$2,902.50</td>
+      <td>$883.25</td>
+      <td>161</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>explore_e59480a0babd3e8148aa</td>
+      <td>MNQ</td>
+      <td>ordinal_entropy_persistence</td>
+      <td>$-1,702.00</td>
+      <td>$1,810.50</td>
+      <td>$2,387.00</td>
+      <td>$1,248.75</td>
+      <td>295</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>explore_d80687c96597709a82e5</td>
+      <td>MNQ</td>
+      <td>ordinal_entropy_persistence</td>
+      <td>$3,487.50</td>
+      <td>$1,864.50</td>
+      <td>$2,172.50</td>
+      <td>$1,719.25</td>
+      <td>318</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table></div><img src="EXPLORE_FUTURES_2K.png" alt="Validation equity and drawdown curves"><h2>What changed and what was checked</h2><p>Directional-probability entries use fixed regularized logistic classification. Cross-index equilibrium fades deviations from a frozen log-price relationship; execution is target-only, not a hedged arbitrage. Wavelet reversal fades dominant causal Haar detail. Ordinal-pattern entropy measures organization of three-return rankings. Run-duration forecasts use frozen signed-run conditional return tables. These use related OHLCV inputs; new algorithms do not create independent economic evidence.</p><p>The 2,000 configurations cover five correlated hypotheses and 1043 distinct TRAIN signal paths. Forty-four targeted tests passed before execution. 10,000 ledgers covering 832,349 trades reconcile. Selected validation curves and isolated fill samples passed audit. No validation account was replayed for reporting. Three learned model families use TRAIN-only fitting/scaling, a fixed4,096-example cap, and an eight-day gap before each evaluated year. Logistic ridge is0.01,maximum200iterations; log-price equilibrium uses OLS; duration tables use20 zero-return pseudocounts. The other two families use causal rolling statistics. Four annual TRAIN accounts reset; validation uses one continuous account. Fees, fills, risk controls, qualification gates, and the strict $2,000 drawdown ceiling were preserved.</p><p>Cash/no-trade benchmark is zero P&amp;L and zero drawdown; it does not meet trade-count gates. Intrabar drawdown is a conservative OHLC bound. Funded-account checks use provisional scenarios. The 50% consistency rule remains an evaluation-account-only diagnostic.</p><p><a href="../runs/explore_futures_2k_v1/training_ranked.csv">All TRAIN results</a> Â· <a href="../runs/explore_futures_2k_v1/validation_ranked.csv">All VAL results</a> Â· <a href="../runs/explore_futures_2k_v1/protocol.json">Frozen protocol</a> Â· <a href="EXPLORE_FUTURES_2K_verification.json">Ledger audit</a> Â· <a href="EXPLORE_FUTURES_2K_additional_audit.json">Model and fill audit</a></p><h2>Detailed methods and results</h2><pre># 2,000 new futures configurations
+
+Completed all2,000 TRAIN and2,000 frozen VALIDATION evaluations. TEST was not accessed.
+
+Five additional entry algorithms differ from the previous libraries but use related OHLCV information. These are correlated configurations, not2,000 independent discoveries.
+
+Counts: {&quot;evaluated&quot;: 2000, &quot;train_positive_dd&quot;: 120, &quot;train_qualified&quot;: 0, &quot;validation_positive_dd&quot;: 333, &quot;validation_qualified&quot;: 78, &quot;both_qualified&quot;: 0}
+
+TRAIN=2020-2023, four reset annual accounts. VALIDATION=2024-2025, one continuous account. Fitted forecasting coefficients never learn from evaluated years or validation. Prior validation is consumed and used here for model selection; this is not unseen confirmation.
+
+## Mechanisms and results
+
+| Family | Trials | TRAIN profit/DD | TRAIN qualified | VAL profit/DD | VAL qualified | Both |
+|---|---:|---:|---:|---:|---:|---:|
+| direction_probability | 400 | 38 | 0 | 84 | 18 | 0 |
+| cross_index_equilibrium | 400 | 1 | 0 | 35 | 1 | 0 |
+| wavelet_reversal | 400 | 8 | 0 | 15 | 2 | 0 |
+| ordinal_entropy_persistence | 400 | 52 | 0 | 97 | 21 | 0 |
+| run_duration_expectation | 400 | 21 | 0 | 102 | 36 | 0 |
+
+## Top5 passing both, ranked on validation
+
+| ID | Market / mechanism | Net P&amp;L | Intrabar DD | Trades | TRAIN qualified |
+|---|---|---:|---:|---:|---|
+
+## Top5 validation only; TRAIN flags matter
+
+| ID | Market / mechanism | Net P&amp;L | Intrabar DD | Trades | TRAIN qualified |
+|---|---|---:|---:|---:|---|
+| explore_95e3cde42cbdbc24cbc2 | MNQ / ordinal_entropy_persistence | $5,191.50 | $976.25 | 240 | False |
+| explore_37c5e3d5f1533ce61db4 | MNQ / run_duration_expectation | $3,478.00 | $1,181.38 | 363 | False |
+| explore_00b64d6d4f95e6970dc9 | MNQ / ordinal_entropy_persistence | $2,902.50 | $883.25 | 161 | False |
+| explore_e59480a0babd3e8148aa | MNQ / ordinal_entropy_persistence | $2,387.00 | $1,248.75 | 295 | False |
+| explore_d80687c96597709a82e5 | MNQ / ordinal_entropy_persistence | $2,172.50 | $1,719.25 | 318 | False |
+
+## Top5 training
+
+| ID | Market / mechanism | Net P&amp;L | Intrabar DD | Trades | TRAIN qualified |
+|---|---|---:|---:|---:|---|
+| explore_76792adac162807a04de | MNQ / ordinal_entropy_persistence | $5,978.00 | $1,198.88 | 245 | False |
+| explore_2b7e834db939b6795456 | MNQ / ordinal_entropy_persistence | $3,559.00 | $1,713.25 | 903 | False |
+| explore_d80687c96597709a82e5 | MNQ / ordinal_entropy_persistence | $3,487.50 | $1,864.50 | 772 | False |
+| explore_943533e7fed59ac182d2 | MNQ / direction_probability | $3,413.00 | $1,418.88 | 770 | False |
+| explore_463c9498277298ffbfc8 | MNQ / ordinal_entropy_persistence | $3,255.50 | $1,600.75 | 432 | False |
+
+## Limitations
+
+The unchanged15m engine uses next-open execution, actual contract economics, fees, spread, slippage, conservative OHLC handling, volume participation and risk locks. Intrabar DD is an OHLC adverse bound, not observed tick-order equity. Funded rules are provisional scenarios, not verified account certification.50%consistency remains evaluation-account-phase-only. Annual reset profits/DD are not a continuous four-year account path. TRAIN top5 have independent fill samples and2x cost diagnostics in training_stress.json; all-case ledgers reconcile. No strategy is promoted, deployed, or claimed independently profitable.
+
+## Entry hypotheses
+
+- **direction_probability**: Frozen regularized logistic classification predicts next-return direction from candle/volume state; classification skill may be too small to cover costs.
+- **cross_index_equilibrium**: Frozen log-price relation between indices identifies deviations; the target-only trade is unhedged and the relation can drift.
+- **wavelet_reversal**: Causal Haar detail isolates a fast oscillation that dominates the slower component; fading it fails when the oscillation becomes a trend.
+- **ordinal_entropy_persistence**: Low entropy of three-return ordinal permutations identifies organized paths; the latest three-return direction supplies exposure.
+- **run_duration_expectation**: Frozen next-return expectation by signed run duration tests persistence/exhaustion beyond the earlier two-sign Markov state.
+</pre></html>
