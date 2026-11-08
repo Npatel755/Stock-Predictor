@@ -484,6 +484,30 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
     return status
 
 
+def vol_regime(now=None):
+    """Prior-close VIX / VIX3M read-out (yfinance ^VIX, ^VIX3M daily). Informational only: research/extstate_1 found the
+    trend/breakout sleeves earned on backwardation (stress) days and were no better than random on contango days."""
+    try:
+        import yfinance as yf
+        rows = {}
+        for key, symbol in (("vix", "^VIX"), ("vix3m", "^VIX3M")):
+            history = yf.Ticker(symbol).history(period="1y", interval="1d", auto_adjust=False)
+            close = history["Close"].dropna()
+            close.index = pd.to_datetime(close.index.strftime("%Y-%m-%d"))  # ^VIX/^VIX3M come back in different tz offsets
+            rows[key] = close
+        joined = pd.concat([rows["vix"].rename("vix"), rows["vix3m"].rename("vix3m")], axis=1).dropna()
+        if len(joined) == 0:
+            return dict(error="no VIX data")
+        last = joined.iloc[-1]
+        slope = float(last.vix3m / last.vix - 1)
+        rank = float((joined.vix <= last.vix).mean())
+        return dict(as_of=str(joined.index[-1].date()), vix=round(float(last.vix), 2), vix3m=round(float(last.vix3m), 2),
+                    slope=round(slope, 4), state="backwardation (stress)" if slope < 0 else "contango (calm)",
+                    vix_rank_1y=round(rank, 2), note="sleeves historically earned on backwardation days; flat-to-negative vs random in contango (extstate_1)")
+    except Exception as exc:  # never let the read-out break the paper run
+        return dict(error=str(exc)[:200])
+
+
 def run_once(root, source, start, now=None, candidates=None):
     now = now or utc_now()
     root = Path(root)
@@ -515,7 +539,7 @@ def run_once(root, source, start, now=None, candidates=None):
             continue
         statuses[key] = update_candidate(root, key, spec, bars, start_ts, now, source.name)
     summary = dict(updated=now.isoformat(), ingest=report, start=start_ts.isoformat(), source=source.name,
-                   candidates=statuses, total_net=round(sum(s["net"] for s in statuses.values()), 2))
+                   candidates=statuses, total_net=round(sum(s["net"] for s in statuses.values()), 2), regime=vol_regime(now))
     (root / "dashboard.json").write_text(json.dumps(summary, indent=1, sort_keys=True, default=str))
     return summary
 
