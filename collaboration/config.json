@@ -1,0 +1,19 @@
+{
+  "api_base_url": "https://api.devin.ai/v1",
+  "api_v3_url": "https://api.devin.ai/v3",
+  "active_session_id": "devin-eaffd5ab978f45aa88e8d8d29fc0381d",
+  "organization_id": "org-a7f3630fc94c4b09a0d9a7d34ce257a1",
+  "polling_interval_seconds": 10,
+  "max_consecutive_autonomous_turns": 10,
+  "max_messages_per_hour": 30,
+  "request_timeout_seconds": 30,
+  "max_retries": 3,
+  "retry_backoff_factor": 2.0,
+  "circuit_breaker_enabled": true,
+  "require_human_approval_for": [
+    "live_order_execution",
+    "git_force_push",
+    "git_main_merge",
+    "secret_modification"
+  ]
+}

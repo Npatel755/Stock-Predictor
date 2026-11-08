@@ -1,0 +1,12 @@
+{
+  "seen_hashes": [
+    "f56687d7c82a4cac1cb95fcca785def50354cb17b6f6d0176d922e356fa2abe5",
+    "4084af08d1069e1123174021e85b370b13784acfddcb1f65c6b31b29da002025",
+    "ab9ea9f47130a837d098dc981dcaec66ce6d407df14ba2d53bdbccd7392dab88",
+    "0b234018fa6ad33e08716d6df95a5639d328db27a734f54eaa1d2e669ee7d976"
+  ],
+  "consecutive_ai_turns": 4,
+  "circuit_breaker_tripped": false,
+  "last_active_turn": 4,
+  "total_messages": 4
+}
