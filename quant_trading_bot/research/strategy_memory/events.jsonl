@@ -38,3 +38,4 @@
 {"ts": "2026-11-08T09:52:27.611719+00:00", "experiment": "vix_round6", "kind": "result", "passers": [], "report": "reports/VIX_ROUND6.md"}
 {"ts":"2026-11-08T16:35:00Z","event":"peer_review","subject":"overnight_institutional_master (Codex/Antigravity, uncommitted on Nick PC)","result":"Portfolio F val DD 2244, pod val DD 9894, 2026 consumed; nothing promotable; E stress val DD up to 1946","report":"reports/PEER_REVIEW_OVERNIGHT_INSTITUTIONAL.md"}
 {"ts":"2026-11-08T18:30:00Z","event":"mass_v2","result":"1.2M configs x 2 bar rules; 12 frozen; validation once: 1/12 holds marginally (v2_7f233cc729959bec); MES none; DSR 0; paper set unchanged","report":"reports/MASS_V2_SUMMARY.md"}
+{"ts":"2026-11-08T20:25:00Z","event":"mass_v2_a2","result":"early-close fix; 23 pass both bar rules, 13 frozen, validation once 1/13 holds; universe closed","report":"reports/MASS_V2_VALIDATION_A2.md"}

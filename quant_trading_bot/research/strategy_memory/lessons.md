@@ -35,3 +35,7 @@
 - 1.2M-rule exhaustive grid (10 families) scored on ES/NQ 2010-2023 as MES/MNQ with the paper engine's costs and $2k rules: 9% net-positive, 74 pass the per-year gate (strict bars), 447 (lenient), 12 distinct pass both; DSR = 0 for all at N = 1.2M.
 - Validation 2024-25 once: 1 of 12 holds, marginally (MNQ trend lb8 10-12 ET, +$437 / 2 yrs, DD $1.2k). Regime/hybrid rules flipped sign in 2025. MES: zero passers.
 - Lesson: more variants of 15-minute price rules will not produce a funded-account edge; strict-bar rule distorts NQ pre-2018 (use lenient or require both).
+
+## 2026-11-08 mass_v2 A2 (early-close fix applied; reports/MASS_V2_*_A2.md)
+- 74 strict / 237 lenient / 23 both -> 13 distinct frozen (all MNQ trend/regime/hybrid). Validation once: 1/13 holds (v2_7f233cc729959bec, +$437/2y). All-day regime rules: +$1.6-2.6k in 2024, -$0.6-0.9k in 2025. 15-min price-rule universe closed; no counter-trend family passes (mean_reversion/vwap/opening_range: 0 on both bar rules).
+- Next: 1-minute counter-trend search (VWAP snap-back, volume exhaustion, ORB fade) to pair with the morning trend runner.
