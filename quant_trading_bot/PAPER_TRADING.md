@@ -60,7 +60,7 @@ Limitations: the bar source is a delayed public proxy, not licensed exchange dat
 symbol is undisclosed (the engine sees a single contract label); fills are simulated at the research cost model;
 nothing here measures real broker fills, funded-account rule enforcement or platform latency.
 
-### TradingView overlay (`pine/mass_sleeve_15m_v1_0_0.pine`)
+### TradingView overlay (`pine/mass_sleeve_15m_v1_0_1.pine`)
 
 A single Pine v5 strategy with a preset dropdown for the eight sleeve variants (MES_MOM_3c/2c/1c, MNQ_BRK_E_2c/1c,
 MNQ_VOL_1c, MNQ_HYB_C_1c, MNQ_E57_1c). It mirrors the engine's bar semantics (15-minute completed-close signal, next-open

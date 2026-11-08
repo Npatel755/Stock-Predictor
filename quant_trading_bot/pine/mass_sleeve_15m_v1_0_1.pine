@@ -1,4 +1,4 @@
-// MES/MNQ mass-research sleeve, TradingView port v1.0.0 (non-authoritative overlay).
+// MES/MNQ mass-research sleeve, TradingView port v1.0.1 (non-authoritative overlay).
 // Source of truth is scripts/mass_features.py + scripts/mass_execution.py run by
 // quant_futures.ensemble_paper on the paper server. This port follows the engine's
 // bar semantics: signal at a completed 15m close, entry at the next bar's open,
@@ -11,7 +11,7 @@
 // lock and five-loss lock are approximated with the inputs below.
 // Chart: CME_MINI:MES1! or CME_MINI:MNQ1!, 15 minute, regular+extended hours.
 //@version=5
-strategy("Mass sleeve 15m v1.0.0", overlay=true, pyramiding=0, calc_on_every_tick=false,
+strategy("Mass sleeve 15m v1.0.1", overlay=true, pyramiding=0, calc_on_every_tick=false,
      default_qty_type=strategy.fixed, default_qty_value=1, initial_capital=50000,
      commission_type=strategy.commission.cash_per_contract, commission_value=0.50,
      slippage=2, process_orders_on_close=false)
@@ -117,7 +117,7 @@ breakout_high = ta.highest(high[1], lookback)
 breakout_low = ta.lowest(low[1], lookback)
 ret = close / close[1] - 1
 vol_ratio = ta.stdev(ret, math.max(2, int(lookback / 4))) / ta.stdev(ret, lookback)
-htf = math.sign(close - close[lookback * 2])
+htf = close > close[lookback * 2] ? 1 : close < close[lookback * 2] ? -1 : 0
 
 float value = na
 bool eligible = false
@@ -132,8 +132,8 @@ else if family == "volatility"
     eligible := vol_ratio >= threshold
 else if family == "hybrid"
     value := trend
-    eligible := math.sign(trend) == htf and math.abs(momentum) >= threshold
-raw_signal = not na(value) and eligible ? math.sign(value) : 0
+    eligible := (trend > 0 ? 1 : trend < 0 ? -1 : 0) == htf and math.abs(momentum) >= threshold
+int raw_signal = not na(value) and eligible ? (value > 0 ? 1 : value < 0 ? -1 : 0) : 0
 
 // ---- session clock (ET) ----
 open_min = hour(time, "America/New_York") * 60 + minute(time, "America/New_York")
@@ -143,7 +143,7 @@ weekday = dow >= dayofweek.monday and dow <= dayofweek.friday
 in_session = close_min >= sess_start and close_min < sess_end and weekday
 entry_window = open_min >= 570 and open_min <= 930
 no_entry_next = close_min >= 955 and close_min < 1080  // next bar opens in the flat window
-signal = in_session and entry_window and not no_entry_next ? raw_signal : 0
+int signal = in_session and entry_window and not no_entry_next ? raw_signal : 0
 
 // ---- risk locks (approximation of the engine's day_locked / losses / hard_dd) ----
 var float day_start_equity = strategy.equity
@@ -177,7 +177,7 @@ flat_now = strategy.position_size == 0
 if flat_now and signal != 0 and not day_locked and not hard_killed and not na(atr) and atr > 0
     distance = math.max(tick, math.ceil(stop_atr * atr / tick) * tick)
     risk_per = distance * mult + 2 * fee + (2 * adverse_ticks + tick) * mult
-    qty = math.min(max_contracts, math.floor(risk_per_contract * max_contracts / risk_per))
+    int qty = math.min(max_contracts, int(math.floor(risk_per_contract * max_contracts / risk_per)))
     if qty >= 1
         pending_stop := distance
         side := signal
@@ -187,7 +187,7 @@ if flat_now and signal != 0 and not day_locked and not hard_killed and not na(at
             strategy.entry("L", strategy.long, qty=qty, alert_message=msg)
         else
             strategy.entry("S", strategy.short, qty=qty, alert_message=msg)
-        strategy.exit("X", loss=math.round(distance / tick), profit=math.round(distance * target_r / tick), alert_message='{"strategy":"' + tag + '","ticker":"' + syminfo.ticker + '","action":"exit","reason":"stop_or_target"}')
+        strategy.exit("X", loss=distance / tick, profit=distance * target_r / tick, alert_message='{"strategy":"' + tag + '","ticker":"' + syminfo.ticker + '","action":"exit","reason":"stop_or_target"}')
 
 if strategy.position_size != 0
     avg = strategy.position_avg_price
