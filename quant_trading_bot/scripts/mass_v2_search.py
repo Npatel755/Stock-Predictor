@@ -28,11 +28,12 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import unseen_years_replication as uy  # noqa: E402  (strict loader from the TRAIN partition, mini->micro relabel)
 from quant_futures import ensemble_paper as ep  # noqa: E402
+from quant_futures.session_calendar import apply_early_close  # noqa: E402  (amendment A2)
 
 RUN = ROOT / "runs" / "mass_v2"
 RUN.mkdir(parents=True, exist_ok=True)
 BAR_RULE = os.environ.get("MASS_V2_BARS", "strict")  # strict = all 15 source minutes; lenient = >= 1 (amendment A1)
-SUFFIX = "" if BAR_RULE == "strict" else "_" + BAR_RULE
+SUFFIX = ("" if BAR_RULE == "strict" else "_" + BAR_RULE) + os.environ.get("MASS_V2_TAG", "")  # A2 runs use MASS_V2_TAG=_a2
 DB = RUN / f"results{SUFFIX}.sqlite"
 FROZEN = RUN / f"frozen_survivors{SUFFIX}.json"
 YEARS = list(range(2010, 2024))
@@ -81,7 +82,7 @@ def load_training():
     eng = ep.engine()
     for mini in MINIS:
         bars = uy.load(mini, "2009-12-01", "2024-01-01", BAR_RULE)
-        data = eng["arrays"](bars)
+        data = apply_early_close(eng["arrays"](bars), bars)
         feats = {lb: eng["features"](bars, lb) for lb in set(LOOKBACKS) | set(OPENING_LOOKBACKS)}
         local = bars.timestamp_utc.dt.tz_convert("America/New_York")
         decision = (local.dt.hour * 60 + local.dt.minute + 15).to_numpy()
@@ -311,7 +312,7 @@ def phase_report():
     frozen = json.loads(FROZEN.read_text()) if FROZEN.exists() else {}
     rep = dict(protocol="research/mass_v2/PROTOCOL.md", scored=total, trials_planned=N_TRIALS, g123=g123, g4=sum(p["g4"] for p in pl),
                g5=sum(p["g5"] for p in pl), by_family=by_fam.to_dict(orient="records"), frozen=frozen)
-    (ROOT / "reports" / "MASS_V2_TRAINING.json").write_text(json.dumps(rep, indent=1, default=float))
+    (ROOT / "reports" / f"MASS_V2_TRAINING{SUFFIX.upper()}.json").write_text(json.dumps(rep, indent=1, default=float))
     lines = [f"# mass_v2 training results (ES/NQ 2010-2023 as MES/MNQ, 1 contract, today's costs)\n",
              f"Configurations scored: {total:,} of {N_TRIALS:,} planned. G1-G3 passers: {g123:,}. G4 (beat placebo p95): {rep['g4']}. "
              f"G5 (DSR > 0.95, N = {N_TRIALS:,}): {rep['g5']}. Frozen for validation: {len(frozen.get('frozen', []))}.\n",
@@ -324,7 +325,7 @@ def phase_report():
             p = f["params"]
             rule = f"{p['instrument']} {p['family']} lb{p['lookback']} th{p['threshold']} {p['session_start']}-{p['session_end']} stop{p['stop_atr']} tgt{p['target_r']} hold{p['hold_bars']} trail{p['trailing_atr']}"
             lines.append(f"| {f['config_id']} | {rule} | {f['net']:,.0f} | {f['years_pos']} | {f['worst_dd']:,.0f} | {f['trades']} | {f['placebo_p95']:.1f} | {f['per_trade']:.1f} | {f['gross_net']:,.0f} | {f['restated_net']:,.0f} | {'-' if f['dsr'] is None else f'{f['dsr']:.2f}'} |")
-    (ROOT / "reports" / "MASS_V2_TRAINING.md").write_text("\n".join(lines) + "\n")
+    (ROOT / "reports" / f"MASS_V2_TRAINING{SUFFIX.upper()}.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
     con.close()
 
@@ -332,7 +333,7 @@ def phase_report():
 def phase_validate():
     """Run the frozen list once on MES/MNQ 2024-2025 from the validation partition. Never loads 2026."""
     frozen = json.loads(FROZEN.read_text())["frozen"]
-    if (RUN / "validation_done.json").exists():
+    if (RUN / f"validation_done{SUFFIX}.json").exists():
         raise SystemExit("validation already run once; refusing to re-run (protocol)")
     import duckdb
     eng = ep.engine()
@@ -352,7 +353,7 @@ def phase_validate():
         from quant_futures.data import canonical
         bars = canonical(frame)
         assert bars.timestamp_utc.max() < pd.Timestamp("2026-01-01", tz="UTC")
-        data = eng["arrays"](bars)
+        data = apply_early_close(eng["arrays"](bars), bars)
         feats = eng["features"](bars, p["lookback"])
         raw = eng["signal_for"](p, feats).astype(np.int8)
         local = bars.timestamp_utc.dt.tz_convert("America/New_York")
@@ -377,7 +378,7 @@ def phase_validate():
         out.append(dict(config_id=f["config_id"], params=p, train_net=f["net"], train_per_trade=f["per_trade"], validation=res,
                         val_net=round(vnet, 2), val_trades=vtr, holds=bool(holds)))
         print(f["config_id"], inst, p["family"], res, "HOLDS" if holds else "fails", flush=True)
-    (RUN / "validation_done.json").write_text(json.dumps(dict(run_at=pd.Timestamp.now('UTC').isoformat(), results=out), indent=1))
+    (RUN / f"validation_done{SUFFIX}.json").write_text(json.dumps(dict(run_at=pd.Timestamp.now('UTC').isoformat(), results=out), indent=1))
     lines = ["# mass_v2 validation (MES/MNQ 2024-2025, run once on the frozen list)\n",
              "| id | rule | train net 14y | 2024 net / DD | 2025 net / DD | val trades | holds |", "|---|---|---:|---:|---:|---:|---|"]
     for o in out:
@@ -386,7 +387,7 @@ def phase_validate():
         v = o["validation"]
         lines.append(f"| {o['config_id']} | {rule} | {o['train_net']:,.0f} | {v[2024]['net']:,.0f} / {v[2024]['dd']:,.0f} | {v[2025]['net']:,.0f} / {v[2025]['dd']:,.0f} | {o['val_trades']} | {'yes' if o['holds'] else 'no'} |")
     lines.append(f"\n{sum(o['holds'] for o in out)} of {len(out)} frozen survivors hold on validation.")
-    (ROOT / "reports" / "MASS_V2_VALIDATION.md").write_text("\n".join(lines) + "\n")
+    (ROOT / "reports" / f"MASS_V2_VALIDATION{SUFFIX.upper()}.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 
 

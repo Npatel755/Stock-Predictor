@@ -9,7 +9,10 @@ import shutil
 import sqlite3
 from pathlib import Path
 
+import os
 import pandas as pd
+
+TAG = os.environ.get("MASS_V2_TAG", "")
 
 ROOT = Path(__file__).resolve().parents[1]
 RUN = ROOT / "runs" / "mass_v2"
@@ -27,8 +30,8 @@ def g4_ids(db):
     return out
 
 
-strict = g4_ids(RUN / "results.sqlite")
-lenient = g4_ids(RUN / "results_lenient.sqlite")
+strict = g4_ids(RUN / f"results{TAG}.sqlite")
+lenient = g4_ids(RUN / f"results_lenient{TAG}.sqlite")
 both = sorted(set(strict) & set(lenient))
 print(f"G4 survivors: strict {len(strict)}, lenient {len(lenient)}, both {len(both)}")
 best = {}
@@ -39,9 +42,9 @@ for cid in both:
     if key not in best or s["worst_dd"] < best[key][1]["worst_dd"]:
         best[key] = (cid, s)
 ranked = sorted(best.values(), key=lambda x: (-min(x[1]["annual"]), -(x[1]["dsr"] or 0)))[:20]
-if (RUN / "frozen_survivors.json").exists() and not (RUN / "frozen_survivors_strict.json").exists():
-    shutil.move(RUN / "frozen_survivors.json", RUN / "frozen_survivors_strict.json")
-(RUN / "frozen_survivors.json").write_text(json.dumps(dict(frozen_at=pd.Timestamp.now("UTC").isoformat(), rule="A1: G1-G4 under both bar rules",
+if (RUN / f"frozen_survivors{TAG}.json").exists() and not (RUN / f"frozen_survivors_strict{TAG}.json").exists():
+    shutil.move(RUN / f"frozen_survivors{TAG}.json", RUN / f"frozen_survivors_strict{TAG}.json")
+(RUN / f"frozen_survivors{TAG}.json").write_text(json.dumps(dict(frozen_at=pd.Timestamp.now("UTC").isoformat(), rule="A1: G1-G4 under both bar rules",
                                                         n_both=len(both), n_unique=len(best), frozen=[dict(config_id=c, **p) for c, p in ranked]), indent=1))
 for cid, p in ranked:
     q = p["params"]

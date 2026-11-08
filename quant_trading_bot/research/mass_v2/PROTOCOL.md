@@ -60,3 +60,14 @@ years" is not evidence over 14 years. Fix applied uniformly to every configurati
 - Additional reported statistic: trades per year; configurations with fewer than 5 trades in 4 or more years are
   labelled "sparse" in the report (not a gate, since it was not pre-registered).
 2024-2025 and 2026 data have not been loaded at the time of this amendment.
+
+## Amendment A2 (2026-11-08, registered after the first validation look, before any A2 run)
+Engine artifact found while re-scoring fees: a position held into a CME early close (13:00 ET sessions) crosses the
+>20-minute gap to the 18:00 reopen and the engine locks the sleeve permanently ("market_data_gap"). In the A1 runs this
+silently killed any configuration that was in a trade at 12:45 ET on an early-close day for the rest of that annual
+account, biasing the grid against all-day sessions. Fix (src/quant_futures/session_calendar.py, applied uniformly in the
+data layer, engine code unchanged): bars from the early session's last regular bar onward are presented to the engine
+as >= 16:00 ET, so it exits at that bar's open and takes no new entries. Both bar-rule runs are repeated with the fix
+(results_a2 / results_lenient_a2); gates, placebo, DSR, freeze rule (pass under both) and cap are unchanged.
+Validation exposure: the A2 frozen list will be the SECOND look at 2024-2025 (first: A1 list, 1 of 12 held). The A1
+look did not influence any A2 choice; A2 only corrects a mechanical defect. 2026 is still never loaded.
