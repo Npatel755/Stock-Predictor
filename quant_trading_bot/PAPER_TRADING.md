@@ -22,3 +22,40 @@ Explicitly resume the same paper session after a clean interruption with `paper-
 The comparison helper reports equity and trade-count differences; feature drift reports standardized mean shifts against eligible training features. These are monitoring diagnostics, not automatic approval to retrain or increase leverage. Future paper review needs real authorized quotes, fills, disconnections, session closes, rolled contracts, broker fees and enough forward observations to assess drift and execution degradation.
 
 Before any live implementation: confirm purchased account rules and API/platform permissions; supply licensed raw contract history and an authoritative calendar; complete untouched final-test and dependence-aware statistical review; review extended real-feed paper results; implement exchange-side protection and reconciliation; establish explicit user authorization for live activation. None of those prerequisites is implied by a passing functional test.
+
+## Automatic ensemble paper testing (`quant_futures.ensemble_paper`)
+
+`python -m quant_futures.ensemble_paper run --root runs/paper_ensembles` paper-tests the three frozen
+ensemble candidates selected on 2026-11-06 without any order routing:
+
+| key | version | sleeves (max contracts) | reproduced train / validation / 2026 test |
+|---|---|---|---|
+| `portfolio_e` | 1.0.0 | MES_MOM_3c + MNQ_BRK_E_2c (5 micros) | +19,095.50 (DD 1,395.25) / +3,142.25 (1,744.25) / +6,562.25 (964.75) |
+| `ensemble_epsilon` | 1.0.0 | MES_MOM_1c + MNQ_VOL_1c + MNQ_E57_1c (3 micros) | +14,241.00 (2,186.00) / +4,052.75 (1,724.75) / +4,723.50 (483.50) |
+| `ensemble_beta` | 1.0.0 | MES_MOM_2c + MNQ_BRK_E_1c + MNQ_HYB_C_1c (4 micros) | +12,817.25 (1,080.75) / +787.00 (1,343.62) / +3,182.25 (908.38) |
+
+The sleeve parameters are those of `scripts/evaluate_multi_strategy_ensembles.py` (Epsilon uses the one-contract
+MES sleeve that reproduces the user's selection screenshot, not the script's two-contract version). All three were
+chosen after their 2026 test results were observed, so 2026 is consumed and this forward paper record is the only
+fresh evidence about them.
+
+How it works:
+
+- Each run fetches public 1-minute `MES=F`/`MNQ=F` history (Yahoo, delayed continuous front month) and appends
+  completed minutes to an append-only store (`<root>/bars/<SYM>_1m.csv`; the first observation of a minute wins and
+  later differences are logged to `<SYM>_revisions.jsonl`). 15-minute bars are rebuilt from the store with the same
+  all-15-minutes rule as the research DuckDB query. On 2026-11-02..05 this proxy matched the Databento series to
+  within a tick on highs/lows and produced identical trade sets (prices within one tick) for all ten sleeve runs.
+- The exact research engine (`scripts/mass_research.py`, `mass_execution.py`, `mass_features.py`,
+  `training_5m_v2_policy.execution_cfg_5m_v2`: $0.50/side, 1 tick slippage, 1 tick spread, $150/contract risk,
+  $400/contract daily loss, $2,000 hard drawdown, $50k start) is re-run from the paper start over the whole stored
+  history on every run. Newly closed trades are appended to `<root>/<candidate>/ledger.jsonl` with sequence numbers;
+  previously ledgered trades are re-derived and any difference is appended as a `divergence` record rather than
+  rewritten. `status.json`, `equity.csv` and `<root>/dashboard.json` are rebuilt each run and the paper server shows
+  them at `/futures`.
+- Deployment: `deploy/futures-paper.service` + `deploy/futures-paper.timer` (every 15 minutes, Mon-Sat) on the paper
+  droplet under `/opt/futures-paper`; the paper start date is pinned in `<root>/start.txt`.
+
+Limitations: the bar source is a delayed public proxy, not licensed exchange data; roll handling of the continuous
+symbol is undisclosed (the engine sees a single contract label); fills are simulated at the research cost model;
+nothing here measures real broker fills, funded-account rule enforcement or platform latency.

@@ -1,0 +1,12 @@
+[Unit]
+Description=MES/MNQ ensemble paper run (simulated, no orders)
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/futures-paper/app
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/opt/futures-paper/app/src
+Environment=NUMBA_CACHE_DIR=/opt/futures-paper/numba_cache
+ExecStart=/opt/futures-paper/venv/bin/python -m quant_futures.ensemble_paper run --root /opt/futures-paper/runs
+Nice=10
