@@ -40,9 +40,9 @@
   "fee":0.5,
   "split":"validation",
   "year":2024,
-  "net":1075.75,
+  "net":2850.75,
   "dd":1710.5,
-  "trades":87
+  "trades":94
  },
  {
   "candidate":"portfolio_e",
@@ -94,9 +94,9 @@
   "fee":0.61,
   "split":"validation",
   "year":2024,
-  "net":1032.63,
+  "net":2803.23,
   "dd":1716.88,
-  "trades":87
+  "trades":94
  },
  {
   "candidate":"portfolio_e",
@@ -148,18 +148,18 @@
   "fee":0.5,
   "split":"validation",
   "year":2024,
-  "net":5189.25,
+  "net":5482.75,
   "dd":1189.5,
-  "trades":330
+  "trades":341
  },
  {
   "candidate":"ensemble_epsilon",
   "fee":0.5,
   "split":"validation",
   "year":2025,
-  "net":-1926.5,
-  "dd":2451.0,
-  "trades":169
+  "net":-2617.0,
+  "dd":2680.5,
+  "trades":206
  },
  {
   "candidate":"ensemble_epsilon",
@@ -202,18 +202,18 @@
   "fee":0.61,
   "split":"validation",
   "year":2024,
-  "net":4708.81,
+  "net":4999.89,
   "dd":1201.27,
-  "trades":327
+  "trades":338
  },
  {
   "candidate":"ensemble_epsilon",
   "fee":0.61,
   "split":"validation",
   "year":2025,
-  "net":-1870.96,
-  "dd":2372.91,
-  "trades":168
+  "net":-2569.6,
+  "dd":2625.62,
+  "trades":205
  },
  {
   "candidate":"ensemble_beta",
@@ -256,18 +256,18 @@
   "fee":0.5,
   "split":"validation",
   "year":2024,
-  "net":833.0,
+  "net":2005.0,
   "dd":1329.5,
-  "trades":110
+  "trades":117
  },
  {
   "candidate":"ensemble_beta",
   "fee":0.5,
   "split":"validation",
   "year":2025,
-  "net":-1165.5,
-  "dd":1687.5,
-  "trades":37
+  "net":-1447.25,
+  "dd":1791.5,
+  "trades":70
  },
  {
   "candidate":"ensemble_beta",
@@ -310,18 +310,18 @@
   "fee":0.61,
   "split":"validation",
   "year":2024,
-  "net":950.76,
+  "net":2119.9,
   "dd":1336.43,
-  "trades":109
+  "trades":116
  },
  {
   "candidate":"ensemble_beta",
   "fee":0.61,
   "split":"validation",
   "year":2025,
-  "net":-1176.94,
-  "dd":1697.95,
-  "trades":37
+  "net":-1427.97,
+  "dd":1792.99,
+  "trades":70
  },
  {
   "candidate":"mass_v2_survivor",
