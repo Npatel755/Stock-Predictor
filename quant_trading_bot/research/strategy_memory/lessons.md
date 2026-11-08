@@ -30,3 +30,8 @@
 - MES-agreement filter on MNQ AM breakout, afternoon 13:00-15:45 MNQ momentum, MES->MNQ lead-lag: training-only wins that failed validation or exceed $2k DD at 2c. Tested-negative.
 - Portfolio E friction stress: validation DD $1,744 -> $1,946 at 2-tick slip + $1 fee. E is within $250 of the rule in 2024-25; Beta remains the only candidate sized for $2k.
 - See reports/PEER_REVIEW_OVERNIGHT_INSTITUTIONAL.md.
+
+## 2026-11-08 mass_v2 (reports/MASS_V2_SUMMARY.md)
+- 1.2M-rule exhaustive grid (10 families) scored on ES/NQ 2010-2023 as MES/MNQ with the paper engine's costs and $2k rules: 9% net-positive, 74 pass the per-year gate (strict bars), 447 (lenient), 12 distinct pass both; DSR = 0 for all at N = 1.2M.
+- Validation 2024-25 once: 1 of 12 holds, marginally (MNQ trend lb8 10-12 ET, +$437 / 2 yrs, DD $1.2k). Regime/hybrid rules flipped sign in 2025. MES: zero passers.
+- Lesson: more variants of 15-minute price rules will not produce a funded-account edge; strict-bar rule distorts NQ pre-2018 (use lenient or require both).

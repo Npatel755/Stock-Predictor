@@ -12,11 +12,13 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-con = sqlite3.connect(f"file:{ROOT / 'runs/mass_v2/results.sqlite'}?mode=ro", uri=True)
+import os
+SUFFIX = os.environ.get('MASS_V2_SUFFIX', '')
+con = sqlite3.connect(f"file:{ROOT / f'runs/mass_v2/results{SUFFIX}.sqlite'}?mode=ro", uri=True)
 df = pd.read_sql("SELECT * FROM results", con)
 df["annual_l"] = df.annual.map(json.loads)
 n = len(df)
-lines = [f"# mass_v2 training analysis ({n:,} configurations, ES/NQ 2010-2023 as MES/MNQ, 1 contract, today's costs)\n"]
+lines = [f"# mass_v2 training analysis ({n:,} configurations, ES/NQ 2010-2023 as MES/MNQ, 1 contract, today's costs; bar rule: {SUFFIX.strip('_') or 'strict'})\n"]
 g = dict(G1_net_pos=(df.net > 0), G1_years10=(df.years_pos >= 10), G2_dd1k=(df.worst_dd < 1000), G3_trades140=(df.trades >= 140),
          G3_topyear40=(df.top_year_share.notna() & (df.top_year_share <= 0.4)))
 lines += ["| gate | configs passing | share |", "|---|---:|---:|"]
@@ -46,6 +48,6 @@ if len(pos):
     share2020 = pos.annual_l.map(lambda a: a[10] / sum(a) if sum(a) > 0 else np.nan)
     lines.append(f"\nAmong the {len(pos):,} net-positive configurations, the 2020 year supplies a median {np.nanmedian(share2020):.0%} of total 14-year profit "
                  f"(2020 is the year the earlier 2020-2023 searches weighted most).")
-out = ROOT / "reports" / "MASS_V2_ANALYSIS.md"
+out = ROOT / "reports" / f"MASS_V2_ANALYSIS{SUFFIX.upper()}.md"
 out.write_text("\n".join(lines) + "\n")
 print("\n".join(lines[:12]), "...", f"\nwritten {out}")
