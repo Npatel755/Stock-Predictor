@@ -63,6 +63,45 @@ def _sleeve(name, base, contracts):
     return dict(name=name, **base, max_contracts=int(contracts))
 
 
+# Antigravity "All-Weather" sleeves (research/antigravity/*.json), added at Nick's request 2026-11-08 as a paper candidate only.
+# Fixed-engine replication: 30m breakout 2010-19 -391 / 2020-23 +7,487; 60m trend 2025 did not reproduce (-1,188 vs claimed +325).
+_AG_BRK30 = dict(instrument="MNQ", family="breakout", lookback=8, threshold=1.5, stop_atr=1.25, target_r=5.0, hold_bars=8,
+                 session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="donchian_atr",
+                 entry_start=570, entry_end=690, max_gap_minutes=60)
+_AG_TRD60 = dict(instrument="MNQ", family="trend", lookback=12, threshold=0.75, stop_atr=1.25, target_r=4.0, hold_bars=8,
+                 session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=60, signal="ewma_trend",
+                 entry_start=540, entry_end=660, max_gap_minutes=90)
+
+
+def _atr14(bars):
+    c, h, l = bars.close.to_numpy(float), bars.high.to_numpy(float), bars.low.to_numpy(float)
+    prev = np.r_[c[0], c[:-1]]
+    return pd.Series(np.maximum(h - l, np.maximum(abs(h - prev), abs(l - prev)))).rolling(14, min_periods=14).mean().to_numpy()
+
+
+def custom_signal(cfg, bars):
+    """Exact signal definitions used in scripts/replicate_antigravity_30m.py and replicate_antigravity_mtf.py."""
+    atr = _atr14(bars)
+    c = bars.close.to_numpy(float)
+    if cfg["signal"] == "donchian_atr":
+        lb, th = int(cfg["lookback"]), float(cfg["threshold"])
+        bh = bars.high.rolling(lb).max().shift(1).to_numpy(float)
+        bl = bars.low.rolling(lb).min().shift(1).to_numpy(float)
+        sig = np.where(c > bh + th * atr, 1, np.where(c < bl - th * atr, -1, 0))
+    elif cfg["signal"] == "ewma_trend":
+        th = float(cfg["threshold"])
+        tr = ((bars.close.ewm(span=6, adjust=False).mean() - bars.close.ewm(span=12, adjust=False).mean()).to_numpy(float)) / atr
+        sig = np.where(tr >= th, 1, np.where(tr <= -th, -1, 0))
+    else:
+        raise ValueError(cfg["signal"])
+    return sig.astype(np.int8), np.nan_to_num(atr).astype(np.float32)
+
+
+def bars_key(sleeve):
+    minutes = int(sleeve.get("bar_minutes", BAR_MINUTES))
+    return sleeve["instrument"] if minutes == BAR_MINUTES else f"{sleeve['instrument']}@{minutes}"
+
+
 CANDIDATES = {
     "portfolio_e": dict(
         version="1.0.0", label="Portfolio E (3 MES momentum + 2 MNQ breakout)",
@@ -88,6 +127,14 @@ CANDIDATES = {
         sleeves=[_sleeve("MES_MOM_2c", _MES_MOM, 2), _sleeve("MNQ_BRK_E_1c", _MNQ_BRK, 1), _sleeve("MNQ_HYB_C_1c", _MNQ_HYB, 1)],
         provenance="scripts/evaluate_multi_strategy_ensembles.py; reproduced train +12,817.25/DD 1,080.75, "
                    "validation +787.00/1,343.62, test(2026) +3,182.25/908.38",
+    ),
+    "ag_all_weather": dict(
+        version="1.0.0", label="AG All-Weather (1 MNQ 30m breakout + 1 MNQ 60m EWMA trend; Antigravity candidate)",
+        sleeves=[_sleeve("AG_BRK30_1c", _AG_BRK30, 1), _sleeve("AG_TRD60_1c", _AG_TRD60, 1)],
+        provenance="Antigravity rule dicts 2026-11-08, added as paper candidate at Nick's request; fixed-engine replication "
+                   "reports/ANTIGRAVITY_30M_REPLICATION.json (30m: 2010-19 -391, 2020-23 +7,487, 2024-25 +3,559) and "
+                   "reports/ANTIGRAVITY_MTF_REPLICATION.json (60m: 2024 +3,337, 2025 -1,188 vs claimed +325). "
+                   "Both sleeves were selected by Antigravity after seeing 2024-26: forward paper is the only clean evidence.",
     ),
 }
 
@@ -185,15 +232,15 @@ def completed(bars, now, minutes=SOURCE_MINUTES):
     return bars[bars.timestamp_utc <= cutoff]
 
 
-def aggregate(one_minute):
-    """Exact-count 15-minute bars from 1-minute bars (all 15 source minutes required)."""
+def aggregate(one_minute, minutes=BAR_MINUTES):
+    """Exact-count N-minute bars from 1-minute bars (all N source minutes required; default 15)."""
     frame = one_minute.sort_values("timestamp_utc").drop_duplicates("timestamp_utc")
-    bucket = frame.timestamp_utc.dt.floor(f"{BAR_MINUTES}min")
+    bucket = frame.timestamp_utc.dt.floor(f"{minutes}min")
     grouped = frame.groupby(bucket)
     bars = grouped.agg(open=("open", "first"), high=("high", "max"), low=("low", "min"), close=("close", "last"), volume=("volume", "sum"))
     count = grouped.size()
     span = grouped.timestamp_utc.max() - grouped.timestamp_utc.min()
-    keep = (count == BAR_MINUTES) & (span == pd.Timedelta(minutes=BAR_MINUTES - 1))
+    keep = (count == minutes) & (span == pd.Timedelta(minutes=minutes - 1))
     bars = bars[keep].reset_index()
     bars.columns = ["timestamp_utc", "open", "high", "low", "close", "volume"]
     return bars
@@ -268,18 +315,25 @@ def run_sleeve(cfg, bars, start):
     """Exact research-engine run of one sleeve; execution starts at ``start``."""
     eng = engine()
     data = apply_early_close(eng["arrays"](bars), bars)
-    features = eng["features"](bars, int(cfg["lookback"]))
-    raw = eng["signal_for"](cfg, features).astype(np.int8)
     local = bars.timestamp_utc.dt.tz_convert("America/New_York")
-    decision = (local.dt.hour * 60 + local.dt.minute + 15).to_numpy()
     weekdays = local.dt.day_of_week.to_numpy() < 5
-    mask = (decision >= cfg["session_start"]) & (decision < cfg["session_end"]) & weekdays
+    exec_cfg = eng["execution_cfg"](cfg)
+    if cfg.get("signal"):
+        raw, atr = custom_signal(cfg, bars)
+        mask = weekdays  # entry window enforced by the engine via entry_start/entry_end, as in the replication scripts
+        exec_cfg.update(entry_start=cfg["entry_start"], entry_end=cfg["entry_end"], flat_minute=955, max_gap_minutes=cfg["max_gap_minutes"])
+    else:
+        features = eng["features"](bars, int(cfg["lookback"]))
+        raw = eng["signal_for"](cfg, features).astype(np.int8)
+        atr = features["atr"]
+        decision = (local.dt.hour * 60 + local.dt.minute + 15).to_numpy()
+        mask = (decision >= cfg["session_start"]) & (decision < cfg["session_end"]) & weekdays
     signal = np.where(mask, raw, 0).astype(np.int8)
     first = int((bars.timestamp_utc < pd.Timestamp(start)).sum())
     sliced = {k: np.ascontiguousarray(v[first:]) for k, v in data.items()}
     sliced["session"] = pd.factorize(sliced["session"], sort=False)[0].astype(np.int64)
     sliced["contract"] = pd.factorize(sliced["contract"], sort=False)[0].astype(np.int64)
-    result = eng["execute"](sliced, signal[first:], np.ascontiguousarray(features["atr"][first:]), eng["execution_cfg"](cfg))
+    result = eng["execute"](sliced, signal[first:], np.ascontiguousarray(atr[first:]), exec_cfg)
     stamps = pd.to_datetime(sliced["timestamp"], unit="ns", utc=True)
     trades = []
     for i in range(len(result["trade_entry"])):
@@ -375,7 +429,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
     prior_keys = {trade_key(r) for r in prior}
     last_exit = max((r["exit_ts"] for r in prior), default=None)
 
-    runs = {s["name"]: run_sleeve(s, bars[s["instrument"]], start) for s in spec["sleeves"]}
+    runs = {s["name"]: run_sleeve(s, bars[bars_key(s)], start) for s in spec["sleeves"]}
     trades = sorted((t for r in runs.values() for t in r["trades"]), key=lambda t: (t["exit_ts"], t["entry_ts"], t["sleeve"]))
     current_keys = {trade_key(t) for t in trades}
     missing = [r for r in prior if trade_key(r) not in current_keys]
@@ -391,7 +445,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
         records.append(dict(kind="trade", **trade))
     portfolio = combine([r["curve"] for r in runs.values()])
     run_record = dict(kind="run", run_ts=now.isoformat(), candidate=key, version=spec["version"],
-                      bars_through={k: v.timestamp_utc.max().isoformat() for k, v in bars.items()},
+                      bars_through={k: v.timestamp_utc.max().isoformat() for k, v in bars.items() if k in {bars_key(s) for s in spec["sleeves"]}},
                       start=pd.Timestamp(start).isoformat(), source=source_name, engine_sha256=engine_identity(),
                       trades=len(trades), net=portfolio["net"], realized=portfolio["realized"],
                       closed_drawdown=portfolio["closed_drawdown"], intrabar_drawdown=portfolio["intrabar_drawdown"],
@@ -421,8 +475,8 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
                   positions=run_record["positions"], locks=run_record["locks"], funded_failed=run_record["funded_failed"],
                   divergences=total_divergences, last_trades=trades[-5:],
                   engine_sha256=run_record["engine_sha256"],
-                  bar_minutes=BAR_MINUTES,
-                  disclaimer="Simulated fills on 15m bars from a delayed public continuous series; no orders are routed anywhere.")
+                  bar_minutes=sorted({int(s.get("bar_minutes", BAR_MINUTES)) for s in spec["sleeves"]}),
+                  disclaimer="Simulated fills on 15m/30m/60m bars from a delayed public continuous series; no orders are routed anywhere.")
     (folder / "status.json").write_text(json.dumps(status, indent=1, sort_keys=True))
     equity = portfolio["equity"].copy()
     equity["ts"] = equity.ts.dt.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -446,6 +500,15 @@ def run_once(root, source, start, now=None, candidates=None):
         warm = frame[frame.timestamp_utc < start_ts].tail(WARMUP_BARS)
         live = frame[frame.timestamp_utc >= start_ts]
         bars[instrument] = canonical_bars(pd.concat([warm, live]), instrument, YAHOO_SYMBOLS[instrument])
+    for key, spec in CANDIDATES.items():
+        for sleeve in spec["sleeves"]:
+            bk = bars_key(sleeve)
+            if bk in bars:
+                continue
+            frame = aggregate(stored[sleeve["instrument"]], int(sleeve["bar_minutes"]))
+            warm = frame[frame.timestamp_utc < start_ts].tail(WARMUP_BARS * BAR_MINUTES // int(sleeve["bar_minutes"]))
+            live = frame[frame.timestamp_utc >= start_ts]
+            bars[bk] = canonical_bars(pd.concat([warm, live]), sleeve["instrument"], YAHOO_SYMBOLS[sleeve["instrument"]])
     statuses = {}
     for key, spec in CANDIDATES.items():
         if candidates and key not in candidates:
