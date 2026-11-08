@@ -1,0 +1,5270 @@
+{
+ "registered": "2026-11-08",
+ "filters": {
+  "MES_MOM_3c": {
+   "baseline": {
+    "total": 7624.75,
+    "pos_years": 7,
+    "worst_dd": 813.75,
+    "trades": 393,
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -237.75,
+      "dd": 463.5,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -361.5,
+      "dd": 441.75,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -440.25,
+      "dd": 474.75,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -577.5,
+      "dd": 813.75,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 148.5,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 8222.5,
+    "pos_years": 8,
+    "worst_dd": 813.75,
+    "trades": 380,
+    "years": {
+     "2010": {
+      "net": 238.5,
+      "dd": 59.25,
+      "trades": 8,
+      "blocked_bars": 853
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 6905
+     },
+     "2012": {
+      "net": -237.75,
+      "dd": 463.5,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -361.5,
+      "dd": 441.75,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -440.25,
+      "dd": 474.75,
+      "trades": 28,
+      "blocked_bars": 367
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 441
+     },
+     "2019": {
+      "net": -577.5,
+      "dd": 813.75,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 40.5,
+      "dd": 270.75,
+      "trades": 19,
+      "blocked_bars": 7168
+     },
+     "2021": {
+      "net": 877.5,
+      "dd": 48.0,
+      "trades": 45,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 7027.75,
+      "dd": 153.0,
+      "trades": 42,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 148.5,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 3
+   },
+   "skip_vix_lt15": {
+    "total": 8589.25,
+    "pos_years": 7,
+    "worst_dd": 677.25,
+    "trades": 259,
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 239
+     },
+     "2012": {
+      "net": -235.5,
+      "dd": 461.25,
+      "trades": 26,
+      "blocked_bars": 1839
+     },
+     "2013": {
+      "net": -8.25,
+      "dd": 36.75,
+      "trades": 4,
+      "blocked_bars": 15261
+     },
+     "2014": {
+      "net": 310.5,
+      "dd": 48.0,
+      "trades": 9,
+      "blocked_bars": 14163
+     },
+     "2015": {
+      "net": -324.0,
+      "dd": 432.75,
+      "trades": 18,
+      "blocked_bars": 8855
+     },
+     "2016": {
+      "net": 50.25,
+      "dd": 316.5,
+      "trades": 12,
+      "blocked_bars": 12629
+     },
+     "2017": {
+      "net": -59.25,
+      "dd": 59.25,
+      "trades": 1,
+      "blocked_bars": 20169
+     },
+     "2018": {
+      "net": 1476.0,
+      "dd": 59.25,
+      "trades": 18,
+      "blocked_bars": 10916
+     },
+     "2019": {
+      "net": -386.25,
+      "dd": 677.25,
+      "trades": 15,
+      "blocked_bars": 11694
+     },
+     "2020": {
+      "net": -419.25,
+      "dd": 419.25,
+      "trades": 22,
+      "blocked_bars": 2041
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 114.75,
+      "dd": 364.5,
+      "trades": 28,
+      "blocked_bars": 8569
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "only_vix_top30": {
+    "total": 2559.25,
+    "pos_years": 4,
+    "worst_dd": 647.25,
+    "trades": 105,
+    "years": {
+     "2010": {
+      "net": -38.25,
+      "dd": 159.75,
+      "trades": 4,
+      "blocked_bars": 8971
+     },
+     "2011": {
+      "net": 33.75,
+      "dd": 135.0,
+      "trades": 5,
+      "blocked_bars": 13421
+     },
+     "2012": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 21160
+     },
+     "2013": {
+      "net": -6.0,
+      "dd": 36.75,
+      "trades": 2,
+      "blocked_bars": 17537
+     },
+     "2014": {
+      "net": 310.5,
+      "dd": 48.0,
+      "trades": 9,
+      "blocked_bars": 13556
+     },
+     "2015": {
+      "net": -362.25,
+      "dd": 483.75,
+      "trades": 12,
+      "blocked_bars": 12466
+     },
+     "2016": {
+      "net": -221.25,
+      "dd": 420.0,
+      "trades": 5,
+      "blocked_bars": 17596
+     },
+     "2017": {
+      "net": -132.0,
+      "dd": 185.25,
+      "trades": 4,
+      "blocked_bars": 19323
+     },
+     "2018": {
+      "net": 963.75,
+      "dd": 21.75,
+      "trades": 20,
+      "blocked_bars": 9311
+     },
+     "2019": {
+      "net": -231.0,
+      "dd": 445.5,
+      "trades": 7,
+      "blocked_bars": 19738
+     },
+     "2020": {
+      "net": -468.0,
+      "dd": 468.0,
+      "trades": 7,
+      "blocked_bars": 12673
+     },
+     "2021": {
+      "net": -632.25,
+      "dd": 647.25,
+      "trades": 7,
+      "blocked_bars": 21527
+     },
+     "2022": {
+      "net": 3342.25,
+      "dd": 129.0,
+      "trades": 23,
+      "blocked_bars": 10784
+     },
+     "2023": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 22726
+     }
+    },
+    "passed": false,
+    "beats": 9
+   },
+   "skip_vix_top10": {
+    "total": 6447.25,
+    "pos_years": 6,
+    "worst_dd": 813.75,
+    "trades": 360,
+    "years": {
+     "2010": {
+      "net": 238.5,
+      "dd": 59.25,
+      "trades": 8,
+      "blocked_bars": 935
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 4490
+     },
+     "2012": {
+      "net": -237.75,
+      "dd": 463.5,
+      "trades": 28,
+      "blocked_bars": 64
+     },
+     "2013": {
+      "net": -414.75,
+      "dd": 495.0,
+      "trades": 17,
+      "blocked_bars": 892
+     },
+     "2014": {
+      "net": -195.0,
+      "dd": 195.0,
+      "trades": 20,
+      "blocked_bars": 2818
+     },
+     "2015": {
+      "net": -300.75,
+      "dd": 335.25,
+      "trades": 24,
+      "blocked_bars": 4253
+     },
+     "2016": {
+      "net": 95.25,
+      "dd": 396.75,
+      "trades": 27,
+      "blocked_bars": 1607
+     },
+     "2017": {
+      "net": -369.75,
+      "dd": 418.5,
+      "trades": 27,
+      "blocked_bars": 356
+     },
+     "2018": {
+      "net": 102.0,
+      "dd": 556.5,
+      "trades": 21,
+      "blocked_bars": 6999
+     },
+     "2019": {
+      "net": -577.5,
+      "dd": 813.75,
+      "trades": 30,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": -504.75,
+      "dd": 504.75,
+      "trades": 24,
+      "blocked_bars": 3370
+     },
+     "2021": {
+      "net": 874.5,
+      "dd": 48.0,
+      "trades": 46,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 6787.0,
+      "dd": 153.0,
+      "trades": 41,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 148.5,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "skip_vix_bottom20": {
+    "total": 6184.0,
+    "pos_years": 7,
+    "worst_dd": 718.5,
+    "trades": 287,
+    "years": {
+     "2010": {
+      "net": 193.5,
+      "dd": 159.75,
+      "trades": 8,
+      "blocked_bars": 2330
+     },
+     "2011": {
+      "net": -271.5,
+      "dd": 510.0,
+      "trades": 13,
+      "blocked_bars": 5784
+     },
+     "2012": {
+      "net": -245.25,
+      "dd": 340.5,
+      "trades": 13,
+      "blocked_bars": 8124
+     },
+     "2013": {
+      "net": -142.5,
+      "dd": 177.0,
+      "trades": 10,
+      "blocked_bars": 8900
+     },
+     "2014": {
+      "net": 221.25,
+      "dd": 48.0,
+      "trades": 20,
+      "blocked_bars": 5060
+     },
+     "2015": {
+      "net": -534.75,
+      "dd": 569.25,
+      "trades": 27,
+      "blocked_bars": 1227
+     },
+     "2016": {
+      "net": 54.0,
+      "dd": 316.5,
+      "trades": 17,
+      "blocked_bars": 7740
+     },
+     "2017": {
+      "net": -289.5,
+      "dd": 338.25,
+      "trades": 14,
+      "blocked_bars": 13137
+     },
+     "2018": {
+      "net": 967.5,
+      "dd": 96.0,
+      "trades": 30,
+      "blocked_bars": 650
+     },
+     "2019": {
+      "net": -560.25,
+      "dd": 718.5,
+      "trades": 23,
+      "blocked_bars": 4818
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 770
+     },
+     "2021": {
+      "net": 110.25,
+      "dd": 114.75,
+      "trades": 32,
+      "blocked_bars": 12995
+     },
+     "2022": {
+      "net": 6833.5,
+      "dd": 153.0,
+      "trades": 42,
+      "blocked_bars": 1321
+     },
+     "2023": {
+      "net": 369.75,
+      "dd": 255.75,
+      "trades": 13,
+      "blocked_bars": 16851
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_falling": {
+    "total": 6653.25,
+    "pos_years": 8,
+    "worst_dd": 595.5,
+    "trades": 231,
+    "years": {
+     "2010": {
+      "net": 276.75,
+      "dd": 59.25,
+      "trades": 4,
+      "blocked_bars": 4639
+     },
+     "2011": {
+      "net": 192.0,
+      "dd": 129.75,
+      "trades": 11,
+      "blocked_bars": 10560
+     },
+     "2012": {
+      "net": -24.75,
+      "dd": 265.5,
+      "trades": 17,
+      "blocked_bars": 9699
+     },
+     "2013": {
+      "net": -351.75,
+      "dd": 390.0,
+      "trades": 11,
+      "blocked_bars": 9073
+     },
+     "2014": {
+      "net": 120.75,
+      "dd": 21.75,
+      "trades": 16,
+      "blocked_bars": 8408
+     },
+     "2015": {
+      "net": -105.0,
+      "dd": 105.0,
+      "trades": 10,
+      "blocked_bars": 9792
+     },
+     "2016": {
+      "net": 42.75,
+      "dd": 231.75,
+      "trades": 17,
+      "blocked_bars": 9414
+     },
+     "2017": {
+      "net": -146.25,
+      "dd": 195.0,
+      "trades": 15,
+      "blocked_bars": 9847
+     },
+     "2018": {
+      "net": 35.25,
+      "dd": 595.5,
+      "trades": 22,
+      "blocked_bars": 10983
+     },
+     "2019": {
+      "net": -516.75,
+      "dd": 516.75,
+      "trades": 16,
+      "blocked_bars": 8446
+     },
+     "2020": {
+      "net": -72.0,
+      "dd": 181.0,
+      "trades": 13,
+      "blocked_bars": 9197
+     },
+     "2021": {
+      "net": 870.75,
+      "dd": 48.0,
+      "trades": 21,
+      "blocked_bars": 9906
+     },
+     "2022": {
+      "net": 4848.75,
+      "dd": 185.25,
+      "trades": 31,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 1482.75,
+      "dd": 303.75,
+      "trades": 27,
+      "blocked_bars": 9216
+     }
+    },
+    "passed": false,
+    "beats": 10
+   }
+  },
+  "MES_MOM_1c": {
+   "baseline": {
+    "total": 2742.25,
+    "pos_years": 7,
+    "worst_dd": 270.62,
+    "trades": 389,
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -79.25,
+      "dd": 153.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -120.5,
+      "dd": 146.62,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -146.75,
+      "dd": 157.62,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -192.5,
+      "dd": 270.62,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 329.5,
+      "dd": 48.88,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 2874.5,
+    "pos_years": 8,
+    "worst_dd": 270.62,
+    "trades": 378,
+    "years": {
+     "2010": {
+      "net": 79.5,
+      "dd": 19.12,
+      "trades": 8,
+      "blocked_bars": 853
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 6905
+     },
+     "2012": {
+      "net": -79.25,
+      "dd": 153.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -120.5,
+      "dd": 146.62,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -146.75,
+      "dd": 157.62,
+      "trades": 28,
+      "blocked_bars": 367
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 441
+     },
+     "2019": {
+      "net": -192.5,
+      "dd": 270.62,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 13.5,
+      "dd": 89.62,
+      "trades": 19,
+      "blocked_bars": 7168
+     },
+     "2021": {
+      "net": 292.5,
+      "dd": 15.38,
+      "trades": 45,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 2476.25,
+      "dd": 50.38,
+      "trades": 40,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 329.5,
+      "dd": 48.88,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 3
+   },
+   "skip_vix_lt15": {
+    "total": 3063.75,
+    "pos_years": 7,
+    "worst_dd": 225.12,
+    "trades": 255,
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 239
+     },
+     "2012": {
+      "net": -78.5,
+      "dd": 153.12,
+      "trades": 26,
+      "blocked_bars": 1839
+     },
+     "2013": {
+      "net": -2.75,
+      "dd": 11.62,
+      "trades": 4,
+      "blocked_bars": 15261
+     },
+     "2014": {
+      "net": 103.5,
+      "dd": 15.38,
+      "trades": 9,
+      "blocked_bars": 14163
+     },
+     "2015": {
+      "net": -108.0,
+      "dd": 143.62,
+      "trades": 18,
+      "blocked_bars": 8855
+     },
+     "2016": {
+      "net": 16.75,
+      "dd": 104.88,
+      "trades": 12,
+      "blocked_bars": 12629
+     },
+     "2017": {
+      "net": -19.75,
+      "dd": 19.75,
+      "trades": 1,
+      "blocked_bars": 20169
+     },
+     "2018": {
+      "net": 492.0,
+      "dd": 19.12,
+      "trades": 18,
+      "blocked_bars": 10916
+     },
+     "2019": {
+      "net": -128.75,
+      "dd": 225.12,
+      "trades": 15,
+      "blocked_bars": 11694
+     },
+     "2020": {
+      "net": -20.0,
+      "dd": 55.38,
+      "trades": 20,
+      "blocked_bars": 2041
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 38.25,
+      "dd": 120.88,
+      "trades": 28,
+      "blocked_bars": 8569
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "only_vix_top30": {
+    "total": 1106.5,
+    "pos_years": 4,
+    "worst_dd": 215.12,
+    "trades": 101,
+    "years": {
+     "2010": {
+      "net": -12.75,
+      "dd": 52.62,
+      "trades": 4,
+      "blocked_bars": 8971
+     },
+     "2011": {
+      "net": 11.25,
+      "dd": 44.38,
+      "trades": 5,
+      "blocked_bars": 13421
+     },
+     "2012": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 21160
+     },
+     "2013": {
+      "net": -2.0,
+      "dd": 11.62,
+      "trades": 2,
+      "blocked_bars": 17537
+     },
+     "2014": {
+      "net": 103.5,
+      "dd": 15.38,
+      "trades": 9,
+      "blocked_bars": 13556
+     },
+     "2015": {
+      "net": -120.75,
+      "dd": 160.62,
+      "trades": 12,
+      "blocked_bars": 12466
+     },
+     "2016": {
+      "net": -73.75,
+      "dd": 139.38,
+      "trades": 5,
+      "blocked_bars": 17596
+     },
+     "2017": {
+      "net": -44.0,
+      "dd": 61.12,
+      "trades": 4,
+      "blocked_bars": 19323
+     },
+     "2018": {
+      "net": 321.25,
+      "dd": 6.62,
+      "trades": 20,
+      "blocked_bars": 9311
+     },
+     "2019": {
+      "net": -77.0,
+      "dd": 147.88,
+      "trades": 7,
+      "blocked_bars": 19738
+     },
+     "2020": {
+      "net": -36.25,
+      "dd": 63.38,
+      "trades": 5,
+      "blocked_bars": 12673
+     },
+     "2021": {
+      "net": -210.75,
+      "dd": 215.12,
+      "trades": 7,
+      "blocked_bars": 21527
+     },
+     "2022": {
+      "net": 1247.75,
+      "dd": 42.38,
+      "trades": 21,
+      "blocked_bars": 10784
+     },
+     "2023": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 22726
+     }
+    },
+    "passed": false,
+    "beats": 9
+   },
+   "skip_vix_top10": {
+    "total": 2396.75,
+    "pos_years": 6,
+    "worst_dd": 270.62,
+    "trades": 357,
+    "years": {
+     "2010": {
+      "net": 79.5,
+      "dd": 19.12,
+      "trades": 8,
+      "blocked_bars": 935
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 4490
+     },
+     "2012": {
+      "net": -79.25,
+      "dd": 153.88,
+      "trades": 28,
+      "blocked_bars": 64
+     },
+     "2013": {
+      "net": -138.25,
+      "dd": 164.38,
+      "trades": 17,
+      "blocked_bars": 892
+     },
+     "2014": {
+      "net": -65.0,
+      "dd": 65.0,
+      "trades": 20,
+      "blocked_bars": 2818
+     },
+     "2015": {
+      "net": -100.25,
+      "dd": 111.12,
+      "trades": 24,
+      "blocked_bars": 4253
+     },
+     "2016": {
+      "net": 31.75,
+      "dd": 131.62,
+      "trades": 27,
+      "blocked_bars": 1607
+     },
+     "2017": {
+      "net": -123.25,
+      "dd": 138.88,
+      "trades": 27,
+      "blocked_bars": 356
+     },
+     "2018": {
+      "net": 34.0,
+      "dd": 184.88,
+      "trades": 21,
+      "blocked_bars": 6999
+     },
+     "2019": {
+      "net": -192.5,
+      "dd": 270.62,
+      "trades": 30,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 3370
+     },
+     "2021": {
+      "net": 291.5,
+      "dd": 15.38,
+      "trades": 46,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 2396.0,
+      "dd": 50.38,
+      "trades": 39,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 329.5,
+      "dd": 48.88,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 5
+   },
+   "skip_vix_bottom20": {
+    "total": 2262.0,
+    "pos_years": 7,
+    "worst_dd": 238.88,
+    "trades": 283,
+    "years": {
+     "2010": {
+      "net": 64.5,
+      "dd": 52.62,
+      "trades": 8,
+      "blocked_bars": 2330
+     },
+     "2011": {
+      "net": -90.5,
+      "dd": 169.38,
+      "trades": 13,
+      "blocked_bars": 5784
+     },
+     "2012": {
+      "net": -81.75,
+      "dd": 112.88,
+      "trades": 13,
+      "blocked_bars": 8124
+     },
+     "2013": {
+      "net": -47.5,
+      "dd": 58.38,
+      "trades": 10,
+      "blocked_bars": 8900
+     },
+     "2014": {
+      "net": 73.75,
+      "dd": 15.38,
+      "trades": 20,
+      "blocked_bars": 5060
+     },
+     "2015": {
+      "net": -178.25,
+      "dd": 189.12,
+      "trades": 27,
+      "blocked_bars": 1227
+     },
+     "2016": {
+      "net": 18.0,
+      "dd": 104.88,
+      "trades": 17,
+      "blocked_bars": 7740
+     },
+     "2017": {
+      "net": -96.5,
+      "dd": 112.12,
+      "trades": 14,
+      "blocked_bars": 13137
+     },
+     "2018": {
+      "net": 322.5,
+      "dd": 31.38,
+      "trades": 30,
+      "blocked_bars": 650
+     },
+     "2019": {
+      "net": -186.75,
+      "dd": 238.88,
+      "trades": 23,
+      "blocked_bars": 4818
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 770
+     },
+     "2021": {
+      "net": 36.75,
+      "dd": 37.62,
+      "trades": 32,
+      "blocked_bars": 12995
+     },
+     "2022": {
+      "net": 2358.75,
+      "dd": 50.38,
+      "trades": 40,
+      "blocked_bars": 1321
+     },
+     "2023": {
+      "net": 123.25,
+      "dd": 84.62,
+      "trades": 13,
+      "blocked_bars": 16851
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_falling": {
+    "total": 2472.0,
+    "pos_years": 8,
+    "worst_dd": 197.88,
+    "trades": 228,
+    "years": {
+     "2010": {
+      "net": 92.25,
+      "dd": 19.12,
+      "trades": 4,
+      "blocked_bars": 4639
+     },
+     "2011": {
+      "net": 64.0,
+      "dd": 42.62,
+      "trades": 11,
+      "blocked_bars": 10560
+     },
+     "2012": {
+      "net": -8.25,
+      "dd": 87.88,
+      "trades": 17,
+      "blocked_bars": 9699
+     },
+     "2013": {
+      "net": -117.25,
+      "dd": 129.38,
+      "trades": 11,
+      "blocked_bars": 9073
+     },
+     "2014": {
+      "net": 40.25,
+      "dd": 6.62,
+      "trades": 16,
+      "blocked_bars": 8408
+     },
+     "2015": {
+      "net": -35.0,
+      "dd": 35.0,
+      "trades": 10,
+      "blocked_bars": 9792
+     },
+     "2016": {
+      "net": 14.25,
+      "dd": 76.62,
+      "trades": 17,
+      "blocked_bars": 9414
+     },
+     "2017": {
+      "net": -48.75,
+      "dd": 64.38,
+      "trades": 15,
+      "blocked_bars": 9847
+     },
+     "2018": {
+      "net": 11.75,
+      "dd": 197.88,
+      "trades": 22,
+      "blocked_bars": 10983
+     },
+     "2019": {
+      "net": -172.25,
+      "dd": 172.25,
+      "trades": 16,
+      "blocked_bars": 8446
+     },
+     "2020": {
+      "net": -18.25,
+      "dd": 18.25,
+      "trades": 12,
+      "blocked_bars": 9197
+     },
+     "2021": {
+      "net": 290.25,
+      "dd": 15.38,
+      "trades": 21,
+      "blocked_bars": 9906
+     },
+     "2022": {
+      "net": 1864.75,
+      "dd": 61.12,
+      "trades": 29,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 494.25,
+      "dd": 100.62,
+      "trades": 27,
+      "blocked_bars": 9216
+     }
+    },
+    "passed": false,
+    "beats": 10
+   }
+  },
+  "MES_MOM_2c": {
+   "baseline": {
+    "total": 5048.25,
+    "pos_years": 7,
+    "worst_dd": 541.88,
+    "trades": 393,
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -158.5,
+      "dd": 308.38,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -241.0,
+      "dd": 293.88,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -293.5,
+      "dd": 315.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -385.0,
+      "dd": 541.88,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 659.0,
+      "dd": 98.38,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 5383.75,
+    "pos_years": 8,
+    "worst_dd": 541.88,
+    "trades": 380,
+    "years": {
+     "2010": {
+      "net": 159.0,
+      "dd": 38.88,
+      "trades": 8,
+      "blocked_bars": 853
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 6905
+     },
+     "2012": {
+      "net": -158.5,
+      "dd": 308.38,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -241.0,
+      "dd": 293.88,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -293.5,
+      "dd": 315.88,
+      "trades": 28,
+      "blocked_bars": 367
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 441
+     },
+     "2019": {
+      "net": -385.0,
+      "dd": 541.88,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 27.0,
+      "dd": 179.88,
+      "trades": 19,
+      "blocked_bars": 7168
+     },
+     "2021": {
+      "net": 585.0,
+      "dd": 31.38,
+      "trades": 45,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 4587.25,
+      "dd": 101.38,
+      "trades": 42,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 659.0,
+      "dd": 98.38,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 3
+   },
+   "skip_vix_lt15": {
+    "total": 5691.25,
+    "pos_years": 7,
+    "worst_dd": 450.88,
+    "trades": 259,
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 239
+     },
+     "2012": {
+      "net": -157.0,
+      "dd": 306.88,
+      "trades": 26,
+      "blocked_bars": 1839
+     },
+     "2013": {
+      "net": -5.5,
+      "dd": 23.88,
+      "trades": 4,
+      "blocked_bars": 15261
+     },
+     "2014": {
+      "net": 207.0,
+      "dd": 31.38,
+      "trades": 9,
+      "blocked_bars": 14163
+     },
+     "2015": {
+      "net": -216.0,
+      "dd": 287.88,
+      "trades": 18,
+      "blocked_bars": 8855
+     },
+     "2016": {
+      "net": 33.5,
+      "dd": 210.38,
+      "trades": 12,
+      "blocked_bars": 12629
+     },
+     "2017": {
+      "net": -39.5,
+      "dd": 39.5,
+      "trades": 1,
+      "blocked_bars": 20169
+     },
+     "2018": {
+      "net": 984.0,
+      "dd": 38.88,
+      "trades": 18,
+      "blocked_bars": 10916
+     },
+     "2019": {
+      "net": -257.5,
+      "dd": 450.88,
+      "trades": 15,
+      "blocked_bars": 11694
+     },
+     "2020": {
+      "net": -228.25,
+      "dd": 228.25,
+      "trades": 22,
+      "blocked_bars": 2041
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 76.5,
+      "dd": 242.38,
+      "trades": 28,
+      "blocked_bars": 8569
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "only_vix_top30": {
+    "total": 1914.75,
+    "pos_years": 4,
+    "worst_dd": 430.88,
+    "trades": 105,
+    "years": {
+     "2010": {
+      "net": -25.5,
+      "dd": 105.88,
+      "trades": 4,
+      "blocked_bars": 8971
+     },
+     "2011": {
+      "net": 22.5,
+      "dd": 89.38,
+      "trades": 5,
+      "blocked_bars": 13421
+     },
+     "2012": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 21160
+     },
+     "2013": {
+      "net": -4.0,
+      "dd": 23.88,
+      "trades": 2,
+      "blocked_bars": 17537
+     },
+     "2014": {
+      "net": 207.0,
+      "dd": 31.38,
+      "trades": 9,
+      "blocked_bars": 13556
+     },
+     "2015": {
+      "net": -241.5,
+      "dd": 321.88,
+      "trades": 12,
+      "blocked_bars": 12466
+     },
+     "2016": {
+      "net": -147.5,
+      "dd": 279.38,
+      "trades": 5,
+      "blocked_bars": 17596
+     },
+     "2017": {
+      "net": -88.0,
+      "dd": 122.88,
+      "trades": 4,
+      "blocked_bars": 19323
+     },
+     "2018": {
+      "net": 642.5,
+      "dd": 13.88,
+      "trades": 20,
+      "blocked_bars": 9311
+     },
+     "2019": {
+      "net": -154.0,
+      "dd": 296.38,
+      "trades": 7,
+      "blocked_bars": 19738
+     },
+     "2020": {
+      "net": -260.75,
+      "dd": 260.75,
+      "trades": 7,
+      "blocked_bars": 12673
+     },
+     "2021": {
+      "net": -421.5,
+      "dd": 430.88,
+      "trades": 7,
+      "blocked_bars": 21527
+     },
+     "2022": {
+      "net": 2385.5,
+      "dd": 85.38,
+      "trades": 23,
+      "blocked_bars": 10784
+     },
+     "2023": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 22726
+     }
+    },
+    "passed": false,
+    "beats": 9
+   },
+   "skip_vix_top10": {
+    "total": 4257.25,
+    "pos_years": 6,
+    "worst_dd": 541.88,
+    "trades": 360,
+    "years": {
+     "2010": {
+      "net": 159.0,
+      "dd": 38.88,
+      "trades": 8,
+      "blocked_bars": 935
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 4490
+     },
+     "2012": {
+      "net": -158.5,
+      "dd": 308.38,
+      "trades": 28,
+      "blocked_bars": 64
+     },
+     "2013": {
+      "net": -276.5,
+      "dd": 329.38,
+      "trades": 17,
+      "blocked_bars": 892
+     },
+     "2014": {
+      "net": -130.0,
+      "dd": 130.0,
+      "trades": 20,
+      "blocked_bars": 2818
+     },
+     "2015": {
+      "net": -200.5,
+      "dd": 222.88,
+      "trades": 24,
+      "blocked_bars": 4253
+     },
+     "2016": {
+      "net": 63.5,
+      "dd": 263.88,
+      "trades": 27,
+      "blocked_bars": 1607
+     },
+     "2017": {
+      "net": -246.5,
+      "dd": 278.38,
+      "trades": 27,
+      "blocked_bars": 356
+     },
+     "2018": {
+      "net": 68.0,
+      "dd": 370.38,
+      "trades": 21,
+      "blocked_bars": 6999
+     },
+     "2019": {
+      "net": -385.0,
+      "dd": 541.88,
+      "trades": 30,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": -279.5,
+      "dd": 279.5,
+      "trades": 24,
+      "blocked_bars": 3370
+     },
+     "2021": {
+      "net": 583.0,
+      "dd": 31.38,
+      "trades": 46,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 4426.75,
+      "dd": 101.38,
+      "trades": 41,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 659.0,
+      "dd": 98.38,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "skip_vix_bottom20": {
+    "total": 4087.75,
+    "pos_years": 7,
+    "worst_dd": 478.38,
+    "trades": 287,
+    "years": {
+     "2010": {
+      "net": 129.0,
+      "dd": 105.88,
+      "trades": 8,
+      "blocked_bars": 2330
+     },
+     "2011": {
+      "net": -181.0,
+      "dd": 339.38,
+      "trades": 13,
+      "blocked_bars": 5784
+     },
+     "2012": {
+      "net": -163.5,
+      "dd": 226.38,
+      "trades": 13,
+      "blocked_bars": 8124
+     },
+     "2013": {
+      "net": -95.0,
+      "dd": 117.38,
+      "trades": 10,
+      "blocked_bars": 8900
+     },
+     "2014": {
+      "net": 147.5,
+      "dd": 31.38,
+      "trades": 20,
+      "blocked_bars": 5060
+     },
+     "2015": {
+      "net": -356.5,
+      "dd": 378.88,
+      "trades": 27,
+      "blocked_bars": 1227
+     },
+     "2016": {
+      "net": 36.0,
+      "dd": 210.38,
+      "trades": 17,
+      "blocked_bars": 7740
+     },
+     "2017": {
+      "net": -193.0,
+      "dd": 224.88,
+      "trades": 14,
+      "blocked_bars": 13137
+     },
+     "2018": {
+      "net": 645.0,
+      "dd": 63.38,
+      "trades": 30,
+      "blocked_bars": 650
+     },
+     "2019": {
+      "net": -373.5,
+      "dd": 478.38,
+      "trades": 23,
+      "blocked_bars": 4818
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 770
+     },
+     "2021": {
+      "net": 73.5,
+      "dd": 75.88,
+      "trades": 32,
+      "blocked_bars": 12995
+     },
+     "2022": {
+      "net": 4469.5,
+      "dd": 101.38,
+      "trades": 42,
+      "blocked_bars": 1321
+     },
+     "2023": {
+      "net": 246.5,
+      "dd": 169.88,
+      "trades": 13,
+      "blocked_bars": 16851
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_falling": {
+    "total": 4409.5,
+    "pos_years": 8,
+    "worst_dd": 396.38,
+    "trades": 231,
+    "years": {
+     "2010": {
+      "net": 184.5,
+      "dd": 38.88,
+      "trades": 4,
+      "blocked_bars": 4639
+     },
+     "2011": {
+      "net": 128.0,
+      "dd": 85.88,
+      "trades": 11,
+      "blocked_bars": 10560
+     },
+     "2012": {
+      "net": -16.5,
+      "dd": 176.38,
+      "trades": 17,
+      "blocked_bars": 9699
+     },
+     "2013": {
+      "net": -234.5,
+      "dd": 259.38,
+      "trades": 11,
+      "blocked_bars": 9073
+     },
+     "2014": {
+      "net": 80.5,
+      "dd": 13.88,
+      "trades": 16,
+      "blocked_bars": 8408
+     },
+     "2015": {
+      "net": -70.0,
+      "dd": 70.0,
+      "trades": 10,
+      "blocked_bars": 9792
+     },
+     "2016": {
+      "net": 28.5,
+      "dd": 153.88,
+      "trades": 17,
+      "blocked_bars": 9414
+     },
+     "2017": {
+      "net": -97.5,
+      "dd": 129.38,
+      "trades": 15,
+      "blocked_bars": 9847
+     },
+     "2018": {
+      "net": 23.5,
+      "dd": 396.38,
+      "trades": 22,
+      "blocked_bars": 10983
+     },
+     "2019": {
+      "net": -344.5,
+      "dd": 344.5,
+      "trades": 16,
+      "blocked_bars": 8446
+     },
+     "2020": {
+      "net": -53.75,
+      "dd": 180.69,
+      "trades": 13,
+      "blocked_bars": 9197
+     },
+     "2021": {
+      "net": 580.5,
+      "dd": 31.38,
+      "trades": 21,
+      "blocked_bars": 9906
+     },
+     "2022": {
+      "net": 3212.25,
+      "dd": 122.88,
+      "trades": 31,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 201.88,
+      "trades": 27,
+      "blocked_bars": 9216
+     }
+    },
+    "passed": false,
+    "beats": 10
+   }
+  },
+  "MNQ_BRK_E_2c": {
+   "baseline": {
+    "total": 9790.0,
+    "pos_years": 8,
+    "worst_dd": 996.0,
+    "trades": 495,
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": 139.0,
+      "dd": 9.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 75.0,
+      "dd": 527.75,
+      "trades": 40,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 61.0,
+      "dd": 417.75,
+      "trades": 52,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -521.0,
+      "dd": 555.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 1712.0,
+      "dd": 152.25,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 8650.5,
+    "pos_years": 8,
+    "worst_dd": 996.0,
+    "trades": 468,
+    "years": {
+     "2010": {
+      "net": -40.0,
+      "dd": 85.75,
+      "trades": 9,
+      "blocked_bars": 581
+     },
+     "2011": {
+      "net": 364.0,
+      "dd": 9.75,
+      "trades": 16,
+      "blocked_bars": 5152
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 75.0,
+      "dd": 527.75,
+      "trades": 40,
+      "blocked_bars": 345
+     },
+     "2016": {
+      "net": 61.0,
+      "dd": 417.75,
+      "trades": 52,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -521.0,
+      "dd": 555.75,
+      "trades": 44,
+      "blocked_bars": 439
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 1009.5,
+      "dd": 98.75,
+      "trades": 27,
+      "blocked_bars": 7147
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 3419.0,
+      "dd": 319.75,
+      "trades": 30,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 2
+   },
+   "skip_vix_lt15": {
+    "total": 9390.0,
+    "pos_years": 6,
+    "worst_dd": 573.75,
+    "trades": 302,
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": 139.0,
+      "dd": 9.75,
+      "trades": 24,
+      "blocked_bars": 124
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 1199
+     },
+     "2013": {
+      "net": -48.0,
+      "dd": 60.75,
+      "trades": 8,
+      "blocked_bars": 10283
+     },
+     "2014": {
+      "net": 36.0,
+      "dd": 78.75,
+      "trades": 10,
+      "blocked_bars": 10179
+     },
+     "2015": {
+      "net": -288.0,
+      "dd": 570.75,
+      "trades": 20,
+      "blocked_bars": 6479
+     },
+     "2016": {
+      "net": -262.0,
+      "dd": 417.75,
+      "trades": 19,
+      "blocked_bars": 9682
+     },
+     "2017": {
+      "net": -132.0,
+      "dd": 132.0,
+      "trades": 3,
+      "blocked_bars": 18856
+     },
+     "2018": {
+      "net": -539.0,
+      "dd": 573.75,
+      "trades": 21,
+      "blocked_bars": 11047
+     },
+     "2019": {
+      "net": -302.0,
+      "dd": 436.75,
+      "trades": 19,
+      "blocked_bars": 11892
+     },
+     "2020": {
+      "net": 1445.0,
+      "dd": 419.25,
+      "trades": 37,
+      "blocked_bars": 2250
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 1858.0,
+      "dd": 259.88,
+      "trades": 26,
+      "blocked_bars": 8713
+     }
+    },
+    "passed": false,
+    "beats": 2
+   },
+   "only_vix_top30": {
+    "total": 3179.0,
+    "pos_years": 4,
+    "worst_dd": 742.75,
+    "trades": 132,
+    "years": {
+     "2010": {
+      "net": -57.0,
+      "dd": 71.75,
+      "trades": 3,
+      "blocked_bars": 5431
+     },
+     "2011": {
+      "net": -39.0,
+      "dd": 87.75,
+      "trades": 11,
+      "blocked_bars": 8442
+     },
+     "2012": {
+      "net": -35.0,
+      "dd": 35.0,
+      "trades": 1,
+      "blocked_bars": 14297
+     },
+     "2013": {
+      "net": -19.0,
+      "dd": 46.75,
+      "trades": 5,
+      "blocked_bars": 11862
+     },
+     "2014": {
+      "net": 46.0,
+      "dd": 78.75,
+      "trades": 11,
+      "blocked_bars": 9707
+     },
+     "2015": {
+      "net": -264.0,
+      "dd": 461.75,
+      "trades": 13,
+      "blocked_bars": 9155
+     },
+     "2016": {
+      "net": -241.0,
+      "dd": 417.75,
+      "trades": 10,
+      "blocked_bars": 13688
+     },
+     "2017": {
+      "net": -214.0,
+      "dd": 246.75,
+      "trades": 6,
+      "blocked_bars": 18063
+     },
+     "2018": {
+      "net": -708.0,
+      "dd": 742.75,
+      "trades": 23,
+      "blocked_bars": 9433
+     },
+     "2019": {
+      "net": -87.0,
+      "dd": 87.0,
+      "trades": 8,
+      "blocked_bars": 19998
+     },
+     "2020": {
+      "net": 987.5,
+      "dd": 419.25,
+      "trades": 18,
+      "blocked_bars": 12918
+     },
+     "2021": {
+      "net": 567.0,
+      "dd": 154.38,
+      "trades": 4,
+      "blocked_bars": 21719
+     },
+     "2022": {
+      "net": 3242.5,
+      "dd": 135.75,
+      "trades": 19,
+      "blocked_bars": 10792
+     },
+     "2023": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 22918
+     }
+    },
+    "passed": false,
+    "beats": 4
+   },
+   "skip_vix_top10": {
+    "total": 9706.5,
+    "pos_years": 9,
+    "worst_dd": 1238.0,
+    "trades": 444,
+    "years": {
+     "2010": {
+      "net": -40.0,
+      "dd": 85.75,
+      "trades": 9,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": 149.0,
+      "dd": 9.75,
+      "trades": 17,
+      "blocked_bars": 3374
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 41
+     },
+     "2013": {
+      "net": -227.0,
+      "dd": 227.0,
+      "trades": 24,
+      "blocked_bars": 661
+     },
+     "2014": {
+      "net": 247.0,
+      "dd": 26.75,
+      "trades": 23,
+      "blocked_bars": 2241
+     },
+     "2015": {
+      "net": 128.0,
+      "dd": 373.75,
+      "trades": 34,
+      "blocked_bars": 3638
+     },
+     "2016": {
+      "net": 250.0,
+      "dd": 218.75,
+      "trades": 49,
+      "blocked_bars": 1533
+     },
+     "2017": {
+      "net": -49.0,
+      "dd": 542.75,
+      "trades": 42,
+      "blocked_bars": 359
+     },
+     "2018": {
+      "net": 212.0,
+      "dd": 26.75,
+      "trades": 33,
+      "blocked_bars": 6989
+     },
+     "2019": {
+      "net": -1238.0,
+      "dd": 1238.0,
+      "trades": 36,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": 2018.5,
+      "dd": 51.75,
+      "trades": 36,
+      "blocked_bars": 3350
+     },
+     "2021": {
+      "net": 3017.0,
+      "dd": 86.75,
+      "trades": 45,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 3596.0,
+      "dd": 319.75,
+      "trades": 31,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "skip_vix_bottom20": {
+    "total": 4515.5,
+    "pos_years": 7,
+    "worst_dd": 941.0,
+    "trades": 346,
+    "years": {
+     "2010": {
+      "net": -44.0,
+      "dd": 89.75,
+      "trades": 9,
+      "blocked_bars": 1359
+     },
+     "2011": {
+      "net": -9.0,
+      "dd": 61.75,
+      "trades": 19,
+      "blocked_bars": 3494
+     },
+     "2012": {
+      "net": -102.0,
+      "dd": 123.75,
+      "trades": 14,
+      "blocked_bars": 5466
+     },
+     "2013": {
+      "net": -135.0,
+      "dd": 135.0,
+      "trades": 13,
+      "blocked_bars": 5895
+     },
+     "2014": {
+      "net": 57.0,
+      "dd": 15.75,
+      "trades": 22,
+      "blocked_bars": 3635
+     },
+     "2015": {
+      "net": 9.0,
+      "dd": 527.75,
+      "trades": 37,
+      "blocked_bars": 891
+     },
+     "2016": {
+      "net": 192.0,
+      "dd": 417.75,
+      "trades": 36,
+      "blocked_bars": 5740
+     },
+     "2017": {
+      "net": -222.0,
+      "dd": 427.75,
+      "trades": 19,
+      "blocked_bars": 12195
+     },
+     "2018": {
+      "net": -564.0,
+      "dd": 598.75,
+      "trades": 43,
+      "blocked_bars": 654
+     },
+     "2019": {
+      "net": -941.0,
+      "dd": 941.0,
+      "trades": 31,
+      "blocked_bars": 4912
+     },
+     "2020": {
+      "net": 1817.0,
+      "dd": 152.25,
+      "trades": 40,
+      "blocked_bars": 880
+     },
+     "2021": {
+      "net": 674.0,
+      "dd": 86.75,
+      "trades": 21,
+      "blocked_bars": 13151
+     },
+     "2022": {
+      "net": 3323.0,
+      "dd": 379.75,
+      "trades": 30,
+      "blocked_bars": 1325
+     },
+     "2023": {
+      "net": 460.5,
+      "dd": 552.88,
+      "trades": 12,
+      "blocked_bars": 17030
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_falling": {
+    "total": 9202.0,
+    "pos_years": 10,
+    "worst_dd": 319.75,
+    "trades": 269,
+    "years": {
+     "2010": {
+      "net": -21.0,
+      "dd": 21.0,
+      "trades": 3,
+      "blocked_bars": 2959
+     },
+     "2011": {
+      "net": 194.0,
+      "dd": 9.75,
+      "trades": 12,
+      "blocked_bars": 7336
+     },
+     "2012": {
+      "net": -101.0,
+      "dd": 151.75,
+      "trades": 13,
+      "blocked_bars": 6688
+     },
+     "2013": {
+      "net": -152.0,
+      "dd": 152.0,
+      "trades": 12,
+      "blocked_bars": 6278
+     },
+     "2014": {
+      "net": 187.0,
+      "dd": 89.75,
+      "trades": 18,
+      "blocked_bars": 6315
+     },
+     "2015": {
+      "net": 49.0,
+      "dd": 247.75,
+      "trades": 19,
+      "blocked_bars": 7700
+     },
+     "2016": {
+      "net": 322.0,
+      "dd": 198.75,
+      "trades": 32,
+      "blocked_bars": 7884
+     },
+     "2017": {
+      "net": 36.0,
+      "dd": 254.75,
+      "trades": 21,
+      "blocked_bars": 9207
+     },
+     "2018": {
+      "net": 667.0,
+      "dd": 15.75,
+      "trades": 23,
+      "blocked_bars": 11022
+     },
+     "2019": {
+      "net": -163.0,
+      "dd": 235.75,
+      "trades": 18,
+      "blocked_bars": 8494
+     },
+     "2020": {
+      "net": 1977.5,
+      "dd": 5.75,
+      "trades": 20,
+      "blocked_bars": 9256
+     },
+     "2021": {
+      "net": 2396.0,
+      "dd": 86.75,
+      "trades": 26,
+      "blocked_bars": 9947
+     },
+     "2022": {
+      "net": 1932.5,
+      "dd": 319.75,
+      "trades": 25,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 1878.0,
+      "dd": 45.88,
+      "trades": 27,
+      "blocked_bars": 9260
+     }
+    },
+    "passed": false,
+    "beats": 9
+   }
+  },
+  "MNQ_VOL_1c": {
+   "baseline": {
+    "total": 2637.0,
+    "pos_years": 5,
+    "worst_dd": 1165.25,
+    "trades": 3656,
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -514.5,
+      "dd": 640.25,
+      "trades": 283,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -992.0,
+      "dd": 1006.75,
+      "trades": 307,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -456.5,
+      "dd": 456.5,
+      "trades": 291,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": -512.0,
+      "dd": 720.75,
+      "trades": 294,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -1163.5,
+      "dd": 1165.25,
+      "trades": 345,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -889.0,
+      "dd": 1160.25,
+      "trades": 347,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -86.5,
+      "dd": 836.75,
+      "trades": 365,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": 429.0,
+      "dd": 76.25,
+      "trades": 360,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 1031.0,
+      "dd": 610.75,
+      "trades": 295,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 1238.0,
+      "dd": 239.75,
+      "trades": 286,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1794.5,
+      "dd": 158.25,
+      "trades": 120,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 2632.5,
+    "pos_years": 7,
+    "worst_dd": 1160.25,
+    "trades": 3558,
+    "years": {
+     "2010": {
+      "net": -229.0,
+      "dd": 232.25,
+      "trades": 112,
+      "blocked_bars": 581
+     },
+     "2011": {
+      "net": 71.0,
+      "dd": 92.25,
+      "trades": 178,
+      "blocked_bars": 5152
+     },
+     "2012": {
+      "net": -992.0,
+      "dd": 1006.75,
+      "trades": 307,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -456.5,
+      "dd": 456.5,
+      "trades": 291,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": -512.0,
+      "dd": 720.75,
+      "trades": 294,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -1076.5,
+      "dd": 1078.25,
+      "trades": 340,
+      "blocked_bars": 345
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -889.0,
+      "dd": 1160.25,
+      "trades": 347,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 76.5,
+      "dd": 706.25,
+      "trades": 360,
+      "blocked_bars": 439
+     },
+     "2019": {
+      "net": 429.0,
+      "dd": 76.25,
+      "trades": 360,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 270.5,
+      "dd": 309.25,
+      "trades": 233,
+      "blocked_bars": 7147
+     },
+     "2021": {
+      "net": 1212.5,
+      "dd": 265.25,
+      "trades": 284,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 1802.5,
+      "dd": 158.25,
+      "trades": 114,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 4
+   },
+   "skip_vix_lt15": {
+    "total": 2778.5,
+    "pos_years": 6,
+    "worst_dd": 970.25,
+    "trades": 2202,
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -514.5,
+      "dd": 640.25,
+      "trades": 281,
+      "blocked_bars": 124
+     },
+     "2012": {
+      "net": -955.5,
+      "dd": 970.25,
+      "trades": 286,
+      "blocked_bars": 1199
+     },
+     "2013": {
+      "net": 328.5,
+      "dd": 49.25,
+      "trades": 69,
+      "blocked_bars": 10283
+     },
+     "2014": {
+      "net": -99.5,
+      "dd": 333.75,
+      "trades": 89,
+      "blocked_bars": 10179
+     },
+     "2015": {
+      "net": -756.0,
+      "dd": 757.75,
+      "trades": 198,
+      "blocked_bars": 6479
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 9682
+     },
+     "2017": {
+      "net": -81.5,
+      "dd": 108.25,
+      "trades": 10,
+      "blocked_bars": 18856
+     },
+     "2018": {
+      "net": -310.5,
+      "dd": 815.25,
+      "trades": 185,
+      "blocked_bars": 11047
+     },
+     "2019": {
+      "net": 272.5,
+      "dd": 76.25,
+      "trades": 174,
+      "blocked_bars": 11892
+     },
+     "2020": {
+      "net": 1085.0,
+      "dd": 556.75,
+      "trades": 261,
+      "blocked_bars": 2250
+     },
+     "2021": {
+      "net": 1238.0,
+      "dd": 239.75,
+      "trades": 286,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1794.5,
+      "dd": 158.25,
+      "trades": 120,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 1436.5,
+      "dd": 290.25,
+      "trades": 177,
+      "blocked_bars": 8713
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_top30": {
+    "total": -1387.0,
+    "pos_years": 3,
+    "worst_dd": 1331.25,
+    "trades": 925,
+    "years": {
+     "2010": {
+      "net": -135.0,
+      "dd": 171.25,
+      "trades": 22,
+      "blocked_bars": 5431
+     },
+     "2011": {
+      "net": -484.5,
+      "dd": 492.75,
+      "trades": 129,
+      "blocked_bars": 8442
+     },
+     "2012": {
+      "net": -15.5,
+      "dd": 30.25,
+      "trades": 4,
+      "blocked_bars": 14297
+     },
+     "2013": {
+      "net": 235.0,
+      "dd": 12.25,
+      "trades": 35,
+      "blocked_bars": 11862
+     },
+     "2014": {
+      "net": -71.5,
+      "dd": 300.75,
+      "trades": 99,
+      "blocked_bars": 9707
+     },
+     "2015": {
+      "net": -594.5,
+      "dd": 647.25,
+      "trades": 143,
+      "blocked_bars": 9155
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 13688
+     },
+     "2017": {
+      "net": -20.5,
+      "dd": 164.75,
+      "trades": 23,
+      "blocked_bars": 18063
+     },
+     "2018": {
+      "net": -826.5,
+      "dd": 1331.25,
+      "trades": 218,
+      "blocked_bars": 9433
+     },
+     "2019": {
+      "net": -317.5,
+      "dd": 354.75,
+      "trades": 53,
+      "blocked_bars": 19998
+     },
+     "2020": {
+      "net": 1093.5,
+      "dd": 523.75,
+      "trades": 107,
+      "blocked_bars": 12918
+     },
+     "2021": {
+      "net": -442.0,
+      "dd": 590.25,
+      "trades": 12,
+      "blocked_bars": 21719
+     },
+     "2022": {
+      "net": 719.5,
+      "dd": 119.75,
+      "trades": 34,
+      "blocked_bars": 10792
+     },
+     "2023": {
+      "net": -35.5,
+      "dd": 61.25,
+      "trades": 5,
+      "blocked_bars": 22918
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "skip_vix_top10": {
+    "total": 3423.0,
+    "pos_years": 6,
+    "worst_dd": 1183.75,
+    "trades": 3684,
+    "years": {
+     "2010": {
+      "net": -231.5,
+      "dd": 234.75,
+      "trades": 111,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": -131.5,
+      "dd": 257.25,
+      "trades": 212,
+      "blocked_bars": 3374
+     },
+     "2012": {
+      "net": -984.0,
+      "dd": 1006.75,
+      "trades": 306,
+      "blocked_bars": 41
+     },
+     "2013": {
+      "net": -567.5,
+      "dd": 567.5,
+      "trades": 281,
+      "blocked_bars": 661
+     },
+     "2014": {
+      "net": -771.0,
+      "dd": 785.25,
+      "trades": 250,
+      "blocked_bars": 2241
+     },
+     "2015": {
+      "net": -725.5,
+      "dd": 817.25,
+      "trades": 280,
+      "blocked_bars": 3638
+     },
+     "2016": {
+      "net": -130.5,
+      "dd": 675.25,
+      "trades": 321,
+      "blocked_bars": 1533
+     },
+     "2017": {
+      "net": -912.5,
+      "dd": 1183.75,
+      "trades": 341,
+      "blocked_bars": 359
+     },
+     "2018": {
+      "net": 446.0,
+      "dd": 393.75,
+      "trades": 254,
+      "blocked_bars": 6989
+     },
+     "2019": {
+      "net": 243.5,
+      "dd": 195.25,
+      "trades": 355,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": 832.0,
+      "dd": 403.25,
+      "trades": 281,
+      "blocked_bars": 3350
+     },
+     "2021": {
+      "net": 1402.0,
+      "dd": 239.75,
+      "trades": 283,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 1536.0,
+      "dd": 158.25,
+      "trades": 112,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "skip_vix_bottom20": {
+    "total": 1527.5,
+    "pos_years": 7,
+    "worst_dd": 1217.75,
+    "trades": 2513,
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 1359
+     },
+     "2011": {
+      "net": -492.5,
+      "dd": 618.25,
+      "trades": 221,
+      "blocked_bars": 3494
+     },
+     "2012": {
+      "net": -572.0,
+      "dd": 673.25,
+      "trades": 191,
+      "blocked_bars": 5466
+     },
+     "2013": {
+      "net": -88.5,
+      "dd": 94.75,
+      "trades": 164,
+      "blocked_bars": 5895
+     },
+     "2014": {
+      "net": -468.5,
+      "dd": 707.75,
+      "trades": 227,
+      "blocked_bars": 3635
+     },
+     "2015": {
+      "net": -1216.0,
+      "dd": 1217.75,
+      "trades": 325,
+      "blocked_bars": 891
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 5740
+     },
+     "2017": {
+      "net": 354.0,
+      "dd": 289.75,
+      "trades": 121,
+      "blocked_bars": 12195
+     },
+     "2018": {
+      "net": 26.0,
+      "dd": 724.25,
+      "trades": 352,
+      "blocked_bars": 654
+     },
+     "2019": {
+      "net": 236.5,
+      "dd": 76.25,
+      "trades": 285,
+      "blocked_bars": 4912
+     },
+     "2020": {
+      "net": 994.5,
+      "dd": 694.25,
+      "trades": 285,
+      "blocked_bars": 880
+     },
+     "2021": {
+      "net": 1217.5,
+      "dd": 24.25,
+      "trades": 102,
+      "blocked_bars": 13151
+     },
+     "2022": {
+      "net": 1184.0,
+      "dd": 401.25,
+      "trades": 104,
+      "blocked_bars": 1325
+     },
+     "2023": {
+      "net": 1011.5,
+      "dd": 250.25,
+      "trades": 70,
+      "blocked_bars": 17030
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_falling": {
+    "total": 3446.5,
+    "pos_years": 7,
+    "worst_dd": 764.75,
+    "trades": 2320,
+    "years": {
+     "2010": {
+      "net": -208.5,
+      "dd": 211.75,
+      "trades": 71,
+      "blocked_bars": 2959
+     },
+     "2011": {
+      "net": -340.5,
+      "dd": 453.25,
+      "trades": 140,
+      "blocked_bars": 7336
+     },
+     "2012": {
+      "net": -488.0,
+      "dd": 516.75,
+      "trades": 156,
+      "blocked_bars": 6688
+     },
+     "2013": {
+      "net": -467.5,
+      "dd": 467.5,
+      "trades": 162,
+      "blocked_bars": 6278
+     },
+     "2014": {
+      "net": -425.0,
+      "dd": 439.25,
+      "trades": 163,
+      "blocked_bars": 6315
+     },
+     "2015": {
+      "net": -542.0,
+      "dd": 543.75,
+      "trades": 186,
+      "blocked_bars": 7700
+     },
+     "2016": {
+      "net": 144.0,
+      "dd": 411.25,
+      "trades": 197,
+      "blocked_bars": 7884
+     },
+     "2017": {
+      "net": -543.0,
+      "dd": 764.75,
+      "trades": 178,
+      "blocked_bars": 9207
+     },
+     "2018": {
+      "net": 1126.5,
+      "dd": 456.75,
+      "trades": 192,
+      "blocked_bars": 11022
+     },
+     "2019": {
+      "net": 1352.0,
+      "dd": 76.25,
+      "trades": 220,
+      "blocked_bars": 8494
+     },
+     "2020": {
+      "net": 258.0,
+      "dd": 751.25,
+      "trades": 191,
+      "blocked_bars": 9256
+     },
+     "2021": {
+      "net": 709.0,
+      "dd": 695.75,
+      "trades": 180,
+      "blocked_bars": 9947
+     },
+     "2022": {
+      "net": 629.0,
+      "dd": 158.25,
+      "trades": 89,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 2242.5,
+      "dd": 131.25,
+      "trades": 195,
+      "blocked_bars": 9260
+     }
+    },
+    "passed": false,
+    "beats": 8
+   }
+  },
+  "MNQ_E57_1c": {
+   "baseline": {
+    "total": 5004.0,
+    "pos_years": 9,
+    "worst_dd": 806.75,
+    "trades": 597,
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -108.5,
+      "dd": 108.5,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 251.0,
+      "dd": 99.75,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -681.0,
+      "dd": 806.75,
+      "trades": 55,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 1382.0,
+      "dd": 13.75,
+      "trades": 61,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 5144.5,
+    "pos_years": 10,
+    "worst_dd": 806.75,
+    "trades": 574,
+    "years": {
+     "2010": {
+      "net": -36.0,
+      "dd": 36.0,
+      "trades": 11,
+      "blocked_bars": 581
+     },
+     "2011": {
+      "net": 11.0,
+      "dd": 27.75,
+      "trades": 22,
+      "blocked_bars": 5152
+     },
+     "2012": {
+      "net": -108.5,
+      "dd": 108.5,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 345
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 110.0,
+      "dd": 99.75,
+      "trades": 46,
+      "blocked_bars": 439
+     },
+     "2019": {
+      "net": -681.0,
+      "dd": 806.75,
+      "trades": 55,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 240.5,
+      "dd": 19.25,
+      "trades": 33,
+      "blocked_bars": 7147
+     },
+     "2021": {
+      "net": 1433.5,
+      "dd": 13.75,
+      "trades": 60,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 2884.5,
+      "dd": 125.25,
+      "trades": 44,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 4
+   },
+   "skip_vix_lt15": {
+    "total": 5268.5,
+    "pos_years": 7,
+    "worst_dd": 535.75,
+    "trades": 361,
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 124
+     },
+     "2012": {
+      "net": -118.0,
+      "dd": 118.0,
+      "trades": 38,
+      "blocked_bars": 1199
+     },
+     "2013": {
+      "net": -24.0,
+      "dd": 40.25,
+      "trades": 5,
+      "blocked_bars": 10283
+     },
+     "2014": {
+      "net": 83.5,
+      "dd": 15.75,
+      "trades": 8,
+      "blocked_bars": 10179
+     },
+     "2015": {
+      "net": -70.0,
+      "dd": 133.25,
+      "trades": 22,
+      "blocked_bars": 6479
+     },
+     "2016": {
+      "net": 143.5,
+      "dd": 15.25,
+      "trades": 22,
+      "blocked_bars": 9682
+     },
+     "2017": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 18856
+     },
+     "2018": {
+      "net": 326.0,
+      "dd": 24.75,
+      "trades": 19,
+      "blocked_bars": 11047
+     },
+     "2019": {
+      "net": -509.0,
+      "dd": 535.75,
+      "trades": 25,
+      "blocked_bars": 11892
+     },
+     "2020": {
+      "net": 227.0,
+      "dd": 5.75,
+      "trades": 37,
+      "blocked_bars": 2250
+     },
+     "2021": {
+      "net": 1382.0,
+      "dd": 13.75,
+      "trades": 61,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 1203.5,
+      "dd": 14.75,
+      "trades": 32,
+      "blocked_bars": 8713
+     }
+    },
+    "passed": false,
+    "beats": 4
+   },
+   "only_vix_top30": {
+    "total": 705.5,
+    "pos_years": 6,
+    "worst_dd": 213.25,
+    "trades": 124,
+    "years": {
+     "2010": {
+      "net": -28.0,
+      "dd": 28.0,
+      "trades": 5,
+      "blocked_bars": 5431
+     },
+     "2011": {
+      "net": -59.0,
+      "dd": 84.75,
+      "trades": 8,
+      "blocked_bars": 8442
+     },
+     "2012": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 14297
+     },
+     "2013": {
+      "net": -1.5,
+      "dd": 17.75,
+      "trades": 3,
+      "blocked_bars": 11862
+     },
+     "2014": {
+      "net": 75.5,
+      "dd": 15.75,
+      "trades": 9,
+      "blocked_bars": 9707
+     },
+     "2015": {
+      "net": -65.5,
+      "dd": 94.75,
+      "trades": 16,
+      "blocked_bars": 9155
+     },
+     "2016": {
+      "net": 36.0,
+      "dd": 15.25,
+      "trades": 7,
+      "blocked_bars": 13688
+     },
+     "2017": {
+      "net": 22.5,
+      "dd": 20.25,
+      "trades": 4,
+      "blocked_bars": 18063
+     },
+     "2018": {
+      "net": 388.0,
+      "dd": 29.25,
+      "trades": 20,
+      "blocked_bars": 9433
+     },
+     "2019": {
+      "net": -186.5,
+      "dd": 213.25,
+      "trades": 8,
+      "blocked_bars": 19998
+     },
+     "2020": {
+      "net": 104.5,
+      "dd": 12.25,
+      "trades": 13,
+      "blocked_bars": 12918
+     },
+     "2021": {
+      "net": -152.5,
+      "dd": 174.75,
+      "trades": 4,
+      "blocked_bars": 21719
+     },
+     "2022": {
+      "net": 658.5,
+      "dd": 188.25,
+      "trades": 26,
+      "blocked_bars": 10792
+     },
+     "2023": {
+      "net": -86.5,
+      "dd": 86.5,
+      "trades": 1,
+      "blocked_bars": 22918
+     }
+    },
+    "passed": false,
+    "beats": 5
+   },
+   "skip_vix_top10": {
+    "total": 5104.0,
+    "pos_years": 10,
+    "worst_dd": 758.25,
+    "trades": 555,
+    "years": {
+     "2010": {
+      "net": -36.0,
+      "dd": 36.0,
+      "trades": 11,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": 11.5,
+      "dd": 27.25,
+      "trades": 26,
+      "blocked_bars": 3374
+     },
+     "2012": {
+      "net": -108.5,
+      "dd": 108.5,
+      "trades": 41,
+      "blocked_bars": 41
+     },
+     "2013": {
+      "net": -89.0,
+      "dd": 130.25,
+      "trades": 25,
+      "blocked_bars": 661
+     },
+     "2014": {
+      "net": 32.0,
+      "dd": 18.25,
+      "trades": 32,
+      "blocked_bars": 2241
+     },
+     "2015": {
+      "net": 115.5,
+      "dd": 44.25,
+      "trades": 41,
+      "blocked_bars": 3638
+     },
+     "2016": {
+      "net": 241.0,
+      "dd": 10.25,
+      "trades": 46,
+      "blocked_bars": 1533
+     },
+     "2017": {
+      "net": 210.5,
+      "dd": 63.25,
+      "trades": 46,
+      "blocked_bars": 359
+     },
+     "2018": {
+      "net": 170.5,
+      "dd": 39.25,
+      "trades": 39,
+      "blocked_bars": 6989
+     },
+     "2019": {
+      "net": -632.5,
+      "dd": 758.25,
+      "trades": 54,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": 239.0,
+      "dd": 19.25,
+      "trades": 37,
+      "blocked_bars": 3350
+     },
+     "2021": {
+      "net": 1450.0,
+      "dd": 13.75,
+      "trades": 60,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 2709.0,
+      "dd": 127.75,
+      "trades": 43,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "skip_vix_bottom20": {
+    "total": 4442.5,
+    "pos_years": 8,
+    "worst_dd": 666.25,
+    "trades": 408,
+    "years": {
+     "2010": {
+      "net": -20.5,
+      "dd": 35.75,
+      "trades": 8,
+      "blocked_bars": 1359
+     },
+     "2011": {
+      "net": -63.5,
+      "dd": 102.25,
+      "trades": 23,
+      "blocked_bars": 3494
+     },
+     "2012": {
+      "net": -73.5,
+      "dd": 73.5,
+      "trades": 25,
+      "blocked_bars": 5466
+     },
+     "2013": {
+      "net": -67.0,
+      "dd": 81.75,
+      "trades": 12,
+      "blocked_bars": 5895
+     },
+     "2014": {
+      "net": 95.0,
+      "dd": 17.25,
+      "trades": 26,
+      "blocked_bars": 3635
+     },
+     "2015": {
+      "net": -23.0,
+      "dd": 96.25,
+      "trades": 43,
+      "blocked_bars": 891
+     },
+     "2016": {
+      "net": 294.5,
+      "dd": 15.25,
+      "trades": 35,
+      "blocked_bars": 5740
+     },
+     "2017": {
+      "net": 138.0,
+      "dd": 75.25,
+      "trades": 21,
+      "blocked_bars": 12195
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 51.75,
+      "trades": 44,
+      "blocked_bars": 654
+     },
+     "2019": {
+      "net": -665.0,
+      "dd": 666.25,
+      "trades": 37,
+      "blocked_bars": 4912
+     },
+     "2020": {
+      "net": 272.5,
+      "dd": 19.25,
+      "trades": 38,
+      "blocked_bars": 880
+     },
+     "2021": {
+      "net": 880.5,
+      "dd": 13.75,
+      "trades": 34,
+      "blocked_bars": 13151
+     },
+     "2022": {
+      "net": 2291.0,
+      "dd": 452.75,
+      "trades": 43,
+      "blocked_bars": 1325
+     },
+     "2023": {
+      "net": 1084.5,
+      "dd": 14.75,
+      "trades": 19,
+      "blocked_bars": 17030
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "only_vix_falling": {
+    "total": 2886.0,
+    "pos_years": 9,
+    "worst_dd": 485.25,
+    "trades": 340,
+    "years": {
+     "2010": {
+      "net": -24.5,
+      "dd": 24.5,
+      "trades": 6,
+      "blocked_bars": 2959
+     },
+     "2011": {
+      "net": 11.5,
+      "dd": 27.25,
+      "trades": 16,
+      "blocked_bars": 7336
+     },
+     "2012": {
+      "net": -101.0,
+      "dd": 101.0,
+      "trades": 21,
+      "blocked_bars": 6688
+     },
+     "2013": {
+      "net": -46.0,
+      "dd": 95.75,
+      "trades": 17,
+      "blocked_bars": 6278
+     },
+     "2014": {
+      "net": 89.5,
+      "dd": 5.75,
+      "trades": 17,
+      "blocked_bars": 6315
+     },
+     "2015": {
+      "net": 88.5,
+      "dd": 16.75,
+      "trades": 21,
+      "blocked_bars": 7700
+     },
+     "2016": {
+      "net": 115.5,
+      "dd": 36.75,
+      "trades": 27,
+      "blocked_bars": 7884
+     },
+     "2017": {
+      "net": 163.5,
+      "dd": 50.75,
+      "trades": 25,
+      "blocked_bars": 9207
+     },
+     "2018": {
+      "net": 44.0,
+      "dd": 165.75,
+      "trades": 29,
+      "blocked_bars": 11022
+     },
+     "2019": {
+      "net": -455.5,
+      "dd": 485.25,
+      "trades": 36,
+      "blocked_bars": 8494
+     },
+     "2020": {
+      "net": -105.0,
+      "dd": 105.0,
+      "trades": 28,
+      "blocked_bars": 9256
+     },
+     "2021": {
+      "net": 1111.0,
+      "dd": 13.75,
+      "trades": 32,
+      "blocked_bars": 9947
+     },
+     "2022": {
+      "net": 1696.0,
+      "dd": 135.25,
+      "trades": 30,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 298.5,
+      "dd": 178.25,
+      "trades": 35,
+      "blocked_bars": 9260
+     }
+    },
+    "passed": false,
+    "beats": 6
+   }
+  },
+  "MNQ_BRK_E_1c": {
+   "baseline": {
+    "total": 4347.5,
+    "pos_years": 8,
+    "worst_dd": 498.0,
+    "trades": 475,
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": 69.5,
+      "dd": 4.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 37.5,
+      "dd": 263.75,
+      "trades": 40,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 30.5,
+      "dd": 208.75,
+      "trades": 52,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -260.5,
+      "dd": 277.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 718.5,
+      "dd": 49.25,
+      "trades": 37,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 3726.5,
+    "pos_years": 8,
+    "worst_dd": 498.0,
+    "trades": 453,
+    "years": {
+     "2010": {
+      "net": -20.0,
+      "dd": 42.75,
+      "trades": 9,
+      "blocked_bars": 581
+     },
+     "2011": {
+      "net": 182.0,
+      "dd": 4.75,
+      "trades": 16,
+      "blocked_bars": 5152
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 37.5,
+      "dd": 263.75,
+      "trades": 40,
+      "blocked_bars": 345
+     },
+     "2016": {
+      "net": 30.5,
+      "dd": 208.75,
+      "trades": 52,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -260.5,
+      "dd": 277.75,
+      "trades": 44,
+      "blocked_bars": 439
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 327.5,
+      "dd": 49.25,
+      "trades": 26,
+      "blocked_bars": 7147
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 1562.0,
+      "dd": 159.75,
+      "trades": 23,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 2
+   },
+   "skip_vix_lt15": {
+    "total": 4147.5,
+    "pos_years": 6,
+    "worst_dd": 321.75,
+    "trades": 282,
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": 69.5,
+      "dd": 4.75,
+      "trades": 24,
+      "blocked_bars": 124
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 1199
+     },
+     "2013": {
+      "net": -24.0,
+      "dd": 30.25,
+      "trades": 8,
+      "blocked_bars": 10283
+     },
+     "2014": {
+      "net": 18.0,
+      "dd": 39.25,
+      "trades": 10,
+      "blocked_bars": 10179
+     },
+     "2015": {
+      "net": -144.0,
+      "dd": 285.25,
+      "trades": 20,
+      "blocked_bars": 6479
+     },
+     "2016": {
+      "net": -131.0,
+      "dd": 208.75,
+      "trades": 19,
+      "blocked_bars": 9682
+     },
+     "2017": {
+      "net": -66.0,
+      "dd": 66.0,
+      "trades": 3,
+      "blocked_bars": 18856
+     },
+     "2018": {
+      "net": -269.5,
+      "dd": 286.75,
+      "trades": 21,
+      "blocked_bars": 11047
+     },
+     "2019": {
+      "net": -151.0,
+      "dd": 218.25,
+      "trades": 19,
+      "blocked_bars": 11892
+     },
+     "2020": {
+      "net": 585.0,
+      "dd": 169.75,
+      "trades": 33,
+      "blocked_bars": 2250
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 877.5,
+      "dd": 321.75,
+      "trades": 21,
+      "blocked_bars": 8713
+     }
+    },
+    "passed": false,
+    "beats": 2
+   },
+   "only_vix_top30": {
+    "total": 1180.0,
+    "pos_years": 4,
+    "worst_dd": 371.25,
+    "trades": 120,
+    "years": {
+     "2010": {
+      "net": -28.5,
+      "dd": 35.75,
+      "trades": 3,
+      "blocked_bars": 5431
+     },
+     "2011": {
+      "net": -19.5,
+      "dd": 43.75,
+      "trades": 11,
+      "blocked_bars": 8442
+     },
+     "2012": {
+      "net": -17.5,
+      "dd": 17.5,
+      "trades": 1,
+      "blocked_bars": 14297
+     },
+     "2013": {
+      "net": -9.5,
+      "dd": 23.25,
+      "trades": 5,
+      "blocked_bars": 11862
+     },
+     "2014": {
+      "net": 23.0,
+      "dd": 39.25,
+      "trades": 11,
+      "blocked_bars": 9707
+     },
+     "2015": {
+      "net": -132.0,
+      "dd": 230.75,
+      "trades": 13,
+      "blocked_bars": 9155
+     },
+     "2016": {
+      "net": -120.5,
+      "dd": 208.75,
+      "trades": 10,
+      "blocked_bars": 13688
+     },
+     "2017": {
+      "net": -107.0,
+      "dd": 123.25,
+      "trades": 6,
+      "blocked_bars": 18063
+     },
+     "2018": {
+      "net": -354.0,
+      "dd": 371.25,
+      "trades": 23,
+      "blocked_bars": 9433
+     },
+     "2019": {
+      "net": -43.5,
+      "dd": 43.5,
+      "trades": 8,
+      "blocked_bars": 19998
+     },
+     "2020": {
+      "net": 533.5,
+      "dd": 169.75,
+      "trades": 15,
+      "blocked_bars": 12918
+     },
+     "2021": {
+      "net": 61.0,
+      "dd": 34.75,
+      "trades": 2,
+      "blocked_bars": 21719
+     },
+     "2022": {
+      "net": 1394.5,
+      "dd": 67.75,
+      "trades": 12,
+      "blocked_bars": 10792
+     },
+     "2023": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 22918
+     }
+    },
+    "passed": false,
+    "beats": 4
+   },
+   "skip_vix_top10": {
+    "total": 4545.0,
+    "pos_years": 9,
+    "worst_dd": 619.0,
+    "trades": 429,
+    "years": {
+     "2010": {
+      "net": -20.0,
+      "dd": 42.75,
+      "trades": 9,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": 74.5,
+      "dd": 4.75,
+      "trades": 17,
+      "blocked_bars": 3374
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 41
+     },
+     "2013": {
+      "net": -113.5,
+      "dd": 113.5,
+      "trades": 24,
+      "blocked_bars": 661
+     },
+     "2014": {
+      "net": 123.5,
+      "dd": 13.25,
+      "trades": 23,
+      "blocked_bars": 2241
+     },
+     "2015": {
+      "net": 64.0,
+      "dd": 186.75,
+      "trades": 34,
+      "blocked_bars": 3638
+     },
+     "2016": {
+      "net": 125.0,
+      "dd": 109.25,
+      "trades": 49,
+      "blocked_bars": 1533
+     },
+     "2017": {
+      "net": -24.5,
+      "dd": 271.25,
+      "trades": 42,
+      "blocked_bars": 359
+     },
+     "2018": {
+      "net": 106.0,
+      "dd": 13.25,
+      "trades": 33,
+      "blocked_bars": 6989
+     },
+     "2019": {
+      "net": -619.0,
+      "dd": 619.0,
+      "trades": 36,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": 832.0,
+      "dd": 25.75,
+      "trades": 35,
+      "blocked_bars": 3350
+     },
+     "2021": {
+      "net": 1488.5,
+      "dd": 43.25,
+      "trades": 44,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 1738.5,
+      "dd": 159.75,
+      "trades": 23,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "skip_vix_bottom20": {
+    "total": 1727.5,
+    "pos_years": 7,
+    "worst_dd": 470.5,
+    "trades": 329,
+    "years": {
+     "2010": {
+      "net": -22.0,
+      "dd": 44.75,
+      "trades": 9,
+      "blocked_bars": 1359
+     },
+     "2011": {
+      "net": -4.5,
+      "dd": 30.75,
+      "trades": 19,
+      "blocked_bars": 3494
+     },
+     "2012": {
+      "net": -51.0,
+      "dd": 61.75,
+      "trades": 14,
+      "blocked_bars": 5466
+     },
+     "2013": {
+      "net": -67.5,
+      "dd": 67.5,
+      "trades": 13,
+      "blocked_bars": 5895
+     },
+     "2014": {
+      "net": 28.5,
+      "dd": 7.75,
+      "trades": 22,
+      "blocked_bars": 3635
+     },
+     "2015": {
+      "net": 4.5,
+      "dd": 263.75,
+      "trades": 37,
+      "blocked_bars": 891
+     },
+     "2016": {
+      "net": 96.0,
+      "dd": 208.75,
+      "trades": 36,
+      "blocked_bars": 5740
+     },
+     "2017": {
+      "net": -111.0,
+      "dd": 213.75,
+      "trades": 19,
+      "blocked_bars": 12195
+     },
+     "2018": {
+      "net": -282.0,
+      "dd": 299.25,
+      "trades": 43,
+      "blocked_bars": 654
+     },
+     "2019": {
+      "net": -470.5,
+      "dd": 470.5,
+      "trades": 31,
+      "blocked_bars": 4912
+     },
+     "2020": {
+      "net": 771.0,
+      "dd": 49.25,
+      "trades": 36,
+      "blocked_bars": 880
+     },
+     "2021": {
+      "net": 114.5,
+      "dd": 43.25,
+      "trades": 19,
+      "blocked_bars": 13151
+     },
+     "2022": {
+      "net": 1525.5,
+      "dd": 189.75,
+      "trades": 21,
+      "blocked_bars": 1325
+     },
+     "2023": {
+      "net": 196.0,
+      "dd": 355.25,
+      "trades": 10,
+      "blocked_bars": 17030
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_falling": {
+    "total": 4275.0,
+    "pos_years": 10,
+    "worst_dd": 159.75,
+    "trades": 261,
+    "years": {
+     "2010": {
+      "net": -10.5,
+      "dd": 10.5,
+      "trades": 3,
+      "blocked_bars": 2959
+     },
+     "2011": {
+      "net": 97.0,
+      "dd": 4.75,
+      "trades": 12,
+      "blocked_bars": 7336
+     },
+     "2012": {
+      "net": -50.5,
+      "dd": 75.75,
+      "trades": 13,
+      "blocked_bars": 6688
+     },
+     "2013": {
+      "net": -76.0,
+      "dd": 76.0,
+      "trades": 12,
+      "blocked_bars": 6278
+     },
+     "2014": {
+      "net": 93.5,
+      "dd": 44.75,
+      "trades": 18,
+      "blocked_bars": 6315
+     },
+     "2015": {
+      "net": 24.5,
+      "dd": 123.75,
+      "trades": 19,
+      "blocked_bars": 7700
+     },
+     "2016": {
+      "net": 161.0,
+      "dd": 99.25,
+      "trades": 32,
+      "blocked_bars": 7884
+     },
+     "2017": {
+      "net": 18.0,
+      "dd": 127.25,
+      "trades": 21,
+      "blocked_bars": 9207
+     },
+     "2018": {
+      "net": 333.5,
+      "dd": 7.75,
+      "trades": 23,
+      "blocked_bars": 11022
+     },
+     "2019": {
+      "net": -81.5,
+      "dd": 117.75,
+      "trades": 18,
+      "blocked_bars": 8494
+     },
+     "2020": {
+      "net": 995.5,
+      "dd": 2.75,
+      "trades": 19,
+      "blocked_bars": 9256
+     },
+     "2021": {
+      "net": 1198.0,
+      "dd": 43.25,
+      "trades": 26,
+      "blocked_bars": 9947
+     },
+     "2022": {
+      "net": 728.0,
+      "dd": 159.75,
+      "trades": 20,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": 844.5,
+      "dd": 65.75,
+      "trades": 25,
+      "blocked_bars": 9260
+     }
+    },
+    "passed": false,
+    "beats": 9
+   }
+  },
+  "MNQ_HYB_C_1c": {
+   "baseline": {
+    "total": 2369.5,
+    "pos_years": 11,
+    "worst_dd": 455.25,
+    "trades": 514,
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -288.5,
+      "dd": 314.75,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -370.5,
+      "dd": 455.25,
+      "trades": 74,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 300.0,
+      "dd": 75.25,
+      "trades": 43,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1622.0,
+      "dd": 73.25,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 0
+     }
+    }
+   },
+   "skip_vix_gt30": {
+    "total": 2272.0,
+    "pos_years": 11,
+    "worst_dd": 455.25,
+    "trades": 492,
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 581
+     },
+     "2011": {
+      "net": -91.5,
+      "dd": 91.5,
+      "trades": 8,
+      "blocked_bars": 5152
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -288.5,
+      "dd": 314.75,
+      "trades": 38,
+      "blocked_bars": 345
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 439
+     },
+     "2019": {
+      "net": -370.5,
+      "dd": 455.25,
+      "trades": 74,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 150.5,
+      "dd": 75.25,
+      "trades": 33,
+      "blocked_bars": 7147
+     },
+     "2021": {
+      "net": 429.5,
+      "dd": 140.75,
+      "trades": 65,
+      "blocked_bars": 548
+     },
+     "2022": {
+      "net": 1677.5,
+      "dd": 73.25,
+      "trades": 26,
+      "blocked_bars": 4492
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 2
+   },
+   "skip_vix_lt15": {
+    "total": 2573.0,
+    "pos_years": 10,
+    "worst_dd": 461.75,
+    "trades": 336,
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 124
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 1199
+     },
+     "2013": {
+      "net": 41.0,
+      "dd": 2.75,
+      "trades": 5,
+      "blocked_bars": 10283
+     },
+     "2014": {
+      "net": 24.0,
+      "dd": 18.25,
+      "trades": 14,
+      "blocked_bars": 10179
+     },
+     "2015": {
+      "net": -182.5,
+      "dd": 223.25,
+      "trades": 20,
+      "blocked_bars": 6479
+     },
+     "2016": {
+      "net": 100.0,
+      "dd": 13.25,
+      "trades": 31,
+      "blocked_bars": 9682
+     },
+     "2017": {
+      "net": -4.0,
+      "dd": 24.25,
+      "trades": 1,
+      "blocked_bars": 18856
+     },
+     "2018": {
+      "net": 331.0,
+      "dd": 187.25,
+      "trades": 20,
+      "blocked_bars": 11047
+     },
+     "2019": {
+      "net": -232.5,
+      "dd": 461.75,
+      "trades": 33,
+      "blocked_bars": 11892
+     },
+     "2020": {
+      "net": 271.5,
+      "dd": 90.25,
+      "trades": 37,
+      "blocked_bars": 2250
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1622.0,
+      "dd": 73.25,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 222.0,
+      "dd": 187.25,
+      "trades": 35,
+      "blocked_bars": 8713
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "only_vix_top30": {
+    "total": 829.5,
+    "pos_years": 8,
+    "worst_dd": 307.25,
+    "trades": 132,
+    "years": {
+     "2010": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 5431
+     },
+     "2011": {
+      "net": -85.5,
+      "dd": 92.25,
+      "trades": 13,
+      "blocked_bars": 8442
+     },
+     "2012": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 14297
+     },
+     "2013": {
+      "net": 27.0,
+      "dd": 11.25,
+      "trades": 4,
+      "blocked_bars": 11862
+     },
+     "2014": {
+      "net": 33.5,
+      "dd": 18.25,
+      "trades": 15,
+      "blocked_bars": 9707
+     },
+     "2015": {
+      "net": -185.5,
+      "dd": 223.25,
+      "trades": 16,
+      "blocked_bars": 9155
+     },
+     "2016": {
+      "net": 133.5,
+      "dd": 13.25,
+      "trades": 11,
+      "blocked_bars": 13688
+     },
+     "2017": {
+      "net": 15.0,
+      "dd": 25.75,
+      "trades": 6,
+      "blocked_bars": 18063
+     },
+     "2018": {
+      "net": 329.0,
+      "dd": 163.75,
+      "trades": 23,
+      "blocked_bars": 9433
+     },
+     "2019": {
+      "net": 117.0,
+      "dd": 87.75,
+      "trades": 11,
+      "blocked_bars": 19998
+     },
+     "2020": {
+      "net": 173.0,
+      "dd": 160.25,
+      "trades": 19,
+      "blocked_bars": 12918
+     },
+     "2021": {
+      "net": -285.0,
+      "dd": 307.25,
+      "trades": 5,
+      "blocked_bars": 21719
+     },
+     "2022": {
+      "net": 557.5,
+      "dd": 44.25,
+      "trades": 9,
+      "blocked_bars": 10792
+     },
+     "2023": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 22918
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "skip_vix_top10": {
+    "total": 2542.0,
+    "pos_years": 10,
+    "worst_dd": 416.25,
+    "trades": 463,
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": -79.5,
+      "dd": 79.5,
+      "trades": 11,
+      "blocked_bars": 3374
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 41
+     },
+     "2013": {
+      "net": 3.0,
+      "dd": 13.75,
+      "trades": 9,
+      "blocked_bars": 661
+     },
+     "2014": {
+      "net": -41.0,
+      "dd": 74.75,
+      "trades": 16,
+      "blocked_bars": 2241
+     },
+     "2015": {
+      "net": -159.5,
+      "dd": 185.75,
+      "trades": 31,
+      "blocked_bars": 3638
+     },
+     "2016": {
+      "net": 65.5,
+      "dd": 13.25,
+      "trades": 51,
+      "blocked_bars": 1533
+     },
+     "2017": {
+      "net": 127.5,
+      "dd": 30.25,
+      "trades": 38,
+      "blocked_bars": 359
+     },
+     "2018": {
+      "net": 107.0,
+      "dd": 87.75,
+      "trades": 24,
+      "blocked_bars": 6989
+     },
+     "2019": {
+      "net": -331.5,
+      "dd": 416.25,
+      "trades": 71,
+      "blocked_bars": 388
+     },
+     "2020": {
+      "net": 155.5,
+      "dd": 75.25,
+      "trades": 40,
+      "blocked_bars": 3350
+     },
+     "2021": {
+      "net": 591.5,
+      "dd": 140.75,
+      "trades": 64,
+      "blocked_bars": 552
+     },
+     "2022": {
+      "net": 1677.5,
+      "dd": 73.25,
+      "trades": 26,
+      "blocked_bars": 5580
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 0
+     }
+    },
+    "passed": false,
+    "beats": 6
+   },
+   "skip_vix_bottom20": {
+    "total": 2336.0,
+    "pos_years": 10,
+    "worst_dd": 456.75,
+    "trades": 375,
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 1359
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 3494
+     },
+     "2012": {
+      "net": -24.5,
+      "dd": 42.25,
+      "trades": 18,
+      "blocked_bars": 5466
+     },
+     "2013": {
+      "net": 42.0,
+      "dd": 2.75,
+      "trades": 7,
+      "blocked_bars": 5895
+     },
+     "2014": {
+      "net": 35.0,
+      "dd": 25.25,
+      "trades": 25,
+      "blocked_bars": 3635
+     },
+     "2015": {
+      "net": -265.5,
+      "dd": 291.75,
+      "trades": 35,
+      "blocked_bars": 891
+     },
+     "2016": {
+      "net": 116.0,
+      "dd": 13.25,
+      "trades": 44,
+      "blocked_bars": 5740
+     },
+     "2017": {
+      "net": 112.0,
+      "dd": 13.25,
+      "trades": 27,
+      "blocked_bars": 12195
+     },
+     "2018": {
+      "net": 145.5,
+      "dd": 242.25,
+      "trades": 31,
+      "blocked_bars": 654
+     },
+     "2019": {
+      "net": -298.5,
+      "dd": 456.75,
+      "trades": 54,
+      "blocked_bars": 4912
+     },
+     "2020": {
+      "net": 318.5,
+      "dd": 78.75,
+      "trades": 41,
+      "blocked_bars": 880
+     },
+     "2021": {
+      "net": 198.5,
+      "dd": 140.75,
+      "trades": 34,
+      "blocked_bars": 13151
+     },
+     "2022": {
+      "net": 1796.0,
+      "dd": 73.25,
+      "trades": 25,
+      "blocked_bars": 1325
+     },
+     "2023": {
+      "net": 261.5,
+      "dd": 8.25,
+      "trades": 15,
+      "blocked_bars": 17030
+     }
+    },
+    "passed": false,
+    "beats": 8
+   },
+   "only_vix_falling": {
+    "total": 1153.0,
+    "pos_years": 8,
+    "worst_dd": 444.25,
+    "trades": 307,
+    "years": {
+     "2010": {
+      "net": 0.0,
+      "dd": 0.0,
+      "trades": 0,
+      "blocked_bars": 2959
+     },
+     "2011": {
+      "net": -93.0,
+      "dd": 93.0,
+      "trades": 10,
+      "blocked_bars": 7336
+     },
+     "2012": {
+      "net": 29.5,
+      "dd": 10.75,
+      "trades": 17,
+      "blocked_bars": 6688
+     },
+     "2013": {
+      "net": 3.0,
+      "dd": 16.25,
+      "trades": 4,
+      "blocked_bars": 6278
+     },
+     "2014": {
+      "net": -24.5,
+      "dd": 25.75,
+      "trades": 13,
+      "blocked_bars": 6315
+     },
+     "2015": {
+      "net": -31.5,
+      "dd": 54.75,
+      "trades": 14,
+      "blocked_bars": 7700
+     },
+     "2016": {
+      "net": 58.0,
+      "dd": 12.25,
+      "trades": 30,
+      "blocked_bars": 7884
+     },
+     "2017": {
+      "net": 69.0,
+      "dd": 31.75,
+      "trades": 18,
+      "blocked_bars": 9207
+     },
+     "2018": {
+      "net": 292.0,
+      "dd": 86.25,
+      "trades": 38,
+      "blocked_bars": 11022
+     },
+     "2019": {
+      "net": -436.5,
+      "dd": 444.25,
+      "trades": 49,
+      "blocked_bars": 8494
+     },
+     "2020": {
+      "net": 226.0,
+      "dd": 13.25,
+      "trades": 28,
+      "blocked_bars": 9256
+     },
+     "2021": {
+      "net": 285.5,
+      "dd": 16.25,
+      "trades": 31,
+      "blocked_bars": 9947
+     },
+     "2022": {
+      "net": 861.0,
+      "dd": 73.25,
+      "trades": 18,
+      "blocked_bars": 10791
+     },
+     "2023": {
+      "net": -85.5,
+      "dd": 321.75,
+      "trades": 37,
+      "blocked_bars": 9260
+     }
+    },
+    "passed": false,
+    "beats": 4
+   }
+  }
+ },
+ "validation": {}
+}
