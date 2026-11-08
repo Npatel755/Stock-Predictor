@@ -28,11 +28,12 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import unseen_years_replication as uy  # noqa: E402  (strict loader from the TRAIN partition, mini->micro relabel)
 from quant_futures import ensemble_paper as ep  # noqa: E402
+from quant_futures.session_calendar import apply_early_close  # noqa: E402  (amendment A2)
 
 RUN = ROOT / "runs" / "mass_v2"
 RUN.mkdir(parents=True, exist_ok=True)
 BAR_RULE = os.environ.get("MASS_V2_BARS", "strict")  # strict = all 15 source minutes; lenient = >= 1 (amendment A1)
-SUFFIX = "" if BAR_RULE == "strict" else "_" + BAR_RULE
+SUFFIX = ("" if BAR_RULE == "strict" else "_" + BAR_RULE) + os.environ.get("MASS_V2_TAG", "")  # A2 runs use MASS_V2_TAG=_a2
 DB = RUN / f"results{SUFFIX}.sqlite"
 FROZEN = RUN / f"frozen_survivors{SUFFIX}.json"
 YEARS = list(range(2010, 2024))
@@ -81,7 +82,7 @@ def load_training():
     eng = ep.engine()
     for mini in MINIS:
         bars = uy.load(mini, "2009-12-01", "2024-01-01", BAR_RULE)
-        data = eng["arrays"](bars)
+        data = apply_early_close(eng["arrays"](bars), bars)
         feats = {lb: eng["features"](bars, lb) for lb in set(LOOKBACKS) | set(OPENING_LOOKBACKS)}
         local = bars.timestamp_utc.dt.tz_convert("America/New_York")
         decision = (local.dt.hour * 60 + local.dt.minute + 15).to_numpy()
@@ -352,7 +353,7 @@ def phase_validate():
         from quant_futures.data import canonical
         bars = canonical(frame)
         assert bars.timestamp_utc.max() < pd.Timestamp("2026-01-01", tz="UTC")
-        data = eng["arrays"](bars)
+        data = apply_early_close(eng["arrays"](bars), bars)
         feats = eng["features"](bars, p["lookback"])
         raw = eng["signal_for"](p, feats).astype(np.int8)
         local = bars.timestamp_utc.dt.tz_convert("America/New_York")

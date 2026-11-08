@@ -31,6 +31,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from quant_futures.session_calendar import apply_early_close
+
 from .data import canonical
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -258,7 +260,7 @@ def canonical_bars(stored, instrument, contract_label):
 def run_sleeve(cfg, bars, start):
     """Exact research-engine run of one sleeve; execution starts at ``start``."""
     eng = engine()
-    data = eng["arrays"](bars)
+    data = apply_early_close(eng["arrays"](bars), bars)
     features = eng["features"](bars, int(cfg["lookback"]))
     raw = eng["signal_for"](cfg, features).astype(np.int8)
     local = bars.timestamp_utc.dt.tz_convert("America/New_York")
