@@ -1,0 +1,5417 @@
+{
+ "registered": "2026-11-08",
+ "variants": [
+  "baseline",
+  "blackout_high_15",
+  "blackout_high_30",
+  "blackout_all_15",
+  "fomc_afternoon",
+  "fomc_day",
+  "nfp_cpi_day"
+ ],
+ "train": {
+  "MES_MOM_3c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -237.75,
+      "dd": 463.5,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -361.5,
+      "dd": 441.75,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -440.25,
+      "dd": 474.75,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -577.5,
+      "dd": 813.75,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 148.5,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "total": 7624.75,
+    "worst_dd": 813.75,
+    "trades": 393
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 129
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 222
+     },
+     "2012": {
+      "net": -297.75,
+      "dd": 519.75,
+      "trades": 28,
+      "blocked_bars": 218
+     },
+     "2013": {
+      "net": -361.5,
+      "dd": 441.75,
+      "trades": 18,
+      "blocked_bars": 213
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 228
+     },
+     "2015": {
+      "net": -440.25,
+      "dd": 474.75,
+      "trades": 28,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 204
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -705.0,
+      "dd": 941.25,
+      "trades": 30,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 241
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 240
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 148.5,
+      "trades": 43,
+      "blocked_bars": 228
+     }
+    },
+    "total": 7437.25,
+    "worst_dd": 941.25,
+    "trades": 393
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 215
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 370
+     },
+     "2012": {
+      "net": -275.25,
+      "dd": 497.25,
+      "trades": 28,
+      "blocked_bars": 363
+     },
+     "2013": {
+      "net": -361.5,
+      "dd": 441.75,
+      "trades": 18,
+      "blocked_bars": 353
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 379
+     },
+     "2015": {
+      "net": -440.25,
+      "dd": 474.75,
+      "trades": 28,
+      "blocked_bars": 380
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 349
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 339
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -705.0,
+      "dd": 941.25,
+      "trades": 30,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 402
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 374
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 400
+     },
+     "2023": {
+      "net": 988.5,
+      "dd": 148.5,
+      "trades": 43,
+      "blocked_bars": 380
+     }
+    },
+    "total": 7459.75,
+    "worst_dd": 941.25,
+    "trades": 393
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": 89.25,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 269
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 450
+     },
+     "2012": {
+      "net": -297.75,
+      "dd": 519.75,
+      "trades": 28,
+      "blocked_bars": 434
+     },
+     "2013": {
+      "net": -402.75,
+      "dd": 483.0,
+      "trades": 18,
+      "blocked_bars": 448
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 443
+     },
+     "2015": {
+      "net": -553.5,
+      "dd": 588.0,
+      "trades": 27,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": -1.5,
+      "dd": 475.5,
+      "trades": 28,
+      "blocked_bars": 459
+     },
+     "2017": {
+      "net": -504.0,
+      "dd": 552.75,
+      "trades": 28,
+      "blocked_bars": 456
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -634.5,
+      "dd": 870.75,
+      "trades": 29,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 7158.25,
+      "dd": 153.0,
+      "trades": 45,
+      "blocked_bars": 465
+     },
+     "2023": {
+      "net": 1298.25,
+      "dd": 51.75,
+      "trades": 41,
+      "blocked_bars": 456
+     }
+    },
+    "total": 7361.5,
+    "worst_dd": 870.75,
+    "trades": 387
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 189
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 346
+     },
+     "2012": {
+      "net": -261.0,
+      "dd": 459.75,
+      "trades": 27,
+      "blocked_bars": 321
+     },
+     "2013": {
+      "net": -396.0,
+      "dd": 476.25,
+      "trades": 17,
+      "blocked_bars": 328
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 307
+     },
+     "2015": {
+      "net": -347.25,
+      "dd": 381.75,
+      "trades": 27,
+      "blocked_bars": 324
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 346
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 330
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 343
+     },
+     "2019": {
+      "net": -544.5,
+      "dd": 780.75,
+      "trades": 29,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 484
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 1205.25,
+      "dd": 148.5,
+      "trades": 42,
+      "blocked_bars": 360
+     }
+    },
+    "total": 7909.75,
+    "worst_dd": 780.75,
+    "trades": 388
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": 138.0,
+      "dd": 159.75,
+      "trades": 9,
+      "blocked_bars": 408
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 716
+     },
+     "2012": {
+      "net": -261.0,
+      "dd": 459.75,
+      "trades": 27,
+      "blocked_bars": 673
+     },
+     "2013": {
+      "net": -396.0,
+      "dd": 476.25,
+      "trades": 17,
+      "blocked_bars": 662
+     },
+     "2014": {
+      "net": 196.5,
+      "dd": 21.75,
+      "trades": 27,
+      "blocked_bars": 636
+     },
+     "2015": {
+      "net": -347.25,
+      "dd": 381.75,
+      "trades": 27,
+      "blocked_bars": 673
+     },
+     "2016": {
+      "net": 77.25,
+      "dd": 396.75,
+      "trades": 28,
+      "blocked_bars": 711
+     },
+     "2017": {
+      "net": -465.75,
+      "dd": 514.5,
+      "trades": 29,
+      "blocked_bars": 664
+     },
+     "2018": {
+      "net": 897.0,
+      "dd": 166.5,
+      "trades": 31,
+      "blocked_bars": 707
+     },
+     "2019": {
+      "net": -544.5,
+      "dd": 780.75,
+      "trades": 29,
+      "blocked_bars": 785
+     },
+     "2020": {
+      "net": -522.0,
+      "dd": 522.0,
+      "trades": 25,
+      "blocked_bars": 999
+     },
+     "2021": {
+      "net": 676.5,
+      "dd": 48.0,
+      "trades": 47,
+      "blocked_bars": 730
+     },
+     "2022": {
+      "net": 7294.0,
+      "dd": 153.0,
+      "trades": 46,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 1205.25,
+      "dd": 148.5,
+      "trades": 42,
+      "blocked_bars": 727
+     }
+    },
+    "total": 7909.75,
+    "worst_dd": 780.75,
+    "trades": 388
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": 66.0,
+      "dd": 159.75,
+      "trades": 8,
+      "blocked_bars": 873
+     },
+     "2011": {
+      "net": -38.25,
+      "dd": 122.25,
+      "trades": 4,
+      "blocked_bars": 1688
+     },
+     "2012": {
+      "net": -79.5,
+      "dd": 309.0,
+      "trades": 24,
+      "blocked_bars": 1610
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 134.25,
+      "trades": 12,
+      "blocked_bars": 1769
+     },
+     "2014": {
+      "net": 179.25,
+      "dd": 21.75,
+      "trades": 24,
+      "blocked_bars": 1691
+     },
+     "2015": {
+      "net": -491.25,
+      "dd": 491.25,
+      "trades": 25,
+      "blocked_bars": 1689
+     },
+     "2016": {
+      "net": -3.75,
+      "dd": 477.75,
+      "trades": 25,
+      "blocked_bars": 1767
+     },
+     "2017": {
+      "net": -426.0,
+      "dd": 474.75,
+      "trades": 27,
+      "blocked_bars": 1589
+     },
+     "2018": {
+      "net": 927.0,
+      "dd": 166.5,
+      "trades": 26,
+      "blocked_bars": 1802
+     },
+     "2019": {
+      "net": -435.0,
+      "dd": 627.75,
+      "trades": 25,
+      "blocked_bars": 1685
+     },
+     "2020": {
+      "net": -274.5,
+      "dd": 342.0,
+      "trades": 23,
+      "blocked_bars": 1791
+     },
+     "2021": {
+      "net": 415.5,
+      "dd": 48.0,
+      "trades": 44,
+      "blocked_bars": 1821
+     },
+     "2022": {
+      "net": 5801.25,
+      "dd": 153.0,
+      "trades": 39,
+      "blocked_bars": 1894
+     },
+     "2023": {
+      "net": 522.0,
+      "dd": 486.75,
+      "trades": 36,
+      "blocked_bars": 1867
+     }
+    },
+    "total": 6066.75,
+    "worst_dd": 627.75,
+    "trades": 342
+   }
+  },
+  "MNQ_BRK_E_2c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": 139.0,
+      "dd": 9.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 75.0,
+      "dd": 527.75,
+      "trades": 40,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 61.0,
+      "dd": 417.75,
+      "trades": 52,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -521.0,
+      "dd": 555.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 1712.0,
+      "dd": 152.25,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 0
+     }
+    },
+    "total": 9790.0,
+    "worst_dd": 996.0,
+    "trades": 495
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 125
+     },
+     "2011": {
+      "net": 139.0,
+      "dd": 9.75,
+      "trades": 24,
+      "blocked_bars": 220
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 215
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 201
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 226
+     },
+     "2015": {
+      "net": 75.0,
+      "dd": 527.75,
+      "trades": 40,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 61.0,
+      "dd": 417.75,
+      "trades": 52,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 44,
+      "blocked_bars": 203
+     },
+     "2018": {
+      "net": -521.0,
+      "dd": 555.75,
+      "trades": 44,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": 1712.0,
+      "dd": 152.25,
+      "trades": 41,
+      "blocked_bars": 240
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 239
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 228
+     }
+    },
+    "total": 9790.0,
+    "worst_dd": 996.0,
+    "trades": 495
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 201
+     },
+     "2011": {
+      "net": 139.0,
+      "dd": 9.75,
+      "trades": 24,
+      "blocked_bars": 357
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 354
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 335
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 370
+     },
+     "2015": {
+      "net": 75.0,
+      "dd": 527.75,
+      "trades": 40,
+      "blocked_bars": 377
+     },
+     "2016": {
+      "net": 61.0,
+      "dd": 417.75,
+      "trades": 52,
+      "blocked_bars": 348
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 44,
+      "blocked_bars": 337
+     },
+     "2018": {
+      "net": -521.0,
+      "dd": 555.75,
+      "trades": 44,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": 1712.0,
+      "dd": 152.25,
+      "trades": 41,
+      "blocked_bars": 401
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 375
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 399
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 380
+     }
+    },
+    "total": 9790.0,
+    "worst_dd": 996.0,
+    "trades": 495
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 262
+     },
+     "2011": {
+      "net": 220.0,
+      "dd": 9.75,
+      "trades": 23,
+      "blocked_bars": 444
+     },
+     "2012": {
+      "net": -262.0,
+      "dd": 262.0,
+      "trades": 22,
+      "blocked_bars": 429
+     },
+     "2013": {
+      "net": -181.0,
+      "dd": 181.0,
+      "trades": 24,
+      "blocked_bars": 429
+     },
+     "2014": {
+      "net": 263.0,
+      "dd": 52.75,
+      "trades": 30,
+      "blocked_bars": 439
+     },
+     "2015": {
+      "net": 25.0,
+      "dd": 527.75,
+      "trades": 39,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": 164.0,
+      "dd": 350.75,
+      "trades": 50,
+      "blocked_bars": 458
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 41,
+      "blocked_bars": 455
+     },
+     "2018": {
+      "net": -544.0,
+      "dd": 578.75,
+      "trades": 41,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": 1455.0,
+      "dd": 152.25,
+      "trades": 40,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 3731.0,
+      "dd": 86.75,
+      "trades": 46,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 3120.0,
+      "dd": 341.75,
+      "trades": 27,
+      "blocked_bars": 464
+     },
+     "2023": {
+      "net": 968.0,
+      "dd": 45.88,
+      "trades": 37,
+      "blocked_bars": 456
+     }
+    },
+    "total": 7792.0,
+    "worst_dd": 996.0,
+    "trades": 468
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 98
+     },
+     "2011": {
+      "net": 139.0,
+      "dd": 9.75,
+      "trades": 24,
+      "blocked_bars": 221
+     },
+     "2012": {
+      "net": -240.0,
+      "dd": 255.75,
+      "trades": 24,
+      "blocked_bars": 169
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 198
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 197
+     },
+     "2015": {
+      "net": 75.0,
+      "dd": 527.75,
+      "trades": 40,
+      "blocked_bars": 236
+     },
+     "2016": {
+      "net": 61.0,
+      "dd": 417.75,
+      "trades": 52,
+      "blocked_bars": 271
+     },
+     "2017": {
+      "net": -87.0,
+      "dd": 576.75,
+      "trades": 44,
+      "blocked_bars": 306
+     },
+     "2018": {
+      "net": -521.0,
+      "dd": 555.75,
+      "trades": 44,
+      "blocked_bars": 348
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": 1712.0,
+      "dd": 152.25,
+      "trades": 41,
+      "blocked_bars": 486
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 1883.0,
+      "dd": 259.88,
+      "trades": 41,
+      "blocked_bars": 360
+     }
+    },
+    "total": 9790.0,
+    "worst_dd": 996.0,
+    "trades": 495
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 244
+     },
+     "2011": {
+      "net": 140.0,
+      "dd": 9.75,
+      "trades": 23,
+      "blocked_bars": 516
+     },
+     "2012": {
+      "net": -206.0,
+      "dd": 221.75,
+      "trades": 23,
+      "blocked_bars": 442
+     },
+     "2013": {
+      "net": -192.0,
+      "dd": 192.0,
+      "trades": 25,
+      "blocked_bars": 451
+     },
+     "2014": {
+      "net": 233.0,
+      "dd": 52.75,
+      "trades": 31,
+      "blocked_bars": 471
+     },
+     "2015": {
+      "net": 92.0,
+      "dd": 510.75,
+      "trades": 39,
+      "blocked_bars": 532
+     },
+     "2016": {
+      "net": 128.0,
+      "dd": 350.75,
+      "trades": 51,
+      "blocked_bars": 592
+     },
+     "2017": {
+      "net": -6.0,
+      "dd": 507.75,
+      "trades": 42,
+      "blocked_bars": 624
+     },
+     "2018": {
+      "net": -498.0,
+      "dd": 643.75,
+      "trades": 42,
+      "blocked_bars": 712
+     },
+     "2019": {
+      "net": -996.0,
+      "dd": 996.0,
+      "trades": 38,
+      "blocked_bars": 793
+     },
+     "2020": {
+      "net": 1759.5,
+      "dd": 104.75,
+      "trades": 39,
+      "blocked_bars": 1003
+     },
+     "2021": {
+      "net": 3682.0,
+      "dd": 86.75,
+      "trades": 47,
+      "blocked_bars": 732
+     },
+     "2022": {
+      "net": 3749.0,
+      "dd": 319.75,
+      "trades": 32,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 2122.0,
+      "dd": 259.88,
+      "trades": 39,
+      "blocked_bars": 736
+     }
+    },
+    "total": 9923.5,
+    "worst_dd": 996.0,
+    "trades": 481
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": -84.0,
+      "dd": 129.75,
+      "trades": 10,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": 260.0,
+      "dd": 9.75,
+      "trades": 22,
+      "blocked_bars": 1295
+     },
+     "2012": {
+      "net": -162.0,
+      "dd": 177.75,
+      "trades": 20,
+      "blocked_bars": 1244
+     },
+     "2013": {
+      "net": -105.0,
+      "dd": 105.0,
+      "trades": 22,
+      "blocked_bars": 1251
+     },
+     "2014": {
+      "net": 146.0,
+      "dd": 52.75,
+      "trades": 28,
+      "blocked_bars": 1312
+     },
+     "2015": {
+      "net": -29.0,
+      "dd": 527.75,
+      "trades": 39,
+      "blocked_bars": 1380
+     },
+     "2016": {
+      "net": -2.0,
+      "dd": 479.75,
+      "trades": 51,
+      "blocked_bars": 1537
+     },
+     "2017": {
+      "net": -44.0,
+      "dd": 542.75,
+      "trades": 43,
+      "blocked_bars": 1475
+     },
+     "2018": {
+      "net": -337.0,
+      "dd": 412.75,
+      "trades": 40,
+      "blocked_bars": 1817
+     },
+     "2019": {
+      "net": -1019.0,
+      "dd": 1019.0,
+      "trades": 34,
+      "blocked_bars": 1707
+     },
+     "2020": {
+      "net": 1435.0,
+      "dd": 152.25,
+      "trades": 40,
+      "blocked_bars": 1804
+     },
+     "2021": {
+      "net": 3239.0,
+      "dd": 86.75,
+      "trades": 45,
+      "blocked_bars": 1853
+     },
+     "2022": {
+      "net": 4125.0,
+      "dd": 319.75,
+      "trades": 34,
+      "blocked_bars": 1895
+     },
+     "2023": {
+      "net": 2227.5,
+      "dd": 259.88,
+      "trades": 38,
+      "blocked_bars": 1889
+     }
+    },
+    "total": 9650.5,
+    "worst_dd": 1019.0,
+    "trades": 466
+   }
+  },
+  "MES_MOM_1c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -79.25,
+      "dd": 153.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -120.5,
+      "dd": 146.62,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -146.75,
+      "dd": 157.62,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -192.5,
+      "dd": 270.62,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 329.5,
+      "dd": 48.88,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "total": 2742.25,
+    "worst_dd": 270.62,
+    "trades": 389
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 129
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 222
+     },
+     "2012": {
+      "net": -99.25,
+      "dd": 172.62,
+      "trades": 28,
+      "blocked_bars": 218
+     },
+     "2013": {
+      "net": -120.5,
+      "dd": 146.62,
+      "trades": 18,
+      "blocked_bars": 213
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 228
+     },
+     "2015": {
+      "net": -146.75,
+      "dd": 157.62,
+      "trades": 28,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 204
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -235.0,
+      "dd": 313.12,
+      "trades": 30,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 241
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 240
+     },
+     "2023": {
+      "net": 329.5,
+      "dd": 48.88,
+      "trades": 43,
+      "blocked_bars": 228
+     }
+    },
+    "total": 2679.75,
+    "worst_dd": 313.12,
+    "trades": 389
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 215
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 370
+     },
+     "2012": {
+      "net": -91.75,
+      "dd": 165.12,
+      "trades": 28,
+      "blocked_bars": 363
+     },
+     "2013": {
+      "net": -120.5,
+      "dd": 146.62,
+      "trades": 18,
+      "blocked_bars": 353
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 379
+     },
+     "2015": {
+      "net": -146.75,
+      "dd": 157.62,
+      "trades": 28,
+      "blocked_bars": 380
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 349
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 339
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -235.0,
+      "dd": 313.12,
+      "trades": 30,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 402
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 374
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 400
+     },
+     "2023": {
+      "net": 329.5,
+      "dd": 48.88,
+      "trades": 43,
+      "blocked_bars": 380
+     }
+    },
+    "total": 2687.25,
+    "worst_dd": 313.12,
+    "trades": 389
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": 29.75,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 269
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 450
+     },
+     "2012": {
+      "net": -99.25,
+      "dd": 172.62,
+      "trades": 28,
+      "blocked_bars": 434
+     },
+     "2013": {
+      "net": -134.25,
+      "dd": 160.38,
+      "trades": 18,
+      "blocked_bars": 448
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 443
+     },
+     "2015": {
+      "net": -184.5,
+      "dd": 195.38,
+      "trades": 27,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": -0.5,
+      "dd": 157.88,
+      "trades": 28,
+      "blocked_bars": 459
+     },
+     "2017": {
+      "net": -168.0,
+      "dd": 183.62,
+      "trades": 28,
+      "blocked_bars": 456
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -211.5,
+      "dd": 289.62,
+      "trades": 29,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 2467.0,
+      "dd": 50.38,
+      "trades": 43,
+      "blocked_bars": 465
+     },
+     "2023": {
+      "net": 432.75,
+      "dd": 16.62,
+      "trades": 41,
+      "blocked_bars": 456
+     }
+    },
+    "total": 2654.5,
+    "worst_dd": 289.62,
+    "trades": 383
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 189
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 346
+     },
+     "2012": {
+      "net": -87.0,
+      "dd": 152.62,
+      "trades": 27,
+      "blocked_bars": 321
+     },
+     "2013": {
+      "net": -132.0,
+      "dd": 158.12,
+      "trades": 17,
+      "blocked_bars": 328
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 307
+     },
+     "2015": {
+      "net": -115.75,
+      "dd": 126.62,
+      "trades": 27,
+      "blocked_bars": 324
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 346
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 330
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 343
+     },
+     "2019": {
+      "net": -181.5,
+      "dd": 259.62,
+      "trades": 29,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 484
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 401.75,
+      "dd": 48.88,
+      "trades": 42,
+      "blocked_bars": 360
+     }
+    },
+    "total": 2837.25,
+    "worst_dd": 259.62,
+    "trades": 384
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": 46.0,
+      "dd": 52.62,
+      "trades": 9,
+      "blocked_bars": 408
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 716
+     },
+     "2012": {
+      "net": -87.0,
+      "dd": 152.62,
+      "trades": 27,
+      "blocked_bars": 673
+     },
+     "2013": {
+      "net": -132.0,
+      "dd": 158.12,
+      "trades": 17,
+      "blocked_bars": 662
+     },
+     "2014": {
+      "net": 65.5,
+      "dd": 6.62,
+      "trades": 27,
+      "blocked_bars": 636
+     },
+     "2015": {
+      "net": -115.75,
+      "dd": 126.62,
+      "trades": 27,
+      "blocked_bars": 673
+     },
+     "2016": {
+      "net": 25.75,
+      "dd": 131.62,
+      "trades": 28,
+      "blocked_bars": 711
+     },
+     "2017": {
+      "net": -155.25,
+      "dd": 170.88,
+      "trades": 29,
+      "blocked_bars": 664
+     },
+     "2018": {
+      "net": 299.0,
+      "dd": 54.88,
+      "trades": 31,
+      "blocked_bars": 707
+     },
+     "2019": {
+      "net": -181.5,
+      "dd": 259.62,
+      "trades": 29,
+      "blocked_bars": 785
+     },
+     "2020": {
+      "net": -54.25,
+      "dd": 89.62,
+      "trades": 23,
+      "blocked_bars": 999
+     },
+     "2021": {
+      "net": 225.5,
+      "dd": 15.38,
+      "trades": 47,
+      "blocked_bars": 730
+     },
+     "2022": {
+      "net": 2512.25,
+      "dd": 50.38,
+      "trades": 44,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 401.75,
+      "dd": 48.88,
+      "trades": 42,
+      "blocked_bars": 727
+     }
+    },
+    "total": 2837.25,
+    "worst_dd": 259.62,
+    "trades": 384
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": 22.0,
+      "dd": 52.62,
+      "trades": 8,
+      "blocked_bars": 873
+     },
+     "2011": {
+      "net": -12.75,
+      "dd": 40.12,
+      "trades": 4,
+      "blocked_bars": 1688
+     },
+     "2012": {
+      "net": -26.5,
+      "dd": 102.38,
+      "trades": 24,
+      "blocked_bars": 1610
+     },
+     "2013": {
+      "net": -32.0,
+      "dd": 44.12,
+      "trades": 12,
+      "blocked_bars": 1769
+     },
+     "2014": {
+      "net": 59.75,
+      "dd": 6.62,
+      "trades": 24,
+      "blocked_bars": 1691
+     },
+     "2015": {
+      "net": -163.75,
+      "dd": 163.75,
+      "trades": 25,
+      "blocked_bars": 1689
+     },
+     "2016": {
+      "net": -1.25,
+      "dd": 158.62,
+      "trades": 25,
+      "blocked_bars": 1767
+     },
+     "2017": {
+      "net": -142.0,
+      "dd": 157.62,
+      "trades": 27,
+      "blocked_bars": 1589
+     },
+     "2018": {
+      "net": 309.0,
+      "dd": 54.88,
+      "trades": 26,
+      "blocked_bars": 1802
+     },
+     "2019": {
+      "net": -145.0,
+      "dd": 208.62,
+      "trades": 25,
+      "blocked_bars": 1685
+     },
+     "2020": {
+      "net": -85.75,
+      "dd": 107.62,
+      "trades": 22,
+      "blocked_bars": 1791
+     },
+     "2021": {
+      "net": 138.5,
+      "dd": 15.38,
+      "trades": 44,
+      "blocked_bars": 1821
+     },
+     "2022": {
+      "net": 2149.25,
+      "dd": 50.38,
+      "trades": 37,
+      "blocked_bars": 1894
+     },
+     "2023": {
+      "net": 174.0,
+      "dd": 161.62,
+      "trades": 36,
+      "blocked_bars": 1867
+     }
+    },
+    "total": 2243.5,
+    "worst_dd": 208.62,
+    "trades": 339
+   }
+  },
+  "MNQ_VOL_1c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -514.5,
+      "dd": 640.25,
+      "trades": 283,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -992.0,
+      "dd": 1006.75,
+      "trades": 307,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -456.5,
+      "dd": 456.5,
+      "trades": 291,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": -512.0,
+      "dd": 720.75,
+      "trades": 294,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -1163.5,
+      "dd": 1165.25,
+      "trades": 345,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -889.0,
+      "dd": 1160.25,
+      "trades": 347,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -86.5,
+      "dd": 836.75,
+      "trades": 365,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": 429.0,
+      "dd": 76.25,
+      "trades": 360,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 1031.0,
+      "dd": 610.75,
+      "trades": 295,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 1238.0,
+      "dd": 239.75,
+      "trades": 286,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1794.5,
+      "dd": 158.25,
+      "trades": 120,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 0
+     }
+    },
+    "total": 2637.0,
+    "worst_dd": 1165.25,
+    "trades": 3656
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 125
+     },
+     "2011": {
+      "net": -514.5,
+      "dd": 640.25,
+      "trades": 283,
+      "blocked_bars": 220
+     },
+     "2012": {
+      "net": -992.0,
+      "dd": 1006.75,
+      "trades": 307,
+      "blocked_bars": 215
+     },
+     "2013": {
+      "net": -456.5,
+      "dd": 456.5,
+      "trades": 291,
+      "blocked_bars": 201
+     },
+     "2014": {
+      "net": -512.0,
+      "dd": 720.75,
+      "trades": 294,
+      "blocked_bars": 226
+     },
+     "2015": {
+      "net": -1163.5,
+      "dd": 1165.25,
+      "trades": 345,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": -889.0,
+      "dd": 1160.25,
+      "trades": 347,
+      "blocked_bars": 203
+     },
+     "2018": {
+      "net": -76.5,
+      "dd": 836.75,
+      "trades": 365,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": 424.0,
+      "dd": 76.25,
+      "trades": 359,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": 1125.5,
+      "dd": 610.75,
+      "trades": 294,
+      "blocked_bars": 240
+     },
+     "2021": {
+      "net": 1238.0,
+      "dd": 239.75,
+      "trades": 286,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 1794.5,
+      "dd": 158.25,
+      "trades": 120,
+      "blocked_bars": 239
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 228
+     }
+    },
+    "total": 2736.5,
+    "worst_dd": 1165.25,
+    "trades": 3654
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 201
+     },
+     "2011": {
+      "net": -514.5,
+      "dd": 640.25,
+      "trades": 283,
+      "blocked_bars": 357
+     },
+     "2012": {
+      "net": -992.0,
+      "dd": 1006.75,
+      "trades": 307,
+      "blocked_bars": 354
+     },
+     "2013": {
+      "net": -456.5,
+      "dd": 456.5,
+      "trades": 291,
+      "blocked_bars": 335
+     },
+     "2014": {
+      "net": -512.0,
+      "dd": 720.75,
+      "trades": 294,
+      "blocked_bars": 370
+     },
+     "2015": {
+      "net": -1163.5,
+      "dd": 1165.25,
+      "trades": 345,
+      "blocked_bars": 377
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 348
+     },
+     "2017": {
+      "net": -889.0,
+      "dd": 1160.25,
+      "trades": 347,
+      "blocked_bars": 337
+     },
+     "2018": {
+      "net": -140.5,
+      "dd": 836.75,
+      "trades": 365,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": 424.0,
+      "dd": 76.25,
+      "trades": 359,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": 1125.5,
+      "dd": 610.75,
+      "trades": 294,
+      "blocked_bars": 401
+     },
+     "2021": {
+      "net": 1238.0,
+      "dd": 239.75,
+      "trades": 286,
+      "blocked_bars": 375
+     },
+     "2022": {
+      "net": 1794.5,
+      "dd": 158.25,
+      "trades": 120,
+      "blocked_bars": 399
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 380
+     }
+    },
+    "total": 2672.5,
+    "worst_dd": 1165.25,
+    "trades": 3654
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 262
+     },
+     "2011": {
+      "net": -455.5,
+      "dd": 617.25,
+      "trades": 277,
+      "blocked_bars": 444
+     },
+     "2012": {
+      "net": -907.0,
+      "dd": 921.75,
+      "trades": 299,
+      "blocked_bars": 429
+     },
+     "2013": {
+      "net": -426.0,
+      "dd": 426.0,
+      "trades": 287,
+      "blocked_bars": 429
+     },
+     "2014": {
+      "net": -596.5,
+      "dd": 805.25,
+      "trades": 291,
+      "blocked_bars": 439
+     },
+     "2015": {
+      "net": -1134.0,
+      "dd": 1135.75,
+      "trades": 339,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": -478.5,
+      "dd": 515.25,
+      "trades": 40,
+      "blocked_bars": 458
+     },
+     "2017": {
+      "net": -821.0,
+      "dd": 1178.25,
+      "trades": 342,
+      "blocked_bars": 455
+     },
+     "2018": {
+      "net": 266.0,
+      "dd": 727.25,
+      "trades": 359,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": 276.5,
+      "dd": 90.75,
+      "trades": 356,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": 1046.5,
+      "dd": 476.25,
+      "trades": 290,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 1237.0,
+      "dd": 271.75,
+      "trades": 284,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 1742.5,
+      "dd": 147.25,
+      "trades": 111,
+      "blocked_bars": 464
+     },
+     "2023": {
+      "net": 3160.0,
+      "dd": 121.75,
+      "trades": 289,
+      "blocked_bars": 456
+     }
+    },
+    "total": 2743.0,
+    "worst_dd": 1178.25,
+    "trades": 3589
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": -167.0,
+      "dd": 203.25,
+      "trades": 25,
+      "blocked_bars": 98
+     },
+     "2011": {
+      "net": -514.5,
+      "dd": 640.25,
+      "trades": 283,
+      "blocked_bars": 221
+     },
+     "2012": {
+      "net": -992.0,
+      "dd": 1006.75,
+      "trades": 307,
+      "blocked_bars": 169
+     },
+     "2013": {
+      "net": -456.5,
+      "dd": 456.5,
+      "trades": 291,
+      "blocked_bars": 198
+     },
+     "2014": {
+      "net": -512.0,
+      "dd": 720.75,
+      "trades": 294,
+      "blocked_bars": 197
+     },
+     "2015": {
+      "net": -1163.5,
+      "dd": 1165.25,
+      "trades": 345,
+      "blocked_bars": 236
+     },
+     "2016": {
+      "net": -492.0,
+      "dd": 528.75,
+      "trades": 41,
+      "blocked_bars": 271
+     },
+     "2017": {
+      "net": -889.0,
+      "dd": 1160.25,
+      "trades": 347,
+      "blocked_bars": 306
+     },
+     "2018": {
+      "net": -86.5,
+      "dd": 836.75,
+      "trades": 365,
+      "blocked_bars": 348
+     },
+     "2019": {
+      "net": 429.0,
+      "dd": 76.25,
+      "trades": 360,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": 1031.0,
+      "dd": 610.75,
+      "trades": 295,
+      "blocked_bars": 486
+     },
+     "2021": {
+      "net": 1238.0,
+      "dd": 239.75,
+      "trades": 286,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 1794.5,
+      "dd": 158.25,
+      "trades": 120,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 3417.5,
+      "dd": 290.25,
+      "trades": 297,
+      "blocked_bars": 360
+     }
+    },
+    "total": 2637.0,
+    "worst_dd": 1165.25,
+    "trades": 3656
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": -163.0,
+      "dd": 199.25,
+      "trades": 24,
+      "blocked_bars": 244
+     },
+     "2011": {
+      "net": -375.5,
+      "dd": 523.25,
+      "trades": 273,
+      "blocked_bars": 516
+     },
+     "2012": {
+      "net": -971.5,
+      "dd": 986.25,
+      "trades": 298,
+      "blocked_bars": 442
+     },
+     "2013": {
+      "net": -476.5,
+      "dd": 476.5,
+      "trades": 284,
+      "blocked_bars": 451
+     },
+     "2014": {
+      "net": -464.0,
+      "dd": 632.75,
+      "trades": 284,
+      "blocked_bars": 471
+     },
+     "2015": {
+      "net": -1146.0,
+      "dd": 1147.75,
+      "trades": 335,
+      "blocked_bars": 532
+     },
+     "2016": {
+      "net": -467.5,
+      "dd": 504.25,
+      "trades": 40,
+      "blocked_bars": 592
+     },
+     "2017": {
+      "net": -834.0,
+      "dd": 1110.25,
+      "trades": 336,
+      "blocked_bars": 624
+     },
+     "2018": {
+      "net": -82.5,
+      "dd": 810.25,
+      "trades": 352,
+      "blocked_bars": 712
+     },
+     "2019": {
+      "net": 546.5,
+      "dd": 76.25,
+      "trades": 345,
+      "blocked_bars": 793
+     },
+     "2020": {
+      "net": 1223.0,
+      "dd": 567.25,
+      "trades": 284,
+      "blocked_bars": 1003
+     },
+     "2021": {
+      "net": 1377.0,
+      "dd": 239.75,
+      "trades": 278,
+      "blocked_bars": 732
+     },
+     "2022": {
+      "net": 1294.0,
+      "dd": 158.25,
+      "trades": 114,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 3104.5,
+      "dd": 348.75,
+      "trades": 289,
+      "blocked_bars": 736
+     }
+    },
+    "total": 2564.5,
+    "worst_dd": 1147.75,
+    "trades": 3536
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": -191.0,
+      "dd": 212.25,
+      "trades": 23,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": -372.5,
+      "dd": 520.75,
+      "trades": 255,
+      "blocked_bars": 1295
+     },
+     "2012": {
+      "net": -1065.5,
+      "dd": 1106.75,
+      "trades": 279,
+      "blocked_bars": 1244
+     },
+     "2013": {
+      "net": -333.5,
+      "dd": 333.5,
+      "trades": 262,
+      "blocked_bars": 1251
+     },
+     "2014": {
+      "net": -479.5,
+      "dd": 648.25,
+      "trades": 268,
+      "blocked_bars": 1312
+     },
+     "2015": {
+      "net": -1074.5,
+      "dd": 1076.25,
+      "trades": 315,
+      "blocked_bars": 1380
+     },
+     "2016": {
+      "net": -596.5,
+      "dd": 633.25,
+      "trades": 37,
+      "blocked_bars": 1537
+     },
+     "2017": {
+      "net": -719.0,
+      "dd": 1108.75,
+      "trades": 322,
+      "blocked_bars": 1475
+     },
+     "2018": {
+      "net": -621.5,
+      "dd": 1126.25,
+      "trades": 333,
+      "blocked_bars": 1817
+     },
+     "2019": {
+      "net": 192.0,
+      "dd": 76.25,
+      "trades": 331,
+      "blocked_bars": 1707
+     },
+     "2020": {
+      "net": 1634.5,
+      "dd": 676.25,
+      "trades": 272,
+      "blocked_bars": 1804
+     },
+     "2021": {
+      "net": 816.0,
+      "dd": 414.25,
+      "trades": 268,
+      "blocked_bars": 1853
+     },
+     "2022": {
+      "net": 1577.0,
+      "dd": 158.25,
+      "trades": 119,
+      "blocked_bars": 1895
+     },
+     "2023": {
+      "net": 3580.5,
+      "dd": 290.25,
+      "trades": 287,
+      "blocked_bars": 1889
+     }
+    },
+    "total": 2346.5,
+    "worst_dd": 1126.25,
+    "trades": 3371
+   }
+  },
+  "MNQ_E57_1c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -108.5,
+      "dd": 108.5,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 251.0,
+      "dd": 99.75,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -681.0,
+      "dd": 806.75,
+      "trades": 55,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 1382.0,
+      "dd": 13.75,
+      "trades": 61,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 0
+     }
+    },
+    "total": 5004.0,
+    "worst_dd": 806.75,
+    "trades": 597
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 125
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 220
+     },
+     "2012": {
+      "net": -101.0,
+      "dd": 101.0,
+      "trades": 40,
+      "blocked_bars": 215
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 201
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 226
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 203
+     },
+     "2018": {
+      "net": 251.0,
+      "dd": 99.75,
+      "trades": 47,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -712.5,
+      "dd": 838.25,
+      "trades": 55,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 240
+     },
+     "2021": {
+      "net": 1391.0,
+      "dd": 13.75,
+      "trades": 60,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 239
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 228
+     }
+    },
+    "total": 4989.0,
+    "worst_dd": 838.25,
+    "trades": 595
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 201
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 357
+     },
+     "2012": {
+      "net": -84.0,
+      "dd": 89.25,
+      "trades": 39,
+      "blocked_bars": 354
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 335
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 370
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 377
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 348
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 337
+     },
+     "2018": {
+      "net": 251.0,
+      "dd": 99.75,
+      "trades": 47,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -712.5,
+      "dd": 838.25,
+      "trades": 55,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 401
+     },
+     "2021": {
+      "net": 1391.0,
+      "dd": 13.75,
+      "trades": 60,
+      "blocked_bars": 375
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 399
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 380
+     }
+    },
+    "total": 5006.0,
+    "worst_dd": 838.25,
+    "trades": 594
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 262
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 444
+     },
+     "2012": {
+      "net": -101.0,
+      "dd": 101.0,
+      "trades": 40,
+      "blocked_bars": 429
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 429
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 439
+     },
+     "2015": {
+      "net": -66.0,
+      "dd": 129.25,
+      "trades": 44,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": 202.0,
+      "dd": 15.25,
+      "trades": 47,
+      "blocked_bars": 458
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 455
+     },
+     "2018": {
+      "net": 307.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -713.5,
+      "dd": 839.25,
+      "trades": 55,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 1391.0,
+      "dd": 13.75,
+      "trades": 60,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 2234.0,
+      "dd": 245.75,
+      "trades": 49,
+      "blocked_bars": 464
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 456
+     }
+    },
+    "total": 4454.5,
+    "worst_dd": 839.25,
+    "trades": 588
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 98
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 221
+     },
+     "2012": {
+      "net": -84.0,
+      "dd": 89.25,
+      "trades": 39,
+      "blocked_bars": 169
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 198
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 197
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 236
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 271
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 306
+     },
+     "2018": {
+      "net": 251.0,
+      "dd": 99.75,
+      "trades": 47,
+      "blocked_bars": 348
+     },
+     "2019": {
+      "net": -676.0,
+      "dd": 801.75,
+      "trades": 54,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 486
+     },
+     "2021": {
+      "net": 1391.0,
+      "dd": 13.75,
+      "trades": 60,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 360
+     }
+    },
+    "total": 5042.5,
+    "worst_dd": 801.75,
+    "trades": 593
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": -51.0,
+      "dd": 51.0,
+      "trades": 12,
+      "blocked_bars": 244
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 516
+     },
+     "2012": {
+      "net": -84.0,
+      "dd": 89.25,
+      "trades": 39,
+      "blocked_bars": 442
+     },
+     "2013": {
+      "net": -81.0,
+      "dd": 122.25,
+      "trades": 27,
+      "blocked_bars": 451
+     },
+     "2014": {
+      "net": 107.0,
+      "dd": 18.25,
+      "trades": 38,
+      "blocked_bars": 471
+     },
+     "2015": {
+      "net": 16.5,
+      "dd": 96.25,
+      "trades": 47,
+      "blocked_bars": 532
+     },
+     "2016": {
+      "net": 220.5,
+      "dd": 15.25,
+      "trades": 48,
+      "blocked_bars": 592
+     },
+     "2017": {
+      "net": 236.5,
+      "dd": 63.25,
+      "trades": 48,
+      "blocked_bars": 624
+     },
+     "2018": {
+      "net": 251.0,
+      "dd": 99.75,
+      "trades": 47,
+      "blocked_bars": 712
+     },
+     "2019": {
+      "net": -676.0,
+      "dd": 801.75,
+      "trades": 54,
+      "blocked_bars": 793
+     },
+     "2020": {
+      "net": 246.0,
+      "dd": 19.25,
+      "trades": 39,
+      "blocked_bars": 1003
+     },
+     "2021": {
+      "net": 1491.0,
+      "dd": 13.75,
+      "trades": 59,
+      "blocked_bars": 732
+     },
+     "2022": {
+      "net": 2723.0,
+      "dd": 245.75,
+      "trades": 50,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 791.0,
+      "dd": 14.75,
+      "trades": 54,
+      "blocked_bars": 736
+     }
+    },
+    "total": 5142.5,
+    "worst_dd": 801.75,
+    "trades": 592
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": -41.0,
+      "dd": 44.75,
+      "trades": 11,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": -48.0,
+      "dd": 86.75,
+      "trades": 30,
+      "blocked_bars": 1295
+     },
+     "2012": {
+      "net": -102.5,
+      "dd": 103.25,
+      "trades": 36,
+      "blocked_bars": 1244
+     },
+     "2013": {
+      "net": -33.0,
+      "dd": 86.25,
+      "trades": 22,
+      "blocked_bars": 1251
+     },
+     "2014": {
+      "net": 67.5,
+      "dd": 18.25,
+      "trades": 34,
+      "blocked_bars": 1312
+     },
+     "2015": {
+      "net": -55.5,
+      "dd": 99.75,
+      "trades": 42,
+      "blocked_bars": 1380
+     },
+     "2016": {
+      "net": 197.0,
+      "dd": 15.25,
+      "trades": 45,
+      "blocked_bars": 1537
+     },
+     "2017": {
+      "net": 254.5,
+      "dd": 53.25,
+      "trades": 44,
+      "blocked_bars": 1475
+     },
+     "2018": {
+      "net": 298.5,
+      "dd": 52.25,
+      "trades": 37,
+      "blocked_bars": 1817
+     },
+     "2019": {
+      "net": -392.5,
+      "dd": 512.25,
+      "trades": 47,
+      "blocked_bars": 1707
+     },
+     "2020": {
+      "net": 353.5,
+      "dd": 19.25,
+      "trades": 36,
+      "blocked_bars": 1804
+     },
+     "2021": {
+      "net": 1351.5,
+      "dd": 13.75,
+      "trades": 57,
+      "blocked_bars": 1853
+     },
+     "2022": {
+      "net": 2304.5,
+      "dd": 138.75,
+      "trades": 44,
+      "blocked_bars": 1895
+     },
+     "2023": {
+      "net": 412.5,
+      "dd": 68.25,
+      "trades": 49,
+      "blocked_bars": 1889
+     }
+    },
+    "total": 4567.0,
+    "worst_dd": 512.25,
+    "trades": 534
+   }
+  },
+  "MES_MOM_2c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -158.5,
+      "dd": 308.38,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -241.0,
+      "dd": 293.88,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -293.5,
+      "dd": 315.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -385.0,
+      "dd": 541.88,
+      "trades": 30,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 659.0,
+      "dd": 98.38,
+      "trades": 43,
+      "blocked_bars": 0
+     }
+    },
+    "total": 5048.25,
+    "worst_dd": 541.88,
+    "trades": 393
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 129
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 222
+     },
+     "2012": {
+      "net": -198.5,
+      "dd": 345.88,
+      "trades": 28,
+      "blocked_bars": 218
+     },
+     "2013": {
+      "net": -241.0,
+      "dd": 293.88,
+      "trades": 18,
+      "blocked_bars": 213
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 228
+     },
+     "2015": {
+      "net": -293.5,
+      "dd": 315.88,
+      "trades": 28,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 204
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -470.0,
+      "dd": 626.88,
+      "trades": 30,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 241
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 240
+     },
+     "2023": {
+      "net": 659.0,
+      "dd": 98.38,
+      "trades": 43,
+      "blocked_bars": 228
+     }
+    },
+    "total": 4923.25,
+    "worst_dd": 626.88,
+    "trades": 393
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 215
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 370
+     },
+     "2012": {
+      "net": -183.5,
+      "dd": 330.88,
+      "trades": 28,
+      "blocked_bars": 363
+     },
+     "2013": {
+      "net": -241.0,
+      "dd": 293.88,
+      "trades": 18,
+      "blocked_bars": 353
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 379
+     },
+     "2015": {
+      "net": -293.5,
+      "dd": 315.88,
+      "trades": 28,
+      "blocked_bars": 380
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 349
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 339
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -470.0,
+      "dd": 626.88,
+      "trades": 30,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 402
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 374
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 400
+     },
+     "2023": {
+      "net": 659.0,
+      "dd": 98.38,
+      "trades": 43,
+      "blocked_bars": 380
+     }
+    },
+    "total": 4938.25,
+    "worst_dd": 626.88,
+    "trades": 393
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": 59.5,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 269
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 450
+     },
+     "2012": {
+      "net": -198.5,
+      "dd": 345.88,
+      "trades": 28,
+      "blocked_bars": 434
+     },
+     "2013": {
+      "net": -268.5,
+      "dd": 321.38,
+      "trades": 18,
+      "blocked_bars": 448
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 443
+     },
+     "2015": {
+      "net": -369.0,
+      "dd": 391.38,
+      "trades": 27,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": -1.0,
+      "dd": 316.38,
+      "trades": 28,
+      "blocked_bars": 459
+     },
+     "2017": {
+      "net": -336.0,
+      "dd": 367.88,
+      "trades": 28,
+      "blocked_bars": 456
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -423.0,
+      "dd": 579.88,
+      "trades": 29,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 4686.0,
+      "dd": 101.38,
+      "trades": 45,
+      "blocked_bars": 465
+     },
+     "2023": {
+      "net": 865.5,
+      "dd": 33.88,
+      "trades": 41,
+      "blocked_bars": 456
+     }
+    },
+    "total": 4872.75,
+    "worst_dd": 579.88,
+    "trades": 387
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 189
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 346
+     },
+     "2012": {
+      "net": -174.0,
+      "dd": 305.88,
+      "trades": 27,
+      "blocked_bars": 321
+     },
+     "2013": {
+      "net": -264.0,
+      "dd": 316.88,
+      "trades": 17,
+      "blocked_bars": 328
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 307
+     },
+     "2015": {
+      "net": -231.5,
+      "dd": 253.88,
+      "trades": 27,
+      "blocked_bars": 324
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 346
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 330
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 343
+     },
+     "2019": {
+      "net": -363.0,
+      "dd": 519.88,
+      "trades": 29,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 484
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 803.5,
+      "dd": 98.38,
+      "trades": 42,
+      "blocked_bars": 360
+     }
+    },
+    "total": 5238.25,
+    "worst_dd": 519.88,
+    "trades": 388
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": 92.0,
+      "dd": 105.88,
+      "trades": 9,
+      "blocked_bars": 408
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 716
+     },
+     "2012": {
+      "net": -174.0,
+      "dd": 305.88,
+      "trades": 27,
+      "blocked_bars": 673
+     },
+     "2013": {
+      "net": -264.0,
+      "dd": 316.88,
+      "trades": 17,
+      "blocked_bars": 662
+     },
+     "2014": {
+      "net": 131.0,
+      "dd": 13.88,
+      "trades": 27,
+      "blocked_bars": 636
+     },
+     "2015": {
+      "net": -231.5,
+      "dd": 253.88,
+      "trades": 27,
+      "blocked_bars": 673
+     },
+     "2016": {
+      "net": 51.5,
+      "dd": 263.88,
+      "trades": 28,
+      "blocked_bars": 711
+     },
+     "2017": {
+      "net": -310.5,
+      "dd": 342.38,
+      "trades": 29,
+      "blocked_bars": 664
+     },
+     "2018": {
+      "net": 598.0,
+      "dd": 110.38,
+      "trades": 31,
+      "blocked_bars": 707
+     },
+     "2019": {
+      "net": -363.0,
+      "dd": 519.88,
+      "trades": 29,
+      "blocked_bars": 785
+     },
+     "2020": {
+      "net": -296.75,
+      "dd": 296.75,
+      "trades": 25,
+      "blocked_bars": 999
+     },
+     "2021": {
+      "net": 451.0,
+      "dd": 31.38,
+      "trades": 47,
+      "blocked_bars": 730
+     },
+     "2022": {
+      "net": 4776.5,
+      "dd": 101.38,
+      "trades": 46,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 803.5,
+      "dd": 98.38,
+      "trades": 42,
+      "blocked_bars": 727
+     }
+    },
+    "total": 5238.25,
+    "worst_dd": 519.88,
+    "trades": 388
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": 44.0,
+      "dd": 105.88,
+      "trades": 8,
+      "blocked_bars": 873
+     },
+     "2011": {
+      "net": -25.5,
+      "dd": 80.88,
+      "trades": 4,
+      "blocked_bars": 1688
+     },
+     "2012": {
+      "net": -53.0,
+      "dd": 205.38,
+      "trades": 24,
+      "blocked_bars": 1610
+     },
+     "2013": {
+      "net": -64.0,
+      "dd": 88.88,
+      "trades": 12,
+      "blocked_bars": 1769
+     },
+     "2014": {
+      "net": 119.5,
+      "dd": 13.88,
+      "trades": 24,
+      "blocked_bars": 1691
+     },
+     "2015": {
+      "net": -327.5,
+      "dd": 327.5,
+      "trades": 25,
+      "blocked_bars": 1689
+     },
+     "2016": {
+      "net": -2.5,
+      "dd": 317.88,
+      "trades": 25,
+      "blocked_bars": 1767
+     },
+     "2017": {
+      "net": -284.0,
+      "dd": 315.88,
+      "trades": 27,
+      "blocked_bars": 1589
+     },
+     "2018": {
+      "net": 618.0,
+      "dd": 110.38,
+      "trades": 26,
+      "blocked_bars": 1802
+     },
+     "2019": {
+      "net": -290.0,
+      "dd": 417.88,
+      "trades": 25,
+      "blocked_bars": 1685
+     },
+     "2020": {
+      "net": -188.75,
+      "dd": 233.12,
+      "trades": 23,
+      "blocked_bars": 1791
+     },
+     "2021": {
+      "net": 277.0,
+      "dd": 31.38,
+      "trades": 44,
+      "blocked_bars": 1821
+     },
+     "2022": {
+      "net": 3975.25,
+      "dd": 101.38,
+      "trades": 39,
+      "blocked_bars": 1894
+     },
+     "2023": {
+      "net": 348.0,
+      "dd": 323.88,
+      "trades": 36,
+      "blocked_bars": 1867
+     }
+    },
+    "total": 4146.5,
+    "worst_dd": 417.88,
+    "trades": 342
+   }
+  },
+  "MNQ_BRK_E_1c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": 69.5,
+      "dd": 4.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": 37.5,
+      "dd": 263.75,
+      "trades": 40,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 30.5,
+      "dd": 208.75,
+      "trades": 52,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": -260.5,
+      "dd": 277.75,
+      "trades": 44,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 718.5,
+      "dd": 49.25,
+      "trades": 37,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 0
+     }
+    },
+    "total": 4347.5,
+    "worst_dd": 498.0,
+    "trades": 475
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 125
+     },
+     "2011": {
+      "net": 69.5,
+      "dd": 4.75,
+      "trades": 24,
+      "blocked_bars": 220
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 215
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 201
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 226
+     },
+     "2015": {
+      "net": 37.5,
+      "dd": 263.75,
+      "trades": 40,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 30.5,
+      "dd": 208.75,
+      "trades": 52,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 44,
+      "blocked_bars": 203
+     },
+     "2018": {
+      "net": -260.5,
+      "dd": 277.75,
+      "trades": 44,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": 718.5,
+      "dd": 49.25,
+      "trades": 37,
+      "blocked_bars": 240
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 239
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 228
+     }
+    },
+    "total": 4347.5,
+    "worst_dd": 498.0,
+    "trades": 475
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 201
+     },
+     "2011": {
+      "net": 69.5,
+      "dd": 4.75,
+      "trades": 24,
+      "blocked_bars": 357
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 354
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 335
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 370
+     },
+     "2015": {
+      "net": 37.5,
+      "dd": 263.75,
+      "trades": 40,
+      "blocked_bars": 377
+     },
+     "2016": {
+      "net": 30.5,
+      "dd": 208.75,
+      "trades": 52,
+      "blocked_bars": 348
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 44,
+      "blocked_bars": 337
+     },
+     "2018": {
+      "net": -260.5,
+      "dd": 277.75,
+      "trades": 44,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": 718.5,
+      "dd": 49.25,
+      "trades": 37,
+      "blocked_bars": 401
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 375
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 399
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 380
+     }
+    },
+    "total": 4347.5,
+    "worst_dd": 498.0,
+    "trades": 475
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 262
+     },
+     "2011": {
+      "net": 110.0,
+      "dd": 4.75,
+      "trades": 23,
+      "blocked_bars": 444
+     },
+     "2012": {
+      "net": -131.0,
+      "dd": 131.0,
+      "trades": 22,
+      "blocked_bars": 429
+     },
+     "2013": {
+      "net": -90.5,
+      "dd": 90.5,
+      "trades": 24,
+      "blocked_bars": 429
+     },
+     "2014": {
+      "net": 131.5,
+      "dd": 26.25,
+      "trades": 30,
+      "blocked_bars": 439
+     },
+     "2015": {
+      "net": 12.5,
+      "dd": 263.75,
+      "trades": 39,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": 82.0,
+      "dd": 175.25,
+      "trades": 50,
+      "blocked_bars": 458
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 41,
+      "blocked_bars": 455
+     },
+     "2018": {
+      "net": -272.0,
+      "dd": 289.25,
+      "trades": 41,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": 590.0,
+      "dd": 49.25,
+      "trades": 36,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 1643.0,
+      "dd": 43.25,
+      "trades": 44,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 1424.0,
+      "dd": 170.75,
+      "trades": 18,
+      "blocked_bars": 464
+     },
+     "2023": {
+      "net": 432.5,
+      "dd": 174.25,
+      "trades": 32,
+      "blocked_bars": 456
+     }
+    },
+    "total": 3348.5,
+    "worst_dd": 498.0,
+    "trades": 448
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 98
+     },
+     "2011": {
+      "net": 69.5,
+      "dd": 4.75,
+      "trades": 24,
+      "blocked_bars": 221
+     },
+     "2012": {
+      "net": -120.0,
+      "dd": 127.75,
+      "trades": 24,
+      "blocked_bars": 169
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 198
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 197
+     },
+     "2015": {
+      "net": 37.5,
+      "dd": 263.75,
+      "trades": 40,
+      "blocked_bars": 236
+     },
+     "2016": {
+      "net": 30.5,
+      "dd": 208.75,
+      "trades": 52,
+      "blocked_bars": 271
+     },
+     "2017": {
+      "net": -43.5,
+      "dd": 288.25,
+      "trades": 44,
+      "blocked_bars": 306
+     },
+     "2018": {
+      "net": -260.5,
+      "dd": 277.75,
+      "trades": 44,
+      "blocked_bars": 348
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": 718.5,
+      "dd": 49.25,
+      "trades": 37,
+      "blocked_bars": 486
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 890.0,
+      "dd": 321.75,
+      "trades": 36,
+      "blocked_bars": 360
+     }
+    },
+    "total": 4347.5,
+    "worst_dd": 498.0,
+    "trades": 475
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 244
+     },
+     "2011": {
+      "net": 70.0,
+      "dd": 4.75,
+      "trades": 23,
+      "blocked_bars": 516
+     },
+     "2012": {
+      "net": -103.0,
+      "dd": 110.75,
+      "trades": 23,
+      "blocked_bars": 442
+     },
+     "2013": {
+      "net": -96.0,
+      "dd": 96.0,
+      "trades": 25,
+      "blocked_bars": 451
+     },
+     "2014": {
+      "net": 116.5,
+      "dd": 26.25,
+      "trades": 31,
+      "blocked_bars": 471
+     },
+     "2015": {
+      "net": 46.0,
+      "dd": 255.25,
+      "trades": 39,
+      "blocked_bars": 532
+     },
+     "2016": {
+      "net": 64.0,
+      "dd": 175.25,
+      "trades": 51,
+      "blocked_bars": 592
+     },
+     "2017": {
+      "net": -3.0,
+      "dd": 253.75,
+      "trades": 42,
+      "blocked_bars": 624
+     },
+     "2018": {
+      "net": -249.0,
+      "dd": 321.75,
+      "trades": 42,
+      "blocked_bars": 712
+     },
+     "2019": {
+      "net": -498.0,
+      "dd": 498.0,
+      "trades": 38,
+      "blocked_bars": 793
+     },
+     "2020": {
+      "net": 735.5,
+      "dd": 32.25,
+      "trades": 36,
+      "blocked_bars": 1003
+     },
+     "2021": {
+      "net": 1618.5,
+      "dd": 43.25,
+      "trades": 45,
+      "blocked_bars": 732
+     },
+     "2022": {
+      "net": 1738.5,
+      "dd": 159.75,
+      "trades": 23,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 1009.5,
+      "dd": 245.75,
+      "trades": 34,
+      "blocked_bars": 736
+     }
+    },
+    "total": 4407.5,
+    "worst_dd": 498.0,
+    "trades": 462
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": -42.0,
+      "dd": 64.75,
+      "trades": 10,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": 130.0,
+      "dd": 4.75,
+      "trades": 22,
+      "blocked_bars": 1295
+     },
+     "2012": {
+      "net": -81.0,
+      "dd": 88.75,
+      "trades": 20,
+      "blocked_bars": 1244
+     },
+     "2013": {
+      "net": -52.5,
+      "dd": 52.5,
+      "trades": 22,
+      "blocked_bars": 1251
+     },
+     "2014": {
+      "net": 73.0,
+      "dd": 26.25,
+      "trades": 28,
+      "blocked_bars": 1312
+     },
+     "2015": {
+      "net": -14.5,
+      "dd": 263.75,
+      "trades": 39,
+      "blocked_bars": 1380
+     },
+     "2016": {
+      "net": -1.0,
+      "dd": 239.75,
+      "trades": 51,
+      "blocked_bars": 1537
+     },
+     "2017": {
+      "net": -22.0,
+      "dd": 271.25,
+      "trades": 43,
+      "blocked_bars": 1475
+     },
+     "2018": {
+      "net": -168.5,
+      "dd": 206.25,
+      "trades": 40,
+      "blocked_bars": 1817
+     },
+     "2019": {
+      "net": -509.5,
+      "dd": 509.5,
+      "trades": 34,
+      "blocked_bars": 1707
+     },
+     "2020": {
+      "net": 580.0,
+      "dd": 49.25,
+      "trades": 36,
+      "blocked_bars": 1804
+     },
+     "2021": {
+      "net": 1599.5,
+      "dd": 43.25,
+      "trades": 44,
+      "blocked_bars": 1853
+     },
+     "2022": {
+      "net": 1926.5,
+      "dd": 159.75,
+      "trades": 25,
+      "blocked_bars": 1895
+     },
+     "2023": {
+      "net": 985.0,
+      "dd": 321.75,
+      "trades": 34,
+      "blocked_bars": 1889
+     }
+    },
+    "total": 4403.0,
+    "worst_dd": 509.5,
+    "trades": 448
+   }
+  },
+  "MNQ_HYB_C_1c": {
+   "baseline": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 0
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 0
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 0
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 0
+     },
+     "2015": {
+      "net": -288.5,
+      "dd": 314.75,
+      "trades": 38,
+      "blocked_bars": 0
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 0
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 0
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 0
+     },
+     "2019": {
+      "net": -370.5,
+      "dd": 455.25,
+      "trades": 74,
+      "blocked_bars": 0
+     },
+     "2020": {
+      "net": 300.0,
+      "dd": 75.25,
+      "trades": 43,
+      "blocked_bars": 0
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 0
+     },
+     "2022": {
+      "net": 1622.0,
+      "dd": 73.25,
+      "trades": 27,
+      "blocked_bars": 0
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 0
+     }
+    },
+    "total": 2369.5,
+    "worst_dd": 455.25,
+    "trades": 514
+   },
+   "blackout_high_15": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 125
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 220
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 215
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 201
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 226
+     },
+     "2015": {
+      "net": -288.5,
+      "dd": 314.75,
+      "trades": 38,
+      "blocked_bars": 228
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 210
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 203
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 222
+     },
+     "2019": {
+      "net": -378.0,
+      "dd": 462.75,
+      "trades": 74,
+      "blocked_bars": 219
+     },
+     "2020": {
+      "net": 300.0,
+      "dd": 75.25,
+      "trades": 43,
+      "blocked_bars": 240
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 225
+     },
+     "2022": {
+      "net": 1622.0,
+      "dd": 73.25,
+      "trades": 27,
+      "blocked_bars": 239
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 228
+     }
+    },
+    "total": 2362.0,
+    "worst_dd": 462.75,
+    "trades": 514
+   },
+   "blackout_high_30": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 201
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 357
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 354
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 335
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 370
+     },
+     "2015": {
+      "net": -288.5,
+      "dd": 314.75,
+      "trades": 38,
+      "blocked_bars": 377
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 348
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 337
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 370
+     },
+     "2019": {
+      "net": -383.5,
+      "dd": 468.25,
+      "trades": 73,
+      "blocked_bars": 365
+     },
+     "2020": {
+      "net": 300.0,
+      "dd": 75.25,
+      "trades": 43,
+      "blocked_bars": 401
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 375
+     },
+     "2022": {
+      "net": 1134.5,
+      "dd": 73.25,
+      "trades": 26,
+      "blocked_bars": 399
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 380
+     }
+    },
+    "total": 1869.0,
+    "worst_dd": 468.25,
+    "trades": 512
+   },
+   "blackout_all_15": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 262
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 444
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 429
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 429
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 439
+     },
+     "2015": {
+      "net": -288.5,
+      "dd": 314.75,
+      "trades": 38,
+      "blocked_bars": 477
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 458
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 455
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 459
+     },
+     "2019": {
+      "net": -378.0,
+      "dd": 462.75,
+      "trades": 74,
+      "blocked_bars": 456
+     },
+     "2020": {
+      "net": 300.0,
+      "dd": 75.25,
+      "trades": 43,
+      "blocked_bars": 462
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 456
+     },
+     "2022": {
+      "net": 1622.0,
+      "dd": 73.25,
+      "trades": 27,
+      "blocked_bars": 464
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 456
+     }
+    },
+    "total": 2362.0,
+    "worst_dd": 462.75,
+    "trades": 514
+   },
+   "fomc_afternoon": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 98
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 221
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 169
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 198
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 197
+     },
+     "2015": {
+      "net": -266.0,
+      "dd": 292.25,
+      "trades": 37,
+      "blocked_bars": 236
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 271
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 306
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 348
+     },
+     "2019": {
+      "net": -320.0,
+      "dd": 404.75,
+      "trades": 72,
+      "blocked_bars": 371
+     },
+     "2020": {
+      "net": 290.0,
+      "dd": 75.25,
+      "trades": 42,
+      "blocked_bars": 486
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 356
+     },
+     "2022": {
+      "net": 1134.5,
+      "dd": 73.25,
+      "trades": 26,
+      "blocked_bars": 360
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 360
+     }
+    },
+    "total": 1945.0,
+    "worst_dd": 404.75,
+    "trades": 509
+   },
+   "fomc_day": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 244
+     },
+     "2011": {
+      "net": -104.5,
+      "dd": 104.5,
+      "trades": 18,
+      "blocked_bars": 516
+     },
+     "2012": {
+      "net": 35.0,
+      "dd": 37.25,
+      "trades": 28,
+      "blocked_bars": 442
+     },
+     "2013": {
+      "net": 35.5,
+      "dd": 13.75,
+      "trades": 11,
+      "blocked_bars": 451
+     },
+     "2014": {
+      "net": 4.5,
+      "dd": 25.25,
+      "trades": 28,
+      "blocked_bars": 471
+     },
+     "2015": {
+      "net": -266.0,
+      "dd": 292.25,
+      "trades": 37,
+      "blocked_bars": 532
+     },
+     "2016": {
+      "net": 26.5,
+      "dd": 13.25,
+      "trades": 53,
+      "blocked_bars": 592
+     },
+     "2017": {
+      "net": 131.5,
+      "dd": 30.25,
+      "trades": 41,
+      "blocked_bars": 624
+     },
+     "2018": {
+      "net": 141.0,
+      "dd": 246.75,
+      "trades": 33,
+      "blocked_bars": 712
+     },
+     "2019": {
+      "net": -320.0,
+      "dd": 404.75,
+      "trades": 72,
+      "blocked_bars": 793
+     },
+     "2020": {
+      "net": 290.0,
+      "dd": 75.25,
+      "trades": 42,
+      "blocked_bars": 1003
+     },
+     "2021": {
+      "net": 446.0,
+      "dd": 140.75,
+      "trades": 66,
+      "blocked_bars": 732
+     },
+     "2022": {
+      "net": 1134.5,
+      "dd": 73.25,
+      "trades": 26,
+      "blocked_bars": 736
+     },
+     "2023": {
+      "net": 387.0,
+      "dd": 187.25,
+      "trades": 53,
+      "blocked_bars": 736
+     }
+    },
+    "total": 1945.0,
+    "worst_dd": 404.75,
+    "trades": 509
+   },
+   "nfp_cpi_day": {
+    "years": {
+     "2010": {
+      "net": 4.0,
+      "dd": 3.75,
+      "trades": 1,
+      "blocked_bars": 639
+     },
+     "2011": {
+      "net": -138.5,
+      "dd": 138.5,
+      "trades": 17,
+      "blocked_bars": 1295
+     },
+     "2012": {
+      "net": 38.0,
+      "dd": 37.25,
+      "trades": 27,
+      "blocked_bars": 1244
+     },
+     "2013": {
+      "net": 39.5,
+      "dd": 13.75,
+      "trades": 10,
+      "blocked_bars": 1251
+     },
+     "2014": {
+      "net": -11.5,
+      "dd": 25.25,
+      "trades": 27,
+      "blocked_bars": 1312
+     },
+     "2015": {
+      "net": -301.5,
+      "dd": 311.75,
+      "trades": 35,
+      "blocked_bars": 1380
+     },
+     "2016": {
+      "net": -61.5,
+      "dd": 95.75,
+      "trades": 49,
+      "blocked_bars": 1537
+     },
+     "2017": {
+      "net": 154.0,
+      "dd": 30.25,
+      "trades": 39,
+      "blocked_bars": 1475
+     },
+     "2018": {
+      "net": 86.5,
+      "dd": 294.25,
+      "trades": 25,
+      "blocked_bars": 1817
+     },
+     "2019": {
+      "net": -365.5,
+      "dd": 397.75,
+      "trades": 64,
+      "blocked_bars": 1707
+     },
+     "2020": {
+      "net": 305.5,
+      "dd": 75.25,
+      "trades": 40,
+      "blocked_bars": 1804
+     },
+     "2021": {
+      "net": 442.0,
+      "dd": 140.75,
+      "trades": 62,
+      "blocked_bars": 1853
+     },
+     "2022": {
+      "net": 1445.0,
+      "dd": 73.25,
+      "trades": 26,
+      "blocked_bars": 1895
+     },
+     "2023": {
+      "net": 129.5,
+      "dd": 257.25,
+      "trades": 47,
+      "blocked_bars": 1889
+     }
+    },
+    "total": 1765.5,
+    "worst_dd": 397.75,
+    "trades": 469
+   }
+  }
+ },
+ "validation": {},
+ "verdict": {
+  "MES_MOM_3c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -187.5,
+   "dd_delta": 127.5
+  },
+  "MES_MOM_3c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -165.0,
+   "dd_delta": 127.5
+  },
+  "MES_MOM_3c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 1,
+   "total_delta": -263.25,
+   "dd_delta": 57.0
+  },
+  "MES_MOM_3c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 285.0,
+   "dd_delta": -33.0
+  },
+  "MES_MOM_3c/fomc_day": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 285.0,
+   "dd_delta": -33.0
+  },
+  "MES_MOM_3c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 6,
+   "total_delta": -1558.0,
+   "dd_delta": -186.0
+  },
+  "MNQ_BRK_E_2c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_2c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_2c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 5,
+   "total_delta": -1998.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_2c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_2c/fomc_day": {
+   "passed": false,
+   "beats_years": 8,
+   "total_delta": 133.5,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_2c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 6,
+   "total_delta": -139.5,
+   "dd_delta": 23.0
+  },
+  "MES_MOM_1c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -62.5,
+   "dd_delta": 42.5
+  },
+  "MES_MOM_1c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -55.0,
+   "dd_delta": 42.5
+  },
+  "MES_MOM_1c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 1,
+   "total_delta": -87.75,
+   "dd_delta": 19.0
+  },
+  "MES_MOM_1c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 95.0,
+   "dd_delta": -11.0
+  },
+  "MES_MOM_1c/fomc_day": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 95.0,
+   "dd_delta": -11.0
+  },
+  "MES_MOM_1c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 5,
+   "total_delta": -498.75,
+   "dd_delta": -62.0
+  },
+  "MNQ_VOL_1c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 2,
+   "total_delta": 99.5,
+   "dd_delta": 0.0
+  },
+  "MNQ_VOL_1c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 1,
+   "total_delta": 35.5,
+   "dd_delta": 0.0
+  },
+  "MNQ_VOL_1c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 8,
+   "total_delta": 106.0,
+   "dd_delta": 13.0
+  },
+  "MNQ_VOL_1c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_VOL_1c/fomc_day": {
+   "passed": false,
+   "beats_years": 11,
+   "total_delta": -72.5,
+   "dd_delta": -17.5
+  },
+  "MNQ_VOL_1c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 7,
+   "total_delta": -290.5,
+   "dd_delta": -39.0
+  },
+  "MNQ_E57_1c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 2,
+   "total_delta": -15.0,
+   "dd_delta": 31.5
+  },
+  "MNQ_E57_1c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 2,
+   "total_delta": 2.0,
+   "dd_delta": 31.5
+  },
+  "MNQ_E57_1c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": -549.5,
+   "dd_delta": 32.5
+  },
+  "MNQ_E57_1c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 38.5,
+   "dd_delta": -5.0
+  },
+  "MNQ_E57_1c/fomc_day": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 138.5,
+   "dd_delta": -5.0
+  },
+  "MNQ_E57_1c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 7,
+   "total_delta": -437.0,
+   "dd_delta": -294.5
+  },
+  "MES_MOM_2c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -125.0,
+   "dd_delta": 85.0
+  },
+  "MES_MOM_2c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -110.0,
+   "dd_delta": 85.0
+  },
+  "MES_MOM_2c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 1,
+   "total_delta": -175.5,
+   "dd_delta": 38.0
+  },
+  "MES_MOM_2c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 190.0,
+   "dd_delta": -22.0
+  },
+  "MES_MOM_2c/fomc_day": {
+   "passed": false,
+   "beats_years": 3,
+   "total_delta": 190.0,
+   "dd_delta": -22.0
+  },
+  "MES_MOM_2c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 6,
+   "total_delta": -901.75,
+   "dd_delta": -124.0
+  },
+  "MNQ_BRK_E_1c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_1c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_1c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 5,
+   "total_delta": -999.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_1c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": 0.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_1c/fomc_day": {
+   "passed": false,
+   "beats_years": 8,
+   "total_delta": 60.0,
+   "dd_delta": 0.0
+  },
+  "MNQ_BRK_E_1c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 6,
+   "total_delta": 55.5,
+   "dd_delta": 11.5
+  },
+  "MNQ_HYB_C_1c/blackout_high_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -7.5,
+   "dd_delta": 7.5
+  },
+  "MNQ_HYB_C_1c/blackout_high_30": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -500.5,
+   "dd_delta": 13.0
+  },
+  "MNQ_HYB_C_1c/blackout_all_15": {
+   "passed": false,
+   "beats_years": 0,
+   "total_delta": -7.5,
+   "dd_delta": 7.5
+  },
+  "MNQ_HYB_C_1c/fomc_afternoon": {
+   "passed": false,
+   "beats_years": 2,
+   "total_delta": -424.5,
+   "dd_delta": -50.5
+  },
+  "MNQ_HYB_C_1c/fomc_day": {
+   "passed": false,
+   "beats_years": 2,
+   "total_delta": -424.5,
+   "dd_delta": -50.5
+  },
+  "MNQ_HYB_C_1c/nfp_cpi_day": {
+   "passed": false,
+   "beats_years": 5,
+   "total_delta": -604.0,
+   "dd_delta": -57.5
+  }
+ }
+}
