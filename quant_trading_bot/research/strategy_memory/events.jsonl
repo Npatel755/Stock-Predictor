@@ -34,3 +34,4 @@
 {"ts": "2026-11-08T09:17:04.666513+00:00", "experiment": "news_round2", "kind": "result", "passers": [], "report": "reports/NEWS_ROUND2.md"}
 {"ts": "2026-11-08T09:26:32.451097+00:00", "experiment": "news_round3", "kind": "result", "passers": ["MNQ/10", "MNQ/11"], "report": "reports/NEWS_ROUND3.md"}
 {"ts": "2026-11-08T09:34:30.269454+00:00", "experiment": "intraday_momentum_round4", "kind": "result", "passers": [], "report": "reports/INTRADAY_MOMENTUM_ROUND4.md"}
+{"ts": "2026-11-08T09:46:23.948973+00:00", "experiment": "calendar_round5", "kind": "result", "passers": ["MNQ_VOL_1c/only_tom", "MNQ_HYB_C_1c/skip_tom"], "report": "reports/CALENDAR_ROUND5.md"}
