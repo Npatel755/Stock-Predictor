@@ -27,8 +27,8 @@ SESSIONS = (
     (570, 720), (585, 840), (780, 945), (180, 540), (180, 945),
     (570, 945), (540, 780), (720, 945)
 )
-# We focus on 1 and 2 contracts: 3 contracts carries excessive DD risk for the $2,000 limit
-MAX_CONTRACTS = (1, 2)
+# Contracts: full range 1, 2, 3 micro contracts
+MAX_CONTRACTS = (1, 2, 3)
 TRAILING_ATR = (0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0)
 
 THRESHOLDS = {

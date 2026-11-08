@@ -1,0 +1,9 @@
+{
+  "run": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\frontier_futures_2k_v1",
+  "configurations_sha256": "bfa0d44482b28ff432b8eb492f16dcbb600d6af2e70434a71fd4fed876ebdb14",
+  "training_seal_sha256": "c301b06d7ce5442f46741af691f4287743557d3d7bfc1b94c9697dec7b6031ba",
+  "models_sha256": "487e7f269ecf6092f506b189ac2f3b3905ef86e497b44a1423b5e7021c7912eb",
+  "reserved_at": "2026-11-08T04:48:39.883923+00:00",
+  "target": 2000,
+  "test_accessed": false
+}

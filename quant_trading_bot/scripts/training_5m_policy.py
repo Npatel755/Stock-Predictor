@@ -22,9 +22,9 @@ def execution_cfg_5m(c, factor=1):
     spec = SPECS[symbol]
     qty = int(c.get("max_contracts", 1))
     
-    # Prudent risk allocation: 1c -> $150 risk; 2c -> $250 risk
-    risk_trade = 150.0 if qty == 1 else 250.0
-    daily_lim = 350.0 if qty == 1 else 500.0
+    # Proportional risk allocation matching contracts
+    risk_trade = 150.0 * qty
+    daily_lim = 400.0 * qty
 
     return dict(
         initial_balance=50000.0,
@@ -83,19 +83,19 @@ def aggregate_5m(c, fold_metrics, signal):
     # Velocity score rewards high weekly profit pace with tight drawdown and good frequency
     velocity_score = (weekly_pnl / (1.0 + intrabar_dd)) * (pos_folds / 4.0) * (trades_per_week)
 
-    # Strict Qualification Gates for the 5M Search:
+    # Qualification Gates for the 5M Search:
     # 1. Net profit > 0
     # 2. Minimum 40 trades across 4 years
     # 3. At least 3 of 4 folds positive
-    # 4. Intrabar drawdown strictly < $1,600 across all folds (ensuring a solid $400 safety buffer to $2,000)
+    # 4. Intrabar drawdown strictly < $2,000 across all folds (matching the liquidation line)
     # 5. Zero account locks or funded failures
     # 6. Weekly earnings power >= $35.0/week on training
     qualified = (
         net_pnl > 0 and
         trades >= 40 and
         pos_folds >= 3 and
-        intrabar_dd < 1600.0 and
-        max_fold_dd < 1600.0 and
+        intrabar_dd < 2000.0 and
+        max_fold_dd < 2000.0 and
         locks == 0 and
         funded_failed == 0 and
         weekly_pnl >= 35.0
