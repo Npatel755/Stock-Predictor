@@ -1,0 +1,92 @@
+{
+ "ag_arch_d_plus": {
+  "net": 20723.25,
+  "trades": 1968,
+  "per": 10.53,
+  "closed_dd": 1654.0,
+  "pos_years": 12,
+  "years": 14,
+  "max_year_share": 0.288,
+  "pre2020": 6625.5,
+  "post2020": 14097.75,
+  "by_sleeve": {
+   "AG_CRABEL15_D_1c": 8105.0,
+   "AG_MES_TRD30_D_1c": 2585.25,
+   "AG_TRD30_D_1c": 3976.0,
+   "AG_TRD60_D_1c": 6057.0
+  }
+ },
+ "overnight_leg": {
+  "all": 11797.45,
+  "nights": 490,
+  "vix_gated": 8308.91,
+  "nights_kept": 422,
+  "skipped_pnl": 3488.54
+ },
+ "book_a_ref": {
+  "closed_net": 28317.45,
+  "marked_dd": 2043.38,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "pos_years": 11,
+  "years": 14,
+  "pre2020": 7842.79
+ },
+ "book_d_plus": {
+  "closed_net": 29032.16,
+  "marked_dd": 2332.57,
+  "when": "2023-04-19 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "pos_years": 12,
+  "years": 14,
+  "pre2020": 9788.05
+ },
+ "book_d_plus_ungated_night": {
+  "closed_net": 32520.7,
+  "marked_dd": 2332.57,
+  "when": "2023-04-19 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "pos_years": 12,
+  "years": 14,
+  "pre2020": 11594.29
+ },
+ "book_a_vix_night": {
+  "closed_net": 24828.91,
+  "marked_dd": 1964.25,
+  "when": "2022-10-07 10:00:00-04:00",
+  "breaches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "pos_years": 10,
+  "years": 14,
+  "pre2020": 6036.54
+ },
+ "antigravity_claims": {
+  "ag_arch_d_plus": {
+   "net": 20292.55,
+   "trades": 1635,
+   "per": 12.41,
+   "closed_dd": 935.65
+  },
+  "book_d_plus": {
+   "closed_net": 29169.65,
+   "marked_dd": 1241.33,
+   "pos_years": 11
+  },
+  "overnight_dip_v2_vix": {
+   "net": 8877,
+   "nights": 420,
+   "marked_dd": 1241
+  }
+ }
+}
