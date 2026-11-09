@@ -1,0 +1,66 @@
+{
+ "v2_base": {
+  "net": 11797.45,
+  "nights": 490,
+  "per": 24.08,
+  "pos_years": 12,
+  "max_year_share": 0.293,
+  "closed_dd": 1646.04,
+  "marked_dd": 1750.52,
+  "worst": -665.6,
+  "hits": 0,
+  "pre2020": 4968.8
+ },
+ "S_stop_1.0sd": {
+  "net": 5457.12,
+  "nights": 490,
+  "per": 11.14,
+  "pos_years": 8,
+  "max_year_share": 0.625,
+  "closed_dd": 911.33,
+  "marked_dd": 1103.53,
+  "worst": -171.38,
+  "hits": 318,
+  "pre2020": 963.53,
+  "pass": false
+ },
+ "S_stop_1.5sd": {
+  "net": 6883.41,
+  "nights": 490,
+  "per": 14.05,
+  "pos_years": 10,
+  "max_year_share": 0.532,
+  "closed_dd": 1087.07,
+  "marked_dd": 1549.41,
+  "worst": -240.6,
+  "hits": 254,
+  "pre2020": 1340.51,
+  "pass": false
+ },
+ "S_stop_2.0sd": {
+  "net": 7519.66,
+  "nights": 490,
+  "per": 15.35,
+  "pos_years": 10,
+  "max_year_share": 0.46,
+  "closed_dd": 1183.06,
+  "marked_dd": 1491.26,
+  "worst": -310.2,
+  "hits": 207,
+  "pre2020": 2330.39,
+  "pass": false
+ },
+ "F1_fill_after_0830": {
+  "net": 1517.95,
+  "nights": 490,
+  "per": 3.1,
+  "pos_years": 7,
+  "max_year_share": 0.866,
+  "closed_dd": 2191.09,
+  "marked_dd": 2361.09,
+  "worst": -665.6,
+  "hits": 263,
+  "pre2020": 1240.8,
+  "pass": false
+ }
+}
