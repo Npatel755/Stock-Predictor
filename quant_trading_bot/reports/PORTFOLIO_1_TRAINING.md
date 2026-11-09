@@ -27,3 +27,10 @@ Protocol: research/portfolio_1/PROTOCOL.md. Script: scripts/portfolio_1_pilot.py
 - Decision rule (DD < $2k and P(breach, 1 yr) ≤ 10 % and corr ≤ 0.3): **fails on DD** → not qualified to run as one $2k-floor account. Diversification is real
   (returns add, risks mostly don't) but the one shared stress episode is exactly where a $2k floor is tested.
 - Not pre-registered, so recorded as ideas only: a $3k floor would hold the combination; or skip the overnight leg while the intraday leg is >$1k down over the trailing 5 days.
+
+## Staging rule (Nick's point, 2026-11-09: the combination can be used once the evaluation is passed and cushion exists)
+The trailing floor stops trailing at the starting balance, so banked profit above it is permanent cushion. From the MC above: run ONE leg alone while
+cushion < ~$2k (either leg ≈ 1 % one-year breach odds at a $2k floor; the overnight leg has the smaller worst case); add the second leg once equity is
+≥ ~$3k above the locked floor, where the combination's worst historical DD ($2,315) and 6–7 % one-year breach odds at $2k fall back to single-leg levels
+(~1.5 % at a $3k cushion by the ex-2020–22 figures; the all-years figure at $3k is not computed here). Pause the second leg after a payout until the
+cushion is rebuilt. Backtest + paper evidence only.
