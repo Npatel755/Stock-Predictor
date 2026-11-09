@@ -13,14 +13,17 @@ def nights(prod):
     et = pd.to_datetime(b.timestamp_utc, utc=True).dt.tz_convert("America/New_York"); b["sod"] = et.dt.hour * 60 + et.dt.minute; b["date"] = et.dt.date; b["dow"] = et.dt.dayofweek
     rth_close = b[b.sod == 959].groupby("date").close.last(); rth_open = b[b.sod == 570].groupby("date").open.first()
     ent = b[b.sod == 1085].groupby("date").open.first()           # 18:05 ET bar open (first completed bar after 18:00 reopen)
-    nxt_open = rth_open.shift(-1); nxt_c0935 = b[b.sod == 935 + 0].groupby("date").close.last().shift(-1)  # placeholder, replaced below
-    c0935 = b[b.sod == 575].groupby("date").close.last().shift(-1)  # 09:35 ET close next day
+    ro_dates = np.array(rth_open.index); pos = np.searchsorted(ro_dates, np.array(ent.index), side="right"); valid = pos < len(ro_dates)
+    nxt_open = pd.Series(rth_open.values[pos[valid]], index=ent.index[valid])            # next RTH open after the entry date (Sunday night -> Monday open)
+    c0935_all = b[b.sod == 575].groupby("date").close.last().reindex(ro_dates)
+    c0935 = pd.Series(c0935_all.values[pos[valid]], index=ent.index[valid])
     night = pd.DataFrame(dict(ent=ent, exit_open=nxt_open, exit_0935=c0935, rth_close=rth_close, rth_open=rth_open, dow=b.groupby("date").dow.first())).dropna(subset=["ent", "exit_open"])
     # overnight low for the stop variant: min low between 18:05 and 09:30 next day
-    b["night_key"] = np.where(b.sod >= 1080, b.date, pd.Series(b.date).shift(1).where(False, b.date))  # simple: minutes >= 18:00 belong to that date's night; early minutes (< 9:30) belong to previous date
-    prev_date = pd.Series(b.date).shift(1); key = pd.Series(b.date.values, index=b.index).where(b.sod >= 1080, np.nan)
     dates_sorted = sorted(set(b.date)); d2prev = {d: p for p, d in zip(dates_sorted[:-1], dates_sorted[1:])}
-    key = key.where(key.notna(), pd.Series(b.date).map(d2prev).where(b.sod < 570, np.nan)); b["nk"] = key
+    nk = pd.Series(pd.NaT, index=b.index, dtype=object)
+    nk[b.sod.values >= 1080] = b.date[b.sod.values >= 1080].values
+    early = b.sod.values < 570; nk[early] = pd.Series(b.date[early]).map(d2prev).values
+    b["nk"] = nk.where(nk.notna(), None)
     low_night = b.dropna(subset=["nk"]).groupby("nk").low.min(); night["low_night"] = low_night.reindex(night.index)
     night["idx_dates"] = night.index; night["year"] = pd.to_datetime(pd.Series(night.index, index=night.index)).dt.year
     night["rth_ret"] = night.rth_close / night.rth_open - 1; night["reopen_gap"] = night.ent / night.rth_close - 1
@@ -43,6 +46,8 @@ N = {p: nights(p) for p in ("MNQ", "MES")}
 def filtered(name, prod, mask, side=1):
     n = N[prod]; p = pnl(n, prod, side)[mask]; yrs = n.year[mask]
     cnt = yrs.groupby(yrs).size(); plc = []
+    if len(p) == 0:
+        out[name] = {"net": 0.0, "nights": 0, "pass": False}; print(name, "no nights", flush=True); return
     for _ in range(200):
         pick = np.concatenate([rng.choice(n.index[n.year == y], size=min(int(c), int((n.year == y).sum())), replace=False) for y, c in cnt.items()])
         plc.append(float(pnl(n, prod, side).loc[pick].sum()))
