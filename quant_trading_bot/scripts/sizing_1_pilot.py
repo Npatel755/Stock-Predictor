@@ -1,5 +1,6 @@
 """sizing_1 (research/sizing_1/PROTOCOL.md): $150 stop-risk budget (V0, as deployed) vs always-one-contract (V1) for the three filtered
 intraday paper candidates. Training 2010-2023 only; engine defaults; no 2024-26 data loaded."""
+import os
 import json, sys
 from pathlib import Path
 import numpy as np, pandas as pd
@@ -13,10 +14,10 @@ RATIO = (cboe("VIX") / cboe("VIX3M")).dropna(); rdates = np.array(sorted(RATIO.i
 def backw_mask(bars):
     days = bars.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy(); pos = rdates.searchsorted(days) - 1
     return np.where(pos >= 0, rvals[np.clip(pos, 0, len(rvals) - 1)], False)
-eng = ep.engine(); _orig_cfg = eng["execution_cfg"]; UNCAP = {"on": False}
+eng = ep.engine(); _orig_cfg = eng["execution_cfg"]; UNCAP = {"on": False}; BUDGET = float(os.environ.get("SIZING_BUDGET", "1e9")); OUT = os.environ.get("SIZING_OUT", "reports/SIZING_1_TRAINING.json")
 def _cfg(c):
     d = _orig_cfg(c)
-    if UNCAP["on"]: d.update(risk_per_trade=1e9, max_open_risk=1e9)
+    if UNCAP["on"]: d.update(risk_per_trade=BUDGET, max_open_risk=BUDGET)
     return d
 eng["execution_cfg"] = _cfg
 BARS = {}
@@ -80,4 +81,4 @@ for key in ("ag_quad_v2", "ag_arch_c_v2", "ag_all_weather_v2"):
     s1["pass"] = bool(s1["net"] > s0["net"] and s1["closed_dd"] <= 2000 and s1["pos_years"] >= s0["pos_years"] and added_info["net"] > 0 and added_info["net"] >= added_info["placebo_trades_p50"])
     out[key] = dict(V0_budget150=s0, V1_one_contract=s1, added=added_info, stop_risk_buckets=buckets)
     print(key, "\n V0", {k: v for k, v in s0.items() if k != "by_year"}, "\n V1", {k: v for k, v in s1.items() if k != "by_year"}, "\n added", added_info, "\n buckets", buckets, flush=True)
-json.dump(out, open(ROOT / "reports/SIZING_1_TRAINING.json", "w"), indent=1, default=str); print("DONE")
+json.dump(out, open(ROOT / OUT, "w"), indent=1, default=str); print("DONE")
