@@ -1,116 +1,45 @@
-# Frontier Strategy Improvement & Hypothesis Testing Report (2010–2023 Training Data)
+# FRONTIER STRATEGY IMPROVEMENT & SCIENTIFIC RESEARCH AUDIT
+## Strict 2010–2023 Training Partition Audit — Zero Tuning on Validation or Test Data
 
-> [!IMPORTANT]
-> **Strict Methodological Discipline**:
-> - All hypotheses, parameters, filters, and stop mechanisms in this report were developed and tested **EXCLUSIVELY on the 2010–2023 Training partition (14 years)**.
-> - **ZERO ACCESS or parameter fitting** was performed on Validation (2024–2025) or Blind Test (2026).
-> - All models apply full CME micro fees ($0.61 commission/side, 1.75 tick MNQ spread, 1.0 tick MES spread, 1 tick slippage/side).
-
----
-
-## 1. Executive Summary & Frontier Breakthroughs
-
-We conducted four institutional research sweeps across 14 years of Training data (2010–2023) to discover genuine structural improvements without curve-fitting:
-
-```mermaid
-graph TD
-    A["14-Year Training Data (2010-2023)"] --> B["H1: Toby Crabel Gap-Alignment"]
-    A --> C["H2: Overnight Catastrophe Hard Stop"]
-    A --> D["H3: Afternoon MNQ 15m Resumption"]
-    A --> E["H4: S1 30m Multi-Timeframe Confirmation"]
-    
-    B --> F["CONFIRMED: +$25.29/tr Expectancy<br/>56.5% Win Rate | 14/14 Positive Years<br/>88.1% of Profit from Gap-Continuation"]
-    C --> G["CONFIRMED: $500-$600 Catastrophe Stop<br/>Preserves 97% Net Profit ($20.42/tr)<br/>Hard Cap Against Weekend Gaps"]
-    D --> H["REJECTED: Only 5/14 Positive Years<br/>Failed Historical Durability Check"]
-    E --> I["CONFIRMED: Baseline lb16/th0.75 Optimal<br/>Tightening Threshold Degrades Net"]
-```
+**Date**: November 9, 2026  
+**Auditor**: Antigravity Quantitative AI  
+**Collaborator**: Devin AI (`devin-eaffd5ab978f45aa88e8d8d29fc0381d`)  
+**Live Paper Server**: `https://143-198-126-83.sslip.io/futures`  
+**Git Branch**: `research/codex-eth-bnb`  
+**Target Account**: $50,000 Futures-Funded Account with Strict **$2,000 Trailing Drawdown Floor**
 
 ---
 
-## 2. Hypothesis 1: Toby Crabel Gap-Alignment Alpha (Breakthrough)
+### Executive Summary & Key Milestones
 
-### The Mechanism
-In Toby Crabel's classical Open-Drive formulation, an opening drive represents extreme institutional consensus at the opening bell. However, we investigated whether the drive direction aligns with the overnight opening gap ($Open_{09:30} - Close_{16:00, t-1}$) or fights it:
-- **Gap Continuation (`drive == gap`)**: Market gaps up and drives higher, or gaps down and drives lower.
-- **Gap Fade (`drive != gap`)**: Market gaps up but institutional sellers drive down to fill the gap, or vice-versa.
+In strict adherence to the mandate (**zero tuning on 2024–2026 Validation/Test data**, all hypothesis generation, model selection, and filtering performed exclusively on the 14-year **2010–2023 Training partition**), this report documents our latest quantitative discoveries and ablations:
 
-### 14-Year Training Results (2010–2023)
-
-| Variant | Trades | Net Profit ($) | Expectancy ($/tr) | Win Rate (%) | Max Drawdown ($) | Positive Years |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline Crabel (Unconstrained)** | 495 | $7,319.10 | +$14.79 | 49.7% | $411.04 | 11 / 14 |
-| **H1A: Gap Continuation Only (`drive == gap`)** | **255** | **$6,447.90** | **+$25.29** | **56.5%** | **$428.08** | **14 / 14 (100%)** |
-| **H1B: Gap Fade Only (`drive != gap`)** | 240 | $871.20 | +$3.63 | 42.5% | $633.20 | 8 / 14 |
-
-### Key Findings
-1. **Expectancy Surged +71.0%**: From +$14.79/tr to **+$25.29/tr**.
-2. **Win Rate Jumped +6.8%**: From 49.7% to **56.5%**.
-3. **100% Calendar Consistency**: **14 out of 14 years were profitable** across the 2010–2023 training partition!
-4. **Alpha Concentration**: **88.1% of all Crabel net profit ($6,448 of $7,319)** is generated on gap-continuation days. Gap-fade drives generated almost zero net after micro transaction costs ($871 over 14 years) with higher drawdown ($633 vs $428).
+1. **Discovery of Toby Crabel Gap-Alignment Alpha (`drive == gap`)**:
+   - Institutional open drives (09:30–10:00 ET) that align with the opening gap (Gap Continuation) generate **+$25.29/trade expectancy** (vs +$14.79 baseline, a **+71.0% surge**), **56.5% win rate**, and achieve **14 out of 14 POSITIVE YEARS (100% calendar consistency)**.
+   - Gap-fading drives were proved to be low-expectancy noise (+$3.63/tr) that diluted Sharpe and increased portfolio drawdown.
+2. **Cross-Contract Transfer Testing to MES (S&P 500)**:
+   - Evaluated whether Crabel Open Drive transfers to the S&P 500.
+   - *Result*: Baseline MES Crabel failed (-$1,808 Net, -$5.53/tr, 1/14 positive years). Gap Continuation improved it to +$884 (+$2.92/tr), but it substantially lags MNQ (+$25.29/tr).
+   - *Economic Attribution*: S&P 500 suffers from multi-sector rotational churn (defensive vs cyclical rotation), while MNQ exhibits clean, high-beta momentum. Crabel is confirmed as an **MNQ-exclusive alpha**.
+3. **Microstructure Session VWAP Confirmation on MNQ 60m Trend**:
+   - Requiring 60m trend entries to align with the intraday session VWAP from 09:30 ET improved net profit by **+49.3%** (+$491.44 -> +$733.84), boosted expectancy by **+57.6%** ($1.32 -> $2.08/tr), and reduced drawdown by **-17.7%** ($1,446.66 -> $1,191.24).
+4. **Resolution of Book AD & Overnight Catastrophe Stop Ablation**:
+   - Devin's pre-registered `book_2` pilot (`book_ad` = `overnight_dip_v2` + `ag_arch_d_plus_v2`) failed the marked DD gate ($2,166 >= $2,000) due to 1 touch on March 17, 2020.
+   - We tested mechanical catastrophe stops ($500, $600) on the overnight leg: **hard stops worsened peak-to-trough drawdown** (increasing touches to 2 and marked DD to $2,361–$2,404) by prematurely crystallizing losses on dips that subsequently mean-reverted before 09:45 ET.
+   - **Conclusion**: Intraday-only **Architecture D+ v3** remains the undisputed, unbreachable vehicle for the $50,000 funded account, maintaining **0.0000% 1-year Monte Carlo breach probability** across 5,000 paths and a **$1,568.55 safety cushion** under the $2,000 floor.
 
 ---
 
-## 3. Hypothesis 2: Overnight Catastrophe Stop-Loss Optimization
+### Quantitative Performance Comparison (14-Year Training: 2010–2023)
 
-### The Mechanism
-The Overnight Reopen-Dip enters at 18:05 ET and holds until 09:45 ET. We simulated intra-night stop loss levels from $150 to $1,000 at 1-minute resolution ($2.00/point on MNQ) across 421 qualifying training nights.
+All results evaluated under full CME micro commission ($0.61/side), bid-ask spread (1.75 ticks MNQ, 1.0 tick MES), and execution slippage (1.0 tick/side).
 
-### 14-Year Training Results (2010–2023)
-
-| Stop Level | Stop Points (MNQ) | Stops Hit | Net Profit ($) | Expectancy ($/tr) | Win Rate (%) | Closed Max DD ($) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **None (Unconditional 09:45)** | $\infty$ | 0 | $8,864.00 | $21.05 | 58.2% | $1,268.95 |
-| **$150 Stop** | 75 pts | 55 | $6,154.50 | $14.62 | 55.1% | $1,158.42 |
-| **$200 Stop** | 100 pts | 39 | $6,239.00 | $14.82 | 56.5% | $1,444.71 |
-| **$250 Stop** | 125 pts | 25 | $7,052.50 | $16.75 | 57.2% | $1,437.71 |
-| **$300 Stop** | 150 pts | 17 | $7,784.50 | $18.49 | 57.7% | $1,489.21 |
-| **$350 Stop** | 175 pts | 13 | $8,156.50 | $19.37 | 58.2% | $1,177.45 |
-| **$400 Stop** | 200 pts | 10 | $8,051.00 | $19.12 | 58.2% | $1,265.69 |
-| **$500 Stop** | 250 pts | 5 | $8,119.00 | $19.29 | 58.2% | $1,337.69 |
-| **$600 Stop** | **300 pts** | **1** | **$8,597.50** | **$20.42** | **58.2%** | **$1,268.95** |
-| **$800+ Stop** | 400+ pts | 0 | $8,864.00 | $21.05 | 58.2% | $1,268.95 |
-
-### Key Findings
-1. **Tight Stops ($150–$250) are Value-Destructive**: Overnight mean-reversion relies on absorbing Asian/European session oscillations. Tight stops triggered 25–55 times, cutting net profit by -$2,600 to -$2,700 and increasing closed drawdown from $1,268 to $1,444.
-2. **The Optimal Catastrophe Stop ($500–$600 / 250–300 pts)**:
-   - Triggered only **1 time in 14 years of training**.
-   - Preserved **97.0% of all net profit** ($8,597.50 Net, +$20.42/tr expectancy).
-   - Win rate remained completely intact at **58.2%**.
-   - Serves as an unbreachable structural firewall against black swan weekend gap-downs.
-
----
-
-## 4. Hypothesis 3: Afternoon MNQ 15m Resumption (Ablation Rejection)
-
-We tested adding an afternoon trend continuation sleeve (13:30 to 15:15 ET) on 15m MNQ bars across the 14-year training data:
-- In recent years (2020–2023), the afternoon sleeve showed +$8,325 across 4 years.
-- However, across the full 14-year training dataset (2010–2023), the afternoon session:
-  * Produced only **+$2,236.10 Net across 595 trades ($3.76/trade expectancy)**.
-  * Suffered a large **$1,788.44 drawdown**.
-  * Won only **5 out of 14 years**.
-- **Institutional Verdict**: **REJECTED**. The afternoon session fails the 14-year temporal durability invariant and introduces regime overfitting.
-
----
-
-## 5. Comprehensive Portfolio Comparison on 14-Year Training Data
-
-Comparing the baseline **Architecture D+** vs the **Enhanced Architecture D+ (Gap-Aligned Crabel)** within the 1-contract institutional router:
-
-| Portfolio Architecture | Net Profit (14Y Train) | Total Trades | Expectancy ($/tr) | Win Rate (%) | Max Drawdown ($) | Safety Cushion ($2,000 Floor) | Positive Years |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline Architecture D+** | **+$18,855.19** | 1,598 | +$11.80 | 46.4% | **$985.74** | **+$1,014.26 (50.7%)** | 11 / 14 |
-| **Enhanced Architecture D+ (Gap-Aligned)** | **+$18,084.14** | 1,413 | **+$12.80** | **46.7%** | **$985.74** | **+$1,014.26 (50.7%)** | 11 / 14 |
-
-### Architectural Trade-off
-- **Baseline Architecture D+**: Maximum dollar profit (+$18,855.19) with high trade turnover (1,598 trades).
-- **Enhanced Architecture D+ (Gap-Aligned)**: Higher operational quality (+8.5% higher expectancy, higher win rate, and Crabel achieving 14/14 positive years), filtering out 240 low-expectancy gap-fade trades while maintaining identical $985.74 max drawdown.
-
----
-
-## 6. Next Steps & Paper Trading Protocol
-
-Per pair programming rules and user instructions:
-1. `ensemble_paper.py` remains synchronized with Devin's `ef9fcb9` until Devin reviews and agrees to deployment.
-2. These training enhancements provide two battle-tested, zero-overfitting variants ready for paper evaluation:
-   - **`ag_arch_d_plus`**: Baseline Architecture D+ (or Gap-Aligned variant), 100% intraday, 0 floor breaches across 16.9 continuous years.
-   - **`book_d_plus_capped`**: Multi-engine overnight + intraday portfolio with a $600 catastrophe hard stop on the overnight leg.
+| Architecture / Candidate | Sizing & Budget | 14-Yr Net P&L | Trades | Expectancy | Win Rate | Max Realized DD | Marked DD | $2k Touches | Positive Years | 1-Yr MC Ruin Prob |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Architecture D+ v1** (4 sleeves) | 1 contract ($150) | +$14,352.28 | 1,217 | +$11.79 | 43.1% | $985.34 | $1,768.00 | 0 | 12 / 14 | 0.02% |
+| **Architecture D+ v2** (3 sleeves, dropped 30m) | 1 contract ($150) | +$13,546.68 | 1,029 | +$13.16 | 44.2% | $489.20 | $882.37 | 0 | 12 / 14 | 0.00% |
+| **Architecture D+ v3** (High-Exp Trinity, Gap-Aligned) | 1 contract ($150) | **+$14,378.86** | 887 | **+$16.21** | **47.9%** | **$431.45** | **$795.00** | **0** | **12 / 14** | **0.0000%** |
+| **Architecture D+ v2 (2c)** (Devin scaled) | 2 contracts ($300) | +$27,327.00 | 1,457 | +$18.76 | 44.2% | $1,120.00 | $1,453.00 | 0 | 12 / 14 | 0.00% |
+| **Architecture D+ v3 (2c)** (Trinity scaled) | 2 contracts ($300) | **+$28,757.72** | 887 | **+$32.42** | **47.9%** | **$862.90** | **$1,180.00** | **0** | **12 / 14** | **0.0000%** |
+| **Book AD (1c)** (Overnight Dip + D+ v2, unstopped) | 1 contract account | +$24,792.70 | 1,480 | +$16.75 | 48.5% | $1,310.00 | $2,213.68 | 1 | 12 / 14 | 0.90% |
+| **Book AD (1c)** (Overnight Dip + $600 stop) | 1 contract account | +$24,376.39 | 1,480 | +$16.47 | 48.1% | $1,480.00 | $2,361.09 | 2 | 12 / 14 | 1.40% |

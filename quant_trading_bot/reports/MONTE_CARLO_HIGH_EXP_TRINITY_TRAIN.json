@@ -1,0 +1,12 @@
+{
+  "num_paths": 5000,
+  "trades_per_year": 63,
+  "breach_rate_pct": 0.0,
+  "median_net": 869.51,
+  "p50_dd": 294.6,
+  "p90_dd": 441.83,
+  "p95_dd": 506.8,
+  "p99_dd": 655.22,
+  "max_mc_dd": 1011.11,
+  "cushion_p95": 1493.2
+}
