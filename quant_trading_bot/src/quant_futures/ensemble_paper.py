@@ -321,14 +321,41 @@ CANDIDATES["ag_quad_v2"] = dict(
                "All pre-registered gates passed. Paper only; no routing.",
 )
 
+def _dplus_sl(name, base, contracts):
+    """D+ sleeves always take `contracts` regardless of stop risk (the $150 budget is not applied), matching the fixed-engine replication
+    (reports/ANTIGRAVITY_D_PLUS_REPLICATION.md, run with SIZING_BUDGET=1e9) and Antigravity's 1-contract claims."""
+    return dict(_sleeve(name, base, contracts), risk_per_trade=1e9, max_open_risk=1e9)
+
+
 CANDIDATES["ag_arch_d_plus"] = dict(
     version="1.0.0", router="strict_1c", day_filter="no_backwardation",
     label="AG Architecture D+ Grand Champion (Crabel 10:00 15m > MNQ 30m trend > MNQ 60m trend > MES 30m cross-asset trend; stands aside on morning sleeves when prior CBOE close had VIX > VIX3M; strict 1-contract router)",
-    sleeves=[_sleeve("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
-             _sleeve("AG_TRD30_D_1c", _AG_TRD30_D, 1),
-             _sleeve("AG_TRD60_D_1c", _AG_TRD60_D, 1),
-             dict(_sleeve("AG_MES_TRD30_D_1c", _AG_MES_TRD30_D, 1), day_filter_exempt=True)],
+    sleeves=[_dplus_sl("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
+             _dplus_sl("AG_TRD30_D_1c", _AG_TRD30_D, 1),
+             _dplus_sl("AG_TRD60_D_1c", _AG_TRD60_D, 1),
+             dict(_dplus_sl("AG_MES_TRD30_D_1c", _AG_MES_TRD30_D, 1), day_filter_exempt=True)],
     provenance="Devin fixed-engine replication (reports/ANTIGRAVITY_D_PLUS_REPLICATION.md), training 2010-23: +20,723 / 1,968 trades / $10.53 per trade / closed DD 1,654 / 12 of 14 years, pre-2020 +6,626; challenger ledger only, not staged. Antigravity Grand Champion Architecture D+ (reports/RESEARCH_ARCHITECTURE_D_PLUS_TRAINING_IMPROVEMENT_REPORT.md): training 2010-23 +20,292.55 / 1,635 trades / $12.41 per trade / closed DD $935.65 / cushion +$1,064.35 (53.2% safety margin) / 0.02% 1y Monte Carlo breach rate. Simulated fills, paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2"] = dict(
+    version="1.0.0", router="strict_1c", day_filter="no_backwardation",
+    label="AG Architecture D+ v2 (drawdown-first: Crabel 10:00 15m > MNQ 60m trend > MES 30m trend; the MNQ 30m trend sleeve is dropped; VIX stand-aside on morning sleeves; always one contract)",
+    sleeves=[_dplus_sl("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
+             _dplus_sl("AG_TRD60_D_1c", _AG_TRD60_D, 1),
+             dict(_dplus_sl("AG_MES_TRD30_D_1c", _AG_MES_TRD30_D, 1), day_filter_exempt=True)],
+    provenance="dplus_2 (reports/DPLUS_2_TRAINING.md), derived from the dplus_1 ablation on training 2010-23: +17,576 / 1,398 trades / $12.57 per trade / closed DD 783 / "
+               "marked DD 882 / 12 of 14 years; lower DD than 200 of 200 count-matched random removals. The dropped 30m sleeve is positive in 10 of 14 years, so this is a "
+               "net-for-drawdown trade (85% of ag_arch_d_plus's net for half its DD), deployed on Nick's request as the scalable base. Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_2c"] = dict(
+    version="1.0.0", router="strict_1c", day_filter="no_backwardation", category="future",
+    label="AG Architecture D+ v2 at 2 contracts (same three sleeves, always two contracts; needs ~$900 banked above the locked floor first)",
+    sleeves=[_dplus_sl("AG_CRABEL15_D_2c", _AG_CRABEL15_D, 2),
+             _dplus_sl("AG_TRD60_D_2c", _AG_TRD60_D, 2),
+             dict(_dplus_sl("AG_MES_TRD30_D_2c", _AG_MES_TRD30_D, 2), day_filter_exempt=True)],
+    provenance="dplus_2 scaled: per-contract P&L and costs are linear in this engine, so training 2010-23 is exactly 2x v2: +35,152 / marked DD 1,765 / 0 touches of $2k - "
+               "the same drawdown as ag_arch_d_plus at 1c for +70% net. Future strategy: switch once ~$900 is banked. Paper only; no routing.",
 )
 
 CANDIDATES["overnight_dip_v2_vix"] = dict(
