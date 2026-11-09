@@ -239,6 +239,15 @@ CANDIDATES["ag_all_weather_v2"] = dict(
                "Missed the positive-years gate by one; deployed at Devin's discretion beside ag_all_weather. Paper only; no routing.",
 )
 
+CANDIDATES["ag_quad_v2"] = dict(
+    version="2.0.0", router="strict_1c", day_filter="no_backwardation",
+    label="AG Quad v2 (same four sleeves; the two MNQ morning sleeves stand aside on days whose prior CBOE close had VIX > VIX3M)",
+    sleeves=[_sleeve("AG_MORN30_1c", _AG_MORN30, 1), _sleeve("AG_TRD60Q_1c", _AG_TRD60Q, 1), dict(_sleeve("AG_TRD30PM_1c", _AG_TRD30PM, 1), day_filter_exempt=True),
+             dict(_sleeve("AG_MES_TRD30_1c", _AG_MES_TRD30, 1), day_filter_exempt=True)],
+    provenance="quad_2 V1 (reports/QUAD_2_TRAINING.md): training 2010-23 +17,707 / 2,274 trades / 11 of 14 years / DD 2,048 vs +16,811 unfiltered; 35 removed days lost -1,374. "
+               "All pre-registered gates passed. Paper only; no routing.",
+)
+
 def _load(name):
     path = SCRIPTS / f"{name}.py"
     if str(SCRIPTS) not in sys.path:
@@ -444,9 +453,9 @@ def vix_backwardation_days():
     ser = (joined.vix > joined.vix3m) if joined is not None and len(joined) else pd.Series(dtype=bool)
     _VIX_CACHE["series"] = ser; return ser
 
-def day_filter_mask(spec, b):
+def day_filter_mask(spec, b, sleeve=None):
     """True on bars whose ET trading date follows a CBOE close with VIX > VIX3M (prior-close state, point-in-time)."""
-    if spec.get("day_filter") != "no_backwardation": return np.zeros(len(b), bool)
+    if spec.get("day_filter") != "no_backwardation" or (sleeve is not None and sleeve.get("day_filter_exempt")): return np.zeros(len(b), bool)
     back = vix_backwardation_days()
     if len(back) == 0: return np.zeros(len(b), bool)
     cboe = back.index.to_numpy()
@@ -467,10 +476,10 @@ def run_routed(spec, bars, start, max_iter=12):
             b = bars[bars_key(sl)]
             blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
             if spec.get("day_filter"):
-                dfm = day_filter_mask(spec, b); blocked = dfm if blocked is None else (blocked | dfm)
+                dfm = day_filter_mask(spec, b, sl); blocked = dfm if blocked is None else (blocked | dfm)
             runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
         return runs
-    masks = {sl["name"]: day_filter_mask(spec, bars[bars_key(sl)]) for sl in spec["sleeves"]}
+    masks = {sl["name"]: day_filter_mask(spec, bars[bars_key(sl)], sl) for sl in spec["sleeves"]}
     prio = {sl["name"]: i for i, sl in enumerate(spec["sleeves"])}
     for _ in range(max_iter):
         runs = {sl["name"]: run_sleeve(sl, bars[bars_key(sl)], start, masks[sl["name"]]) for sl in spec["sleeves"]}
