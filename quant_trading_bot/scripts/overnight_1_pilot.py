@@ -26,7 +26,7 @@ def nights(prod):
     b["nk"] = nk.where(nk.notna(), None)
     low_night = b.dropna(subset=["nk"]).groupby("nk").low.min(); night["low_night"] = low_night.reindex(night.index)
     night["idx_dates"] = night.index; night["year"] = pd.to_datetime(pd.Series(night.index, index=night.index)).dt.year
-    night["rth_ret"] = night.rth_close / night.rth_open - 1; night["reopen_gap"] = night.ent / night.rth_close - 1
+    night["rth_ret"] = night.rth_close / night.rth_open - 1; night["reopen_gap"] = night.ent / night.rth_close.ffill() - 1   # Sunday night: gap vs Friday close
     night["ratio_prev"] = pd.Series(night.index, index=night.index).map(ratio)   # prior close (same date) VIX/VIX3M known at 18:00
     return night
 def pnl(night, prod, side=1, exit_col="exit_open", stop=False):
