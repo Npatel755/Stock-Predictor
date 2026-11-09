@@ -1,0 +1,293 @@
+{
+ "S_A": {
+  "A": {
+   "n_starts": 157,
+   "survival": 0.955,
+   "median_net_12m": 1026.3,
+   "p10_net_12m": -121.38,
+   "locked_share": 0.331,
+   "median_months_to_lock": 5.2,
+   "breach_starts": [
+    "2019-04-01",
+    "2019-05-01",
+    "2019-06-01",
+    "2019-07-01",
+    "2019-08-01",
+    "2019-09-01",
+    "2019-10-01"
+   ],
+   "full_path_2010_23": {
+    "closed": 28317.45,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 1071.34,
+   "p10_net_12m": -109.55,
+   "locked_share": 0.331,
+   "median_months_to_lock": 5.2,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 28317.45,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.057,
+   "B": 0.041
+  }
+ },
+ "S_1": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 429.79,
+   "p10_net_12m": -44.14,
+   "locked_share": 0.146,
+   "median_months_to_lock": 8.2,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 11797.45,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 429.79,
+   "p10_net_12m": -44.14,
+   "locked_share": 0.146,
+   "median_months_to_lock": 8.2,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 11797.45,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.028,
+   "B": 0.011
+  }
+ },
+ "S_2": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 424.5,
+   "p10_net_12m": -307.5,
+   "locked_share": 0.229,
+   "median_months_to_lock": 6.3,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 16520.0,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 424.5,
+   "p10_net_12m": -307.5,
+   "locked_share": 0.229,
+   "median_months_to_lock": 6.3,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 16520.0,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.03,
+   "B": 0.021
+  }
+ },
+ "S_3": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "median_months_to_lock": 7.0,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 17576.0,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "median_months_to_lock": 7.0,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 17576.0,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.001,
+   "B": 0.0
+  }
+ },
+ "P_L1": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 429.79,
+   "p10_net_12m": -44.14,
+   "locked_share": 0.146,
+   "median_months_to_lock": 8.2,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 63810.59,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 429.79,
+   "p10_net_12m": -44.14,
+   "locked_share": 0.146,
+   "median_months_to_lock": 8.2,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 63810.59,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.03,
+   "B": 0.012
+  }
+ },
+ "P_L2": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 424.5,
+   "p10_net_12m": -307.5,
+   "locked_share": 0.229,
+   "median_months_to_lock": 6.3,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 61543.33,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 424.5,
+   "p10_net_12m": -307.5,
+   "locked_share": 0.229,
+   "median_months_to_lock": 6.3,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 61543.33,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.042,
+   "B": 0.022
+  }
+ },
+ "P_L3": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "median_months_to_lock": 7.0,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 63023.73,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "median_months_to_lock": 7.0,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 63023.73,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.009,
+   "B": 0.003
+  }
+ },
+ "P_BookA": {
+  "A": {
+   "n_starts": 157,
+   "survival": 0.949,
+   "median_net_12m": 1001.89,
+   "p10_net_12m": -124.61,
+   "locked_share": 0.331,
+   "median_months_to_lock": 5.2,
+   "breach_starts": [
+    "2019-04-01",
+    "2019-05-01",
+    "2019-06-01",
+    "2019-07-01",
+    "2019-08-01",
+    "2019-09-01",
+    "2019-10-01",
+    "2022-06-01"
+   ],
+   "full_path_2010_23": {
+    "closed": 66598.69,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 0.994,
+   "median_net_12m": 1064.71,
+   "p10_net_12m": -110.98,
+   "locked_share": 0.331,
+   "median_months_to_lock": 5.2,
+   "breach_starts": [
+    "2022-06-01"
+   ],
+   "full_path_2010_23": {
+    "closed": 66598.69,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.076,
+   "B": 0.051
+  }
+ }
+}
