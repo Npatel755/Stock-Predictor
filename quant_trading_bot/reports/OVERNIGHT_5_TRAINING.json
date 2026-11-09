@@ -1,0 +1,110 @@
+{
+ "champion": {
+  "net": 11797.45,
+  "nights": 490,
+  "per_night": 24.08,
+  "pos_years": 12,
+  "max_dd": 1646.04,
+  "pre2020": 4968.8,
+  "t": 3.48
+ },
+ "R1_skip_release": {
+  "net": 10838.63,
+  "nights": 446,
+  "per_night": 24.3,
+  "pos_years": 12,
+  "max_dd": 1397.83,
+  "pre2020": 3915.84,
+  "t": 3.33,
+  "removed": {
+   "net": 958.82,
+   "nights": 44,
+   "per_night": 21.79,
+   "pos_years": 8,
+   "max_dd": 601.69,
+   "pre2020": 1052.96,
+   "t": 0.99
+  },
+  "pass": false
+ },
+ "R2_release_only": {
+  "net": 958.82,
+  "nights": 44,
+  "per_night": 21.79,
+  "pos_years": 8,
+  "max_dd": 601.69,
+  "pre2020": 1052.96,
+  "t": 0.99,
+  "removed": {
+   "net": 10838.63,
+   "nights": 446,
+   "per_night": 24.3,
+   "pos_years": 12,
+   "max_dd": 1397.83,
+   "pre2020": 3915.84,
+   "t": 3.33
+  },
+  "pass": false
+ },
+ "F1_skip_fomc": {
+  "net": 9147.06,
+  "nights": 473,
+  "per_night": 19.34,
+  "pos_years": 11,
+  "max_dd": 2358.09,
+  "pre2020": 4742.05,
+  "t": 2.88,
+  "removed": {
+   "net": 2650.38,
+   "nights": 17,
+   "per_night": 155.9,
+   "pos_years": 7,
+   "max_dd": 16.09,
+   "pre2020": 226.74,
+   "t": 2.46
+  },
+  "pass": false
+ },
+ "F2_fomc_only": {
+  "net": 2650.38,
+  "nights": 17,
+  "per_night": 155.9,
+  "pos_years": 7,
+  "max_dd": 16.09,
+  "pre2020": 226.74,
+  "t": 2.46,
+  "removed": {
+   "net": 9147.06,
+   "nights": 473,
+   "per_night": 19.34,
+   "pos_years": 11,
+   "max_dd": 2358.09,
+   "pre2020": 4742.05,
+   "t": 2.88
+  },
+  "pass": false
+ },
+ "R3_skip_release_and_fomc": {
+  "net": 8188.24,
+  "nights": 429,
+  "per_night": 19.09,
+  "pos_years": 12,
+  "max_dd": 1756.4,
+  "pre2020": 3689.1,
+  "t": 2.7,
+  "removed": {
+   "net": 3609.21,
+   "nights": 61,
+   "per_night": 59.17,
+   "pos_years": 11,
+   "max_dd": 617.79,
+   "pre2020": 1279.7,
+   "t": 2.39
+  },
+  "pass": false
+ },
+ "attribution": {
+  "release_nights_0830_0945_ticks": 30.48,
+  "other_nights_0830_0945_ticks": 6.94
+ }
+}

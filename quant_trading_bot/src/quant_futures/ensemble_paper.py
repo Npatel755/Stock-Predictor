@@ -78,6 +78,12 @@ _AG_MORN30 = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75,
                   session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
                   entry_start=570, entry_end=690, max_gap_minutes=60)   # Antigravity "Sleeve 1": EMA 8/16 over ATR14, decisions 09:45-12:00 ET
 _AG_TRD60Q = dict(_AG_TRD60, max_gap_minutes=120)
+_AG_CRABEL15 = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.0, stop_atr=2.0, target_r=4.0, hold_bars=12, trailing_atr=0.0,
+                    session_start=600, session_end=945, bar_minutes=15, signal="crabel_open_drive", tail=0.2, entry_start=585, entry_end=585, max_gap_minutes=20)
+_AG_TRD30C = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75, stop_atr=1.5, target_r=3.5, hold_bars=8, trailing_atr=0.0,
+                  session_start=585, session_end=720, bar_minutes=30, signal="ewma_trend", entry_start=555, entry_end=690, max_gap_minutes=60)
+_AG_TRD60C = dict(instrument="MNQ", family="trend", lookback=12, threshold=0.75, stop_atr=1.25, target_r=4.0, hold_bars=8, trailing_atr=0.0,
+                  session_start=600, session_end=720, bar_minutes=60, signal="ewma_trend", entry_start=540, entry_end=660, max_gap_minutes=90)
 _AG_TRD30PM = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.5, stop_atr=1.5, target_r=4.0, hold_bars=4,
                    session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
                    entry_start=780, entry_end=870, max_gap_minutes=60)
@@ -105,6 +111,15 @@ def custom_signal(cfg, bars):
         th, lb = float(cfg["threshold"]), int(cfg.get("lookback", 12))
         tr = ((bars.close.ewm(span=max(2, lb // 2), adjust=False).mean() - bars.close.ewm(span=lb, adjust=False).mean()).to_numpy(float)) / atr
         sig = np.where(tr >= th, 1, np.where(tr <= -th, -1, 0))
+    elif cfg["signal"] == "crabel_open_drive":
+        # Antigravity Architecture C sleeve 1 (reports/ANTIGRAVITY_ARCH_C_REPLICATION.md): on 15m bars, 09:30 open in the bottom (top) 20% of the
+        # 09:30-10:00 range and the 10:00 close in the top (bottom) 20% -> long (short); signal sits on the 09:45 bar (its close is 10:00), fill at the 10:00 open.
+        et = bars.timestamp_utc.dt.tz_convert("America/New_York"); sod = (et.dt.hour * 60 + et.dt.minute).to_numpy(); day = et.dt.date.to_numpy()
+        df = pd.DataFrame(dict(day=day, sod=sod, o=bars.open.to_numpy(float), h=bars.high.to_numpy(float), l=bars.low.to_numpy(float), c=c))
+        r = df[df.sod.isin([570, 585])].groupby("day"); o930 = df[df.sod == 570].groupby("day").o.first(); c1000 = df[df.sod == 585].groupby("day").c.first()
+        hi, lo = r.h.max(), r.l.min(); rng_ = (hi - lo).replace(0, np.nan); op = (o930 - lo) / rng_; cp = (c1000 - lo) / rng_
+        tail = float(cfg.get("tail", 0.2)); sig_day = pd.Series(np.where((op <= tail) & (cp >= 1 - tail), 1, np.where((op >= 1 - tail) & (cp <= tail), -1, 0)), index=op.index)
+        sig = np.where(sod == 585, pd.Series(day).map(sig_day).fillna(0).to_numpy(), 0)
     else:
         raise ValueError(cfg["signal"])
     return sig.astype(np.int8), np.nan_to_num(atr).astype(np.float32)
@@ -167,6 +182,7 @@ OVN_SEED_GAPS = [0.00053, -0.00029, 0.00014, 0.00087, 0.00172, -0.00086, -0.0008
 OVN_SEED_GAPS_MES = [0.00048, 0.00047, -0.00025, 0.00087, 0.00124, -0.0004, -0.00062, 0.00101, 0.00026, 0.00935, -0.00062, 0.00192, -0.00051,
                      0.00247, 0.00018, -0.00025, 0.00298, 0.0, 0.00025, 0.0]
 OVN_TICK, OVN_MULT, OVN_SPREAD_TICKS, OVN_SLIP_TICKS, OVN_COMM = 0.25, 2.0, 1.75, 1.0, 0.61
+OVN_ECON = {"MNQ": dict(mult=2.0, spread=1.75, seed=None), "MES": dict(mult=5.0, spread=1.0, seed=None)}
 CANDIDATES["overnight_dip"] = dict(
     version="1.0.1", overnight=True, exit_sod=570, require_mes_dip=False, label="Overnight Dip (MNQ 1c: hold 18:05 -> 09:30 ET only when the 18:00 reopen is <= -0.5 sd below the 16:00 close)",
     sleeves=[dict(name="OVN_DIP_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
@@ -183,6 +199,28 @@ CANDIDATES["overnight_dip_v2"] = dict(
     sleeves=[dict(name="OVN_DIP2_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
     provenance="research/overnight_3/PROTOCOL.md + reports/OVERNIGHT_3_TRAINING.md (pre-declared combination C2+E2): training 2010-23 +11,797 / 490 nights / "
                "12 of 14 years / closed DD 1,646 / 200 of 200 placebos. Challenger to overnight_dip v1 on paper only; not validated (2024-26 sealed); no routing.",
+)
+
+CANDIDATES["ag_arch_c"] = dict(
+    version="1.0.0", router="strict_1c", label="AG Architecture C (Crabel 10:00 open-drive > MNQ 30m morning trend > MNQ 60m trend; strict 1-contract router)",
+    sleeves=[_sleeve("AG_CRABEL15_1c", _AG_CRABEL15, 1), _sleeve("AG_TRD30C_1c", _AG_TRD30C, 1), _sleeve("AG_TRD60C_1c", _AG_TRD60C, 1)],
+    provenance="Antigravity Architecture C (scripts/audit_architecture_c_all_splits.py), added as paper candidate at Nick's request 2026-11-09. Fixed-engine replication "
+               "reports/ANTIGRAVITY_ARCH_C_REPLICATION.md: 2010-23 +16,070 / 1,980 trades / 11 of 14 years / DD 1,596 / 2010-19 +5,050 / 2021 = 42%. Sender has scored 2024-26, "
+               "so forward paper is the only clean evidence. Simulated fills, no routing.",
+)
+
+CANDIDATES["overnight_dip_mes"] = dict(
+    version="1.0.0", overnight=True, exit_sod=575, exit_at_close=True, require_mes_dip=False,
+    label="Overnight Dip MES (MES 1c: hold 18:05 -> 09:35 ET close when the MES 18:00 reopen is <= -0.5 sd below its 16:00 close)",
+    sleeves=[dict(name="OVN_DIP_MES_1c", instrument="MES", bar_minutes=1, max_contracts=1)],
+    provenance="reports/OVERNIGHT_3_TRAINING.md MES E1: training 2010-23 +6,482 / 724 nights / 11 of 14 years / DD 1,543 / 200 of 200 placebos. Second-instrument read of the "
+               "same mechanism; Devin's discretion 2026-11-09. Not validated; paper only; no routing.",
+)
+CANDIDATES["ag_arch_c_lite"] = dict(
+    version="1.0.0", router="strict_1c", label="AG Architecture C lite (Crabel 10:00 open-drive > MNQ 60m trend; no 30m trend sleeve; strict 1-contract router)",
+    sleeves=[_sleeve("AG_CRABEL15_1c", _AG_CRABEL15, 1), _sleeve("AG_TRD60C_1c", _AG_TRD60C, 1)],
+    provenance="archc_1 variant A2 (reports/ARCHC_1_TRAINING.md): training 2010-23 +12,873 / 1,357 trades / $9.5 per trade / 10 of 14 years / closed DD 974 (vs 1,604 with the 30m sleeve). "
+               "Failed the pre-registered net gate; added at Devin's discretion as the lower-drawdown sibling of ag_arch_c for a side-by-side forward test. Paper only; no routing.",
 )
 
 def _load(name):
@@ -375,7 +413,7 @@ def run_routed(spec, bars, start, max_iter=12):
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
     signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
     if spec.get("overnight"):
-        return {spec["sleeves"][0]["name"]: run_overnight(spec, bars["MNQ@1"], start, bars.get("MES@1"))}
+        return {spec["sleeves"][0]["name"]: run_overnight(spec, bars[spec["sleeves"][0]["instrument"] + "@1"], start, bars.get("MES@1"))}
     if spec.get("router") != "strict_1c":
         runs = {}
         for sl in spec["sleeves"]:
@@ -432,12 +470,14 @@ def _reopen_gaps(mes):
 
 def run_overnight(spec, b, start, mes=None):
     """Overnight reopen-dip hold on 1-minute MNQ bars; same output shape as run_sleeve. Long only, 1 contract, paper fills."""
-    name = spec["sleeves"][0]["name"]; exit_sod = int(spec.get("exit_sod", 570))
+    name = spec["sleeves"][0]["name"]; exit_sod = int(spec.get("exit_sod", 570)); exit_at_close = bool(spec.get("exit_at_close", False))
+    inst = spec["sleeves"][0]["instrument"]; econ = OVN_ECON[inst]; mult, spread = econ["mult"], econ["spread"]
+    seed = OVN_SEED_GAPS if inst == "MNQ" else OVN_SEED_GAPS_MES
     mes_gaps = _reopen_gaps(mes) if spec.get("require_mes_dip") else None
     b = b.sort_values("timestamp_utc").reset_index(drop=True)
     local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
     o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
-    half = (OVN_SPREAD_TICKS / 2 + OVN_SLIP_TICKS) * OVN_TICK
+    half = (spread / 2 + OVN_SLIP_TICKS) * OVN_TICK
     days = sorted(set(day)); rth_close = {}; reopen = {}; entry = {}; rth_open = {}; safety = {}
     for i in range(len(b)):
         d = day[i]
@@ -447,7 +487,7 @@ def run_overnight(spec, b, start, mes=None):
         if exit_sod <= sod[i] < exit_sod + 5 and d not in rth_open: rth_open[d] = i
         if sod[i] <= 965: safety[d] = i
     last_ts = b.timestamp_utc.iloc[-1]
-    gaps = list(OVN_SEED_GAPS); last_close = None; trades = []; entry_bars = []; pos = None; cash = INITIAL_BALANCE
+    gaps = list(seed); last_close = None; trades = []; entry_bars = []; pos = None; cash = INITIAL_BALANCE
     cash_arr = np.full(len(b), np.nan); eq_arr = np.full(len(b), np.nan); worst_arr = np.full(len(b), np.nan)
     start_ts = pd.Timestamp(start); first = int((b.timestamp_utc < start_ts).sum())
     for di, d in enumerate(days):
@@ -464,14 +504,14 @@ def run_overnight(spec, b, start, mes=None):
             cutoff = pd.Timestamp(nd).tz_localize("America/New_York") + pd.Timedelta(minutes=965)
             if nd in safety and safety[nd] > ei and last_ts >= cutoff: xi, reason = safety[nd], "safety_flatten"; break
         if xi is None: continue  # still open
-        xp = (o[xi] if reason == "rth_open" else c[xi]) - half; net = (xp - fill) * OVN_MULT - 2 * OVN_COMM
+        xp = (c[xi] if (exit_at_close or reason != "rth_open") else o[xi]) - half; net = (xp - fill) * mult - 2 * OVN_COMM
         trades.append(dict(sleeve=name, entry_ts=b.timestamp_utc[ei].isoformat(), exit_ts=b.timestamp_utc[xi].isoformat(), side=1, qty=1, entry_price=round(fill, 2),
                            exit_price=round(xp, 2), net=round(float(net), 2), fees=round(2 * OVN_COMM, 2), reason=reason))
         entry_bars.append(ei); pos = None
-        for j in range(ei, xi): eq_arr[j] = cash + (c[j] - fill) * OVN_MULT; worst_arr[j] = cash + (l[j] - fill) * OVN_MULT
+        for j in range(ei, xi): eq_arr[j] = cash + (c[j] - fill) * mult; worst_arr[j] = cash + (l[j] - fill) * mult
         cash += net; cash_arr[xi] = cash
     if pos is not None:
-        for j in range(pos["i"], len(b)): eq_arr[j] = cash + (c[j] - pos["price"]) * OVN_MULT; worst_arr[j] = cash + (l[j] - pos["price"]) * OVN_MULT
+        for j in range(pos["i"], len(b)): eq_arr[j] = cash + (c[j] - pos["price"]) * mult; worst_arr[j] = cash + (l[j] - pos["price"]) * mult
     sl = slice(first, None); cash_s = pd.Series(cash_arr[sl]).ffill().fillna(INITIAL_BALANCE)
     eq_s = pd.Series(eq_arr[sl]); eq_s = eq_s.where(eq_s.notna(), cash_s); worst_s = pd.Series(worst_arr[sl]); worst_s = worst_s.where(worst_s.notna(), cash_s)
     curve = pd.DataFrame(dict(ts=b.timestamp_utc[sl].to_numpy(), cash=cash_s.to_numpy(), equity=eq_s.to_numpy(), worst=worst_s.to_numpy()))
