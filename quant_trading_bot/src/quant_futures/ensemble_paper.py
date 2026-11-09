@@ -321,6 +321,24 @@ CANDIDATES["ag_quad_v2"] = dict(
                "All pre-registered gates passed. Paper only; no routing.",
 )
 
+# Dashboard grouping (Nick, 2026-11-09): variants of one architecture share a family so the dashboard shows a per-family net beside the overall net.
+FAMILIES = {
+    "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon"),
+    "AG All-Weather": ("ag_all_weather", "ag_all_weather_v2", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"),
+    "AG Architecture C": ("ag_arch_c", "ag_arch_c_lite", "ag_arch_c_v2"),
+    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c"),
+    "AG Quad": ("ag_quad", "ag_quad_v2"),
+    "Book A (overnight dip v2 + All-Weather v2 1c)": ("book_a", "book_a_bond", "book_a_skew"),
+    "Book D+ (overnight dip + Architecture D+)": ("book_d_plus",),
+    "Codex ensembles": ("ensemble_beta", "ensemble_epsilon", "portfolio_e", "portfolio_e_scaled"),
+}
+_FAMILY_OF = {k: f for f, keys in FAMILIES.items() for k in keys}
+
+
+def family_of(key):
+    return _FAMILY_OF.get(key, "Other")
+
+
 def _dplus_sl(name, base, contracts):
     """D+ sleeves always take `contracts` regardless of stop risk (the $150 budget is not applied), matching the fixed-engine replication
     (reports/ANTIGRAVITY_D_PLUS_REPLICATION.md, run with SIZING_BUDGET=1e9) and Antigravity's 1-contract claims."""
@@ -998,7 +1016,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
                 notify(f"{spec['label'].split(' (')[0]}: {name} opened {'long' if pos['quantity'] > 0 else 'short'} x{abs(pos['quantity'])}",
                        f"last close {pos['last_close']:,.2f}; candidate net {portfolio['net']:+,.2f}")
     total_divergences = sum(1 for r in ledger if r["kind"] == "divergence") + len(missing) + len(late)
-    status = dict(candidate=key, version=spec["version"], label=spec["label"], provenance=spec["provenance"], category=spec.get("category", "current"),
+    status = dict(candidate=key, version=spec["version"], label=spec["label"], provenance=spec["provenance"], category=spec.get("category", "current"), family=family_of(key),
                   updated=now.isoformat(), source=source_name, start=run_record["start"], bars_through=run_record["bars_through"],
                   net=portfolio["net"], realized=portfolio["realized"], unrealized=round(portfolio["net"] - portfolio["realized"], 2),
                   closed_drawdown=portfolio["closed_drawdown"], intrabar_drawdown=portfolio["intrabar_drawdown"],
