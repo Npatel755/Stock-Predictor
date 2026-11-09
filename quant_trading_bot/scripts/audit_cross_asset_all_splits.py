@@ -54,9 +54,9 @@ g_mnq = rth_mnq.groupby('date')
 g_mes = rth_mes.groupby('date')
 
 o930_mnq = g_mnq.apply(lambda d: d.loc[d.sod == 570, 'open'].iloc[0] if (d.sod == 570).any() else np.nan)
-c1000_mnq = g_mnq.apply(lambda d: d.loc[d.sod == 600, 'close'].iloc[0] if (d.sod == 600).any() else np.nan)
+c1000_mnq = g_mnq.apply(lambda d: d.loc[d.sod == 585, 'close'].iloc[0] if (d.sod == 585).any() else np.nan)
 o930_mes = g_mes.apply(lambda d: d.loc[d.sod == 570, 'open'].iloc[0] if (d.sod == 570).any() else np.nan)
-c1000_mes = g_mes.apply(lambda d: d.loc[d.sod == 600, 'close'].iloc[0] if (d.sod == 600).any() else np.nan)
+c1000_mes = g_mes.apply(lambda d: d.loc[d.sod == 585, 'close'].iloc[0] if (d.sod == 585).any() else np.nan)
 
 common_days = sorted(list(set(o930_mnq.dropna().index).intersection(set(o930_mes.dropna().index))))
 df_days = pd.DataFrame(index=common_days)

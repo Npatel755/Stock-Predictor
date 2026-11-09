@@ -64,8 +64,8 @@ def sim_open_drive(o, h, l, c, atr, sig, day, sod, stop_mult, tgt_r, hold, flat,
                 pos = 0
                 ntr += 1
                 
-        # Entry check: exactly at 10:00 close (sod == 600)
-        if pos == 0 and sig[i] != 0 and sod[i] == 600 and i + 1 < n and day[i + 1] == day[i] and atr[i] > 0:
+        # Entry check: exactly at 10:00 close (sod == 585, next bar opens at 600 = 10:00)
+        if pos == 0 and sig[i] != 0 and sod[i] == 585 and i + 1 < n and day[i + 1] == day[i] and atr[i] > 0:
             pos = sig[i]
             ep = o[i + 1]
             risk = stop_mult * atr[i]
