@@ -91,17 +91,6 @@ _AG_MES_TRD30 = dict(instrument="MES", family="trend", lookback=8, threshold=1.0
                      session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
                      entry_start=570, entry_end=900, max_gap_minutes=60)   # quad candidate applies router="strict_1c" (global 1-contract cap, priority 1>2>3>4)
 
-# Architecture D+ Grand Champion additions (MNQ 15m Crabel + MNQ 30m trend + MNQ 60m macro trend + MES 30m cross-asset trend)
-_AG_CRABEL15_D = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.0, stop_atr=2.0, target_r=3.5, hold_bars=8, trailing_atr=0.0,
-                      session_start=600, session_end=945, bar_minutes=15, signal="crabel_open_drive", tail=0.2, min_range=15.0,
-                      entry_start=585, entry_end=585, max_gap_minutes=20)
-_AG_TRD30_D = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75, stop_atr=1.5, target_r=3.0, hold_bars=8, trailing_atr=0.0,
-                   session_start=585, session_end=720, bar_minutes=30, signal="ewma_trend", entry_start=555, entry_end=690, max_gap_minutes=60)
-_AG_TRD60_D = dict(instrument="MNQ", family="trend", lookback=12, threshold=0.75, stop_atr=1.25, target_r=4.0, hold_bars=6, trailing_atr=0.0,
-                   session_start=600, session_end=720, bar_minutes=60, signal="ewma_trend", entry_start=540, entry_end=660, max_gap_minutes=90)
-_AG_MES_TRD30_D = dict(instrument="MES", family="trend", lookback=8, threshold=1.0, stop_atr=1.25, target_r=2.5, hold_bars=12, trailing_atr=0.0,
-                      session_start=585, session_end=930, bar_minutes=30, signal="ewma_trend", entry_start=570, entry_end=900, max_gap_minutes=60)
-
 
 def _atr14(bars):
     c, h, l = bars.close.to_numpy(float), bars.high.to_numpy(float), bars.low.to_numpy(float)
@@ -130,9 +119,6 @@ def custom_signal(cfg, bars):
         r = df[df.sod.isin([570, 585])].groupby("day"); o930 = df[df.sod == 570].groupby("day").o.first(); c1000 = df[df.sod == 585].groupby("day").c.first()
         hi, lo = r.h.max(), r.l.min(); rng_ = (hi - lo).replace(0, np.nan); op = (o930 - lo) / rng_; cp = (c1000 - lo) / rng_
         tail = float(cfg.get("tail", 0.2)); sig_day = pd.Series(np.where((op <= tail) & (cp >= 1 - tail), 1, np.where((op >= 1 - tail) & (cp <= tail), -1, 0)), index=op.index)
-        min_rng = float(cfg.get("min_range", 0.0))
-        if min_rng > 0:
-            sig_day = pd.Series(np.where(rng_ >= min_rng, sig_day, 0), index=op.index)
         sig = np.where(sod == 585, pd.Series(day).map(sig_day).fillna(0).to_numpy(), 0)
     else:
         raise ValueError(cfg["signal"])
@@ -320,34 +306,6 @@ CANDIDATES["ag_quad_v2"] = dict(
     provenance="quad_2 V1 (reports/QUAD_2_TRAINING.md): training 2010-23 +17,707 / 2,274 trades / 11 of 14 years / DD 2,048 vs +16,811 unfiltered; 35 removed days lost -1,374. "
                "All pre-registered gates passed. Paper only; no routing.",
 )
-
-CANDIDATES["ag_arch_d_plus"] = dict(
-    version="1.0.0", router="strict_1c", day_filter="no_backwardation",
-    label="AG Architecture D+ Grand Champion (Crabel 10:00 15m > MNQ 30m trend > MNQ 60m trend > MES 30m cross-asset trend; stands aside on morning sleeves when prior CBOE close had VIX > VIX3M; strict 1-contract router)",
-    sleeves=[_sleeve("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
-             _sleeve("AG_TRD30_D_1c", _AG_TRD30_D, 1),
-             _sleeve("AG_TRD60_D_1c", _AG_TRD60_D, 1),
-             dict(_sleeve("AG_MES_TRD30_D_1c", _AG_MES_TRD30_D, 1), day_filter_exempt=True)],
-    provenance="Antigravity Grand Champion Architecture D+ (reports/RESEARCH_ARCHITECTURE_D_PLUS_TRAINING_IMPROVEMENT_REPORT.md): training 2010-23 +20,292.55 / 1,635 trades / $12.41 per trade / closed DD $935.65 / cushion +$1,064.35 (53.2% safety margin) / 0.02% 1y Monte Carlo breach rate. Simulated fills, paper only; no routing.",
-)
-
-CANDIDATES["overnight_dip_v2_vix"] = dict(
-    version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, state="not_backwardation", hidden=True,
-    label="Overnight Dip v2 VIX-conditioned (skips nights whose prior CBOE close had VIX > VIX3M term structure backwardation)",
-    sleeves=[dict(name="OVN_DIP2_VIX_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
-    provenance="research_book_d_plus_risk_reduction_train: training 2010-23 +8,877 / 420 nights / marked DD $1,241 / 0 breaches of $2k floor. Component of book_d_plus only; not shown as its own ledger.",
-)
-
-CANDIDATES["book_d_plus"] = dict(
-    version="1.0.0", book=("overnight_dip_v2_vix", "ag_arch_d_plus"),
-    label="Book D+ (Overnight Dip v2 VIX-conditioned + Architecture D+ Intraday; strict 1-contract account; night leg has priority, intraday decisions while open are skipped)",
-    sleeves=[dict(sl) for k in ("overnight_dip_v2_vix", "ag_arch_d_plus") for sl in CANDIDATES[k]["sleeves"]],
-    provenance=("research_book_d_plus_risk_reduction_train, training 2010-23: book +29,169.65 / 2,055 units / $14.19 per unit / marked (intraday-trailing) DD $1,241.33 / "
-                "safety cushion +$758.67 under $2k floor (37.9% safety margin) / 0 touches / 0 breaches of $2k floor across 14 years / 0.00% 1-year Monte Carlo ruin probability. "
-                "Paper only; no routing."),
-)
-
-
 
 def _load(name):
     path = SCRIPTS / f"{name}.py"
@@ -732,9 +690,6 @@ def run_overnight(spec, b, start, mes=None):
     if spec.get("state") == "zn_not_down":  # xasset_3: skip the night if the day's ZN 16:00 ET close was below the prior day's; unknown state -> trade (as in research)
         _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
         state_ok = dict(zip(_d, ~_prior_close_state(zn_down_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))]).astype(bool)))
-    if spec.get("state") == "not_backwardation":  # Book D+: skip the night if the day's CBOE close had VIX > VIX3M (term structure backwardation)
-        _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
-        state_ok = dict(zip(_d, ~_prior_close_state(vix_backwardation_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))]).astype(bool)))
     local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
     o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
     half = (spread / 2 + OVN_SLIP_TICKS) * OVN_TICK
