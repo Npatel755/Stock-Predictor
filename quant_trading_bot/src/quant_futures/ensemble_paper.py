@@ -223,6 +223,15 @@ CANDIDATES["ag_arch_c_lite"] = dict(
                "Failed the pre-registered net gate; added at Devin's discretion as the lower-drawdown sibling of ag_arch_c for a side-by-side forward test. Paper only; no routing.",
 )
 
+CANDIDATES["ag_arch_c_v2"] = dict(
+    version="2.0.0", router="strict_1c", day_filter="no_backwardation",
+    label="AG Architecture C v2 (same three sleeves; stands aside on days whose prior CBOE close had VIX > VIX3M)",
+    sleeves=[_sleeve("AG_CRABEL15_1c", _AG_CRABEL15, 1), _sleeve("AG_TRD30C_1c", _AG_TRD30C, 1), _sleeve("AG_TRD60C_1c", _AG_TRD60C, 1)],
+    provenance="archc_2 V3 (reports/ARCHC_2_TRAINING.md): training 2010-23 +17,291 / 1,886 trades / 12 of 14 years / DD 1,596; the 64 removed backwardation days lost -1,221 "
+               "(below the 5th pct of random same-count day sets). Failed the pre-registered DD gate (DD unchanged); deployed at Devin's discretion beside ag_arch_c. "
+               "VIX/VIX3M from yfinance daily, cached in runs/bars/vix_daily.csv. Paper only; no routing.",
+)
+
 def _load(name):
     path = SCRIPTS / f"{name}.py"
     if str(SCRIPTS) not in sys.path:
@@ -408,6 +417,37 @@ def _blocked(bars, runs, names):
     return out.to_numpy()
 
 
+_VIX_CACHE = {"path": None, "series": None}
+def vix_backwardation_days():
+    """Dates (CBOE close) where VIX > VIX3M, from yfinance daily history (1y); cached to <bars>/vix_daily.csv so a feed failure falls back to the last copy."""
+    if _VIX_CACHE["series"] is not None: return _VIX_CACHE["series"]
+    path = _VIX_CACHE["path"]; joined = None
+    try:
+        import yfinance as yf
+        rows = {}
+        for key, symbol in (("vix", "^VIX"), ("vix3m", "^VIX3M")):
+            h = yf.Ticker(symbol).history(period="1y", interval="1d", auto_adjust=False)["Close"].dropna(); h.index = pd.to_datetime(h.index.strftime("%Y-%m-%d")); rows[key] = h
+        joined = pd.concat([rows["vix"].rename("vix"), rows["vix3m"].rename("vix3m")], axis=1).dropna()
+        if path is not None and len(joined):
+            old = pd.read_csv(path, index_col=0, parse_dates=True) if Path(path).exists() else None
+            joined = pd.concat([old, joined]).loc[lambda d: ~d.index.duplicated(keep="last")].sort_index() if old is not None else joined
+            joined.to_csv(path)
+    except Exception:
+        if path is not None and Path(path).exists(): joined = pd.read_csv(path, index_col=0, parse_dates=True)
+    ser = (joined.vix > joined.vix3m) if joined is not None and len(joined) else pd.Series(dtype=bool)
+    _VIX_CACHE["series"] = ser; return ser
+
+def day_filter_mask(spec, b):
+    """True on bars whose ET trading date follows a CBOE close with VIX > VIX3M (prior-close state, point-in-time)."""
+    if spec.get("day_filter") != "no_backwardation": return np.zeros(len(b), bool)
+    back = vix_backwardation_days()
+    if len(back) == 0: return np.zeros(len(b), bool)
+    cboe = back.index.to_numpy()
+    days = pd.to_datetime(pd.Series(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()).astype(str)).to_numpy()
+    pos = np.searchsorted(cboe, days, side="left") - 1  # last CBOE close strictly before the bar's date
+    vals = back.to_numpy(); return np.where(pos >= 0, vals[np.clip(pos, 0, len(vals) - 1)], False)
+
+
 def run_routed(spec, bars, start, max_iter=12):
     """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
@@ -421,7 +461,7 @@ def run_routed(spec, bars, start, max_iter=12):
             blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
             runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
         return runs
-    masks = {sl["name"]: np.zeros(len(bars[bars_key(sl)]), bool) for sl in spec["sleeves"]}
+    masks = {sl["name"]: day_filter_mask(spec, bars[bars_key(sl)]) for sl in spec["sleeves"]}
     prio = {sl["name"]: i for i, sl in enumerate(spec["sleeves"])}
     for _ in range(max_iter):
         runs = {sl["name"]: run_sleeve(sl, bars[bars_key(sl)], start, masks[sl["name"]]) for sl in spec["sleeves"]}
@@ -731,7 +771,7 @@ def vol_regime(now=None):
 def run_once(root, source, start, now=None, candidates=None):
     now = now or utc_now()
     root = Path(root)
-    report = ingest(root / "bars", source, now)
+    report = ingest(root / "bars", source, now); _VIX_CACHE["path"] = str(root / "bars" / "vix_daily.csv"); _VIX_CACHE["series"] = None
     stored = {k: BarStore(root / "bars", k).read() for k in ("MES", "MNQ")}
     start_ts = pd.Timestamp(start).tz_localize("UTC") if pd.Timestamp(start).tzinfo is None else pd.Timestamp(start)
     bars = {}
