@@ -27,3 +27,5 @@ Date 2026-11-08. Coverage: research/quantconnect/coverage_log.md. Sources: sourc
 2. VIX-percentile regime filter on MES_MOM (free CBOE history), same gate.
 3. Risk-of-ruin Monte Carlo of the three paper candidates (scripts/risk_of_ruin_candidates.py) to size the
    funded-account breach probability rather than to find new edge.
+
+## Pass 2 (2026-11-08, institutional-strategy request): both qc_1 tests rejected — passive-execution transfer (reports/QC_1_EXEC_PILOT.md, 0/60) and variance-risk-premium day state (reports/QC_1_VRP_TRAINING.md, 0/20). QuantConnect's 85-entry library holds no further intraday index-futures mechanism buildable on the data on disk; remaining institutional classes (ETF/index arb, VIX futures term structure, options/GEX flows, MBO queue dynamics) need data not owned.
