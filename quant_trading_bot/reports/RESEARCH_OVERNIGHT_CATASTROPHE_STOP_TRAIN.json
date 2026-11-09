@@ -1,0 +1,123 @@
+[
+  {
+    "stop_dollars": "None (Unconditional)",
+    "net_profit": 8864.0,
+    "trades": 421,
+    "expectancy": 21.05,
+    "win_rate": 58.2,
+    "stops_hit": 0,
+    "max_closed_dd": 1268.95,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 150.0,
+    "net_profit": 6154.5,
+    "trades": 421,
+    "expectancy": 14.62,
+    "win_rate": 55.1,
+    "stops_hit": 55,
+    "max_closed_dd": 1158.42,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 200.0,
+    "net_profit": 6239.0,
+    "trades": 421,
+    "expectancy": 14.82,
+    "win_rate": 56.5,
+    "stops_hit": 39,
+    "max_closed_dd": 1444.71,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 250.0,
+    "net_profit": 7052.5,
+    "trades": 421,
+    "expectancy": 16.75,
+    "win_rate": 57.2,
+    "stops_hit": 25,
+    "max_closed_dd": 1437.71,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 300.0,
+    "net_profit": 7784.5,
+    "trades": 421,
+    "expectancy": 18.49,
+    "win_rate": 57.7,
+    "stops_hit": 17,
+    "max_closed_dd": 1489.21,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 350.0,
+    "net_profit": 8156.5,
+    "trades": 421,
+    "expectancy": 19.37,
+    "win_rate": 58.2,
+    "stops_hit": 13,
+    "max_closed_dd": 1177.45,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 400.0,
+    "net_profit": 8051.0,
+    "trades": 421,
+    "expectancy": 19.12,
+    "win_rate": 58.2,
+    "stops_hit": 10,
+    "max_closed_dd": 1265.69,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 500.0,
+    "net_profit": 8119.0,
+    "trades": 421,
+    "expectancy": 19.29,
+    "win_rate": 58.2,
+    "stops_hit": 5,
+    "max_closed_dd": 1337.69,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 600.0,
+    "net_profit": 8597.5,
+    "trades": 421,
+    "expectancy": 20.42,
+    "win_rate": 58.2,
+    "stops_hit": 1,
+    "max_closed_dd": 1268.95,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 800.0,
+    "net_profit": 8864.0,
+    "trades": 421,
+    "expectancy": 21.05,
+    "win_rate": 58.2,
+    "stops_hit": 0,
+    "max_closed_dd": 1268.95,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  },
+  {
+    "stop_dollars": 1000.0,
+    "net_profit": 8864.0,
+    "trades": 421,
+    "expectancy": 21.05,
+    "win_rate": 58.2,
+    "stops_hit": 0,
+    "max_closed_dd": 1268.95,
+    "max_mae": 607.0,
+    "p95_mae": 274.0
+  }
+]
