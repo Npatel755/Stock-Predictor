@@ -239,6 +239,13 @@ CANDIDATES["ag_all_weather_v2"] = dict(
                "Missed the positive-years gate by one; deployed at Devin's discretion beside ag_all_weather. Paper only; no routing.",
 )
 
+CANDIDATES["ag_all_weather_v2_1c"] = dict(
+    version="2.1.0", day_filter="no_backwardation", label="AG All-Weather v2 1c (same two filtered sleeves; always one contract - the $150 stop-risk budget is not applied)",
+    sleeves=[dict(_sleeve("AG_BRK30_1c", _AG_BRK30, 1), risk_per_trade=1e9, max_open_risk=1e9), dict(_sleeve("AG_TRD60_1c", _AG_TRD60, 1), risk_per_trade=1e9, max_open_risk=1e9)],
+    provenance="sizing_1 V1 (reports/SIZING_1_TRAINING.md): training 2010-23 +16,520 / 1,590 trades / DD 1,256 vs +14,073 / DD 1,455 with the $150 budget; the 39 added "
+               "high-ATR trades made +2,447 (random same-count trade sets: median +120). All pre-registered gates passed. Daily-loss, hard-drawdown and funded-lock gates unchanged. Paper only; no routing.",
+)
+
 CANDIDATES["ag_quad_v2"] = dict(
     version="2.0.0", router="strict_1c", day_filter="no_backwardation",
     label="AG Quad v2 (same four sleeves; the two MNQ morning sleeves stand aside on days whose prior CBOE close had VIX > VIX3M)",
@@ -586,6 +593,8 @@ def run_sleeve(cfg, bars, start, blocked=None):
     local = bars.timestamp_utc.dt.tz_convert("America/New_York")
     weekdays = local.dt.day_of_week.to_numpy() < 5
     exec_cfg = eng["execution_cfg"](cfg)
+    if cfg.get("risk_per_trade"):  # sizing_1: candidates that always take one contract regardless of stop risk
+        exec_cfg.update(risk_per_trade=float(cfg["risk_per_trade"]), max_open_risk=float(cfg.get("max_open_risk", cfg["risk_per_trade"])))
     if cfg.get("signal"):
         raw, atr = custom_signal(cfg, bars)
         mask = weekdays  # entry window enforced by the engine via entry_start/entry_end, as in the replication scripts
