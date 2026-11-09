@@ -1,42 +1,9 @@
 # Unified Collaboration Stream: Devin + Antigravity Perpetual Timeline
-*Last Synchronized: 2026-11-09 23:41:37 UTC*
-*Total Interleaved Events: 945*
+*Last Synchronized: 2026-11-09 23:47:32 UTC*
+*Total Interleaved Events: 950*
 
 > Chronological merged stream of all messages across both Devin and Antigravity.
 > Both agents can inspect this single file to see the entire dual-agent workflow in real time.
-
----
-
-### `[2026-11-09T15:10:09.904958+00:00]` **Nick -> Devin** *(Devin Session)*
-go ahead and push it as a leger then also when can i expect the frist trade to be done by
-ATTACHMENT:"https://app.devin.ai/attachments/f6d4bfd6-6fb0-498c-8d6a-c84880995f08/image.png"
-
----
-
-### `[2026-11-09T15:10:30.739000Z]` **Devin** *(Devin Session)*
-On it — adding the pair as a combined 16th ledger (`book_a`: overnight dip v2 + All-Weather v2 1c under one 1-contract router, simulated only), then I'll give you the first-trade timing from the training frequencies once it's deployed and verified on the dashboard.
-
----
-
-### `[2026-11-09T15:15:07.648000Z]` **Devin** *(Devin Session)*
-Done — `book_a` is the 16th ledger on https://143-198-126-83.sslip.io/futures (overnight dip v2 + All-Weather v2 1c under one 1-contract router, night leg has priority; simulated only, both component ledgers keep running). Pushed as 9f2321a; the router was tested on synthetic overlaps and the server run completed cleanly.
-
-**First trade:**
-- Intraday leg: likely today or tomorrow. Its backwardation filter blocked Nov 5–6; today is allowed, and on allowed days it fires ~0.46 signals/day (≈80 % within 3 sessions). Caveat: this leg has no $150 budget, so at today's ATR a stop-out costs ~$425+, outside anything seen in training — that's the risk the book is taking.
-- Overnight leg: both MNQ and MES must reopen ≤ −0.5σ down (~14 % of nights) — median 5 trading nights, 90 % within 16; tonight's 18:00 ET reopen is the first check.
-
-Idle until then or your next message.
-
----
-
-### `[2026-11-09T15:15:28.171194+00:00]` **Nick -> Devin** *(Devin Session)*
-ok great now make sure you keep seeing if you can i mprove the strategy even more use all the skills in you disposal
-make sure NOT TO TUNE ON VALIDATION OR TESTING DATA
-
----
-
-### `[2026-11-09T15:15:45.432000Z]` **Devin** *(Devin Session)*
-Continuing, training-only (2024–26 sealed). Per the memo I'll avoid re-tuning the same rules and look for a new mechanism instead: first checking the experiment registry and the news data another agent dropped in data/news/ for untested families (multi-day swing holds, news-aligned nights), then pre-registering the next round.
 
 ---
 
@@ -960,5 +927,77 @@ Nothing changes on paper either way — every stage's configuration already runs
 
 ### `[2026-11-09T23:40:53.648000Z]` **Devin** *(Devin Session)*
 My pick: open with D+ v2 alone, then the ladder — your stated priority is not getting squeezed out, and it is the only opening with zero deaths in all 157 starts and sub-1 % bootstrap breach odds; the first-year net cost is recoverable, a breach isn't. Documenting it as the deployment plan now (paper ledgers unchanged), with the prop-firm rule confirmation listed as the precondition before anything is acted on.
+
+---
+
+### `[2026-11-09T23:41:33.076000Z]` **Devin** *(Devin Session)*
+Deployment plan documented and pushed (46a6a25, research/DEPLOYMENT_PLAN.md): open with D+ v2 alone → Book A at $500 cushion above the locked floor → SKEW-sized book at $1.5k → add D+ v2 at $3k, with the prop-firm rule confirmation as the precondition and promotion/rollback triggers set before looking at forward results. Paper ledgers unchanged (21, all flat tonight, no errors).
+
+Everything testable on 2010–23 with owned data is now closed; the next information comes from the paper record. Next checkpoint: tomorrow's 09:30 ET open.
+
+---
+
+### `[2026-11-09T23:42:14.613284+00:00]` **Nick -> Devin** *(Devin Session)*
+see if you can i mprove the strategy even more use all the skills in you disposal
+make sure NOT TO TUNE ON VALIDATION OR TESTING DATA
+
+---
+
+### `[2026-11-09T23:42:17Z]` **Antigravity** *(Antigravity Session)*
+All research was executed **strictly on the 14-year Training partition (2010–2023)** with **zero parameter fitting on Validation (2024–2025) or Test (2026)** data.
+
+A comprehensive technical audit has been written to the persistent report: [FRONTIER_STRATEGY_IMPROVEMENT_AND_GAP_ALIGNMENT_REPORT.md](file:///C:/Users/Nick/.gemini/antigravity/brain/892d6d20-4274-43dc-a605-1f060d93027d/FRONTIER_STRATEGY_IMPROVEMENT_AND_GAP_ALIGNMENT_REPORT.md).
+
+---
+
+### Key Research Discoveries & Scientific Frontiers
+
+```
+                         ┌────────────────────────────────────────────────────────┐
+                         │           ARCHITECTURE D+ v3 (PURE TRINITY)            │
+                         │   1. Toby Crabel Gap-Continuation Drive (MNQ 15m)      │
+                         │   2. Macro Trend with Session VWAP Filter (MNQ 60m)    │
+                         │   3. Multi-Timeframe Cross-Asset Ballast (MES 30m)     │
+                         └──────────────────────────┬─────────────────────────────┘
+                                                    │
+                                  Strict 1-Contract Router & Cost Drag
+                                                    │
+                         ┌──────────────────────────▼─────────────────────────────┐
+                         │               14-YEAR TRAINING PERFORMANCE             │
+                         │  • Net Profit: +$14,378.86 (+$16.21 / trade)           │
+                         │  • Realized DD: $431.45 (-56.2% cut vs v1)             │
+                         │  • $2,000 Floor Cushion: +$1,568.55 (78.4% safety)    │
+                         │  • 5,000-Path
+<truncated 1856 bytes>
+91.24).
+
+#### 4. Overnight Catastrophe Stop Ablation (Book AD)
+- Devin's pre-registered `book_2` pilot (`book_ad` = `overnight_dip_v2` + `ag_arch_d_plus_v2`) failed its marked drawdown gate (\$2,166 >= \$2,000) due to a single excursion on March 17, 2020.
+- We tested mechanical catastrophe hard stops (\$500, \$600) on the overnight leg: **hard stops worsened marked drawdown to \$2,361–\$2,404 and doubled floor touches from 1 to 2**.
+- Dips exceeding -\$500 routinely recovered by 09:45 ET; cutting them at -\$600 locked in maximal losses at cyclical bottoms. This proves mechanical stops harm overnight mean reversion, establishing that **intraday-only Architecture D+ v3 remains the safest path for funded account compliance**.
+
+---
+
+### Synchronization & Collaboration Status
+
+1. **Devin's Funded-Account Staging Ladder**:
+   - Devin formulated [`quant_trading_bot/research/DEPLOYMENT_PLAN.md`](file:///c:/Users/Nick/OneDrive/Attachments/Desktop/Stock%20Predictor%20Codex%20ETH%20BNB/quant_trading_bot/research/DEPLOYMENT_PLAN.md) (commit [`6f1bf7b`](file:///c:/Users/Nick/OneDrive/Attachments/Desktop/Stock%20Predictor%20Codex%20ETH%20BNB/quant_trading_bot/research/DEPLOYMENT_PLAN.md#L1)) based on 157 dynamic 12-month cohort simulations.
+   - **Key Fact**: Pre-lock, banked profit does not protect against a trailing floor—only the configuration's marked drawdown does. Starting with **Architecture D+ alone achieved 100% 12-month survival** (0.1% breach vs 5.7% for Book A).
+2. **Live Paper Server**:
+   - Running cleanly on [https://143-198-126-83.sslip.io/futures](https://143-198-126-83.sslip.io/futures) across 21 ledgers with family-grouped subtotal Net P&Ls.
+   - Dispatched full research findings to Devin via collaboration bus message `35a7a8d0-4722-4791-b256-a8e1fa0d6c69`.
+3. **Git Hygiene**:
+   - Working tree clean; remotes `origin` and `research` synchronized at commit [`6f1bf7b`](file:///c:/Users/Nick/OneDrive/Attachments/Desktop/Stock%20Predictor%20Codex%20ETH%20BNB/quant_trading_bot/research/DEPLOYMENT_PLAN.md#L1).
+
+---
+
+### `[2026-11-09T23:42:36.660000Z]` **Devin** *(Devin Session)*
+Continuing, training-only. Since D+ v2 is now the opening leg, the next round targets it: checking the experiment registry for whether a macro-event-day stand-aside (FOMC decision days, 08:30 CPI/NFP days) has ever been tested on the intraday trend/Crabel sleeves — if not, pre-registering dplus_3 with a removed-days placebo; otherwise the next untested conditioner for that leg.
+
+---
+
+### `[2026-11-09T23:43:29Z]` **Nick -> Antigravity** *(Antigravity Session)*
+see if you can i mprove the strategy even more use all the skills in you disposal
+make sure NOT TO TUNE ON VALIDATION OR TESTING DATA
 
 ---

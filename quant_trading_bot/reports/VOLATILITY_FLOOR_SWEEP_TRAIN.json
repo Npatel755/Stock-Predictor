@@ -1,0 +1,68 @@
+[
+  {
+    "floor": 0.0,
+    "trades": 1361,
+    "net": 12995.25,
+    "exp": 9.55,
+    "wr": 42.8,
+    "realized_dd": 776.25,
+    "marked_dd": 882.37,
+    "touches": 0,
+    "pos_years": "11"
+  },
+  {
+    "floor": 11.0,
+    "trades": 1290,
+    "net": 13295.0,
+    "exp": 10.31,
+    "wr": 43.5,
+    "realized_dd": 776.25,
+    "marked_dd": 882.37,
+    "touches": 0,
+    "pos_years": "12"
+  },
+  {
+    "floor": 12.0,
+    "trades": 1219,
+    "net": 12714.25,
+    "exp": 10.43,
+    "wr": 43.4,
+    "realized_dd": 776.25,
+    "marked_dd": 882.37,
+    "touches": 0,
+    "pos_years": "11"
+  },
+  {
+    "floor": 13.0,
+    "trades": 1072,
+    "net": 12199.5,
+    "exp": 11.38,
+    "wr": 43.5,
+    "realized_dd": 776.25,
+    "marked_dd": 882.37,
+    "touches": 0,
+    "pos_years": "11"
+  },
+  {
+    "floor": 14.0,
+    "trades": 912,
+    "net": 12116.5,
+    "exp": 13.29,
+    "wr": 44.4,
+    "realized_dd": 776.25,
+    "marked_dd": 882.37,
+    "touches": 0,
+    "pos_years": "11"
+  },
+  {
+    "floor": 15.0,
+    "trades": 795,
+    "net": 13133.5,
+    "exp": 16.52,
+    "wr": 44.7,
+    "realized_dd": 776.25,
+    "marked_dd": 882.37,
+    "touches": 0,
+    "pos_years": "11"
+  }
+]

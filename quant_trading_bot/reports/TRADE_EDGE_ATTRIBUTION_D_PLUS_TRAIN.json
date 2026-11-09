@@ -1,0 +1,198 @@
+{
+  "v2_attribution": {
+    "name": "Architecture D+ v2 (Standard Crabel)",
+    "total_net": 12995.25,
+    "expectancy": 9.55,
+    "win_rate": 42.8,
+    "by_sleeve": [
+      {
+        "sleeve": "AG_CRABEL15_D_1c",
+        "trades": 423,
+        "net": 4610.5,
+        "exp": 10.89952718676123,
+        "wr": 45.9
+      },
+      {
+        "sleeve": "AG_MES_TRD30_D_1c",
+        "trades": 169,
+        "net": 1989.75,
+        "exp": 11.773668639053254,
+        "wr": 43.2
+      },
+      {
+        "sleeve": "AG_TRD60_D_1c",
+        "trades": 769,
+        "net": 6395.0,
+        "exp": 8.315994798439531,
+        "wr": 41.1
+      }
+    ],
+    "by_side": [
+      {
+        "side": "LONG",
+        "trades": 1361,
+        "net": 12995.25,
+        "exp": 9.548310066127847,
+        "wr": 42.8
+      }
+    ],
+    "by_dow": [
+      {
+        "dow": "Monday",
+        "trades": 299,
+        "net": 2319.75,
+        "exp": 7.758361204013378,
+        "wr": 41.1
+      },
+      {
+        "dow": "Tuesday",
+        "trades": 294,
+        "net": 200.5,
+        "exp": 0.6819727891156463,
+        "wr": 36.4
+      },
+      {
+        "dow": "Wednesday",
+        "trades": 258,
+        "net": 3254.25,
+        "exp": 12.613372093023257,
+        "wr": 45.3
+      },
+      {
+        "dow": "Thursday",
+        "trades": 270,
+        "net": 4709.0,
+        "exp": 17.44074074074074,
+        "wr": 45.9
+      },
+      {
+        "dow": "Friday",
+        "trades": 240,
+        "net": 2511.75,
+        "exp": 10.465625,
+        "wr": 46.7
+      }
+    ],
+    "by_vix": [
+      {
+        "vix_bucket": "Low VIX (<15)",
+        "trades": 559,
+        "net": -38.5,
+        "exp": -0.06887298747763863,
+        "wr": 40.6
+      },
+      {
+        "vix_bucket": "Normal VIX (15-25)",
+        "trades": 658,
+        "net": 8928.5,
+        "exp": 13.569148936170214,
+        "wr": 43.3
+      },
+      {
+        "vix_bucket": "High VIX (>25)",
+        "trades": 136,
+        "net": 4151.25,
+        "exp": 30.52389705882353,
+        "wr": 50.0
+      }
+    ]
+  },
+  "v3_attribution": {
+    "name": "Architecture D+ v3 (Gap-Continuation Crabel)",
+    "total_net": 10562.5,
+    "expectancy": 9.23,
+    "win_rate": 42.8,
+    "by_sleeve": [
+      {
+        "sleeve": "AG_CRABEL15_D_1c",
+        "trades": 188,
+        "net": 2157.5,
+        "exp": 11.476063829787234,
+        "wr": 50.0
+      },
+      {
+        "sleeve": "AG_MES_TRD30_D_1c",
+        "trades": 177,
+        "net": 2038.0,
+        "exp": 11.514124293785311,
+        "wr": 42.4
+      },
+      {
+        "sleeve": "AG_TRD60_D_1c",
+        "trades": 779,
+        "net": 6367.0,
+        "exp": 8.173299101412066,
+        "wr": 41.2
+      }
+    ],
+    "by_side": [
+      {
+        "side": "LONG",
+        "trades": 1144,
+        "net": 10562.5,
+        "exp": 9.232954545454545,
+        "wr": 42.8
+      }
+    ],
+    "by_dow": [
+      {
+        "dow": "Monday",
+        "trades": 251,
+        "net": 1992.5,
+        "exp": 7.938247011952191,
+        "wr": 41.0
+      },
+      {
+        "dow": "Tuesday",
+        "trades": 249,
+        "net": -770.5,
+        "exp": -3.0943775100401605,
+        "wr": 36.9
+      },
+      {
+        "dow": "Wednesday",
+        "trades": 213,
+        "net": 2869.75,
+        "exp": 13.47300469483568,
+        "wr": 44.6
+      },
+      {
+        "dow": "Thursday",
+        "trades": 235,
+        "net": 4008.25,
+        "exp": 17.056382978723406,
+        "wr": 45.1
+      },
+      {
+        "dow": "Friday",
+        "trades": 196,
+        "net": 2462.5,
+        "exp": 12.563775510204081,
+        "wr": 48.0
+      }
+    ],
+    "by_vix": [
+      {
+        "vix_bucket": "Low VIX (<15)",
+        "trades": 470,
+        "net": -830.0,
+        "exp": -1.7659574468085106,
+        "wr": 39.8
+      },
+      {
+        "vix_bucket": "Normal VIX (15-25)",
+        "trades": 552,
+        "net": 8019.75,
+        "exp": 14.528532608695652,
+        "wr": 43.7
+      },
+      {
+        "vix_bucket": "High VIX (>25)",
+        "trades": 114,
+        "net": 3418.75,
+        "exp": 29.989035087719298,
+        "wr": 51.8
+      }
+    ]
+  }
+}
