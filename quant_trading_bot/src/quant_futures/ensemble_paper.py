@@ -232,6 +232,13 @@ CANDIDATES["ag_arch_c_v2"] = dict(
                "VIX/VIX3M from yfinance daily, cached in runs/bars/vix_daily.csv. Paper only; no routing.",
 )
 
+CANDIDATES["ag_all_weather_v2"] = dict(
+    version="2.0.0", day_filter="no_backwardation", label="AG All-Weather v2 (same two sleeves; stands aside on days whose prior CBOE close had VIX > VIX3M)",
+    sleeves=[_sleeve("AG_BRK30_1c", _AG_BRK30, 1), _sleeve("AG_TRD60_1c", _AG_TRD60, 1)],
+    provenance="allweather_1 V1 (reports/ALLWEATHER_1_TRAINING.md): training 2010-23 +14,073 / DD 1,455 vs +13,069 / DD 2,061 unfiltered; the 59 removed days lost -1,005. "
+               "Missed the positive-years gate by one; deployed at Devin's discretion beside ag_all_weather. Paper only; no routing.",
+)
+
 def _load(name):
     path = SCRIPTS / f"{name}.py"
     if str(SCRIPTS) not in sys.path:
@@ -459,6 +466,8 @@ def run_routed(spec, bars, start, max_iter=12):
         for sl in spec["sleeves"]:
             b = bars[bars_key(sl)]
             blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
+            if spec.get("day_filter"):
+                dfm = day_filter_mask(spec, b); blocked = dfm if blocked is None else (blocked | dfm)
             runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
         return runs
     masks = {sl["name"]: day_filter_mask(spec, bars[bars_key(sl)]) for sl in spec["sleeves"]}
