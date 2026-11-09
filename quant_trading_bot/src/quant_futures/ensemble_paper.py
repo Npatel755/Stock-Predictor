@@ -246,6 +246,15 @@ CANDIDATES["ag_all_weather_v2_1c"] = dict(
                "high-ATR trades made +2,447 (random same-count trade sets: median +120). All pre-registered gates passed. Daily-loss, hard-drawdown and funded-lock gates unchanged. Paper only; no routing.",
 )
 
+CANDIDATES["book_a"] = dict(
+    version="1.0.0", book=("overnight_dip_v2", "ag_all_weather_v2_1c"),
+    label="Book A (overnight dip v2 + All-Weather v2 1c as one 1-contract account; night leg has priority, intraday decisions while it is open are skipped)",
+    sleeves=[dict(sl) for k in ("overnight_dip_v2", "ag_all_weather_v2_1c") for sl in CANDIDATES[k]["sleeves"]],
+    provenance=("portfolio_4 (reports/PORTFOLIO_4_TRAINING.md): the two frozen legs summed on training 2010-23 give +28,317, closed DD 1,633, "
+                "monthly corr 0.09, 0 overlapping fills, 1-y P(DD>=2k) 1.9%; book_1 marked (intraday-trailing) DD 2,043 once (Mar 2020). "
+                "No parameter chosen; both component ledgers keep running. Paper only; no routing."),
+)
+
 CANDIDATES["ag_quad_v2"] = dict(
     version="2.0.0", router="strict_1c", day_filter="no_backwardation",
     label="AG Quad v2 (same four sleeves; the two MNQ morning sleeves stand aside on days whose prior CBOE close had VIX > VIX3M)",
@@ -471,7 +480,31 @@ def day_filter_mask(spec, b, sleeve=None):
     vals = back.to_numpy(); return np.where(pos >= 0, vals[np.clip(pos, 0, len(vals) - 1)], False)
 
 
-def run_routed(spec, bars, start, max_iter=12):
+def _book_intervals(runs):
+    """[(open_utc, close_utc)] for every trade and still-open position of a run dict (used to block the other leg's decision bars)."""
+    iv = []
+    for r in runs.values():
+        for t in r["trades"]: iv.append((pd.Timestamp(t["entry_ts"]), pd.Timestamp(t["exit_ts"])))
+        if r["position"]["quantity"] and r.get("open_since"): iv.append((pd.Timestamp(r["open_since"]), pd.Timestamp("2200-01-01", tz="UTC")))
+    return iv
+
+
+def _interval_block(iv):
+    def f(b):
+        ts = b.timestamp_utc.to_numpy(); m = np.zeros(len(b), bool)
+        for a, z in iv: m |= (ts >= np.datetime64(a.tz_convert("UTC").tz_localize(None))) & (ts < np.datetime64(z.tz_convert("UTC").tz_localize(None)))
+        return m
+    return f
+
+
+def run_routed(spec, bars, start, max_iter=12, extra_block=None):
+    if spec.get("book"):
+        # Two frozen candidates as one 1-contract account: the overnight leg runs first; the intraday leg's decision bars that fall while a night
+        # position is open are blocked (training: 0 such overlaps, portfolio_4). Component ledgers are untouched.
+        ov_key, in_key = spec["book"]
+        runs = dict(run_routed(CANDIDATES[ov_key], bars, start))
+        runs.update(run_routed(CANDIDATES[in_key], bars, start, extra_block=_interval_block(_book_intervals(runs))))
+        return runs
     """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
     signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
@@ -484,6 +517,8 @@ def run_routed(spec, bars, start, max_iter=12):
             blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
             if spec.get("day_filter"):
                 dfm = day_filter_mask(spec, b, sl); blocked = dfm if blocked is None else (blocked | dfm)
+            if extra_block is not None:
+                xm = extra_block(b); blocked = xm if blocked is None else (blocked | xm)
             runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
         return runs
     masks = {sl["name"]: day_filter_mask(spec, bars[bars_key(sl)], sl) for sl in spec["sleeves"]}
