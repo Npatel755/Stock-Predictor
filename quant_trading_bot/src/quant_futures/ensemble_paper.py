@@ -491,8 +491,8 @@ def _book_intervals(runs):
 
 def _interval_block(iv):
     def f(b):
-        ts = b.timestamp_utc.to_numpy(); m = np.zeros(len(b), bool)
-        for a, z in iv: m |= (ts >= np.datetime64(a.tz_convert("UTC").tz_localize(None))) & (ts < np.datetime64(z.tz_convert("UTC").tz_localize(None)))
+        ts = pd.to_datetime(b.timestamp_utc, utc=True); m = np.zeros(len(b), bool)
+        for a, z in iv: m |= ((ts >= pd.Timestamp(a).tz_convert("UTC")) & (ts < pd.Timestamp(z).tz_convert("UTC"))).to_numpy()
         return m
     return f
 
