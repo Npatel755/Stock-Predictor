@@ -1,0 +1,102 @@
+{
+ "train": {
+  "2010": {
+   "net": -180.5,
+   "dd": 310.25,
+   "trades": 36,
+   "breach": false
+  },
+  "2011": {
+   "net": -151.5,
+   "dd": 194.25,
+   "trades": 80,
+   "breach": false
+  },
+  "2012": {
+   "net": -43.5,
+   "dd": 123.25,
+   "trades": 83,
+   "breach": false
+  },
+  "2013": {
+   "net": -142.0,
+   "dd": 262.75,
+   "trades": 74,
+   "breach": false
+  },
+  "2014": {
+   "net": -180.5,
+   "dd": 321.25,
+   "trades": 80,
+   "breach": false
+  },
+  "2015": {
+   "net": 228.5,
+   "dd": 235.25,
+   "trades": 90,
+   "breach": false
+  },
+  "2016": {
+   "net": -85.5,
+   "dd": 284.25,
+   "trades": 80,
+   "breach": false
+  },
+  "2017": {
+   "net": -52.0,
+   "dd": 346.25,
+   "trades": 72,
+   "breach": false
+  },
+  "2018": {
+   "net": 823.0,
+   "dd": 631.75,
+   "trades": 86,
+   "breach": false
+  },
+  "2019": {
+   "net": -215.5,
+   "dd": 364.25,
+   "trades": 54,
+   "breach": false
+  },
+  "2020": {
+   "net": 1202.5,
+   "dd": 625.25,
+   "trades": 49,
+   "breach": false
+  },
+  "2021": {
+   "net": 305.0,
+   "dd": 305.25,
+   "trades": 46,
+   "breach": false
+  },
+  "2022": {
+   "net": 786.5,
+   "dd": 338.75,
+   "trades": 17,
+   "breach": false
+  },
+  "2023": {
+   "net": 1938.0,
+   "dd": 322.75,
+   "trades": 52,
+   "breach": false
+  }
+ },
+ "validation": {
+  "2024": {
+   "net": 1536.5,
+   "dd": 325.75,
+   "trades": 31,
+   "breach": false
+  },
+  "2025": {
+   "net": -130.5,
+   "dd": 481.25,
+   "trades": 17,
+   "breach": false
+  }
+ }
+}

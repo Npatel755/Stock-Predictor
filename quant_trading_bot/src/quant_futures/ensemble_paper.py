@@ -63,6 +63,58 @@ def _sleeve(name, base, contracts):
     return dict(name=name, **base, max_contracts=int(contracts))
 
 
+# Antigravity "All-Weather" sleeves (research/antigravity/*.json), added at Nick's request 2026-11-08 as a paper candidate only.
+# Fixed-engine replication: 30m breakout 2010-19 -391 / 2020-23 +7,487; 60m trend 2025 did not reproduce (-1,188 vs claimed +325).
+_AG_BRK30 = dict(instrument="MNQ", family="breakout", lookback=8, threshold=1.5, stop_atr=1.25, target_r=5.0, hold_bars=8,
+                 session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="donchian_atr",
+                 entry_start=570, entry_end=690, max_gap_minutes=60)
+_AG_TRD60 = dict(instrument="MNQ", family="trend", lookback=12, threshold=0.75, stop_atr=1.25, target_r=4.0, hold_bars=8,
+                 session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=60, signal="ewma_trend",
+                 entry_start=540, entry_end=660, max_gap_minutes=90)
+
+# Antigravity "Quad Champion" additions (2026-11-08, Nick: "add the quad champion to the paper ledger"); paper only.
+# Afternoon MNQ 30m trend replicated: 2010-19 net $0 (6/14 years positive), 2020-23 +4,232 (reports/ANTIGRAVITY_PM_REPLICATION.json).
+_AG_MORN30 = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75, stop_atr=1.5, target_r=3.5, hold_bars=8,
+                  session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
+                  entry_start=570, entry_end=690, max_gap_minutes=60)   # Antigravity "Sleeve 1": EMA 8/16 over ATR14, decisions 09:45-12:00 ET
+_AG_TRD60Q = dict(_AG_TRD60, max_gap_minutes=120)
+_AG_TRD30PM = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.5, stop_atr=1.5, target_r=4.0, hold_bars=4,
+                   session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
+                   entry_start=780, entry_end=870, max_gap_minutes=60)
+_AG_MES_TRD30 = dict(instrument="MES", family="trend", lookback=8, threshold=1.0, stop_atr=1.25, target_r=2.5, hold_bars=12,
+                     session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
+                     entry_start=570, entry_end=900, max_gap_minutes=60)   # quad candidate applies router="strict_1c" (global 1-contract cap, priority 1>2>3>4)
+
+
+def _atr14(bars):
+    c, h, l = bars.close.to_numpy(float), bars.high.to_numpy(float), bars.low.to_numpy(float)
+    prev = np.r_[c[0], c[:-1]]
+    return pd.Series(np.maximum(h - l, np.maximum(abs(h - prev), abs(l - prev)))).rolling(14, min_periods=14).mean().to_numpy()
+
+
+def custom_signal(cfg, bars):
+    """Exact signal definitions used in scripts/replicate_antigravity_30m.py and replicate_antigravity_mtf.py."""
+    atr = _atr14(bars)
+    c = bars.close.to_numpy(float)
+    if cfg["signal"] == "donchian_atr":
+        lb, th = int(cfg["lookback"]), float(cfg["threshold"])
+        bh = bars.high.rolling(lb).max().shift(1).to_numpy(float)
+        bl = bars.low.rolling(lb).min().shift(1).to_numpy(float)
+        sig = np.where(c > bh + th * atr, 1, np.where(c < bl - th * atr, -1, 0))
+    elif cfg["signal"] == "ewma_trend":
+        th, lb = float(cfg["threshold"]), int(cfg.get("lookback", 12))
+        tr = ((bars.close.ewm(span=max(2, lb // 2), adjust=False).mean() - bars.close.ewm(span=lb, adjust=False).mean()).to_numpy(float)) / atr
+        sig = np.where(tr >= th, 1, np.where(tr <= -th, -1, 0))
+    else:
+        raise ValueError(cfg["signal"])
+    return sig.astype(np.int8), np.nan_to_num(atr).astype(np.float32)
+
+
+def bars_key(sleeve):
+    minutes = int(sleeve.get("bar_minutes", BAR_MINUTES))
+    return sleeve["instrument"] if minutes == BAR_MINUTES else f"{sleeve['instrument']}@{minutes}"
+
+
 CANDIDATES = {
     "portfolio_e": dict(
         version="1.0.0", label="Portfolio E (3 MES momentum + 2 MNQ breakout)",
@@ -88,6 +140,22 @@ CANDIDATES = {
         sleeves=[_sleeve("MES_MOM_2c", _MES_MOM, 2), _sleeve("MNQ_BRK_E_1c", _MNQ_BRK, 1), _sleeve("MNQ_HYB_C_1c", _MNQ_HYB, 1)],
         provenance="scripts/evaluate_multi_strategy_ensembles.py; reproduced train +12,817.25/DD 1,080.75, "
                    "validation +787.00/1,343.62, test(2026) +3,182.25/908.38",
+    ),
+    "ag_quad": dict(
+        version="1.1.0", router="strict_1c", label="AG Quad Champion (MNQ 30m morning trend > MNQ 60m macro trend > MNQ 30m afternoon trend > MES 30m trend; strict 1-contract router)",
+        sleeves=[_sleeve("AG_MORN30_1c", _AG_MORN30, 1), _sleeve("AG_TRD60Q_1c", _AG_TRD60Q, 1), _sleeve("AG_TRD30PM_1c", _AG_TRD30PM, 1), _sleeve("AG_MES_TRD30_1c", _AG_MES_TRD30, 1)],
+        provenance="Antigravity 'QUAD CHAMPION' spec message 2026-11-08 (v1.1.0 replaces the provisional 3-sleeve v1.0.0 before any trade), added as paper "
+                   "candidate at Nick's request. Fixed-engine replications: 60m trend 2025 -1,188 vs claimed +325; afternoon trend 2010-19 $0 / 2020-23 +4,232 "
+                   "(reports/ANTIGRAVITY_PM_REPLICATION.json); morning lb16 and MES sleeves not replicated here. Router strict_1c: one contract across all sleeves; a trade whose "
+                   "decision bar falls inside any open trade is rejected (priority by sleeve order), re-run until no overlap. Selected after seeing 2024-26: forward paper is the only clean evidence.",
+    ),
+    "ag_all_weather": dict(
+        version="1.0.0", label="AG All-Weather (1 MNQ 30m breakout + 1 MNQ 60m EWMA trend; Antigravity candidate)",
+        sleeves=[_sleeve("AG_BRK30_1c", _AG_BRK30, 1), _sleeve("AG_TRD60_1c", _AG_TRD60, 1)],
+        provenance="Antigravity rule dicts 2026-11-08, added as paper candidate at Nick's request; fixed-engine replication "
+                   "reports/ANTIGRAVITY_30M_REPLICATION.json (30m: 2010-19 -391, 2020-23 +7,487, 2024-25 +3,559) and "
+                   "reports/ANTIGRAVITY_MTF_REPLICATION.json (60m: 2024 +3,337, 2025 -1,188 vs claimed +325). "
+                   "Both sleeves were selected by Antigravity after seeing 2024-26: forward paper is the only clean evidence.",
     ),
 }
 
@@ -185,15 +253,15 @@ def completed(bars, now, minutes=SOURCE_MINUTES):
     return bars[bars.timestamp_utc <= cutoff]
 
 
-def aggregate(one_minute):
-    """Exact-count 15-minute bars from 1-minute bars (all 15 source minutes required)."""
+def aggregate(one_minute, minutes=BAR_MINUTES):
+    """Exact-count N-minute bars from 1-minute bars (all N source minutes required; default 15)."""
     frame = one_minute.sort_values("timestamp_utc").drop_duplicates("timestamp_utc")
-    bucket = frame.timestamp_utc.dt.floor(f"{BAR_MINUTES}min")
+    bucket = frame.timestamp_utc.dt.floor(f"{minutes}min")
     grouped = frame.groupby(bucket)
     bars = grouped.agg(open=("open", "first"), high=("high", "max"), low=("low", "min"), close=("close", "last"), volume=("volume", "sum"))
     count = grouped.size()
     span = grouped.timestamp_utc.max() - grouped.timestamp_utc.min()
-    keep = (count == BAR_MINUTES) & (span == pd.Timedelta(minutes=BAR_MINUTES - 1))
+    keep = (count == minutes) & (span == pd.Timedelta(minutes=minutes - 1))
     bars = bars[keep].reset_index()
     bars.columns = ["timestamp_utc", "open", "high", "low", "close", "volume"]
     return bars
@@ -264,24 +332,88 @@ def canonical_bars(stored, instrument, contract_label):
     return canonical(frame)
 
 
-def run_sleeve(cfg, bars, start):
-    """Exact research-engine run of one sleeve; execution starts at ``start``."""
+def _blocked(bars, runs, names):
+    """True on bars whose timestamp falls inside an open trade of any named sleeve (entry fill through exit), or after an
+    entry that is still open at the end of the data."""
+    ts = pd.to_datetime(bars.timestamp_utc, utc=True)
+    out = pd.Series(False, index=bars.index)
+    for name in names:
+        for t in runs[name]["trades"]:
+            out |= (ts >= pd.Timestamp(t["entry_ts"])) & (ts < pd.Timestamp(t["exit_ts"]))
+        if runs[name].get("open_since"):
+            out |= ts >= pd.Timestamp(runs[name]["open_since"])
+    return out.to_numpy()
+
+
+def run_routed(spec, bars, start, max_iter=12):
+    """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
+    (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
+    signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
+    if spec.get("router") != "strict_1c":
+        runs = {}
+        for sl in spec["sleeves"]:
+            b = bars[bars_key(sl)]
+            blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
+            runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
+        return runs
+    masks = {sl["name"]: np.zeros(len(bars[bars_key(sl)]), bool) for sl in spec["sleeves"]}
+    prio = {sl["name"]: i for i, sl in enumerate(spec["sleeves"])}
+    for _ in range(max_iter):
+        runs = {sl["name"]: run_sleeve(sl, bars[bars_key(sl)], start, masks[sl["name"]]) for sl in spec["sleeves"]}
+        rows = []
+        for sl in spec["sleeves"]:
+            r = runs[sl["name"]]; minutes = int(sl.get("bar_minutes", BAR_MINUTES))
+            for t, eb in zip(r["trades"], r["entry_bars"]):
+                e = pd.Timestamp(t["entry_ts"]); rows.append((e - pd.Timedelta(minutes=minutes), e, pd.Timestamp(t["exit_ts"]), prio[sl["name"]], sl["name"], eb))
+            if r["position"]["quantity"] and r.get("open_since"):
+                e = pd.Timestamp(r["open_since"]); rows.append((e - pd.Timedelta(minutes=minutes), e, pd.Timestamp("2200-01-01", tz="UTC"), prio[sl["name"]], sl["name"], None))
+        rows.sort(key=lambda x: (x[0], x[3]))
+        open_until, rejected = None, []
+        for decision, entry, exit_, _, name, eb in rows:
+            if open_until is not None and decision < open_until:
+                rejected.append((name, eb))
+            else:
+                open_until = exit_ if open_until is None else max(open_until, exit_)
+        if not rejected:
+            return runs
+        for name, eb in rejected:
+            if eb is not None:
+                masks[name][max(eb - 1, 0)] = True
+            else:   # still-open position without trade record: mask its signal bar via open_since
+                b = bars[bars_key(next(s for s in spec["sleeves"] if s["name"] == name))]
+                i = int((pd.to_datetime(b.timestamp_utc, utc=True) < pd.Timestamp(runs[name]["open_since"])).sum())
+                masks[name][max(i - 1, 0)] = True
+    return runs
+
+
+def run_sleeve(cfg, bars, start, blocked=None):
+    """Exact research-engine run of one sleeve; execution starts at ``start``. ``blocked`` masks signals (router)."""
     eng = engine()
     data = apply_early_close(eng["arrays"](bars), bars)
-    features = eng["features"](bars, int(cfg["lookback"]))
-    raw = eng["signal_for"](cfg, features).astype(np.int8)
     local = bars.timestamp_utc.dt.tz_convert("America/New_York")
-    decision = (local.dt.hour * 60 + local.dt.minute + 15).to_numpy()
     weekdays = local.dt.day_of_week.to_numpy() < 5
-    mask = (decision >= cfg["session_start"]) & (decision < cfg["session_end"]) & weekdays
+    exec_cfg = eng["execution_cfg"](cfg)
+    if cfg.get("signal"):
+        raw, atr = custom_signal(cfg, bars)
+        mask = weekdays  # entry window enforced by the engine via entry_start/entry_end, as in the replication scripts
+        exec_cfg.update(entry_start=cfg["entry_start"], entry_end=cfg["entry_end"], flat_minute=955, max_gap_minutes=cfg["max_gap_minutes"])
+    else:
+        features = eng["features"](bars, int(cfg["lookback"]))
+        raw = eng["signal_for"](cfg, features).astype(np.int8)
+        atr = features["atr"]
+        decision = (local.dt.hour * 60 + local.dt.minute + 15).to_numpy()
+        mask = (decision >= cfg["session_start"]) & (decision < cfg["session_end"]) & weekdays
+    if blocked is not None:
+        mask = mask & ~blocked
     signal = np.where(mask, raw, 0).astype(np.int8)
     first = int((bars.timestamp_utc < pd.Timestamp(start)).sum())
     sliced = {k: np.ascontiguousarray(v[first:]) for k, v in data.items()}
     sliced["session"] = pd.factorize(sliced["session"], sort=False)[0].astype(np.int64)
     sliced["contract"] = pd.factorize(sliced["contract"], sort=False)[0].astype(np.int64)
-    result = eng["execute"](sliced, signal[first:], np.ascontiguousarray(features["atr"][first:]), eng["execution_cfg"](cfg))
+    result = eng["execute"](sliced, signal[first:], np.ascontiguousarray(atr[first:]), exec_cfg)
     stamps = pd.to_datetime(sliced["timestamp"], unit="ns", utc=True)
     trades = []
+    entry_bars = [first + int(result["trade_entry"][i]) for i in range(len(result["trade_entry"]))]
     for i in range(len(result["trade_entry"])):
         trades.append(dict(
             sleeve=cfg["name"], entry_ts=stamps[int(result["trade_entry"][i])].isoformat(),
@@ -293,7 +425,14 @@ def run_sleeve(cfg, bars, start):
     position = dict(quantity=int(result["quantity"][-1]) if len(stamps) else 0,
                     unrealized=round(float(result["equity"][-1] - result["cash"][-1]), 2) if len(stamps) else 0.0,
                     last_close=float(sliced["close"][-1]) if len(stamps) else None)
-    return dict(trades=trades, curve=curve, position=position, lock=result["lock_reason"],
+    open_since = None
+    if position["quantity"]:
+        held = np.flatnonzero(result["quantity"] != 0)
+        run_start = held[-1]
+        while run_start > 0 and result["quantity"][run_start - 1] != 0:
+            run_start -= 1
+        open_since = stamps[int(run_start)].isoformat()
+    return dict(trades=trades, curve=curve, position=position, lock=result["lock_reason"], open_since=open_since, entry_bars=entry_bars,
                 funded_failed=bool(np.any(result["funded_failed"])) if len(stamps) else False)
 
 
@@ -375,7 +514,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
     prior_keys = {trade_key(r) for r in prior}
     last_exit = max((r["exit_ts"] for r in prior), default=None)
 
-    runs = {s["name"]: run_sleeve(s, bars[s["instrument"]], start) for s in spec["sleeves"]}
+    runs = run_routed(spec, bars, start)
     trades = sorted((t for r in runs.values() for t in r["trades"]), key=lambda t: (t["exit_ts"], t["entry_ts"], t["sleeve"]))
     current_keys = {trade_key(t) for t in trades}
     missing = [r for r in prior if trade_key(r) not in current_keys]
@@ -391,7 +530,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
         records.append(dict(kind="trade", **trade))
     portfolio = combine([r["curve"] for r in runs.values()])
     run_record = dict(kind="run", run_ts=now.isoformat(), candidate=key, version=spec["version"],
-                      bars_through={k: v.timestamp_utc.max().isoformat() for k, v in bars.items()},
+                      bars_through={k: v.timestamp_utc.max().isoformat() for k, v in bars.items() if k in {bars_key(s) for s in spec["sleeves"]}},
                       start=pd.Timestamp(start).isoformat(), source=source_name, engine_sha256=engine_identity(),
                       trades=len(trades), net=portfolio["net"], realized=portfolio["realized"],
                       closed_drawdown=portfolio["closed_drawdown"], intrabar_drawdown=portfolio["intrabar_drawdown"],
@@ -421,13 +560,37 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
                   positions=run_record["positions"], locks=run_record["locks"], funded_failed=run_record["funded_failed"],
                   divergences=total_divergences, last_trades=trades[-5:],
                   engine_sha256=run_record["engine_sha256"],
-                  bar_minutes=BAR_MINUTES,
-                  disclaimer="Simulated fills on 15m bars from a delayed public continuous series; no orders are routed anywhere.")
+                  bar_minutes=sorted({int(s.get("bar_minutes", BAR_MINUTES)) for s in spec["sleeves"]}),
+                  disclaimer="Simulated fills on 15m/30m/60m bars from a delayed public continuous series; no orders are routed anywhere.")
     (folder / "status.json").write_text(json.dumps(status, indent=1, sort_keys=True))
     equity = portfolio["equity"].copy()
     equity["ts"] = equity.ts.dt.strftime("%Y-%m-%dT%H:%M:%SZ")
     equity.iloc[-min(len(equity), 2000):].to_csv(folder / "equity.csv", index=False)
     return status
+
+
+def vol_regime(now=None):
+    """Prior-close VIX / VIX3M read-out (yfinance ^VIX, ^VIX3M daily). Informational only: research/extstate_1 found the
+    trend/breakout sleeves earned on backwardation (stress) days and were no better than random on contango days."""
+    try:
+        import yfinance as yf
+        rows = {}
+        for key, symbol in (("vix", "^VIX"), ("vix3m", "^VIX3M")):
+            history = yf.Ticker(symbol).history(period="1y", interval="1d", auto_adjust=False)
+            close = history["Close"].dropna()
+            close.index = pd.to_datetime(close.index.strftime("%Y-%m-%d"))  # ^VIX/^VIX3M come back in different tz offsets
+            rows[key] = close
+        joined = pd.concat([rows["vix"].rename("vix"), rows["vix3m"].rename("vix3m")], axis=1).dropna()
+        if len(joined) == 0:
+            return dict(error="no VIX data")
+        last = joined.iloc[-1]
+        slope = float(last.vix3m / last.vix - 1)
+        rank = float((joined.vix <= last.vix).mean())
+        return dict(as_of=str(joined.index[-1].date()), vix=round(float(last.vix), 2), vix3m=round(float(last.vix3m), 2),
+                    slope=round(slope, 4), state="backwardation (stress)" if slope < 0 else "contango (calm)",
+                    vix_rank_1y=round(rank, 2), note="sleeves historically earned on backwardation days; flat-to-negative vs random in contango (extstate_1)")
+    except Exception as exc:  # never let the read-out break the paper run
+        return dict(error=str(exc)[:200])
 
 
 def run_once(root, source, start, now=None, candidates=None):
@@ -446,13 +609,22 @@ def run_once(root, source, start, now=None, candidates=None):
         warm = frame[frame.timestamp_utc < start_ts].tail(WARMUP_BARS)
         live = frame[frame.timestamp_utc >= start_ts]
         bars[instrument] = canonical_bars(pd.concat([warm, live]), instrument, YAHOO_SYMBOLS[instrument])
+    for key, spec in CANDIDATES.items():
+        for sleeve in spec["sleeves"]:
+            bk = bars_key(sleeve)
+            if bk in bars:
+                continue
+            frame = aggregate(stored[sleeve["instrument"]], int(sleeve["bar_minutes"]))
+            warm = frame[frame.timestamp_utc < start_ts].tail(WARMUP_BARS * BAR_MINUTES // int(sleeve["bar_minutes"]))
+            live = frame[frame.timestamp_utc >= start_ts]
+            bars[bk] = canonical_bars(pd.concat([warm, live]), sleeve["instrument"], YAHOO_SYMBOLS[sleeve["instrument"]])
     statuses = {}
     for key, spec in CANDIDATES.items():
         if candidates and key not in candidates:
             continue
         statuses[key] = update_candidate(root, key, spec, bars, start_ts, now, source.name)
     summary = dict(updated=now.isoformat(), ingest=report, start=start_ts.isoformat(), source=source.name,
-                   candidates=statuses, total_net=round(sum(s["net"] for s in statuses.values()), 2))
+                   candidates=statuses, total_net=round(sum(s["net"] for s in statuses.values()), 2), regime=vol_regime(now))
     (root / "dashboard.json").write_text(json.dumps(summary, indent=1, sort_keys=True, default=str))
     return summary
 

@@ -1,0 +1,16 @@
+{
+  "source": "Antigravity via API bridge, 2026-11-08; 2024-25 and 2026 already consulted by sender for these rules -> only 2010-2019 NQ is unseen",
+  "causal_alignment_protocol": {
+    "description": "Zero-lookahead as-of backward join on bar close timestamp",
+    "formula": "5m_close_time = 5m_bar_open_time + 5min; 60m_close_time = 60m_bar_open_time + 60min",
+    "join": "pd.merge_asof(df_5m, df_60m[['close_time', 'trend60']], on='close_time', direction='backward')"
+  },
+  "rules": {
+    "MNQ_60m_Macro_Trend_1c": {"instrument": "MNQ", "timeframe": "60m", "feature": "fast_ewma(span=6) - slow_ewma(span=12) normalized by ATR(14)",
+      "signal": "Trend >= 0.75 Long, <= -0.75 Short", "session": "10:00-12:00 ET entry", "stop_atr": 1.25, "target_ratio": 4.0, "hold_bars": 8, "trailing_atr": 0.0, "maxqty": 1, "flat_minute": 955},
+    "MNQ_5m_MTF_lb24_tgt5R": {"instrument": "MNQ", "timeframe": "5m", "feature": "Donchian high/low of last 24 5m bars shifted by 1",
+      "mtf_condition": "trend60 > 0 Long, < 0 Short", "signal": "close > bh + 0.75*atr AND trend60 > 0 Long; close < bl - 0.75*atr AND trend60 < 0 Short",
+      "session": "09:45-11:45 ET entry", "stop_atr": 1.5, "target_ratio": 5.0, "hold_bars": 24, "trailing_atr": 0.0, "maxqty": 1, "flat_minute": 955}
+  },
+  "sender_claims_unverified": {"5m_train_2020_23_net": 6348.80, "5m_val_24_25_net": 4451.38, "duo_val_24_25_net": 6232.82, "duo_2026_test_net": -302.18, "full_7y_net": 17371.14}
+}

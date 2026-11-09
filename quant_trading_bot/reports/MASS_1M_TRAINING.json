@@ -1,0 +1,335 @@
+{
+ "protocol": "research/mass_v2/PROTOCOL.md",
+ "scored": 198720,
+ "trials_planned": 198720,
+ "g123": 0,
+ "g4": 0,
+ "g5": 0,
+ "by_family": [
+  {
+   "instrument": "MES",
+   "family": "keltner_fade_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -25450.2125,
+   "avg_years_pos": 0.03611111111111111,
+   "max_net": -1246.5
+  },
+  {
+   "instrument": "MES",
+   "family": "keltner_fade_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -21396.75078125,
+   "avg_years_pos": 0.17690972222222223,
+   "max_net": 94.75
+  },
+  {
+   "instrument": "MES",
+   "family": "keltner_fade_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -17972.720789930554,
+   "avg_years_pos": 0.16961805555555556,
+   "max_net": 98.0
+  },
+  {
+   "instrument": "MES",
+   "family": "orb_fade_r1",
+   "n": 4320,
+   "passed": 0,
+   "avg_net": -8114.969733796296,
+   "avg_years_pos": 0.49375,
+   "max_net": 173.0
+  },
+  {
+   "instrument": "MES",
+   "family": "orb_fade_r3",
+   "n": 4320,
+   "passed": 0,
+   "avg_net": -3572.0919560185184,
+   "avg_years_pos": 1.5465277777777777,
+   "max_net": 530.75
+  },
+  {
+   "instrument": "MES",
+   "family": "orb_fade_r5",
+   "n": 4320,
+   "passed": 0,
+   "avg_net": -2130.107002314815,
+   "avg_years_pos": 1.8608796296296297,
+   "max_net": 611.5
+  },
+  {
+   "instrument": "MES",
+   "family": "rsi_extreme_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -17278.020225694443,
+   "avg_years_pos": 0.6418402777777777,
+   "max_net": 594.5
+  },
+  {
+   "instrument": "MES",
+   "family": "rsi_extreme_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -15189.251779513888,
+   "avg_years_pos": 0.7269097222222223,
+   "max_net": 337.25
+  },
+  {
+   "instrument": "MES",
+   "family": "rsi_extreme_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -14404.128168402778,
+   "avg_years_pos": 0.7555555555555555,
+   "max_net": 192.0
+  },
+  {
+   "instrument": "MES",
+   "family": "stretch_fade_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -27584.076822916668,
+   "avg_years_pos": 0.0019097222222222222,
+   "max_net": -20541.5
+  },
+  {
+   "instrument": "MES",
+   "family": "stretch_fade_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -26367.845789930554,
+   "avg_years_pos": 0.0020833333333333333,
+   "max_net": -8142.25
+  },
+  {
+   "instrument": "MES",
+   "family": "stretch_fade_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -25042.826475694445,
+   "avg_years_pos": 0.006423611111111111,
+   "max_net": -5097.25
+  },
+  {
+   "instrument": "MES",
+   "family": "volume_exhaustion_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -26223.50759548611,
+   "avg_years_pos": 0.01423611111111111,
+   "max_net": -9290.0
+  },
+  {
+   "instrument": "MES",
+   "family": "volume_exhaustion_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -21087.82990451389,
+   "avg_years_pos": 0.134375,
+   "max_net": -1315.5
+  },
+  {
+   "instrument": "MES",
+   "family": "volume_exhaustion_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -19109.76736111111,
+   "avg_years_pos": 0.1284722222222222,
+   "max_net": -593.75
+  },
+  {
+   "instrument": "MES",
+   "family": "vwap_snapback_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -27774.543402777777,
+   "avg_years_pos": 0.0,
+   "max_net": -24722.25
+  },
+  {
+   "instrument": "MES",
+   "family": "vwap_snapback_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -25694.980555555554,
+   "avg_years_pos": 0.0,
+   "max_net": -9160.0
+  },
+  {
+   "instrument": "MES",
+   "family": "vwap_snapback_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -22550.93923611111,
+   "avg_years_pos": 0.0006944444444444445,
+   "max_net": -2916.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "keltner_fade_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -23215.43862847222,
+   "avg_years_pos": 0.10243055555555555,
+   "max_net": -602.0
+  },
+  {
+   "instrument": "MNQ",
+   "family": "keltner_fade_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -16019.455989583334,
+   "avg_years_pos": 0.4661458333333333,
+   "max_net": 356.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "keltner_fade_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -12089.164670138889,
+   "avg_years_pos": 0.6376736111111111,
+   "max_net": 637.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "orb_fade_r1",
+   "n": 4320,
+   "passed": 0,
+   "avg_net": -3250.6050925925924,
+   "avg_years_pos": 1.775,
+   "max_net": 797.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "orb_fade_r3",
+   "n": 4320,
+   "passed": 0,
+   "avg_net": -1361.0135416666667,
+   "avg_years_pos": 3.3252314814814814,
+   "max_net": 1936.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "orb_fade_r5",
+   "n": 4320,
+   "passed": 0,
+   "avg_net": -632.3418981481482,
+   "avg_years_pos": 3.857175925925926,
+   "max_net": 2943.0
+  },
+  {
+   "instrument": "MNQ",
+   "family": "rsi_extreme_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -15608.294444444444,
+   "avg_years_pos": 0.7715277777777778,
+   "max_net": 397.0
+  },
+  {
+   "instrument": "MNQ",
+   "family": "rsi_extreme_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -13365.650607638889,
+   "avg_years_pos": 1.0012152777777779,
+   "max_net": 621.0
+  },
+  {
+   "instrument": "MNQ",
+   "family": "rsi_extreme_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -11985.685069444444,
+   "avg_years_pos": 1.0793402777777779,
+   "max_net": 200.0
+  },
+  {
+   "instrument": "MNQ",
+   "family": "stretch_fade_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -26325.647482638888,
+   "avg_years_pos": 0.04791666666666667,
+   "max_net": -12545.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "stretch_fade_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -23797.507378472223,
+   "avg_years_pos": 0.0328125,
+   "max_net": -5238.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "stretch_fade_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -20960.78402777778,
+   "avg_years_pos": 0.1439236111111111,
+   "max_net": -2741.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "volume_exhaustion_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -22221.809895833332,
+   "avg_years_pos": 0.09930555555555555,
+   "max_net": -2916.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "volume_exhaustion_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -15363.0828125,
+   "avg_years_pos": 0.5375,
+   "max_net": -246.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "volume_exhaustion_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -12899.132118055555,
+   "avg_years_pos": 0.8100694444444444,
+   "max_net": -75.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "vwap_snapback_r1",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -26778.68611111111,
+   "avg_years_pos": 0.025694444444444443,
+   "max_net": -16741.0
+  },
+  {
+   "instrument": "MNQ",
+   "family": "vwap_snapback_r3",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -23324.311805555557,
+   "avg_years_pos": 0.01875,
+   "max_net": -7770.5
+  },
+  {
+   "instrument": "MNQ",
+   "family": "vwap_snapback_r5",
+   "n": 5760,
+   "passed": 0,
+   "avg_net": -19005.04236111111,
+   "avg_years_pos": 0.1388888888888889,
+   "max_net": -2012.5
+  }
+ ],
+ "frozen": {}
+}

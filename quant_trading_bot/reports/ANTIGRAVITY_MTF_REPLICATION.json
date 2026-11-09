@@ -1,0 +1,212 @@
+{
+ "train": {
+  "MNQ_5m_MTF": {
+   "2010": {
+    "net": -166.0,
+    "dd": 173.25,
+    "trades": 46,
+    "breach": false
+   },
+   "2011": {
+    "net": -201.5,
+    "dd": 300.25,
+    "trades": 75,
+    "breach": false
+   },
+   "2012": {
+    "net": -60.0,
+    "dd": 166.25,
+    "trades": 76,
+    "breach": false
+   },
+   "2013": {
+    "net": -67.5,
+    "dd": 182.25,
+    "trades": 76,
+    "breach": false
+   },
+   "2014": {
+    "net": -107.5,
+    "dd": 212.5,
+    "trades": 75,
+    "breach": false
+   },
+   "2015": {
+    "net": 87.0,
+    "dd": 169.75,
+    "trades": 74,
+    "breach": false
+   },
+   "2016": {
+    "net": 69.5,
+    "dd": 235.75,
+    "trades": 94,
+    "breach": false
+   },
+   "2017": {
+    "net": 235.5,
+    "dd": 174.25,
+    "trades": 77,
+    "breach": false
+   },
+   "2018": {
+    "net": 491.5,
+    "dd": 550.75,
+    "trades": 87,
+    "breach": false
+   },
+   "2019": {
+    "net": 220.0,
+    "dd": 286.75,
+    "trades": 44,
+    "breach": false
+   },
+   "2020": {
+    "net": 1153.0,
+    "dd": 479.75,
+    "trades": 64,
+    "breach": false
+   },
+   "2021": {
+    "net": 818.5,
+    "dd": 800.75,
+    "trades": 69,
+    "breach": false
+   },
+   "2022": {
+    "net": 2721.5,
+    "dd": 859.25,
+    "trades": 65,
+    "breach": false
+   },
+   "2023": {
+    "net": 1607.5,
+    "dd": 716.75,
+    "trades": 68,
+    "breach": false
+   }
+  },
+  "MNQ_60m_Trend": {
+   "2010": {
+    "net": 0.0,
+    "dd": 134.5,
+    "trades": 33,
+    "breach": false
+   },
+   "2011": {
+    "net": 80.0,
+    "dd": 271.75,
+    "trades": 69,
+    "breach": false
+   },
+   "2012": {
+    "net": 53.0,
+    "dd": 209.25,
+    "trades": 66,
+    "breach": false
+   },
+   "2013": {
+    "net": -208.5,
+    "dd": 275.25,
+    "trades": 79,
+    "breach": false
+   },
+   "2014": {
+    "net": 441.0,
+    "dd": 170.25,
+    "trades": 66,
+    "breach": false
+   },
+   "2015": {
+    "net": 598.0,
+    "dd": 150.75,
+    "trades": 68,
+    "breach": false
+   },
+   "2016": {
+    "net": -50.0,
+    "dd": 353.75,
+    "trades": 76,
+    "breach": false
+   },
+   "2017": {
+    "net": 166.0,
+    "dd": 299.5,
+    "trades": 76,
+    "breach": false
+   },
+   "2018": {
+    "net": 1393.5,
+    "dd": 560.5,
+    "trades": 65,
+    "breach": false
+   },
+   "2019": {
+    "net": 201.5,
+    "dd": 543.75,
+    "trades": 51,
+    "breach": false
+   },
+   "2020": {
+    "net": 182.5,
+    "dd": 1083.25,
+    "trades": 45,
+    "breach": false
+   },
+   "2021": {
+    "net": 1754.5,
+    "dd": 865.75,
+    "trades": 60,
+    "breach": false
+   },
+   "2022": {
+    "net": 1513.0,
+    "dd": 1406.75,
+    "trades": 54,
+    "breach": false
+   },
+   "2023": {
+    "net": -151.5,
+    "dd": 1170.25,
+    "trades": 91,
+    "breach": false
+   }
+  },
+  "duo_net": 12774.5,
+  "duo_eod_dd": 1867.0,
+  "corr_daily": 0.282
+ },
+ "validation": {
+  "MNQ_5m_MTF": {
+   "2024": {
+    "net": 1166.0,
+    "dd": 741.75,
+    "trades": 68,
+    "breach": false
+   },
+   "2025": {
+    "net": 3230.5,
+    "dd": 696.25,
+    "trades": 54,
+    "breach": false
+   }
+  },
+  "MNQ_60m_Trend": {
+   "2024": {
+    "net": 3336.5,
+    "dd": 775.25,
+    "trades": 63,
+    "breach": false
+   },
+   "2025": {
+    "net": -1188.0,
+    "dd": 1288.5,
+    "trades": 37,
+    "breach": false
+   }
+  },
+  "duo_net": 6545.0,
+  "duo_eod_dd": 1025.0,
+  "corr_daily": 0.223
+ }
+}
