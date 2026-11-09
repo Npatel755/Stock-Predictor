@@ -1,0 +1,118 @@
+{
+  "architecture_d_plus": {
+    "Training (2010-2023)": {
+      "net": 18855.19,
+      "trades": 1598,
+      "exp": 11.8,
+      "wr": 46.4,
+      "max_dd": 985.74
+    },
+    "Validation (2024-2025)": {
+      "net": 3254.59,
+      "trades": 178,
+      "exp": 18.28,
+      "wr": 46.1,
+      "max_dd": 1029.97
+    },
+    "Blind Test (2026)": {
+      "net": 1650.45,
+      "trades": 40,
+      "exp": 41.26,
+      "wr": 45.0,
+      "max_dd": 342.38
+    },
+    "Full 16.9-Year Total (2010-2026)": {
+      "net": 23760.23,
+      "trades": 1816,
+      "exp": 13.08,
+      "wr": 46.3,
+      "max_dd": 1576.83
+    }
+  },
+  "overnight_dip_v2_gated": {
+    "Training (2010-2023)": {
+      "net": 8864.0,
+      "trades": 421,
+      "exp": 21.05,
+      "wr": 58.2,
+      "max_dd": 1268.95
+    },
+    "Validation (2024-2025)": {
+      "net": 1072.82,
+      "trades": 44,
+      "exp": 24.38,
+      "wr": 47.7,
+      "max_dd": 1909.76
+    },
+    "Blind Test (2026)": {
+      "net": 7633.56,
+      "trades": 31,
+      "exp": 246.24,
+      "wr": 64.5,
+      "max_dd": 1369.97
+    },
+    "Full 16.9-Year Total (2010-2026)": {
+      "net": 17570.38,
+      "trades": 496,
+      "exp": 35.42,
+      "wr": 57.7,
+      "max_dd": 1909.76
+    }
+  },
+  "book_d_plus": {
+    "Training (2010-2023)": {
+      "net": 27719.19,
+      "trades": 2019,
+      "exp": 13.73,
+      "wr": 48.8,
+      "max_dd": 1097.61
+    },
+    "Validation (2024-2025)": {
+      "net": 4327.41,
+      "trades": 222,
+      "exp": 19.49,
+      "wr": 46.4,
+      "max_dd": 1276.93
+    },
+    "Blind Test (2026)": {
+      "net": 9284.01,
+      "trades": 71,
+      "exp": 130.76,
+      "wr": 53.5,
+      "max_dd": 1317.23
+    },
+    "Full 16.9-Year Total (2010-2026)": {
+      "net": 41330.61,
+      "trades": 2312,
+      "exp": 17.88,
+      "wr": 48.7,
+      "max_dd": 1317.24
+    }
+  },
+  "marked_drawdowns": {
+    "training": {
+      "max_marked_dd": 1247.6100000000442,
+      "date": "2023-04-13 11:00:00-04:00",
+      "cushion": 752.3899999999558,
+      "touches": 0
+    },
+    "validation": {
+      "max_marked_dd": 2139.5350000000003,
+      "date": "2025-01-26 18:05:00-05:00",
+      "cushion": -139.5350000000003,
+      "touches": 1
+    },
+    "test": {
+      "max_marked_dd": 1469.1399999999921,
+      "date": "2026-10-29 18:05:00-04:00",
+      "cushion": 530.8600000000079,
+      "touches": 0
+    },
+    "full_16_9yr": {
+      "max_marked_dd": 2139.5350000000035,
+      "date": "2025-01-26 18:05:00-05:00",
+      "cushion": -139.5350000000035,
+      "touches": 1
+    }
+  }
+}
