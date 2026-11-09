@@ -162,11 +162,13 @@ CANDIDATES = {
 
 # Overnight reopen-dip hold (research/overnight_2, 2026-11-09): paper-only at Nick's request. Training 2010-23 D4 variant +7,228 / 446 nights,
 # 11/14 years, DD 1,303, 199/200 placebo; frozen sibling D5 failed the one-shot 2024-25 (-1,031 / +1,751). Forward paper is the remaining test.
-OVN_SEED_GAPS = [0.00053, -0.00029, 0.00014, 0.00472, 0.00172, -0.00086, -0.00087, 0.00018, -0.01945, 0.00061, 0.00802, 0.00354, -0.00057,
-                 0.01517, 0.00051, 0.00003, 0.00228, 0.00224, 0.00024, 0.00001]  # last 20 MNQ reopen gaps of Dec 2025 (owned data), used until 20 live gaps exist
+OVN_SEED_GAPS = [0.00053, -0.00029, 0.00014, 0.00087, 0.00172, -0.00086, -0.00087, 0.00018, 0.00017, 0.00061, 0.00802, 0.00354, -0.00057,
+                 0.0021, 0.00051, 0.00003, 0.00228, 0.00009, 0.00024, 0.00001]  # last 20 MNQ reopen gaps of Dec 2025 (owned data, Sunday vs Friday close), used until 20 live gaps exist
+OVN_SEED_GAPS_MES = [0.00048, 0.00047, -0.00025, 0.00087, 0.00124, -0.0004, -0.00062, 0.00101, 0.00026, 0.00935, -0.00062, 0.00192, -0.00051,
+                     0.00247, 0.00018, -0.00025, 0.00298, 0.0, 0.00025, 0.0]
 OVN_TICK, OVN_MULT, OVN_SPREAD_TICKS, OVN_SLIP_TICKS, OVN_COMM = 0.25, 2.0, 1.75, 1.0, 0.61
 CANDIDATES["overnight_dip"] = dict(
-    version="1.0.0", overnight=True, label="Overnight Dip (MNQ 1c: hold 18:05 -> 09:30 ET only when the 18:00 reopen is <= -0.5 sd below the 16:00 close)",
+    version="1.0.1", overnight=True, exit_sod=570, require_mes_dip=False, label="Overnight Dip (MNQ 1c: hold 18:05 -> 09:30 ET only when the 18:00 reopen is <= -0.5 sd below the 16:00 close)",
     sleeves=[dict(name="OVN_DIP_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
     provenance="research/overnight_2/PROTOCOL.md + reports/OVERNIGHT_2_TRAINING.md (D4). Gap = 18:00 ET bar open / last 15:55-16:00 close (Sunday vs Friday) - 1; "
                "threshold -0.5 x std of the previous 20 gaps (seeded with Dec-2025 gaps until 20 live gaps exist). Entry 18:05 bar open + half spread + slippage, "
@@ -174,6 +176,14 @@ CANDIDATES["overnight_dip"] = dict(
                "Not validated (sibling failed 2024-25); paper only, no routing.",
 )
 
+
+CANDIDATES["overnight_dip_v2"] = dict(
+    version="2.0.0", overnight=True, exit_sod=585, require_mes_dip=True,
+    label="Overnight Dip v2 (MNQ 1c: hold 18:05 -> 09:45 ET when both the MNQ and MES 18:00 reopens are <= -0.5 sd below their 16:00 close)",
+    sleeves=[dict(name="OVN_DIP2_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="research/overnight_3/PROTOCOL.md + reports/OVERNIGHT_3_TRAINING.md (pre-declared combination C2+E2): training 2010-23 +11,797 / 490 nights / "
+               "12 of 14 years / closed DD 1,646 / 200 of 200 placebos. Challenger to overnight_dip v1 on paper only; not validated (2024-26 sealed); no routing.",
+)
 
 def _load(name):
     path = SCRIPTS / f"{name}.py"
@@ -365,7 +375,7 @@ def run_routed(spec, bars, start, max_iter=12):
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
     signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
     if spec.get("overnight"):
-        return {spec["sleeves"][0]["name"]: run_overnight(spec, bars["MNQ@1"], start)}
+        return {spec["sleeves"][0]["name"]: run_overnight(spec, bars["MNQ@1"], start, bars.get("MES@1"))}
     if spec.get("router") != "strict_1c":
         runs = {}
         for sl in spec["sleeves"]:
@@ -403,9 +413,27 @@ def run_routed(spec, bars, start, max_iter=12):
     return runs
 
 
-def run_overnight(spec, b, start):
+def _reopen_gaps(mes):
+    """Per date: True when the MES 18:00 reopen gap is <= -0.5 sd of its previous 20 gaps (seeded as for MNQ). Only prior completed nights enter the sd."""
+    if mes is None or mes.empty: return {}
+    m = mes.sort_values("timestamp_utc"); local = m.timestamp_utc.dt.tz_convert("America/New_York")
+    sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy(); o = m.open.to_numpy(dtype=float); c = m.close.to_numpy(dtype=float)
+    rth_close, reopen = {}, {}
+    for i in range(len(m)):
+        if 955 <= sod[i] < 960: rth_close[day[i]] = c[i]
+        if 1080 <= sod[i] < 1085 and day[i] not in reopen: reopen[day[i]] = o[i]
+    gaps = list(OVN_SEED_GAPS_MES); last_close = None; out = {}
+    for d in sorted(set(day)):
+        if d in rth_close: last_close = rth_close[d]
+        if d not in reopen or last_close is None: continue
+        gap = reopen[d] / last_close - 1; out[d] = bool(gap <= -0.5 * float(np.std(gaps[-20:], ddof=1))); gaps.append(gap)
+    return out
+
+
+def run_overnight(spec, b, start, mes=None):
     """Overnight reopen-dip hold on 1-minute MNQ bars; same output shape as run_sleeve. Long only, 1 contract, paper fills."""
-    name = spec["sleeves"][0]["name"]
+    name = spec["sleeves"][0]["name"]; exit_sod = int(spec.get("exit_sod", 570))
+    mes_gaps = _reopen_gaps(mes) if spec.get("require_mes_dip") else None
     b = b.sort_values("timestamp_utc").reset_index(drop=True)
     local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
     o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
@@ -416,7 +444,7 @@ def run_overnight(spec, b, start):
         if 955 <= sod[i] < 960: rth_close[d] = c[i]
         if 1080 <= sod[i] < 1085 and d not in reopen: reopen[d] = i
         if 1085 <= sod[i] < 1090 and d not in entry: entry[d] = i
-        if 570 <= sod[i] < 575 and d not in rth_open: rth_open[d] = i
+        if exit_sod <= sod[i] < exit_sod + 5 and d not in rth_open: rth_open[d] = i
         if sod[i] <= 965: safety[d] = i
     last_ts = b.timestamp_utc.iloc[-1]
     gaps = list(OVN_SEED_GAPS); last_close = None; trades = []; entry_bars = []; pos = None; cash = INITIAL_BALANCE
@@ -428,6 +456,7 @@ def run_overnight(spec, b, start):
         ri = reopen[d]; gap = o[ri] / last_close - 1; thr = -0.5 * float(np.std(gaps[-20:], ddof=1)); gaps.append(gap)
         ei = entry.get(d)
         if ei is None or gap > thr or ei < first or pos is not None: continue
+        if mes_gaps is not None and not mes_gaps.get(d, False): continue
         fill = o[ei] + half; pos = dict(i=ei, price=fill)
         xi, reason = None, None
         for nd in days[di + 1:di + 4]:
@@ -675,7 +704,7 @@ def run_once(root, source, start, now=None, candidates=None):
         warm = frame[frame.timestamp_utc < start_ts].tail(WARMUP_BARS)
         live = frame[frame.timestamp_utc >= start_ts]
         bars[instrument] = canonical_bars(pd.concat([warm, live]), instrument, YAHOO_SYMBOLS[instrument])
-    bars["MNQ@1"] = stored["MNQ"]
+    bars["MNQ@1"] = stored["MNQ"]; bars["MES@1"] = stored["MES"]
     for key, spec in CANDIDATES.items():
         for sleeve in spec["sleeves"]:
             bk = bars_key(sleeve)
