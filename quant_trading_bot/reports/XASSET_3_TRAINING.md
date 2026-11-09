@@ -19,3 +19,14 @@ B1 vs placebo: 193/200 random skips leave a worse marked DD, 192/200 a lower net
   not been scored on any sealed data and will not be. Forward paper is the next test.
 - Deployment: `book_a_bond` as a separate paper version beside `book_a` (same legs, same router; overnight leg additionally requires prior ZN day return ≥ 0
   or missing). Live state needs a daily 10-yr note close feed; its sign must be parity-checked against the Databento 16:00 ET series before trusting it.
+
+## Addendum — feed-definition robustness (pre-registered in the protocol addendum before deployment)
+| ZN close definition | retained | marked DD | $2k touches | placebo DD worse | gate |
+|---|---|---|---|---|---|
+| 16:00 ET bar (research) | 0.935 | 1,506 | 0 | 193/200 | pass |
+| 15:00 ET bar (settlement-like) | 0.876 | 1,676 | 0 | 147/200 | **fail** |
+
+The sign of the two definitions agrees on 94 % of days; the 6 % that differ carry much of the effect, i.e. the information is largely the bond move during
+equities' last hour. Plausible (it classifies the type of equity selloff) but definition-sensitive, which lowers confidence. Deployment therefore uses the
+exact 16:00 ET close computed from yfinance ZN=F 1-minute bars (same feed family the runner already uses for MNQ/MES), not the daily settlement; the fragility
+is stated in the ledger's provenance and `book_a_bond` is a challenger beside `book_a`, not a replacement. Forward divergence between the two cards measures the state.

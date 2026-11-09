@@ -9,7 +9,7 @@ ns = {"__file__": str(ROOT / "scripts/book_1_pilot.py")}; exec(src, ns); ev = ns
 def leg_of(t): return "ov" if (t.hour, t.minute) in ((18, 5), (9, 45)) else "in"
 events = sorted([(t, k, w, r, leg_of(t)) for (t, k, w, r) in ev], key=lambda x: x[0])
 d = pd.read_parquet(ROOT / "data/market/crossasset/ZN_c_0_ohlcv1m_2010_2025.parquet", columns=["close"]); d = d[d.index < pd.Timestamp("2024-01-01", tz="UTC")]
-et = d.index.tz_convert("America/New_York"); sod = et.hour * 60 + et.minute; sel = (sod >= 955) & (sod < 960)
+et = d.index.tz_convert("America/New_York"); sod = et.hour * 60 + et.minute; import os; _h = int(os.environ.get("ZN_DEF", "16")) * 60; sel = (sod >= _h - 5) & (sod < _h)
 c16 = d.close[sel].groupby(pd.Series(et.date, index=d.index)[sel]).last(); D = (c16 / c16.shift(1) - 1).dropna(); D.index = pd.to_datetime(D.index)
 night_idx = [i for i, e in enumerate(events) if e[4] == "ov" and e[1] == "worst"]
 night_dates = pd.to_datetime([events[i][0].date() for i in night_idx])
@@ -45,4 +45,4 @@ b1["placebo_dd_worse_than_B1"] = int((pdd > b1["marked_dd"]).sum()); b1["placebo
 b1["placebo_dd_median"] = round(float(np.median(pdd)), 2); b1["placebo_net_median"] = round(float(np.median(pnet)), 2)
 b1["pass"] = bool(b1["marked_dd"] < 2000 and b1["retained"] >= 0.8 and b1["placebo_dd_worse_than_B1"] >= 190 and c1["retained"] < b1["retained"] and c1["marked_dd"] >= b1["marked_dd"])
 print("B1 placebo", {k_: b1[k_] for k_ in ("placebo_dd_worse_than_B1", "placebo_net_below_B1", "placebo_dd_median", "placebo_net_median", "pass")}, flush=True)
-Path(ROOT / "reports/XASSET_3_TRAINING.json").write_text(json.dumps(dict(book_a=base, B1=b1, C1=c1), indent=1, default=str)); print("done")
+(ROOT / ("reports/XASSET_3_TRAINING" + ("" if os.environ.get("ZN_DEF", "16") == "16" else "_" + os.environ["ZN_DEF"]) + ".json")).write_text(json.dumps(dict(book_a=base, B1=b1, C1=c1), indent=1, default=str)); print("done")

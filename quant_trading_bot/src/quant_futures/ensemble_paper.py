@@ -280,6 +280,24 @@ CANDIDATES["book_a_skew"] = dict(
                 "Forward record only; switch target, not a current-account candidate. Paper only; no routing."),
 )
 
+CANDIDATES["overnight_dip_v2_bond"] = dict(
+    version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, state="zn_not_down", hidden=True,
+    label="Overnight Dip v2 bond-conditioned (skips nights whose day had the 10-yr note's 16:00 ET close below the prior day's)",
+    sleeves=[dict(name="OVN_DIP2_BOND_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="xasset_3 (reports/XASSET_3_TRAINING.md). Component of book_a_bond only; not shown as its own ledger.",
+)
+
+CANDIDATES["book_a_bond"] = dict(
+    version="1.0.0", book=("overnight_dip_v2_bond", "ag_all_weather_v2_1c"),
+    label="Book A bond-conditioned (Book A legs; the overnight leg skips nights whose day had the 10-yr note close down at 16:00 ET; night leg has priority)",
+    sleeves=[dict(sl) for k in ("overnight_dip_v2_bond", "ag_all_weather_v2_1c") for sl in CANDIDATES[k]["sleeves"]],
+    provenance=("xasset_2/xasset_3 (reports/XASSET_2_TRAINING.md, XASSET_3_TRAINING.md), training 2010-23 only, derived on the same split: dip nights after a "
+                "bonds-down day earn ~$9/night vs ~$34 after bonds-up; skipping them keeps 93.5% of Book A's net (+26,481 vs +28,317) and cuts the marked "
+                "(intraday-trailing) DD from 2,043 to 1,506 with 0 touches of a $2k floor; 193/200 random same-count skips are worse, the mirror control fails. "
+                "Not scored on 2024-26. Challenger beside book_a; both keep running. FRAGILITY: re-scored with the 15:00 ET settlement close the rule keeps 87.6% / DD 1,676 but only 147/200 placebos are worse "
+                "(fails) - the effect sits largely in the 15:00-16:00 bond move, so the live state uses the exact 16:00 ET close from yfinance ZN=F 1-minute bars. Paper only; no routing."),
+)
+
 CANDIDATES["ag_quad_v2"] = dict(
     version="2.0.0", router="strict_1c", day_filter="no_backwardation",
     label="AG Quad v2 (same four sleeves; the two MNQ morning sleeves stand aside on days whose prior CBOE close had VIX > VIX3M)",
@@ -515,6 +533,31 @@ def skew_below_days():
         out = pd.Series(dtype=bool)
     _SKEW_CACHE["series"] = out; return out
 
+_ZN_CACHE = {"path": None, "series": None}
+def zn_down_days():
+    """10-yr note futures 16:00 ET close below the prior day's 16:00 close, by date. Research definition (xasset_2/3: last ZN 1-minute close in 15:55-15:59 ET);
+    live source is yfinance ZN=F 1-minute bars (7-day window), accumulated in <bars>/zn_daily.csv so history builds up and a feed failure falls back to the
+    last copy. The settlement (15:00) definition was pre-registered as a fallback and FAILED the gate, so only the 16:00 definition is used."""
+    if _ZN_CACHE["series"] is not None: return _ZN_CACHE["series"]
+    path = _ZN_CACHE["path"]; ser = None
+    try:
+        import yfinance as yf
+        h = yf.Ticker("ZN=F").history(period="7d", interval="1m", auto_adjust=False)["Close"].dropna()
+        et = h.index.tz_convert("America/New_York"); sod = et.hour * 60 + et.minute; sel = (sod >= 955) & (sod < 960)
+        c16 = h[sel].groupby(pd.Index(et[sel].strftime("%Y-%m-%d"))).last(); c16.index = pd.to_datetime(c16.index)
+        ser = c16.rename("zn16").to_frame()
+        if path is not None and len(ser):
+            old = pd.read_csv(path, index_col=0, parse_dates=True) if Path(path).exists() else None
+            ser = pd.concat([old, ser]).loc[lambda d: ~d.index.duplicated(keep="last")].sort_index() if old is not None else ser
+            ser.to_csv(path)
+    except Exception:
+        if path is not None and Path(path).exists(): ser = pd.read_csv(path, index_col=0, parse_dates=True)
+    if ser is not None and len(ser) >= 2:
+        lvl = ser["zn16"].astype(float); out = (lvl < lvl.shift(1))[lvl.shift(1).notna()]
+    else:
+        out = pd.Series(dtype=bool)
+    _ZN_CACHE["series"] = out; return out
+
 def _prior_close_state(series, dates):
     """Value of a CBOE-close-dated boolean series at the last close strictly before each ET date (point-in-time); False where unknown."""
     if len(series) == 0: return np.zeros(len(dates), bool)
@@ -644,6 +687,9 @@ def run_overnight(spec, b, start, mes=None):
     if spec.get("state") == "skew_below":  # prior CBOE close (the day's 16:15 close precedes the 18:00 reopen; the series is dated by close day)
         _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
         state_ok = dict(zip(_d, _prior_close_state(skew_below_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))])))
+    if spec.get("state") == "zn_not_down":  # xasset_3: skip the night if the day's ZN 16:00 ET close was below the prior day's; unknown state -> trade (as in research)
+        _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
+        state_ok = dict(zip(_d, ~_prior_close_state(zn_down_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))]).astype(bool)))
     local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
     o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
     half = (spread / 2 + OVN_SLIP_TICKS) * OVN_TICK
@@ -927,6 +973,7 @@ def run_once(root, source, start, now=None, candidates=None):
     root = Path(root)
     report = ingest(root / "bars", source, now); _VIX_CACHE["path"] = str(root / "bars" / "vix_daily.csv"); _VIX_CACHE["series"] = None
     _SKEW_CACHE["path"] = str(root / "bars" / "skew_daily.csv"); _SKEW_CACHE["series"] = None
+    _ZN_CACHE["path"] = str(root / "bars" / "zn_daily.csv"); _ZN_CACHE["series"] = None
     stored = {k: BarStore(root / "bars", k).read() for k in ("MES", "MNQ")}
     start_ts = pd.Timestamp(start).tz_localize("UTC") if pd.Timestamp(start).tzinfo is None else pd.Timestamp(start)
     bars = {}
