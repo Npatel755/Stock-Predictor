@@ -1,0 +1,56 @@
+{
+ "base": {
+  "net": 16069.5,
+  "trades": 1980,
+  "per": 8.12,
+  "closed_dd": 1596.0,
+  "pos_years": 11,
+  "max_year_share": 0.419,
+  "pre2020": 5049.5
+ },
+ "B1": {
+  "net": 6695.0,
+  "trades": 1208,
+  "per": 5.54,
+  "closed_dd": 2641.5,
+  "pos_years": 9,
+  "max_year_share": 0.621,
+  "pre2020": 2369.0,
+  "removed": 934,
+  "removed_net": 11153.0,
+  "random_removals_worse": 193,
+  "added": 162,
+  "added_net": 1778.5,
+  "pass": false
+ },
+ "B2": {
+  "net": 10464.0,
+  "trades": 1474,
+  "per": 7.1,
+  "closed_dd": 1673.0,
+  "pos_years": 7,
+  "max_year_share": 0.567,
+  "pre2020": 2888.5,
+  "removed": 612,
+  "removed_net": 7378.5,
+  "random_removals_worse": 176,
+  "added": 106,
+  "added_net": 1773.0,
+  "pass": false
+ },
+ "B3": {
+  "net": 16049.5,
+  "trades": 1980,
+  "per": 8.11,
+  "closed_dd": 1596.0,
+  "pos_years": 11,
+  "max_year_share": 0.42,
+  "pre2020": 5029.5,
+  "removed": 2,
+  "removed_net": 85.5,
+  "random_removals_worse": 164,
+  "added": 2,
+  "added_net": 65.5,
+  "pass": false
+ }
+}
