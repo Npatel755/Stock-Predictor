@@ -160,6 +160,21 @@ CANDIDATES = {
 }
 
 
+# Overnight reopen-dip hold (research/overnight_2, 2026-11-09): paper-only at Nick's request. Training 2010-23 D4 variant +7,228 / 446 nights,
+# 11/14 years, DD 1,303, 199/200 placebo; frozen sibling D5 failed the one-shot 2024-25 (-1,031 / +1,751). Forward paper is the remaining test.
+OVN_SEED_GAPS = [0.00053, -0.00029, 0.00014, 0.00472, 0.00172, -0.00086, -0.00087, 0.00018, -0.01945, 0.00061, 0.00802, 0.00354, -0.00057,
+                 0.01517, 0.00051, 0.00003, 0.00228, 0.00224, 0.00024, 0.00001]  # last 20 MNQ reopen gaps of Dec 2025 (owned data), used until 20 live gaps exist
+OVN_TICK, OVN_MULT, OVN_SPREAD_TICKS, OVN_SLIP_TICKS, OVN_COMM = 0.25, 2.0, 1.75, 1.0, 0.61
+CANDIDATES["overnight_dip"] = dict(
+    version="1.0.0", overnight=True, label="Overnight Dip (MNQ 1c: hold 18:05 -> 09:30 ET only when the 18:00 reopen is <= -0.5 sd below the 16:00 close)",
+    sleeves=[dict(name="OVN_DIP_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="research/overnight_2/PROTOCOL.md + reports/OVERNIGHT_2_TRAINING.md (D4). Gap = 18:00 ET bar open / last 15:55-16:00 close (Sunday vs Friday) - 1; "
+               "threshold -0.5 x std of the previous 20 gaps (seeded with Dec-2025 gaps until 20 live gaps exist). Entry 18:05 bar open + half spread + slippage, "
+               "exit next 09:30 bar open - half spread - slippage, $0.61/side; safety flatten at the last bar <= 16:05 ET if no RTH open bar appears. "
+               "Not validated (sibling failed 2024-25); paper only, no routing.",
+)
+
+
 def _load(name):
     path = SCRIPTS / f"{name}.py"
     if str(SCRIPTS) not in sys.path:
@@ -349,6 +364,8 @@ def run_routed(spec, bars, start, max_iter=12):
     """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
     signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
+    if spec.get("overnight"):
+        return {spec["sleeves"][0]["name"]: run_overnight(spec, bars["MNQ@1"], start)}
     if spec.get("router") != "strict_1c":
         runs = {}
         for sl in spec["sleeves"]:
@@ -384,6 +401,55 @@ def run_routed(spec, bars, start, max_iter=12):
                 i = int((pd.to_datetime(b.timestamp_utc, utc=True) < pd.Timestamp(runs[name]["open_since"])).sum())
                 masks[name][max(i - 1, 0)] = True
     return runs
+
+
+def run_overnight(spec, b, start):
+    """Overnight reopen-dip hold on 1-minute MNQ bars; same output shape as run_sleeve. Long only, 1 contract, paper fills."""
+    name = spec["sleeves"][0]["name"]
+    b = b.sort_values("timestamp_utc").reset_index(drop=True)
+    local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
+    o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
+    half = (OVN_SPREAD_TICKS / 2 + OVN_SLIP_TICKS) * OVN_TICK
+    days = sorted(set(day)); rth_close = {}; reopen = {}; entry = {}; rth_open = {}; safety = {}
+    for i in range(len(b)):
+        d = day[i]
+        if 955 <= sod[i] < 960: rth_close[d] = c[i]
+        if 1080 <= sod[i] < 1085 and d not in reopen: reopen[d] = i
+        if 1085 <= sod[i] < 1090 and d not in entry: entry[d] = i
+        if 570 <= sod[i] < 575 and d not in rth_open: rth_open[d] = i
+        if sod[i] <= 965: safety[d] = i
+    last_ts = b.timestamp_utc.iloc[-1]
+    gaps = list(OVN_SEED_GAPS); last_close = None; trades = []; entry_bars = []; pos = None; cash = INITIAL_BALANCE
+    cash_arr = np.full(len(b), np.nan); eq_arr = np.full(len(b), np.nan); worst_arr = np.full(len(b), np.nan)
+    start_ts = pd.Timestamp(start); first = int((b.timestamp_utc < start_ts).sum())
+    for di, d in enumerate(days):
+        if d in rth_close: last_close = rth_close[d]
+        if d not in reopen or last_close is None: continue
+        ri = reopen[d]; gap = o[ri] / last_close - 1; thr = -0.5 * float(np.std(gaps[-20:], ddof=1)); gaps.append(gap)
+        ei = entry.get(d)
+        if ei is None or gap > thr or ei < first or pos is not None: continue
+        fill = o[ei] + half; pos = dict(i=ei, price=fill)
+        xi, reason = None, None
+        for nd in days[di + 1:di + 4]:
+            if nd in rth_open and rth_open[nd] > ei: xi, reason = rth_open[nd], "rth_open"; break
+            cutoff = pd.Timestamp(nd).tz_localize("America/New_York") + pd.Timedelta(minutes=965)
+            if nd in safety and safety[nd] > ei and last_ts >= cutoff: xi, reason = safety[nd], "safety_flatten"; break
+        if xi is None: continue  # still open
+        xp = (o[xi] if reason == "rth_open" else c[xi]) - half; net = (xp - fill) * OVN_MULT - 2 * OVN_COMM
+        trades.append(dict(sleeve=name, entry_ts=b.timestamp_utc[ei].isoformat(), exit_ts=b.timestamp_utc[xi].isoformat(), side=1, qty=1, entry_price=round(fill, 2),
+                           exit_price=round(xp, 2), net=round(float(net), 2), fees=round(2 * OVN_COMM, 2), reason=reason))
+        entry_bars.append(ei); pos = None
+        for j in range(ei, xi): eq_arr[j] = cash + (c[j] - fill) * OVN_MULT; worst_arr[j] = cash + (l[j] - fill) * OVN_MULT
+        cash += net; cash_arr[xi] = cash
+    if pos is not None:
+        for j in range(pos["i"], len(b)): eq_arr[j] = cash + (c[j] - pos["price"]) * OVN_MULT; worst_arr[j] = cash + (l[j] - pos["price"]) * OVN_MULT
+    sl = slice(first, None); cash_s = pd.Series(cash_arr[sl]).ffill().fillna(INITIAL_BALANCE)
+    eq_s = pd.Series(eq_arr[sl]); eq_s = eq_s.where(eq_s.notna(), cash_s); worst_s = pd.Series(worst_arr[sl]); worst_s = worst_s.where(worst_s.notna(), cash_s)
+    curve = pd.DataFrame(dict(ts=b.timestamp_utc[sl].to_numpy(), cash=cash_s.to_numpy(), equity=eq_s.to_numpy(), worst=worst_s.to_numpy()))
+    position = dict(quantity=1 if pos is not None else 0, unrealized=round(float(eq_s.iloc[-1] - cash_s.iloc[-1]), 2) if len(eq_s) else 0.0, last_close=float(c[-1]) if len(c) else None)
+    peak = pd.Series(eq_s).cummax()
+    return dict(trades=trades, curve=curve, position=position, lock=None, open_since=b.timestamp_utc[pos["i"]].isoformat() if pos is not None else None,
+                entry_bars=entry_bars, funded_failed=bool(((peak - worst_s).max()) > FUNDED_DRAWDOWN) if len(eq_s) else False)
 
 
 def run_sleeve(cfg, bars, start, blocked=None):
@@ -609,6 +675,7 @@ def run_once(root, source, start, now=None, candidates=None):
         warm = frame[frame.timestamp_utc < start_ts].tail(WARMUP_BARS)
         live = frame[frame.timestamp_utc >= start_ts]
         bars[instrument] = canonical_bars(pd.concat([warm, live]), instrument, YAHOO_SYMBOLS[instrument])
+    bars["MNQ@1"] = stored["MNQ"]
     for key, spec in CANDIDATES.items():
         for sleeve in spec["sleeves"]:
             bk = bars_key(sleeve)
