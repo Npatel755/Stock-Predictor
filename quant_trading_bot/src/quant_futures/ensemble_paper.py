@@ -74,13 +74,16 @@ _AG_TRD60 = dict(instrument="MNQ", family="trend", lookback=12, threshold=0.75, 
 
 # Antigravity "Quad Champion" additions (2026-11-08, Nick: "add the quad champion to the paper ledger"); paper only.
 # Afternoon MNQ 30m trend replicated: 2010-19 net $0 (6/14 years positive), 2020-23 +4,232 (reports/ANTIGRAVITY_PM_REPLICATION.json).
+_AG_MORN30 = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75, stop_atr=1.5, target_r=3.5, hold_bars=8,
+                  session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
+                  entry_start=570, entry_end=690, max_gap_minutes=60)   # Antigravity "Sleeve 1": EMA 8/16 over ATR14, decisions 09:45-12:00 ET
+_AG_TRD60Q = dict(_AG_TRD60, max_gap_minutes=120)
 _AG_TRD30PM = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.5, stop_atr=1.5, target_r=4.0, hold_bars=4,
                    session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
                    entry_start=780, entry_end=870, max_gap_minutes=60)
 _AG_MES_TRD30 = dict(instrument="MES", family="trend", lookback=8, threshold=1.0, stop_atr=1.25, target_r=2.5, hold_bars=12,
                      session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
-                     entry_start=570, entry_end=870, max_gap_minutes=60,
-                     router_after=["AG_BRK30_1c", "AG_TRD30PM_1c"])   # 1-contract exclusive router: MES only signals while every MNQ sleeve is flat
+                     entry_start=570, entry_end=900, max_gap_minutes=60)   # quad candidate applies router="strict_1c" (global 1-contract cap, priority 1>2>3>4)
 
 
 def _atr14(bars):
@@ -139,12 +142,12 @@ CANDIDATES = {
                    "validation +787.00/1,343.62, test(2026) +3,182.25/908.38",
     ),
     "ag_quad": dict(
-        version="1.0.0", label="AG Quad Champion (MNQ 30m morning breakout + MNQ 30m afternoon trend + MES 30m trend, 1c exclusive router)",
-        sleeves=[_sleeve("AG_BRK30_1c", _AG_BRK30, 1), _sleeve("AG_TRD30PM_1c", _AG_TRD30PM, 1), _sleeve("AG_MES_TRD30_1c", _AG_MES_TRD30, 1)],
-        provenance="Antigravity rule dicts 2026-11-08, added as paper candidate at Nick's request. Fixed-engine replication: morning breakout "
-                   "2010-19 -391 / 2020-23 +7,487; afternoon trend 2010-19 $0 / 2020-23 +4,232 (reports/ANTIGRAVITY_PM_REPLICATION.json); "
-                   "MES sleeve not replicated here. Router: MES signals suppressed while an MNQ sleeve holds a position (bar-level). "
-                   "Selected after seeing 2024-26: forward paper is the only clean evidence.",
+        version="1.1.0", router="strict_1c", label="AG Quad Champion (MNQ 30m morning trend > MNQ 60m macro trend > MNQ 30m afternoon trend > MES 30m trend; strict 1-contract router)",
+        sleeves=[_sleeve("AG_MORN30_1c", _AG_MORN30, 1), _sleeve("AG_TRD60Q_1c", _AG_TRD60Q, 1), _sleeve("AG_TRD30PM_1c", _AG_TRD30PM, 1), _sleeve("AG_MES_TRD30_1c", _AG_MES_TRD30, 1)],
+        provenance="Antigravity 'QUAD CHAMPION' spec message 2026-11-08 (v1.1.0 replaces the provisional 3-sleeve v1.0.0 before any trade), added as paper "
+                   "candidate at Nick's request. Fixed-engine replications: 60m trend 2025 -1,188 vs claimed +325; afternoon trend 2010-19 $0 / 2020-23 +4,232 "
+                   "(reports/ANTIGRAVITY_PM_REPLICATION.json); morning lb16 and MES sleeves not replicated here. Router strict_1c: one contract across all sleeves; a trade whose "
+                   "decision bar falls inside any open trade is rejected (priority by sleeve order), re-run until no overlap. Selected after seeing 2024-26: forward paper is the only clean evidence.",
     ),
     "ag_all_weather": dict(
         version="1.0.0", label="AG All-Weather (1 MNQ 30m breakout + 1 MNQ 60m EWMA trend; Antigravity candidate)",
@@ -342,6 +345,47 @@ def _blocked(bars, runs, names):
     return out.to_numpy()
 
 
+def run_routed(spec, bars, start, max_iter=12):
+    """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
+    (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
+    signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
+    if spec.get("router") != "strict_1c":
+        runs = {}
+        for sl in spec["sleeves"]:
+            b = bars[bars_key(sl)]
+            blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
+            runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
+        return runs
+    masks = {sl["name"]: np.zeros(len(bars[bars_key(sl)]), bool) for sl in spec["sleeves"]}
+    prio = {sl["name"]: i for i, sl in enumerate(spec["sleeves"])}
+    for _ in range(max_iter):
+        runs = {sl["name"]: run_sleeve(sl, bars[bars_key(sl)], start, masks[sl["name"]]) for sl in spec["sleeves"]}
+        rows = []
+        for sl in spec["sleeves"]:
+            r = runs[sl["name"]]; minutes = int(sl.get("bar_minutes", BAR_MINUTES))
+            for t, eb in zip(r["trades"], r["entry_bars"]):
+                e = pd.Timestamp(t["entry_ts"]); rows.append((e - pd.Timedelta(minutes=minutes), e, pd.Timestamp(t["exit_ts"]), prio[sl["name"]], sl["name"], eb))
+            if r["position"]["quantity"] and r.get("open_since"):
+                e = pd.Timestamp(r["open_since"]); rows.append((e - pd.Timedelta(minutes=minutes), e, pd.Timestamp("2200-01-01", tz="UTC"), prio[sl["name"]], sl["name"], None))
+        rows.sort(key=lambda x: (x[0], x[3]))
+        open_until, rejected = None, []
+        for decision, entry, exit_, _, name, eb in rows:
+            if open_until is not None and decision < open_until:
+                rejected.append((name, eb))
+            else:
+                open_until = exit_ if open_until is None else max(open_until, exit_)
+        if not rejected:
+            return runs
+        for name, eb in rejected:
+            if eb is not None:
+                masks[name][max(eb - 1, 0)] = True
+            else:   # still-open position without trade record: mask its signal bar via open_since
+                b = bars[bars_key(next(s for s in spec["sleeves"] if s["name"] == name))]
+                i = int((pd.to_datetime(b.timestamp_utc, utc=True) < pd.Timestamp(runs[name]["open_since"])).sum())
+                masks[name][max(i - 1, 0)] = True
+    return runs
+
+
 def run_sleeve(cfg, bars, start, blocked=None):
     """Exact research-engine run of one sleeve; execution starts at ``start``. ``blocked`` masks signals (router)."""
     eng = engine()
@@ -369,6 +413,7 @@ def run_sleeve(cfg, bars, start, blocked=None):
     result = eng["execute"](sliced, signal[first:], np.ascontiguousarray(atr[first:]), exec_cfg)
     stamps = pd.to_datetime(sliced["timestamp"], unit="ns", utc=True)
     trades = []
+    entry_bars = [first + int(result["trade_entry"][i]) for i in range(len(result["trade_entry"]))]
     for i in range(len(result["trade_entry"])):
         trades.append(dict(
             sleeve=cfg["name"], entry_ts=stamps[int(result["trade_entry"][i])].isoformat(),
@@ -387,7 +432,7 @@ def run_sleeve(cfg, bars, start, blocked=None):
         while run_start > 0 and result["quantity"][run_start - 1] != 0:
             run_start -= 1
         open_since = stamps[int(run_start)].isoformat()
-    return dict(trades=trades, curve=curve, position=position, lock=result["lock_reason"], open_since=open_since,
+    return dict(trades=trades, curve=curve, position=position, lock=result["lock_reason"], open_since=open_since, entry_bars=entry_bars,
                 funded_failed=bool(np.any(result["funded_failed"])) if len(stamps) else False)
 
 
@@ -469,11 +514,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
     prior_keys = {trade_key(r) for r in prior}
     last_exit = max((r["exit_ts"] for r in prior), default=None)
 
-    runs = {}
-    for sl in spec["sleeves"]:   # in order, so a routed sleeve sees the sleeves it must yield to
-        b = bars[bars_key(sl)]
-        blocked = _blocked(b, runs, sl["router_after"]) if sl.get("router_after") else None
-        runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
+    runs = run_routed(spec, bars, start)
     trades = sorted((t for r in runs.values() for t in r["trades"]), key=lambda t: (t["exit_ts"], t["entry_ts"], t["sleeve"]))
     current_keys = {trade_key(t) for t in trades}
     missing = [r for r in prior if trade_key(r) not in current_keys]
