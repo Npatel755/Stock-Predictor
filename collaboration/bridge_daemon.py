@@ -127,6 +127,11 @@ class BridgeDaemon:
         """Single synchronization pass."""
         self.sync_outbox_to_devin()
         self.sync_devin_to_inbox()
+        try:
+            from sync_chat_histories import run_sync_pass
+            run_sync_pass()
+        except Exception as e:
+            logger.error(f"Error syncing perpetual chat histories: {e}")
 
     def run_loop(self):
         """Continuous background execution loop."""
