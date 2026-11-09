@@ -255,6 +255,31 @@ CANDIDATES["book_a"] = dict(
                 "No parameter chosen; both component ledgers keep running. Paper only; no routing."),
 )
 
+CANDIDATES["overnight_dip_v2_skew_addon"] = dict(
+    version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, state="skew_below", hidden=True,
+    label="Overnight Dip v2 SKEW add-on (second contract on nights whose prior CBOE close had SKEW below its 20-day mean)",
+    sleeves=[dict(name="OVN_DIP2_SKEW_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="sizing_3 (reports/SIZING_3_TRAINING.md). Component of book_a_skew only; not shown as its own ledger.",
+)
+
+CANDIDATES["ag_all_weather_v2_1c_skew_addon"] = dict(
+    version="1.0.0", day_filter="no_backwardation", hidden=True,
+    label="AG All-Weather v2 1c SKEW add-on (second contract on days whose prior CBOE close had SKEW below its 20-day mean)",
+    sleeves=[dict(_sleeve("AG_BRK30_SKEW_1c", _AG_BRK30, 1), risk_per_trade=1e9, max_open_risk=1e9, state="skew_below"),
+             dict(_sleeve("AG_TRD60_SKEW_1c", _AG_TRD60, 1), risk_per_trade=1e9, max_open_risk=1e9, state="skew_below")],
+    provenance="sizing_3 (reports/SIZING_3_TRAINING.md). Component of book_a_skew only; not shown as its own ledger.",
+)
+
+CANDIDATES["book_a_skew"] = dict(
+    version="1.0.0", category="future",
+    book=[["overnight_dip_v2", "overnight_dip_v2_skew_addon"], ["ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"]],
+    label="FUTURE - Book A SKEW-sized (Book A legs; 2 contracts when the prior CBOE close has SKEW below its 20-day mean, else 1; needs ~$1.5k banked cushion first)",
+    sleeves=[dict(sl) for k in ("overnight_dip_v2", "overnight_dip_v2_skew_addon", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon") for sl in CANDIDATES[k]["sleeves"]],
+    provenance=("sizing_3 (reports/SIZING_3_TRAINING.md), training 2010-23: book +51,047 vs +28,317 at 1c, closed DD 2,767 (control: 2c on SKEW>=20d mean +33,906 / DD 3,494), "
+                "1-y P(breach $2k floor) 17% -> fails the $2k gate; fits once ~$1.5k is banked above the locked floor (effective floor >= $3.5k). "
+                "Forward record only; switch target, not a current-account candidate. Paper only; no routing."),
+)
+
 CANDIDATES["ag_quad_v2"] = dict(
     version="2.0.0", router="strict_1c", day_filter="no_backwardation",
     label="AG Quad v2 (same four sleeves; the two MNQ morning sleeves stand aside on days whose prior CBOE close had VIX > VIX3M)",
@@ -469,6 +494,40 @@ def vix_backwardation_days():
     ser = (joined.vix > joined.vix3m) if joined is not None and len(joined) else pd.Series(dtype=bool)
     _VIX_CACHE["series"] = ser; return ser
 
+_SKEW_CACHE = {"path": None, "series": None}
+def skew_below_days():
+    """CBOE SKEW close < its 20-day mean, by CBOE close date (yfinance ^SKEW daily, 1y); cached to <bars>/skew_daily.csv so a feed failure falls back."""
+    if _SKEW_CACHE["series"] is not None: return _SKEW_CACHE["series"]
+    path = _SKEW_CACHE["path"]; ser = None
+    try:
+        import yfinance as yf
+        h = yf.Ticker("^SKEW").history(period="1y", interval="1d", auto_adjust=False)["Close"].dropna(); h.index = pd.to_datetime(h.index.strftime("%Y-%m-%d"))
+        ser = h.rename("skew").to_frame()
+        if path is not None and len(ser):
+            old = pd.read_csv(path, index_col=0, parse_dates=True) if Path(path).exists() else None
+            ser = pd.concat([old, ser]).loc[lambda d: ~d.index.duplicated(keep="last")].sort_index() if old is not None else ser
+            ser.to_csv(path)
+    except Exception:
+        if path is not None and Path(path).exists(): ser = pd.read_csv(path, index_col=0, parse_dates=True)
+    if ser is not None and len(ser) >= 20:
+        lvl = ser["skew"].astype(float); mean20 = lvl.rolling(20).mean(); out = (lvl < mean20)[mean20.notna()]
+    else:
+        out = pd.Series(dtype=bool)
+    _SKEW_CACHE["series"] = out; return out
+
+def _prior_close_state(series, dates):
+    """Value of a CBOE-close-dated boolean series at the last close strictly before each ET date (point-in-time); False where unknown."""
+    if len(series) == 0: return np.zeros(len(dates), bool)
+    cboe = series.index.to_numpy(); days = pd.to_datetime(pd.Series(np.asarray(dates)).astype(str)).to_numpy()
+    pos = np.searchsorted(cboe, days, side="left") - 1; vals = series.to_numpy()
+    return np.where(pos >= 0, vals[np.clip(pos, 0, len(vals) - 1)], False)
+
+def state_block_mask(sleeve, b):
+    """True on bars the sleeve may NOT trade because the required prior-close state is absent. ``state="skew_below"``: SKEW < 20d mean (sizing_3)."""
+    if sleeve.get("state") != "skew_below": return np.zeros(len(b), bool)
+    allowed = _prior_close_state(skew_below_days(), b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy())
+    return ~allowed
+
 def day_filter_mask(spec, b, sleeve=None):
     """True on bars whose ET trading date follows a CBOE close with VIX > VIX3M (prior-close state, point-in-time)."""
     if spec.get("day_filter") != "no_backwardation" or (sleeve is not None and sleeve.get("day_filter_exempt")): return np.zeros(len(b), bool)
@@ -501,9 +560,13 @@ def run_routed(spec, bars, start, max_iter=12, extra_block=None):
     if spec.get("book"):
         # Two frozen candidates as one 1-contract account: the overnight leg runs first; the intraday leg's decision bars that fall while a night
         # position is open are blocked (training: 0 such overlaps, portfolio_4). Component ledgers are untouched.
-        ov_key, in_key = spec["book"]
-        runs = dict(run_routed(CANDIDATES[ov_key], bars, start))
-        runs.update(run_routed(CANDIDATES[in_key], bars, start, extra_block=_interval_block(_book_intervals(runs))))
+        # ``book`` is a priority-ordered list of groups (a str is a group of one); every group is blocked by the intervals of all groups before it,
+        # so a group of {leg, leg_skew_addon} trades the same bars twice (= 2 contracts in the SKEW state, sizing_3) without blocking itself.
+        runs = {}
+        for group in spec["book"]:
+            block = _interval_block(_book_intervals(runs)) if runs else None
+            for key in ([group] if isinstance(group, str) else group):
+                runs.update(run_routed(CANDIDATES[key], bars, start, extra_block=block))
         return runs
     """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its
@@ -519,6 +582,8 @@ def run_routed(spec, bars, start, max_iter=12, extra_block=None):
                 dfm = day_filter_mask(spec, b, sl); blocked = dfm if blocked is None else (blocked | dfm)
             if extra_block is not None:
                 xm = extra_block(b); blocked = xm if blocked is None else (blocked | xm)
+            if sl.get("state"):
+                sm = state_block_mask(sl, b); blocked = sm if blocked is None else (blocked | sm)
             runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
         return runs
     masks = {sl["name"]: day_filter_mask(spec, bars[bars_key(sl)], sl) for sl in spec["sleeves"]}
@@ -575,6 +640,10 @@ def run_overnight(spec, b, start, mes=None):
     seed = OVN_SEED_GAPS if inst == "MNQ" else OVN_SEED_GAPS_MES
     mes_gaps = _reopen_gaps(mes) if spec.get("require_mes_dip") else None
     b = b.sort_values("timestamp_utc").reset_index(drop=True)
+    state_ok = None
+    if spec.get("state") == "skew_below":  # prior CBOE close (the day's 16:15 close precedes the 18:00 reopen; the series is dated by close day)
+        _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
+        state_ok = dict(zip(_d, _prior_close_state(skew_below_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))])))
     local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
     o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
     half = (spread / 2 + OVN_SLIP_TICKS) * OVN_TICK
@@ -597,6 +666,7 @@ def run_overnight(spec, b, start, mes=None):
         ei = entry.get(d)
         if ei is None or gap > thr or ei < first or pos is not None: continue
         if mes_gaps is not None and not mes_gaps.get(d, False): continue
+        if state_ok is not None and not state_ok.get(d, False): continue
         fill = o[ei] + half; pos = dict(i=ei, price=fill)
         xi, reason = None, None
         for nd in days[di + 1:di + 4]:
@@ -788,7 +858,7 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
                 notify(f"{spec['label'].split(' (')[0]}: {name} opened {'long' if pos['quantity'] > 0 else 'short'} x{abs(pos['quantity'])}",
                        f"last close {pos['last_close']:,.2f}; candidate net {portfolio['net']:+,.2f}")
     total_divergences = sum(1 for r in ledger if r["kind"] == "divergence") + len(missing) + len(late)
-    status = dict(candidate=key, version=spec["version"], label=spec["label"], provenance=spec["provenance"],
+    status = dict(candidate=key, version=spec["version"], label=spec["label"], provenance=spec["provenance"], category=spec.get("category", "current"),
                   updated=now.isoformat(), source=source_name, start=run_record["start"], bars_through=run_record["bars_through"],
                   net=portfolio["net"], realized=portfolio["realized"], unrealized=round(portfolio["net"] - portfolio["realized"], 2),
                   closed_drawdown=portfolio["closed_drawdown"], intrabar_drawdown=portfolio["intrabar_drawdown"],
@@ -834,6 +904,7 @@ def run_once(root, source, start, now=None, candidates=None):
     now = now or utc_now()
     root = Path(root)
     report = ingest(root / "bars", source, now); _VIX_CACHE["path"] = str(root / "bars" / "vix_daily.csv"); _VIX_CACHE["series"] = None
+    _SKEW_CACHE["path"] = str(root / "bars" / "skew_daily.csv"); _SKEW_CACHE["series"] = None
     stored = {k: BarStore(root / "bars", k).read() for k in ("MES", "MNQ")}
     start_ts = pd.Timestamp(start).tz_localize("UTC") if pd.Timestamp(start).tzinfo is None else pd.Timestamp(start)
     bars = {}
@@ -858,11 +929,12 @@ def run_once(root, source, start, now=None, candidates=None):
             bars[bk] = canonical_bars(pd.concat([warm, live]), sleeve["instrument"], YAHOO_SYMBOLS[sleeve["instrument"]])
     statuses = {}
     for key, spec in CANDIDATES.items():
-        if candidates and key not in candidates:
+        if (candidates and key not in candidates) or spec.get("hidden"):
             continue
         statuses[key] = update_candidate(root, key, spec, bars, start_ts, now, source.name)
     summary = dict(updated=now.isoformat(), ingest=report, start=start_ts.isoformat(), source=source.name,
-                   candidates=statuses, total_net=round(sum(s["net"] for s in statuses.values()), 2), regime=vol_regime(now))
+                   candidates=statuses, total_net=round(sum(s["net"] for s in statuses.values() if s.get("category", "current") == "current"), 2),
+                   future_net=round(sum(s["net"] for s in statuses.values() if s.get("category") == "future"), 2), regime=vol_regime(now))
     (root / "dashboard.json").write_text(json.dumps(summary, indent=1, sort_keys=True, default=str))
     return summary
 
