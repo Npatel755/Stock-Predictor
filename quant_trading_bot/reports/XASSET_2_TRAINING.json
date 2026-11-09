@@ -1,0 +1,182 @@
+{
+ "ZN_day>0": {
+  "n": 170,
+  "per": 36.3,
+  "removed_net": 6170.35,
+  "random_removals_worse": 177,
+  "remaining": {
+   "net": 5627.1,
+   "nights": 320,
+   "pos_years": 11,
+   "max_year_share": 0.316,
+   "dd": 2162.64
+  },
+  "coverage": 0.624,
+  "adoptable": false
+ },
+ "ZN_day<0": {
+  "n": 128,
+  "per": 2.04,
+  "removed_net": 261.34,
+  "random_removals_worse": 7,
+  "remaining": {
+   "net": 11536.11,
+   "nights": 362,
+   "pos_years": 12,
+   "max_year_share": 0.271,
+   "dd": 1264.74
+  },
+  "coverage": 0.624,
+  "adoptable": false
+ },
+ "ZN_reopen>0": {
+  "n": 147,
+  "per": 38.73,
+  "removed_net": 5694.03,
+  "random_removals_worse": 186,
+  "remaining": {
+   "net": 6103.41,
+   "nights": 343,
+   "pos_years": 11,
+   "max_year_share": 0.272,
+   "dd": 2424.28
+  },
+  "coverage": 0.631,
+  "adoptable": false
+ },
+ "ZN_reopen<0": {
+  "n": 103,
+  "per": 30.73,
+  "removed_net": 3164.72,
+  "random_removals_worse": 142,
+  "remaining": {
+   "net": 8632.73,
+   "nights": 387,
+   "pos_years": 12,
+   "max_year_share": 0.254,
+   "dd": 1132.67
+  },
+  "coverage": 0.631,
+  "adoptable": false
+ },
+ "CL_day>0": {
+  "n": 155,
+  "per": 37.46,
+  "removed_net": 5805.77,
+  "random_removals_worse": 179,
+  "remaining": {
+   "net": 5991.68,
+   "nights": 335,
+   "pos_years": 11,
+   "max_year_share": 0.211,
+   "dd": 1535.02
+  },
+  "coverage": 0.643,
+  "adoptable": false
+ },
+ "CL_day<0": {
+  "n": 160,
+  "per": 13.85,
+  "removed_net": 2215.3,
+  "random_removals_worse": 29,
+  "remaining": {
+   "net": 9582.15,
+   "nights": 330,
+   "pos_years": 12,
+   "max_year_share": 0.344,
+   "dd": 1812.35
+  },
+  "coverage": 0.643,
+  "adoptable": false
+ },
+ "CL_reopen>0": {
+  "n": 190,
+  "per": 25.88,
+  "removed_net": 4917.95,
+  "random_removals_worse": 120,
+  "remaining": {
+   "net": 6879.5,
+   "nights": 300,
+   "pos_years": 11,
+   "max_year_share": 0.419,
+   "dd": 2450.33
+  },
+  "coverage": 0.908,
+  "adoptable": false
+ },
+ "CL_reopen<0": {
+  "n": 239,
+  "per": 19.07,
+  "removed_net": 4558.8,
+  "random_removals_worse": 59,
+  "remaining": {
+   "net": 7238.65,
+   "nights": 251,
+   "pos_years": 10,
+   "max_year_share": 0.55,
+   "dd": 1940.49
+  },
+  "coverage": 0.908,
+  "adoptable": false
+ },
+ "6E_day>0": {
+  "n": 111,
+  "per": 23.09,
+  "removed_net": 2562.96,
+  "random_removals_worse": 97,
+  "remaining": {
+   "net": 9234.49,
+   "nights": 379,
+   "pos_years": 11,
+   "max_year_share": 0.299,
+   "dd": 1453.45
+  },
+  "coverage": 0.492,
+  "adoptable": false
+ },
+ "6E_day<0": {
+  "n": 128,
+  "per": 26.52,
+  "removed_net": 3394.34,
+  "random_removals_worse": 119,
+  "remaining": {
+   "net": 8403.11,
+   "nights": 362,
+   "pos_years": 12,
+   "max_year_share": 0.313,
+   "dd": 1661.71
+  },
+  "coverage": 0.492,
+  "adoptable": false
+ },
+ "6E_reopen>0": {
+  "n": 136,
+  "per": 24.13,
+  "removed_net": 3282.08,
+  "random_removals_worse": 105,
+  "remaining": {
+   "net": 8515.37,
+   "nights": 354,
+   "pos_years": 12,
+   "max_year_share": 0.3,
+   "dd": 1712.42
+  },
+  "coverage": 0.627,
+  "adoptable": false
+ },
+ "6E_reopen<0": {
+  "n": 133,
+  "per": 22.68,
+  "removed_net": 3016.37,
+  "random_removals_worse": 86,
+  "remaining": {
+   "net": 8781.08,
+   "nights": 357,
+   "pos_years": 12,
+   "max_year_share": 0.267,
+   "dd": 1365.76
+  },
+  "coverage": 0.627,
+  "adoptable": false
+ }
+}
