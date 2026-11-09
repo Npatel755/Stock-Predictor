@@ -340,9 +340,12 @@ def family_of(key):
 
 
 def _dplus_sl(name, base, contracts):
-    """D+ sleeves always take `contracts` regardless of stop risk (the $150 budget is not applied), matching the fixed-engine replication
-    (reports/ANTIGRAVITY_D_PLUS_REPLICATION.md, run with SIZING_BUDGET=1e9) and Antigravity's 1-contract claims."""
-    return dict(_sleeve(name, base, contracts), risk_per_trade=1e9, max_open_risk=1e9)
+    """D+ sleeves run under the engine's standard stop-risk budget ($150 per contract per trade: a trade is skipped when one contract's stop
+    risk exceeds it), which is what the fixed-engine replication and the dplus_1/2 reports measured (checked 2026-11-09: the uncapped
+    always-one-contract version is +18,386 / 1,457 trades / marked DD 1,280 vs the reported +17,576 / 1,398 / 882). The 2-contract
+    version uses a $300 budget: two contracts wherever the 1c version takes one, plus one contract on the higher-ATR trades it skips."""
+    sl = _sleeve(name, base, contracts)
+    return dict(sl, risk_per_trade=150.0 * contracts, max_open_risk=150.0 * contracts) if contracts > 1 else sl
 
 
 CANDIDATES["ag_arch_d_plus"] = dict(
@@ -357,7 +360,7 @@ CANDIDATES["ag_arch_d_plus"] = dict(
 
 CANDIDATES["ag_arch_d_plus_v2"] = dict(
     version="1.0.0", router="strict_1c", day_filter="no_backwardation",
-    label="AG Architecture D+ v2 (drawdown-first: Crabel 10:00 15m > MNQ 60m trend > MES 30m trend; the MNQ 30m trend sleeve is dropped; VIX stand-aside on morning sleeves; always one contract)",
+    label="AG Architecture D+ v2 (drawdown-first: Crabel 10:00 15m > MNQ 60m trend > MES 30m trend; the MNQ 30m trend sleeve is dropped; VIX stand-aside on morning sleeves; one contract within the standard $150 stop-risk budget)",
     sleeves=[_dplus_sl("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
              _dplus_sl("AG_TRD60_D_1c", _AG_TRD60_D, 1),
              dict(_dplus_sl("AG_MES_TRD30_D_1c", _AG_MES_TRD30_D, 1), day_filter_exempt=True)],
@@ -368,12 +371,11 @@ CANDIDATES["ag_arch_d_plus_v2"] = dict(
 
 CANDIDATES["ag_arch_d_plus_v2_2c"] = dict(
     version="1.0.0", router="strict_1c", day_filter="no_backwardation", category="future",
-    label="AG Architecture D+ v2 at 2 contracts (same three sleeves, always two contracts; needs ~$900 banked above the locked floor first)",
+    label="AG Architecture D+ v2 at 2 contracts (same three sleeves, two contracts within a $300 stop-risk budget; needs ~$900 banked above the locked floor first)",
     sleeves=[_dplus_sl("AG_CRABEL15_D_2c", _AG_CRABEL15_D, 2),
              _dplus_sl("AG_TRD60_D_2c", _AG_TRD60_D, 2),
              dict(_dplus_sl("AG_MES_TRD30_D_2c", _AG_MES_TRD30_D, 2), day_filter_exempt=True)],
-    provenance="dplus_2 scaled: per-contract P&L and costs are linear in this engine, so training 2010-23 is exactly 2x v2: +35,152 / marked DD 1,765 / 0 touches of $2k - "
-               "the same drawdown as ag_arch_d_plus at 1c for +70% net. Future strategy: switch once ~$900 is banked. Paper only; no routing.",
+    provenance="dplus_2 scaled (reports/DPLUS_2_TRAINING.md addendum): $300 budget = 2 contracts on every v2 trade plus 1 contract on the 59 higher-ATR trades v2 skips; exact training 2010-23 stats in the addendum. Future strategy: switch once ~$900 is banked. Paper only; no routing.",
 )
 
 CANDIDATES["overnight_dip_v2_vix"] = dict(
