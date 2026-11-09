@@ -1,0 +1,83 @@
+{
+ "L1_overnight_v2": {
+  "base_1c": {
+   "net": 11797.45,
+   "dd": 1646.04,
+   "pos_years": 12,
+   "max_year_share": 0.293,
+   "net_per_dd": 7.17,
+   "breach": 0.002
+  },
+  "skew_below_2c": {
+   "net": 21849.8,
+   "dd": 2694.71,
+   "pos_years": 12,
+   "max_year_share": 0.301,
+   "net_per_dd": 8.11,
+   "breach": 0.097
+  },
+  "control_above_2c": {
+   "net": 13542.55,
+   "dd": 3055.14,
+   "pos_years": 11,
+   "max_year_share": 0.278,
+   "net_per_dd": 4.43,
+   "breach": 0.093
+  },
+  "share_below": 0.551
+ },
+ "L2_allweather_1c": {
+  "base_1c": {
+   "net": 16520.0,
+   "dd": 1255.5,
+   "pos_years": 8,
+   "max_year_share": 0.425,
+   "net_per_dd": 13.16,
+   "breach": 0.001
+  },
+  "skew_below_2c": {
+   "net": 29197.0,
+   "dd": 2349.0,
+   "pos_years": 9,
+   "max_year_share": 0.454,
+   "net_per_dd": 12.43,
+   "breach": 0.064
+  },
+  "control_above_2c": {
+   "net": 20363.0,
+   "dd": 2763.5,
+   "pos_years": 9,
+   "max_year_share": 0.383,
+   "net_per_dd": 7.37,
+   "breach": 0.091
+  },
+  "share_below": 0.51
+ },
+ "L3_book": {
+  "base_1c": {
+   "net": 28317.45,
+   "dd": 1802.29,
+   "pos_years": 11,
+   "max_year_share": 0.37,
+   "net_per_dd": 15.71,
+   "breach": 0.012
+  },
+  "skew_below_2c": {
+   "net": 51046.8,
+   "dd": 2767.28,
+   "pos_years": 11,
+   "max_year_share": 0.389,
+   "net_per_dd": 18.45,
+   "breach": 0.174
+  },
+  "control_above_2c": {
+   "net": 33905.55,
+   "dd": 3493.53,
+   "pos_years": 9,
+   "max_year_share": 0.341,
+   "net_per_dd": 9.71,
+   "breach": 0.248
+  },
+  "share_below": 0.523
+ }
+}

@@ -1,0 +1,482 @@
+{
+ "MNQ|A1_asia_le_-0.5sd|x0830|long": {
+  "net": 720.77,
+  "n": 734,
+  "per": 0.98,
+  "pos_years": 6,
+  "max_year_share": 1.991,
+  "net_2010_19": -599.91,
+  "dd": 2192.55,
+  "beats": 180,
+  "plc_med": -2252.23
+ },
+ "MNQ|A1_asia_le_-0.5sd|x0830|short": {
+  "net": -720.77,
+  "n": 734,
+  "per": -0.98,
+  "pos_years": 8,
+  "max_year_share": null,
+  "net_2010_19": 599.91,
+  "dd": 2668.15
+ },
+ "MNQ|A1_asia_le_-0.5sd|x0930|long": {
+  "net": -86.73,
+  "n": 734,
+  "per": -0.12,
+  "pos_years": 7,
+  "max_year_share": null,
+  "net_2010_19": -900.91,
+  "dd": 2786.98,
+  "beats": 173,
+  "plc_med": -2904.98
+ },
+ "MNQ|A1_asia_le_-0.5sd|x0930|short": {
+  "net": 86.73,
+  "n": 734,
+  "per": 0.12,
+  "pos_years": 7,
+  "max_year_share": 13.394,
+  "net_2010_19": 900.91,
+  "dd": 3920.3
+ },
+ "MNQ|A1_asia_le_-0.5sd|x0945|long": {
+  "net": 2945.86,
+  "n": 733,
+  "per": 4.02,
+  "pos_years": 10,
+  "max_year_share": 0.381,
+  "net_2010_19": 838.59,
+  "dd": 2605.42,
+  "beats": 189,
+  "plc_med": -1719.14
+ },
+ "MNQ|A1_asia_le_-0.5sd|x0945|short": {
+  "net": -2945.86,
+  "n": 733,
+  "per": -4.02,
+  "pos_years": 4,
+  "max_year_share": null,
+  "net_2010_19": -838.59,
+  "dd": 4872.1
+ },
+ "MNQ|A2_asia_le_-1sd|x0830|long": {
+  "net": -537.22,
+  "n": 376,
+  "per": -1.43,
+  "pos_years": 6,
+  "max_year_share": null,
+  "net_2010_19": -526.99,
+  "dd": 2022.9,
+  "beats": 123,
+  "plc_med": -1072.22
+ },
+ "MNQ|A2_asia_le_-1sd|x0830|short": {
+  "net": 537.22,
+  "n": 376,
+  "per": 1.43,
+  "pos_years": 8,
+  "max_year_share": 1.554,
+  "net_2010_19": 526.99,
+  "dd": 1263.9
+ },
+ "MNQ|A2_asia_le_-1sd|x0930|long": {
+  "net": -1837.22,
+  "n": 376,
+  "per": -4.89,
+  "pos_years": 3,
+  "max_year_share": null,
+  "net_2010_19": -792.99,
+  "dd": 2632.71,
+  "beats": 94,
+  "plc_med": -1742.97
+ },
+ "MNQ|A2_asia_le_-1sd|x0930|short": {
+  "net": 1837.22,
+  "n": 376,
+  "per": 4.89,
+  "pos_years": 11,
+  "max_year_share": 0.402,
+  "net_2010_19": 792.99,
+  "dd": 1686.77
+ },
+ "MNQ|A2_asia_le_-1sd|x0945|long": {
+  "net": -25.63,
+  "n": 375,
+  "per": -0.07,
+  "pos_years": 8,
+  "max_year_share": null,
+  "net_2010_19": 106.51,
+  "dd": 1627.71,
+  "beats": 125,
+  "plc_med": -731.63
+ },
+ "MNQ|A2_asia_le_-1sd|x0945|short": {
+  "net": 25.63,
+  "n": 375,
+  "per": 0.07,
+  "pos_years": 6,
+  "max_year_share": 24.599,
+  "net_2010_19": -106.51,
+  "dd": 1651.36
+ },
+ "MNQ|A3_asia_ge_+0.5sd|x0830|long": {
+  "net": -4358.38,
+  "n": 1025,
+  "per": -4.25,
+  "pos_years": 3,
+  "max_year_share": null,
+  "net_2010_19": -3110.11,
+  "dd": 5313.99,
+  "beats": 60,
+  "plc_med": -3307.88
+ },
+ "MNQ|A3_asia_ge_+0.5sd|x0830|short": {
+  "net": 4358.38,
+  "n": 1025,
+  "per": 4.25,
+  "pos_years": 11,
+  "max_year_share": 0.343,
+  "net_2010_19": 3110.11,
+  "dd": 1939.3
+ },
+ "MNQ|A3_asia_ge_+0.5sd|x0930|long": {
+  "net": -3756.66,
+  "n": 1028,
+  "per": -3.65,
+  "pos_years": 4,
+  "max_year_share": null,
+  "net_2010_19": -3180.8,
+  "dd": 6682.58,
+  "beats": 88,
+  "plc_med": -3425.66
+ },
+ "MNQ|A3_asia_ge_+0.5sd|x0930|short": {
+  "net": 3756.66,
+  "n": 1028,
+  "per": 3.65,
+  "pos_years": 10,
+  "max_year_share": 0.71,
+  "net_2010_19": 3180.8,
+  "dd": 2979.11
+ },
+ "MNQ|A3_asia_ge_+0.5sd|x0945|long": {
+  "net": -4489.16,
+  "n": 1028,
+  "per": -4.37,
+  "pos_years": 5,
+  "max_year_share": null,
+  "net_2010_19": -2484.3,
+  "dd": 7646.84,
+  "beats": 43,
+  "plc_med": -2161.16
+ },
+ "MNQ|A3_asia_ge_+0.5sd|x0945|short": {
+  "net": 4489.16,
+  "n": 1028,
+  "per": 4.37,
+  "pos_years": 9,
+  "max_year_share": 0.611,
+  "net_2010_19": 2484.3,
+  "dd": 3176.06
+ },
+ "MNQ|A4_A1_not_dip|x0830|long": {
+  "net": 358.21,
+  "n": 582,
+  "per": 0.62,
+  "pos_years": 7,
+  "max_year_share": 3.168,
+  "net_2010_19": -563.79,
+  "dd": 1566.88,
+  "beats": 169,
+  "plc_med": -1786.04
+ },
+ "MNQ|A4_A1_not_dip|x0830|short": {
+  "net": -358.21,
+  "n": 582,
+  "per": -0.62,
+  "pos_years": 7,
+  "max_year_share": null,
+  "net_2010_19": 563.79,
+  "dd": 1961.19
+ },
+ "MNQ|A4_A1_not_dip|x0930|long": {
+  "net": -262.29,
+  "n": 582,
+  "per": -0.45,
+  "pos_years": 7,
+  "max_year_share": null,
+  "net_2010_19": -791.79,
+  "dd": 2149.89,
+  "beats": 158,
+  "plc_med": -1810.04
+ },
+ "MNQ|A4_A1_not_dip|x0930|short": {
+  "net": 262.29,
+  "n": 582,
+  "per": 0.45,
+  "pos_years": 7,
+  "max_year_share": 4.611,
+  "net_2010_19": 791.79,
+  "dd": 3109.87
+ },
+ "MNQ|A4_A1_not_dip|x0945|long": {
+  "net": 378.3,
+  "n": 581,
+  "per": 0.65,
+  "pos_years": 6,
+  "max_year_share": 1.927,
+  "net_2010_19": 363.21,
+  "dd": 3014.53,
+  "beats": 155,
+  "plc_med": -1574.95
+ },
+ "MNQ|A4_A1_not_dip|x0945|short": {
+  "net": -378.3,
+  "n": 581,
+  "per": -0.65,
+  "pos_years": 8,
+  "max_year_share": null,
+  "net_2010_19": -363.21,
+  "dd": 3636.93
+ },
+ "MES|A1_asia_le_-0.5sd|x0830|long": {
+  "net": -1302.84,
+  "n": 822,
+  "per": -1.58,
+  "pos_years": 5,
+  "max_year_share": null,
+  "net_2010_19": -1350.7,
+  "dd": 2701.14,
+  "beats": 188,
+  "plc_med": -3547.84
+ },
+ "MES|A1_asia_le_-0.5sd|x0830|short": {
+  "net": 1302.84,
+  "n": 822,
+  "per": 1.58,
+  "pos_years": 9,
+  "max_year_share": 0.55,
+  "net_2010_19": 1350.7,
+  "dd": 1547.42
+ },
+ "MES|A1_asia_le_-0.5sd|x0930|long": {
+  "net": -1936.5,
+  "n": 825,
+  "per": -2.35,
+  "pos_years": 5,
+  "max_year_share": null,
+  "net_2010_19": -1865.7,
+  "dd": 4082.3,
+  "beats": 172,
+  "plc_med": -4069.63
+ },
+ "MES|A1_asia_le_-0.5sd|x0930|short": {
+  "net": 1936.5,
+  "n": 825,
+  "per": 2.35,
+  "pos_years": 9,
+  "max_year_share": 0.533,
+  "net_2010_19": 1865.7,
+  "dd": 3288.46
+ },
+ "MES|A1_asia_le_-0.5sd|x0945|long": {
+  "net": -46.56,
+  "n": 823,
+  "per": -0.06,
+  "pos_years": 9,
+  "max_year_share": null,
+  "net_2010_19": -740.7,
+  "dd": 2169.86,
+  "beats": 195,
+  "plc_med": -3407.81
+ },
+ "MES|A1_asia_le_-0.5sd|x0945|short": {
+  "net": 46.56,
+  "n": 823,
+  "per": 0.06,
+  "pos_years": 5,
+  "max_year_share": 19.095,
+  "net_2010_19": 740.7,
+  "dd": 3496.25
+ },
+ "MES|A2_asia_le_-1sd|x0830|long": {
+  "net": -326.75,
+  "n": 400,
+  "per": -0.82,
+  "pos_years": 4,
+  "max_year_share": null,
+  "net_2010_19": -589.49,
+  "dd": 1511.83,
+  "beats": 172,
+  "plc_med": -1738.62
+ },
+ "MES|A2_asia_le_-1sd|x0830|short": {
+  "net": 326.75,
+  "n": 400,
+  "per": 0.82,
+  "pos_years": 10,
+  "max_year_share": 1.119,
+  "net_2010_19": 589.49,
+  "dd": 1280.93
+ },
+ "MES|A2_asia_le_-1sd|x0930|long": {
+  "net": -1301.69,
+  "n": 402,
+  "per": -3.24,
+  "pos_years": 5,
+  "max_year_share": null,
+  "net_2010_19": -755.74,
+  "dd": 2426.82,
+  "beats": 132,
+  "plc_med": -1762.94
+ },
+ "MES|A2_asia_le_-1sd|x0930|short": {
+  "net": 1301.69,
+  "n": 402,
+  "per": 3.24,
+  "pos_years": 9,
+  "max_year_share": 0.674,
+  "net_2010_19": 755.74,
+  "dd": 2168.17
+ },
+ "MES|A2_asia_le_-1sd|x0945|long": {
+  "net": 543.25,
+  "n": 400,
+  "per": 1.36,
+  "pos_years": 7,
+  "max_year_share": 1.449,
+  "net_2010_19": -9.49,
+  "dd": 1568.26,
+  "beats": 187,
+  "plc_med": -1849.25
+ },
+ "MES|A2_asia_le_-1sd|x0945|short": {
+  "net": -543.25,
+  "n": 400,
+  "per": -1.36,
+  "pos_years": 7,
+  "max_year_share": null,
+  "net_2010_19": 9.49,
+  "dd": 2650.1
+ },
+ "MES|A3_asia_ge_+0.5sd|x0830|long": {
+  "net": -5163.2,
+  "n": 1060,
+  "per": -4.87,
+  "pos_years": 1,
+  "max_year_share": null,
+  "net_2010_19": -4220.03,
+  "dd": 5387.7,
+  "beats": 71,
+  "plc_med": -4546.95
+ },
+ "MES|A3_asia_ge_+0.5sd|x0830|short": {
+  "net": 5163.2,
+  "n": 1060,
+  "per": 4.87,
+  "pos_years": 13,
+  "max_year_share": 0.197,
+  "net_2010_19": 4220.03,
+  "dd": 2243.2
+ },
+ "MES|A3_asia_ge_+0.5sd|x0930|long": {
+  "net": -4058.17,
+  "n": 1061,
+  "per": -3.82,
+  "pos_years": 1,
+  "max_year_share": null,
+  "net_2010_19": -4155.03,
+  "dd": 4631.47,
+  "beats": 123,
+  "plc_med": -4688.17
+ },
+ "MES|A3_asia_ge_+0.5sd|x0930|short": {
+  "net": 4058.17,
+  "n": 1061,
+  "per": 3.82,
+  "pos_years": 13,
+  "max_year_share": 0.328,
+  "net_2010_19": 4155.03,
+  "dd": 2729.66
+ },
+ "MES|A3_asia_ge_+0.5sd|x0945|long": {
+  "net": -4615.67,
+  "n": 1061,
+  "per": -4.35,
+  "pos_years": 2,
+  "max_year_share": null,
+  "net_2010_19": -3752.53,
+  "dd": 5613.14,
+  "beats": 87,
+  "plc_med": -4347.55
+ },
+ "MES|A3_asia_ge_+0.5sd|x0945|short": {
+  "net": 4615.67,
+  "n": 1061,
+  "per": 4.35,
+  "pos_years": 12,
+  "max_year_share": 0.231,
+  "net_2010_19": 3752.53,
+  "dd": 2158.2
+ },
+ "MES|A4_A1_not_dip|x0830|long": {
+  "net": -1082.97,
+  "n": 651,
+  "per": -1.66,
+  "pos_years": 6,
+  "max_year_share": null,
+  "net_2010_19": -919.03,
+  "dd": 1721.09,
+  "beats": 180,
+  "plc_med": -2647.35
+ },
+ "MES|A4_A1_not_dip|x0830|short": {
+  "net": 1082.97,
+  "n": 651,
+  "per": 1.66,
+  "pos_years": 8,
+  "max_year_share": 0.445,
+  "net_2010_19": 919.03,
+  "dd": 814.5
+ },
+ "MES|A4_A1_not_dip|x0930|long": {
+  "net": -929.22,
+  "n": 651,
+  "per": -1.43,
+  "pos_years": 5,
+  "max_year_share": null,
+  "net_2010_19": -1554.03,
+  "dd": 2160.22,
+  "beats": 181,
+  "plc_med": -2916.72
+ },
+ "MES|A4_A1_not_dip|x0930|short": {
+  "net": 929.22,
+  "n": 651,
+  "per": 1.43,
+  "pos_years": 9,
+  "max_year_share": 0.856,
+  "net_2010_19": 1554.03,
+  "dd": 2205.0
+ },
+ "MES|A4_A1_not_dip|x0945|long": {
+  "net": -68.0,
+  "n": 650,
+  "per": -0.1,
+  "pos_years": 8,
+  "max_year_share": null,
+  "net_2010_19": -866.53,
+  "dd": 1635.52,
+  "beats": 192,
+  "plc_med": -2937.38
+ },
+ "MES|A4_A1_not_dip|x0945|short": {
+  "net": 68.0,
+  "n": 650,
+  "per": 0.1,
+  "pos_years": 6,
+  "max_year_share": 13.578,
+  "net_2010_19": 866.53,
+  "dd": 2706.02
+ }
+}

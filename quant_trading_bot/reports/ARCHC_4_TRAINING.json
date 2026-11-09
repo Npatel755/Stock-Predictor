@@ -1,0 +1,56 @@
+{
+ "C_base": {
+  "net": 16069.5,
+  "trades": 1980,
+  "per": 8.12,
+  "closed_dd": 1596.0,
+  "pos_years": 11,
+  "max_year_share": 0.419,
+  "pre2020": 5049.5
+ },
+ "C_R1": {
+  "net": 12240.0,
+  "trades": 1058,
+  "per": 11.57,
+  "closed_dd": 1514.5,
+  "pos_years": 10,
+  "max_year_share": 0.315,
+  "pre2020": 3473.5,
+  "beats_subsets": 193,
+  "subset_median": 8452.75,
+  "pass": false
+ },
+ "C_R2": {
+  "net": 14085.5,
+  "trades": 1282,
+  "per": 10.99,
+  "closed_dd": 956.5,
+  "pos_years": 10,
+  "max_year_share": 0.308,
+  "pre2020": 3263.0,
+  "beats_subsets": 199,
+  "subset_median": 10248.0,
+  "pass": false
+ },
+ "AW_base": {
+  "net": 16520.0,
+  "trades": 1590,
+  "per": 10.39,
+  "closed_dd": 1255.5,
+  "pos_years": 8,
+  "max_year_share": 0.425,
+  "pre2020": 2874.0
+ },
+ "AW_R1": {
+  "net": 9984.0,
+  "trades": 896,
+  "per": 11.14,
+  "closed_dd": 1084.5,
+  "pos_years": 9,
+  "max_year_share": 0.254,
+  "pre2020": 2307.0,
+  "beats_subsets": 120,
+  "subset_median": 9386.75,
+  "pass": false
+ }
+}
