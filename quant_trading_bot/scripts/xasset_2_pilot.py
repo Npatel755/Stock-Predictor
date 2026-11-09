@@ -1,4 +1,4 @@
-"""xasset_2: ZN/CL/6E day and reopen states as conditioners for overnight_dip_v2 nights; training 2010-23 only."""
+"""xasset_2 (b: coverage fix - Sunday nights use Friday day return via 3-day forward fill; declared, no parameter change): ZN/CL/6E day and reopen states as conditioners for overnight_dip_v2 nights; training 2010-23 only."""
 import json, sys
 from pathlib import Path
 import numpy as np, pandas as pd
@@ -23,7 +23,7 @@ out = {}; arr = p.to_numpy()
 for sym in ("ZN", "CL", "6E"):
     D, R = states(sym)
     for fname, f in (("day", D), ("reopen", R)):
-        v = f.reindex(p.index)
+        f = f.dropna(); f.index = pd.to_datetime(f.index); idx = pd.to_datetime(pd.Index(p.index)); fv = f.reindex(f.index.union(idx)).ffill(limit=3); v = fv.reindex(idx); v.index = p.index
         for sname, m in ((">0", v > 0), ("<0", v < 0)):
             m = m.fillna(False).to_numpy(); k = int(m.sum()); rem = float(p[m].sum())
             rand = np.array([arr[rng.choice(len(arr), size=k, replace=False)].sum() for _ in range(200)]) if k else np.array([0.0])
@@ -31,4 +31,4 @@ for sym in ("ZN", "CL", "6E"):
                                          coverage=round(float(v.notna().mean()), 3))
             r["adoptable"] = bool(rem < 0 and r["random_removals_worse"] <= 10 and keep["pos_years"] >= 11 and (keep["max_year_share"] or 1) <= 0.4 and keep["dd"] < 2000 and keep["nights"] >= 100)
             out[f"{sym}_{fname}{sname}"] = r; print(f"{sym} {fname}{sname}", r, flush=True)
-Path(ROOT / "reports/XASSET_2_TRAINING.json").write_text(json.dumps(out, indent=1, default=str)); print("done")
+Path(ROOT / "reports/XASSET_2B_TRAINING.json").write_text(json.dumps(out, indent=1, default=str)); print("done")

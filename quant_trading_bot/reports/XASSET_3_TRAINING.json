@@ -1,0 +1,39 @@
+{
+ "book_a": {
+  "closed_net": 28317.45,
+  "marked_dd": 2043.38,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "skipped": 0
+ },
+ "B1": {
+  "closed_net": 26481.3,
+  "marked_dd": 1505.69,
+  "when": "2023-04-24 18:05:00-04:00",
+  "breaches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "skipped": 209,
+  "retained": 0.935,
+  "placebo_dd_worse_than_B1": 193,
+  "placebo_net_below_B1": 192,
+  "placebo_dd_median": 1838.77,
+  "placebo_net_median": 23268.55,
+  "pass": true
+ },
+ "C1": {
+  "closed_net": 19243.41,
+  "marked_dd": 1996.12,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "skipped": 268,
+  "retained": 0.68
+ }
+}
