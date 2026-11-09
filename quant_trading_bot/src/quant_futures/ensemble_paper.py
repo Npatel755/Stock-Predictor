@@ -31,7 +31,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from quant_futures.session_calendar import apply_early_close
+from quant_futures.session_calendar import apply_early_close, early_close_dates
 
 from .data import canonical
 
@@ -691,10 +691,24 @@ def run_overnight(spec, b, start, mes=None):
                 entry_bars=entry_bars, funded_failed=bool(((peak - worst_s).max()) > FUNDED_DRAWDOWN) if len(eq_s) else False)
 
 
+def live_early_close(data, bars):
+    """apply_early_close() for a live, still-running day. The research helper treats any trade date whose last regular bar is before 15:00 ET as an
+    early close and relabels that bar as the 15:55 flatten bar; on the day in progress that is simply the latest bar, which would force every open
+    position flat at the newest bar (seen 2026-11-09: MES longs 'session_exit' at 11:30 ET). For the last trade date, if it is not a calendar early
+    close and the data ends before 16:00 ET, keep the plain ET minutes."""
+    out = apply_early_close(data, bars)
+    if len(bars) == 0: return out
+    ts = pd.DatetimeIndex(bars.timestamp_utc).tz_convert("America/New_York"); last = ts[-1]
+    if last.date() in early_close_dates(last.year) or (last.hour * 60 + last.minute) >= 960: return out
+    sel = np.asarray(ts.date) == last.date()
+    out["minute"] = np.ascontiguousarray(np.where(sel, np.asarray(data["minute"]), out["minute"]))
+    return out
+
+
 def run_sleeve(cfg, bars, start, blocked=None):
     """Exact research-engine run of one sleeve; execution starts at ``start``. ``blocked`` masks signals (router)."""
     eng = engine()
-    data = apply_early_close(eng["arrays"](bars), bars)
+    data = live_early_close(eng["arrays"](bars), bars)
     local = bars.timestamp_utc.dt.tz_convert("America/New_York")
     weekdays = local.dt.day_of_week.to_numpy() < 5
     exec_cfg = eng["execution_cfg"](cfg)
@@ -739,6 +753,14 @@ def run_sleeve(cfg, bars, start, blocked=None):
         while run_start > 0 and result["quantity"][run_start - 1] != 0:
             run_start -= 1
         open_since = stamps[int(run_start)].isoformat()
+    # The research engine closes any position still open on the final bar ("terminal_close"). Live, the final bar is just the newest bar, so
+    # that trade is not closed: report it as the open position (marked at the last close, exit costs included) instead of a ledgered trade.
+    terminal = [t for t in trades if t["reason"] == "terminal_close"]
+    if terminal:
+        t = terminal[-1]; trades = [x for x in trades if x["reason"] != "terminal_close"]
+        position = dict(quantity=int(t["side"] * t["qty"]), unrealized=float(t["net"]), last_close=position["last_close"])
+        open_since = t["entry_ts"]
+        curve["cash"] = curve["cash"] - float(t["net"]) * (curve["ts"] >= pd.Timestamp(t["exit_ts"])).to_numpy()
     return dict(trades=trades, curve=curve, position=position, lock=result["lock_reason"], open_since=open_since, entry_bars=entry_bars,
                 funded_failed=bool(np.any(result["funded_failed"])) if len(stamps) else False)
 
