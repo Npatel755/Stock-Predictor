@@ -331,6 +331,23 @@ CANDIDATES["ag_arch_d_plus"] = dict(
     provenance="Antigravity Grand Champion Architecture D+ (reports/RESEARCH_ARCHITECTURE_D_PLUS_TRAINING_IMPROVEMENT_REPORT.md): training 2010-23 +20,292.55 / 1,635 trades / $12.41 per trade / closed DD $935.65 / cushion +$1,064.35 (53.2% safety margin) / 0.02% 1y Monte Carlo breach rate. Simulated fills, paper only; no routing.",
 )
 
+CANDIDATES["overnight_dip_v2_vix"] = dict(
+    version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, state="not_backwardation", hidden=True,
+    label="Overnight Dip v2 VIX-conditioned (skips nights whose prior CBOE close had VIX > VIX3M term structure backwardation)",
+    sleeves=[dict(name="OVN_DIP2_VIX_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="research_book_d_plus_risk_reduction_train: training 2010-23 +8,877 / 420 nights / marked DD $1,241 / 0 breaches of $2k floor. Component of book_d_plus only; not shown as its own ledger.",
+)
+
+CANDIDATES["book_d_plus"] = dict(
+    version="1.0.0", book=("overnight_dip_v2_vix", "ag_arch_d_plus"),
+    label="Book D+ (Overnight Dip v2 VIX-conditioned + Architecture D+ Intraday; strict 1-contract account; night leg has priority, intraday decisions while open are skipped)",
+    sleeves=[dict(sl) for k in ("overnight_dip_v2_vix", "ag_arch_d_plus") for sl in CANDIDATES[k]["sleeves"]],
+    provenance=("research_book_d_plus_risk_reduction_train, training 2010-23: book +29,169.65 / 2,055 units / $14.19 per unit / marked (intraday-trailing) DD $1,241.33 / "
+                "safety cushion +$758.67 under $2k floor (37.9% safety margin) / 0 touches / 0 breaches of $2k floor across 14 years / 0.00% 1-year Monte Carlo ruin probability. "
+                "Paper only; no routing."),
+)
+
+
 
 def _load(name):
     path = SCRIPTS / f"{name}.py"
@@ -715,6 +732,9 @@ def run_overnight(spec, b, start, mes=None):
     if spec.get("state") == "zn_not_down":  # xasset_3: skip the night if the day's ZN 16:00 ET close was below the prior day's; unknown state -> trade (as in research)
         _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
         state_ok = dict(zip(_d, ~_prior_close_state(zn_down_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))]).astype(bool)))
+    if spec.get("state") == "not_backwardation":  # Book D+: skip the night if the day's CBOE close had VIX > VIX3M (term structure backwardation)
+        _d = sorted(set(b.timestamp_utc.dt.tz_convert("America/New_York").dt.date.to_numpy()))
+        state_ok = dict(zip(_d, ~_prior_close_state(vix_backwardation_days(), [x + pd.Timedelta(days=1) for x in pd.to_datetime(pd.Series(_d).astype(str))]).astype(bool)))
     local = b.timestamp_utc.dt.tz_convert("America/New_York"); sod = (local.dt.hour * 60 + local.dt.minute).to_numpy(); day = local.dt.date.to_numpy()
     o, h, l, c = (b[k].to_numpy(dtype=float) for k in ("open", "high", "low", "close"))
     half = (spread / 2 + OVN_SLIP_TICKS) * OVN_TICK
