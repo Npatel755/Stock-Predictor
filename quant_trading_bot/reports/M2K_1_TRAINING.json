@@ -1,0 +1,102 @@
+{
+ "M2K": {
+  "first": "2017-07-09",
+  "years": 7,
+  "nights_total": 1516,
+  "T1_own_dip": {
+   "net": 330.6,
+   "nights": 295,
+   "per_night": 1.12,
+   "pos_years": 4,
+   "years": 7,
+   "pre2020": 1197.56,
+   "max_year_share": 2.044,
+   "max_dd": 1522.58,
+   "worst_night": -362.72,
+   "beat": 115,
+   "n_plc": 200,
+   "placebo_mean": 166.59,
+   "pass": false
+  },
+  "T2_co_dip_MES": {
+   "net": 1624.48,
+   "nights": 191,
+   "per_night": 8.51,
+   "pos_years": 5,
+   "years": 7,
+   "pre2020": 1035.58,
+   "max_year_share": 0.451,
+   "max_dd": 1061.0,
+   "worst_night": -362.72,
+   "beat": 200,
+   "n_plc": 200,
+   "placebo_mean": 164.9,
+   "pass": false
+  },
+  "T3_allweather_1c": {
+   "net": -3715.5,
+   "trades": 777,
+   "per": -4.78,
+   "pos_years": 1,
+   "years": 7,
+   "max_year_share": null,
+   "dd": 3834.0,
+   "pre2020": -882.5,
+   "pass": false
+  }
+ },
+ "MYM": {
+  "first": "2010-06-07",
+  "years": 14,
+  "nights_total": 3168,
+  "T1_own_dip": {
+   "net": 557.68,
+   "nights": 606,
+   "per_night": 0.92,
+   "pos_years": 7,
+   "years": 14,
+   "pre2020": 1673.72,
+   "max_year_share": 0.966,
+   "max_dd": 1981.66,
+   "worst_night": -684.22,
+   "beat": 135,
+   "n_plc": 200,
+   "placebo_mean": 180.88,
+   "pass": false
+  },
+  "T2_co_dip_MES": {
+   "net": 1162.62,
+   "nights": 454,
+   "per_night": 2.56,
+   "pos_years": 8,
+   "years": 14,
+   "pre2020": 1968.88,
+   "max_year_share": 0.685,
+   "max_dd": 1656.82,
+   "worst_night": -684.22,
+   "beat": 185,
+   "n_plc": 200,
+   "placebo_mean": 136.47,
+   "pass": false
+  },
+  "T3_allweather_1c": {
+   "net": -2440.0,
+   "trades": 1283,
+   "per": -1.9,
+   "pos_years": 5,
+   "years": 14,
+   "max_year_share": null,
+   "dd": 3481.0,
+   "pre2020": -819.5,
+   "pass": false
+  }
+ },
+ "T4_books": {
+  "mnq_v2_alone": {
+   "net": 11797.45,
+   "dd": 1646.04,
+   "pos_years": 12,
+   "breach": 0.002
+  }
+ }
+}

@@ -9,6 +9,7 @@ policy.SPECS["M2K"] = {"tick": 0.1, "multiplier": 5.0}; policy.SPECS["MYM"] = {"
 os.environ["SIZING_BUDGET"] = "1e9"
 s1 = (ROOT / "scripts/sizing_1_pilot.py").read_text().split("\nfor key in (")[0]
 ns1 = {"__file__": str(ROOT / "scripts/sizing_1_pilot.py")}; exec(s1, ns1); ep, backw_mask, breach = ns1["ep"], ns1["backw_mask"], ns1["breach"]
+ns1["_orig_cfg"].__globals__["SPECS"].update({"M2K": {"tick": 0.1, "multiplier": 5.0}, "MYM": {"tick": 1.0, "multiplier": 0.5}})  # the engine's own policy module instance
 src = (ROOT / "scripts/overnight_3_pilot.py").read_text().split("\nif __name__")[0].split("\nN = ")[0]
 ns = {"__name__": "ov3", "__file__": str(ROOT / "scripts/overnight_3_pilot.py")}; exec(src, ns)
 SPEC = ns["SPEC"]; SPEC["M2K"] = dict(tick=0.1, tv=0.5, spread=2.0); SPEC["MYM"] = dict(tick=1.0, tv=0.5, spread=2.0)
