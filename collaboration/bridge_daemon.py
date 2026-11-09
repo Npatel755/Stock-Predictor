@@ -103,6 +103,7 @@ class BridgeDaemon:
 
             # Only process if message is from Devin and new
             if msg_type in ("devin_message", "assistant") and msg_id != self._last_devin_message_id:
+                self._last_devin_message_id = msg_id
                 content = last_msg.get("message") or last_msg.get("content") or last_msg.get("text", "")
                 if content:
                     logger.info(f"New message from Devin detected: '{content[:60]}...'")
@@ -116,7 +117,6 @@ class BridgeDaemon:
                     try:
                         published = self.bus.publish(agent_msg)
                         if published:
-                            self._last_devin_message_id = msg_id
                             logger.info(f"Message {agent_msg.id[:8]} deposited into Antigravity inbox.")
                     except RuntimeError as e:
                         logger.warning(f"Loop protection triggered: {e}")
