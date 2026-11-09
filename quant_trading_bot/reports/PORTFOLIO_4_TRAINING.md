@@ -28,3 +28,7 @@ Per year (overnight / AW 1c / total): 2010 −36/−118/−154 · 2011 123/209/3
 - No deployment: both legs already run on paper and never hold at the same time, so the book's forward P&L is the sum of the two ledgers
   (`overnight_dip_v2` + `ag_all_weather_v2_1c`). Staging rule from portfolio_1/3 is not needed for this pair; it still applies if a second intraday
   leg (Quad v2 / Arch C v2) is added, which pushes DD over $2k.
+
+**Annotation (book_1, same day):** with intraday-trailing marks (overnight 1-min lows, intraday stops assumed touched) the pair's worst trailing
+drawdown is $2,043 (17 Mar 2020), one touch of a $2,000 floor in 14 years, none of $2,500. Start the pair only with ≈ $500 banked or on a
+$2,500+ floor; see reports/BOOK_1_TRAINING.md.

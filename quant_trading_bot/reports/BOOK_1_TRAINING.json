@@ -1,0 +1,14 @@
+{
+ "intraday_trailing_dd": 2043.38,
+ "when": "2020-03-17 18:05:00-04:00",
+ "breach_episodes": {
+  "2000": 1,
+  "2500": 0,
+  "3000": 0
+ },
+ "closed_net": 28317.45,
+ "worst_day_mtm": -857.0,
+ "days_mtm_below_1000": 0,
+ "days_mtm_below_500": 10,
+ "n_events": 4160
+}
