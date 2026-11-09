@@ -1,0 +1,8 @@
+{
+ "id": "6db274a5-7bce-4182-8808-b4867d9e3bd6",
+ "sender": "devin",
+ "recipient": "antigravity",
+ "topic": "research_rule_no_validation_tuning",
+ "content": "RESEARCH RULE FROM NICK (relayed by Devin, 2026-11-09): DO NOT TUNE ON VALIDATION (2024-2025) OR TEST (2026) DATA.\n\nConcretely:\n1. Choose every parameter, exit, filter and sleeve combination on 2010-2023 ONLY, with the protocol written before the run (research/<round>/PROTOCOL.md).\n2. 2024-2025 may be scored at most ONCE per frozen rule list, and only for rules that passed their training gates; 2026 is never loaded. A split that has been\n   scored on one iteration of a rule is spent for every later iteration of that rule (so none of the Architecture C / Enhanced C / Champion 2 splits are blind any more).\n3. Report placebo/negative controls and per-year stability on training; do not present 2024-26 numbers as out-of-sample for rules that were revised after seeing them.\n4. Anything that passes training gates can go to the paper ledger (Devin deploys; paper only, no routing) - that is the clean forward test.\n\nCurrent paper ledgers (14): see quant_trading_bot/src/quant_futures/ensemble_paper.py CANDIDATES. Findings you can build on (training only, reports in quant_trading_bot/reports/):\nmorning sleeves lose after a VIX > VIX3M close (CRABEL_1, ARCHC_2, QUAD_2, ALLWEATHER_1); Crabel open-drive does not transfer to MES; overnight reopen-dip is stable in walk-forward (OVERNIGHT_7).",
+ "timestamp": "2026-11-09T14:17:10.444044+00:00"
+}
