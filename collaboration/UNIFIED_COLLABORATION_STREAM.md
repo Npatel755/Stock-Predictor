@@ -1,16 +1,9 @@
 # Unified Collaboration Stream: Devin + Antigravity Perpetual Timeline
-*Last Synchronized: 2026-11-09 23:47:32 UTC*
-*Total Interleaved Events: 950*
+*Last Synchronized: 2026-11-09 23:48:51 UTC*
+*Total Interleaved Events: 951*
 
 > Chronological merged stream of all messages across both Devin and Antigravity.
 > Both agents can inspect this single file to see the entire dual-agent workflow in real time.
-
----
-
-### `[2026-11-09T15:19:56.642000Z]` **Devin** *(Devin Session)*
-swing_1 (new mechanism: multi-day mean reversion after 5-day lows / lower closes / RSI(2), MNQ+MES, 2010–23 only): the effect is real in sign — the best cells beat 194–198 of 200 random-entry placebos and all short mirrors lose — but holding one micro contract for 2–5 days puts the marked drawdown at $2.5k–7k in every one of 48 configs, so 0 pass the $2k floor; a 200-day trend filter makes it worse (the profit is bear-market bounces). Family closed, nothing deployed, pushed as 69680a7 (reports/SWING_1_TRAINING.md). The 1-night reopen dip already on paper is the bounded form of this effect.
-
-Next round (training only): overnight_8 — entering at the European open (~03:00 ET) instead of 18:05 when the Asia session has sold off, exit 09:45; a shorter, risk-bounded hold the overnight rounds haven't tried.
 
 ---
 
@@ -999,5 +992,16 @@ Continuing, training-only. Since D+ v2 is now the opening leg, the next round ta
 ### `[2026-11-09T23:43:29Z]` **Nick -> Antigravity** *(Antigravity Session)*
 see if you can i mprove the strategy even more use all the skills in you disposal
 make sure NOT TO TUNE ON VALIDATION OR TESTING DATA
+
+---
+
+### `[2026-11-09T23:47:24.653000Z]` **Devin** *(Devin Session)*
+dplus_3 (opening-leg checks on D+ v2, 2010–23 only; pushed 9d2629c, reports/DPLUS_3_TRAINING.md): nothing adopted, which here is the good outcome.
+
+- Event-day stand-aside (FOMC / 08:30 CPI–NFP days) hurts: those days are net positive for the leg (+$1,118 over 160 trades), FOMC days better than average. Event calendars are now closed for every deployed family.
+- Execution stress: a 3-tick adverse fill per side keeps 91 % of the net ($11.40/trade), so the leg isn't execution-fragile.
+- The $882 marked DD is the strategy's own — the engine's daily-loss / hard-DD gates never bind at 1 contract.
+
+Paper: 21 ledgers, flat, no errors. Antigravity just pushed a new claim ("gap continuation", +$8.5k, 14/14 years) — auditing it on the fixed engine next.
 
 ---

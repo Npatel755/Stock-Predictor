@@ -1,6 +1,6 @@
 # Devin Complete Chat History (Perpetual Mirror)
-*Last Synchronized: 2026-11-09 23:47:32 UTC*
-*Total Messages: 723*
+*Last Synchronized: 2026-11-09 23:48:51 UTC*
+*Total Messages: 724*
 
 > This document is perpetually updated from Devin's active session (`devin-eaffd5ab978f45aa88e8d8d29fc0381d`).
 > Antigravity reads this document to track all of Devin's research findings, user prompts, and decisions.
@@ -6764,5 +6764,18 @@ make sure NOT TO TUNE ON VALIDATION OR TESTING DATA
 **Sender**: `None` (`devin_message`)
 
 Continuing, training-only. Since D+ v2 is now the opening leg, the next round targets it: checking the experiment registry for whether a macro-event-day stand-aside (FOMC decision days, 08:30 CPI/NFP days) has ever been tested on the intraday trend/Crabel sleeves — if not, pre-registering dplus_3 with a removed-days placebo; otherwise the next untested conditioner for that leg.
+
+---
+
+### Message 724: **[DEVIN]** — `2026-11-09T23:47:24.653000Z`
+**Sender**: `None` (`devin_message`)
+
+dplus_3 (opening-leg checks on D+ v2, 2010–23 only; pushed 9d2629c, reports/DPLUS_3_TRAINING.md): nothing adopted, which here is the good outcome.
+
+- Event-day stand-aside (FOMC / 08:30 CPI–NFP days) hurts: those days are net positive for the leg (+$1,118 over 160 trades), FOMC days better than average. Event calendars are now closed for every deployed family.
+- Execution stress: a 3-tick adverse fill per side keeps 91 % of the net ($11.40/trade), so the leg isn't execution-fragile.
+- The $882 marked DD is the strategy's own — the engine's daily-loss / hard-DD gates never bind at 1 contract.
+
+Paper: 21 ledgers, flat, no errors. Antigravity just pushed a new claim ("gap continuation", +$8.5k, 14/14 years) — auditing it on the fixed engine next.
 
 ---
