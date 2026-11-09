@@ -78,6 +78,12 @@ _AG_MORN30 = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75,
                   session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
                   entry_start=570, entry_end=690, max_gap_minutes=60)   # Antigravity "Sleeve 1": EMA 8/16 over ATR14, decisions 09:45-12:00 ET
 _AG_TRD60Q = dict(_AG_TRD60, max_gap_minutes=120)
+_AG_CRABEL15 = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.0, stop_atr=2.0, target_r=4.0, hold_bars=12, trailing_atr=0.0,
+                    session_start=600, session_end=945, bar_minutes=15, signal="crabel_open_drive", tail=0.2, entry_start=585, entry_end=585, max_gap_minutes=20)
+_AG_TRD30C = dict(instrument="MNQ", family="trend", lookback=16, threshold=0.75, stop_atr=1.5, target_r=3.5, hold_bars=8, trailing_atr=0.0,
+                  session_start=585, session_end=720, bar_minutes=30, signal="ewma_trend", entry_start=555, entry_end=690, max_gap_minutes=60)
+_AG_TRD60C = dict(instrument="MNQ", family="trend", lookback=12, threshold=0.75, stop_atr=1.25, target_r=4.0, hold_bars=8, trailing_atr=0.0,
+                  session_start=600, session_end=720, bar_minutes=60, signal="ewma_trend", entry_start=540, entry_end=660, max_gap_minutes=90)
 _AG_TRD30PM = dict(instrument="MNQ", family="trend", lookback=8, threshold=0.5, stop_atr=1.5, target_r=4.0, hold_bars=4,
                    session_start=600, session_end=945, trailing_atr=0.0, bar_minutes=30, signal="ewma_trend",
                    entry_start=780, entry_end=870, max_gap_minutes=60)
@@ -105,6 +111,15 @@ def custom_signal(cfg, bars):
         th, lb = float(cfg["threshold"]), int(cfg.get("lookback", 12))
         tr = ((bars.close.ewm(span=max(2, lb // 2), adjust=False).mean() - bars.close.ewm(span=lb, adjust=False).mean()).to_numpy(float)) / atr
         sig = np.where(tr >= th, 1, np.where(tr <= -th, -1, 0))
+    elif cfg["signal"] == "crabel_open_drive":
+        # Antigravity Architecture C sleeve 1 (reports/ANTIGRAVITY_ARCH_C_REPLICATION.md): on 15m bars, 09:30 open in the bottom (top) 20% of the
+        # 09:30-10:00 range and the 10:00 close in the top (bottom) 20% -> long (short); signal sits on the 09:45 bar (its close is 10:00), fill at the 10:00 open.
+        et = bars.timestamp_utc.dt.tz_convert("America/New_York"); sod = (et.dt.hour * 60 + et.dt.minute).to_numpy(); day = et.dt.date.to_numpy()
+        df = pd.DataFrame(dict(day=day, sod=sod, o=bars.open.to_numpy(float), h=bars.high.to_numpy(float), l=bars.low.to_numpy(float), c=c))
+        r = df[df.sod.isin([570, 585])].groupby("day"); o930 = df[df.sod == 570].groupby("day").o.first(); c1000 = df[df.sod == 585].groupby("day").c.first()
+        hi, lo = r.h.max(), r.l.min(); rng_ = (hi - lo).replace(0, np.nan); op = (o930 - lo) / rng_; cp = (c1000 - lo) / rng_
+        tail = float(cfg.get("tail", 0.2)); sig_day = pd.Series(np.where((op <= tail) & (cp >= 1 - tail), 1, np.where((op >= 1 - tail) & (cp <= tail), -1, 0)), index=op.index)
+        sig = np.where(sod == 585, pd.Series(day).map(sig_day).fillna(0).to_numpy(), 0)
     else:
         raise ValueError(cfg["signal"])
     return sig.astype(np.int8), np.nan_to_num(atr).astype(np.float32)
@@ -183,6 +198,14 @@ CANDIDATES["overnight_dip_v2"] = dict(
     sleeves=[dict(name="OVN_DIP2_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
     provenance="research/overnight_3/PROTOCOL.md + reports/OVERNIGHT_3_TRAINING.md (pre-declared combination C2+E2): training 2010-23 +11,797 / 490 nights / "
                "12 of 14 years / closed DD 1,646 / 200 of 200 placebos. Challenger to overnight_dip v1 on paper only; not validated (2024-26 sealed); no routing.",
+)
+
+CANDIDATES["ag_arch_c"] = dict(
+    version="1.0.0", router="strict_1c", label="AG Architecture C (Crabel 10:00 open-drive > MNQ 30m morning trend > MNQ 60m trend; strict 1-contract router)",
+    sleeves=[_sleeve("AG_CRABEL15_1c", _AG_CRABEL15, 1), _sleeve("AG_TRD30C_1c", _AG_TRD30C, 1), _sleeve("AG_TRD60C_1c", _AG_TRD60C, 1)],
+    provenance="Antigravity Architecture C (scripts/audit_architecture_c_all_splits.py), added as paper candidate at Nick's request 2026-11-09. Fixed-engine replication "
+               "reports/ANTIGRAVITY_ARCH_C_REPLICATION.md: 2010-23 +16,070 / 1,980 trades / 11 of 14 years / DD 1,596 / 2010-19 +5,050 / 2021 = 42%. Sender has scored 2024-26, "
+               "so forward paper is the only clean evidence. Simulated fills, no routing.",
 )
 
 def _load(name):

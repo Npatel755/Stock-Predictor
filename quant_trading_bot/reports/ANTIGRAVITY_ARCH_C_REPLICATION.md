@@ -22,3 +22,14 @@ By year (mine): 2010 −261 · 2011 −200 · 2012 +18 · 2013 −604 · 2014 +6
 - Still not an edge to fund: ≈$4/trade before 2020 (under one MNQ tick), four flat/negative years 2010–13, 2021 = 42 % of the net (cap 40 %), 2023 ≈ 0,
   and the sender has scored 2024–26 (their two audits disagree there: 2026 5 trades / +$824 / DD 1,146 vs 92 trades / +$5,306 / DD 3,998 — the second breaches the floor).
 - Same profile as the Quad already on paper (trend sleeves 2020–22-heavy) plus a Crabel sleeve that is 2021-heavy. Suitable for a paper ledger only if Nick wants it; no validation claim can be made.
+
+## Cost note (added after the run)
+The fixed engine's default MNQ execution cost is $0.50/side commission and a 1-tick spread (plus 1 tick slippage per side), not the $0.61 / 1.75-tick
+figures stated above — this applies to every paper candidate and prior replication here. Per round trip the difference is ≈$1.47, i.e. ≈$2.9k over
+1,980 trades: under the stated costs the routed result is ≈ +$13.2k, in line with the sender's +$14.4k. The archc_1 round re-scores the champion
+under the stated costs so its comparisons are like-for-like.
+
+## Paper note
+Added as `ag_arch_c` v1.0.0 at Nick's request (2026-11-09). The engine's $150-per-trade risk budget means that with the current 15m ATR (~110–130
+NQ points, a 2-ATR stop ≈ $440 on one MNQ) no sleeve can open a 1-contract position; this is the same rule that applied in the backtest and it
+affects all paper candidates while volatility stays this high.
