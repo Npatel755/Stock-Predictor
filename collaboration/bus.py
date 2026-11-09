@@ -56,7 +56,7 @@ class AgentMessage:
 
 
 class CollaborationBus:
-    def __init__(self, root_dir: Optional[Path] = None, max_consecutive_turns: int = 10):
+    def __init__(self, root_dir: Optional[Path] = None, max_consecutive_turns: int = 50):
         self.root = root_dir or COLLAB_ROOT
         self.inbox = self.root / "inbox"
         self.outbox = self.root / "outbox"

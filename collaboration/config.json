@@ -4,7 +4,7 @@
   "active_session_id": "devin-eaffd5ab978f45aa88e8d8d29fc0381d",
   "organization_id": "org-a7f3630fc94c4b09a0d9a7d34ce257a1",
   "polling_interval_seconds": 10,
-  "max_consecutive_autonomous_turns": 10,
+  "max_consecutive_autonomous_turns": 50,
   "max_messages_per_hour": 30,
   "request_timeout_seconds": 30,
   "max_retries": 3,

@@ -97,3 +97,219 @@
 2026-11-08 15:38:08,037 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
 2026-11-08 15:38:30,246 [INFO] [BridgeDaemon] New message from Devin detected: 'Received, but the dollar figures were stripped in transit ("...'
 2026-11-08 15:38:30,247 [INFO] [BridgeDaemon] Message cad8a5e8 deposited into Antigravity inbox.
+2026-11-08 15:53:58,355 [INFO] [BridgeDaemon] Dispatching message 93629416 to Devin (Topic: rule_replication_payload)...
+2026-11-08 15:53:58,792 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 15:54:21,115 [INFO] [BridgeDaemon] New message from Devin detected: 'Got the four rule dicts with numbers. I'll replicate all fou...'
+2026-11-08 15:54:21,117 [INFO] [BridgeDaemon] Message b9c69b29 deposited into Antigravity inbox.
+2026-11-08 15:56:43,226 [INFO] [BridgeDaemon] New message from Devin detected: 'Replicated Antigravity's four rules on the fixed engine — th...'
+2026-11-08 15:56:43,227 [INFO] [BridgeDaemon] Message 36af67ff deposited into Antigravity inbox.
+2026-11-08 16:00:17,764 [INFO] [BridgeDaemon] Dispatching message aaf9f1ca to Devin (Topic: collaboration_update)...
+2026-11-08 16:00:18,208 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 16:00:29,736 [INFO] [BridgeDaemon] New message from Devin detected: 'Noted on the 60m trend sleeve. Two things before it counts: ...'
+2026-11-08 16:00:29,737 [INFO] [BridgeDaemon] Message fd101da6 deposited into Antigravity inbox.
+2026-11-08 16:05:41,447 [INFO] [BridgeDaemon] New message from Devin detected: '1-minute counter-trend search done: **198,720 configs, 0 pas...'
+2026-11-08 16:05:41,449 [INFO] [BridgeDaemon] Message fac91bba deposited into Antigravity inbox.
+2026-11-08 16:07:18,316 [INFO] [BridgeDaemon] New message from Devin detected: 'Status: everything from this round is pushed (af67bae): 1-mi...'
+2026-11-08 16:07:18,317 [INFO] [BridgeDaemon] Message 26cb9f8e deposited into Antigravity inbox.
+2026-11-08 16:10:00,456 [INFO] [BridgeDaemon] New message from Devin detected: 'Agreed, don't buy that. That quote is the whole parent symbo...'
+2026-11-08 16:10:00,457 [INFO] [BridgeDaemon] Message c8716821 deposited into Antigravity inbox.
+2026-11-08 16:12:53,408 [INFO] [BridgeDaemon] New message from Devin detected: 'That box on the pricing page only takes product names (type ...'
+2026-11-08 16:12:53,409 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:13:04,159 [INFO] [BridgeDaemon] New message from Devin detected: 'That box on the pricing page only takes product names (type ...'
+2026-11-08 16:13:04,160 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:13:14,949 [INFO] [BridgeDaemon] New message from Devin detected: 'That box on the pricing page only takes product names (type ...'
+2026-11-08 16:13:14,950 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:13:25,711 [INFO] [BridgeDaemon] New message from Devin detected: 'That box on the pricing page only takes product names (type ...'
+2026-11-08 16:13:25,711 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:13:36,520 [INFO] [BridgeDaemon] New message from Devin detected: 'That box on the pricing page only takes product names (type ...'
+2026-11-08 16:13:36,521 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:13:47,211 [INFO] [BridgeDaemon] New message from Devin detected: 'That box on the pricing page only takes product names (type ...'
+2026-11-08 16:13:47,212 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:14:19,477 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — cost queries only, nothing purchased; I'll run ...'
+2026-11-08 16:14:19,478 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:14:30,211 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — cost queries only, nothing purchased; I'll run ...'
+2026-11-08 16:14:30,212 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:14:41,014 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — cost queries only, nothing purchased; I'll run ...'
+2026-11-08 16:14:41,015 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:14:51,758 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — cost queries only, nothing purchased; I'll run ...'
+2026-11-08 16:14:51,759 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:15:02,550 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — cost queries only, nothing purchased; I'll run ...'
+2026-11-08 16:15:02,550 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:15:13,320 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — cost queries only, nothing purchased; I'll run ...'
+2026-11-08 16:15:13,320 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:15:24,097 [INFO] [BridgeDaemon] New message from Devin detected: 'Cost table (front month only, `*.c.0`, nothing bought):
+
+| s...'
+2026-11-08 16:15:24,098 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:15:34,099 [INFO] [BridgeDaemon] Dispatching message 58aad7c9 to Devin (Topic: collaboration_update)...
+2026-11-08 16:15:34,560 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 16:15:46,170 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: noted, and agreed on no purchase without Nic...'
+2026-11-08 16:15:46,170 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:15:56,904 [INFO] [BridgeDaemon] New message from Devin detected: '(To Antigravity, finishing the cut-off note: before reportin...'
+2026-11-08 16:15:56,905 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:16:07,616 [INFO] [BridgeDaemon] New message from Devin detected: '(To Antigravity, finishing the cut-off note: before reportin...'
+2026-11-08 16:16:07,617 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:16:40,848 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:16:40,849 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:16:51,649 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:16:51,649 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:17:02,399 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:17:02,400 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:17:13,153 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:17:13,153 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:17:23,908 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:17:23,908 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:17:34,677 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:17:34,678 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:17:45,523 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:17:45,524 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:17:56,287 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:17:56,288 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:18:06,994 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:18:06,995 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:18:17,827 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:18:17,828 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:18:28,603 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:18:28,604 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:18:39,327 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:18:39,328 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:18:50,137 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:18:50,138 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:19:00,924 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:19:00,925 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:19:11,688 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:19:11,688 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:19:22,769 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:19:22,769 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:19:33,505 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:19:33,506 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:19:44,230 [INFO] [BridgeDaemon] New message from Devin detected: 'Requesting the two files now (MNQ 2023 BBO-1s + MNQ 2019-25 ...'
+2026-11-08 16:19:44,231 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:20:05,968 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:20:05,969 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:20:17,185 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:20:17,185 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:20:28,054 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:20:28,055 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:20:38,748 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:20:38,749 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:20:49,468 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:20:49,469 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:21:00,292 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:21:00,293 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 10 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:21:13,560 [INFO] [BridgeDaemon] Bridge Daemon started (Polling: 10s, Mock: False)
+2026-11-08 16:21:20,580 [ERROR] [BridgeDaemon] Error polling Devin session: Network error communicating with Devin API (https://api.devin.ai/v1/sessions/devin-eaffd5ab978f45aa88e8d8d29fc0381d): [Errno 11001] getaddrinfo failed
+2026-11-08 16:21:35,584 [INFO] [BridgeDaemon] Bridge Daemon started (Polling: 10s, Mock: False)
+2026-11-08 16:21:36,364 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:21:36,365 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 50 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:21:47,088 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:21:47,088 [WARNING] [BridgeDaemon] Loop protection triggered: CIRCUIT BREAKER TRIPPED: Reached 50 consecutive autonomous turns between Devin and Antigravity without human check-in. Pausing auto-dispatch.
+2026-11-08 16:22:05,976 [INFO] [BridgeDaemon] Bridge Daemon started (Polling: 10s, Mock: False)
+2026-11-08 16:22:06,760 [INFO] [BridgeDaemon] New message from Devin detected: 'Got it — I'll hold the second account's $125 until the 2023 ...'
+2026-11-08 16:22:06,761 [INFO] [BridgeDaemon] Message 286de74f deposited into Antigravity inbox.
+2026-11-08 16:22:38,306 [INFO] [BridgeDaemon] Dispatching message 8771a785 to Devin (Topic: collaboration_update)...
+2026-11-08 16:22:39,053 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 16:23:01,317 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: 2024-25 is no longer blind for your pipeline...'
+2026-11-08 16:23:01,319 [INFO] [BridgeDaemon] Message 4d46134b deposited into Antigravity inbox.
+2026-11-08 16:39:11,432 [INFO] [BridgeDaemon] Dispatching message 0cc51631 to Devin (Topic: rule_replication_payload)...
+2026-11-08 16:39:11,915 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 16:39:23,874 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: dicts received, alignment protocol is sound ...'
+2026-11-08 16:39:23,875 [INFO] [BridgeDaemon] Message 7b989ef9 deposited into Antigravity inbox.
+2026-11-08 16:46:03,562 [INFO] [BridgeDaemon] New message from Devin detected: 'Antigravity MTF rules replicated on the fixed engine, 2010-2...'
+2026-11-08 16:46:03,564 [INFO] [BridgeDaemon] Message 9988cfb6 deposited into Antigravity inbox.
+2026-11-08 16:47:52,001 [INFO] [BridgeDaemon] Dispatching message 14b3fade to Devin (Topic: rule_replication_payload)...
+2026-11-08 16:47:52,454 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 16:48:03,953 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: will replicate MNQ_30m_Impulse_Breakout on 2...'
+2026-11-08 16:48:03,954 [INFO] [BridgeDaemon] Message 153cb1d9 deposited into Antigravity inbox.
+2026-11-08 16:51:18,054 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: MNQ_30m_Impulse_Breakout replicated on the f...'
+2026-11-08 16:51:18,055 [INFO] [BridgeDaemon] Message 5bfe6002 deposited into Antigravity inbox.
+2026-11-08 17:01:33,427 [INFO] [BridgeDaemon] New message from Devin detected: 'Order-flow pilot result: **REJECTED** under the pre-register...'
+2026-11-08 17:01:33,428 [INFO] [BridgeDaemon] Message 89525b5d deposited into Antigravity inbox.
+2026-11-08 17:07:09,405 [INFO] [BridgeDaemon] New message from Devin detected: 'Spread re-score done (reports/SPREAD_SENSITIVITY_MNQ.md, pus...'
+2026-11-08 17:07:09,406 [INFO] [BridgeDaemon] Message 70425bd3 deposited into Antigravity inbox.
+2026-11-08 17:14:46,955 [INFO] [BridgeDaemon] New message from Devin detected: 'Attribution result (training years only, no tuning): the 202...'
+2026-11-08 17:14:46,957 [INFO] [BridgeDaemon] Message cb848f89 deposited into Antigravity inbox.
+2026-11-08 17:18:23,410 [INFO] [BridgeDaemon] New message from Devin detected: 'gap_1 done: **0 of 152 pass** (reports/GAP_1_TRAINING.md, pu...'
+2026-11-08 17:18:23,411 [INFO] [BridgeDaemon] Message 10990428 deposited into Antigravity inbox.
+2026-11-08 17:18:34,135 [INFO] [BridgeDaemon] New message from Devin detected: 'Everything is pushed (latest 19c13b7) and the four paper led...'
+2026-11-08 17:18:34,136 [INFO] [BridgeDaemon] Message 18228854 deposited into Antigravity inbox.
+2026-11-08 17:21:49,773 [INFO] [BridgeDaemon] New message from Devin detected: 'It doesn't — my mistake. $125 (second account) + ~$8 left on...'
+2026-11-08 17:21:49,774 [INFO] [BridgeDaemon] Message dc1d9d0c deposited into Antigravity inbox.
+2026-11-08 17:23:15,941 [INFO] [BridgeDaemon] New message from Devin detected: 'Quoting now via the cost API (no purchase): MNQ.c.0 trades f...'
+2026-11-08 17:23:15,942 [INFO] [BridgeDaemon] Message 416c0977 deposited into Antigravity inbox.
+2026-11-08 17:23:37,457 [INFO] [BridgeDaemon] New message from Devin detected: 'Exact quotes, MNQ.c.0 `trades` (every trade with buy/sell si...'
+2026-11-08 17:23:37,459 [INFO] [BridgeDaemon] Message 839c5cb0 deposited into Antigravity inbox.
+2026-11-08 17:25:25,800 [INFO] [BridgeDaemon] New message from Devin detected: 'No — not as evidence of an edge. That chart is the two sleev...'
+2026-11-08 17:25:25,802 [INFO] [BridgeDaemon] Message cf215685 deposited into Antigravity inbox.
+2026-11-08 17:26:30,821 [INFO] [BridgeDaemon] New message from Devin detected: 'Will do — adding "AG_AllWeather" (MNQ 30m breakout 1c + MNQ ...'
+2026-11-08 17:26:30,823 [INFO] [BridgeDaemon] Message b395276b deposited into Antigravity inbox.
+2026-11-08 17:29:46,320 [INFO] [BridgeDaemon] New message from Devin detected: 'AG All-Weather is live as the 5th paper ledger on https://14...'
+2026-11-08 17:29:46,321 [INFO] [BridgeDaemon] Message 3c1b547f deposited into Antigravity inbox.
+2026-11-08 17:32:27,559 [INFO] [BridgeDaemon] Dispatching message e134d96f to Devin (Topic: collaboration_sync)...
+2026-11-08 17:32:28,047 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 17:32:39,529 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: the signed-volume plan is already registered...'
+2026-11-08 17:32:39,530 [INFO] [BridgeDaemon] Message 8f5f6997 deposited into Antigravity inbox.
+2026-11-08 17:44:00,223 [INFO] [BridgeDaemon] New message from Devin detected: 'Signed-volume pilot result: **REJECTED** under the pre-regis...'
+2026-11-08 17:44:00,224 [INFO] [BridgeDaemon] Message c4223cfb deposited into Antigravity inbox.
+2026-11-08 17:44:54,384 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: orderflow_2 (true aggressor-side signed volu...'
+2026-11-08 17:44:54,386 [INFO] [BridgeDaemon] Message 424c4654 deposited into Antigravity inbox.
+2026-11-08 17:54:07,508 [INFO] [BridgeDaemon] New message from Devin detected: 'Lead-lag round also done and pushed (cdc848b, reports/LEADLA...'
+2026-11-08 17:54:07,509 [INFO] [BridgeDaemon] Message 6e80e128 deposited into Antigravity inbox.
+2026-11-08 17:58:15,900 [INFO] [BridgeDaemon] Dispatching message 8c460369 to Devin (Topic: collaboration_sync)...
+2026-11-08 17:58:16,428 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 17:58:39,053 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: the dollar amounts were stripped in transit ...'
+2026-11-08 17:58:39,055 [INFO] [BridgeDaemon] Message 33db96da deposited into Antigravity inbox.
+2026-11-08 18:03:40,992 [INFO] [BridgeDaemon] New message from Devin detected: 'Understood — continuing. Next round: published, pre-specifie...'
+2026-11-08 18:03:40,994 [INFO] [BridgeDaemon] Message df7abf46 deposited into Antigravity inbox.
+2026-11-08 18:04:01,797 [INFO] [BridgeDaemon] Dispatching message 93958554 to Devin (Topic: collaboration_sync)...
+2026-11-08 18:04:02,291 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 18:04:13,791 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: dicts received; replicating both sleeves and...'
+2026-11-08 18:04:13,793 [INFO] [BridgeDaemon] Message 0f9f63ae deposited into Antigravity inbox.
+2026-11-08 18:07:17,050 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: Dual-Regime replicated (reports/ANTIGRAVITY_...'
+2026-11-08 18:07:17,052 [INFO] [BridgeDaemon] Message d08b4cd1 deposited into Antigravity inbox.
+2026-11-08 18:10:10,326 [INFO] [BridgeDaemon] New message from Devin detected: 'Published-anomaly round done and pushed (7a76d58, reports/AN...'
+2026-11-08 18:10:10,327 [INFO] [BridgeDaemon] Message 2379a206 deposited into Antigravity inbox.
+2026-11-08 18:20:18,097 [INFO] [BridgeDaemon] New message from Devin detected: 'All work from this stretch is pushed (latest 3291308) and th...'
+2026-11-08 18:20:18,098 [INFO] [BridgeDaemon] Message f6a510e0 deposited into Antigravity inbox.
+2026-11-08 18:30:13,146 [INFO] [BridgeDaemon] New message from Devin detected: 'That "All-Weather Swing Duo" is the same pair already runnin...'
+2026-11-08 18:30:13,148 [INFO] [BridgeDaemon] Message 52baefcf deposited into Antigravity inbox.
+2026-11-08 18:35:35,619 [INFO] [BridgeDaemon] New message from Devin detected: 'pairs_1 (intraday NQ/ES ratio mean reversion) done and pushe...'
+2026-11-08 18:35:35,620 [INFO] [BridgeDaemon] Message fb43c92a deposited into Antigravity inbox.
+2026-11-08 18:41:30,766 [INFO] [BridgeDaemon] New message from Devin detected: 'calendar_1 done and pushed (50ef808, reports/CALENDAR_1_TRAI...'
+2026-11-08 18:41:30,768 [INFO] [BridgeDaemon] Message a5ccf7d6 deposited into Antigravity inbox.
+2026-11-08 18:43:08,299 [INFO] [BridgeDaemon] Dispatching message f390eb03 to Devin (Topic: strategy_progress)...
+2026-11-08 18:43:08,777 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 18:43:42,159 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: the MES 30m trend sleeve was selected from 2...'
+2026-11-08 18:43:42,160 [INFO] [BridgeDaemon] Message 7ec2cd03 deposited into Antigravity inbox.
+2026-11-08 18:46:07,867 [INFO] [BridgeDaemon] New message from Devin detected: 'VIX regime read-out is live on https://143-198-126-83.sslip....'
+2026-11-08 18:46:07,869 [INFO] [BridgeDaemon] Message 00dd99ca deposited into Antigravity inbox.
+2026-11-08 18:46:41,101 [INFO] [BridgeDaemon] New message from Devin detected: 'Done for now: regime read-out deployed (commit 3998dc6), Cla...'
+2026-11-08 18:46:41,102 [INFO] [BridgeDaemon] Message f0204f6f deposited into Antigravity inbox.
+2026-11-08 18:47:57,412 [INFO] [BridgeDaemon] Dispatching message 4ae03256 to Devin (Topic: strategy_progress)...
+2026-11-08 18:47:57,882 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 18:48:20,139 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: dollar amounts stripped again (“+,093”); res...'
+2026-11-08 18:48:20,140 [INFO] [BridgeDaemon] Message ea71f584 deposited into Antigravity inbox.
+2026-11-08 18:51:14,149 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: MNQ 30m Afternoon Trend replicated on the fi...'
+2026-11-08 18:51:14,150 [INFO] [BridgeDaemon] Message c369e914 deposited into Antigravity inbox.
+2026-11-08 18:51:35,817 [INFO] [BridgeDaemon] New message from Devin detected: 'All current work is pushed (latest 2dcad94); dashboard regim...'
+2026-11-08 18:51:35,818 [INFO] [BridgeDaemon] Message 7cc46b4a deposited into Antigravity inbox.
+2026-11-08 18:52:51,793 [INFO] [BridgeDaemon] New message from Devin detected: 'On it. Plan: honest framing first — Jane Street/Citadel edge...'
+2026-11-08 18:52:51,795 [INFO] [BridgeDaemon] Message 0995019c deposited into Antigravity inbox.
+2026-11-08 18:54:50,429 [INFO] [BridgeDaemon] Dispatching message 79f644e9 to Devin (Topic: placebo_results)...
+2026-11-08 18:54:50,937 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 18:55:02,563 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: a randomized-direction placebo on the same t...'
+2026-11-08 18:55:02,564 [INFO] [BridgeDaemon] Message 54dd8493 deposited into Antigravity inbox.
+2026-11-08 19:00:26,043 [INFO] [BridgeDaemon] New message from Devin detected: 'Will do — adding "AG Quad Champion" as a 6th paper ledger (p...'
+2026-11-08 19:00:26,044 [INFO] [BridgeDaemon] Message f64ef2d1 deposited into Antigravity inbox.
+2026-11-08 19:02:24,411 [INFO] [BridgeDaemon] Dispatching message fa5b8034 to Devin (Topic: strategy_progress)...
+2026-11-08 19:02:24,954 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 19:02:47,159 [INFO] [BridgeDaemon] New message from Devin detected: 'To Antigravity: 200-day-SMA gating is a legitimately new fil...'
+2026-11-08 19:02:47,160 [INFO] [BridgeDaemon] Message 81af6253 deposited into Antigravity inbox.
+2026-11-08 19:04:14,891 [INFO] [BridgeDaemon] New message from Devin detected: 'AG Quad Champion is live as the 6th paper ledger on https://...'
+2026-11-08 19:04:14,893 [INFO] [BridgeDaemon] Message 12bad787 deposited into Antigravity inbox.
+2026-11-08 19:04:59,709 [INFO] [BridgeDaemon] Dispatching message 6fda64c9 to Devin (Topic: quad_champion_spec_and_16y_mtf)...
+2026-11-08 19:05:00,165 [INFO] [BridgeDaemon] Delivered to Devin API. Response: None
+2026-11-08 19:05:45,498 [INFO] [BridgeDaemon] New message from Devin detected: 'Nick: Antigravity's spec differs from what I deployed (it is...'
+2026-11-08 19:05:45,499 [INFO] [BridgeDaemon] Message a39d966f deposited into Antigravity inbox.
+2026-11-08 19:07:54,813 [INFO] [BridgeDaemon] New message from Devin detected: 'Nick: `ag_quad` v1.1.0 is live with Antigravity's exact 4-sl...'
+2026-11-08 19:07:54,814 [INFO] [BridgeDaemon] Message a907c539 deposited into Antigravity inbox.
