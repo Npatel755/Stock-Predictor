@@ -23,7 +23,7 @@ trade; a trade is skipped when one contract's stop risk exceeds it), because tho
 contract version is +18,386 / 1,457 trades / closed DD 1,102 / marked DD 1,280 (59 extra high-ATR trades, +810 net, +45% drawdown) -
 so the budgeted version is both what was reported and the better drawdown configuration, and the paper candidates keep the budget. A
 2-contract version therefore cannot be "exactly 2x": it uses a $300 budget (two contracts on every v2 trade, one contract on the
-higher-ATR trades v2 skips) and the engine's unchanged $300 daily-loss / $1,800 hard-drawdown gates trip more often at double size.
+higher-ATR trades v2 skips) and the engine's gates bite differently at double size (the v2 policy scales the daily-loss limit to $400 x contracts but leaves the $2,000 per-sleeve hard-drawdown lock unscaled).
 Exact fixed-engine results, training 2010-23 only (scripts/dplus_2_pilot.py, /tmp/dp_2c.py -> reports/DPLUS_2C_TRAINING.json):
 
 | config | net | trades | $/trade | closed DD | marked DD | $2k touches | years >0 |
@@ -33,7 +33,7 @@ Exact fixed-engine results, training 2010-23 only (scripts/dplus_2_pilot.py, /tm
 | ag_arch_d_plus_v2_2c (3 sleeves, $300 budget) | +27,327 | 1,281 (1,239 at 2c, 42 at 1c) | 21.33 | 1,245 | 1,453 | 0 | 12/14 |
 
 The 2c variant has lower marked drawdown than the 4-sleeve original at 1c (1,453 vs 1,768) with 32% more net, so at equal or lower
-drawdown it still dominates - but the gain is +32%, not the +70% a naive doubling suggests, because the daily-loss gate bites at double
+drawdown it still dominates - but the gain is +32%, not the +70% a naive doubling suggests, because the unscaled $2,000 per-sleeve hard-drawdown lock (and the $800 daily loss) bite at double
 size. The dplus_2 coherence failure above still stands and all of this is one-split (2010-23) evidence derived from an ablation on that
 split; the forward record decides.
 

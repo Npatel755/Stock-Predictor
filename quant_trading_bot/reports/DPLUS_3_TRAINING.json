@@ -1,0 +1,186 @@
+{
+ "base": {
+  "net": 17576.0,
+  "trades": 1398,
+  "per": 12.57,
+  "closed_dd": 783.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 882.37,
+  "when": "2022-08-19 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  }
+ },
+ "A": {
+  "fomc_day": {
+   "kept": {
+    "net": 16885.25,
+    "trades": 1365,
+    "per": 12.37,
+    "closed_dd": 776.25,
+    "pos_years": 12,
+    "years": 14,
+    "marked_dd": 882.37,
+    "when": "2022-08-19 14:00:00+00:00",
+    "touches": {
+     "2000": 0,
+     "2500": 0
+    }
+   },
+   "removed_net": 690.75,
+   "removed_trades": 33,
+   "removed_days": 24,
+   "placebo_worse_of_200": 58,
+   "adopt": false
+  },
+  "cpi_nfp_day": {
+   "kept": {
+    "net": 17136.0,
+    "trades": 1270,
+    "per": 13.49,
+    "closed_dd": 751.75,
+    "pos_years": 11,
+    "years": 14,
+    "marked_dd": 842.93,
+    "when": "2022-10-10 14:00:00+00:00",
+    "touches": {
+     "2000": 0,
+     "2500": 0
+    }
+   },
+   "removed_net": 440.0,
+   "removed_trades": 128,
+   "removed_days": 97,
+   "placebo_worse_of_200": 175,
+   "adopt": false
+  },
+  "all_event_days": {
+   "kept": {
+    "net": 16457.75,
+    "trades": 1238,
+    "per": 13.29,
+    "closed_dd": 751.75,
+    "pos_years": 11,
+    "years": 14,
+    "marked_dd": 842.93,
+    "when": "2022-10-10 14:00:00+00:00",
+    "touches": {
+     "2000": 0,
+     "2500": 0
+    }
+   },
+   "removed_net": 1118.25,
+   "removed_trades": 160,
+   "removed_days": 120,
+   "placebo_worse_of_200": 156,
+   "adopt": false
+  }
+ },
+ "B": {
+  "slip2": {
+   "net": 15851.25,
+   "trades": 1404,
+   "per": 11.29,
+   "closed_dd": 815.5,
+   "pos_years": 10,
+   "years": 14,
+   "marked_dd": 861.5,
+   "when": "2023-04-20 14:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   },
+   "net_retention": 0.902
+  },
+  "spread2": {
+   "net": 17576.0,
+   "trades": 1398,
+   "per": 12.57,
+   "closed_dd": 783.0,
+   "pos_years": 12,
+   "years": 14,
+   "marked_dd": 882.37,
+   "when": "2022-08-19 14:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   },
+   "net_retention": 1.0
+  },
+  "both": {
+   "net": 15999.75,
+   "trades": 1403,
+   "per": 11.4,
+   "closed_dd": 815.5,
+   "pos_years": 10,
+   "years": 14,
+   "marked_dd": 861.5,
+   "when": "2023-04-20 14:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   },
+   "net_retention": 0.91
+  }
+ },
+ "C": {
+  "daily_200": {
+   "net": 17423.5,
+   "trades": 1398,
+   "per": 12.46,
+   "closed_dd": 783.0,
+   "pos_years": 12,
+   "years": 14,
+   "marked_dd": 882.37,
+   "when": "2022-08-19 14:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   }
+  },
+  "daily_off": {
+   "net": 17576.0,
+   "trades": 1398,
+   "per": 12.57,
+   "closed_dd": 783.0,
+   "pos_years": 12,
+   "years": 14,
+   "marked_dd": 882.37,
+   "when": "2022-08-19 14:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   }
+  },
+  "hard_1000": {
+   "net": 14028.0,
+   "trades": 1243,
+   "per": 11.29,
+   "closed_dd": 622.5,
+   "pos_years": 12,
+   "years": 14,
+   "marked_dd": 726.65,
+   "when": "2020-07-20 16:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   }
+  },
+  "hard_off": {
+   "net": 17576.0,
+   "trades": 1398,
+   "per": 12.57,
+   "closed_dd": 783.0,
+   "pos_years": 12,
+   "years": 14,
+   "marked_dd": 882.37,
+   "when": "2022-08-19 14:00:00+00:00",
+   "touches": {
+    "2000": 0,
+    "2500": 0
+   }
+  }
+ }
+}
