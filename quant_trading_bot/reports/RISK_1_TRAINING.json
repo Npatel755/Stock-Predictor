@@ -1,0 +1,52 @@
+{
+ "book_a": {
+  "closed_net": 28317.45,
+  "marked_dd": 2043.38,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "nights": 490,
+  "skipped": 0
+ },
+ "R1": {
+  "closed_net": 28070.54,
+  "marked_dd": 2043.38,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "nights": 490,
+  "skipped": 1,
+  "retained": 0.991,
+  "pass": false
+ },
+ "R2": {
+  "closed_net": 28070.54,
+  "marked_dd": 2043.38,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "nights": 490,
+  "skipped": 1,
+  "retained": 0.991,
+  "pass": false
+ },
+ "R3": {
+  "closed_net": 27962.75,
+  "marked_dd": 2206.59,
+  "when": "2020-03-17 18:05:00-04:00",
+  "breaches": {
+   "2000": 1,
+   "2500": 0
+  },
+  "nights": 490,
+  "skipped": 19,
+  "retained": 0.987,
+  "pass": false
+ }
+}
