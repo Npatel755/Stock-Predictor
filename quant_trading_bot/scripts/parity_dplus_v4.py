@@ -32,8 +32,14 @@ research_metrics = measure(CM, X)
 
 # ---- runner (engine overrides cleared: the candidate's own sleeve settings must carry hard_drawdown / daily_loss)
 OVR.clear()
+# The live VIX filter fetches only the last year from yfinance; for a 2010-23 replay give it the same CBOE history the research used
+# (data/external VIX/VIX3M CSVs, VIX > VIX3M at the CBOE close), otherwise the stand-aside silently does nothing.
+def _cboe(n):
+    d = pd.read_csv(ROOT / f"data/external/{n}_History.csv"); d.index = pd.to_datetime(d.DATE, format="%m/%d/%Y"); return d.CLOSE.astype(float)
+_j = pd.concat([_cboe("VIX").rename("vix"), _cboe("VIX3M").rename("vix3m")], axis=1).dropna().sort_index()
+ep._VIX_CACHE["series"] = (_j.vix > _j.vix3m)
 spec = ep.CANDIDATES["ag_arch_d_plus_v2_gapsize_4c_v4"]
-sleeves = [sl for k in ("ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_1of3_v3") for sl in ep.CANDIDATES[k]["sleeves"]]
+sleeves = [sl for k in ("ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4") for sl in ep.CANDIDATES[k]["sleeves"]]
 bars = {}
 for sl in sleeves:
     bars.setdefault(ep.bars_key(sl), bars_for(sl)[0])
@@ -61,5 +67,28 @@ out = dict(research_entries=len(R), runner_entries=len(Q), common_entries=len(bo
            research_days=day_stats(Rd), runner_days=day_stats(Qd), research_metrics_dplus_7e=research_metrics,
            research_only_sample=[str(x) for x in R.index.difference(Q.index)[:10]], runner_only_sample=[str(x) for x in Q.index.difference(R.index)[:10]])
 out["exact"] = bool(out["research_only"] == 0 and out["runner_only"] == 0 and (out["max_abs_net_diff_common"] or 0) < 0.02)
+bad = diff[diff > 0.02].sort_values(ascending=False)
+out["entries_with_net_diff"] = len(bad)
+out["net_diff_detail"] = [dict(entry=str(k), research=round(float(R[k]), 2), runner=round(float(Q[k]), 2),
+                               runner_trades=[(t["sleeve"], t["qty"], t["net"], t["exit_ts"]) for t in rt if pd.Timestamp(t["entry_ts"]).tz_convert(NY) == k],
+                               research_rows=[(round(r["net"], 2), str(r["tout"])) for r in kept if r["tin"] == k]) for k in bad.index[:8]]
+
+# ---- diagnostics: where does the gap come from?
+fam = lambda s: "CRABEL" if "CRABEL" in s else ("MES" if "MES" in s else "TRD60")
+yr_r = pd.DataFrame([(fam(t["sleeve"]), pd.Timestamp(t["exit_ts"]).year, float(t["net"])) for t in tr], columns=["sl", "yr", "net"])
+yr_q0 = None
+base_runs = ep.run_routed(ep.CANDIDATES["ag_arch_d_plus_v2_3c_v4"], bars, START)        # plain 3c v4 base, no addon, no account stop
+bt = [t for r in base_runs.values() for t in r["trades"]]
+yr_q0 = pd.DataFrame([(fam(t["sleeve"]), pd.Timestamp(t["exit_ts"]).year, float(t["net"])) for t in bt], columns=["sl", "yr", "net"])
+out["base_3c_v3_research_net_by_sleeve"] = yr_r.groupby("sl").net.sum().round(0).to_dict()
+out["base_3c_v3_runner_net_by_sleeve"] = yr_q0.groupby("sl").net.sum().round(0).to_dict()
+out["base_3c_v3_research_trades"] = len(tr); out["base_3c_v3_runner_trades"] = len(bt)
+out["base_3c_v3_net_by_year"] = {int(y): [round(float(yr_r[yr_r.yr == y].net.sum()), 0), round(float(yr_q0[yr_q0.yr == y].net.sum()), 0)] for y in sorted(yr_r.yr.unique())}
+out["runner_locks"] = {n: r.get("lock") for n, r in base_runs.items()}
+out["runner_last_trade_by_sleeve"] = {n: (r["trades"][-1]["exit_ts"] if r["trades"] else None) for n, r in base_runs.items()}
+# independent (unrouted) sleeve runs on the runner path, to separate routing from engine state
+indep = {sl["name"]: ep.run_sleeve(sl, bars[ep.bars_key(sl)], START, ep.day_filter_mask(ep.CANDIDATES["ag_arch_d_plus_v2_3c_v4"], bars[ep.bars_key(sl)], sl))
+         for sl in ep.CANDIDATES["ag_arch_d_plus_v2_3c_v4"]["sleeves"]}
+out["unrouted_runner_net_by_sleeve"] = {n: [len(r["trades"]), round(sum(float(t["net"]) for t in r["trades"]), 0), r.get("lock")] for n, r in indep.items()}
 (ROOT / "reports/PARITY_DPLUS_V4.json").write_text(json.dumps(out, indent=1, default=str))
 print(json.dumps(out, indent=1, default=str))

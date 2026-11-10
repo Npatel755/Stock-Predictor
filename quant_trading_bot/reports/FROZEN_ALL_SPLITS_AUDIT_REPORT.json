@@ -1,0 +1,155 @@
+{
+  "Training (2010-2023)": {
+    "split": "Training (2010-2023)",
+    "total_calendar_days": 3484,
+    "active_trading_days": 1138,
+    "continuous_performance": {
+      "4c": {
+        "net_profit": 19240.8,
+        "max_drawdown": 3387.2,
+        "win_rate_pct": 41.1,
+        "profit_factor": 1.22,
+        "worst_day": -138.4,
+        "best_day": 581.6
+      },
+      "6c": {
+        "net_profit": 28861.2,
+        "max_drawdown": 5080.8,
+        "win_rate_pct": 41.1,
+        "profit_factor": 1.22,
+        "worst_day": -207.6,
+        "best_day": 872.4
+      },
+      "8c": {
+        "net_profit": 38481.6,
+        "max_drawdown": 6774.4,
+        "win_rate_pct": 41.1,
+        "profit_factor": 1.22,
+        "worst_day": -276.8,
+        "best_day": 1163.2
+      },
+      "12c": {
+        "net_profit": 57722.4,
+        "max_drawdown": 10161.6,
+        "win_rate_pct": 41.1,
+        "profit_factor": 1.22,
+        "worst_day": -415.2,
+        "best_day": 1744.8
+      }
+    },
+    "prop_firm_evaluation": {
+      "trials_evaluated": 3424,
+      "resolved_total": 177,
+      "passed": 177,
+      "ruined": 0,
+      "timeout": 3247,
+      "pass_rate_pct": 100.0,
+      "ruin_rate_pct": 0.0,
+      "median_days_to_pass": 35.0,
+      "min_days_to_pass": 7,
+      "avg_dd_on_pass": 671.29
+    }
+  },
+  "Validation (2024-2025)": {
+    "split": "Validation (2024-2025)",
+    "total_calendar_days": 516,
+    "active_trading_days": 260,
+    "continuous_performance": {
+      "4c": {
+        "net_profit": 3198.0,
+        "max_drawdown": 1931.6,
+        "win_rate_pct": 42.3,
+        "profit_factor": 1.15,
+        "worst_day": -138.4,
+        "best_day": 581.6
+      },
+      "6c": {
+        "net_profit": 4797.0,
+        "max_drawdown": 2897.4,
+        "win_rate_pct": 42.3,
+        "profit_factor": 1.15,
+        "worst_day": -207.6,
+        "best_day": 872.4
+      },
+      "8c": {
+        "net_profit": 6396.0,
+        "max_drawdown": 3863.2,
+        "win_rate_pct": 42.3,
+        "profit_factor": 1.15,
+        "worst_day": -276.8,
+        "best_day": 1163.2
+      },
+      "12c": {
+        "net_profit": 9594.0,
+        "max_drawdown": 5794.8,
+        "win_rate_pct": 42.3,
+        "profit_factor": 1.15,
+        "worst_day": -415.2,
+        "best_day": 1744.8
+      }
+    },
+    "prop_firm_evaluation": {
+      "trials_evaluated": 456,
+      "resolved_total": 19,
+      "passed": 19,
+      "ruined": 0,
+      "timeout": 437,
+      "pass_rate_pct": 100.0,
+      "ruin_rate_pct": 0.0,
+      "median_days_to_pass": 49.0,
+      "min_days_to_pass": 32,
+      "avg_dd_on_pass": 853.58
+    }
+  },
+  "Blind Test (2026)": {
+    "split": "Blind Test (2026)",
+    "total_calendar_days": 219,
+    "active_trading_days": 156,
+    "continuous_performance": {
+      "4c": {
+        "net_profit": 2155.6,
+        "max_drawdown": 1968.0,
+        "win_rate_pct": 42.9,
+        "profit_factor": 1.18,
+        "worst_day": -138.4,
+        "best_day": 581.6
+      },
+      "6c": {
+        "net_profit": 3233.4,
+        "max_drawdown": 2952.0,
+        "win_rate_pct": 42.9,
+        "profit_factor": 1.18,
+        "worst_day": -207.6,
+        "best_day": 872.4
+      },
+      "8c": {
+        "net_profit": 4311.2,
+        "max_drawdown": 3936.0,
+        "win_rate_pct": 42.9,
+        "profit_factor": 1.18,
+        "worst_day": -276.8,
+        "best_day": 1163.2
+      },
+      "12c": {
+        "net_profit": 6466.8,
+        "max_drawdown": 5904.0,
+        "win_rate_pct": 42.9,
+        "profit_factor": 1.18,
+        "worst_day": -415.2,
+        "best_day": 1744.8
+      }
+    },
+    "prop_firm_evaluation": {
+      "trials_evaluated": 159,
+      "resolved_total": 18,
+      "passed": 18,
+      "ruined": 0,
+      "timeout": 141,
+      "pass_rate_pct": 100.0,
+      "ruin_rate_pct": 0.0,
+      "median_days_to_pass": 33.0,
+      "min_days_to_pass": 22,
+      "avg_dd_on_pass": 581.42
+    }
+  }
+}

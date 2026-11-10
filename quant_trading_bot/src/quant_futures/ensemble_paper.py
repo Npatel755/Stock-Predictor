@@ -449,18 +449,29 @@ CANDIDATES["ag_arch_d_plus_v2_gapsize_3c_v3"] = dict(
                "only as the no-DLL-account version. Stop-risk caps on the doubled trades did not change this (the big losers gap through their stops). Paper only; no routing.",
 )
 
-CANDIDATES["ag_arch_d_plus_v2_gap_addon_1of3_v3"] = dict(
-    version="4.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v3", addon_sleeve="AG_CRABEL15_D_3c_v3", addon_filter="gap_continuation", addon_scale=1.0 / 3.0,
-    label="D+ v2 3c v3 gap addon at +1 micro (hidden): routed 3c Crabel trades that agree with the opening gap, scaled to one micro (= 4 micros on those in the v4 book)",
-    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP1_v3", _AG_CRABEL15_D, 1), hard_drawdown=6000.0, daily_loss=600.0)],
-    provenance="dplus_7d/7e continuation multiplier 4/3 on the 3c v3 base, implemented as a 1/3-scaled addon (exact: engine P&L is linear in contracts). Paper only; no routing.",
+_V4_GATES = dict(hard_drawdown=6000.0, daily_loss=600.0, funded_drawdown=1e9)   # per-sleeve floor off: the account floor is judged on the combined book
+
+CANDIDATES["ag_arch_d_plus_v2_3c_v4"] = dict(
+    version="4.0.0", router="posthoc_1c", day_filter="no_backwardation", hidden=True,
+    label="D+ v2 at 3 micros, v4 gates (hidden base: v3 gates, no per-sleeve funded floor, research-identical post-hoc 1-position routing)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_3c_v4", _AG_CRABEL15_D, 3), **_V4_GATES),
+             dict(_dplus_sl("AG_TRD60_D_3c_v4", _AG_TRD60_D, 3), **_V4_GATES),
+             dict(_dplus_sl("AG_MES_TRD30_D_3c_v4", _AG_MES_TRD30_D, 3), day_filter_exempt=True, **_V4_GATES)],
+    provenance="ag_arch_d_plus_v2_3c_v3 with funded_drawdown disabled per sleeve (reports/PARITY_DPLUS_V4.md). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gap_addon_1of3_v4"] = dict(
+    version="4.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v4", addon_sleeve="AG_CRABEL15_D_3c_v4", addon_filter="gap_continuation", addon_scale=1.0 / 3.0,
+    label="D+ v2 3c v4 gap addon at +1 micro (hidden): routed 3c Crabel trades that agree with the opening gap, scaled to one micro (= 4 micros on those in the v4 book)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP1_v4", _AG_CRABEL15_D, 1), **_V4_GATES)],
+    provenance="dplus_7d/7e continuation multiplier 4/3 on the 3c base, implemented as a 1/3-scaled addon (engine P&L is linear in contracts). Paper only; no routing.",
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gapsize_4c_v4"] = dict(
     version="4.0.0", hidden=True,
-    book=[["ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_1of3_v3"]], account_daily_stop=600.0,
+    book=[["ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4"]], account_daily_stop=600.0,
     label="D+ v2 v4 payout build (3 micros; 4 on Crabel drives that agree with the opening gap; engine v3 gates; account-level daily stop: no new entry once the day is -$600) - Topstep-safe $150-day version",
-    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_1of3_v3") for sl in CANDIDATES[k]["sleeves"]],
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4") for sl in CANDIDATES[k]["sleeves"]],
     provenance="dplus_7e (research/dplus_7/PROTOCOL.md addendum 4), training 2010-23: 4-micro continuation + $600 account-level daily stop = 0 days <= -$1,000 in 14 years, "
                "0% DLL hits, 0.6% static breach, median winning day $155, median winning trade $148.50 (misses Devin's pre-registered trade gate by $1.50; deployed on "
                "Nick's 2026-11-09 decision that the winning-day metric is the target). Runner parity: see reports/PARITY_DPLUS_V4.md. Paper only; no routing.",
@@ -859,6 +870,38 @@ def account_daily_stop_filter(runs, limit):
     return out
 
 
+def _route_posthoc(spec, bars, start, extra_block=None):
+    """``router="posthoc_1c"`` (v4): every sleeve runs on its own signals (its engine state includes its own skipped trades), and the
+    account takes a sleeve's trade unless its decision bar falls inside [entry, exit) of an already-accepted trade (sorted by decision,
+    then sleeve priority). Skipped trades are removed as if never taken; there is no re-fill. This is exactly the routing the dplus_1..7
+    research measured (scripts/dplus_1_pilot.py route()), including its one quirk: a trade decided before an accepted trade's ENTRY (e.g.
+    a 30m MES decision at 10:30 vs a 60m trend trade decided 10:00 that enters 11:00) is accepted, so two positions can briefly overlap.
+    Live-feasible: every sleeve's signal is computed from bars regardless of what the account holds."""
+    runs, prio = {}, {sl["name"]: i for i, sl in enumerate(spec["sleeves"])}
+    for sl in spec["sleeves"]:
+        b = bars[bars_key(sl)]
+        blocked = day_filter_mask(spec, b, sl)
+        if extra_block is not None:
+            xm = extra_block(b); blocked = xm if blocked is None else (blocked | xm)
+        runs[sl["name"]] = run_sleeve(sl, b, start, blocked)
+    rows = []
+    for sl in spec["sleeves"]:
+        r = runs[sl["name"]]; minutes = int(sl.get("bar_minutes", BAR_MINUTES))
+        for i, t in enumerate(r["trades"]):
+            e = pd.Timestamp(t["entry_ts"]); rows.append((e - pd.Timedelta(minutes=minutes), prio[sl["name"]], e, pd.Timestamp(t["exit_ts"]), sl["name"], i))
+        if r["position"]["quantity"] and r.get("open_since"):
+            e = pd.Timestamp(r["open_since"]); rows.append((e - pd.Timedelta(minutes=minutes), prio[sl["name"]], e, pd.Timestamp("2200-01-01", tz="UTC"), sl["name"], None))
+    rows.sort(key=lambda x: (x[0], x[1]))
+    keep = {n: [True] * len(r["trades"]) for n, r in runs.items()}; open_blocked = {n: False for n in runs}; accepted = []
+    for decision, _, entry, exit_, name, i in rows:
+        if any(a_entry <= decision < a_exit for a_entry, a_exit in accepted[-6:]):   # research route(): last six accepted trades
+            if i is None: open_blocked[name] = True
+            else: keep[name][i] = False
+            continue
+        accepted.append((entry, exit_))
+    return {n: (_remove_trades(r, keep[n], drop_open=open_blocked[n]) if (not all(keep[n]) or open_blocked[n]) else r) for n, r in runs.items()}
+
+
 def run_routed(spec, bars, start, max_iter=12, extra_block=None):
     if spec.get("addon_of"):
         # Sizing addon (dplus_5): re-run the base candidate exactly (same router, same blocks), keep one sleeve's trades that pass the
@@ -887,6 +930,8 @@ def run_routed(spec, bars, start, max_iter=12, extra_block=None):
     signal bar and re-running, until no overlap remains. Otherwise sleeves run independently (optionally ``router_after`` masks)."""
     if spec.get("overnight"):
         return {spec["sleeves"][0]["name"]: run_overnight(spec, bars[spec["sleeves"][0]["instrument"] + "@1"], start, bars.get("MES@1"))}
+    if spec.get("router") == "posthoc_1c":
+        return _route_posthoc(spec, bars, start, extra_block)
     if spec.get("router") != "strict_1c":
         runs = {}
         for sl in spec["sleeves"]:
@@ -1034,7 +1079,10 @@ def run_sleeve(cfg, bars, start, blocked=None):
     exec_cfg = eng["execution_cfg"](cfg)
     if cfg.get("risk_per_trade"):  # sizing_1: candidates that always take one contract regardless of stop risk
         exec_cfg.update(risk_per_trade=float(cfg["risk_per_trade"]), max_open_risk=float(cfg.get("max_open_risk", cfg["risk_per_trade"])))
-    for key in ("hard_drawdown", "daily_loss"):  # dplus_7: size-scaled engine gates (the policy default is a fixed $2,000 lock / $400 x contracts daily loss)
+    # dplus_7: size-scaled engine gates (the policy default is a fixed $2,000 lock / $400 x contracts daily loss). v4 also sets
+    # funded_drawdown: the policy's per-SLEEVE $2,000 trailing floor is not the account rule (one static floor on the combined account) and,
+    # at 3+ micros under the router, it permanently locked the Crabel sleeve in 2015 (reports/PARITY_DPLUS_V4.md).
+    for key in ("hard_drawdown", "daily_loss", "funded_drawdown"):
         if cfg.get(key) is not None: exec_cfg[key] = float(cfg[key])
     if cfg.get("signal"):
         raw, atr = custom_signal(cfg, bars)
