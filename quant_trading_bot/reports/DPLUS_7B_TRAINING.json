@@ -1,0 +1,53 @@
+{
+ "k3_hdd6000_dl800": {
+  "trades": 1457,
+  "net": 70642.75,
+  "per": 48.49,
+  "pos_years": 12,
+  "closed_dd": 3107.25,
+  "median_win_trade": 165.0,
+  "share_win_ge150": 0.534,
+  "median_win_day": 168.0,
+  "share_win_days_ge150": 0.549,
+  "days150_per_year": 20.7,
+  "worst_day": -1331.0,
+  "p_breach_static": 0.006,
+  "p_dll": 0.108,
+  "median_net_12m": 1835.25,
+  "gate": false
+ },
+ "k3_hdd6000_dl600": {
+  "trades": 1456,
+  "net": 70733.75,
+  "per": 48.58,
+  "pos_years": 12,
+  "closed_dd": 3107.25,
+  "median_win_trade": 165.0,
+  "share_win_ge150": 0.534,
+  "median_win_day": 168.0,
+  "share_win_days_ge150": 0.549,
+  "days150_per_year": 20.7,
+  "worst_day": -1204.5,
+  "p_breach_static": 0.006,
+  "p_dll": 0.108,
+  "median_net_12m": 1835.25,
+  "gate": false
+ },
+ "k3_hdd6000_dl400": {
+  "trades": 1453,
+  "net": 66522.75,
+  "per": 45.78,
+  "pos_years": 12,
+  "closed_dd": 4367.25,
+  "median_win_trade": 163.5,
+  "share_win_ge150": 0.529,
+  "median_win_day": 165.75,
+  "share_win_days_ge150": 0.547,
+  "days150_per_year": 20.4,
+  "worst_day": -1279.5,
+  "p_breach_static": 0.006,
+  "p_dll": 0.108,
+  "median_net_12m": 1835.25,
+  "gate": false
+ }
+}

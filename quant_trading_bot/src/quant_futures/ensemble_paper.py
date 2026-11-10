@@ -326,7 +326,7 @@ FAMILIES = {
     "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon"),
     "AG All-Weather": ("ag_all_weather", "ag_all_weather_v2", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"),
     "AG Architecture C": ("ag_arch_c", "ag_arch_c_lite", "ag_arch_c_v2"),
-    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c"),
+    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c", "ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3", "ag_arch_d_plus_v2_gapsize_3c_v3"),
     "AG Quad": ("ag_quad", "ag_quad_v2"),
     "Book A (overnight dip v2 + All-Weather v2 1c)": ("book_a", "book_a_bond", "book_a_skew"),
     "Book D+ (overnight dip + Architecture D+)": ("book_d_plus",),
@@ -420,6 +420,35 @@ CANDIDATES["ag_arch_d_plus_v2_gapsize_3c"] = dict(
                "median winning trade 141, 47% of winners >= $150; median winning day 147, 50% of winning days >= $150, 16.7 such days a year; static $2k floor + $1k DLL over 157 "
                "monthly starts: 0.6% breach, 0% DLL hits, median 12m net +1,914. Built for Nick's $150-winning-day payout rule; needs the static-floor account. Paper only; no routing.",
 )
+
+CANDIDATES["ag_arch_d_plus_v2_3c_v3"] = dict(
+    version="3.0.0", router="strict_1c", day_filter="no_backwardation", hidden=True,
+    label="D+ v2 at 3 micros, engine v3 gates (hidden base: per-sleeve hard-drawdown lock $6,000 = $2,000 x contracts, daily stop $600)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_3c_v3", _AG_CRABEL15_D, 3), hard_drawdown=6000.0, daily_loss=600.0),
+             dict(_dplus_sl("AG_TRD60_D_3c_v3", _AG_TRD60_D, 3), hard_drawdown=6000.0, daily_loss=600.0),
+             dict(_dplus_sl("AG_MES_TRD30_D_3c_v3", _AG_MES_TRD30_D, 3), day_filter_exempt=True, hard_drawdown=6000.0, daily_loss=600.0)],
+    provenance="dplus_7 (reports/DPLUS_7_TRAINING.md), training 2010-23: the fixed $2,000 lock removed 229 of the 1c trades at 3 micros; scaled to $6,000 the sleeve set is "
+               "1,456 trades / +70,734 gap-sized / closed DD 3,107 / worst day -1,205 (daily stop $600 trims the four-stop day). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gap_addon_3c_v3"] = dict(
+    version="3.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v3", addon_sleeve="AG_CRABEL15_D_3c_v3", addon_filter="gap_continuation",
+    label="D+ v2 3c v3 gap addon (hidden): routed 3c Crabel trades that agree with the opening gap, once more (= 6 micros on those)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP3_v3", _AG_CRABEL15_D, 3), hard_drawdown=6000.0, daily_loss=600.0)],
+    provenance="dplus_4/5 state applied at 3c under engine v3 gates (dplus_7). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gapsize_3c_v3"] = dict(
+    version="3.0.0", category="future",
+    book=[["ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3"]],
+    label="FUTURE - D+ v2 gap-sized at 3 micros, engine v3 gates (lock scaled to size, $600 daily stop): typical winning trade ~$165 / day ~$168 - NEEDS an account WITHOUT a $1k daily loss limit (e.g. Tradeify Select Flex)",
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3") for sl in CANDIDATES[k]["sleeves"]],
+    provenance="dplus_7 (reports/DPLUS_7_TRAINING.md), training 2010-23, engine-exact: 1,456 trades / +70,734 / $48.58 per trade / 12 of 14 years / closed DD 3,107 / worst day -1,205; "
+               "median winning trade 165 (53% >= $150), median winning day 168 (55% >= $150), 20.7 such days a year; static $2k floor: 0.6% breach over 157 monthly starts; "
+               "BUT 5 days in 14 years lose >= $1,000 (10.8% of 12-month starts), so it fails the pre-registered gate for accounts with a $1k daily loss limit and is deployed "
+               "only as the no-DLL-account version. Stop-risk caps on the doubled trades did not change this (the big losers gap through their stops). Paper only; no routing.",
+)
+
 
 
 
@@ -934,6 +963,8 @@ def run_sleeve(cfg, bars, start, blocked=None):
     exec_cfg = eng["execution_cfg"](cfg)
     if cfg.get("risk_per_trade"):  # sizing_1: candidates that always take one contract regardless of stop risk
         exec_cfg.update(risk_per_trade=float(cfg["risk_per_trade"]), max_open_risk=float(cfg.get("max_open_risk", cfg["risk_per_trade"])))
+    for key in ("hard_drawdown", "daily_loss"):  # dplus_7: size-scaled engine gates (the policy default is a fixed $2,000 lock / $400 x contracts daily loss)
+        if cfg.get(key) is not None: exec_cfg[key] = float(cfg[key])
     if cfg.get("signal"):
         raw, atr = custom_signal(cfg, bars)
         mask = weekdays  # entry window enforced by the engine via entry_start/entry_end, as in the replication scripts
