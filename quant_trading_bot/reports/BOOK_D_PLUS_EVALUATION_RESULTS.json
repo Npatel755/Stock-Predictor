@@ -1,0 +1,442 @@
+{
+  "Cushion-Staged (4 -> 8 MNQ)": {
+    "60": {
+      "max_days": 60,
+      "intra_size_stg1": 4,
+      "intra_size_stg2": 8,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 17.3,
+      "ruin_pct": 34.8,
+      "resolved_pass_pct": 33.2,
+      "in_progress": 47.9,
+      "median_days": 30.0,
+      "p25_days": 17.0,
+      "min_days": 5,
+      "avg_dd_on_pass": 922.68,
+      "ruin_reasons": {
+        "dll": 278,
+        "floor": 210
+      }
+    },
+    "75": {
+      "max_days": 75,
+      "intra_size_stg1": 4,
+      "intra_size_stg2": 8,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 20.0,
+      "ruin_pct": 37.9,
+      "resolved_pass_pct": 34.6,
+      "in_progress": 42.1,
+      "median_days": 34.0,
+      "p25_days": 18.0,
+      "min_days": 5,
+      "avg_dd_on_pass": 945.06,
+      "ruin_reasons": {
+        "dll": 278,
+        "floor": 248
+      }
+    },
+    "90": {
+      "max_days": 90,
+      "intra_size_stg1": 4,
+      "intra_size_stg2": 8,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 21.5,
+      "ruin_pct": 41.6,
+      "resolved_pass_pct": 34.1,
+      "in_progress": 36.8,
+      "median_days": 36.0,
+      "p25_days": 19.0,
+      "min_days": 5,
+      "avg_dd_on_pass": 949.42,
+      "ruin_reasons": {
+        "dll": 277,
+        "floor": 295
+      }
+    },
+    "110": {
+      "max_days": 110,
+      "intra_size_stg1": 4,
+      "intra_size_stg2": 8,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 25.0,
+      "ruin_pct": 46.2,
+      "resolved_pass_pct": 35.1,
+      "in_progress": 28.8,
+      "median_days": 41.0,
+      "p25_days": 21.0,
+      "min_days": 5,
+      "avg_dd_on_pass": 1001.44,
+      "ruin_reasons": {
+        "dll": 281,
+        "floor": 345
+      }
+    },
+    "130": {
+      "max_days": 130,
+      "intra_size_stg1": 4,
+      "intra_size_stg2": 8,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 27.1,
+      "ruin_pct": 48.6,
+      "resolved_pass_pct": 35.8,
+      "in_progress": 24.3,
+      "median_days": 44.0,
+      "p25_days": 22.0,
+      "min_days": 5,
+      "avg_dd_on_pass": 1055.47,
+      "ruin_reasons": {
+        "dll": 266,
+        "floor": 382
+      }
+    },
+    "180": {
+      "max_days": 180,
+      "intra_size_stg1": 4,
+      "intra_size_stg2": 8,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 30.9,
+      "ruin_pct": 50.2,
+      "resolved_pass_pct": 38.1,
+      "in_progress": 18.9,
+      "median_days": 49.0,
+      "p25_days": 23.0,
+      "min_days": 5,
+      "avg_dd_on_pass": 1110.0,
+      "ruin_reasons": {
+        "dll": 260,
+        "floor": 384
+      }
+    }
+  },
+  "Cushion-Staged (5 -> 9 MNQ)": {
+    "60": {
+      "max_days": 60,
+      "intra_size_stg1": 5,
+      "intra_size_stg2": 9,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 14.7,
+      "ruin_pct": 45.4,
+      "resolved_pass_pct": 24.5,
+      "in_progress": 39.8,
+      "median_days": 30.0,
+      "p25_days": 14.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 984.09,
+      "ruin_reasons": {
+        "dll": 260,
+        "floor": 378
+      }
+    },
+    "75": {
+      "max_days": 75,
+      "intra_size_stg1": 5,
+      "intra_size_stg2": 9,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 17.6,
+      "ruin_pct": 50.6,
+      "resolved_pass_pct": 25.8,
+      "in_progress": 31.8,
+      "median_days": 35.0,
+      "p25_days": 16.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1021.36,
+      "ruin_reasons": {
+        "dll": 274,
+        "floor": 429
+      }
+    },
+    "90": {
+      "max_days": 90,
+      "intra_size_stg1": 5,
+      "intra_size_stg2": 9,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 19.7,
+      "ruin_pct": 52.5,
+      "resolved_pass_pct": 27.2,
+      "in_progress": 27.9,
+      "median_days": 37.0,
+      "p25_days": 17.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1089.4,
+      "ruin_reasons": {
+        "dll": 265,
+        "floor": 456
+      }
+    },
+    "110": {
+      "max_days": 110,
+      "intra_size_stg1": 5,
+      "intra_size_stg2": 9,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 23.6,
+      "ruin_pct": 54.1,
+      "resolved_pass_pct": 30.4,
+      "in_progress": 22.3,
+      "median_days": 46.5,
+      "p25_days": 21.8,
+      "min_days": 3,
+      "avg_dd_on_pass": 1209.42,
+      "ruin_reasons": {
+        "dll": 269,
+        "floor": 463
+      }
+    },
+    "130": {
+      "max_days": 130,
+      "intra_size_stg1": 5,
+      "intra_size_stg2": 9,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 25.1,
+      "ruin_pct": 54.8,
+      "resolved_pass_pct": 31.4,
+      "in_progress": 20.1,
+      "median_days": 49.0,
+      "p25_days": 23.5,
+      "min_days": 3,
+      "avg_dd_on_pass": 1256.8,
+      "ruin_reasons": {
+        "dll": 253,
+        "floor": 478
+      }
+    },
+    "180": {
+      "max_days": 180,
+      "intra_size_stg1": 5,
+      "intra_size_stg2": 9,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 29.9,
+      "ruin_pct": 55.1,
+      "resolved_pass_pct": 35.2,
+      "in_progress": 15.0,
+      "median_days": 55.0,
+      "p25_days": 27.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1303.11,
+      "ruin_reasons": {
+        "dll": 250,
+        "floor": 458
+      }
+    }
+  },
+  "Cushion-Staged Sprint (6 -> 10 MNQ)": {
+    "60": {
+      "max_days": 60,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 10,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 11.9,
+      "ruin_pct": 52.4,
+      "resolved_pass_pct": 18.5,
+      "in_progress": 35.7,
+      "median_days": 33.0,
+      "p25_days": 14.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 978.07,
+      "ruin_reasons": {
+        "dll": 281,
+        "floor": 455
+      }
+    },
+    "75": {
+      "max_days": 75,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 10,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 14.7,
+      "ruin_pct": 56.2,
+      "resolved_pass_pct": 20.7,
+      "in_progress": 29.2,
+      "median_days": 39.5,
+      "p25_days": 17.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1125.09,
+      "ruin_reasons": {
+        "dll": 285,
+        "floor": 495
+      }
+    },
+    "90": {
+      "max_days": 90,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 10,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 17.1,
+      "ruin_pct": 57.6,
+      "resolved_pass_pct": 22.9,
+      "in_progress": 25.3,
+      "median_days": 44.0,
+      "p25_days": 23.5,
+      "min_days": 3,
+      "avg_dd_on_pass": 1219.99,
+      "ruin_reasons": {
+        "dll": 277,
+        "floor": 515
+      }
+    },
+    "110": {
+      "max_days": 110,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 10,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 20.1,
+      "ruin_pct": 59.6,
+      "resolved_pass_pct": 25.2,
+      "in_progress": 20.3,
+      "median_days": 49.0,
+      "p25_days": 27.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1292.98,
+      "ruin_reasons": {
+        "dll": 292,
+        "floor": 515
+      }
+    },
+    "130": {
+      "max_days": 130,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 10,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 21.6,
+      "ruin_pct": 60.9,
+      "resolved_pass_pct": 26.2,
+      "in_progress": 17.5,
+      "median_days": 52.5,
+      "p25_days": 29.8,
+      "min_days": 3,
+      "avg_dd_on_pass": 1303.0,
+      "ruin_reasons": {
+        "dll": 295,
+        "floor": 518
+      }
+    },
+    "180": {
+      "max_days": 180,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 10,
+      "stage2_cushion": 1200.0,
+      "pass_pct": 27.1,
+      "ruin_pct": 62.1,
+      "resolved_pass_pct": 30.4,
+      "in_progress": 10.7,
+      "median_days": 63.0,
+      "p25_days": 34.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1368.63,
+      "ruin_reasons": {
+        "dll": 289,
+        "floor": 509
+      }
+    }
+  },
+  "High-Frequency Sprint (6 -> 12 MNQ)": {
+    "60": {
+      "max_days": 60,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 12,
+      "stage2_cushion": 1400.0,
+      "pass_pct": 9.5,
+      "ruin_pct": 56.7,
+      "resolved_pass_pct": 14.4,
+      "in_progress": 33.8,
+      "median_days": 33.5,
+      "p25_days": 16.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 955.42,
+      "ruin_reasons": {
+        "dll": 353,
+        "floor": 443
+      }
+    },
+    "75": {
+      "max_days": 75,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 12,
+      "stage2_cushion": 1400.0,
+      "pass_pct": 11.4,
+      "ruin_pct": 60.0,
+      "resolved_pass_pct": 16.0,
+      "in_progress": 28.6,
+      "median_days": 41.0,
+      "p25_days": 20.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1010.32,
+      "ruin_reasons": {
+        "dll": 361,
+        "floor": 472
+      }
+    },
+    "90": {
+      "max_days": 90,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 12,
+      "stage2_cushion": 1400.0,
+      "pass_pct": 13.5,
+      "ruin_pct": 61.8,
+      "resolved_pass_pct": 18.0,
+      "in_progress": 24.7,
+      "median_days": 45.0,
+      "p25_days": 24.2,
+      "min_days": 3,
+      "avg_dd_on_pass": 1115.88,
+      "ruin_reasons": {
+        "dll": 356,
+        "floor": 493
+      }
+    },
+    "110": {
+      "max_days": 110,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 12,
+      "stage2_cushion": 1400.0,
+      "pass_pct": 16.2,
+      "ruin_pct": 64.3,
+      "resolved_pass_pct": 20.1,
+      "in_progress": 19.5,
+      "median_days": 50.0,
+      "p25_days": 31.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1198.54,
+      "ruin_reasons": {
+        "dll": 377,
+        "floor": 494
+      }
+    },
+    "130": {
+      "max_days": 130,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 12,
+      "stage2_cushion": 1400.0,
+      "pass_pct": 18.1,
+      "ruin_pct": 65.9,
+      "resolved_pass_pct": 21.5,
+      "in_progress": 16.0,
+      "median_days": 56.0,
+      "p25_days": 32.0,
+      "min_days": 3,
+      "avg_dd_on_pass": 1242.35,
+      "ruin_reasons": {
+        "dll": 372,
+        "floor": 507
+      }
+    },
+    "180": {
+      "max_days": 180,
+      "intra_size_stg1": 6,
+      "intra_size_stg2": 12,
+      "stage2_cushion": 1400.0,
+      "pass_pct": 24.0,
+      "ruin_pct": 65.4,
+      "resolved_pass_pct": 26.8,
+      "in_progress": 10.6,
+      "median_days": 71.5,
+      "p25_days": 38.8,
+      "min_days": 3,
+      "avg_dd_on_pass": 1356.12,
+      "ruin_reasons": {
+        "dll": 353,
+        "floor": 487
+      }
+    }
+  }
+}

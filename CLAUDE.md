@@ -4,18 +4,49 @@ Welcome Claude! You are pair programming with **Nick** (User) and working in dir
 
 ---
 
+## 🧰 BEFORE EVERY TASK: CHECK SKILLS & TOOLS FIRST
+
+Whenever Nick sends you anything (a request, a file, a link, a zip, a pasted message), do this **first**, before planning or writing code:
+
+1. **Match skills.** Go through the available skills and pick every one whose description fits the task. Load each with the Skill tool and follow it. Skills live in:
+   * `~/.claude/skills/`: your personal skills. This includes the 43 quant research skills plus `news-trading-intelligence` (e.g. `walk-forward-validation`, `overfitting-defense`, `statistical-evidence-auditor`, `risk-of-ruin-monte-carlo`, `quantconnect-strategy-forensics`) and the general pack (`strategy-backtest-lab`, `trade-risk-sizing`, `stock-research-scan`, ...).
+   * `.agents/skills/` in this repo: Devin/Codex copies of the same quant skills. Claude Code does not load these; if you edit a quant skill, mirror the change to the other copy.
+2. **Match tools.** Work out which tools the task needs, including deferred tools (load them with ToolSearch). Before writing a new script, check for existing ones in `quant_trading_bot/scripts/`, `quant_trading_bot/src/` and `collaboration/claude_bridge.py`.
+3. **Say what you picked.** Start your reply with one line naming the skills and tools you're using, or "No matching skill" if none fit.
+
+---
+
+## 🔍 CLAUDE'S ROLE: REVIEW ANTIGRAVITY + CO-DEVELOP STRATEGIES
+
+Set by Nick on 2026-11-09. Reviewing Antigravity used to be Devin's job; it's now yours.
+
+1. **Check Antigravity's work every session.** Read its latest turns (`python collaboration/claude_bridge.py --read-antigravity --tail 5`) and any new scripts or results. For each claim, check that it is feasible under the real account rules and not inflated:
+   * Does the number trace to a results file, and to the code that produced it?
+   * Does the code do what the variant's label says?
+   * Was it run on the training split only?
+   * Are the friction costs applied?
+2. **Critique only what the evidence supports.** Don't invent objections just to have something to say. If a claim checks out, say so in one line. When something is wrong, cite the file, line and number, and send Antigravity a note through the bridge (`--msg-to-antigravity`).
+3. **Develop strategies alongside Antigravity**, not only review its work.
+
+**Current goal:** a strategy that produces as many trading days as possible with **net P&L ≥ $150** (after friction) on a **Topstep 50K funded account**: $2,000 max drawdown, $4,000 evaluation target (per Nick). Survival comes first, because a blown account produces no more $150 days.
+
+---
+
 ## 🌉 THE BI-DIRECTIONAL AGENT BRIDGE
 
 A real-time bridge is active in this workspace between **You (Claude)** and **Antigravity**. You can view each other's complete conversation histories, research findings, code modifications, and strategic decisions.
 
-### 1. How You Read Antigravity's Chat History
-Antigravity's conversation history with Nick is continuously mirrored into:
-* **Human-Readable Full Transcript**: [`collaboration/ANTIGRAVITY_CHAT_HISTORY.md`](collaboration/ANTIGRAVITY_CHAT_HISTORY.md)
-* **Unified Chronological Stream**: [`collaboration/UNIFIED_COLLABORATION_STREAM.md`](collaboration/UNIFIED_COLLABORATION_STREAM.md)
-* **Structured Machine-Readable JSONL**: [`collaboration/ANTIGRAVITY_FULL_CHAT_HISTORY.jsonl`](collaboration/ANTIGRAVITY_FULL_CHAT_HISTORY.jsonl)
-* **Direct Messages from Antigravity to You**: [`collaboration/ANTIGRAVITY_TO_CLAUDE.md`](collaboration/ANTIGRAVITY_TO_CLAUDE.md)
+### 1. How You Read Antigravity's & Devin's Chat History
+Everything discussed, proved, and implemented is mirrored live in the repository:
+* **Antigravity Complete Transcript (148 turns)**: [`collaboration/ANTIGRAVITY_CHAT_HISTORY.md`](collaboration/ANTIGRAVITY_CHAT_HISTORY.md)
+* **Devin Complete Transcript (756 messages)**: [`collaboration/DEVIN_CHAT_HISTORY.md`](collaboration/DEVIN_CHAT_HISTORY.md)
+* **Unified Chronological Stream (1,026+ events)**: [`collaboration/UNIFIED_COLLABORATION_STREAM.md`](collaboration/UNIFIED_COLLABORATION_STREAM.md)
+* **Executive Catch-Up Memo for You**: [`collaboration/ANTIGRAVITY_TO_CLAUDE.md`](collaboration/ANTIGRAVITY_TO_CLAUDE.md)
+* **Machine-Readable JSONL Logs**:
+  - `collaboration/ANTIGRAVITY_FULL_CHAT_HISTORY.jsonl`
+  - `collaboration/DEVIN_FULL_CHAT_HISTORY.jsonl`
 
-👉 **Before starting any new research or code changes, read `collaboration/ANTIGRAVITY_CHAT_HISTORY.md`** to see what Nick and Antigravity have already established, verified, or ruled out.
+👉 **Start by reading [`collaboration/ANTIGRAVITY_TO_CLAUDE.md`](collaboration/ANTIGRAVITY_TO_CLAUDE.md)** for a structured executive summary of all 148 Antigravity turns and 756 Devin messages.
 
 ---
 
@@ -70,12 +101,13 @@ When working on `quant_trading_bot`, strictly adhere to these institutional rese
    * **Daily Loss Limit (DLL)**: -$1,000 max loss in a single session.
    * **50% Consistency Rule**: No single day may account for $\ge 50\%$ of total banked profit (enforced by a daily profit cap of +$1,750).
 
-4. **Champion Architecture: Book D+ / Cushion-Staged**:
-   * Evaluated across 14 years:
-     - Stage 1: 6 MNQ (-$207 stop risk, 95%+ survival, safely under DLL).
-     - Stage 2: Scale up to 10–12 MNQ after banking +$1,200 cushion.
-     - Multi-Sleeves: Crabel 15m Momentum Continuation + 30m/60m Macro Trend + VIX-gated Overnight Reopen Dip.
-     - Reaches **>50% Pass Rate with 0.0% Ruin Rate**.
+4. **Best evaluation result so far: Book D+ at fixed 6 MNQ** (training split 2010–2023, 90-day window, $4k target):
+   * Sleeves: Crabel 15m Momentum Continuation + 30m/60m Macro Trend + VIX-gated Overnight Reopen Dip. Crabel continuation trades at 6 MNQ, other sleeves at 3.
+   * **~33% pass, ~4.5–4.9% ruin**, median 27–32 trading days to pass. The other ~62% of starts are still open at day 90 (neither passed nor blown).
+   * **Cushion-staged scaling (6 → 10–12 MNQ after +$1,000–1,200) made things worse** in every variant tested: 8–22% pass, 12.6–22.7% ruin.
+   * No tested configuration has reached 50% pass, and none has 0% ruin.
+   * Sources: `quant_trading_bot/reports/RESEARCH_PASS_RATE_ABOVE_50.json`, `quant_trading_bot/reports/EVALUATION_SUPERCHARGED_RESULTS.json`.
+   * *Corrected 2026-11-09 by Claude: this section used to claim ">50% pass rate with 0.0% ruin" for 6 → 10–12 MNQ staging. No results file supports that; Antigravity's own run of that config gave 14.6% pass / 19.6% ruin.*
 
 ---
 
