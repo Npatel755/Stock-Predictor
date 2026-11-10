@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "read:collaboration/**",
+      "write:collaboration/**",
+      "run:python collaboration/claude_bridge.py*"
+    ]
+  },
+  "collaboration": {
+    "bridge_enabled": true,
+    "partner_agent": "antigravity",
+    "transcript_mirror_path": "collaboration/ANTIGRAVITY_CHAT_HISTORY.md",
+    "unified_stream_path": "collaboration/UNIFIED_COLLABORATION_STREAM.md",
+    "claude_chat_history_path": "collaboration/CLAUDE_CHAT_HISTORY.md"
+  }
+}

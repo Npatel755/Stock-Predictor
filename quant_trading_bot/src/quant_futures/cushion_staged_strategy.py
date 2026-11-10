@@ -43,10 +43,12 @@ class StrategyConfig:
     daily_profit_cap: float = 1750.0  # Topstep 50% consistency compliance (43.6% share)
     daily_stop_loss: float = 400.0    # Strict DLL buffer
     
-    # Staging Sizing Thresholds
-    cushion_threshold: float = 1200.0 # Transition from Stage 1 to Stage 2
-    stage1_contracts: int = 6         # 3 Banked + 3 Runners
-    stage2_contracts: int = 12        # 6 Banked + 6 Runners
+    # Staging Sizing Thresholds (Optimized v2: 6c Base -> 8c Sprint with De-escalation)
+    cushion_threshold: float = 1500.0   # Scale up to Stage 2 once +$1,500 banked
+    deescalate_threshold: float = 1200.0 # Ratchet back down to Stage 1 if drops below $1,200
+    stage1_contracts: int = 6           # 3 Banked + 3 Runners (4.5% Ruin Rate, 95.5% Survival)
+    stage2_contracts: int = 8           # 4 Banked + 4 Runners (Preserves cushion, fast finish)
+    require_gap_continuation: bool = True # Only trade Crabel drives aligned with Opening Gap
     
     # Scale-Out & Free-Roll Mechanics
     initial_stop_pts: float = 16.0
@@ -75,6 +77,7 @@ class AccountState:
     day_locked: bool = False
     passed: bool = False
     ruined: bool = False
+    current_stage: int = 1
     max_single_day_pnl: float = 0.0
     history: List[Dict] = field(default_factory=list)
 
