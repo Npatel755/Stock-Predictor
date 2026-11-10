@@ -1,0 +1,93 @@
+[
+  {
+    "desc": "1 Contract Baseline (ag_arch_d_plus_v2)",
+    "multiplier": 1.0,
+    "gap_sized": false,
+    "attempts": 1097,
+    "passed": 0,
+    "blown": 0,
+    "incomplete": 1097,
+    "pct_pass": 0.0,
+    "pct_blow": 0.0,
+    "pct_incomplete": 100.0,
+    "pass_to_ruin_odds": 0.0
+  },
+  {
+    "desc": "2 Contracts Flat (ag_arch_d_plus_v2_2c)",
+    "multiplier": 2.0,
+    "gap_sized": false,
+    "attempts": 1097,
+    "passed": 0,
+    "blown": 0,
+    "incomplete": 1097,
+    "pct_pass": 0.0,
+    "pct_blow": 0.0,
+    "pct_incomplete": 100.0,
+    "pass_to_ruin_odds": 0.0
+  },
+  {
+    "desc": "Gap-State Sized (1c fade / 2c cont)",
+    "multiplier": 1.0,
+    "gap_sized": true,
+    "attempts": 1097,
+    "passed": 0,
+    "blown": 0,
+    "incomplete": 1097,
+    "pct_pass": 0.0,
+    "pct_blow": 0.0,
+    "pct_incomplete": 100.0,
+    "pass_to_ruin_odds": 0.0
+  },
+  {
+    "desc": "3 Contracts Aggressive",
+    "multiplier": 3.0,
+    "gap_sized": false,
+    "attempts": 1097,
+    "passed": 0,
+    "blown": 0,
+    "incomplete": 1097,
+    "pct_pass": 0.0,
+    "pct_blow": 0.0,
+    "pct_incomplete": 100.0,
+    "pass_to_ruin_odds": 0.0
+  },
+  {
+    "desc": "5 Contracts Extreme",
+    "multiplier": 5.0,
+    "gap_sized": false,
+    "attempts": 1097,
+    "passed": 14,
+    "blown": 6,
+    "incomplete": 1077,
+    "pct_pass": 1.28,
+    "pct_blow": 0.55,
+    "pct_incomplete": 98.18,
+    "pass_to_ruin_odds": 2.33
+  },
+  {
+    "desc": "8 Contracts 'All-In'",
+    "multiplier": 8.0,
+    "gap_sized": false,
+    "attempts": 1097,
+    "passed": 46,
+    "blown": 48,
+    "incomplete": 1003,
+    "pct_pass": 4.19,
+    "pct_blow": 4.38,
+    "pct_incomplete": 91.43,
+    "pass_to_ruin_odds": 0.96
+  },
+  {
+    "desc": "10 Contracts Maximum Micro Limit",
+    "multiplier": 10.0,
+    "gap_sized": false,
+    "attempts": 1097,
+    "passed": 71,
+    "blown": 95,
+    "incomplete": 931,
+    "pct_pass": 6.47,
+    "pct_blow": 8.66,
+    "pct_incomplete": 84.87,
+    "pass_to_ruin_odds": 0.75
+  }
+]

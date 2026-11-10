@@ -1,0 +1,74 @@
+[
+  {
+    "contracts": 1,
+    "req_daily_pts": 750.0,
+    "max_dip_pts": 1000.0,
+    "pct_pass": 0.0,
+    "pct_ruin": 0.32,
+    "ruin_vs_pass_ratio": 999.0
+  },
+  {
+    "contracts": 2,
+    "req_daily_pts": 375.0,
+    "max_dip_pts": 500.0,
+    "pct_pass": 0.06,
+    "pct_ruin": 4.12,
+    "ruin_vs_pass_ratio": 70.0
+  },
+  {
+    "contracts": 3,
+    "req_daily_pts": 250.0,
+    "max_dip_pts": 333.3333333333333,
+    "pct_pass": 0.24,
+    "pct_ruin": 10.34,
+    "ruin_vs_pass_ratio": 43.88
+  },
+  {
+    "contracts": 5,
+    "req_daily_pts": 150.0,
+    "max_dip_pts": 200.0,
+    "pct_pass": 0.71,
+    "pct_ruin": 22.73,
+    "ruin_vs_pass_ratio": 32.17
+  },
+  {
+    "contracts": 8,
+    "req_daily_pts": 93.75,
+    "max_dip_pts": 125.0,
+    "pct_pass": 0.85,
+    "pct_ruin": 34.54,
+    "ruin_vs_pass_ratio": 40.45
+  },
+  {
+    "contracts": 10,
+    "req_daily_pts": 75.0,
+    "max_dip_pts": 100.0,
+    "pct_pass": 0.71,
+    "pct_ruin": 39.84,
+    "ruin_vs_pass_ratio": 56.38
+  },
+  {
+    "contracts": 15,
+    "req_daily_pts": 50.0,
+    "max_dip_pts": 66.66666666666667,
+    "pct_pass": 0.97,
+    "pct_ruin": 52.39,
+    "ruin_vs_pass_ratio": 53.91
+  },
+  {
+    "contracts": 20,
+    "req_daily_pts": 37.5,
+    "max_dip_pts": 50.0,
+    "pct_pass": 1.47,
+    "pct_ruin": 63.43,
+    "ruin_vs_pass_ratio": 43.08
+  },
+  {
+    "contracts": 25,
+    "req_daily_pts": 30.0,
+    "max_dip_pts": 40.0,
+    "pct_pass": 1.56,
+    "pct_ruin": 72.23,
+    "ruin_vs_pass_ratio": 46.28
+  }
+]
