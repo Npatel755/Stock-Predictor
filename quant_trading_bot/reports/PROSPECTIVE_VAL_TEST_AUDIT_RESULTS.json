@@ -1,0 +1,134 @@
+{
+  "Training (2010-2023) [Frozen Discovery]": {
+    "continuous_perf": {
+      "net_profit": 16844.7,
+      "win_rate": 50.9,
+      "profit_factor": 1.15,
+      "max_drawdown": 3379.2,
+      "worst_day": -207.6,
+      "best_day": 614.4
+    },
+    "evaluation_trials": {
+      "Static 6 MNQ Baseline": {
+        "passed": 76,
+        "ruined": 68,
+        "timeout": 3250,
+        "pass_pct": 52.8,
+        "ruin_pct": 47.2,
+        "mean_sessions": 77.9,
+        "med_sessions": 79.0,
+        "p25_sessions": 74.0,
+        "min_sessions": 42,
+        "mean_trade_days": 61.2,
+        "med_trade_days": 62.0,
+        "p25_trade_days": 58.8,
+        "min_trade_days": 31,
+        "avg_dd": 812.1
+      },
+      "Gentle Fortress Finisher (6c -> 8c @ +$2k)": {
+        "passed": 104,
+        "ruined": 68,
+        "timeout": 3222,
+        "pass_pct": 60.5,
+        "ruin_pct": 39.5,
+        "mean_sessions": 72.1,
+        "med_sessions": 74.0,
+        "p25_sessions": 64.0,
+        "min_sessions": 33,
+        "mean_trade_days": 56.8,
+        "med_trade_days": 59.0,
+        "p25_trade_days": 52.0,
+        "min_trade_days": 23,
+        "avg_dd": 910.05
+      }
+    }
+  },
+  "Validation (2024-2025) [Out-of-Sample]": {
+    "continuous_perf": {
+      "net_profit": 2184.0,
+      "win_rate": 48.8,
+      "profit_factor": 1.08,
+      "max_drawdown": 2146.8,
+      "worst_day": -207.6,
+      "best_day": 614.4
+    },
+    "evaluation_trials": {
+      "Static 6 MNQ Baseline": {
+        "passed": 4,
+        "ruined": 97,
+        "timeout": 325,
+        "pass_pct": 4.0,
+        "ruin_pct": 96.0,
+        "mean_sessions": 73.2,
+        "med_sessions": 72.0,
+        "p25_sessions": 69.8,
+        "min_sessions": 69,
+        "mean_trade_days": 52.0,
+        "med_trade_days": 50.5,
+        "p25_trade_days": 49.0,
+        "min_trade_days": 49,
+        "avg_dd": 1038.0
+      },
+      "Gentle Fortress Finisher (6c -> 8c @ +$2k)": {
+        "passed": 12,
+        "ruined": 97,
+        "timeout": 317,
+        "pass_pct": 11.0,
+        "ruin_pct": 89.0,
+        "mean_sessions": 73.3,
+        "med_sessions": 70.5,
+        "p25_sessions": 69.0,
+        "min_sessions": 68,
+        "mean_trade_days": 52.2,
+        "med_trade_days": 49.5,
+        "p25_trade_days": 49.0,
+        "min_trade_days": 48,
+        "avg_dd": 1141.8
+      }
+    }
+  },
+  "Blind Test (2026) [Strict Holdout]": {
+    "continuous_perf": {
+      "net_profit": 2552.4,
+      "win_rate": 50.6,
+      "profit_factor": 1.16,
+      "max_drawdown": 2443.2,
+      "worst_day": -207.6,
+      "best_day": 614.4
+    },
+    "evaluation_trials": {
+      "Static 6 MNQ Baseline": {
+        "passed": 43,
+        "ruined": 0,
+        "timeout": 86,
+        "pass_pct": 100.0,
+        "ruin_pct": 0.0,
+        "mean_sessions": 59.3,
+        "med_sessions": 62.0,
+        "p25_sessions": 39.5,
+        "min_sessions": 26,
+        "mean_trade_days": 51.3,
+        "med_trade_days": 55.0,
+        "p25_trade_days": 33.5,
+        "min_trade_days": 22,
+        "avg_dd": 875.13
+      },
+      "Gentle Fortress Finisher (6c -> 8c @ +$2k)": {
+        "passed": 28,
+        "ruined": 34,
+        "timeout": 67,
+        "pass_pct": 45.2,
+        "ruin_pct": 54.8,
+        "mean_sessions": 44.8,
+        "med_sessions": 37.0,
+        "p25_sessions": 28.8,
+        "min_sessions": 22,
+        "mean_trade_days": 38.7,
+        "med_trade_days": 33.0,
+        "p25_trade_days": 24.8,
+        "min_trade_days": 18,
+        "avg_dd": 761.63
+      }
+    }
+  }
+}
