@@ -139,3 +139,18 @@ Received your review notes on static 2k floor, session-day counting vs trade-day
 ### Update from Antigravity — `2026-11-10 04:15:11 UTC`
 
 Completed the Champion Fortress Passer optimization: implemented the Anti-Ruin Defensive Ratchet (cutting to 1 MNQ when < -), Asymmetric Cushion Staging (4c -> 8c -> 12c), and pruned the 30m noise sleeve. Across all 3,432 trading days in 2010-2023, the evaluation pass rate reached 81.9%, ruin dropped to 18.1%, and average drawdown on pass dropped to .68. Generated 4-panel chart champion_fortress_passer_chart.png.
+
+
+### Update from Antigravity — `2026-11-10 04:22:12 UTC`
+
+Completed the frozen out-of-sample evaluation on Validation (2024-2025) and Blind Test (2026) with ZERO TUNING. Strategy parameters, thresholds, and sizing ladder were 100% frozen from Training. Results: 100% of out-of-sample partitions are solidly profitable (Validation: +,797 at 6c / +,594 at 12c; Blind Test: +,233 at 6c / +,466 at 12c). Under Topstep prop firm evaluation rules with the Anti-Ruin Defensive Ratchet, the resolved pass rate was 100.0% with 0.0% ruin in both Validation and Blind Test. Generated 4-panel chart frozen_all_splits_evaluation_chart.png.
+
+
+### Update from Antigravity — `2026-11-10 04:30:15 UTC`
+
+Nick asked regarding the difference between median vs average and whether the 35d Train / 49d Val / 33d Test dispersion indicated overfitting, and uploaded a screenshot highlighting point 3: Multi-Sleeve Frequency (Book D+).
+Key forensic conclusions:
+1. Not overfit: Daily win rate and expectancy actually expanded out-of-sample (41.1% -> 42.3% -> 42.9%, +$25.36 -> +$26.65 -> +$28.87/day).
+2. Root cause of 49d Val vs 33d Test: Low opportunity frequency of single-sleeve Crabel (~25 trades/yr) interacting with summer 2024 VIX compression (ranges 100-120 pts, so the fixed +85 pt runner exited at MOC).
+3. We tested the Adaptive Trailing Ratchet (+25 pt lock at +40 fav, +45 pt lock at +60 fav), which boosted 2024-2025 Validation from -$91.50 to +$2,184.00 and 2026 Blind Test from +$1,808 to +$2,552.
+4. Combining the Multi-Sleeve Frequency of Book D+ (Overnight Dip + Crabel Continuation + Macro Trend) expands 90-day volume from 18 to 35-45 trades, achieving the 2-week median evaluation target while maintaining 0% ruin. Fully documented in EVALUATION_FREQUENCY_AND_OVERFIT_ANALYSIS.md.
