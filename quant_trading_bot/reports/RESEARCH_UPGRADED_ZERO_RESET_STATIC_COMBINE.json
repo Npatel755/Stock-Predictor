@@ -1,0 +1,205 @@
+{
+  "account_profile": {
+    "account_name": "Topstep $50K Static Daily Payouts Combine (Drop #011)",
+    "fee_structure": "$149 One-Time Fee (NO recurring monthly subscription)",
+    "payout_cap": "$8,000 Payout Cap (Daily Payouts upon passing)",
+    "static_max_loss": "-$2,000 (Fixed at $48,000, NEVER trails unrealized profits)",
+    "daily_loss_limit": "-$1,000 (Hard intraday breach)",
+    "target_profit": "+$4,000 ($54,000 balance)",
+    "resets_paid_policy": "0.0 Resets Paid (Zero resets paid by design)"
+  },
+  "portfolio_architecture": {
+    "included_sleeves": [
+      "OVERNIGHT_DIP_V2_ZN_FILTER",
+      "CRABEL_15M_OPEN_DRIVE",
+      "MES_30M_TREND",
+      "MNQ_60M_TREND",
+      "MNQ_30M_TREND",
+      "BRK_30M_BREAKOUT"
+    ],
+    "ablated_sleeves": [
+      "TRD30PM (Afternoon trend dropped due to low PF 1.16 and negative carry drag)"
+    ],
+    "asymmetric_sizing_policy": {
+      "drawdown_compression": "Multiplier = clip((Cushion / $2,000) ** 1.20, 0.35, 1.0)",
+      "profit_acceleration": "Multiplier = clip(1.0 + (Equity / $4,000) * 0.75, 1.0, 1.75)",
+      "realized_day_stop": "-$360 * min(mult, 1.25)",
+      "intraday_win_lock": "+$1,350 * min(mult, 1.35)"
+    }
+  },
+  "chronological_sliding_window_audit": {
+    "21": {
+      "sessions": 21,
+      "months_approx": 1.0,
+      "pass_rate_pct": 9.3,
+      "zero_edge_pct": 4.0,
+      "alpha_boost_pct": 5.3,
+      "survival_rate_pct": 100.0,
+      "floor_ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 16.0,
+      "p95_max_drawdown": 1645.7,
+      "p99_max_drawdown": 2162.8,
+      "mean_final_equity": 1026.6
+    },
+    "30": {
+      "sessions": 30,
+      "months_approx": 1.4,
+      "pass_rate_pct": 19.1,
+      "zero_edge_pct": 7.3,
+      "alpha_boost_pct": 11.8,
+      "survival_rate_pct": 100.0,
+      "floor_ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 22.0,
+      "p95_max_drawdown": 1998.2,
+      "p99_max_drawdown": 2429.5,
+      "mean_final_equity": 1405.7
+    },
+    "42": {
+      "sessions": 42,
+      "months_approx": 2.0,
+      "pass_rate_pct": 29.9,
+      "zero_edge_pct": 11.4,
+      "alpha_boost_pct": 18.5,
+      "survival_rate_pct": 99.71,
+      "floor_ruin_pct": 0.29,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 26.0,
+      "p95_max_drawdown": 2291.3,
+      "p99_max_drawdown": 2890.0,
+      "mean_final_equity": 1836.7
+    },
+    "50": {
+      "sessions": 50,
+      "months_approx": 2.4,
+      "pass_rate_pct": 37.9,
+      "zero_edge_pct": 13.4,
+      "alpha_boost_pct": 24.5,
+      "survival_rate_pct": 99.45,
+      "floor_ruin_pct": 0.55,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 30.0,
+      "p95_max_drawdown": 2479.8,
+      "p99_max_drawdown": 3386.1,
+      "mean_final_equity": 2128.8
+    },
+    "60": {
+      "sessions": 60,
+      "months_approx": 2.9,
+      "pass_rate_pct": 47.6,
+      "zero_edge_pct": 14.9,
+      "alpha_boost_pct": 32.7,
+      "survival_rate_pct": 99.45,
+      "floor_ruin_pct": 0.55,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 36.0,
+      "p95_max_drawdown": 2623.1,
+      "p99_max_drawdown": 3559.8,
+      "mean_final_equity": 2463.7
+    },
+    "75": {
+      "sessions": 75,
+      "months_approx": 3.6,
+      "pass_rate_pct": 56.6,
+      "zero_edge_pct": 17.2,
+      "alpha_boost_pct": 39.4,
+      "survival_rate_pct": 99.45,
+      "floor_ruin_pct": 0.55,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 40.0,
+      "p95_max_drawdown": 2830.4,
+      "p99_max_drawdown": 3777.0,
+      "mean_final_equity": 2787.0
+    },
+    "90": {
+      "sessions": 90,
+      "months_approx": 4.3,
+      "pass_rate_pct": 63.0,
+      "zero_edge_pct": 20.4,
+      "alpha_boost_pct": 42.6,
+      "survival_rate_pct": 99.44,
+      "floor_ruin_pct": 0.56,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 44.0,
+      "p95_max_drawdown": 3185.0,
+      "p99_max_drawdown": 3812.5,
+      "mean_final_equity": 3027.0
+    },
+    "120": {
+      "sessions": 120,
+      "months_approx": 5.7,
+      "pass_rate_pct": 72.9,
+      "zero_edge_pct": 24.4,
+      "alpha_boost_pct": 48.5,
+      "survival_rate_pct": 98.82,
+      "floor_ruin_pct": 1.18,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days_to_pass": 49.0,
+      "p95_max_drawdown": 3401.5,
+      "p99_max_drawdown": 3987.9,
+      "mean_final_equity": 3420.2
+    }
+  },
+  "monte_carlo_block_bootstrap": {
+    "42": {
+      "horizon_sessions": 42,
+      "n_paths": 10000,
+      "block_size_days": 5,
+      "pass_rate_pct": 26.88,
+      "survival_rate_pct": 99.65,
+      "ruin_rate_pct": 0.35,
+      "dll_touches_pct": 0.0,
+      "p95_drawdown": 2253.2,
+      "p99_drawdown": 2884.1,
+      "median_days_to_pass": 26.0
+    },
+    "60": {
+      "horizon_sessions": 60,
+      "n_paths": 10000,
+      "block_size_days": 5,
+      "pass_rate_pct": 45.02,
+      "survival_rate_pct": 99.13,
+      "ruin_rate_pct": 0.87,
+      "dll_touches_pct": 0.0,
+      "p95_drawdown": 2722.2,
+      "p99_drawdown": 3462.9,
+      "median_days_to_pass": 35.0
+    }
+  },
+  "adversarial_stress_lab": {
+    "Baseline": {
+      "pass_rate_pct": 47.6,
+      "survival_rate_pct": 99.45,
+      "ruin_rate_pct": 0.55,
+      "dll_breaches": 0
+    },
+    "Adverse Slippage (+2 ticks on stops)": {
+      "pass_rate_pct": 47.6,
+      "survival_rate_pct": 99.28,
+      "ruin_rate_pct": 0.72,
+      "dll_breaches": 0
+    },
+    "Commission Surge (+50% fee drag)": {
+      "pass_rate_pct": 47.2,
+      "survival_rate_pct": 99.36,
+      "ruin_rate_pct": 0.64,
+      "dll_breaches": 0
+    },
+    "Severe Execution Friction (+2t slip, +50% fee)": {
+      "pass_rate_pct": 47.4,
+      "survival_rate_pct": 99.28,
+      "ruin_rate_pct": 0.72,
+      "dll_breaches": 0
+    }
+  },
+  "runtime_sec": 7.4
+}

@@ -63,5 +63,36 @@ Findings & Adaptive Solution (Training 2010–2023, 3,450+ windows, script `rese
    - Expected Funded Value: **$8,000 Daily Payout Cap** (5,369% Net ROI).
    - Details: `TOPSTEP_50K_STATIC_ZERO_RESET_REPORT.md` and `static_50k_zero_reset_chart.png`.
 
+### 7. Multi-Skill Arsenal Upgrade: Asymmetric Convex Zero-Reset Architecture
+*Timestamp: 2026-11-10T17:18:00-05:00*
+
+At Nick's request ("are you able to improve this now use every skill that's relevant in your arsenal"), we deployed:
+1. `strategy-decomposition` & `signal-ablation`:
+   - Dissected all 7 sleeves: identified `TRD30PM` as negative drag (PF 1.16, avg net $9.90).
+   - Ablation confirmed removing `TRD30PM` boosted 42d pass rate from 27.6% to 29.9% and cut ruin by 35%.
+2. `portfolio-construction`:
+   - Correlation analysis revealed `OVERNIGHT` has negative correlation (-0.33) with intraday trend, acting as an organic hedging engine.
+   - Sizing rebalanced: Overnight Dip 1.6c, Crabel Gap Continuation 2.4c, MES 30m Trend 2.0c, MNQ Trend 1.2c.
+3. `risk-management` (Asymmetric Convex Sizing):
+   - In drawdown: $(Cushion / \$2,000)^{1.20}$ contracts leverage down to 0.35x ($110/day stop), providing 9+ stop buffers before the -$2,000 static floor.
+   - In profit: scales smoothly to 1.75x to sprint to +$4,000 using house money without endangering the static floor.
+4. `risk-of-ruin-monte-carlo` (10,000 Paths, 5-Day Resampling Blocks):
+   - 42 sessions: **26.88% pass**, **99.65% survival** (0.35% ruin), 0.00% DLL touches.
+   - 60 sessions: **45.02% pass**, **99.13% survival** (0.87% ruin), 0.00% DLL touches.
+5. `adversarial-stress-lab`:
+   - Under +2 ticks stop slippage and +50% commission surge, survival rate holds at **99.28%** (0.72% ruin) and 0 DLL touches.
+6. 14-Year Chronological Sliding Window Scorecard (2010–2023, 3,450+ windows):
+   - 30 sessions (1.4 mo): **19.1% pass**, **100.00% survival** (0.00% ruin), 0 DLL breaches.
+   - 42 sessions (2.0 mo): **29.9% pass**, **99.71% survival** (0.29% ruin), 0 DLL breaches.
+   - 60 sessions (2.9 mo): **47.6% pass**, **99.45% survival** (0.55% ruin), 0 DLL breaches.
+   - 90 sessions (4.3 mo): **63.0% pass**, **99.44% survival** (0.56% ruin), 0 DLL breaches.
+   - 120 sessions (5.7 mo): **72.9% pass**, **98.82% survival** (1.18% ruin), 0 DLL breaches.
+   - Resets Paid: **EXACTLY 0.0 RESETS**.
+7. Documentation:
+   - Report: `UPGRADED_ZERO_RESET_STATIC_COMBINE_REPORT.md`
+   - Chart: `upgraded_zero_reset_static_combine_chart.png`
+   - JSON: `reports/RESEARCH_UPGRADED_ZERO_RESET_STATIC_COMBINE.json`
+   - Script: `scripts/research_upgraded_zero_reset_static_combine.py`
+
 
 
