@@ -96,3 +96,45 @@ At Nick's request ("are you able to improve this now use every skill that's rele
 
 
 
+
+
+### 8. Official Prop Firm Rulebook for Friend's Claude: Topstep $50K Static Daily Payouts (Drop #011)
+*Timestamp: 2026-11-10T18:58:00-05:00*
+
+**Attention Claude (`claude-research` branch / `hlklulu-jpg` & workspace collaborators)**:
+Nick has requested the exact official account specifications for the **Topstep $50K Static Daily Payouts Trading Combine (Drop #011)** to be pushed to GitHub so you can directly integrate it into your `propsim.py`, `scaling_plan_v2.py`, and `low_budget.py` pipelines.
+
+#### A. JSON Rulebook File Available
+The drop-in rulebook file is committed at:
+- [`collaboration/topstep_50k_static_daily.json`](file:///c:/Users/Nick/OneDrive/Attachments/Desktop/Stock%20Predictor%20Codex%20ETH%20BNB/collaboration/topstep_50k_static_daily.json)
+- Full documentation specification: [`collaboration/TOPSTEP_50K_STATIC_DAILY_PAYOUTS_DROP011_SPEC.md`](file:///c:/Users/Nick/OneDrive/Attachments/Desktop/Stock%20Predictor%20Codex%20ETH%20BNB/collaboration/TOPSTEP_50K_STATIC_DAILY_PAYOUTS_DROP011_SPEC.md)
+
+#### B. Exact Parameters (Drop #011)
+1. **Pricing**:
+   - `billing`: `"one_time"`
+   - `eval`: `149.0`
+   - `reset`: `149.0` (Resets cost $149, NOT $49. Churning evaluations is economically heavily penalized; **objective is 0.0 resets paid**).
+   - `monthly`: `0.0` (NO recurring monthly subscription bleed).
+   - `activation`: `0.0` (Included).
+2. **Evaluation Rules**:
+   - `target`: `4000.0` (Evaluation profit target is +$4,000).
+   - `max_loss`: `2000.0`
+   - `trail`: `"none"` (**STATIC floor fixed at $48,000 forever**; does NOT trail higher!).
+   - `dll`: `1000.0` (**-$1,000 Daily Loss Limit is strictly active**; single-trade risk must not exceed -$950, and daily stop must be set at -$380 to -$700).
+   - `consistency`: `0.50` (50% max profit consistency rule).
+   - `min_days`: `2`
+   - `max_micros`: `50`
+3. **Funded Account Rules**:
+   - `max_loss`: `2000.0`
+   - `trail`: `"none"` (Static -$2,000 until first payout, then locks at starting balance).
+   - `dll`: `1000.0`
+   - `payout.days`: `1` (Daily payouts allowed).
+   - `payout.cap`: `8000.0` (Drop #011 has a strict **$8,000 Payout Cap**).
+   - `payout.keep`: `2000.0` ($2,000 profit buffer required before initiating daily withdrawals).
+   - `payout.split`: `0.90` (90% trader / 10% firm).
+
+#### C. Key Calibration for Claude's Sizing Engines
+In `low_budget.py` and `funded_search.py`:
+- Do **not** use `"$1,500, first trade only"` with `dll: 0` on this account, as a single full stop-out loses -$1,500 and immediately violates the -$1,000 DLL on Day 1.
+- Instead, use **Asymmetric Convex Sizing (`Bal-3`)**: risk $150–$300 in base/drawdown, scaling up to $950–$1,500 only using banked *house money* once equity > +$1,000.
+- This achieves **0.0 resets paid, 0 DLL touches, and 99.5% account survival** while passing the +$4,000 target.

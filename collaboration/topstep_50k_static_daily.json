@@ -1,0 +1,98 @@
+{
+  "id": "topstep_50k_static_daily",
+  "firm": "Topstep",
+  "plan": "Drop #011: $50K Static Daily Payouts Trading Combine -> Express Funded Account",
+  "verified": "2026-11-10",
+  "confidence": "official Topstep Drop #011 promotional card & rules (screenshot verified)",
+  "sources": [
+    "https://help.topstep.com/en/articles/8284208-consistency-at-topstep",
+    "https://help.topstep.com/en/articles/14289835-topstep-pricing-and-payment-questions",
+    "https://help.topstep.com/en/articles/8284197-trading-combine-parameters",
+    "https://help.topstep.com/en/articles/8284223-what-is-the-scaling-plan",
+    "https://help.topstep.com/en/articles/8284215-express-funded-account-parameters",
+    "https://help.topstep.com/en/articles/8284233-topstep-payout-policy",
+    "https://help.topstep.com/en/articles/8284099-topstep-program-overview",
+    "Topstep Drop #011 $50K Static Daily Payouts Promotional Card"
+  ],
+  "close_et": "16:10",
+  "price": {
+    "billing": "one_time",
+    "eval": 149,
+    "reset": 149,
+    "monthly": 0,
+    "activation": 0
+  },
+  "eval": {
+    "target": 4000,
+    "max_loss": 2000,
+    "trail": "none",
+    "lock_floor": 0,
+    "dll": 1000,
+    "consistency": 0.50,
+    "min_days": 2,
+    "max_micros": 50
+  },
+  "funded": {
+    "max_loss": 2000,
+    "trail": "none",
+    "lock_floor": 0,
+    "floor_after_payout": 0,
+    "dll": 1000,
+    "consistency": 0,
+    "max_micros": 50,
+    "scaling": [
+      [
+        0,
+        20
+      ],
+      [
+        1500,
+        30
+      ],
+      [
+        2000,
+        50
+      ]
+    ],
+    "payout": {
+      "days": 1,
+      "day_min": 0,
+      "net_positive": true,
+      "min": 125,
+      "pct": 1.0,
+      "cap": 8000,
+      "keep": 2000,
+      "first_profit": 2000,
+      "next_profit": 0,
+      "min_calendar_days": 0,
+      "split": 0.9,
+      "max_payouts": 0
+    }
+  },
+  "options": [
+    {
+      "name": "Path",
+      "choices": {
+        "Drop #011 Static ($149 one-time, no monthly, no activation)": {}
+      }
+    },
+    {
+      "name": "Daily loss limit",
+      "choices": {
+        "On ($1,000 hard DLL)": {
+          "eval.dll": 1000,
+          "funded.dll": 1000
+        }
+      }
+    }
+  ],
+  "assumed": [
+    "Drop #011 is a $149 ONE-TIME purchase (no recurring monthly fee, no activation fee)",
+    "Target is $4,000 for the $50K Static account (standard trailing is $3k)",
+    "Max Loss Limit is $2,000 STATIC (does NOT trail end-of-day, fixed at $48,000 starting floor)",
+    "Daily Loss Limit is strictly -$1,000 (locks trading for the remainder of the session)",
+    "Payout Cap is strictly $8,000 (Drop #011 parameter)",
+    "Funded phase allows daily payouts of profits above a $2,000 buffer balance",
+    "Profit split is 90% trader / 10% firm"
+  ]
+}

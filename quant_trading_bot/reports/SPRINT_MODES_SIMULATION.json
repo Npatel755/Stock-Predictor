@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "yolo_1500",
+    "total_starts": 1523,
+    "pass_pct": 58.896913985554825,
+    "ruin_pct": 8.40446487196323,
+    "dll_breach_pct": 72.94812869336835,
+    "pass_in_2_days_pct": 30.531845042678924,
+    "pass_in_3_days_pct": 42.61326329612607,
+    "median_days_to_pass": 2.0
+  },
+  {
+    "mode": "dll_compliant_950",
+    "total_starts": 1523,
+    "pass_pct": 43.13854235062377,
+    "ruin_pct": 24.7537754432042,
+    "dll_breach_pct": 52.33092580433355,
+    "pass_in_2_days_pct": 19.369665134602755,
+    "pass_in_3_days_pct": 29.152987524622453,
+    "median_days_to_pass": 3.0
+  },
+  {
+    "mode": "house_money",
+    "total_starts": 1523,
+    "pass_pct": 44.45173998686802,
+    "ruin_pct": 22.258699934340118,
+    "dll_breach_pct": 63.9527248850952,
+    "pass_in_2_days_pct": 20.35456336178595,
+    "pass_in_3_days_pct": 29.875246224556797,
+    "median_days_to_pass": 3.0
+  },
+  {
+    "mode": "a_plus_only",
+    "total_starts": 1523,
+    "pass_pct": 6.631648063033486,
+    "ruin_pct": 1.6414970453053186,
+    "dll_breach_pct": 9.389363099146422,
+    "pass_in_2_days_pct": 1.8384766907419567,
+    "pass_in_3_days_pct": 3.282994090610637,
+    "median_days_to_pass": 4.0
+  }
+]
