@@ -1,0 +1,90 @@
+[
+  {
+    "label": "1. Baseline: 4 MNQ Base -> 8c -> 12c (Def: 1c at -$300)",
+    "passed": 991,
+    "ruined": 287,
+    "total_resolved": 1278,
+    "pass_pct": 77.5,
+    "ruin_pct": 22.5,
+    "med_days": 327.0,
+    "p25_days": 171.0,
+    "avg_dd": 852.14
+  },
+  {
+    "label": "2. Fast Recovery: 4 MNQ Base -> 8c -> 12c (Def: 2c at -$300)",
+    "passed": 1076,
+    "ruined": 245,
+    "total_resolved": 1321,
+    "pass_pct": 81.5,
+    "ruin_pct": 18.5,
+    "med_days": 336.0,
+    "p25_days": 219.2,
+    "avg_dd": 870.21
+  },
+  {
+    "label": "3. Power Base: 5 MNQ Base -> 8c -> 12c (Def: 1c at -$300)",
+    "passed": 1095,
+    "ruined": 336,
+    "total_resolved": 1431,
+    "pass_pct": 76.5,
+    "ruin_pct": 23.5,
+    "med_days": 330.0,
+    "p25_days": 257.5,
+    "avg_dd": 835.74
+  },
+  {
+    "label": "4. Power Base: 5 MNQ Base -> 8c -> 12c (Def: 2c at -$300)",
+    "passed": 1114,
+    "ruined": 312,
+    "total_resolved": 1426,
+    "pass_pct": 78.1,
+    "ruin_pct": 21.9,
+    "med_days": 333.0,
+    "p25_days": 271.2,
+    "avg_dd": 854.84
+  },
+  {
+    "label": "5. Early Cushion: 4 MNQ Base -> 8c (+$800) -> 12c (+$2k)",
+    "passed": 1023,
+    "ruined": 321,
+    "total_resolved": 1344,
+    "pass_pct": 76.1,
+    "ruin_pct": 23.9,
+    "med_days": 343.0,
+    "p25_days": 249.5,
+    "avg_dd": 842.95
+  },
+  {
+    "label": "6. Fortress Ultra: 3 MNQ Base -> 6c (+$600) -> 10c (+$1.5k) -> 12c (+$2.5k)",
+    "passed": 899,
+    "ruined": 391,
+    "total_resolved": 1290,
+    "pass_pct": 69.7,
+    "ruin_pct": 30.3,
+    "med_days": 344.0,
+    "p25_days": 234.5,
+    "avg_dd": 848.39
+  },
+  {
+    "label": "7. Finisher Sprint: 5 MNQ Base -> 10c (+$1k) -> 14c (+$2.2k)",
+    "passed": 935,
+    "ruined": 502,
+    "total_resolved": 1437,
+    "pass_pct": 65.1,
+    "ruin_pct": 34.9,
+    "med_days": 336.0,
+    "p25_days": 273.5,
+    "avg_dd": 789.14
+  },
+  {
+    "label": "8. Strict Daily Stop -$250: 4 MNQ Base -> 8c -> 12c (Def: 1c)",
+    "passed": 1084,
+    "ruined": 240,
+    "total_resolved": 1324,
+    "pass_pct": 81.9,
+    "ruin_pct": 18.1,
+    "med_days": 327.5,
+    "p25_days": 181.8,
+    "avg_dd": 853.68
+  }
+]

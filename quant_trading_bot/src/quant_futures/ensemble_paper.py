@@ -449,6 +449,23 @@ CANDIDATES["ag_arch_d_plus_v2_gapsize_3c_v3"] = dict(
                "only as the no-DLL-account version. Stop-risk caps on the doubled trades did not change this (the big losers gap through their stops). Paper only; no routing.",
 )
 
+CANDIDATES["ag_arch_d_plus_v2_gap_addon_1of3_v3"] = dict(
+    version="4.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v3", addon_sleeve="AG_CRABEL15_D_3c_v3", addon_filter="gap_continuation", addon_scale=1.0 / 3.0,
+    label="D+ v2 3c v3 gap addon at +1 micro (hidden): routed 3c Crabel trades that agree with the opening gap, scaled to one micro (= 4 micros on those in the v4 book)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP1_v3", _AG_CRABEL15_D, 1), hard_drawdown=6000.0, daily_loss=600.0)],
+    provenance="dplus_7d/7e continuation multiplier 4/3 on the 3c v3 base, implemented as a 1/3-scaled addon (exact: engine P&L is linear in contracts). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gapsize_4c_v4"] = dict(
+    version="4.0.0", hidden=True,
+    book=[["ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_1of3_v3"]], account_daily_stop=600.0,
+    label="D+ v2 v4 payout build (3 micros; 4 on Crabel drives that agree with the opening gap; engine v3 gates; account-level daily stop: no new entry once the day is -$600) - Topstep-safe $150-day version",
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_1of3_v3") for sl in CANDIDATES[k]["sleeves"]],
+    provenance="dplus_7e (research/dplus_7/PROTOCOL.md addendum 4), training 2010-23: 4-micro continuation + $600 account-level daily stop = 0 days <= -$1,000 in 14 years, "
+               "0% DLL hits, 0.6% static breach, median winning day $155, median winning trade $148.50 (misses Devin's pre-registered trade gate by $1.50; deployed on "
+               "Nick's 2026-11-09 decision that the winning-day metric is the target). Runner parity: see reports/PARITY_DPLUS_V4.md. Paper only; no routing.",
+)
+
 
 
 
@@ -792,14 +809,66 @@ def gap_filter_run(run, b):
     return out
 
 
+def scale_run(run, factor):
+    """Scale a run's trades, curve and open position by ``factor`` (engine P&L is linear in contracts, dplus_2). Used by an addon with
+    ``addon_scale`` so a 3-micro base plus a 1/3 addon trades 4 micros on the filtered trades (dplus_7d/7e post-hoc scaling, exactly)."""
+    f = float(factor)
+    trades = [dict(t, qty=max(1, int(round(t["qty"] * f))), net=round(float(t["net"]) * f, 2), fees=round(float(t["fees"]) * f, 2)) for t in run["trades"]]
+    curve = run["curve"].copy()
+    for col in ("cash", "equity", "worst"):
+        curve[col] = INITIAL_BALANCE + (curve[col] - INITIAL_BALANCE) * f
+    pos = run["position"]
+    pos = dict(pos, quantity=int(np.sign(pos["quantity"])) * max(1, int(round(abs(pos["quantity"]) * f))) if pos.get("quantity") else 0,
+               unrealized=round(float(pos.get("unrealized", 0.0)) * f, 2))
+    return dict(run, trades=trades, curve=curve, position=pos)
+
+
+def _remove_trades(run, keep, drop_open=False):
+    """Remove the trades whose ``keep`` flag is False as if never taken (same curve rule as gap_filter_run); ``drop_open`` flattens an open position."""
+    curve = run["curve"].copy(); ts = pd.to_datetime(curve["ts"], utc=True)
+    for t, k in zip(run["trades"], keep):
+        if k: continue
+        after = (ts >= pd.Timestamp(t["exit_ts"])).to_numpy(); during = ((ts >= pd.Timestamp(t["entry_ts"])) & ~after).to_numpy()
+        for col in ("cash", "equity", "worst"): curve[col] = curve[col] - float(t["net"]) * after
+        curve.loc[during, "equity"] = curve.loc[during, "cash"]; curve.loc[during, "worst"] = curve.loc[during, "cash"]
+    out = dict(run, trades=[t for t, k in zip(run["trades"], keep) if k], entry_bars=[e for e, k in zip(run["entry_bars"], keep) if k], curve=curve)
+    if drop_open and run["position"].get("quantity"):
+        out["position"] = dict(run["position"], quantity=0, unrealized=0.0); out["open_since"] = None
+    return out
+
+
+def account_daily_stop_filter(runs, limit):
+    """Account-level daily stop across every sleeve of a book (dplus_7e): no new entry once the ET day's realised P&L is <= -limit.
+    Realised P&L for an entry at time T = net of already-kept trades whose exit is on T's ET date and at or before T. Open trades run to
+    their exits; blocked entries are removed as if never taken (no router re-fill, as in the research cell)."""
+    et = lambda ts: pd.Timestamp(ts).tz_convert("America/New_York")
+    rows = sorted(((et(t["entry_ts"]), name, i) for name, r in runs.items() for i, t in enumerate(r["trades"])), key=lambda x: x[0])
+    realised_by_day, keep = {}, {name: [True] * len(r["trades"]) for name, r in runs.items()}
+
+    def realised(tin):
+        return sum(net for tout, net in realised_by_day.get(tin.date(), ()) if tout <= tin)
+    for tin, name, i in rows:
+        if realised(tin) <= -limit:
+            keep[name][i] = False; continue
+        t = runs[name]["trades"][i]; tout = et(t["exit_ts"])
+        realised_by_day.setdefault(tout.date(), []).append((tout, float(t["net"])))
+    out = {}
+    for name, r in runs.items():
+        open_blocked = bool(r["position"].get("quantity") and r.get("open_since") and realised(et(r["open_since"])) <= -limit)
+        out[name] = _remove_trades(r, keep[name], drop_open=open_blocked) if (not all(keep[name]) or open_blocked) else r
+    return out
+
+
 def run_routed(spec, bars, start, max_iter=12, extra_block=None):
     if spec.get("addon_of"):
         # Sizing addon (dplus_5): re-run the base candidate exactly (same router, same blocks), keep one sleeve's trades that pass the
         # state filter, and publish them under the addon sleeve name; in a ``book`` group with the base this doubles those trades.
+        # ``addon_scale`` (dplus_7e / v4) scales the published trades, e.g. 1/3 of a 3-micro base = +1 micro (4 micros in the book).
         base = run_routed(CANDIDATES[spec["addon_of"]], bars, start, max_iter, extra_block)
         src_name, out_name = spec["addon_sleeve"], spec["sleeves"][0]["name"]
         b = bars[bars_key(spec["sleeves"][0])]
-        return {out_name: gap_filter_run(base[src_name], b) if spec.get("addon_filter") == "gap_continuation" else base[src_name]}
+        run = gap_filter_run(base[src_name], b) if spec.get("addon_filter") == "gap_continuation" else base[src_name]
+        return {out_name: scale_run(run, spec["addon_scale"]) if spec.get("addon_scale") else run}
     if spec.get("book"):
         # Two frozen candidates as one 1-contract account: the overnight leg runs first; the intraday leg's decision bars that fall while a night
         # position is open are blocked (training: 0 such overlaps, portfolio_4). Component ledgers are untouched.
@@ -810,6 +879,8 @@ def run_routed(spec, bars, start, max_iter=12, extra_block=None):
             block = _interval_block(_book_intervals(runs)) if runs else None
             for key in ([group] if isinstance(group, str) else group):
                 runs.update(run_routed(CANDIDATES[key], bars, start, extra_block=block))
+        if spec.get("account_daily_stop"):
+            runs = account_daily_stop_filter(runs, float(spec["account_daily_stop"]))
         return runs
     """Run the candidate's sleeves. ``router="strict_1c"``: at most one contract across all sleeves; a trade whose decision bar
     (fill bar minus one) falls while any accepted trade is open is rejected (priority = sleeve order on ties) by masking its

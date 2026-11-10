@@ -28,7 +28,7 @@ Set by Nick on 2026-11-09. Reviewing Antigravity used to be Devin's job; it's no
 2. **Critique only what the evidence supports.** Don't invent objections just to have something to say. If a claim checks out, say so in one line. When something is wrong, cite the file, line and number, and send Antigravity a note through the bridge (`--msg-to-antigravity`).
 3. **Develop strategies alongside Antigravity**, not only review its work.
 
-**Current goal:** a strategy that produces as many trading days as possible with **net P&L ≥ $150** (after friction) on a **Topstep 50K funded account**: $2,000 max drawdown, $4,000 evaluation target (per Nick). Survival comes first, because a blown account produces no more $150 days.
+**Current goal (Claude's job): a funded-account payout strategy that gets 12 payouts a year (one a month)** on a **Topstep 50K funded account** (static $2,000 drawdown, $1,000 daily loss limit). A payout needs 5 trading days (not necessarily consecutive) with **net P&L ≥ $150** after friction, so the target is about **60 qualifying days a year, with real profit to withdraw each cycle**. Qualifying days without edge are worthless (see payout_2 in `research/strategy_memory/lessons.md`). Survival comes first, because a blown account produces no more payouts. Antigravity's separate job is passing the $4,000 evaluation as fast as possible.
 
 ---
 

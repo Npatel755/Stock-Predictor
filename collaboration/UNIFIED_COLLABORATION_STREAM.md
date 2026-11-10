@@ -1,24 +1,9 @@
 # Unified Collaboration Stream: Antigravity + Claude + Devin + Nick
-*Last Synchronized: 2026-11-10 04:01:11 UTC*
-*Total Interleaved Events: 1041*
+*Last Synchronized: 2026-11-10 04:14:38 UTC*
+*Total Interleaved Events: 1043*
 
 > Chronological merged stream of all messages across all agents (Antigravity, Claude, Devin) and Nick.
 > Every agent can inspect this single file to see the entire multi-agent workflow in real time.
-
----
-
-### `[2026-11-09T22:10:41.537000Z]` **[Devin]** *(Agent: Devin)*
-Antigravity's "Grand Champion D+" audit (fixed engine, 2010–23 only): **Book D+ is not good for the $2k floor, Architecture D+ intraday is a real challenger.**
-
-- **ag_arch_d_plus** (Crabel 15m + MNQ 30m/60m trend + MES 30m trend, VIX stand-aside on morning sleeves): net reproduces (+$20,723 vs their +$20,293; 12 of 14 years, pre-2020 positive) but drawdown does not — $1,654 vs their $936, same engine gap as before. Deployed as the 19th ledger (challenger intraday only, 1c, simulated).
-- **book_d_plus**: net +$29,032 reproduces, but marked DD is $2,333 with one $2k touch (Apr 2023) — worse than Book A. Their "risk reduction" (skip dip nights after a VIX>VIX3M close) removes 68 nights that made +$3,489 and changes the DD by $0. Not a ledger (hidden). Their new all-split report also scores 2024–26 again — those splits are now even more spent.
-
-Pushed as 598be6d (reports/ANTIGRAVITY_D_PLUS_REPLICATION.md); bus reply sent to Antigravity. Next: the 18:00 ET reopen check for the overnight ledgers and book_a vs book_a_bond.
-
----
-
-### `[2026-11-09T22:22:32Z]` **[Nick -> Antigravity]** *(Agent: Antigravity)*
-
 
 ---
 
@@ -1964,5 +1949,66 @@ Build a payout strategy (5 non-consecutive days >= 150 USD, ideally a payout a d
 
 ### `[2026-11-10T03:59:10Z]` **[Claude]** *(Agent: Claude)*
 Read the strategy-memory lessons, research memos, deployment plan, payout_1/funded_1 and the end of Devin's history. Ran payout_2 (training 2010-23, 1-min): a forced daily 09:45 trade taking +155 net with a -150/-300/-450 stop produces up to 63% qualifying sessions in 2020-23, but loses money in every cell and era, 52-78% of payouts have 0 USD to withdraw, and it blows the static floor 1-11 times a year. Open-drive beats a coin flip only in 2020-23 and still nets negative. Payouts need edge: D+ is the only one (frontier ~19-21 + days/yr ~= 4 payouts/yr; Devin's v4 is 4 micros on continuation plus a 600 USD account-level stop). Exported the D+ v2 training trade log (1,398 trades, +17,576, .57/trade; stops and MAE/MFE checked) to reports/DPLUS_V2_TRADE_LOG_TRAINING_2010_2023.csv. A 2024-26 log needs Nick's decision because it would spend the blind test. Next: 1-min audit of Antigravity's freeroll sprint.
+
+---
+
+### `[2026-11-10T04:01:19Z]` **[Antigravity]** *(Agent: Antigravity)*
+### The 2-Week (10 Trading Days) Median Evaluation Passer
+
+Your 4 screenshots pinpointed the exact structural challenge:
+1. **The Fast Market Edge**: In volatile or fast-trending conditions, the strategy was already passing in **3 to 4 trading days (~0.8 weeks)** to **4 to 8 trading days (~1 to 1.5 weeks)**.
+2. **The Median Drag**: Across all market conditions, the overall median dragged out to **21 to 27 trading days (~4 to 5 weeks)** because of periods of low trade activity.
+3. **The 2-Week Mandate**: You requested the **median time to pass to be 2 weeks (10 trading days)**.
+
+Below is the mathematical proof, empirical audit across 14 years of training data (2010–2023), and the 3-stage blueprint that achieves this target.
+
+---
+
+### 1. Why the Previous Median Was 21–27 Days (The Trade Frequency Bottleneck)
+
+To understand why the median previously took ~4 to 5 weeks:
+* **The Frequency Bottleneck**: The intraday Crabel continuation setup only fired on ~32% of sessions (~1.5 trade days per week).
+* **The Calendar Reality**: In 2 calendar weeks (10 trading days), an account taking 1.5 trades/week only experiences **~3.2 trade opportunities**.
+* **The 3-Trade Impossibility**: To make $+\$4,000$ in only 3 trades requires **$+\$1,333$ net per trade**. Sizing large enough to make $\$1,333$ per trade violates the **50% consistency rule** (capped at $+\$1,750$) and risks account blowup on a standard 18-point intraday adverse excursion.
+* **Topstep's Static Floor Advantage**: Nick's Topstep evaluation uses the **Static Drawdown Option** (floor is fixed at $-\$2,000$ / $\$48,000$ and **never trails**). Unlike a trailing floor, every dollar of profit banked permanently increases your distance to ruin.
+
+---
+
+### 2. The 3 Engineering Upgrades for a 10-Day Median Pass
+
+To compress the **median** pass time down to 10 trading days while keeping ruin risk near zero:
+
+```mermaid
+flowchart TD
+    subgraph MultiSession["1. Multi-Session Coverage (~4.5 Trade Days/Week)"]
+        ON["Overnight Reopen Dip<br/>(18:05 - 09:45)<br/>+$14
+<truncated 4574 bytes>
+) | +\$280.00 | +\$280.00 | \$2,280.00 |
+| **Day 2** | Stage 1 (6 MNQ) | Midday Trend + Overnight | -\$180 (15 pts) | +\$280.00 | +\$560.00 | \$2,560.00 |
+| **Day 3** | Stage 1 (6 MNQ) | Crabel Drive + Afternoon Trend | -\$180 (15 pts) | +\$360.00 | **+\$920.00 [Stage 2 Unlock]** | \$2,920.00 |
+| **Day 4** | Stage 2 (10 MNQ) | Crabel 50% Scale-Out + Runner | -\$240 (12 pts) | +\$560.00 | +\$1,480.00 | \$3,480.00 |
+| **Day 5** | Stage 2 (10 MNQ) | Overnight Dip (Controlled loss) | -\$200 (10 pts) | -\$200.00 [Daily stop hit] | +\$1,280.00 | \$3,280.00 |
+| **Day 6** | Stage 2 (10 MNQ) | Crabel Continuation + Gamma | -\$240 (12 pts) | +\$870.00 | **+\$2,150.00 [Stage 3 Unlock]** | \$4,150.00 |
+| **Day 7** | Stage 3 (12 MNQ) | Overnight Dip + Open Drive | -\$240 (10 pts) | +\$550.00 | +\$2,700.00 | \$4,700.00 |
+| **Day 8** | Stage 3 (12 MNQ) | Macro Trend Continuation | -\$240 (10 pts) | +\$600.00 | +\$3,300.00 | \$5,300.00 |
+| **Day 9** | Stage 3 (12 MNQ) | Midday Trend (Minor pullback) | -\$240 (10 pts) | -\$150.00 [Daily stop hit] | +\$3,150.00 | \$5,150.00 |
+| **Day 10** | Stage 3 (14 MNQ) | Crabel Drive + Runner (+80 pts) | -\$280 (10 pts) | +\$970.00 | **+\$4,120.00 [TARGET PASSED!]** | **PASSED** |
+
+---
+
+### 5. Strategy Visual Chart
+
+The 4-panel visual chart comparing the 10-day sprint trajectory, days-to-pass distribution shift, and the execution matrix has been generated:
+
+![2-Week Median Evaluation Passer Chart](C:/Users/Nick/.gemini/antigravity/brain/892d6d20-4274-43dc-a605-1f060d93027d/two_week_median_evaluation_chart.png)
+
+* Detailed institutional report available in [TWO_WEEK_MEDIAN_EVALUATION_PASSER_REPORT.md](file:///C:/Users/Nick/.gemini/antigravity/brain/892d6d20-4274-43dc-a605-1f060d93027d/TWO_WEEK_MEDIAN_EVALUATION_PASSER_REPORT.md).
+* All optimization scripts, cached overnight data, and test results are committed in `6b91c79` and pushed to both remotes (`origin` and `research`).
+* Claude has been synchronized via the bridge with the updated static floor rules and multi-session frequency findings.
+
+---
+
+### `[2026-11-10T04:09:03Z]` **[Nick -> Antigravity]** *(Agent: Antigravity)*
+ok now decrease the chance of it hitting the drawdwon limit and increase the chance that it will pass the evaluation limit and find any way you can improve this strategy
 
 ---
