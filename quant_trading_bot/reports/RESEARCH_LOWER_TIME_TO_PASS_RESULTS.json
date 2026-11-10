@@ -1,0 +1,42 @@
+{
+  "r0": {
+    "label": "Baseline v1 (No Ratchet)",
+    "pass_pct": 15.0,
+    "ruin_pct": 34.9,
+    "min": 5,
+    "p25": 23.0,
+    "median": 41.0,
+    "mean": 42.6,
+    "max": 90
+  },
+  "r1": {
+    "label": "Enhancement 1 (Dynamic Trailing Ratchet)",
+    "pass_pct": 12.1,
+    "ruin_pct": 35.5,
+    "min": 7,
+    "p25": 27.0,
+    "median": 44.0,
+    "mean": 46.1,
+    "max": 90
+  },
+  "r2": {
+    "label": "Enhancement 2 (Faster Scale-Out T1=22 + Ratchet)",
+    "pass_pct": 9.0,
+    "ruin_pct": 37.7,
+    "min": 6,
+    "p25": 33.5,
+    "median": 59.0,
+    "mean": 54.0,
+    "max": 90
+  },
+  "r3": {
+    "label": "Enhancement 3 (Adaptive Size 14c on High VIX + T1=22 + Ratchet)",
+    "pass_pct": 5.4,
+    "ruin_pct": 35.4,
+    "min": 6,
+    "p25": 26.0,
+    "median": 38.5,
+    "mean": 42.0,
+    "max": 90
+  }
+}
