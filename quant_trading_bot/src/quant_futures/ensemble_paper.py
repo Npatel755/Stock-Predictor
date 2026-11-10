@@ -326,7 +326,7 @@ FAMILIES = {
     "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon"),
     "AG All-Weather": ("ag_all_weather", "ag_all_weather_v2", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"),
     "AG Architecture C": ("ag_arch_c", "ag_arch_c_lite", "ag_arch_c_v2"),
-    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize"),
+    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c"),
     "AG Quad": ("ag_quad", "ag_quad_v2"),
     "Book A (overnight dip v2 + All-Weather v2 1c)": ("book_a", "book_a_bond", "book_a_skew"),
     "Book D+ (overnight dip + Architecture D+)": ("book_d_plus",),
@@ -395,6 +395,32 @@ CANDIDATES["ag_arch_d_plus_v2_gapsize"] = dict(
                "marked DD 1,027 / 0 touches of $2k / 1-y breach 0.05% / net per marked DD 22.5 vs 19.9 for D+ v2 1c and the flat 2c; mirror control (2c on fades) +20,116 / "
                "marked DD 1,050. All 5 pre-registered gates passed. Engine check: Crabel at 2c is exactly 2x the 1c trades under the same budget. Paper only; no routing.",
 )
+
+CANDIDATES["ag_arch_d_plus_v2_3c"] = dict(
+    version="1.0.0", router="strict_1c", day_filter="no_backwardation", hidden=True,
+    label="D+ v2 at 3 micros (hidden base of the 3c gap-sized ledger; $450 stop-risk budget)",
+    sleeves=[_dplus_sl("AG_CRABEL15_D_3c", _AG_CRABEL15_D, 3), _dplus_sl("AG_TRD60_D_3c", _AG_TRD60_D, 3), dict(_dplus_sl("AG_MES_TRD30_D_3c", _AG_MES_TRD30_D, 3), day_filter_exempt=True)],
+    provenance="payout_1 engine check (reports/PAYOUT_1_TRAINING.md), training 2010-23: 1,228 trades / +35,930 / closed DD 1,833 / worst day -807; the engine's unscaled $2,000 "
+               "per-sleeve hard-drawdown lock removes 229 of the 1c trades at this size (at 4c it removes most of them - 4c is not viable on this engine). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gap_addon_3c"] = dict(
+    version="1.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c", addon_sleeve="AG_CRABEL15_D_3c", addon_filter="gap_continuation",
+    label="D+ v2 3c gap addon (hidden): the routed 3c Crabel trades whose drive agrees with the opening gap, once more (= 6 micros on those)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP3", _AG_CRABEL15_D, 3))],
+    provenance="dplus_4/5 state applied at 3c (payout_1). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gapsize_3c"] = dict(
+    version="1.0.0", category="future",
+    book=[["ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c"]],
+    label="FUTURE - D+ v2 gap-sized at 3 micros (3 micros; 6 on Crabel drives that agree with the opening gap) - payout-rule size: typical winning trade ~$141, winning day ~$147",
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c") for sl in CANDIDATES[k]["sleeves"]],
+    provenance="payout_1 (reports/PAYOUT_1_TRAINING.md), training 2010-23, engine-exact: 1,228 trades / +49,999 / $40.72 per trade / 12 of 14 years / closed DD 2,735 / worst day -885; "
+               "median winning trade 141, 47% of winners >= $150; median winning day 147, 50% of winning days >= $150, 16.7 such days a year; static $2k floor + $1k DLL over 157 "
+               "monthly starts: 0.6% breach, 0% DLL hits, median 12m net +1,914. Built for Nick's $150-winning-day payout rule; needs the static-floor account. Paper only; no routing.",
+)
+
 
 
 CANDIDATES["overnight_dip_v2_vix"] = dict(
