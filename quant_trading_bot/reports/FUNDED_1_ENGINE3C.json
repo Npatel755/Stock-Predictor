@@ -1,0 +1,30 @@
+{
+ "dplus_v2_3c_engine": {
+  "topstep_trailing": {
+   "p_pass": 0.369,
+   "p_fail": 0.0,
+   "p_fail_dll": 0.0,
+   "median_days": 34
+  },
+  "topstep_static": {
+   "p_pass": 0.248,
+   "p_fail": 0.0,
+   "p_fail_dll": 0.0,
+   "median_days": 35
+  }
+ },
+ "dplus_gapsized_3c_engine(crabel cont x2)": {
+  "topstep_trailing": {
+   "p_pass": 0.401,
+   "p_fail": 0.032,
+   "p_fail_dll": 0.0,
+   "median_days": 25
+  },
+  "topstep_static": {
+   "p_pass": 0.363,
+   "p_fail": 0.006,
+   "p_fail_dll": 0.0,
+   "median_days": 36
+  }
+ }
+}

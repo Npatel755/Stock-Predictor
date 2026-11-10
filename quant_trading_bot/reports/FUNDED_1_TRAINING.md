@@ -39,7 +39,11 @@ Select Flex) or stay at 1c. Payouts: at 1c a 5-winning-day payout takes a year o
 is satisfied by every configuration (best day 20-35 % of annual net).
 
 ## Engine check of the 3c evaluation size
-ENGINE_CHECK
+D+ v2 run through the engine at 3 contracts ($450 budget): 1,228 trades, +$35,930 on 2010-23 vs +$52,728 for linear 3x - 1,169 trades are exactly 3x the 1c trade,
+229 1c trades are missing (the unscaled $2,000 per-sleeve hard-drawdown lock trips at size) and 59 higher-ATR trades are added (+$2,344); closed DD $1,833, worst day -$807.
+Evaluation odds on the engine-exact 3c list (gap-sized = Crabel continuation trades doubled on top): gap-sized D+ 3c - Topstep trailing **40 % pass / 3 % fail**, median
+25 trading days; static **36 % / 0.6 %**, 36 days. Plain D+ v2 3c - trailing 37 % / 0 %, static 25 % / 0 %. The linear table above is therefore only slightly optimistic
+(43 -> 40 %, 38 -> 36 %); no daily-loss hits in either. Data: reports/FUNDED_1_ENGINE3C.json.
 
 Decision (policy, for Nick): Topstep $50k Static; evaluation with gap-sized D+ at 3 micros; funded phase per research/DEPLOYMENT_PLAN.md with the static floor
 noted (Stage 1 can start as soon as $500 is banked, no lock needed). Not evidence for 2024-26 (sealed). Script: scripts/funded_1_pilot.py; data: reports/FUNDED_1_TRAINING.json.
