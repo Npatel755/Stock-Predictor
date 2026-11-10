@@ -123,7 +123,8 @@ def test_rerun_is_idempotent_and_extends_without_divergence(tmp_path):
     now1 = (cut + pd.Timedelta(hours=1)).to_pydatetime()
     first = ep.run_once(root, ep.FileSource(partial_paths), start, now=now1)
     second = ep.run_once(root, ep.FileSource(partial_paths), start, now=now1 + timedelta(hours=1))
-    for key in ep.CANDIDATES:
+    ledgered = [k for k, v in ep.CANDIDATES.items() if not v.get("hidden")]   # run_once skips hidden components (they run inside books)
+    for key in ledgered:
         ledger = ep.read_ledger(root / key / "ledger.jsonl")
         kinds = [r["kind"] for r in ledger]
         assert kinds.count("run") == 2 and "divergence" not in kinds
@@ -132,7 +133,7 @@ def test_rerun_is_idempotent_and_extends_without_divergence(tmp_path):
         assert first["candidates"][key]["net"] == second["candidates"][key]["net"]
     now3 = (stamps.iloc[-1] + pd.Timedelta(hours=1)).to_pydatetime()
     third = ep.run_once(root, ep.FileSource(paths), start, now=now3)
-    for key in ep.CANDIDATES:
+    for key in ledgered:
         ledger = ep.read_ledger(root / key / "ledger.jsonl")
         trades = [r for r in ledger if r["kind"] == "trade"]
         assert "divergence" not in [r["kind"] for r in ledger]

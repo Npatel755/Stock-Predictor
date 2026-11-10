@@ -1,0 +1,140 @@
+[
+  {
+    "name": "Policy 1: Ultra-Safe Capital Preservation (1.5c/1c/1.5c)",
+    "real": {
+      "p30": 4.9,
+      "p42": 14.0,
+      "p60": 27.7,
+      "median_days": 42.0,
+      "busted_floor_pct": 4.26,
+      "busted_dll": 0,
+      "worst_day": -675.3,
+      "worst_dd": 3436.5
+    },
+    "zero": {
+      "p30": 1.8,
+      "p42": 4.5,
+      "p60": 8.4,
+      "median_days": 42.0,
+      "busted_floor_pct": 29.74,
+      "busted_dll": 0,
+      "worst_day": -802.6,
+      "worst_dd": 4910.8
+    }
+  },
+  {
+    "name": "Policy 2: Conservative Fixed (2c/1.5c/2c)",
+    "real": {
+      "p30": 10.5,
+      "p42": 20.0,
+      "p60": 34.9,
+      "median_days": 39.0,
+      "busted_floor_pct": 6.37,
+      "busted_dll": 0,
+      "worst_day": -602.8,
+      "worst_dd": 3916.7
+    },
+    "zero": {
+      "p30": 4.1,
+      "p42": 9.1,
+      "p60": 13.9,
+      "median_days": 37.5,
+      "busted_floor_pct": 35.85,
+      "busted_dll": 0,
+      "worst_day": -725.6,
+      "worst_dd": 4882.1
+    }
+  },
+  {
+    "name": "Policy 3: Balanced Fixed (2.5c/1.5c/2.5c)",
+    "real": {
+      "p30": 17.5,
+      "p42": 28.6,
+      "p60": 46.1,
+      "median_days": 36.0,
+      "busted_floor_pct": 15.73,
+      "busted_dll": 0,
+      "worst_day": -772.6,
+      "worst_dd": 5005.1
+    },
+    "zero": {
+      "p30": 6.3,
+      "p42": 12.0,
+      "p60": 18.4,
+      "median_days": 36.5,
+      "busted_floor_pct": 45.7,
+      "busted_dll": 0,
+      "worst_day": -941.0,
+      "worst_dd": 5486.9
+    }
+  },
+  {
+    "name": "Policy 4: Floor-Guard Defensive (Cut size at -$400)",
+    "real": {
+      "p30": 17.3,
+      "p42": 28.3,
+      "p60": 43.0,
+      "median_days": 34.0,
+      "busted_floor_pct": 4.69,
+      "busted_dll": 0,
+      "worst_day": -783.9,
+      "worst_dd": 5187.0
+    },
+    "zero": {
+      "p30": 6.4,
+      "p42": 12.0,
+      "p60": 17.7,
+      "median_days": 36.0,
+      "busted_floor_pct": 34.29,
+      "busted_dll": 0,
+      "worst_day": -953.5,
+      "worst_dd": 5697.0
+    }
+  },
+  {
+    "name": "Policy 5: Dynamic Cushion Staging (Scale in Profit)",
+    "real": {
+      "p30": 15.4,
+      "p42": 25.4,
+      "p60": 42.4,
+      "median_days": 37.0,
+      "busted_floor_pct": 5.18,
+      "busted_dll": 0,
+      "worst_day": -792.5,
+      "worst_dd": 5184.4
+    },
+    "zero": {
+      "p30": 6.9,
+      "p42": 11.8,
+      "p60": 16.9,
+      "median_days": 34.0,
+      "busted_floor_pct": 34.09,
+      "busted_dll": 0,
+      "worst_day": -869.3,
+      "worst_dd": 5430.7
+    }
+  },
+  {
+    "name": "Policy 6: Adaptive Distance-to-Floor",
+    "real": {
+      "p30": 18.6,
+      "p42": 29.1,
+      "p60": 44.8,
+      "median_days": 34.0,
+      "busted_floor_pct": 1.68,
+      "busted_dll": 0,
+      "worst_day": -798.9,
+      "worst_dd": 4711.5
+    },
+    "zero": {
+      "p30": 7.6,
+      "p42": 12.9,
+      "p60": 18.1,
+      "median_days": 34.0,
+      "busted_floor_pct": 29.83,
+      "busted_dll": 0,
+      "worst_day": -962.9,
+      "worst_dd": 6013.2
+    }
+  }
+]

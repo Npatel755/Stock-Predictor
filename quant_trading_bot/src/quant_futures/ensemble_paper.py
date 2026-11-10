@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import importlib.util
+import itertools
 import json
 import os
 import sys
@@ -323,10 +324,10 @@ CANDIDATES["ag_quad_v2"] = dict(
 
 # Dashboard grouping (Nick, 2026-11-09): variants of one architecture share a family so the dashboard shows a per-family net beside the overall net.
 FAMILIES = {
-    "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon"),
+    "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon", "overnight_dip_v2_stop055"),
     "AG All-Weather": ("ag_all_weather", "ag_all_weather_v2", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"),
     "AG Architecture C": ("ag_arch_c", "ag_arch_c_lite", "ag_arch_c_v2"),
-    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c", "ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3", "ag_arch_d_plus_v2_gapsize_3c_v3"),
+    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c", "ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3", "ag_arch_d_plus_v2_gapsize_3c_v3", "ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4", "ag_arch_d_plus_v2_gapsize_4c_v4", "ag_arch_d_plus_v2_1c_v5", "ag_arch_d_plus_v2_price_aware_v5", "ag_arch_d_plus_v2_1c_v52", "ag_arch_d_plus_v2_gap_addon_v52", "ag_arch_d_plus_v2_price_aware_v52"),
     "AG Quad": ("ag_quad", "ag_quad_v2"),
     "Book A (overnight dip v2 + All-Weather v2 1c)": ("book_a", "book_a_bond", "book_a_skew"),
     "Book D+ (overnight dip + Architecture D+)": ("book_d_plus",),
@@ -344,12 +345,12 @@ def _dplus_sl(name, base, contracts):
     risk exceeds it), which is what the fixed-engine replication and the dplus_1/2 reports measured (checked 2026-11-09: the uncapped
     always-one-contract version is +18,386 / 1,457 trades / marked DD 1,280 vs the reported +17,576 / 1,398 / 882). The 2-contract
     version uses a $300 budget: two contracts wherever the 1c version takes one, plus one contract on the higher-ATR trades it skips."""
-    sl = _sleeve(name, base, contracts)
+    sl = dict(_sleeve(name, base, contracts), funded_drawdown=1e9)  # 2026-11-09: no per-sleeve $2k floor; account_static_floor on the book
     return dict(sl, risk_per_trade=150.0 * contracts, max_open_risk=150.0 * contracts) if contracts > 1 else sl
 
 
 CANDIDATES["ag_arch_d_plus"] = dict(
-    version="1.0.0", router="strict_1c", day_filter="no_backwardation",
+    version="1.1.0", router="posthoc_1c", day_filter="no_backwardation", account_static_floor=2000.0,
     label="AG Architecture D+ Grand Champion (Crabel 10:00 15m > MNQ 30m trend > MNQ 60m trend > MES 30m cross-asset trend; stands aside on morning sleeves when prior CBOE close had VIX > VIX3M; strict 1-contract router)",
     sleeves=[_dplus_sl("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
              _dplus_sl("AG_TRD30_D_1c", _AG_TRD30_D, 1),
@@ -359,7 +360,7 @@ CANDIDATES["ag_arch_d_plus"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2"] = dict(
-    version="1.0.0", router="strict_1c", day_filter="no_backwardation",
+    version="1.1.0", router="posthoc_1c", day_filter="no_backwardation", account_static_floor=2000.0,
     label="AG Architecture D+ v2 (drawdown-first: Crabel 10:00 15m > MNQ 60m trend > MES 30m trend; the MNQ 30m trend sleeve is dropped; VIX stand-aside on morning sleeves; one contract within the standard $150 stop-risk budget)",
     sleeves=[_dplus_sl("AG_CRABEL15_D_1c", _AG_CRABEL15_D, 1),
              _dplus_sl("AG_TRD60_D_1c", _AG_TRD60_D, 1),
@@ -370,7 +371,7 @@ CANDIDATES["ag_arch_d_plus_v2"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_2c"] = dict(
-    version="1.0.0", router="strict_1c", day_filter="no_backwardation", category="future",
+    version="1.1.0", router="posthoc_1c", day_filter="no_backwardation", category="future", account_static_floor=2000.0,
     label="AG Architecture D+ v2 at 2 contracts (same three sleeves, two contracts within a $300 stop-risk budget; needs ~$900 banked above the locked floor first)",
     sleeves=[_dplus_sl("AG_CRABEL15_D_2c", _AG_CRABEL15_D, 2),
              _dplus_sl("AG_TRD60_D_2c", _AG_TRD60_D, 2),
@@ -379,7 +380,7 @@ CANDIDATES["ag_arch_d_plus_v2_2c"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gap_addon"] = dict(
-    version="1.0.0", hidden=True, addon_of="ag_arch_d_plus_v2", addon_sleeve="AG_CRABEL15_D_1c", addon_filter="gap_continuation",
+    version="1.1.0", hidden=True, addon_of="ag_arch_d_plus_v2", addon_sleeve="AG_CRABEL15_D_1c", addon_filter="gap_continuation",
     label="D+ v2 gap addon (hidden): the routed Crabel 15m trades whose drive agrees with the opening gap, once more",
     sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP", _AG_CRABEL15_D, 1))],
     provenance="dplus_4/5 (reports/DPLUS_4_TRAINING.md, DPLUS_5_TRAINING.md), training 2010-23: gap-continuation drives +5,566 / 261 trades / $21.32 per trade / 13 of 14 years "
@@ -387,7 +388,7 @@ CANDIDATES["ag_arch_d_plus_v2_gap_addon"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gapsize"] = dict(
-    version="1.0.0", category="future",
+    version="1.1.0", category="future", account_static_floor=2000.0,
     book=[["ag_arch_d_plus_v2", "ag_arch_d_plus_v2_gap_addon"]],
     label="FUTURE - D+ v2 gap-sized (D+ v2; 2 contracts on Crabel 15m drives that agree with the opening gap, else 1; standard $150-per-contract budget)",
     sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2", "ag_arch_d_plus_v2_gap_addon") for sl in CANDIDATES[k]["sleeves"]],
@@ -397,7 +398,7 @@ CANDIDATES["ag_arch_d_plus_v2_gapsize"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_3c"] = dict(
-    version="1.0.0", router="strict_1c", day_filter="no_backwardation", hidden=True,
+    version="1.1.0", router="posthoc_1c", day_filter="no_backwardation", hidden=True,
     label="D+ v2 at 3 micros (hidden base of the 3c gap-sized ledger; $450 stop-risk budget)",
     sleeves=[_dplus_sl("AG_CRABEL15_D_3c", _AG_CRABEL15_D, 3), _dplus_sl("AG_TRD60_D_3c", _AG_TRD60_D, 3), dict(_dplus_sl("AG_MES_TRD30_D_3c", _AG_MES_TRD30_D, 3), day_filter_exempt=True)],
     provenance="payout_1 engine check (reports/PAYOUT_1_TRAINING.md), training 2010-23: 1,228 trades / +35,930 / closed DD 1,833 / worst day -807; the engine's unscaled $2,000 "
@@ -405,14 +406,14 @@ CANDIDATES["ag_arch_d_plus_v2_3c"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gap_addon_3c"] = dict(
-    version="1.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c", addon_sleeve="AG_CRABEL15_D_3c", addon_filter="gap_continuation",
+    version="1.1.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c", addon_sleeve="AG_CRABEL15_D_3c", addon_filter="gap_continuation",
     label="D+ v2 3c gap addon (hidden): the routed 3c Crabel trades whose drive agrees with the opening gap, once more (= 6 micros on those)",
     sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP3", _AG_CRABEL15_D, 3))],
     provenance="dplus_4/5 state applied at 3c (payout_1). Paper only; no routing.",
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gapsize_3c"] = dict(
-    version="1.0.0", category="future",
+    version="1.1.0", category="future", account_static_floor=2000.0,
     book=[["ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c"]],
     label="FUTURE - D+ v2 gap-sized at 3 micros (3 micros; 6 on Crabel drives that agree with the opening gap) - payout-rule size: typical winning trade ~$141, winning day ~$147",
     sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c") for sl in CANDIDATES[k]["sleeves"]],
@@ -422,7 +423,7 @@ CANDIDATES["ag_arch_d_plus_v2_gapsize_3c"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_3c_v3"] = dict(
-    version="3.0.0", router="strict_1c", day_filter="no_backwardation", hidden=True,
+    version="3.1.0", router="posthoc_1c", day_filter="no_backwardation", hidden=True,
     label="D+ v2 at 3 micros, engine v3 gates (hidden base: per-sleeve hard-drawdown lock $6,000 = $2,000 x contracts, daily stop $600)",
     sleeves=[dict(_dplus_sl("AG_CRABEL15_D_3c_v3", _AG_CRABEL15_D, 3), hard_drawdown=6000.0, daily_loss=600.0),
              dict(_dplus_sl("AG_TRD60_D_3c_v3", _AG_TRD60_D, 3), hard_drawdown=6000.0, daily_loss=600.0),
@@ -432,14 +433,14 @@ CANDIDATES["ag_arch_d_plus_v2_3c_v3"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gap_addon_3c_v3"] = dict(
-    version="3.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v3", addon_sleeve="AG_CRABEL15_D_3c_v3", addon_filter="gap_continuation",
+    version="3.1.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v3", addon_sleeve="AG_CRABEL15_D_3c_v3", addon_filter="gap_continuation",
     label="D+ v2 3c v3 gap addon (hidden): routed 3c Crabel trades that agree with the opening gap, once more (= 6 micros on those)",
     sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP3_v3", _AG_CRABEL15_D, 3), hard_drawdown=6000.0, daily_loss=600.0)],
     provenance="dplus_4/5 state applied at 3c under engine v3 gates (dplus_7). Paper only; no routing.",
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gapsize_3c_v3"] = dict(
-    version="3.0.0", category="future",
+    version="3.1.0", category="future", account_static_floor=2000.0,
     book=[["ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3"]],
     label="FUTURE - D+ v2 gap-sized at 3 micros, engine v3 gates (lock scaled to size, $600 daily stop): typical winning trade ~$165 / day ~$168 - NEEDS an account WITHOUT a $1k daily loss limit (e.g. Tradeify Select Flex)",
     sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3") for sl in CANDIDATES[k]["sleeves"]],
@@ -460,6 +461,65 @@ CANDIDATES["ag_arch_d_plus_v2_3c_v4"] = dict(
     provenance="ag_arch_d_plus_v2_3c_v3 with funded_drawdown disabled per sleeve (reports/PARITY_DPLUS_V4.md). Paper only; no routing.",
 )
 
+_V5 = dict(risk_per_trade=300.0, max_open_risk=300.0, hard_drawdown=1e9)   # 1 micro, skip when one micro's stop risk > $300; no per-sleeve permanent lock
+
+CANDIDATES["ag_arch_d_plus_v2_1c_v5"] = dict(
+    version="5.0.0", router="posthoc_1c", day_filter="no_backwardation", hidden=True,
+    label="D+ v2 v5 base (hidden): 1 micro per sleeve, $300 per-micro stop-risk budget, no per-sleeve drawdown lock",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_1c_v5", _AG_CRABEL15_D, 1), **_V5),
+             dict(_dplus_sl("AG_TRD60_D_1c_v5", _AG_TRD60_D, 1), **_V5),
+             dict(_dplus_sl("AG_MES_TRD30_D_1c_v5", _AG_MES_TRD30_D, 1), day_filter_exempt=True, **_V5)],
+    provenance="payout_5 (reports/PAYOUT_5_PRICE_NORMALIZED_TRAINING.json). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_price_aware_v5"] = dict(
+    version="5.0.0", category="future", account_static_floor=2000.0,
+    book=[["ag_arch_d_plus_v2_1c_v5"]], account_daily_stop=400.0,
+    label="FUTURE - D+ v5 price-aware payout build (1 micro per sleeve; skips a trade when one micro's stop risks > $300; account-level daily stop -$400) - sized for a $2k static floor at today's NQ price",
+    sleeves=[dict(sl) for sl in CANDIDATES["ag_arch_d_plus_v2_1c_v5"]["sleeves"]],
+    provenance="payout_5 (Claude, 2026-11-10; training 2010-23 trades re-expressed at the 2026-11-10 price level, NQ 27,981 / ES 7,584): "
+               "4.5 payouts/yr ($1k cushion), 24.3 $150+ days/yr, 13/14 positive years, worst day -$610, 0% static-floor breach over 157 monthly "
+               "12-month starts. Same replay for the deployed v4: 5.7 payouts/yr but 38% 12-month breach (oversized at today's dollar volatility). "
+               "Live feed 2026-10-30..11-10 is high-vol (Crabel stop ~$384/micro): v5 then sits out the MNQ sleeves and trades MES only. "
+               "Assumes training's R-distribution and % volatility pattern repeat at today's prices; forward paper is the test. Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_1c_v52"] = dict(
+    version="5.2.0", router="posthoc_1c", day_filter="no_backwardation", hidden=True,
+    label="D+ v5.2 base (hidden): v5 sleeves + MNQ 30m afternoon trend, 1 micro each, $300 per-micro budget",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_1c_v52", _AG_CRABEL15_D, 1), **_V5),
+             dict(_dplus_sl("AG_TRD60_D_1c_v52", _AG_TRD60_D, 1), **_V5),
+             dict(_dplus_sl("AG_MES_TRD30_D_1c_v52", _AG_MES_TRD30_D, 1), day_filter_exempt=True, **_V5),
+             dict(_dplus_sl("AG_TRD30PM_1c_v52", _AG_TRD30PM, 1), day_filter_exempt=True, **_V5)],
+    provenance="payout_6/9 (reports/PAYOUT_6_MORE_SLEEVES_TRAINING.json, PAYOUT_9_GAPSIZE_V5_TRAINING.json). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gap_addon_v52"] = dict(
+    version="5.2.0", hidden=True, addon_of="ag_arch_d_plus_v2_1c_v52", addon_sleeve="AG_CRABEL15_D_1c_v52", addon_filter="gap_continuation",
+    label="D+ v5.2 gap addon (hidden): routed Crabel trades that agree with the opening gap, once more (= 2 micros on those)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP_v52", _AG_CRABEL15_D, 1), **_V5)],
+    provenance="dplus_4/5 gap state applied to v5 (payout_9: Crabel continuation $74/trade vs fades $20 at today's price). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_price_aware_v52"] = dict(
+    version="5.2.0", category="future", account_static_floor=2000.0,
+    book=[["ag_arch_d_plus_v2_1c_v52", "ag_arch_d_plus_v2_gap_addon_v52"]], account_daily_stop=400.0,
+    label="FUTURE - D+ v5.2 payout build (v5 + MNQ 30m afternoon trend; 2 micros on Crabel drives that agree with the opening gap; $300 per-micro budget; account stop -$400)",
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_1c_v52", "ag_arch_d_plus_v2_gap_addon_v52") for sl in CANDIDATES[k]["sleeves"]],
+    provenance="payout_9 (Claude, 2026-11-10; training 2010-23 re-expressed at the 2026-11-10 price level): 5.5 payouts/yr ($1k cushion), 30.6 $150+ days/yr, "
+               "payouts per 12-month start p10-p90 3-7, 0.7% static-floor breach over 151 starts, worst day -$767, 13/14 positive years (v5: 4.5/yr, 0%). "
+               "Same assumptions as v5: training R-distribution and % volatility pattern repeat at today's prices. Paper only; no routing.",
+)
+
+CANDIDATES["overnight_dip_v2_stop055"] = dict(
+    version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, stop_pct=0.0055, category="future",
+    label="FUTURE - Overnight Dip v2 with a 0.55% protective stop (~$310 per micro at NQ 28k) - payout leg; Nick to enable it only once ~$500 is banked",
+    sleeves=[dict(name="OVN_DIP2_STOP_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="payout_10/11 (Claude, 2026-11-10; training 2010-23 at today's price level): unstopped the worst night is -$2,701 per micro and the $1k DLL is hit in 42% "
+               "of 12-month starts; with the 0.55% stop the worst night is -$316. Added to v5.2 and enabled only above a $500 balance: 6.4 payouts/yr, 0.7% breach. "
+               "CAUTION: the overnight family failed its one-shot 2024-25 validation (overnight_2). Paper only; no routing.",
+)
+
 CANDIDATES["ag_arch_d_plus_v2_gap_addon_1of3_v4"] = dict(
     version="4.0.0", hidden=True, addon_of="ag_arch_d_plus_v2_3c_v4", addon_sleeve="AG_CRABEL15_D_3c_v4", addon_filter="gap_continuation", addon_scale=1.0 / 3.0,
     label="D+ v2 3c v4 gap addon at +1 micro (hidden): routed 3c Crabel trades that agree with the opening gap, scaled to one micro (= 4 micros on those in the v4 book)",
@@ -468,9 +528,9 @@ CANDIDATES["ag_arch_d_plus_v2_gap_addon_1of3_v4"] = dict(
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gapsize_4c_v4"] = dict(
-    version="4.0.0", hidden=True,
+    version="4.0.0", category="future", account_static_floor=2000.0,
     book=[["ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4"]], account_daily_stop=600.0,
-    label="D+ v2 v4 payout build (3 micros; 4 on Crabel drives that agree with the opening gap; engine v3 gates; account-level daily stop: no new entry once the day is -$600) - Topstep-safe $150-day version",
+    label="FUTURE - D+ v2 v4 payout build (3 micros; 4 on Crabel drives that agree with the opening gap; account-level daily stop: no new entry once the day is -$600) - Topstep-safe $150-day version: median winning day ~$155, ~19 qualifying days a year",
     sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4") for sl in CANDIDATES[k]["sleeves"]],
     provenance="dplus_7e (research/dplus_7/PROTOCOL.md addendum 4), training 2010-23: 4-micro continuation + $600 account-level daily stop = 0 days <= -$1,000 in 14 years, "
                "0% DLL hits, 0.6% static breach, median winning day $155, median winning trade $148.50 (misses Devin's pre-registered trade gate by $1.50; deployed on "
@@ -850,19 +910,23 @@ def _remove_trades(run, keep, drop_open=False):
 
 def account_daily_stop_filter(runs, limit):
     """Account-level daily stop across every sleeve of a book (dplus_7e): no new entry once the ET day's realised P&L is <= -limit.
-    Realised P&L for an entry at time T = net of already-kept trades whose exit is on T's ET date and at or before T. Open trades run to
-    their exits; blocked entries are removed as if never taken (no router re-fill, as in the research cell)."""
+    Realised P&L for entries at time T = net of already-kept trades that entered BEFORE T and exited on T's ET date at or before T.
+    All entries stamped T are one decision (orders sent together cannot see each other's fills - e.g. a base trade and its sizing-addon
+    twin). Open trades run to their exits; blocked entries are removed as if never taken (no router re-fill, as in the research cell)."""
     et = lambda ts: pd.Timestamp(ts).tz_convert("America/New_York")
     rows = sorted(((et(t["entry_ts"]), name, i) for name, r in runs.items() for i, t in enumerate(r["trades"])), key=lambda x: x[0])
     realised_by_day, keep = {}, {name: [True] * len(r["trades"]) for name, r in runs.items()}
 
     def realised(tin):
         return sum(net for tout, net in realised_by_day.get(tin.date(), ()) if tout <= tin)
-    for tin, name, i in rows:
+    for tin, group in itertools.groupby(rows, key=lambda x: x[0]):
+        group = list(group)
         if realised(tin) <= -limit:
-            keep[name][i] = False; continue
-        t = runs[name]["trades"][i]; tout = et(t["exit_ts"])
-        realised_by_day.setdefault(tout.date(), []).append((tout, float(t["net"])))
+            for _, name, i in group: keep[name][i] = False
+            continue
+        for _, name, i in group:
+            t = runs[name]["trades"][i]; tout = et(t["exit_ts"])
+            realised_by_day.setdefault(tout.date(), []).append((tout, float(t["net"])))
     out = {}
     for name, r in runs.items():
         open_blocked = bool(r["position"].get("quantity") and r.get("open_since") and realised(et(r["open_since"])) <= -limit)
@@ -1038,8 +1102,18 @@ def run_overnight(spec, b, start, mes=None):
             if nd in rth_open and rth_open[nd] > ei: xi, reason = rth_open[nd], "rth_open"; break
             cutoff = pd.Timestamp(nd).tz_localize("America/New_York") + pd.Timedelta(minutes=965)
             if nd in safety and safety[nd] > ei and last_ts >= cutoff: xi, reason = safety[nd], "safety_flatten"; break
+        stop_fill = None
+        if spec.get("stop_pct"):  # payout_10/11: protective stop below the raw entry, 1-min bars from the entry bar; gap-through fills at the bar open
+            stop = (fill - half) * (1.0 - float(spec["stop_pct"]))
+            hit = np.nonzero(l[ei:(xi if xi is not None else len(b))] <= stop)[0]
+            if len(hit):
+                j = ei + int(hit[0]); xi, reason = j, "stop"; stop_fill = stop if j == ei else min(stop, o[j])
         if xi is None: continue  # still open
-        xp = (c[xi] if (exit_at_close or reason != "rth_open") else o[xi]) - half; net = (xp - fill) * mult - 2 * OVN_COMM
+        if stop_fill is not None:
+            xp = stop_fill - half
+        else:
+            xp = (c[xi] if (exit_at_close or reason != "rth_open") else o[xi]) - half
+        net = (xp - fill) * mult - 2 * OVN_COMM
         trades.append(dict(sleeve=name, entry_ts=b.timestamp_utc[ei].isoformat(), exit_ts=b.timestamp_utc[xi].isoformat(), side=1, qty=1, entry_price=round(fill, 2),
                            exit_price=round(xp, 2), net=round(float(net), 2), fees=round(2 * OVN_COMM, 2), reason=reason))
         entry_bars.append(ei); pos = None
@@ -1148,6 +1222,7 @@ def combine(curves):
     return dict(realized=round(float(realized.iloc[-1]), 2), net=round(float(equity.iloc[-1]), 2),
                 closed_drawdown=round(float((peak - equity).max()), 2),
                 intrabar_drawdown=round(float((peak - worst).max()), 2),
+                worst_from_start=round(float(min(worst.min(), 0.0)), 2),   # lowest combined intrabar equity vs the start balance (static floor)
                 equity=pd.DataFrame(dict(ts=merged.ts, net=equity.to_numpy())))
 
 
@@ -1234,7 +1309,11 @@ def update_candidate(root, key, spec, bars, start, now, source_name):
                       trades=len(trades), net=portfolio["net"], realized=portfolio["realized"],
                       closed_drawdown=portfolio["closed_drawdown"], intrabar_drawdown=portfolio["intrabar_drawdown"],
                       positions={n: r["position"] for n, r in runs.items()}, locks={n: r["lock"] for n, r in runs.items()},
-                      funded_failed=any(r["funded_failed"] for r in runs.values()),
+                      # account_static_floor (D+ ledgers, 2026-11-09): the account fails when combined intrabar equity touches -floor from the
+                      # start balance - the real static rule - instead of relying on per-sleeve trailing floors (switched off for those sleeves).
+                      funded_failed=any(r["funded_failed"] for r in runs.values()) or bool(
+                          spec.get("account_static_floor") and portfolio["worst_from_start"] <= -float(spec["account_static_floor"])),
+                      worst_from_start=portfolio["worst_from_start"],
                       divergences=len(missing) + len(late))
     records.append(run_record)
     append_records(ledger_path, records, next_seq)

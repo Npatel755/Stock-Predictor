@@ -1,0 +1,86 @@
+[
+  {
+    "name": "1. Pure 1-Micro Baseline (Safe)",
+    "p10_pct": 0.0,
+    "p15_pct": 0.0,
+    "p21_pct": 0.0,
+    "dll_breaches": 0,
+    "floor_breaches": 0,
+    "avg_resets": 0.0,
+    "worst_day": -387.0,
+    "median_final": 181.9,
+    "open_positive_pct": 63.1
+  },
+  {
+    "name": "2. 2-Micro Balanced (No Reset)",
+    "p10_pct": 0.0,
+    "p15_pct": 0.0,
+    "p21_pct": 0.2,
+    "dll_breaches": 0,
+    "floor_breaches": 0,
+    "avg_resets": 0.0,
+    "worst_day": -623.7,
+    "median_final": 277.2,
+    "open_positive_pct": 65.0
+  },
+  {
+    "name": "3. 2-Micro Balanced (Reset @ -$450)",
+    "p10_pct": 0.0,
+    "p15_pct": 0.0,
+    "p21_pct": 0.2,
+    "dll_breaches": 0,
+    "floor_breaches": 0,
+    "avg_resets": 0.28,
+    "worst_day": -623.7,
+    "median_final": 385.3,
+    "open_positive_pct": 72.6
+  },
+  {
+    "name": "4. 3-Micro Conviction (Reset @ -$450)",
+    "p10_pct": 0.2,
+    "p15_pct": 0.6,
+    "p21_pct": 1.9,
+    "dll_breaches": 0,
+    "floor_breaches": 0,
+    "avg_resets": 0.41,
+    "worst_day": -904.2,
+    "median_final": 539.9,
+    "open_positive_pct": 73.5
+  },
+  {
+    "name": "5. 4-Micro Sprint (Reset @ -$500)",
+    "p10_pct": 0.3,
+    "p15_pct": 1.4,
+    "p21_pct": 4.5,
+    "dll_breaches": 222,
+    "floor_breaches": 0,
+    "avg_resets": 0.46,
+    "worst_day": -1205.7,
+    "median_final": 754.8,
+    "open_positive_pct": 67.9
+  },
+  {
+    "name": "6. 6-Micro Aggressive (No Day Stop)",
+    "p10_pct": 1.0,
+    "p15_pct": 3.2,
+    "p21_pct": 7.6,
+    "dll_breaches": 710,
+    "floor_breaches": 0,
+    "avg_resets": 0.44,
+    "worst_day": -2060.5,
+    "median_final": 916.5,
+    "open_positive_pct": 55.5
+  },
+  {
+    "name": "7. 12-Micro Hyper-Velocity (Single Sleeve Crabel)",
+    "p10_pct": 0.8,
+    "p15_pct": 2.2,
+    "p21_pct": 4.2,
+    "dll_breaches": 1834,
+    "floor_breaches": 0,
+    "avg_resets": 0.15,
+    "worst_day": -3617.0,
+    "median_final": 145.5,
+    "open_positive_pct": 24.5
+  }
+]
