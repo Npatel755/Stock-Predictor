@@ -1,0 +1,52 @@
+[
+  {
+    "name": "1. Baseline: Fixed 6 MNQ (Gap-Confirmed)",
+    "pass_pct": 33.1,
+    "ruin_pct": 4.5,
+    "odds": 7.42,
+    "min_days": 4,
+    "median_days": 32.0,
+    "mean_days": 38.7,
+    "worst_dd_pass": 1808.25
+  },
+  {
+    "name": "2. Progressive 4-Step Compounding",
+    "pass_pct": 8.4,
+    "ruin_pct": 22.4,
+    "odds": 0.38,
+    "min_days": 4,
+    "median_days": 19.0,
+    "mean_days": 23.1,
+    "worst_dd_pass": 1967.5
+  },
+  {
+    "name": "3. Progressive Compounding + Active De-Escalation",
+    "pass_pct": 12.4,
+    "ruin_pct": 19.9,
+    "odds": 0.62,
+    "min_days": 5,
+    "median_days": 23.0,
+    "mean_days": 30.4,
+    "worst_dd_pass": 1958.25
+  },
+  {
+    "name": "4. Floor-Locked Compounding Acceleration",
+    "pass_pct": 10.2,
+    "ruin_pct": 22.7,
+    "odds": 0.45,
+    "min_days": 6,
+    "median_days": 32.0,
+    "mean_days": 44.3,
+    "worst_dd_pass": 2079.0
+  },
+  {
+    "name": "5. Floor-Locked Compounding (120-Day Window)",
+    "pass_pct": 15.8,
+    "ruin_pct": 20.4,
+    "odds": 0.77,
+    "min_days": 6,
+    "median_days": 74.0,
+    "mean_days": 64.8,
+    "worst_dd_pass": 2079.0
+  }
+]

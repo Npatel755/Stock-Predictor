@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Baseline: Fixed 6 MNQ",
+    "pass_pct": 33.2,
+    "ruin_pct": 4.9,
+    "odds_ratio": 6.84,
+    "min_days": 4,
+    "p25_days": 15.0,
+    "median_days": 27.0,
+    "mean_days": 35.0,
+    "worst_dd_pass": 2091.75,
+    "avg_dd_pass": 932.93
+  },
+  {
+    "name": "Variant 1: 2-Stage (6c -> 12c at $1.2k)",
+    "pass_pct": 14.6,
+    "ruin_pct": 19.6,
+    "odds_ratio": 0.74,
+    "min_days": 3,
+    "p25_days": 14.0,
+    "median_days": 25.0,
+    "mean_days": 37.8,
+    "worst_dd_pass": 2079.0,
+    "avg_dd_pass": 1145.85
+  },
+  {
+    "name": "Variant 2: 3-Stage Dynamic (6c -> 8c -> 12c)",
+    "pass_pct": 19.8,
+    "ruin_pct": 14.2,
+    "odds_ratio": 1.4,
+    "min_days": 3,
+    "p25_days": 17.0,
+    "median_days": 40.5,
+    "mean_days": 41.9,
+    "worst_dd_pass": 2177.0,
+    "avg_dd_pass": 1314.57
+  },
+  {
+    "name": "Variant 3: 3-Stage + Gap-Conditioned Sizing",
+    "pass_pct": 19.8,
+    "ruin_pct": 14.2,
+    "odds_ratio": 1.4,
+    "min_days": 3,
+    "p25_days": 17.0,
+    "median_days": 40.5,
+    "mean_days": 41.9,
+    "worst_dd_pass": 2177.0,
+    "avg_dd_pass": 1314.57
+  },
+  {
+    "name": "Variant 4: 3-Stage + Intraday Green Lock Ratchet",
+    "pass_pct": 19.8,
+    "ruin_pct": 14.2,
+    "odds_ratio": 1.4,
+    "min_days": 3,
+    "p25_days": 17.0,
+    "median_days": 40.5,
+    "mean_days": 41.9,
+    "worst_dd_pass": 2177.0,
+    "avg_dd_pass": 1314.57
+  },
+  {
+    "name": "Variant 5: Elite Finisher (6c -> 8c -> 10c)",
+    "pass_pct": 22.1,
+    "ruin_pct": 12.6,
+    "odds_ratio": 1.76,
+    "min_days": 4,
+    "p25_days": 14.0,
+    "median_days": 27.0,
+    "mean_days": 36.9,
+    "worst_dd_pass": 1911.0,
+    "avg_dd_pass": 1123.9
+  }
+]

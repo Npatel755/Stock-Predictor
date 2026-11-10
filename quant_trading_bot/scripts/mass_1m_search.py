@@ -54,6 +54,8 @@ def load_bars(product, res, start, end, split):
             continue
         path = str(CAT[sym]["splits"][split]["path"])
         con = duckdb.connect()
+        con.execute("PRAGMA memory_limit='4GB'")
+        con.execute("PRAGMA threads=4")
         q = f"""SELECT time_bucket(INTERVAL '{res} minutes', timestamp_utc::TIMESTAMPTZ) AS timestamp_utc,
                  arg_min(open, timestamp_utc) AS open, max(high) AS high, min(low) AS low, arg_max(close, timestamp_utc) AS close,
                  sum(volume) AS volume, arg_min(contract, timestamp_utc) AS contract, arg_min(session_id, timestamp_utc) AS session_id
