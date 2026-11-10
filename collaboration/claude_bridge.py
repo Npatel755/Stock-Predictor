@@ -159,13 +159,11 @@ def load_claude_turns() -> list[dict]:
 
 
 def save_claude_turns(turns: list[dict]):
-    """Save Claude interaction turns to JSONL and Markdown."""
-    # Write JSONL
-    with open(CLAUDE_JSONL_PATH, "w", encoding="utf-8") as f:
-        for t in turns:
-            f.write(json.dumps(t, ensure_ascii=False) + "\n")
+    """Save Claude interaction turns to JSONL and Markdown if changed."""
+    jsonl_content = "".join(json.dumps(t, ensure_ascii=False) + "\n" for t in turns)
+    if not CLAUDE_JSONL_PATH.exists() or CLAUDE_JSONL_PATH.read_text(encoding="utf-8") != jsonl_content:
+        CLAUDE_JSONL_PATH.write_text(jsonl_content, encoding="utf-8")
 
-    # Write Markdown
     md_lines = [
         "# Claude Complete Chat History (Perpetual Mirror for Antigravity & Nick)",
         f"*Last Synchronized: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}*",
@@ -195,8 +193,15 @@ def save_claude_turns(turns: list[dict]):
         md_lines.append("---")
         md_lines.append("")
 
-    with open(CLAUDE_MD_PATH, "w", encoding="utf-8") as f:
-        f.write("\n".join(md_lines))
+    new_md = "\n".join(md_lines)
+    # Compare without the timestamp line to avoid unnecessary writes
+    if CLAUDE_MD_PATH.exists():
+        old_md = CLAUDE_MD_PATH.read_text(encoding="utf-8")
+        old_core = re.sub(r"\*Last Synchronized:.*?\*", "", old_md)
+        new_core = re.sub(r"\*Last Synchronized:.*?\*", "", new_md)
+        if old_core.strip() == new_core.strip():
+            return
+    CLAUDE_MD_PATH.write_text(new_md, encoding="utf-8")
 
 
 def append_claude_turn(user_prompt: str, assistant_response: str):
@@ -379,17 +384,20 @@ def watch_loop(interval: int = 5):
     logger.info(f"Starting perpetual bridge watcher (polling every {interval}s)...")
     last_ag_mtime = 0.0
     last_cl_mtime = 0.0
+    last_inbox_mtime = 0.0
 
     while True:
         try:
             ag_mtime = AG_TRANSCRIPT_PATH.stat().st_mtime if AG_TRANSCRIPT_PATH.exists() else 0.0
             cl_mtime = CLAUDE_MD_PATH.stat().st_mtime if CLAUDE_MD_PATH.exists() else 0.0
+            inbox_mtime = CLAUDE_TO_AG_PATH.stat().st_mtime if CLAUDE_TO_AG_PATH.exists() else 0.0
 
-            if ag_mtime != last_ag_mtime or cl_mtime != last_cl_mtime:
-                last_ag_mtime = ag_mtime
-                last_cl_mtime = cl_mtime
-                logger.info("Detected change in transcript or Claude history, syncing...")
+            if ag_mtime != last_ag_mtime or cl_mtime != last_cl_mtime or inbox_mtime != last_inbox_mtime:
+                logger.info("Detected change in transcript or Claude files, syncing...")
                 sync_all()
+                last_ag_mtime = AG_TRANSCRIPT_PATH.stat().st_mtime if AG_TRANSCRIPT_PATH.exists() else 0.0
+                last_cl_mtime = CLAUDE_MD_PATH.stat().st_mtime if CLAUDE_MD_PATH.exists() else 0.0
+                last_inbox_mtime = CLAUDE_TO_AG_PATH.stat().st_mtime if CLAUDE_TO_AG_PATH.exists() else 0.0
         except Exception as e:
             logger.error(f"Watcher error: {e}")
 
