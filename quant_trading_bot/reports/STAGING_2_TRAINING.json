@@ -1,0 +1,137 @@
+{
+ "S_3": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 17576.0,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 17576.0,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.001,
+   "B": 0.0
+  }
+ },
+ "S_3G": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 782.75,
+   "p10_net_12m": -25.85,
+   "locked_share": 0.325,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 23141.5,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 782.75,
+   "p10_net_12m": -25.85,
+   "locked_share": 0.325,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 23141.5,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.0,
+   "B": 0.0
+  }
+ },
+ "P_L3": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 63023.73,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 525.75,
+   "p10_net_12m": -85.9,
+   "locked_share": 0.28,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 63023.73,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.009,
+   "B": 0.003
+  }
+ },
+ "P_L3G": {
+  "A": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 782.75,
+   "p10_net_12m": -25.85,
+   "locked_share": 0.325,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 67939.59,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "B": {
+   "n_starts": 157,
+   "survival": 1.0,
+   "median_net_12m": 782.75,
+   "p10_net_12m": -25.85,
+   "locked_share": 0.325,
+   "breach_starts": [],
+   "full_path_2010_23": {
+    "closed": 67939.59,
+    "n_breach": 0,
+    "first_breach": null
+   }
+  },
+  "bootstrap_breach_1y": {
+   "A": 0.011,
+   "B": 0.004
+  }
+ },
+ "gates": {
+  "survival": true,
+  "boot": false,
+  "median": true,
+  "p10": true
+ },
+ "pass": false
+}
