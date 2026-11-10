@@ -1,0 +1,40 @@
+{
+ "cont_5mic_acct_stop_600": {
+  "trades": 1450,
+  "net": 64887.33,
+  "per": 44.75,
+  "pos_years": 12,
+  "closed_dd": 3433.17,
+  "median_win_trade": 160.5,
+  "share_win_ge150": 0.515,
+  "median_win_day": 164.25,
+  "share_win_days_ge150": 0.532,
+  "days150_per_year": 20.1,
+  "worst_day": -1077.5,
+  "days_le_1000": 3,
+  "days_le_800": 8,
+  "p_breach_static": 0.006,
+  "p_dll": 0.089,
+  "median_net_12m": 1666.75,
+  "gate": false
+ },
+ "cont_5mic_acct_stop_400": {
+  "trades": 1443,
+  "net": 65498.67,
+  "per": 45.39,
+  "pos_years": 12,
+  "closed_dd": 3197.67,
+  "median_win_trade": 159.75,
+  "share_win_ge150": 0.514,
+  "median_win_day": 163.5,
+  "share_win_days_ge150": 0.531,
+  "days150_per_year": 20.0,
+  "worst_day": -1014.0,
+  "days_le_1000": 2,
+  "days_le_800": 6,
+  "p_breach_static": 0.006,
+  "p_dll": 0.089,
+  "median_net_12m": 1666.75,
+  "gate": false
+ }
+}

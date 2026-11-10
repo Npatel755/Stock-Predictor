@@ -37,3 +37,21 @@ those trades had small stop risks and large realised losses. The 10.8 % figure i
   `hard_drawdown` / `daily_loss` overrides are now honoured (src/quant_futures/ensemble_paper.py, run_sleeve).
 Not evidence for 2024-26 (sealed). Scripts: scripts/dplus_7_pilot.py, dplus_7b_pilot.py, dplus_7c_pilot.py; data: reports/DPLUS_7_TRAINING.json, DPLUS_7B_TRAINING.json, DPLUS_7C_TRAINING.json.
 
+
+## dplus_7d / 7e - continuation size and an account-level daily stop (3 micros base, engine v3 gates)
+| continuation size | account daily stop | trades | net | $/trade | median win trade / day | winners >= $150 | $150+ days/yr | worst day | days <= -$1k | static breach | DLL hit | gate |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 6 micros | none | 1,456 | +$70,734 | 48.58 | $165 / $168 | 53 % | 20.7 | -$1,205 | 5 | 0.6 % | 10.8 % | fail (DLL) |
+| 5 micros | none | 1,456 | +$65,355 | 44.89 | $162 / $164 | 52 % | 20.1 | -$1,101 | 3 | 0.6 % | 8.3 % | fail (DLL) |
+| 5 micros | $600 | 1,450 | +$64,887 | 44.75 | $160.5 / $164 | 52 % | 20.1 | -$1,078 | 3 | 0.6 % | 8.9 % | fail (DLL) |
+| 5 micros | $400 | 1,443 | +$65,499 | 45.39 | $159.75 / $163.5 | 51 % | 20.0 | -$1,014 | 2 | 0.6 % | 8.9 % | fail (DLL) |
+| 4 micros | none | 1,456 | +$59,975 | 41.19 | $151.75 / $155 | 50 % | 19.3 | -$1,101 | 1 | 0.6 % | 7.6 % | fail (DLL) |
+| **4 micros** | **$600** | 1,451 | +$59,258 | 40.84 | **$148.50 / $155** | 50 % | 19.3 | **-$951** | **0** | 0.6 % | **0 %** | **fail by $1.50 (median trade)** |
+| 4 micros | $500 / $400 | 1,449 / 1,445 | +$58,248 / +$59,596 | 40.2 / 41.2 | $147.75 / $154.5 | 50 % | 19.2 | -$951 / -$885 | 0 | 0.6 % | 0 % | fail (median trade) |
+
+Account-level daily stop = no new entry on any sleeve once the day's realised P&L <= -X (post-hoc removal of later entries; router re-fill ignored). The engine's own
+daily stop is per sleeve, which is why it never prevented the four-stop day. With 5 micros the gap-through Crabel day plus already-open trend losses still reach -$1k;
+with 4 micros and a $600 account stop no day in 14 years reaches -$1,000, DLL hits are 0 % and the static breach is unchanged (0.6 %) - but the median winning trade is
+$148.50, $1.50 under the pre-registered gate (the median winning DAY, which the payout rule counts, is $155). Not deployed by rule; offered to Nick as a decision:
+if the winning-day metric is the target, the account-level daily stop becomes a runner feature and this ships as the Topstep-compatible v4.
+Data: reports/DPLUS_7D_TRAINING.json, DPLUS_7E_TRAINING.json (4-micro cells), DPLUS_7E5_TRAINING.json / DPLUS_7E5B_TRAINING.json (5-micro cells).
