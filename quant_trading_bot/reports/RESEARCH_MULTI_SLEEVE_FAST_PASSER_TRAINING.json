@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Conservative 2c Base (Reset @ -$400)",
+    "real": {
+      "p10_pct": 13.8,
+      "p15_pct": 28.3,
+      "p21_pct": 43.8,
+      "avg_resets_paid": 1.0,
+      "median_sessions": 13.0,
+      "worst_day_loss": -1280.1,
+      "max_attempt_dd": 4787.0,
+      "n_passed": 617
+    },
+    "zero_edge": {
+      "p10_pct": 5.6,
+      "p15_pct": 11.5,
+      "p21_pct": 18.1,
+      "avg_resets_paid": 1.7,
+      "median_sessions": 14.0,
+      "worst_day_loss": -1407.9,
+      "max_attempt_dd": 4576.7,
+      "n_passed": 255
+    },
+    "edge_boost": 25.7,
+    "est_cost": 98.0
+  },
+  {
+    "name": "Balanced 3c Base (Reset @ -$500)",
+    "real": {
+      "p10_pct": 22.7,
+      "p15_pct": 41.3,
+      "p21_pct": 60.4,
+      "avg_resets_paid": 1.2,
+      "median_sessions": 12.0,
+      "worst_day_loss": -1782.2,
+      "max_attempt_dd": 5005.3,
+      "n_passed": 851
+    },
+    "zero_edge": {
+      "p10_pct": 9.3,
+      "p15_pct": 15.7,
+      "p21_pct": 22.9,
+      "avg_resets_paid": 2.9,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2111.9,
+      "max_attempt_dd": 4045.7,
+      "n_passed": 323
+    },
+    "edge_boost": 37.5,
+    "est_cost": 108.0
+  },
+  {
+    "name": "Sprint 4c Base (Reset @ -$600)",
+    "real": {
+      "p10_pct": 24.6,
+      "p15_pct": 42.3,
+      "p21_pct": 59.9,
+      "avg_resets_paid": 2.0,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2376.2,
+      "max_attempt_dd": 3395.2,
+      "n_passed": 843
+    },
+    "zero_edge": {
+      "p10_pct": 12.9,
+      "p15_pct": 20.8,
+      "p21_pct": 28.9,
+      "avg_resets_paid": 3.1,
+      "median_sessions": 11.0,
+      "worst_day_loss": -2815.8,
+      "max_attempt_dd": 2892.6,
+      "n_passed": 407
+    },
+    "edge_boost": 31.0,
+    "est_cost": 147.0
+  },
+  {
+    "name": "Conviction Sizing (Crabel 4c, Night 3c, MES 3c, TRD 2c | Reset -$500)",
+    "real": {
+      "p10_pct": 21.2,
+      "p15_pct": 38.0,
+      "p21_pct": 55.9,
+      "avg_resets_paid": 1.2,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2593.7,
+      "max_attempt_dd": 5064.3,
+      "n_passed": 787
+    },
+    "zero_edge": {
+      "p10_pct": 8.7,
+      "p15_pct": 14.7,
+      "p21_pct": 21.5,
+      "avg_resets_paid": 2.8,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2815.8,
+      "max_attempt_dd": 2699.8,
+      "n_passed": 303
+    },
+    "edge_boost": 34.4,
+    "est_cost": 108.0
+  },
+  {
+    "name": "Dynamic Ladder 2c->3c->4c (Reset @ -$450)",
+    "real": {
+      "p10_pct": 17.1,
+      "p15_pct": 30.3,
+      "p21_pct": 44.2,
+      "avg_resets_paid": 1.1,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2096.4,
+      "max_attempt_dd": 4100.6,
+      "n_passed": 623
+    },
+    "zero_edge": {
+      "p10_pct": 8.2,
+      "p15_pct": 13.6,
+      "p21_pct": 19.8,
+      "avg_resets_paid": 2.8,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2536.0,
+      "max_attempt_dd": 3597.1,
+      "n_passed": 279
+    },
+    "edge_boost": 24.4,
+    "est_cost": 103.0
+  },
+  {
+    "name": "Aggressive Dynamic 3c->4c->5c (Reset @ -$600)",
+    "real": {
+      "p10_pct": 16.3,
+      "p15_pct": 29.2,
+      "p21_pct": 43.0,
+      "avg_resets_paid": 1.0,
+      "median_sessions": 13.0,
+      "worst_day_loss": -2348.2,
+      "max_attempt_dd": 3977.6,
+      "n_passed": 605
+    },
+    "zero_edge": {
+      "p10_pct": 8.0,
+      "p15_pct": 13.5,
+      "p21_pct": 19.7,
+      "avg_resets_paid": 2.6,
+      "median_sessions": 12.0,
+      "worst_day_loss": -2787.9,
+      "max_attempt_dd": 3899.6,
+      "n_passed": 278
+    },
+    "edge_boost": 23.3,
+    "est_cost": 98.0
+  }
+]
