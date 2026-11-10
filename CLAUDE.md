@@ -97,13 +97,15 @@ When working on `quant_trading_bot`, strictly adhere to these institutional rese
 
 3. **Prop Firm Evaluation Rules ($50k Account)**:
    * **Target**: +$4,000 profit.
-   * **Trailing Drawdown Floor**: -$2,000 trailing intraday high-water mark; locks permanently at starting balance ($0.00 profit) once equity reaches +$2,000.
+   * **Static Drawdown**: the account fails if equity ever touches -$2,000 from the starting balance ($48,000). The floor does **not** trail. Nick uses Topstep's static drawdown option, which is why the target is $4,000. *(Older simulators model a trailing floor. For the Book D+ baseline the difference is small: 33.6% pass static vs 33.2% trailing.)*
    * **Daily Loss Limit (DLL)**: -$1,000 max loss in a single session.
    * **50% Consistency Rule**: No single day may account for $\ge 50\%$ of total banked profit (enforced by a daily profit cap of +$1,750).
 
-4. **Best evaluation result so far: Book D+ at fixed 6 MNQ** (training split 2010–2023, 90-day window, $4k target):
-   * Sleeves: Crabel 15m Momentum Continuation + 30m/60m Macro Trend + VIX-gated Overnight Reopen Dip. Crabel continuation trades at 6 MNQ, other sleeves at 3.
-   * **~33% pass, ~4.5–4.9% ruin**, median 27–32 trading days to pass. The other ~62% of starts are still open at day 90 (neither passed nor blown).
+4. **Best evaluation result so far: Book D+ at fixed 6 MNQ** (training split 2010–2023, $4k target):
+   * Sleeves in `research_evaluation_supercharged_train.py`: AG_CRABEL15 (15m momentum), AG_MES_TRD30 (30m trend), AG_TRD60 (60m trend). Crabel continuation trades at 6 contracts, everything else at 3.
+   * **~33% pass, ~4.5–4.9% ruin**. The other ~62% of starts are still open at the end of the window (neither passed nor blown).
+   * **⚠ "Days" in these results are days with a trade, not trading days.** Book D+ trades on only 1,098 of the 3,397 sessions in the split (32%), and the evaluation scripts step only through trade days. So the "90-day window" is really about 280 trading days (~13 months), and "median 27 days to pass" is about 84 trading days (~4 months), not ~5 weeks. Affected: `research_evaluation_supercharged_train.py`, `research_pass_rate_above_50_train.py`, `research_arch_d_plus_pass_rate.py`, `research_multi_sleeve_time_to_pass_train.py`, `generate_cushion_staged_chart.py`, `simulate_optimal_eval_strategy_train.py`. `audit_evaluation_horizons_train.py` steps through real sessions and is correct. New simulators must step through every trading session.
+   * **Baseline for the $150-day goal** (Claude, 2026-11-09; funded, static $2k drawdown, no target): about **1.1 days per month with net ≥ $150** (mean; median ~0.7), with **11.3% of accounts blown** within ~13 months. Stopping for the day at +$150 barely changes this, because most trade days have only one trade.
    * **Cushion-staged scaling (6 → 10–12 MNQ after +$1,000–1,200) made things worse** in every variant tested: 8–22% pass, 12.6–22.7% ruin.
    * No tested configuration has reached 50% pass, and none has 0% ruin.
    * Sources: `quant_trading_bot/reports/RESEARCH_PASS_RATE_ABOVE_50.json`, `quant_trading_bot/reports/EVALUATION_SUPERCHARGED_RESULTS.json`.
