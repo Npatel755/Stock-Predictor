@@ -1,0 +1,80 @@
+{
+  "Training (2010-2023) [Frozen Benchmark]": {
+    "split": "Training (2010-2023) [Frozen Benchmark]",
+    "continuous": {
+      "net_profit": 38481.6,
+      "win_rate": 41.1,
+      "profit_factor": 1.22,
+      "max_drawdown": 6774.4,
+      "worst_day": -276.8,
+      "best_day": 1163.2,
+      "active_trade_days": 1138
+    },
+    "evaluation": {
+      "passed": 315,
+      "ruined": 0,
+      "timeouts": 3069,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "mean_trade_days": 26.7,
+      "med_trade_days": 23.0,
+      "p25_trade_days": 16.0,
+      "min_trade_days": 6,
+      "mean_sessions": 50.1,
+      "avg_peak_dd": 1102.88
+    }
+  },
+  "Validation (2024-2025) [Out-of-Sample Holdout]": {
+    "split": "Validation (2024-2025) [Out-of-Sample Holdout]",
+    "continuous": {
+      "net_profit": 6396.0,
+      "win_rate": 42.3,
+      "profit_factor": 1.15,
+      "max_drawdown": 3863.2,
+      "worst_day": -276.8,
+      "best_day": 1163.2,
+      "active_trade_days": 260
+    },
+    "evaluation": {
+      "passed": 38,
+      "ruined": 0,
+      "timeouts": 378,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "mean_trade_days": 23.8,
+      "med_trade_days": 21.5,
+      "p25_trade_days": 13.0,
+      "min_trade_days": 4,
+      "mean_sessions": 45.0,
+      "avg_peak_dd": 1512.86
+    }
+  },
+  "Blind Test (2026) [Strict Holdout]": {
+    "split": "Blind Test (2026) [Strict Holdout]",
+    "continuous": {
+      "net_profit": 5263.2,
+      "win_rate": 42.9,
+      "profit_factor": 1.21,
+      "max_drawdown": 3462.4,
+      "worst_day": -276.8,
+      "best_day": 1163.2,
+      "active_trade_days": 156
+    },
+    "evaluation": {
+      "passed": 27,
+      "ruined": 0,
+      "timeouts": 92,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "mean_trade_days": 40.7,
+      "med_trade_days": 33.0,
+      "p25_trade_days": 19.0,
+      "min_trade_days": 8,
+      "mean_sessions": 48.4,
+      "avg_peak_dd": 1263.9
+    }
+  }
+}
