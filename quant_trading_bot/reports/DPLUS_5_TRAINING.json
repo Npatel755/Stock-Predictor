@@ -1,0 +1,74 @@
+{
+ "v2_1c": {
+  "net": 17576.0,
+  "trades": 1398,
+  "per": 12.57,
+  "closed_dd": 783.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 882.37,
+  "when": "2022-08-19 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0,
+  "net_per_dd": 19.92
+ },
+ "v2_2c_flat": {
+  "net": 35152.0,
+  "trades": 1398,
+  "per": 25.14,
+  "closed_dd": 1566.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1764.74,
+  "when": "2022-08-19 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0725,
+  "net_per_dd": 19.92
+ },
+ "S1_2c_on_continuation": {
+  "net": 23141.5,
+  "trades": 1398,
+  "per": 16.55,
+  "closed_dd": 999.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1026.92,
+  "when": "2023-08-23 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0005,
+  "net_per_dd": 22.53
+ },
+ "C1_2c_on_fades": {
+  "net": 20115.5,
+  "trades": 1398,
+  "per": 14.39,
+  "closed_dd": 886.75,
+  "pos_years": 11,
+  "years": 14,
+  "marked_dd": 1050.25,
+  "when": "2023-04-20 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0005,
+  "net_per_dd": 19.15
+ },
+ "gates": {
+  "npd": true,
+  "dd": true,
+  "ctrl": true,
+  "breach": true,
+  "years": true
+ },
+ "pass": true
+}

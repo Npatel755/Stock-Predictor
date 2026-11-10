@@ -326,7 +326,7 @@ FAMILIES = {
     "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon"),
     "AG All-Weather": ("ag_all_weather", "ag_all_weather_v2", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"),
     "AG Architecture C": ("ag_arch_c", "ag_arch_c_lite", "ag_arch_c_v2"),
-    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c"),
+    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize"),
     "AG Quad": ("ag_quad", "ag_quad_v2"),
     "Book A (overnight dip v2 + All-Weather v2 1c)": ("book_a", "book_a_bond", "book_a_skew"),
     "Book D+ (overnight dip + Architecture D+)": ("book_d_plus",),
@@ -377,6 +377,25 @@ CANDIDATES["ag_arch_d_plus_v2_2c"] = dict(
              dict(_dplus_sl("AG_MES_TRD30_D_2c", _AG_MES_TRD30_D, 2), day_filter_exempt=True)],
     provenance="dplus_2 scaled (reports/DPLUS_2_TRAINING.md addendum): $300 budget = 2 contracts on every v2 trade plus 1 contract on the 59 higher-ATR trades v2 skips; exact training 2010-23 stats in the addendum. Future strategy: switch once ~$900 is banked. Paper only; no routing.",
 )
+
+CANDIDATES["ag_arch_d_plus_v2_gap_addon"] = dict(
+    version="1.0.0", hidden=True, addon_of="ag_arch_d_plus_v2", addon_sleeve="AG_CRABEL15_D_1c", addon_filter="gap_continuation",
+    label="D+ v2 gap addon (hidden): the routed Crabel 15m trades whose drive agrees with the opening gap, once more",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP", _AG_CRABEL15_D, 1))],
+    provenance="dplus_4/5 (reports/DPLUS_4_TRAINING.md, DPLUS_5_TRAINING.md), training 2010-23: gap-continuation drives +5,566 / 261 trades / $21.32 per trade / 13 of 14 years "
+               "vs fades +2,540 / 232 / $10.95 / 7 of 14. Gap = 09:30 15m-bar open minus previous RTH close, known before the 09:45 decision. Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gapsize"] = dict(
+    version="1.0.0", category="future",
+    book=[["ag_arch_d_plus_v2", "ag_arch_d_plus_v2_gap_addon"]],
+    label="FUTURE - D+ v2 gap-sized (D+ v2; 2 contracts on Crabel 15m drives that agree with the opening gap, else 1; standard $150-per-contract budget)",
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2", "ag_arch_d_plus_v2_gap_addon") for sl in CANDIDATES[k]["sleeves"]],
+    provenance="dplus_5 (reports/DPLUS_5_TRAINING.md), training 2010-23, derived from dplus_4 (one-split evidence): +23,142 / $16.55 per trade / 12 of 14 years / closed DD 999 / "
+               "marked DD 1,027 / 0 touches of $2k / 1-y breach 0.05% / net per marked DD 22.5 vs 19.9 for D+ v2 1c and the flat 2c; mirror control (2c on fades) +20,116 / "
+               "marked DD 1,050. All 5 pre-registered gates passed. Engine check: Crabel at 2c is exactly 2x the 1c trades under the same budget. Paper only; no routing.",
+)
+
 
 CANDIDATES["overnight_dip_v2_vix"] = dict(
     version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, state="not_backwardation", hidden=True,
@@ -688,7 +707,44 @@ def _interval_block(iv):
     return f
 
 
+def gap_sign_by_day(b):
+    """Opening-gap sign per ET trading date: open of the first RTH bar (>= 09:30 ET) minus the previous date's last RTH close (<= 16:00 ET).
+    Known at 09:30, before the Crabel 15m decision (09:45). dplus_4/5 definition."""
+    loc = b.timestamp_utc.dt.tz_convert("America/New_York"); m = (loc.dt.hour * 60 + loc.dt.minute).to_numpy(); day = loc.dt.date.to_numpy()
+    rth = (m >= 570) & (m <= 960)
+    if not rth.any(): return {}
+    f = pd.DataFrame(dict(day=day[rth], o=b.open.to_numpy()[rth], c=b.close.to_numpy()[rth]))
+    g = f.groupby("day").agg(o=("o", "first"), c=("c", "last")); gap = g["o"] - g["c"].shift(1)
+    return {d: int(np.sign(v)) for d, v in gap.dropna().items()}
+
+
+def gap_filter_run(run, b):
+    """Keep only trades whose side agrees with the opening gap (side * gap >= 0; a zero gap agrees with both). Removed trades leave the
+    curve as if never taken (cash/equity/worst reduced by their net after exit, flat during the trade). An open disagreeing position is
+    reported flat."""
+    gs = gap_sign_by_day(b); et = lambda ts: pd.Timestamp(ts).tz_convert("America/New_York").date()
+    keep = [int(t["side"]) * gs.get(et(t["entry_ts"]), 0) >= 0 for t in run["trades"]]
+    curve = run["curve"].copy(); ts = pd.to_datetime(curve["ts"], utc=True)
+    for t, k in zip(run["trades"], keep):
+        if k: continue
+        after = (ts >= pd.Timestamp(t["exit_ts"])).to_numpy(); during = ((ts >= pd.Timestamp(t["entry_ts"])) & ~after).to_numpy()
+        for col in ("cash", "equity", "worst"): curve[col] = curve[col] - float(t["net"]) * after
+        curve.loc[during, "equity"] = curve.loc[during, "cash"]; curve.loc[during, "worst"] = curve.loc[during, "cash"]
+    out = dict(run, trades=[t for t, k in zip(run["trades"], keep) if k], entry_bars=[e for e, k in zip(run["entry_bars"], keep) if k], curve=curve)
+    pos = run["position"]
+    if pos.get("quantity") and run.get("open_since") and int(np.sign(pos["quantity"])) * gs.get(et(run["open_since"]), 0) < 0:
+        out["position"] = dict(pos, quantity=0, unrealized=0.0); out["open_since"] = None
+    return out
+
+
 def run_routed(spec, bars, start, max_iter=12, extra_block=None):
+    if spec.get("addon_of"):
+        # Sizing addon (dplus_5): re-run the base candidate exactly (same router, same blocks), keep one sleeve's trades that pass the
+        # state filter, and publish them under the addon sleeve name; in a ``book`` group with the base this doubles those trades.
+        base = run_routed(CANDIDATES[spec["addon_of"]], bars, start, max_iter, extra_block)
+        src_name, out_name = spec["addon_sleeve"], spec["sleeves"][0]["name"]
+        b = bars[bars_key(spec["sleeves"][0])]
+        return {out_name: gap_filter_run(base[src_name], b) if spec.get("addon_filter") == "gap_continuation" else base[src_name]}
     if spec.get("book"):
         # Two frozen candidates as one 1-contract account: the overnight leg runs first; the intraday leg's decision bars that fall while a night
         # position is open are blocked (training: 0 such overlaps, portfolio_4). Component ledgers are untouched.
