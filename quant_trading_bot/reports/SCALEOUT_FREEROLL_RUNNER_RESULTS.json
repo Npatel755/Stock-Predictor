@@ -1,0 +1,44 @@
+{
+  "s1": {
+    "label": "Scale-Out Free-Roll (4 Contracts: 2 Banked + 2 Runners)",
+    "net": 11241.2,
+    "max_dd": 3650.8,
+    "worst_day": -138.4,
+    "days_over_500": 118,
+    "days_over_1000": 0,
+    "days_over_1500": 0,
+    "clean_pass_5d": 0,
+    "pct_clean_pass_5d": 0.0,
+    "ruined_5d": 0,
+    "pct_ruin_5d": 0.0,
+    "pct_safe_5d": 100.0
+  },
+  "s2": {
+    "label": "Scale-Out Free-Roll (6 Contracts: 3 Banked + 3 Runners)",
+    "net": 16861.8,
+    "max_dd": 5476.2,
+    "worst_day": -207.6,
+    "days_over_500": 146,
+    "days_over_1000": 0,
+    "days_over_1500": 0,
+    "clean_pass_5d": 0,
+    "pct_clean_pass_5d": 0.0,
+    "ruined_5d": 0,
+    "pct_ruin_5d": 0.0,
+    "pct_safe_5d": 100.0
+  },
+  "s3": {
+    "label": "Scale-Out Free-Roll (8 Contracts: 4 Banked + 4 Runners)",
+    "net": 22482.4,
+    "max_dd": 7301.6,
+    "worst_day": -276.8,
+    "days_over_500": 189,
+    "days_over_1000": 118,
+    "days_over_1500": 0,
+    "clean_pass_5d": 0,
+    "pct_clean_pass_5d": 0.0,
+    "ruined_5d": 10,
+    "pct_ruin_5d": 0.29,
+    "pct_safe_5d": 99.71
+  }
+}
