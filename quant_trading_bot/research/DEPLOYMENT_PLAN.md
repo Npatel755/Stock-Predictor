@@ -29,3 +29,13 @@ $2,043. Cost: first-year median net about half of Book A's (+$526 vs +$1,026) an
   sections) is frozen out of the ladder until reviewed; no parameter is changed in response.
 - A paper-vs-research divergence (runner `divergences` > 0) on any ladder ledger blocks promotion until reconciled.
 - 2024-26 are never scored to make these decisions.
+
+## Account-rules update (2026-11-09, from Nick's Topstep / Tradeify notes; basis reports/FUNDED_1_TRAINING.md)
+- Target account: Topstep $50k Daily Payouts+ **Static** ($2k fixed floor, $1k daily loss limit, $4k evaluation target with 55 % best-day consistency;
+  cap 50 micros / 5 minis, scaling plan after funding). Verify the current policy text before purchase - these rules are Nick's notes, not checked by Devin.
+- Evaluation (sim, only the fee at risk): run gap-sized D+ (`ag_arch_d_plus_v2_gapsize` rules) at **3 micros**: engine-exact training odds 36 % pass /
+  0.6 % fail per 12-month start under static rules (40 % / 3 % under trailing), median ~5-7 weeks when it passes; plan for 1-3 attempts. Not 4c (fails rise faster).
+- Funded phase: the ladder above, unchanged - but with a static floor banked profit protects immediately, so Stage 1 (Book A) starts when $500 is banked,
+  no lock wait. Under static + $1k DLL every ladder stage except the 2c books is clean in all 157 training starts; the 2c overnight / SKEW books hit the DLL
+  in 8-23 % of years, so Stage 2 (SKEW-sized book) is held back until the DLL semantics are confirmed, or the account has no DLL (Tradeify Select Flex).
+- Payouts: 5 winning days >= $150 is slow at 1c (1-5 such days a year); the 40 % consistency path is satisfied by every configuration (best day 20-35 % of net).
