@@ -1,0 +1,44 @@
+{
+  "12c": {
+    "label": "Scale-Out Runner: 12 MNQ (Aggressive Sprint Tier)",
+    "total_trials": 4129,
+    "passed": 616,
+    "ruined": 1971,
+    "pass_rate_pct": 14.92,
+    "ruin_rate_pct": 47.74,
+    "min_days": 4,
+    "avg_days": 36.6,
+    "median_days": 30.0,
+    "p25_days": 17.0,
+    "p75_days": 55.0,
+    "max_days": 90
+  },
+  "8c": {
+    "label": "Scale-Out Runner: 8 MNQ (Balanced Tier)",
+    "total_trials": 4129,
+    "passed": 616,
+    "ruined": 1485,
+    "pass_rate_pct": 14.92,
+    "ruin_rate_pct": 35.97,
+    "min_days": 6,
+    "avg_days": 48.7,
+    "median_days": 46.5,
+    "p25_days": 29.0,
+    "p75_days": 68.0,
+    "max_days": 90
+  },
+  "6c": {
+    "label": "Scale-Out Runner: 6 MNQ (High-Survival Conservative Tier)",
+    "total_trials": 4129,
+    "passed": 343,
+    "ruined": 1124,
+    "pass_rate_pct": 8.31,
+    "ruin_rate_pct": 27.22,
+    "min_days": 8,
+    "avg_days": 52.0,
+    "median_days": 50.0,
+    "p25_days": 35.5,
+    "p75_days": 68.0,
+    "max_days": 90
+  }
+}
