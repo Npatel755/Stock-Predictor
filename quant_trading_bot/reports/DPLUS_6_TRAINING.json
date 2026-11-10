@@ -1,0 +1,154 @@
+{
+ "base": {
+  "net": 17576.0,
+  "trades": 1398,
+  "per": 12.57,
+  "closed_dd": 783.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 882.37,
+  "when": "2022-08-19 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0,
+  "net_per_dd": 19.92
+ },
+ "AG_TRD60_D_1c": {
+  "aligned": {
+   "net": 6662.0,
+   "trades": 673,
+   "per": 9.9,
+   "closed_dd": 1049.0,
+   "pos_years": 9,
+   "years": 14
+  },
+  "opposed": {
+   "net": -83.0,
+   "trades": 4,
+   "per": -20.75,
+   "closed_dd": 164.5,
+   "pos_years": 1,
+   "years": 3
+  },
+  "placebo_worse_of_200": 148,
+  "real": false
+ },
+ "AG_MES_TRD30_D_1c": {
+  "aligned": {
+   "net": 1987.75,
+   "trades": 151,
+   "per": 13.16,
+   "closed_dd": 434.75,
+   "pos_years": 7,
+   "years": 14
+  },
+  "opposed": {
+   "net": 904.25,
+   "trades": 77,
+   "per": 11.74,
+   "closed_dd": 300.0,
+   "pos_years": 7,
+   "years": 14
+  },
+  "placebo_worse_of_200": 115,
+  "real": false
+ },
+ "S1_gapsized_crabel": {
+  "net": 23141.5,
+  "trades": 1398,
+  "per": 16.55,
+  "closed_dd": 999.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1026.92,
+  "when": "2023-08-23 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0005,
+  "net_per_dd": 22.53
+ },
+ "S2_plus_60m_aligned": {
+  "net": 29803.5,
+  "trades": 1398,
+  "per": 21.32,
+  "closed_dd": 1514.5,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1680.99,
+  "when": "2022-08-19 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0455,
+  "net_per_dd": 17.73
+ },
+ "C2_plus_60m_opposed": {
+  "net": 23058.5,
+  "trades": 1398,
+  "per": 16.49,
+  "closed_dd": 1075.0,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1075.0,
+  "when": "2023-12-29 18:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0005,
+  "net_per_dd": 21.45
+ },
+ "S3_plus_mes_aligned": {
+  "net": 25129.25,
+  "trades": 1398,
+  "per": 17.98,
+  "closed_dd": 1072.75,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1112.67,
+  "when": "2023-08-23 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.002,
+  "net_per_dd": 22.58
+ },
+ "C3_plus_mes_opposed": {
+  "net": 24045.75,
+  "trades": 1398,
+  "per": 17.2,
+  "closed_dd": 987.25,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1125.33,
+  "when": "2023-12-13 20:30:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0005,
+  "net_per_dd": 21.37
+ },
+ "S4_all_aligned_2c": {
+  "net": 31791.25,
+  "trades": 1398,
+  "per": 22.74,
+  "closed_dd": 1588.25,
+  "pos_years": 12,
+  "years": 14,
+  "marked_dd": 1654.24,
+  "when": "2022-08-19 14:00:00+00:00",
+  "touches": {
+   "2000": 0,
+   "2500": 0
+  },
+  "breach_1y": 0.0545,
+  "net_per_dd": 19.22
+ }
+}
