@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Baseline: All 4 Sleeves (3c/2c/3c/2c)",
+    "real": {
+      "p10": 13.6,
+      "p15": 26.6,
+      "p21": 43.0,
+      "resets": 0.8,
+      "median_days": 13.0,
+      "worst_day": -1355.8,
+      "dll_breaches": 219
+    },
+    "zero": {
+      "p10": 6.4,
+      "p15": 11.6,
+      "p21": 17.1,
+      "resets": 1.4,
+      "median_days": 12.0,
+      "worst_day": -1685.6,
+      "dll_breaches": 988
+    },
+    "boost": 25.9,
+    "cost": 88.0
+  },
+  {
+    "name": "Exp 1: With ZN Bond Filter on Overnight",
+    "real": {
+      "p10": 14.8,
+      "p15": 29.4,
+      "p21": 46.4,
+      "resets": 0.7,
+      "median_days": 13.0,
+      "worst_day": -1355.8,
+      "dll_breaches": 230
+    },
+    "zero": {
+      "p10": 7.4,
+      "p15": 12.8,
+      "p21": 18.9,
+      "resets": 1.4,
+      "median_days": 12.0,
+      "worst_day": -1685.6,
+      "dll_breaches": 1021
+    },
+    "boost": 27.5,
+    "cost": 83.0
+  },
+  {
+    "name": "Exp 2: Top 3 High-Win-Rate Sleeves (Drop TRD60 drag)",
+    "real": {
+      "p10": 14.3,
+      "p15": 28.0,
+      "p21": 44.9,
+      "resets": 0.8,
+      "median_days": 14.0,
+      "worst_day": -1355.8,
+      "dll_breaches": 216
+    },
+    "zero": {
+      "p10": 7.6,
+      "p15": 12.3,
+      "p21": 17.3,
+      "resets": 1.9,
+      "median_days": 11.5,
+      "worst_day": -1685.6,
+      "dll_breaches": 1011
+    },
+    "boost": 27.6,
+    "cost": 88.0
+  },
+  {
+    "name": "Exp 3: Top 3 Sleeves + ZN Bond Filter",
+    "real": {
+      "p10": 21.0,
+      "p15": 37.6,
+      "p21": 54.5,
+      "resets": 0.9,
+      "median_days": 12.0,
+      "worst_day": -1355.8,
+      "dll_breaches": 212
+    },
+    "zero": {
+      "p10": 8.0,
+      "p15": 14.4,
+      "p21": 21.8,
+      "resets": 1.7,
+      "median_days": 13.0,
+      "worst_day": -1685.6,
+      "dll_breaches": 1047
+    },
+    "boost": 32.7,
+    "cost": 93.0
+  },
+  {
+    "name": "Exp 4: High-Conviction Core (Crabel 4c, Night 2c, MES 3c)",
+    "real": {
+      "p10": 13.5,
+      "p15": 27.6,
+      "p21": 41.5,
+      "resets": 1.1,
+      "median_days": 13.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 474
+    },
+    "zero": {
+      "p10": 5.3,
+      "p15": 9.7,
+      "p21": 14.6,
+      "resets": 1.2,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1317
+    },
+    "boost": 26.9,
+    "cost": 103.0
+  },
+  {
+    "name": "Exp 5: Conviction Core + ZN Filter (Crabel 4c, Night 2c, MES 3c)",
+    "real": {
+      "p10": 15.7,
+      "p15": 29.8,
+      "p21": 44.6,
+      "resets": 1.1,
+      "median_days": 13.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 530
+    },
+    "zero": {
+      "p10": 6.8,
+      "p15": 12.8,
+      "p21": 19.7,
+      "resets": 1.4,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1343
+    },
+    "boost": 24.9,
+    "cost": 103.0
+  },
+  {
+    "name": "Exp 6: Conviction Core + Reset @ -$400",
+    "real": {
+      "p10": 14.0,
+      "p15": 28.0,
+      "p21": 42.2,
+      "resets": 1.2,
+      "median_days": 13.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 474
+    },
+    "zero": {
+      "p10": 5.3,
+      "p15": 9.8,
+      "p21": 15.0,
+      "resets": 1.2,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1314
+    },
+    "boost": 27.2,
+    "cost": 108.0
+  }
+]

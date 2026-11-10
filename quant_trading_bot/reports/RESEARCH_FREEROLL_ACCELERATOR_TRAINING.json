@@ -1,0 +1,146 @@
+[
+  {
+    "name": "No Accelerator (Flat 1.0x Base)",
+    "real": {
+      "p10": 13.7,
+      "p15": 28.0,
+      "p21": 44.2,
+      "resets": 0.7,
+      "median_days": 13.0,
+      "worst_day": -1401.2,
+      "dll_breaches": 266,
+      "n_passed": 623
+    },
+    "zero": {
+      "p10": 6.3,
+      "p15": 12.1,
+      "p21": 18.4,
+      "resets": 1.4,
+      "median_days": 13.0,
+      "worst_day": -1730.9,
+      "dll_breaches": 1028,
+      "n_passed": 259
+    },
+    "boost": 25.8
+  },
+  {
+    "name": "Gentle Sprint (1.33x @ $1500, 1.67x @ $2800)",
+    "real": {
+      "p10": 13.1,
+      "p15": 27.4,
+      "p21": 42.0,
+      "resets": 0.7,
+      "median_days": 13.0,
+      "worst_day": -1401.2,
+      "dll_breaches": 353,
+      "n_passed": 591
+    },
+    "zero": {
+      "p10": 5.1,
+      "p15": 10.9,
+      "p21": 16.8,
+      "resets": 1.3,
+      "median_days": 14.0,
+      "worst_day": -1839.5,
+      "dll_breaches": 1024,
+      "n_passed": 237
+    },
+    "boost": 25.2
+  },
+  {
+    "name": "Moderate Sprint (1.50x @ $1500, 2.00x @ $2800)",
+    "real": {
+      "p10": 11.2,
+      "p15": 23.7,
+      "p21": 35.1,
+      "resets": 0.6,
+      "median_days": 13.0,
+      "worst_day": -1484.0,
+      "dll_breaches": 334,
+      "n_passed": 494
+    },
+    "zero": {
+      "p10": 4.0,
+      "p15": 9.4,
+      "p21": 15.1,
+      "resets": 1.4,
+      "median_days": 14.0,
+      "worst_day": -2077.8,
+      "dll_breaches": 989,
+      "n_passed": 212
+    },
+    "boost": 20.0
+  },
+  {
+    "name": "Early Sprint (1.50x @ $1200, 2.00x @ $2500)",
+    "real": {
+      "p10": 10.9,
+      "p15": 23.4,
+      "p21": 35.8,
+      "resets": 0.7,
+      "median_days": 13.0,
+      "worst_day": -1484.0,
+      "dll_breaches": 397,
+      "n_passed": 504
+    },
+    "zero": {
+      "p10": 3.9,
+      "p15": 9.2,
+      "p21": 15.7,
+      "resets": 1.3,
+      "median_days": 14.0,
+      "worst_day": -2077.8,
+      "dll_breaches": 1002,
+      "n_passed": 221
+    },
+    "boost": 20.1
+  },
+  {
+    "name": "Aggressive Sprint (1.67x @ $1200, 2.33x @ $2500)",
+    "real": {
+      "p10": 8.9,
+      "p15": 20.1,
+      "p21": 31.4,
+      "resets": 0.6,
+      "median_days": 14.0,
+      "worst_day": -1505.2,
+      "dll_breaches": 321,
+      "n_passed": 442
+    },
+    "zero": {
+      "p10": 4.3,
+      "p15": 9.4,
+      "p21": 15.3,
+      "resets": 1.4,
+      "median_days": 14.0,
+      "worst_day": -2129.8,
+      "dll_breaches": 934,
+      "n_passed": 215
+    },
+    "boost": 16.1
+  },
+  {
+    "name": "Ultra Sprint (2.00x @ $1200, 2.50x @ $2500)",
+    "real": {
+      "p10": 8.0,
+      "p15": 18.3,
+      "p21": 30.5,
+      "resets": 0.6,
+      "median_days": 14.0,
+      "worst_day": -1710.5,
+      "dll_breaches": 302,
+      "n_passed": 429
+    },
+    "zero": {
+      "p10": 4.4,
+      "p15": 9.4,
+      "p21": 14.1,
+      "resets": 1.4,
+      "median_days": 13.0,
+      "worst_day": -2285.2,
+      "dll_breaches": 899,
+      "n_passed": 199
+    },
+    "boost": 16.4
+  }
+]
