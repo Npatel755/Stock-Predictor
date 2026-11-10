@@ -18,3 +18,13 @@ Addendum 2 (declared after the DLL composition check, before running): the 5 day
 (2022-12-13) - which the $600 daily stop does cut - and (b) four days where a 6-micro Crabel continuation trade lost $730-770 (a stop gapped through).
 Derived cells (dplus_7c), same gate: k = 3, lock $6,000, daily_loss $600, and the Crabel doubling applied only when the 3c trade's stop risk is
 <= {$300, $250} (so the doubled trade risks <= $600 / $500); trades above the cap stay at 3 micros. Reference: no cap (= the daily-$600 cell).
+
+Addendum 3 (dplus_7d, declared before running): the four gap-through days each carry a 6-micro Crabel trade; cells = continuation multiplier
+{5/3 (5 micros), 4/3 (4 micros)} on the 3c v3 base (lock $6,000, daily stop $600), post-hoc scaling of the routed Crabel trade (exact per contract).
+Same gate. If a cell passes it is deployed as `ag_arch_d_plus_v2_gapsize_3c_v4` (DLL-safe $150 version); v3 stays as the no-DLL version.
+
+Addendum 4 (dplus_7e, declared before running): 7d left one >= $1k day (2022-12-13: four 3-micro trend stops; the engine's daily stop is per sleeve,
+so the account's day was never stopped). Cell: an ACCOUNT-level daily stop - no new entry on any sleeve once the day's realised P&L <= -X,
+X in {600, 500, 400}; open trades run to their exits - on the 7d continuation sizes {4, 5 micros}. Post-hoc removal of later entries (router re-fill
+ignored; stated). Same gate. A passing cell is implemented in the runner as a book-level daily stop (new feature, iterative block like the router) and
+checked for parity before any ledger.
