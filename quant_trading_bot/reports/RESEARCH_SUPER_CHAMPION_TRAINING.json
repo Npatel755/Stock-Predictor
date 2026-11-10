@@ -1,0 +1,186 @@
+[
+  {
+    "name": "Exp 3 Champion Baseline (3c/2c/3c, No Guard)",
+    "real": {
+      "p10": 21.0,
+      "p15": 37.6,
+      "p21": 54.5,
+      "resets": 0.9,
+      "median_days": 12.0,
+      "worst_day": -1355.8,
+      "dll_breaches": 212
+    },
+    "zero": {
+      "p10": 8.0,
+      "p15": 14.4,
+      "p21": 21.8,
+      "resets": 1.7,
+      "median_days": 13.0,
+      "worst_day": -1685.6,
+      "dll_breaches": 1035
+    },
+    "boost": 32.7,
+    "cost": 93.0
+  },
+  {
+    "name": "Config A: + Overnight Loss Guard",
+    "real": {
+      "p10": 21.1,
+      "p15": 37.6,
+      "p21": 54.5,
+      "resets": 0.9,
+      "median_days": 12.0,
+      "worst_day": -1355.8,
+      "dll_breaches": 212
+    },
+    "zero": {
+      "p10": 8.0,
+      "p15": 14.4,
+      "p21": 22.0,
+      "resets": 1.7,
+      "median_days": 13.0,
+      "worst_day": -1685.6,
+      "dll_breaches": 1035
+    },
+    "boost": 32.5,
+    "cost": 93.0
+  },
+  {
+    "name": "Config B: + VIX Volatility Bonus (+1c Crabel)",
+    "real": {
+      "p10": 16.3,
+      "p15": 29.9,
+      "p21": 44.0,
+      "resets": 0.9,
+      "median_days": 12.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 251
+    },
+    "zero": {
+      "p10": 7.0,
+      "p15": 12.7,
+      "p21": 19.3,
+      "resets": 1.3,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 966
+    },
+    "boost": 24.7,
+    "cost": 93.0
+  },
+  {
+    "name": "Config C: VIX Bonus + Overnight Guard",
+    "real": {
+      "p10": 16.3,
+      "p15": 29.9,
+      "p21": 44.1,
+      "resets": 0.9,
+      "median_days": 12.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 251
+    },
+    "zero": {
+      "p10": 7.0,
+      "p15": 12.7,
+      "p21": 19.3,
+      "resets": 1.3,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 945
+    },
+    "boost": 24.8,
+    "cost": 93.0
+  },
+  {
+    "name": "Config D: High Conviction (Crabel 4c, Night 2c, MES 2c)",
+    "real": {
+      "p10": 15.4,
+      "p15": 29.5,
+      "p21": 42.6,
+      "resets": 1.2,
+      "median_days": 12.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 532
+    },
+    "zero": {
+      "p10": 6.9,
+      "p15": 13.9,
+      "p21": 21.9,
+      "resets": 1.6,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1352
+    },
+    "boost": 20.7,
+    "cost": 108.0
+  },
+  {
+    "name": "Config E: High Conviction + Guard (Crabel 4c, Night 2c)",
+    "real": {
+      "p10": 15.3,
+      "p15": 29.5,
+      "p21": 42.3,
+      "resets": 1.2,
+      "median_days": 12.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 532
+    },
+    "zero": {
+      "p10": 6.9,
+      "p15": 13.9,
+      "p21": 21.9,
+      "resets": 1.6,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1331
+    },
+    "boost": 20.4,
+    "cost": 108.0
+  },
+  {
+    "name": "Config F: High Conviction + Reset @ -$450",
+    "real": {
+      "p10": 15.4,
+      "p15": 29.5,
+      "p21": 42.5,
+      "resets": 1.2,
+      "median_days": 12.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 531
+    },
+    "zero": {
+      "p10": 6.9,
+      "p15": 13.9,
+      "p21": 21.9,
+      "resets": 1.7,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1331
+    },
+    "boost": 20.6,
+    "cost": 108.0
+  },
+  {
+    "name": "Config G: High Conviction + Reset @ -$550",
+    "real": {
+      "p10": 15.1,
+      "p15": 29.1,
+      "p21": 41.8,
+      "resets": 1.1,
+      "median_days": 12.0,
+      "worst_day": -1349.3,
+      "dll_breaches": 532
+    },
+    "zero": {
+      "p10": 6.9,
+      "p15": 13.9,
+      "p21": 21.9,
+      "resets": 1.6,
+      "median_days": 13.0,
+      "worst_day": -1789.0,
+      "dll_breaches": 1331
+    },
+    "boost": 19.9,
+    "cost": 103.0
+  }
+]

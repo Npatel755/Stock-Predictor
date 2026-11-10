@@ -1,0 +1,132 @@
+[
+  {
+    "name": "1. Conservative 2c Base (Crabel 2c, Night 2c, MES 2c)",
+    "real": {
+      "p10": 0.0,
+      "p15": 0.0,
+      "p21": 0.1,
+      "p42": 3.1,
+      "p63": 8.2,
+      "resets": 0.1,
+      "median_days": 48.0,
+      "worst_day": -623.7,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p10": 0.0,
+      "p15": 0.0,
+      "p21": 0.1,
+      "p42": 1.0,
+      "p63": 3.5,
+      "resets": 0.1,
+      "median_days": 49.0,
+      "worst_day": -814.2,
+      "dll_breaches": 0
+    },
+    "alpha_3m": 4.7
+  },
+  {
+    "name": "2. Balanced 3c Base (Crabel 3c, Night 2c, MES 2.5c)",
+    "real": {
+      "p10": 0.1,
+      "p15": 0.3,
+      "p21": 1.2,
+      "p42": 7.6,
+      "p63": 17.2,
+      "resets": 0.3,
+      "median_days": 45.0,
+      "worst_day": -735.4,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p10": 0.0,
+      "p15": 0.1,
+      "p21": 0.3,
+      "p42": 2.6,
+      "p63": 5.5,
+      "resets": 0.2,
+      "median_days": 44.0,
+      "worst_day": -906.1,
+      "dll_breaches": 0
+    },
+    "alpha_3m": 11.7
+  },
+  {
+    "name": "3. Sprint 4c Base (Crabel Cont 4c, Fade 2c, Night 2c, MES 3c)",
+    "real": {
+      "p10": 0.2,
+      "p15": 0.7,
+      "p21": 1.8,
+      "p42": 8.7,
+      "p63": 18.7,
+      "resets": 0.4,
+      "median_days": 44.0,
+      "worst_day": -709.9,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p10": 0.2,
+      "p15": 0.6,
+      "p21": 1.5,
+      "p42": 5.6,
+      "p63": 10.2,
+      "resets": 0.9,
+      "median_days": 40.0,
+      "worst_day": -955.5,
+      "dll_breaches": 0
+    },
+    "alpha_3m": 8.5
+  },
+  {
+    "name": "4. High-Octane 5c (Crabel Cont 5c, Fade 2c, Night 2.5c, MES 3.5c)",
+    "real": {
+      "p10": 0.0,
+      "p15": 0.5,
+      "p21": 1.9,
+      "p42": 7.8,
+      "p63": 14.7,
+      "resets": 0.4,
+      "median_days": 41.0,
+      "worst_day": -736.2,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p10": 0.0,
+      "p15": 0.3,
+      "p21": 1.2,
+      "p42": 4.5,
+      "p63": 8.8,
+      "resets": 0.5,
+      "median_days": 42.0,
+      "worst_day": -1043.1,
+      "dll_breaches": 126
+    },
+    "alpha_3m": 5.9
+  },
+  {
+    "name": "5. Super Sprint (Crabel Cont 6c, Fade 2c, Night 2c, MES 4c)",
+    "real": {
+      "p10": 0.1,
+      "p15": 0.6,
+      "p21": 1.4,
+      "p42": 5.7,
+      "p63": 13.7,
+      "resets": 0.4,
+      "median_days": 46.0,
+      "worst_day": -736.1,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p10": 0.0,
+      "p15": 0.3,
+      "p21": 0.6,
+      "p42": 2.0,
+      "p63": 4.8,
+      "resets": 0.1,
+      "median_days": 46.0,
+      "worst_day": -1104.5,
+      "dll_breaches": 378
+    },
+    "alpha_3m": 8.9
+  }
+]

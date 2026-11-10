@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Core 3-Sleeve (Crabel 3c/1.5c, Night 2c, MES 2.5c)",
+    "real": {
+      "p15": 0.2,
+      "p25": 1.8,
+      "p35": 4.8,
+      "p45": 8.5,
+      "p60": 15.6,
+      "resets": 0.3,
+      "median_days": 44.0,
+      "worst_day": -735.4,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p15": 0.1,
+      "p25": 0.6,
+      "p35": 1.7,
+      "p45": 2.8,
+      "p60": 5.1,
+      "resets": 0.2,
+      "median_days": 42.0,
+      "worst_day": -906.1,
+      "dll_breaches": 0
+    },
+    "alpha": 10.5
+  },
+  {
+    "name": "Core 4-Sleeve (+ TRD30PM Afternoon Trend 1c)",
+    "real": {
+      "p15": 0.3,
+      "p25": 2.0,
+      "p35": 5.8,
+      "p45": 11.9,
+      "p60": 20.9,
+      "resets": 0.3,
+      "median_days": 43.0,
+      "worst_day": -735.4,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p15": 0.1,
+      "p25": 1.0,
+      "p35": 2.4,
+      "p45": 4.1,
+      "p60": 7.9,
+      "resets": 0.8,
+      "median_days": 44.0,
+      "worst_day": -906.1,
+      "dll_breaches": 0
+    },
+    "alpha": 13.0
+  },
+  {
+    "name": "Sprint 3-Sleeve (Crabel 4c/2c, Night 2.5c, MES 3c)",
+    "real": {
+      "p15": 0.7,
+      "p25": 2.6,
+      "p35": 5.4,
+      "p45": 10.4,
+      "p60": 17.8,
+      "resets": 0.5,
+      "median_days": 43.0,
+      "worst_day": -709.9,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p15": 0.6,
+      "p25": 2.1,
+      "p35": 4.3,
+      "p45": 6.1,
+      "p60": 10.0,
+      "resets": 1.0,
+      "median_days": 39.0,
+      "worst_day": -955.5,
+      "dll_breaches": 0
+    },
+    "alpha": 7.8
+  },
+  {
+    "name": "Aggressive 3-Sleeve (Crabel 5c/2c, Night 2.5c, MES 3.5c)",
+    "real": {
+      "p15": 0.5,
+      "p25": 2.5,
+      "p35": 5.5,
+      "p45": 8.4,
+      "p60": 13.4,
+      "resets": 0.4,
+      "median_days": 40.0,
+      "worst_day": -736.2,
+      "dll_breaches": 0
+    },
+    "zero": {
+      "p15": 0.1,
+      "p25": 1.3,
+      "p35": 2.5,
+      "p45": 4.3,
+      "p60": 7.8,
+      "resets": 0.3,
+      "median_days": 44.0,
+      "worst_day": -1043.1,
+      "dll_breaches": 120
+    },
+    "alpha": 5.6
+  }
+]
