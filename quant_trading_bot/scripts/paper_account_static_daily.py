@@ -302,7 +302,7 @@ def main(argv=None):
         r["prio"] = prio.get(r["sleeve"], 0); r["dec"] = r["tin"] - pd.Timedelta(minutes=int(specs.get(r["sleeve"], {}).get("bar_minutes", 15)))
     pool = attach_mae(vr + extra_rows(x) + night_rows(n), specs, bars)
     book_c = route_book(pool); book_s = route_book_strict(pool); book_3 = attach_mae(group_intraday(v) + night_rows(n), specs, bars)
-    res["evaluation_strict"] = dict(evaluation(book_s, start, combined_rule), name="PLAN: one position at a time + 2 Codex sleeves, defensive + endgame",
+    res["evaluation_strict"] = dict(evaluation(book_s, start, combined_rule), name="one position at a time + 2 Codex sleeves, defensive + endgame",
                                     rolling=rolling(book_s, start, combined_rule), status_note="the plan for a real Combine (Nick 2026-11-11)",
                                     extra_taken=sum(1 for r in book_s if r["sleeve"] in EXTRA_PRIO), trades=sum(1 for r in book_s if not r["night"]),
                                     rule="causal one-position routing; 3x; 2x at <= -$500; 1x at <= -$1,000; from day 60, > $1,000 short and above -$500: 5x; $900 risk cap per trade",

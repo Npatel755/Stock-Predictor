@@ -580,3 +580,8 @@
   now spent for this comparison too; only forward paper is independent from here.
 - Paper replay since 2026-11-11: PLAN card `evaluation_strict` (route_book_strict, causal); all evaluation cards check the floor and DLL
   intraday (day_pnl_intraday, worst points from the runner's 1-minute bars). Deploy to the droplet needs Nick's SSH key unlocked.
+- DEPLOYED 2026-11-11 ~19:30 UTC (Nick: "do it"): droplet replay /opt/futures-paper/app/scripts/paper_account_static_daily.py (backup
+  .bak_20261111_claude = 11aaef1 version) and the dashboard webhook /opt/eth-paper/paper_webhook.py (PLAN card patched in at two anchors;
+  backup .bak_1794424768; eth-paper restarted). Dry run on a /tmp copy first: existing cards unchanged (champion +$113.25, challenger
+  +$783.75, funded +$37.75); PLAN card +$471.75 (one position at a time took 1 of the 2 Codex trades). Live https://143-198-126-83.sslip.io/futures
+  HTTP 200 with the PLAN card. Undo: restore the two backups and restart eth-paper.
