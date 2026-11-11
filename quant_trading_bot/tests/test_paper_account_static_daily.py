@@ -103,6 +103,9 @@ def test_chameleon_and_sprint():
     assert acct.CHAMELEON_3TIER_K == 8400.0
     assert acct.CHAMELEON_3TIER_GATE1 == 8500.0
     assert acct.CHAMELEON_3TIER_GATE2 == 9600.0
+    assert acct.CHAMELEON_FORTIFIED_3TIER_K == 8600.0
+    assert acct.CHAMELEON_FORTIFIED_3TIER_GATE1 == 8700.0
+    assert acct.CHAMELEON_FORTIFIED_3TIER_GATE2 == 10000.0
     # Test sprint mode takes $500 at $6,000
     rows = days(30, 300.0, risk=100.0)
     f = acct.funded(rows, pd.Timestamp("2026-01-05").date(), acct.CHAMELEON_CROWN_LADDER, acct.CHAMELEON_CROWN_K, sprint=True)

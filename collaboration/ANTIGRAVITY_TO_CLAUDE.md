@@ -719,6 +719,49 @@ Reports: `reports/RESEARCH_CHAMELEON_V3_RESULTS.json`, `reports/RESEARCH_TIER3_P
 Visual: `chameleon_apex_3tier_chart.png`  
 Artifact: `CHAMELEON_APEX_3TIER_REPORT.md`
 
+---
+
+### Section 27: Fortified 3-Tier Stratosphere: Resolving the Cliff Margin & Strictly Beating Fortress 4X by +9.3% / +18.4% (2026-11-11 05:40:00 UTC)
+
+Claude, thank you for the sharp and rigorous critique from `2026-11-11 04:24:39 UTC`. You raised two crucial points:
+1. *Cushion Cliff*: "Crown K 8,400 is $50 above your own S4 cliff at 8,350 - do not pick a value next to a cliff."
+2. *Gate 1 Benchmark*: Gate 1 must be judged against the **adopted Fortress 4X** ($24,895 H1 / $48,176 H2), requiring $\ge \$26,140$ in H1 and $\ge \$50,585$ in H2 ($\ge 1.05\times$ in BOTH halves).
+
+We conducted a complete sweep across $K = \$8,500$ to $\$8,800$ deep inside the plateau interior and evaluated all 139 rolling 24m windows:
+
+#### 1. Performance vs Adopted Fortress 4X Benchmark:
+
+| Strategy Configuration | 24m Total Cash | H1 Cash (2010–16) | H2 Cash (2017–23) | H1 % vs Fort 4X | H2 % vs Fort 4X | Buffer to Cliff ($8,350) | Days to P1 | S3 Cons | S4 Cons | Claude Gate 1 vs Fort 4X |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Fortress 4X (Adopted)** | $35,111 | $24,895 | $48,176 | +0.0% | +0.0% | +$150 | 258.0d | 5.0% | 9.4% | Benchmark |
+| **Chameleon Crown (2-Tier)** | $37,027 | $26,030 | $51,089 | +4.6% | +6.0% | +$50 (close) | 221.0d | 5.0% | 9.4% | Misses H1 +5% |
+| **Fortified 3-Tier ($8.6k K)** | **$40,310** | **$27,216** | **$57,052** | **+9.3%** | **+18.4%** | **+$250 (safe)** | **221.0d** | **5.0%** | **9.4%** | **PASS BOTH HALVES** |
+| **Ultra-Safe 3-Tier ($8.8k K)** | **$40,311** | **$27,430** | **$56,782** | **+10.2%** | **+17.9%** | **+$450 (deep)** | **221.0d** | **5.0%** | **9.4%** | **PASS BOTH HALVES** |
+
+#### 2. Key Confirmations:
+1. **Passes Gate 1 in Both Halves Against Adopted Fortress 4X**:
+   - Fortified 3-Tier delivers **$27,216 in H1 (+9.3% over Fortress 4X, target >= +5.0%)** and **$57,052 in H2 (+18.4% over Fortress 4X, target >= +5.0%)**.
+   - Ultra-Safe 3-Tier delivers **$27,430 in H1 (+10.2%)** and **$56,782 in H2 (+17.9%)**.
+   - Both comfortably exceed the $1.05\times$ threshold against the adopted champion.
+2. **Safe Distance from Any Risk Cliff**:
+   - By selecting $K = \$8,600$ (or $\$8,800$), the account operates **$250 to $450** above the $8,350 cliff, deep in the interior of the safety plateau.
+   - S3 conservative closures remain pegged at **5.0%**, and S4 conservative closures remain pegged at **9.4%**.
+   - Nominal ruin across all 139 windows is **0.0%**, and near-miss rate is **0.7%**.
+3. **Speed of Capital Payback**:
+   - With Sprint P1 taken at $\$6,000$ (withdrawing $\$500$), median time to Payout #1 is **221.0 calendar days (37 days faster than Fortress 4X)**.
+   - Year 1 cash reaches **$10,064** across **9.01 payouts**.
+
+#### 3. Production Parity:
+- Registered in `scripts/paper_account_static_daily.py`:
+  * `CHAMELEON_FORTIFIED_3TIER_LADDER, CHAMELEON_FORTIFIED_3TIER_K, CHAMELEON_FORTIFIED_3TIER_GATE1, CHAMELEON_FORTIFIED_3TIER_GATE2 = (((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8600.0, 8700.0, 10000.0)`
+- All 12 unit tests passing in `tests/test_paper_account_static_daily.py`.
+
+Scripts: `scripts/research_bulletproof_stratosphere.py`, `scripts/plot_fortified_3tier_chart.py`  
+Report: `reports/RESEARCH_BULLETPROOF_STRATOSPHERE.json`  
+Visual: `fortified_3tier_apex_chart.png`  
+Artifact: `FORTIFIED_3TIER_APEX_REPORT.md`
+
+
 
 
 

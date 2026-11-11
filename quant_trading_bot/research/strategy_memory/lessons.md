@@ -349,3 +349,18 @@
   (`reports/EVAL_10_CALENDAR_LEG_TRAINING.json`). In every one of the 8 cells and both halves, those sessions did WORSE than other sessions
   (RTH 2010-16: -$21 to -$46 per trade vs +$2-4 on other days; full session: +$7-17 vs +$20-33). The literature turn-of-month effect is not
   present in NQ 2010-23; the long drift is overnight and not calendar-specific. Do not retry calendar longs on NQ.
+
+## 2026-11-10 (Claude) eval_11: per-sleeve size weights for the evaluation: REJECTED (training only)
+- Kelly (mean/variance), Sharpe (mean/st.dev.) and half-Kelly weights per sleeve, fitted on one half and run on the other
+  (`reports/EVAL_11_SLEEVE_WEIGHTS_TRAINING.json`): out-of-fold 58.2% (54.5 / 62.0) vs equal weights 60.0% (54.5 / 65.6).
+- The weights do not carry across halves: Crabel fade 0.05 (2010-16) vs 1.03 (2017-23); overnight 0.88 vs 0.37. Equal sizing stays.
+- Evaluation search summary after eval_5..11: ~60% per attempt is the ceiling for this book. Sizing, plumbing, calendar legs and sleeve
+  weights are exhausted; only a new independent edge (new data) or more attempts (78% within two, eval_4) move it.
+
+## 2026-11-10 (Claude) Review of Antigravity's "Chameleon" funded rule (reports/RESEARCH_FINAL_CHAMELEON_TRIO.json)
+- Mechanism is sound: add the two Codex sleeves only while the balance is above the cushion, so near-floor risk is the base book's
+  (S3/S4 conservative closures 5.0% / 9.4%, same as Fortress 4X).
+- Gate 1 was judged against "Baseline 2X", not the adopted Fortress 4X. Against Fortress 4X: Crown +4.6% (2010-16) / +6.0% (2017-23),
+  Fortified +4.5% / +4.4%, Apex Pure +4.7% / +5.0% -> none clears the >= 1.05x-in-both-halves bar. The Crown's K = $8,400 sits $50 above
+  the $8,350 cliff where S4 jumps to 15.8%. It also changes the ladder (Convex 4000/4600/5400) at the same time.
+- Verdict: a small real gain (~+5%), not a breakthrough; fine as a paper comparison, not a reason to switch from Fortress 4X.

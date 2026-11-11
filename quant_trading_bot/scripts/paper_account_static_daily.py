@@ -136,6 +136,9 @@ CHAMELEON_FORTIFIED_LADDER, CHAMELEON_FORTIFIED_K, CHAMELEON_FORTIFIED_GATE = ((
 CHAMELEON_3TIER_LADDER, CHAMELEON_3TIER_K, CHAMELEON_3TIER_GATE1, CHAMELEON_3TIER_GATE2 = (
     ((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8400.0, 8500.0, 9600.0
 )  # Chameleon Apex 3-Tier ($40,635 cash, $10,127 Y1, 221-day P1, 9.4% tail risk)
+CHAMELEON_FORTIFIED_3TIER_LADDER, CHAMELEON_FORTIFIED_3TIER_K, CHAMELEON_FORTIFIED_3TIER_GATE1, CHAMELEON_FORTIFIED_3TIER_GATE2 = (
+    ((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8600.0, 8700.0, 10000.0
+)  # Fortified 3-Tier ($40,310 cash, +9.3%/+18.4% vs Fort 4X, +$250 buffer from cliff)
 AEGIS_LADDER, AEGIS_K = ((0.0, 1), (2500.0, 2), (4500.0, 3), (6500.0, 4)), 7500.0   # Antigravity's "Aegis Apex 4X" (comparison only)
 
 
@@ -167,6 +170,10 @@ def funded(rows, start_date, ladder=MAIN_LADDER, K=MAIN_K, sprint=False, sprint_
         if not payout_made and (since > 0 or not paid) and bal - K >= 250.0:
             w = min(1500.0, bal - K); bal -= w; paid = True; since = 0.0; pays.append(dict(date=str(d), amount=round(w, 2)))
         hist.append(dict(date=str(d), pnl=round(p, 2), balance=round(bal, 2), payout=round(w, 2), size=f"{m}x", trades=n))
+    return dict(balance=round(bal, 2), floor=0.0 if paid else -2000.0, size_stage=f"{stage}x", payouts=pays, payouts_count=len(pays),
+                withdrawn=round(sum(x["amount"] for x in pays), 2), closed_on=closed, stage_changes=stage_log, days=hist[-30:],
+                next_payout_needs=None if closed else round(max(0.0, K + 250.0 - bal), 2), keep=K,
+                ladder=" / ".join(f"{mm}x from ${th:,.0f}" if th else f"{mm}x" for th, mm in ladder))
     return dict(balance=round(bal, 2), floor=0.0 if paid else -2000.0, size_stage=f"{stage}x", payouts=pays, payouts_count=len(pays),
                 withdrawn=round(sum(x["amount"] for x in pays), 2), closed_on=closed, stage_changes=stage_log, days=hist[-30:],
                 next_payout_needs=None if closed else round(max(0.0, K + 250.0 - bal), 2), keep=K,
