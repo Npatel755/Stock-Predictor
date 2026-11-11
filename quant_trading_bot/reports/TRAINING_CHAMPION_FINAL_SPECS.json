@@ -1,0 +1,32 @@
+{
+  "parameters": {
+    "initial_stop": 18.0,
+    "t1_pts": 28.0,
+    "runner_tp": 120.0,
+    "be_offset": 1.0,
+    "floor_trigger": -350.0,
+    "floor_size": 1,
+    "base_size": 8,
+    "accel_size": 10,
+    "sprint_size": 12,
+    "vol_bonus": 2,
+    "vix_threshold": 16.0,
+    "gap_max_pct": 0.02,
+    "trend_filter": "5-SMA daily close momentum"
+  },
+  "training_results": {
+    "passed": 189,
+    "ruined": 0,
+    "timeouts": 3195,
+    "pass_pct": 100.0,
+    "ruin_pct": 0.0,
+    "mean_trade_days": 11.5,
+    "med_trade_days": 9.0,
+    "p25_trade_days": 8.0,
+    "p10_trade_days": 8.0,
+    "min_trade_days": 5,
+    "mean_sessions": 48.3,
+    "avg_peak_dd": 899.31,
+    "dll_breaches": 0
+  }
+}

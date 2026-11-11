@@ -1,0 +1,97 @@
+[
+  {
+    "mode": "none",
+    "wr": 41.42480211081794,
+    "net_1c": 4741.049999999999,
+    "eval": {
+      "passed": 432,
+      "ruined": 0,
+      "timeouts": 2952,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "mean_days": 24.3,
+      "med_days": 19.0,
+      "p25_days": 13.0,
+      "p10_days": 6.0,
+      "min_days": 4,
+      "avg_dd": 1272.9,
+      "dll": 0
+    }
+  },
+  {
+    "mode": "step_60_30",
+    "wr": 41.42480211081794,
+    "net_1c": 3675.0499999999993,
+    "eval": {
+      "passed": 382,
+      "ruined": 0,
+      "timeouts": 3002,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "mean_days": 21.8,
+      "med_days": 19.0,
+      "p25_days": 14.2,
+      "p10_days": 12.1,
+      "min_days": 6,
+      "avg_dd": 1454.2,
+      "dll": 0
+    }
+  },
+  {
+    "mode": "step_50_25",
+    "wr": 41.42480211081794,
+    "net_1c": 3857.7999999999993,
+    "eval": {
+      "passed": 424,
+      "ruined": 0,
+      "timeouts": 2960,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "mean_days": 22.2,
+      "med_days": 19.0,
+      "p25_days": 13.0,
+      "p10_days": 7.0,
+      "min_days": 5,
+      "avg_dd": 1279.1,
+      "dll": 0
+    }
+  },
+  {
+    "mode": "dual_50_80",
+    "wr": 41.42480211081794,
+    "net_1c": 3246.5499999999993,
+    "eval": {
+      "passed": 425,
+      "ruined": 0,
+      "timeouts": 2959,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "mean_days": 21.4,
+      "med_days": 19.0,
+      "p25_days": 12.0,
+      "p10_days": 7.4,
+      "min_days": 5,
+      "avg_dd": 1285.1,
+      "dll": 0
+    }
+  },
+  {
+    "mode": "trail_25_after_40",
+    "wr": 41.42480211081794,
+    "net_1c": 2427.0499999999997,
+    "eval": {
+      "passed": 470,
+      "ruined": 0,
+      "timeouts": 2914,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "mean_days": 20.4,
+      "med_days": 15.0,
+      "p25_days": 11.0,
+      "p10_days": 8.0,
+      "min_days": 4,
+      "avg_dd": 1157.8,
+      "dll": 0
+    }
+  }
+]

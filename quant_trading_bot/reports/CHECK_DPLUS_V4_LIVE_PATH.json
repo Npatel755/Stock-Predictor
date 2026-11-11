@@ -1,0 +1,31 @@
+{
+ "regression_ag_arch_d_plus_v2": {
+  "trades": 1287,
+  "net": 15074.25,
+  "expected": "1,398 / +17,576.00"
+ },
+ "live_path": {
+  "cut_utc": "2023-10-05 14:15:00+00:00",
+  "picked_trade": {
+   "sleeve": "AG_CRABEL15_D_3c_v4",
+   "entry": "2023-10-05T14:00:00+00:00",
+   "exit": "2023-10-05T16:00:00+00:00"
+  },
+  "open_positions": {
+   "AG_CRABEL15_D_3c_v4": {
+    "quantity": -3,
+    "unrealized": 214.5,
+    "last_close": 14799.75
+   },
+   "AG_CRABEL15_D_GAP1_v4": {
+    "quantity": -1,
+    "unrealized": 71.5,
+    "last_close": 14799.75
+   }
+  },
+  "partial_closed_trades": 1689,
+  "full_trades_closed_before_cut": 1689,
+  "partial_is_prefix": true,
+  "extra_in_partial": []
+ }
+}

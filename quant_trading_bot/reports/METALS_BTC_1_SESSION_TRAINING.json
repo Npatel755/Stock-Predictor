@@ -1,0 +1,228 @@
+{
+ "GC": {
+  "h1_grid": {
+   "F1 long 02-08": {
+    "trades": 1681,
+    "net_bp_per_year": -1603.6,
+    "avg_bp": -6.27,
+    "pf": 0.687
+   },
+   "F1 long 18-02": {
+    "trades": 1661,
+    "net_bp_per_year": 541.0,
+    "avg_bp": 2.14,
+    "pf": 1.162
+   },
+   "F1 long 18-08": {
+    "trades": 1661,
+    "net_bp_per_year": -680.2,
+    "avg_bp": -2.69,
+    "pf": 0.885
+   },
+   "F1 short 08-16": {
+    "trades": 1641,
+    "net_bp_per_year": 364.3,
+    "avg_bp": 1.46,
+    "pf": 1.052
+   },
+   "F2 trend20 18-08": {
+    "trades": 1640,
+    "net_bp_per_year": -159.2,
+    "avg_bp": -0.64,
+    "pf": 0.972
+   },
+   "F2 trend20 18-16": {
+    "trades": 1602,
+    "net_bp_per_year": 362.6,
+    "avg_bp": 1.49,
+    "pf": 1.04
+   },
+   "F2 trend60 18-08": {
+    "trades": 1601,
+    "net_bp_per_year": 213.1,
+    "avg_bp": 0.87,
+    "pf": 1.04
+   },
+   "F2 trend60 18-16": {
+    "trades": 1563,
+    "net_bp_per_year": 452.2,
+    "avg_bp": 1.9,
+    "pf": 1.052
+   }
+  },
+  "selected": "F1 long 18-02",
+  "trading_days": 3488,
+  "h2": {
+   "trades": 1777,
+   "net_bp_per_year": -452.6,
+   "avg_bp": -1.78,
+   "pf": 0.866
+  },
+  "h2_stress": {
+   "trades": 1777,
+   "net_bp_per_year": -696.4,
+   "avg_bp": -2.74,
+   "pf": 0.802
+  },
+  "h2_by_year": {
+   "2017": -1.0,
+   "2018": -352.0,
+   "2019": -234.0,
+   "2020": -998.0,
+   "2021": -213.0,
+   "2022": -1378.0,
+   "2023": 9.0
+  },
+  "placebo_beaten": "31/200",
+  "gates": {
+   "net": false,
+   "pf": false,
+   "years": false,
+   "stress": false,
+   "placebo": false
+  },
+  "confirmed": false,
+  "h2_usd_per_year_1_micro": -1878.0
+ },
+ "SI": {
+  "h1_grid": {
+   "F1 long 02-08": {
+    "trades": 1680,
+    "net_bp_per_year": -2052.6,
+    "avg_bp": -8.03,
+    "pf": 0.767
+   },
+   "F1 long 18-02": {
+    "trades": 1655,
+    "net_bp_per_year": -608.8,
+    "avg_bp": -2.42,
+    "pf": 0.909
+   },
+   "F1 long 18-08": {
+    "trades": 1656,
+    "net_bp_per_year": -1918.3,
+    "avg_bp": -7.61,
+    "pf": 0.818
+   },
+   "F1 short 08-16": {
+    "trades": 1642,
+    "net_bp_per_year": -1272.0,
+    "avg_bp": -5.09,
+    "pf": 0.902
+   },
+   "F2 trend20 18-08": {
+    "trades": 1637,
+    "net_bp_per_year": -782.8,
+    "avg_bp": -3.14,
+    "pf": 0.922
+   },
+   "F2 trend20 18-16": {
+    "trades": 1598,
+    "net_bp_per_year": 451.1,
+    "avg_bp": 1.85,
+    "pf": 1.031
+   },
+   "F2 trend60 18-08": {
+    "trades": 1597,
+    "net_bp_per_year": 477.2,
+    "avg_bp": 1.96,
+    "pf": 1.052
+   },
+   "F2 trend60 18-16": {
+    "trades": 1558,
+    "net_bp_per_year": 546.9,
+    "avg_bp": 2.31,
+    "pf": 1.039
+   }
+  },
+  "selected": null,
+  "trading_days": 3489
+ },
+ "BTC": {
+  "h1_grid": {
+   "F1 long 02-08": {
+    "trades": 770,
+    "net_bp_per_year": -807.0,
+    "avg_bp": -3.14,
+    "pf": 0.952
+   },
+   "F1 long 18-02": {
+    "trades": 770,
+    "net_bp_per_year": -6239.4,
+    "avg_bp": -24.32,
+    "pf": 0.701
+   },
+   "F1 long 18-08": {
+    "trades": 770,
+    "net_bp_per_year": -5197.7,
+    "avg_bp": -20.26,
+    "pf": 0.811
+   },
+   "F1 short 08-16": {
+    "trades": 716,
+    "net_bp_per_year": -2659.1,
+    "avg_bp": -11.14,
+    "pf": 0.87
+   },
+   "F2 trend20 18-08": {
+    "trades": 759,
+    "net_bp_per_year": -2148.4,
+    "avg_bp": -8.49,
+    "pf": 0.915
+   },
+   "F2 trend20 18-16": {
+    "trades": 703,
+    "net_bp_per_year": 111.1,
+    "avg_bp": 0.47,
+    "pf": 1.004
+   },
+   "F2 trend60 18-08": {
+    "trades": 720,
+    "net_bp_per_year": 307.2,
+    "avg_bp": 1.28,
+    "pf": 1.014
+   },
+   "F2 trend60 18-16": {
+    "trades": 666,
+    "net_bp_per_year": 3115.8,
+    "avg_bp": 14.04,
+    "pf": 1.121
+   }
+  },
+  "selected": "F2 trend60 18-16",
+  "trading_days": 1559,
+  "h2": {
+   "trades": 731,
+   "net_bp_per_year": -428.2,
+   "avg_bp": -1.76,
+   "pf": 0.987
+  },
+  "h2_stress": {
+   "trades": 731,
+   "net_bp_per_year": -1037.8,
+   "avg_bp": -4.26,
+   "pf": 0.968
+  },
+  "h2_by_year": {
+   "2021": -680.0,
+   "2022": 1483.0,
+   "2023": -2087.0
+  },
+  "placebo_beaten": "119/200",
+  "gates": {
+   "net": false,
+   "pf": false,
+   "years": false,
+   "stress": false,
+   "placebo": false
+  },
+  "confirmed": false,
+  "h2_usd_per_year_1_micro": -343.0
+ },
+ "SI_with_gold_config_h2": {
+  "trades": 1772,
+  "net_bp_per_year": -1413.6,
+  "avg_bp": -5.58,
+  "pf": 0.8
+ }
+}

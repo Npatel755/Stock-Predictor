@@ -1,0 +1,64 @@
+{
+ "fixed k3 (no TRD30PM)": {
+  "all": {
+   "starts": 3165,
+   "pass_1": 54.9,
+   "pass_within_2": 78.1,
+   "pass_within_3": 88.8,
+   "expected_attempts_bought": 1.67,
+   "median_days_to_pass": 55.0
+  },
+  "half1": {
+   "starts": 1696,
+   "pass_1": 45.8,
+   "pass_within_2": 70.9,
+   "pass_within_3": 83.7,
+   "expected_attempts_bought": 1.83,
+   "median_days_to_pass": 66.0
+  },
+  "half2": {
+   "starts": 1469,
+   "pass_1": 65.4,
+   "pass_within_2": 86.4,
+   "pass_within_3": 94.6,
+   "expected_attempts_bought": 1.48,
+   "median_days_to_pass": 47.0
+  }
+ },
+ "AG defensive: k3, k2 <= -500, k1 <= -1000": {
+  "all": {
+   "starts": 3165,
+   "pass_1": 56.8,
+   "pass_within_2": 77.9,
+   "pass_within_3": 90.0,
+   "expected_attempts_bought": 1.65,
+   "median_days_to_pass": 61.0
+  },
+  "half1": {
+   "starts": 1696,
+   "pass_1": 45.6,
+   "pass_within_2": 68.4,
+   "pass_within_3": 83.0,
+   "expected_attempts_bought": 1.86,
+   "median_days_to_pass": 76.0
+  },
+  "half2": {
+   "starts": 1469,
+   "pass_1": 69.8,
+   "pass_within_2": 88.9,
+   "pass_within_3": 98.1,
+   "expected_attempts_bought": 1.41,
+   "median_days_to_pass": 49.0
+  }
+ },
+ "independence_formula_for_comparison": {
+  "fixed k3 (no TRD30PM)": {
+   "two": 79.7,
+   "three": 90.8
+  },
+  "AG defensive: k3, k2 <= -500, k1 <= -1000": {
+   "two": 81.3,
+   "three": 91.9
+  }
+ }
+}

@@ -14,3 +14,7 @@ runs/
 .pytest_*/
 .test-tmp-*/
 
+
+# Third-party free downloads (redistribution not allowed; re-fetch with scripts/fetch_histdata_xauusd.py / fetch_dukascopy_xauusd.py)
+data/external/histdata_xauusd/
+data/external/dukascopy_xauusd/

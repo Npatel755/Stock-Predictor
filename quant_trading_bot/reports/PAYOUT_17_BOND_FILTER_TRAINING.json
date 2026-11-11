@@ -1,0 +1,155 @@
+{
+ "base R | staged $500": {
+  "S0": {
+   "payouts_12m_mean": 6.21,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.94,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.48,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.113,
+   "dll_days": 0
+  }
+ },
+ "base R | staged $0 (on while balance >= 0)": {
+  "S0": {
+   "payouts_12m_mean": 6.45,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0
+  },
+  "S3": {
+   "payouts_12m_mean": 5.32,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.053,
+   "dll_days": 0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.7,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.146,
+   "dll_days": 0
+  }
+ },
+ "ZN16 | staged $500": {
+  "S0": {
+   "payouts_12m_mean": 5.93,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.74,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.37,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.099,
+   "dll_days": 0
+  },
+  "passes_risk_and_gain": false,
+  "placebo": {
+   "payouts_median": 5.81,
+   "breach_median": 0.007,
+   "no_worse_on_both": "27/200"
+  },
+  "beats_random": false
+ },
+ "ZN16 | staged $0 (on while balance >= 0)": {
+  "S0": {
+   "payouts_12m_mean": 6.1,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0
+  },
+  "S3": {
+   "payouts_12m_mean": 5.05,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.053,
+   "dll_days": 0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.48,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.106,
+   "dll_days": 0
+  },
+  "passes_risk_and_gain": false,
+  "placebo": {
+   "payouts_median": 5.95,
+   "breach_median": 0.007,
+   "no_worse_on_both": "27/200"
+  },
+  "beats_random": false
+ },
+ "ZN15 | staged $500": {
+  "S0": {
+   "payouts_12m_mean": 6.0,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.75,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.3,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.093,
+   "dll_days": 0
+  },
+  "passes_risk_and_gain": false,
+  "placebo": {
+   "payouts_median": 5.79,
+   "breach_median": 0.007,
+   "no_worse_on_both": "4/200"
+  },
+  "beats_random": true
+ },
+ "ZN15 | staged $0 (on while balance >= 0)": {
+  "S0": {
+   "payouts_12m_mean": 6.21,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0
+  },
+  "S3": {
+   "payouts_12m_mean": 5.11,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.046,
+   "dll_days": 0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.59,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.113,
+   "dll_days": 0
+  },
+  "passes_risk_and_gain": false,
+  "placebo": {
+   "payouts_median": 5.945,
+   "breach_median": 0.007,
+   "no_worse_on_both": "4/200"
+  },
+  "beats_random": true
+ },
+ "adopt": {
+  "staged $500": false,
+  "staged $0 (on while balance >= 0)": false
+ },
+ "selected": null
+}

@@ -1,0 +1,68 @@
+{
+ "proxy_gate": {
+  "hours": 74748,
+  "corr": 0.9899,
+  "median_level_gap": 1.12,
+  "passed": true
+ },
+ "days_used": 3176,
+ "h1_grid": {
+  "L15_far_tgt1": {
+   "trades": 1452,
+   "per_year": 220.4,
+   "net_per_year": -1578.0,
+   "pf": 0.9,
+   "avg": -7.16
+  },
+  "L15_far_time": {
+   "trades": 1452,
+   "per_year": 220.4,
+   "net_per_year": -4390.0,
+   "pf": 0.795,
+   "avg": -19.92
+  },
+  "L15_mid_tgt1": {
+   "trades": 1555,
+   "per_year": 236.1,
+   "net_per_year": -2990.0,
+   "pf": 0.868,
+   "avg": -12.67
+  },
+  "L15_mid_time": {
+   "trades": 1555,
+   "per_year": 236.1,
+   "net_per_year": -8051.0,
+   "pf": 0.718,
+   "avg": -34.1
+  },
+  "L30_far_tgt1": {
+   "trades": 1342,
+   "per_year": 203.7,
+   "net_per_year": -984.0,
+   "pf": 0.93,
+   "avg": -4.83
+  },
+  "L30_far_time": {
+   "trades": 1342,
+   "per_year": 203.7,
+   "net_per_year": -1773.0,
+   "pf": 0.898,
+   "avg": -8.7
+  },
+  "L30_mid_tgt1": {
+   "trades": 1500,
+   "per_year": 227.7,
+   "net_per_year": -2213.0,
+   "pf": 0.895,
+   "avg": -9.72
+  },
+  "L30_mid_time": {
+   "trades": 1500,
+   "per_year": 227.7,
+   "net_per_year": -3934.0,
+   "pf": 0.841,
+   "avg": -17.28
+  }
+ },
+ "selected": null
+}

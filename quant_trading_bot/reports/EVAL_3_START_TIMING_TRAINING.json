@@ -1,0 +1,178 @@
+{
+ "base": {
+  "all": 52.7,
+  "h1": 40.5,
+  "h2": 65.2,
+  "starts": 3360
+ },
+ "filters": {
+  "VIX low": {
+   "cut": [
+    null,
+    14.35
+   ],
+   "h1_pass": 50.4,
+   "h1_keep": 33.4,
+   "h2_pass": 49.5,
+   "h2_keep": 30.1
+  },
+  "VIX mid": {
+   "cut": [
+    14.35,
+    18.05
+   ],
+   "h1_pass": 49.6,
+   "h1_keep": 33.4,
+   "h2_pass": 73.6,
+   "h2_keep": 20.5
+  },
+  "VIX high": {
+   "cut": [
+    18.05,
+    null
+   ],
+   "h1_pass": 21.5,
+   "h1_keep": 33.3,
+   "h2_pass": 71.3,
+   "h2_keep": 49.4
+  },
+  "VIX/VIX3M low": {
+   "cut": [
+    null,
+    0.8623
+   ],
+   "h1_pass": 41.1,
+   "h1_keep": 33.4,
+   "h2_pass": 63.6,
+   "h2_keep": 43.2
+  },
+  "VIX/VIX3M mid": {
+   "cut": [
+    0.8623,
+    0.9116
+   ],
+   "h1_pass": 41.3,
+   "h1_keep": 33.3,
+   "h2_pass": 66.6,
+   "h2_keep": 21.8
+  },
+  "VIX/VIX3M high": {
+   "cut": [
+    0.9116,
+    null
+   ],
+   "h1_pass": 39.1,
+   "h1_keep": 33.3,
+   "h2_pass": 66.4,
+   "h2_keep": 35.0
+  },
+  "NQ vs 50-day avg low": {
+   "cut": [
+    null,
+    0.0041
+   ],
+   "h1_pass": 41.2,
+   "h1_keep": 32.4,
+   "h2_pass": 73.9,
+   "h2_keep": 32.7
+  },
+  "NQ vs 50-day avg mid": {
+   "cut": [
+    0.0041,
+    0.0331
+   ],
+   "h1_pass": 47.4,
+   "h1_keep": 32.3,
+   "h2_pass": 59.2,
+   "h2_keep": 29.0
+  },
+  "NQ vs 50-day avg high": {
+   "cut": [
+    0.0331,
+    null
+   ],
+   "h1_pass": 36.6,
+   "h1_keep": 32.4,
+   "h2_pass": 62.3,
+   "h2_keep": 38.3
+  },
+  "NQ 20-day vol low": {
+   "cut": [
+    null,
+    0.1212
+   ],
+   "h1_pass": 54.4,
+   "h1_keep": 33.0,
+   "h2_pass": 52.1,
+   "h2_keep": 28.0
+  },
+  "NQ 20-day vol mid": {
+   "cut": [
+    0.1212,
+    0.1666
+   ],
+   "h1_pass": 43.5,
+   "h1_keep": 32.9,
+   "h2_pass": 66.7,
+   "h2_keep": 17.1
+  },
+  "NQ 20-day vol high": {
+   "cut": [
+    0.1666,
+    null
+   ],
+   "h1_pass": 25.0,
+   "h1_keep": 33.0,
+   "h2_pass": 71.4,
+   "h2_keep": 54.9
+  },
+  "book 20-session P&L low": {
+   "cut": [
+    null,
+    107.2256
+   ],
+   "h1_pass": 46.7,
+   "h1_keep": 33.0,
+   "h2_pass": 61.0,
+   "h2_keep": 27.6
+  },
+  "book 20-session P&L mid": {
+   "cut": [
+    107.2256,
+    942.0745
+   ],
+   "h1_pass": 41.3,
+   "h1_keep": 33.0,
+   "h2_pass": 66.4,
+   "h2_keep": 23.6
+  },
+  "book 20-session P&L high": {
+   "cut": [
+    942.0745,
+    null
+   ],
+   "h1_pass": 34.9,
+   "h1_keep": 32.9,
+   "h2_pass": 67.0,
+   "h2_keep": 48.8
+  }
+ },
+ "selected": {
+  "filter": "NQ 20-day vol low",
+  "cut": [
+   null,
+   0.1212
+  ],
+  "h1_pass": 54.4,
+  "h1_keep": 33.0,
+  "h2_pass": 52.1,
+  "h2_keep": 28.0,
+  "block_placebo_beaten": "6/200",
+  "gates": {
+   "gain": false,
+   "keep": true,
+   "placebo": false
+  },
+  "adopt": false
+ }
+}

@@ -273,3 +273,16 @@
   * Multi-Account Portfolio: At Topstep's 5-account limit, yields $186,315 per 24 months ($93,158/year).
 - Artifacts: `SUPERCHARGED_FUNDED_STRATEGY_REPORT.md`, `supercharged_funded_strategy_chart.png`, `reports/RESEARCH_SUPERCHARGED_TWOSTAGE_TRAINING.json`.
 
+
+## 2026-11-10 (Claude) v54 + v55: account rule, Crabel exit, and a check of Antigravity's "Aegis Apex 4X" (training only)
+- v54 Crabel exit (hold 8/16/22 bars x trail 0/2 ATR): none adopted; longer holds lose money and raise closures; trail 2 is safer, earns less.
+- v54 picked "2x from $3,000, keep $6,000" (+8.6% $) but with skip-before-routing; v55 re-measured it the way the paper account works
+  (route at 1x, then size): S4 closure 6.5% -> 11.5%. Not adopted. Lesson: measure account rules with the same routing order as the live replay.
+- Aegis (v55): 09:15 overnight exit NOT better in both halves (2010-16 net $19,063 vs $19,384 at 09:45; 2017-23 $17,485 vs $16,236).
+  Cap-aware 1x/2x/3x/4x ladder with K $7.5k: $35,777 vs $24,668 (+45%), same realised closures (0 / 2.2% / 6.5%), but conservative closure
+  in S3 15.8% vs 5.0% -> failed the pre-declared check.
+- Adopted (not pre-declared, a design fix): TRIM 2x trades to floor($900 / risk) micros instead of skipping them. Same closures in every
+  scenario, $25,899 vs $24,668, both halves up (+3% / +6%), S4 dollars $10,950 -> $19,143. Deployed to the paper account replay.
+- (2026-11-10, Claude) Nick chose to track Antigravity's "Aegis Apex 4X" on paper as a COMPARISON (not adopted): new runner candidate
+  overnight_dip_v2_stop055_0915 (09:15 exit) and an "aegis" track in scripts/paper_account_static_daily.py (cap-aware 1x/2x@$2.5k/3x@$4.5k/
+  4x@$6.5k, payouts above $7.5k, same v5.3 intraday trades). Dashboard shows it as a 4th card with the v55 caution. Notifications on its payouts.

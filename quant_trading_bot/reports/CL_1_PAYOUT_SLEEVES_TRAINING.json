@@ -1,0 +1,221 @@
+{
+ "days_used": 3372,
+ "days_skipped": {
+  "degraded": 13,
+  "roll": 0,
+  "thin": 104
+ },
+ "trades_by_family": {
+  "F1": 26644,
+  "F2": 3486,
+  "F3": 21918
+ },
+ "F1": {
+  "h1_grid": {
+   "L15_far_tgt1": {
+    "trades": 1605,
+    "per_year": 244.3,
+    "net": -27296.0,
+    "net_per_year": -4154.0,
+    "pf": 0.776,
+    "avg": -17.01
+   },
+   "L15_far_time": {
+    "trades": 1605,
+    "per_year": 244.3,
+    "net": -32953.0,
+    "net_per_year": -5015.0,
+    "pf": 0.799,
+    "avg": -20.53
+   },
+   "L15_mid_tgt1": {
+    "trades": 1605,
+    "per_year": 244.3,
+    "net": -45010.0,
+    "net_per_year": -6850.0,
+    "pf": 0.702,
+    "avg": -28.04
+   },
+   "L15_mid_time": {
+    "trades": 1605,
+    "per_year": 244.3,
+    "net": -50371.0,
+    "net_per_year": -7666.0,
+    "pf": 0.731,
+    "avg": -31.38
+   },
+   "L30_far_tgt1": {
+    "trades": 1566,
+    "per_year": 238.3,
+    "net": -18137.0,
+    "net_per_year": -2760.0,
+    "pf": 0.834,
+    "avg": -11.58
+   },
+   "L30_far_time": {
+    "trades": 1566,
+    "per_year": 238.3,
+    "net": -21095.0,
+    "net_per_year": -3210.0,
+    "pf": 0.845,
+    "avg": -13.47
+   },
+   "L30_mid_tgt1": {
+    "trades": 1568,
+    "per_year": 238.6,
+    "net": -34813.0,
+    "net_per_year": -5298.0,
+    "pf": 0.771,
+    "avg": -22.2
+   },
+   "L30_mid_time": {
+    "trades": 1568,
+    "per_year": 238.6,
+    "net": -38396.0,
+    "net_per_year": -5843.0,
+    "pf": 0.786,
+    "avg": -24.49
+   }
+  },
+  "selected": null
+ },
+ "F2": {
+  "h1_grid": {
+   "W15_fade_x690": {
+    "trades": 213,
+    "per_year": 32.4,
+    "net": -5280.0,
+    "net_per_year": -804.0,
+    "pf": 0.693,
+    "avg": -24.79
+   },
+   "W15_fade_x869": {
+    "trades": 213,
+    "per_year": 32.4,
+    "net": -3038.0,
+    "net_per_year": -462.0,
+    "pf": 0.855,
+    "avg": -14.26
+   },
+   "W15_mom_x690": {
+    "trades": 213,
+    "per_year": 32.4,
+    "net": -3511.0,
+    "net_per_year": -534.0,
+    "pf": 0.69,
+    "avg": -16.48
+   },
+   "W15_mom_x869": {
+    "trades": 213,
+    "per_year": 32.4,
+    "net": 1338.0,
+    "net_per_year": 204.0,
+    "pf": 1.088,
+    "avg": 6.28
+   },
+   "W5_fade_x690": {
+    "trades": 211,
+    "per_year": 32.1,
+    "net": -5414.0,
+    "net_per_year": -824.0,
+    "pf": 0.683,
+    "avg": -25.66
+   },
+   "W5_fade_x869": {
+    "trades": 211,
+    "per_year": 32.1,
+    "net": -4966.0,
+    "net_per_year": -756.0,
+    "pf": 0.745,
+    "avg": -23.53
+   },
+   "W5_mom_x690": {
+    "trades": 212,
+    "per_year": 32.3,
+    "net": -4377.0,
+    "net_per_year": -666.0,
+    "pf": 0.715,
+    "avg": -20.65
+   },
+   "W5_mom_x869": {
+    "trades": 212,
+    "per_year": 32.3,
+    "net": -1814.0,
+    "net_per_year": -276.0,
+    "pf": 0.905,
+    "avg": -8.56
+   }
+  },
+  "selected": null
+ },
+ "F3": {
+  "h1_grid": {
+   "day_810_th0.0": {
+    "trades": 1607,
+    "per_year": 244.6,
+    "net": -52581.0,
+    "net_per_year": -8002.0,
+    "pf": 0.684,
+    "avg": -32.72
+   },
+   "day_810_th0.005": {
+    "trades": 1019,
+    "per_year": 155.1,
+    "net": -32754.0,
+    "net_per_year": -4985.0,
+    "pf": 0.706,
+    "avg": -32.14
+   },
+   "day_840_th0.0": {
+    "trades": 1608,
+    "per_year": 244.7,
+    "net": -53249.0,
+    "net_per_year": -8104.0,
+    "pf": 0.646,
+    "avg": -33.11
+   },
+   "day_840_th0.005": {
+    "trades": 1055,
+    "per_year": 160.6,
+    "net": -33078.0,
+    "net_per_year": -5034.0,
+    "pf": 0.682,
+    "avg": -31.35
+   },
+   "ovn_810_th0.0": {
+    "trades": 1534,
+    "per_year": 233.5,
+    "net": -36611.0,
+    "net_per_year": -5572.0,
+    "pf": 0.763,
+    "avg": -23.87
+   },
+   "ovn_810_th0.005": {
+    "trades": 981,
+    "per_year": 149.3,
+    "net": -28800.0,
+    "net_per_year": -4383.0,
+    "pf": 0.727,
+    "avg": -29.36
+   },
+   "ovn_840_th0.0": {
+    "trades": 1534,
+    "per_year": 233.5,
+    "net": -42008.0,
+    "net_per_year": -6393.0,
+    "pf": 0.697,
+    "avg": -27.38
+   },
+   "ovn_840_th0.005": {
+    "trades": 981,
+    "per_year": 149.3,
+    "net": -24864.0,
+    "net_per_year": -3784.0,
+    "pf": 0.729,
+    "avg": -25.35
+   }
+  },
+  "selected": null
+ },
+ "confirmed": {}
+}

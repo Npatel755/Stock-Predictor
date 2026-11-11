@@ -1,0 +1,81 @@
+{
+ "budget $300 / account stop $400": {
+  "S0": {
+   "payouts_12m_mean": 6.21,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007
+  },
+  "S4_vol_x1_5": {
+   "payouts_12m_mean": 4.48,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.113
+  },
+  "eligible": false
+ },
+ "budget $300 / account stop $300": {
+  "S0": {
+   "payouts_12m_mean": 6.11,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.013
+  },
+  "S4_vol_x1_5": {
+   "payouts_12m_mean": 4.32,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.119
+  },
+  "eligible": false
+ },
+ "budget $250 / account stop $400": {
+  "S0": {
+   "payouts_12m_mean": 5.5,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.007
+  },
+  "S4_vol_x1_5": {
+   "payouts_12m_mean": 3.29,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.152
+  },
+  "eligible": false
+ },
+ "budget $250 / account stop $300": {
+  "S0": {
+   "payouts_12m_mean": 5.3,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.007
+  },
+  "S4_vol_x1_5": {
+   "payouts_12m_mean": 3.13,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.219
+  },
+  "eligible": false
+ },
+ "budget $200 / account stop $400": {
+  "S0": {
+   "payouts_12m_mean": 4.14,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.06
+  },
+  "S4_vol_x1_5": {
+   "payouts_12m_mean": 1.64,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.04
+  },
+  "eligible": false
+ },
+ "budget $200 / account stop $300": {
+  "S0": {
+   "payouts_12m_mean": 3.86,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.06
+  },
+  "S4_vol_x1_5": {
+   "payouts_12m_mean": 1.7,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.033
+  },
+  "eligible": false
+ },
+ "selected": null
+}

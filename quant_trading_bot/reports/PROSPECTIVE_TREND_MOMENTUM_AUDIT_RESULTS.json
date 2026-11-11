@@ -1,0 +1,83 @@
+{
+  "Training (2010-2023) [Frozen Benchmark]": {
+    "split": "Training (2010-2023) [Frozen Benchmark]",
+    "continuous": {
+      "net_profit": 32033.8,
+      "win_rate": 45.1,
+      "profit_factor": 1.46,
+      "max_drawdown": 5864.0,
+      "worst_day": -346.0,
+      "best_day": 1454.0,
+      "active_trade_days": 395
+    },
+    "evaluation": {
+      "passed": 278,
+      "ruined": 0,
+      "timeouts": 3106,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "mean_trade_days": 11.0,
+      "med_trade_days": 9.0,
+      "p25_trade_days": 8.0,
+      "p10_trade_days": 7.0,
+      "min_trade_days": 4,
+      "mean_sessions": 53.7,
+      "avg_peak_dd": 717.25
+    }
+  },
+  "Validation (2024-2025) [Out-of-Sample Holdout]": {
+    "split": "Validation (2024-2025) [Out-of-Sample Holdout]",
+    "continuous": {
+      "net_profit": 4384.0,
+      "win_rate": 45.0,
+      "profit_factor": 1.42,
+      "max_drawdown": 2564.8,
+      "worst_day": -346.0,
+      "best_day": 1454.0,
+      "active_trade_days": 60
+    },
+    "evaluation": {
+      "passed": 7,
+      "ruined": 0,
+      "timeouts": 409,
+      "pass_pct": 100.0,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "mean_trade_days": 12.0,
+      "med_trade_days": 12.0,
+      "p25_trade_days": 12.0,
+      "p10_trade_days": 12.0,
+      "min_trade_days": 12,
+      "mean_sessions": 69.0,
+      "avg_peak_dd": 582.8
+    }
+  },
+  "Blind Test (2026) [Strict Holdout]": {
+    "split": "Blind Test (2026) [Strict Holdout]",
+    "continuous": {
+      "net_profit": 588.8,
+      "win_rate": 45.5,
+      "profit_factor": 1.32,
+      "max_drawdown": 830.4,
+      "worst_day": -346.0,
+      "best_day": 1454.0,
+      "active_trade_days": 11
+    },
+    "evaluation": {
+      "passed": 0,
+      "ruined": 0,
+      "timeouts": 119,
+      "pass_pct": 0.0,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "mean_trade_days": 999.0,
+      "med_trade_days": 999.0,
+      "p25_trade_days": 999.0,
+      "p10_trade_days": 999.0,
+      "min_trade_days": 999,
+      "mean_sessions": 999.0,
+      "avg_peak_dd": 999.0
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+ "frozen_at_utc": "2026-11-10T22:08:17Z",
+ "frozen_by": "Claude",
+ "requested_by": "Nick (2026-11-10: 'try evaluating on validation and test data')",
+ "strategy": "base R = v5.2 (AG_CRABEL15_D, AG_TRD60_D, AG_MES_TRD30_D, AG_TRD30PM; 1 micro, 2 on gap-continuation Crabel; skip stop risk > $300/micro; research 1-position routing; $400 account stop on realised same-day P&L) + overnight_dip_v2 with 0.55% stop, on while the balance >= $500. Trades re-expressed at today's price (MNQ 27,981.5 / MES 7,584) with payout_lib costs, exactly as in training.",
+ "account": "Topstep Labs $50K Static Daily Payouts+: MLL -$2,000 static until the first payout, then $0; DLL $1,000 caps a day; daily payouts of profit above the kept cushion, $250-$1,500, one per trading day, net profit since last payout > 0.",
+ "rule_adopted": "payout_24: 1x below a $4,000 balance, 2x from $4,000 (account stop $700; skip a trade or overnight leg risking > $900 at 2x); withdraw daily only above $6,000. Reference also reported: 1x, keep $4,000.",
+ "data": "validation = MNQ/MES micro 1-min 2024-01-01..2025-12-31 (indicator warm-up from training bars 2023-10-01..2023-12-31, no trades before 2024-01-01); test = 2026-01-01..end of file (warm-up from validation 2025-10-01..2025-12-31). Read once; no change to any rule after this.",
+ "did_good_gate": [
+  "G1 book net P&L > 0 in validation AND in test (1x, at today's prices)",
+  "G2 the adopted account, started at each split's first day, is not closed in either split",
+  "G3 validation single path makes >= 8 payouts over its 24 months",
+  "G4 test single path: balance + withdrawals >= $2,000 at the end of the file"
+ ],
+ "if_did_good": "step 2 (evaluation check), then step 1 (account model on the paper ledger). If not: report, change nothing, holdout counted as spent.",
+ "known_prior_exposure": "Devin ran the overnight-dip passer on 2024-25 (failed: one year each way, DD > $2k; lessons.md line 69). The 2026 test split has not been used for this book.",
+ "sha256": {
+  "scripts/payout_lib.py": "c815b8d9a45775c737cfd44df17db0b5a0ee4839a2f444e60ce6d51effe010c1",
+  "scripts/payout_10_overnight_stop_train.py": "25243fa9c7d808acab34ed85f68a663ec1ada24641224df22f3460f163e993a6",
+  "scripts/payout_13_stress_train.py": "450668bfc54dd98b5731766e08d96704b142166ab15b8a77f0ea840c4a394af4",
+  "scripts/payout_17_bond_filter_train.py": "b5334140196caaf21ba32af7ca5e013f3999716aa5e368452faf05a249d8b75a",
+  "scripts/payout_24_static_daily_sizing_train.py": "b9722cda31b380fdcec7b9d6d9f31ea247e2ffcf72fc4f9c5686c300e9707de3",
+  "src/quant_futures/ensemble_paper.py": "d479ae41e6b65f6f505aa17d0b270b9d50e7744c94731814809f2a80861cbfd9",
+  "scripts/mass_1m_search.py": "54c66a8ff3bcb39e550b23ad70ae881438c96c3e8af93251eb06a058deb5b19e"
+ }
+}

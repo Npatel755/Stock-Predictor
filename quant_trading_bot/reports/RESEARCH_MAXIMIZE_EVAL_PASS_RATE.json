@@ -1,0 +1,382 @@
+{
+  "Fixed k=1": {
+    "all": {
+      "pass": 22.5,
+      "fail": 3.3,
+      "timeout": 74.2
+    },
+    "half1": {
+      "pass": 10.8,
+      "fail": 1.4,
+      "timeout": 87.9
+    },
+    "half2": {
+      "pass": 34.4,
+      "fail": 5.3,
+      "timeout": 60.3
+    },
+    "starts": 3360,
+    "median_sess": 46.0,
+    "p25_sess": 35.0
+  },
+  "Fixed k=2": {
+    "all": {
+      "pass": 52.1,
+      "fail": 19.8,
+      "timeout": 28.2
+    },
+    "half1": {
+      "pass": 43.5,
+      "fail": 15.2,
+      "timeout": 41.3
+    },
+    "half2": {
+      "pass": 60.8,
+      "fail": 24.4,
+      "timeout": 14.8
+    },
+    "starts": 3360,
+    "median_sess": 35.0,
+    "p25_sess": 22.0
+  },
+  "Fixed k=3": {
+    "all": {
+      "pass": 53.4,
+      "fail": 28.0,
+      "timeout": 18.6
+    },
+    "half1": {
+      "pass": 45.8,
+      "fail": 26.2,
+      "timeout": 28.0
+    },
+    "half2": {
+      "pass": 61.2,
+      "fail": 29.8,
+      "timeout": 9.0
+    },
+    "starts": 3360,
+    "median_sess": 29.0,
+    "p25_sess": 18.0
+  },
+  "Fixed k=4": {
+    "all": {
+      "pass": 53.0,
+      "fail": 32.4,
+      "timeout": 14.6
+    },
+    "half1": {
+      "pass": 45.3,
+      "fail": 31.8,
+      "timeout": 22.9
+    },
+    "half2": {
+      "pass": 60.8,
+      "fail": 33.0,
+      "timeout": 6.2
+    },
+    "starts": 3360,
+    "median_sess": 27.0,
+    "p25_sess": 17.0
+  },
+  "Fixed k=5": {
+    "all": {
+      "pass": 51.6,
+      "fail": 36.0,
+      "timeout": 12.4
+    },
+    "half1": {
+      "pass": 43.4,
+      "fail": 36.7,
+      "timeout": 19.9
+    },
+    "half2": {
+      "pass": 59.9,
+      "fail": 35.3,
+      "timeout": 4.8
+    },
+    "starts": 3360,
+    "median_sess": 26.0,
+    "p25_sess": 16.0
+  },
+  "Defensive: k3, k1 <= -500": {
+    "all": {
+      "pass": 52.9,
+      "fail": 11.9,
+      "timeout": 35.1
+    },
+    "half1": {
+      "pass": 42.4,
+      "fail": 6.0,
+      "timeout": 51.7
+    },
+    "half2": {
+      "pass": 63.6,
+      "fail": 18.0,
+      "timeout": 18.3
+    },
+    "starts": 3360,
+    "median_sess": 31.0,
+    "p25_sess": 19.0
+  },
+  "Defensive: k3, k1 <= -800": {
+    "all": {
+      "pass": 53.7,
+      "fail": 16.7,
+      "timeout": 29.7
+    },
+    "half1": {
+      "pass": 44.7,
+      "fail": 10.9,
+      "timeout": 44.4
+    },
+    "half2": {
+      "pass": 62.8,
+      "fail": 22.5,
+      "timeout": 14.7
+    },
+    "starts": 3360,
+    "median_sess": 30.0,
+    "p25_sess": 18.0
+  },
+  "Defensive: k3, k1 <= -1000": {
+    "all": {
+      "pass": 54.4,
+      "fail": 20.0,
+      "timeout": 25.6
+    },
+    "half1": {
+      "pass": 45.8,
+      "fail": 15.6,
+      "timeout": 38.6
+    },
+    "half2": {
+      "pass": 63.2,
+      "fail": 24.5,
+      "timeout": 12.4
+    },
+    "starts": 3360,
+    "median_sess": 30.0,
+    "p25_sess": 18.0
+  },
+  "Defensive: k3, k2 <= -500, k1 <= -1000": {
+    "all": {
+      "pass": 55.2,
+      "fail": 16.8,
+      "timeout": 27.9
+    },
+    "half1": {
+      "pass": 45.6,
+      "fail": 11.8,
+      "timeout": 42.6
+    },
+    "half2": {
+      "pass": 65.1,
+      "fail": 21.9,
+      "timeout": 13.0
+    },
+    "starts": 3360,
+    "median_sess": 30.0,
+    "p25_sess": 18.0
+  },
+  "Defensive: k2, k1 <= -500": {
+    "all": {
+      "pass": 51.0,
+      "fail": 10.3,
+      "timeout": 38.7
+    },
+    "half1": {
+      "pass": 40.7,
+      "fail": 4.0,
+      "timeout": 55.2
+    },
+    "half2": {
+      "pass": 61.5,
+      "fail": 16.6,
+      "timeout": 21.8
+    },
+    "starts": 3360,
+    "median_sess": 36.0,
+    "p25_sess": 23.0
+  },
+  "Asymmetric A: k1 <= -500, k3 base, k4 >= +1500": {
+    "all": {
+      "pass": 53.3,
+      "fail": 12.0,
+      "timeout": 34.7
+    },
+    "half1": {
+      "pass": 42.9,
+      "fail": 6.0,
+      "timeout": 51.2
+    },
+    "half2": {
+      "pass": 64.0,
+      "fail": 18.1,
+      "timeout": 17.8
+    },
+    "starts": 3360,
+    "median_sess": 31.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric B: k1 <= -500, k3 base, k5 >= +1500": {
+    "all": {
+      "pass": 50.6,
+      "fail": 12.3,
+      "timeout": 37.1
+    },
+    "half1": {
+      "pass": 38.0,
+      "fail": 6.2,
+      "timeout": 55.8
+    },
+    "half2": {
+      "pass": 63.4,
+      "fail": 18.5,
+      "timeout": 18.1
+    },
+    "starts": 3360,
+    "median_sess": 30.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric C: k1 <= -800, k3 base, k4 >= +1500": {
+    "all": {
+      "pass": 53.8,
+      "fail": 16.7,
+      "timeout": 29.5
+    },
+    "half1": {
+      "pass": 44.7,
+      "fail": 10.9,
+      "timeout": 44.4
+    },
+    "half2": {
+      "pass": 63.1,
+      "fail": 22.6,
+      "timeout": 14.3
+    },
+    "starts": 3360,
+    "median_sess": 29.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric D: k1 <= -800, k3 base, k5 >= +1500": {
+    "all": {
+      "pass": 51.9,
+      "fail": 17.0,
+      "timeout": 31.1
+    },
+    "half1": {
+      "pass": 41.2,
+      "fail": 10.9,
+      "timeout": 47.9
+    },
+    "half2": {
+      "pass": 62.9,
+      "fail": 23.2,
+      "timeout": 13.9
+    },
+    "starts": 3360,
+    "median_sess": 29.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric E: k1 <= -500, k2 <= 0, k3 base, k5 >= +1500": {
+    "all": {
+      "pass": 50.9,
+      "fail": 10.7,
+      "timeout": 38.5
+    },
+    "half1": {
+      "pass": 38.3,
+      "fail": 4.5,
+      "timeout": 57.2
+    },
+    "half2": {
+      "pass": 63.7,
+      "fail": 16.9,
+      "timeout": 19.4
+    },
+    "starts": 3360,
+    "median_sess": 30.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric F: k1 <= -500, k3 base, k5 >= +2000": {
+    "all": {
+      "pass": 51.0,
+      "fail": 12.0,
+      "timeout": 37.0
+    },
+    "half1": {
+      "pass": 38.6,
+      "fail": 6.0,
+      "timeout": 55.4
+    },
+    "half2": {
+      "pass": 63.6,
+      "fail": 18.1,
+      "timeout": 18.2
+    },
+    "starts": 3360,
+    "median_sess": 30.5,
+    "p25_sess": 18.0
+  },
+  "Asymmetric G: k1 <= -500, k3 base, k6 >= +2000": {
+    "all": {
+      "pass": 49.9,
+      "fail": 12.0,
+      "timeout": 38.1
+    },
+    "half1": {
+      "pass": 38.0,
+      "fail": 6.0,
+      "timeout": 56.0
+    },
+    "half2": {
+      "pass": 62.1,
+      "fail": 18.1,
+      "timeout": 19.8
+    },
+    "starts": 3360,
+    "median_sess": 30.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric H (High Floor): k2 <= -300, k1 <= -700, k3 base, k5 >= +1500": {
+    "all": {
+      "pass": 51.7,
+      "fail": 13.6,
+      "timeout": 34.7
+    },
+    "half1": {
+      "pass": 39.6,
+      "fail": 8.2,
+      "timeout": 52.2
+    },
+    "half2": {
+      "pass": 64.1,
+      "fail": 19.1,
+      "timeout": 16.8
+    },
+    "starts": 3360,
+    "median_sess": 29.0,
+    "p25_sess": 18.0
+  },
+  "Asymmetric I (Fortress): k1 <= 0, k2 <= 1000, k4 >= 1000, k6 >= 2500": {
+    "all": {
+      "pass": 49.2,
+      "fail": 6.3,
+      "timeout": 44.5
+    },
+    "half1": {
+      "pass": 36.3,
+      "fail": 2.2,
+      "timeout": 61.6
+    },
+    "half2": {
+      "pass": 62.3,
+      "fail": 10.6,
+      "timeout": 27.1
+    },
+    "starts": 3360,
+    "median_sess": 33.0,
+    "p25_sess": 22.0
+  }
+}

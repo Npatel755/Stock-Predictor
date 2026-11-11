@@ -1,0 +1,115 @@
+{
+ "base R (P1)": {
+  "S0": {
+   "payouts_12m_mean": 6.21,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0,
+   "days_ge150_12m": 37.8
+  },
+  "S3": {
+   "payouts_12m_mean": 4.94,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 0,
+   "days_ge150_12m": 34.0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.48,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.113,
+   "dll_days": 0,
+   "days_ge150_12m": 28.6
+  },
+  "H1": {
+   "payouts_12m_mean": 5.58,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.0,
+   "dll_days": 0,
+   "days_ge150_12m": 36.4
+  },
+  "H2": {
+   "payouts_12m_mean": 6.89,
+   "payouts_12m_p10": 5.0,
+   "p_breach_12m": 0.014,
+   "dll_days": 0,
+   "days_ge150_12m": 39.3
+  }
+ },
+ "P2 always": {
+  "S0": {
+   "payouts_12m_mean": 5.99,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0,
+   "days_ge150_12m": 36.9
+  },
+  "S3": {
+   "payouts_12m_mean": 4.67,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.066,
+   "dll_days": 0,
+   "days_ge150_12m": 32.8
+  },
+  "S4": {
+   "payouts_12m_mean": 4.38,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.132,
+   "dll_days": 0,
+   "days_ge150_12m": 28.1
+  },
+  "H1": {
+   "payouts_12m_mean": 5.73,
+   "payouts_12m_p10": 3.7,
+   "p_breach_12m": 0.0,
+   "dll_days": 0,
+   "days_ge150_12m": 36.7
+  },
+  "H2": {
+   "payouts_12m_mean": 6.27,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.014,
+   "dll_days": 0,
+   "days_ge150_12m": 37.0
+  },
+  "adopt": false
+ },
+ "P2 above $500": {
+  "S0": {
+   "payouts_12m_mean": 5.96,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0,
+   "days_ge150_12m": 36.7
+  },
+  "S3": {
+   "payouts_12m_mean": 4.6,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 0,
+   "days_ge150_12m": 33.5
+  },
+  "S4": {
+   "payouts_12m_mean": 4.38,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.132,
+   "dll_days": 0,
+   "days_ge150_12m": 28.2
+  },
+  "H1": {
+   "payouts_12m_mean": 5.59,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.0,
+   "dll_days": 0,
+   "days_ge150_12m": 36.3
+  },
+  "H2": {
+   "payouts_12m_mean": 6.36,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.014,
+   "dll_days": 0,
+   "days_ge150_12m": 37.2
+  },
+  "adopt": false
+ }
+}

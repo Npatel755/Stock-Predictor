@@ -1,0 +1,216 @@
+{
+ "base R (1x)": {
+  "S0": {
+   "payouts_12m_mean": 6.21,
+   "payouts_12m_p10": 4.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 0,
+   "days_ge150_12m": 37.8,
+   "withdrawn_12m_mean": 7873.0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.94,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 0,
+   "days_ge150_12m": 34.0,
+   "withdrawn_12m_mean": 5519.0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.48,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.113,
+   "dll_days": 0,
+   "days_ge150_12m": 28.6,
+   "withdrawn_12m_mean": 6947.0
+  },
+  "H1": {
+   "payouts_12m_mean": 5.58,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.0,
+   "dll_days": 0,
+   "days_ge150_12m": 36.4,
+   "withdrawn_12m_mean": 5719.0
+  },
+  "H2": {
+   "payouts_12m_mean": 6.89,
+   "payouts_12m_p10": 5.0,
+   "p_breach_12m": 0.014,
+   "dll_days": 0,
+   "days_ge150_12m": 39.3,
+   "withdrawn_12m_mean": 10175.0
+  }
+ },
+ "2x always": {
+  "S0": {
+   "payouts_12m_mean": 5.32,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.45,
+   "dll_days": 124,
+   "days_ge150_12m": 33.1,
+   "withdrawn_12m_mean": 10945.0
+  },
+  "S3": {
+   "payouts_12m_mean": 3.4,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.728,
+   "dll_days": 122,
+   "days_ge150_12m": 22.8,
+   "withdrawn_12m_mean": 6956.0
+  },
+  "S4": {
+   "payouts_12m_mean": 2.76,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.556,
+   "dll_days": 94,
+   "days_ge150_12m": 17.8,
+   "withdrawn_12m_mean": 6082.0
+  },
+  "H1": {
+   "payouts_12m_mean": 5.19,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.449,
+   "dll_days": 45,
+   "days_ge150_12m": 33.7,
+   "withdrawn_12m_mean": 8435.0
+  },
+  "H2": {
+   "payouts_12m_mean": 5.47,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.452,
+   "dll_days": 79,
+   "days_ge150_12m": 32.5,
+   "withdrawn_12m_mean": 13626.0
+  },
+  "adopt": false
+ },
+ "2x above $1,000": {
+  "S0": {
+   "payouts_12m_mean": 6.13,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 83,
+   "days_ge150_12m": 39.1,
+   "withdrawn_12m_mean": 9751.0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.66,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.033,
+   "dll_days": 70,
+   "days_ge150_12m": 34.9,
+   "withdrawn_12m_mean": 7119.0
+  },
+  "S4": {
+   "payouts_12m_mean": 3.84,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.079,
+   "dll_days": 23,
+   "days_ge150_12m": 26.3,
+   "withdrawn_12m_mean": 6662.0
+  },
+  "H1": {
+   "payouts_12m_mean": 5.77,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.0,
+   "dll_days": 22,
+   "days_ge150_12m": 38.5,
+   "withdrawn_12m_mean": 7504.0
+  },
+  "H2": {
+   "payouts_12m_mean": 6.52,
+   "payouts_12m_p10": 3.0,
+   "p_breach_12m": 0.014,
+   "dll_days": 61,
+   "days_ge150_12m": 39.7,
+   "withdrawn_12m_mean": 12152.0
+  },
+  "adopt": false
+ },
+ "3x always": {
+  "S0": {
+   "payouts_12m_mean": 3.2,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.775,
+   "dll_days": 183,
+   "days_ge150_12m": 19.8,
+   "withdrawn_12m_mean": 8509.0
+  },
+  "S3": {
+   "payouts_12m_mean": 1.9,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.907,
+   "dll_days": 171,
+   "days_ge150_12m": 12.7,
+   "withdrawn_12m_mean": 5365.0
+  },
+  "S4": {
+   "payouts_12m_mean": 1.83,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.834,
+   "dll_days": 156,
+   "days_ge150_12m": 11.8,
+   "withdrawn_12m_mean": 5459.0
+  },
+  "H1": {
+   "payouts_12m_mean": 2.59,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.872,
+   "dll_days": 79,
+   "days_ge150_12m": 17.3,
+   "withdrawn_12m_mean": 4517.0
+  },
+  "H2": {
+   "payouts_12m_mean": 3.85,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.671,
+   "dll_days": 104,
+   "days_ge150_12m": 22.5,
+   "withdrawn_12m_mean": 12775.0
+  },
+  "adopt": false
+ },
+ "3x above $1,000": {
+  "S0": {
+   "payouts_12m_mean": 5.11,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.007,
+   "dll_days": 150,
+   "days_ge150_12m": 35.1,
+   "withdrawn_12m_mean": 8481.0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.02,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.086,
+   "dll_days": 102,
+   "days_ge150_12m": 31.5,
+   "withdrawn_12m_mean": 6242.0
+  },
+  "S4": {
+   "payouts_12m_mean": 3.59,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.079,
+   "dll_days": 67,
+   "days_ge150_12m": 25.8,
+   "withdrawn_12m_mean": 7112.0
+  },
+  "H1": {
+   "payouts_12m_mean": 4.59,
+   "payouts_12m_p10": 2.7,
+   "p_breach_12m": 0.0,
+   "dll_days": 58,
+   "days_ge150_12m": 34.7,
+   "withdrawn_12m_mean": 5202.0
+  },
+  "H2": {
+   "payouts_12m_mean": 5.66,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.014,
+   "dll_days": 92,
+   "days_ge150_12m": 35.5,
+   "withdrawn_12m_mean": 11984.0
+  },
+  "adopt": false
+ }
+}

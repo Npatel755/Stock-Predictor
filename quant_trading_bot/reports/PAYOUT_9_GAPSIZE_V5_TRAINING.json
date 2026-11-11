@@ -1,0 +1,126 @@
+{
+ "v5": {
+  "days150_per_year": 24.6,
+  "days150_2010_19": 22.1,
+  "days150_2020_23": 31.0,
+  "net_per_year": 4788.0,
+  "pos_years": "13/14",
+  "worst_day": -610.0,
+  "max_drawdown": 1628.0,
+  "payouts_per_year": 4.5,
+  "median_payout": 979.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   6.0
+  ]
+ },
+ "v5 + gap 2-micro Crabel": {
+  "days150_per_year": 26.1,
+  "days150_2010_19": 23.9,
+  "days150_2020_23": 31.5,
+  "net_per_year": 6330.0,
+  "pos_years": "14/14",
+  "worst_day": -767.0,
+  "max_drawdown": 2234.0,
+  "payouts_per_year": 4.93,
+  "median_payout": 1150.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   3.0,
+   7.0
+  ],
+  "gate": true
+ },
+ "v5 + gap 2-micro Crabel, stop $600": {
+  "days150_per_year": 26.1,
+  "days150_2010_19": 23.9,
+  "days150_2020_23": 31.5,
+  "net_per_year": 6300.0,
+  "pos_years": "14/14",
+  "worst_day": -813.0,
+  "max_drawdown": 2234.0,
+  "payouts_per_year": 4.93,
+  "median_payout": 1124.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   3.0,
+   7.0
+  ],
+  "gate": true
+ },
+ "v5+TRD30PM": {
+  "days150_per_year": 29.1,
+  "days150_2010_19": 26.7,
+  "days150_2020_23": 35.2,
+  "net_per_year": 4983.0,
+  "pos_years": "13/14",
+  "worst_day": -640.0,
+  "max_drawdown": 2545.0,
+  "payouts_per_year": 5.07,
+  "median_payout": 926.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.013,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ]
+ },
+ "v5+TRD30PM + gap 2-micro Crabel": {
+  "days150_per_year": 30.6,
+  "days150_2010_19": 28.6,
+  "days150_2020_23": 35.8,
+  "net_per_year": 6517.0,
+  "pos_years": "13/14",
+  "worst_day": -767.0,
+  "max_drawdown": 2515.0,
+  "payouts_per_year": 5.5,
+  "median_payout": 895.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.007,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   3.0,
+   7.0
+  ],
+  "gate": true
+ },
+ "v5+TRD30PM + gap 2-micro Crabel, stop $600": {
+  "days150_per_year": 30.6,
+  "days150_2010_19": 28.6,
+  "days150_2020_23": 35.8,
+  "net_per_year": 6495.0,
+  "pos_years": "13/14",
+  "worst_day": -813.0,
+  "max_drawdown": 2515.0,
+  "payouts_per_year": 5.5,
+  "median_payout": 895.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.007,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   3.0,
+   7.0
+  ],
+  "gate": true
+ }
+}

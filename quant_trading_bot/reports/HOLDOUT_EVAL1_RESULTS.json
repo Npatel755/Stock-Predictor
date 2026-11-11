@@ -1,0 +1,31 @@
+{
+ "validation": {
+  "starts": 457,
+  "pass": 38.9,
+  "fail": 43.3,
+  "timeout": 17.7,
+  "median_sessions_to_pass": 20.0,
+  "by_start_quarter": {
+   "2024Q1": "6% pass of 64",
+   "2024Q2": "40% pass of 65",
+   "2024Q3": "41% pass of 66",
+   "2024Q4": "80% pass of 66",
+   "2025Q1": "47% pass of 64",
+   "2025Q2": "59% pass of 64",
+   "2025Q3": "0% pass of 66",
+   "2025Q4": "0% pass of 2"
+  }
+ },
+ "test": {
+  "starts": 157,
+  "pass": 58.6,
+  "fail": 30.6,
+  "timeout": 10.8,
+  "median_sessions_to_pass": 25.0,
+  "by_start_quarter": {
+   "2026Q1": "58% pass of 64",
+   "2026Q2": "55% pass of 65",
+   "2026Q3": "68% pass of 28"
+  }
+ }
+}

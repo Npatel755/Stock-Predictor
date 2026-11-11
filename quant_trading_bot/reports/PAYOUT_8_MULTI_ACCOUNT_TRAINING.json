@@ -1,0 +1,125 @@
+{
+ "books": {
+  "A v5": {
+   "payouts_12m_mean": 4.21,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.0,
+   "passes": true,
+   "days150_per_year": 24.6,
+   "net_per_year": 4788.0,
+   "worst_day": -610.0,
+   "max_drawdown": 1628.0
+  },
+  "B v5+TRD30PM": {
+   "payouts_12m_mean": 4.72,
+   "payouts_12m_p10": 2.0,
+   "p_breach_12m": 0.013,
+   "passes": true,
+   "days150_per_year": 29.1,
+   "net_per_year": 4983.0,
+   "worst_day": -640.0,
+   "max_drawdown": 2545.0
+  },
+  "C TRD30_D+BRK30+TRD30PM": {
+   "payouts_12m_mean": 4.01,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.192,
+   "passes": false,
+   "days150_per_year": 28.6,
+   "net_per_year": 3948.0,
+   "worst_day": -587.0,
+   "max_drawdown": 4224.0
+  },
+  "D TRD30_D+BRK30+MES30": {
+   "payouts_12m_mean": 3.73,
+   "payouts_12m_p10": 1.0,
+   "p_breach_12m": 0.126,
+   "passes": false,
+   "days150_per_year": 25.0,
+   "net_per_year": 4041.0,
+   "worst_day": -587.0,
+   "max_drawdown": 3553.0
+  },
+  "E TRD30PM+MES30+TRD60": {
+   "payouts_12m_mean": 2.95,
+   "payouts_12m_p10": 0.0,
+   "p_breach_12m": 0.007,
+   "passes": true,
+   "days150_per_year": 23.0,
+   "net_per_year": 2799.0,
+   "worst_day": -640.0,
+   "max_drawdown": 2332.0
+  }
+ },
+ "monthly_corr": {
+  "A v5": {
+   "A v5": 1.0,
+   "B v5+TRD30PM": 0.94,
+   "C TRD30_D+BRK30+TRD30PM": 0.6,
+   "D TRD30_D+BRK30+MES30": 0.69,
+   "E TRD30PM+MES30+TRD60": 0.77
+  },
+  "B v5+TRD30PM": {
+   "A v5": 0.94,
+   "B v5+TRD30PM": 1.0,
+   "C TRD30_D+BRK30+TRD30PM": 0.68,
+   "D TRD30_D+BRK30+MES30": 0.69,
+   "E TRD30PM+MES30+TRD60": 0.85
+  },
+  "C TRD30_D+BRK30+TRD30PM": {
+   "A v5": 0.6,
+   "B v5+TRD30PM": 0.68,
+   "C TRD30_D+BRK30+TRD30PM": 1.0,
+   "D TRD30_D+BRK30+MES30": 0.93,
+   "E TRD30PM+MES30+TRD60": 0.71
+  },
+  "D TRD30_D+BRK30+MES30": {
+   "A v5": 0.69,
+   "B v5+TRD30PM": 0.69,
+   "C TRD30_D+BRK30+TRD30PM": 0.93,
+   "D TRD30_D+BRK30+MES30": 1.0,
+   "E TRD30PM+MES30+TRD60": 0.7
+  },
+  "E TRD30PM+MES30+TRD60": {
+   "A v5": 0.77,
+   "B v5+TRD30PM": 0.85,
+   "C TRD30_D+BRK30+TRD30PM": 0.71,
+   "D TRD30_D+BRK30+MES30": 0.7,
+   "E TRD30PM+MES30+TRD60": 1.0
+  }
+ },
+ "portfolios": {
+  "A v5 + B v5+TRD30PM": {
+   "total_payouts_12m_mean": 8.93,
+   "total_payouts_12m_p10": 4.0,
+   "p_any_breach_12m": 0.013,
+   "p_2plus_breach_12m": 0.0,
+   "mean_monthly_corr": 0.94,
+   "meets_target": false
+  },
+  "A v5 + E TRD30PM+MES30+TRD60": {
+   "total_payouts_12m_mean": 7.16,
+   "total_payouts_12m_p10": 3.0,
+   "p_any_breach_12m": 0.007,
+   "p_2plus_breach_12m": 0.0,
+   "mean_monthly_corr": 0.77,
+   "meets_target": false
+  },
+  "B v5+TRD30PM + E TRD30PM+MES30+TRD60": {
+   "total_payouts_12m_mean": 7.66,
+   "total_payouts_12m_p10": 3.0,
+   "p_any_breach_12m": 0.02,
+   "p_2plus_breach_12m": 0.0,
+   "mean_monthly_corr": 0.85,
+   "meets_target": false
+  },
+  "A v5 + B v5+TRD30PM + E TRD30PM+MES30+TRD60": {
+   "total_payouts_12m_mean": 11.87,
+   "total_payouts_12m_p10": 5.0,
+   "p_any_breach_12m": 0.02,
+   "p_2plus_breach_12m": 0.0,
+   "mean_monthly_corr": 0.85,
+   "meets_target": false
+  }
+ }
+}

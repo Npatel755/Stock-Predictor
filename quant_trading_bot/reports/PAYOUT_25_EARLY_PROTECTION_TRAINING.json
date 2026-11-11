@@ -1,0 +1,306 @@
+{
+ "base (payout_24 adopted)": {
+  "S0": {
+   "withdrawn_24m": 25325.0,
+   "payouts_y1": 9.49,
+   "payouts_y2": 19.73,
+   "closed_24m": 0.007,
+   "near_miss": 0.029
+  },
+  "S3": {
+   "withdrawn_24m": 15996.0,
+   "payouts_y1": 5.12,
+   "payouts_y2": 12.91,
+   "closed_24m": 0.036,
+   "near_miss": 0.137
+  },
+  "S4": {
+   "withdrawn_24m": 11579.0,
+   "payouts_y1": 4.31,
+   "payouts_y2": 7.87,
+   "closed_24m": 0.065,
+   "near_miss": 0.18
+  },
+  "half1": {
+   "withdrawn_24m": 19292.0,
+   "payouts_y1": 7.6,
+   "payouts_y2": 18.17,
+   "closed_24m": 0.0,
+   "near_miss": 0.042
+  },
+  "half2": {
+   "withdrawn_24m": 31808.0,
+   "payouts_y1": 11.52,
+   "payouts_y2": 21.4,
+   "closed_24m": 0.015,
+   "near_miss": 0.015
+  }
+ },
+ "A1 below $0": {
+  "S0": {
+   "withdrawn_24m": 24844.0,
+   "payouts_y1": 8.95,
+   "payouts_y2": 19.59,
+   "closed_24m": 0.014,
+   "near_miss": 0.065
+  },
+  "S3": {
+   "withdrawn_24m": 15409.0,
+   "payouts_y1": 4.81,
+   "payouts_y2": 12.3,
+   "closed_24m": 0.086,
+   "near_miss": 0.173
+  },
+  "S4": {
+   "withdrawn_24m": 10535.0,
+   "payouts_y1": 3.63,
+   "payouts_y2": 7.34,
+   "closed_24m": 0.058,
+   "near_miss": 0.122
+  },
+  "half1": {
+   "withdrawn_24m": 18505.0,
+   "payouts_y1": 6.82,
+   "payouts_y2": 17.75,
+   "closed_24m": 0.028,
+   "near_miss": 0.111
+  },
+  "half2": {
+   "withdrawn_24m": 31656.0,
+   "payouts_y1": 11.24,
+   "payouts_y2": 21.57,
+   "closed_24m": 0.0,
+   "near_miss": 0.015
+  },
+  "eligible": false
+ },
+ "A1 below $1,000": {
+  "S0": {
+   "withdrawn_24m": 23819.0,
+   "payouts_y1": 7.92,
+   "payouts_y2": 19.32,
+   "closed_24m": 0.014,
+   "near_miss": 0.05
+  },
+  "S3": {
+   "withdrawn_24m": 14882.0,
+   "payouts_y1": 4.65,
+   "payouts_y2": 11.6,
+   "closed_24m": 0.086,
+   "near_miss": 0.165
+  },
+  "S4": {
+   "withdrawn_24m": 10880.0,
+   "payouts_y1": 3.66,
+   "payouts_y2": 7.73,
+   "closed_24m": 0.065,
+   "near_miss": 0.115
+  },
+  "half1": {
+   "withdrawn_24m": 17437.0,
+   "payouts_y1": 5.51,
+   "payouts_y2": 17.39,
+   "closed_24m": 0.028,
+   "near_miss": 0.083
+  },
+  "half2": {
+   "withdrawn_24m": 30677.0,
+   "payouts_y1": 10.51,
+   "payouts_y2": 21.4,
+   "closed_24m": 0.0,
+   "near_miss": 0.015
+  },
+  "eligible": false
+ },
+ "A2 below $0": {
+  "S0": {
+   "withdrawn_24m": 24297.0,
+   "payouts_y1": 8.78,
+   "payouts_y2": 19.24,
+   "closed_24m": 0.007,
+   "near_miss": 0.007
+  },
+  "S3": {
+   "withdrawn_24m": 14605.0,
+   "payouts_y1": 4.47,
+   "payouts_y2": 11.36,
+   "closed_24m": 0.065,
+   "near_miss": 0.129
+  },
+  "S4": {
+   "withdrawn_24m": 7481.0,
+   "payouts_y1": 2.19,
+   "payouts_y2": 5.73,
+   "closed_24m": 0.108,
+   "near_miss": 0.151
+  },
+  "half1": {
+   "withdrawn_24m": 18406.0,
+   "payouts_y1": 6.74,
+   "payouts_y2": 17.5,
+   "closed_24m": 0.0,
+   "near_miss": 0.0
+  },
+  "half2": {
+   "withdrawn_24m": 30627.0,
+   "payouts_y1": 10.97,
+   "payouts_y2": 21.1,
+   "closed_24m": 0.015,
+   "near_miss": 0.015
+  },
+  "eligible": false
+ },
+ "A2 below $1,000": {
+  "S0": {
+   "withdrawn_24m": 22335.0,
+   "payouts_y1": 7.65,
+   "payouts_y2": 18.4,
+   "closed_24m": 0.058,
+   "near_miss": 0.058
+  },
+  "S3": {
+   "withdrawn_24m": 13859.0,
+   "payouts_y1": 4.24,
+   "payouts_y2": 10.99,
+   "closed_24m": 0.086,
+   "near_miss": 0.194
+  },
+  "S4": {
+   "withdrawn_24m": 5787.0,
+   "payouts_y1": 1.17,
+   "payouts_y2": 4.91,
+   "closed_24m": 0.029,
+   "near_miss": 0.129
+  },
+  "half1": {
+   "withdrawn_24m": 18638.0,
+   "payouts_y1": 6.53,
+   "payouts_y2": 18.25,
+   "closed_24m": 0.0,
+   "near_miss": 0.0
+  },
+  "half2": {
+   "withdrawn_24m": 26308.0,
+   "payouts_y1": 8.87,
+   "payouts_y2": 18.57,
+   "closed_24m": 0.119,
+   "near_miss": 0.119
+  },
+  "eligible": false
+ },
+ "A4 below $0": {
+  "S0": {
+   "withdrawn_24m": 23797.0,
+   "payouts_y1": 8.1,
+   "payouts_y2": 19.21,
+   "closed_24m": 0.007,
+   "near_miss": 0.007
+  },
+  "S3": {
+   "withdrawn_24m": 13746.0,
+   "payouts_y1": 4.07,
+   "payouts_y2": 10.61,
+   "closed_24m": 0.065,
+   "near_miss": 0.137
+  },
+  "S4": {
+   "withdrawn_24m": 7406.0,
+   "payouts_y1": 2.16,
+   "payouts_y2": 5.63,
+   "closed_24m": 0.065,
+   "near_miss": 0.144
+  },
+  "half1": {
+   "withdrawn_24m": 17815.0,
+   "payouts_y1": 5.83,
+   "payouts_y2": 17.51,
+   "closed_24m": 0.0,
+   "near_miss": 0.0
+  },
+  "half2": {
+   "withdrawn_24m": 30226.0,
+   "payouts_y1": 10.54,
+   "payouts_y2": 21.03,
+   "closed_24m": 0.015,
+   "near_miss": 0.015
+  },
+  "eligible": false
+ },
+ "A4 below $1,000": {
+  "S0": {
+   "withdrawn_24m": 21087.0,
+   "payouts_y1": 6.61,
+   "payouts_y2": 17.81,
+   "closed_24m": 0.058,
+   "near_miss": 0.058
+  },
+  "S3": {
+   "withdrawn_24m": 12415.0,
+   "payouts_y1": 3.4,
+   "payouts_y2": 9.81,
+   "closed_24m": 0.072,
+   "near_miss": 0.173
+  },
+  "S4": {
+   "withdrawn_24m": 6423.0,
+   "payouts_y1": 1.12,
+   "payouts_y2": 5.6,
+   "closed_24m": 0.022,
+   "near_miss": 0.058
+  },
+  "half1": {
+   "withdrawn_24m": 17508.0,
+   "payouts_y1": 5.53,
+   "payouts_y2": 17.46,
+   "closed_24m": 0.0,
+   "near_miss": 0.0
+  },
+  "half2": {
+   "withdrawn_24m": 24933.0,
+   "payouts_y1": 7.78,
+   "payouts_y2": 18.18,
+   "closed_24m": 0.119,
+   "near_miss": 0.119
+  },
+  "eligible": false
+ },
+ "A3 overnight from $1,000": {
+  "S0": {
+   "withdrawn_24m": 25176.0,
+   "payouts_y1": 9.35,
+   "payouts_y2": 19.67,
+   "closed_24m": 0.007,
+   "near_miss": 0.029
+  },
+  "S3": {
+   "withdrawn_24m": 15916.0,
+   "payouts_y1": 5.12,
+   "payouts_y2": 12.85,
+   "closed_24m": 0.036,
+   "near_miss": 0.158
+  },
+  "S4": {
+   "withdrawn_24m": 11326.0,
+   "payouts_y1": 4.12,
+   "payouts_y2": 7.84,
+   "closed_24m": 0.072,
+   "near_miss": 0.158
+  },
+  "half1": {
+   "withdrawn_24m": 18891.0,
+   "payouts_y1": 7.11,
+   "payouts_y2": 18.1,
+   "closed_24m": 0.0,
+   "near_miss": 0.042
+  },
+  "half2": {
+   "withdrawn_24m": 31930.0,
+   "payouts_y1": 11.75,
+   "payouts_y2": 21.36,
+   "closed_24m": 0.015,
+   "near_miss": 0.015
+  },
+  "eligible": false
+ },
+ "selected": null
+}

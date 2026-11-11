@@ -1,0 +1,24 @@
+{
+ "V v5.2": {
+  "starts": 151,
+  "pass_rate": 0.801,
+  "fail_floor": 0.007,
+  "fail_dll": 0.0,
+  "open_after_12m": 0.192,
+  "median_trading_days_to_pass": 118.0,
+  "p75_trading_days_to_pass": 178.0,
+  "median_trading_days_pass_to_first_payout": 38.0,
+  "median_trading_days_start_to_first_payout": 163.0
+ },
+ "R v5.2 + staged overnight": {
+  "starts": 151,
+  "pass_rate": 0.907,
+  "fail_floor": 0.007,
+  "fail_dll": 0.0,
+  "open_after_12m": 0.086,
+  "median_trading_days_to_pass": 102.0,
+  "p75_trading_days_to_pass": 159.0,
+  "median_trading_days_pass_to_first_payout": 35.0,
+  "median_trading_days_start_to_first_payout": 142.0
+ }
+}

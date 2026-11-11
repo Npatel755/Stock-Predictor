@@ -1,0 +1,46 @@
+{
+ "v5.2 + overnight stop 0.40%, night only when balance >= $500": {
+  "payouts_per_year_14y": 6.07,
+  "payouts_12m_mean": 6.06,
+  "payouts_12m_p10_p90": [
+   4.0,
+   9.0
+  ],
+  "p_breach_12m": 0.007,
+  "worst_day": -780.0,
+  "gate": true
+ },
+ "v5.2 + overnight stop 0.40%, night only when balance >= $1000": {
+  "payouts_per_year_14y": 6.07,
+  "payouts_12m_mean": 5.82,
+  "payouts_12m_p10_p90": [
+   3.0,
+   8.0
+  ],
+  "p_breach_12m": 0.007,
+  "worst_day": -780.0,
+  "gate": true
+ },
+ "v5.2 + overnight stop 0.55%, night only when balance >= $500": {
+  "payouts_per_year_14y": 6.43,
+  "payouts_12m_mean": 6.21,
+  "payouts_12m_p10_p90": [
+   4.0,
+   9.0
+  ],
+  "p_breach_12m": 0.007,
+  "worst_day": -864.0,
+  "gate": true
+ },
+ "v5.2 + overnight stop 0.55%, night only when balance >= $1000": {
+  "payouts_per_year_14y": 6.14,
+  "payouts_12m_mean": 5.86,
+  "payouts_12m_p10_p90": [
+   3.0,
+   8.0
+  ],
+  "p_breach_12m": 0.007,
+  "worst_day": -864.0,
+  "gate": true
+ }
+}

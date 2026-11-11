@@ -1,0 +1,194 @@
+{
+  "Cap-Aware 2x (Scale @ $3.5k | K=$5.5k | 09:15 Exit)": {
+    "S0": {
+      "withdrawn_24m": 27287.0,
+      "payouts_y1": 10.53,
+      "payouts_y2": 21.66,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0
+    },
+    "S3": {
+      "withdrawn_24m": 17246.0,
+      "payouts_y1": 6.53,
+      "payouts_y2": 13.18,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.165,
+      "worst_drawdown_valley": -2064.0
+    },
+    "S4": {
+      "withdrawn_24m": 20096.0,
+      "payouts_y1": 8.39,
+      "payouts_y2": 15.01,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.216,
+      "worst_drawdown_valley": -2252.0
+    },
+    "half1": {
+      "withdrawn_24m": 20042.0,
+      "payouts_y1": 8.04,
+      "payouts_y2": 19.19,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0
+    },
+    "half2": {
+      "withdrawn_24m": 35072.0,
+      "payouts_y1": 13.21,
+      "payouts_y2": 24.31,
+      "payouts_y1_p10": 3.6000000000000005,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0
+    },
+    "eligible": true
+  },
+  "Cap-Aware 3x Tier (1x <$3.5k, 2x $3.5k-$7.5k, 3x >=$7.5k | K=$5.5k | 09:15 Exit)": {
+    "S0": {
+      "withdrawn_24m": 27237.0,
+      "payouts_y1": 10.53,
+      "payouts_y2": 21.66,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0
+    },
+    "S3": {
+      "withdrawn_24m": 17057.0,
+      "payouts_y1": 6.46,
+      "payouts_y2": 13.01,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.165,
+      "worst_drawdown_valley": -2064.0
+    },
+    "S4": {
+      "withdrawn_24m": 20128.0,
+      "payouts_y1": 8.39,
+      "payouts_y2": 15.09,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.216,
+      "worst_drawdown_valley": -2252.0
+    },
+    "half1": {
+      "withdrawn_24m": 20042.0,
+      "payouts_y1": 8.04,
+      "payouts_y2": 19.19,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0
+    },
+    "half2": {
+      "withdrawn_24m": 34969.0,
+      "payouts_y1": 13.21,
+      "payouts_y2": 24.31,
+      "payouts_y1_p10": 3.6000000000000005,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0
+    },
+    "eligible": true
+  },
+  "Cap-Aware 3x Tier (1x <$3.5k, 2x $3.5k-$8.0k, 3x >=$8.0k | K=$6.0k | 09:15 Exit)": {
+    "S0": {
+      "withdrawn_24m": 27099.0,
+      "payouts_y1": 10.14,
+      "payouts_y2": 21.67,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0
+    },
+    "S3": {
+      "withdrawn_24m": 18555.0,
+      "payouts_y1": 6.41,
+      "payouts_y2": 14.71,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.05,
+      "worst_drawdown_valley": -2064.0
+    },
+    "S4": {
+      "withdrawn_24m": 21166.0,
+      "payouts_y1": 8.34,
+      "payouts_y2": 15.69,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.194,
+      "worst_drawdown_valley": -2252.0
+    },
+    "half1": {
+      "withdrawn_24m": 20325.0,
+      "payouts_y1": 7.56,
+      "payouts_y2": 19.14,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0
+    },
+    "half2": {
+      "withdrawn_24m": 34379.0,
+      "payouts_y1": 12.93,
+      "payouts_y2": 24.39,
+      "payouts_y1_p10": 3.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0
+    },
+    "eligible": true
+  },
+  "Cap-Aware 4x Ultra (1x <$3.5k, 2x $3.5k-$7.5k, 3x $7.5k-$11k, 4x >=$11k | K=$6.0k | 09:15 Exit)": {
+    "S0": {
+      "withdrawn_24m": 27118.0,
+      "payouts_y1": 10.14,
+      "payouts_y2": 21.67,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0
+    },
+    "S3": {
+      "withdrawn_24m": 18556.0,
+      "payouts_y1": 6.41,
+      "payouts_y2": 14.71,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.05,
+      "worst_drawdown_valley": -2064.0
+    },
+    "S4": {
+      "withdrawn_24m": 21166.0,
+      "payouts_y1": 8.32,
+      "payouts_y2": 15.61,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.194,
+      "worst_drawdown_valley": -2252.0
+    },
+    "half1": {
+      "withdrawn_24m": 20325.0,
+      "payouts_y1": 7.56,
+      "payouts_y2": 19.14,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0
+    },
+    "half2": {
+      "withdrawn_24m": 34418.0,
+      "payouts_y1": 12.93,
+      "payouts_y2": 24.39,
+      "payouts_y1_p10": 3.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0
+    },
+    "eligible": true
+  }
+}

@@ -1,0 +1,278 @@
+{
+ "old model (static -$2,000, keep $1,000)": {
+  "S0": {
+   "payouts_12m_mean": 6.21,
+   "payouts_12m_p10": 4.0,
+   "closed_12m": 0.007,
+   "withdrawn_12m_mean": 7873.0
+  },
+  "S3": {
+   "payouts_12m_mean": 4.94,
+   "payouts_12m_p10": 2.0,
+   "closed_12m": 0.033,
+   "withdrawn_12m_mean": 5519.0
+  },
+  "S4": {
+   "payouts_12m_mean": 4.48,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.113,
+   "withdrawn_12m_mean": 6947.0
+  }
+ },
+ "standard | keep $0": {
+  "S0": {
+   "payouts_12m_mean": 3.95,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.649,
+   "withdrawn_12m_mean": 4810.0
+  },
+  "S3": {
+   "payouts_12m_mean": 2.86,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.781,
+   "withdrawn_12m_mean": 3188.0
+  },
+  "S4": {
+   "payouts_12m_mean": 2.58,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.689,
+   "withdrawn_12m_mean": 3335.0
+  },
+  "H1": {
+   "payouts_12m_mean": 3.19,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.744,
+   "withdrawn_12m_mean": 2945.0
+  },
+  "H2": {
+   "payouts_12m_mean": 4.77,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.548,
+   "withdrawn_12m_mean": 6803.0
+  }
+ },
+ "standard | keep $500": {
+  "S0": {
+   "payouts_12m_mean": 4.33,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.583,
+   "withdrawn_12m_mean": 5355.0
+  },
+  "S3": {
+   "payouts_12m_mean": 3.03,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.748,
+   "withdrawn_12m_mean": 3465.0
+  },
+  "S4": {
+   "payouts_12m_mean": 2.65,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.642,
+   "withdrawn_12m_mean": 3617.0
+  },
+  "H1": {
+   "payouts_12m_mean": 3.74,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.654,
+   "withdrawn_12m_mean": 3676.0
+  },
+  "H2": {
+   "payouts_12m_mean": 4.96,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.507,
+   "withdrawn_12m_mean": 7149.0
+  }
+ },
+ "standard | keep $1000": {
+  "S0": {
+   "payouts_12m_mean": 4.62,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.477,
+   "withdrawn_12m_mean": 5918.0
+  },
+  "S3": {
+   "payouts_12m_mean": 3.38,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.689,
+   "withdrawn_12m_mean": 3869.0
+  },
+  "S4": {
+   "payouts_12m_mean": 2.89,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.556,
+   "withdrawn_12m_mean": 4076.0
+  },
+  "H1": {
+   "payouts_12m_mean": 4.03,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.526,
+   "withdrawn_12m_mean": 4247.0
+  },
+  "H2": {
+   "payouts_12m_mean": 5.26,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.425,
+   "withdrawn_12m_mean": 7702.0
+  }
+ },
+ "standard | keep $1500": {
+  "S0": {
+   "payouts_12m_mean": 5.11,
+   "payouts_12m_p10": 2.0,
+   "closed_12m": 0.272,
+   "withdrawn_12m_mean": 6226.0
+  },
+  "S3": {
+   "payouts_12m_mean": 3.69,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.49,
+   "withdrawn_12m_mean": 4117.0
+  },
+  "S4": {
+   "payouts_12m_mean": 3.07,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.503,
+   "withdrawn_12m_mean": 4293.0
+  },
+  "H1": {
+   "payouts_12m_mean": 4.78,
+   "payouts_12m_p10": 1.7000000000000002,
+   "closed_12m": 0.192,
+   "withdrawn_12m_mean": 4837.0
+  },
+  "H2": {
+   "payouts_12m_mean": 5.45,
+   "payouts_12m_p10": 2.0,
+   "closed_12m": 0.356,
+   "withdrawn_12m_mean": 7710.0
+  }
+ },
+ "consistency | keep $0": {
+  "S0": {
+   "payouts_12m_mean": 2.32,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.225,
+   "withdrawn_12m_mean": 4624.0
+  },
+  "S3": {
+   "payouts_12m_mean": 1.58,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.437,
+   "withdrawn_12m_mean": 3149.0
+  },
+  "S4": {
+   "payouts_12m_mean": 1.63,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.338,
+   "withdrawn_12m_mean": 3834.0
+  },
+  "H1": {
+   "payouts_12m_mean": 2.08,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.256,
+   "withdrawn_12m_mean": 3553.0
+  },
+  "H2": {
+   "payouts_12m_mean": 2.58,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.192,
+   "withdrawn_12m_mean": 5768.0
+  }
+ },
+ "consistency | keep $500": {
+  "S0": {
+   "payouts_12m_mean": 2.33,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.212,
+   "withdrawn_12m_mean": 4663.0
+  },
+  "S3": {
+   "payouts_12m_mean": 1.58,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.424,
+   "withdrawn_12m_mean": 3186.0
+  },
+  "S4": {
+   "payouts_12m_mean": 1.63,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.338,
+   "withdrawn_12m_mean": 3833.0
+  },
+  "H1": {
+   "payouts_12m_mean": 2.08,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.244,
+   "withdrawn_12m_mean": 3574.0
+  },
+  "H2": {
+   "payouts_12m_mean": 2.6,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.178,
+   "withdrawn_12m_mean": 5826.0
+  }
+ },
+ "consistency | keep $1000": {
+  "S0": {
+   "payouts_12m_mean": 2.38,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.172,
+   "withdrawn_12m_mean": 4798.0
+  },
+  "S3": {
+   "payouts_12m_mean": 1.66,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.377,
+   "withdrawn_12m_mean": 3392.0
+  },
+  "S4": {
+   "payouts_12m_mean": 1.62,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.331,
+   "withdrawn_12m_mean": 3837.0
+  },
+  "H1": {
+   "payouts_12m_mean": 2.15,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.179,
+   "withdrawn_12m_mean": 3732.0
+  },
+  "H2": {
+   "payouts_12m_mean": 2.63,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.164,
+   "withdrawn_12m_mean": 5936.0
+  }
+ },
+ "consistency | keep $1500": {
+  "S0": {
+   "payouts_12m_mean": 2.49,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.113,
+   "withdrawn_12m_mean": 5071.0
+  },
+  "S3": {
+   "payouts_12m_mean": 1.7,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.338,
+   "withdrawn_12m_mean": 3474.0
+  },
+  "S4": {
+   "payouts_12m_mean": 1.64,
+   "payouts_12m_p10": 0.0,
+   "closed_12m": 0.325,
+   "withdrawn_12m_mean": 3841.0
+  },
+  "H1": {
+   "payouts_12m_mean": 2.24,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.115,
+   "withdrawn_12m_mean": 4025.0
+  },
+  "H2": {
+   "payouts_12m_mean": 2.75,
+   "payouts_12m_p10": 1.0,
+   "closed_12m": 0.11,
+   "withdrawn_12m_mean": 6188.0
+  }
+ }
+}

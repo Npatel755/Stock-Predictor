@@ -1,0 +1,239 @@
+{
+ "freeze": "reports/HOLDOUT_PAYOUT24_FREEZE.json",
+ "validation": {
+  "last_bar_utc": "2025-12-31 21:59:00+00:00",
+  "intraday_trades": 352,
+  "overnight_nights": 52,
+  "intraday_net": 8758.0,
+  "intraday_pf": 1.288,
+  "overnight_net": 2793.0,
+  "book_1x": {
+   "trade_days": 276,
+   "net": 11509.0,
+   "days_ge150": 83,
+   "worst_day": -901.0,
+   "max_drawdown": 3501.0,
+   "net_by_year": {
+    "2024": 10314.0,
+    "2025": 1195.0
+   }
+  },
+  "account_adopted_single_path": {
+   "payouts": 16,
+   "withdrawn": 12857.0,
+   "end_balance": 1066.0,
+   "closed": false,
+   "lowest_balance": -1577.0,
+   "first_payout_day": "see log",
+   "days": 276
+  },
+  "account_reference_1x_keep4000_single_path": {
+   "payouts": 19,
+   "withdrawn": 10951.0,
+   "end_balance": 499.0,
+   "closed": false,
+   "lowest_balance": -1577.0,
+   "first_payout_day": "see log",
+   "days": 276
+  },
+  "account_adopted_costs_plus_1pt": {
+   "payouts": 15,
+   "withdrawn": 13068.0,
+   "end_balance": 1053.0,
+   "closed": false,
+   "lowest_balance": -1651.0,
+   "first_payout_day": "see log",
+   "days": 276
+  },
+  "rolling_12m_adopted": [
+   {
+    "start": "2024-01-01",
+    "payouts": 10,
+    "withdrawn": 8378.0,
+    "end_balance": 5165.0,
+    "closed": false,
+    "lowest_balance": -1577.0,
+    "first_payout_day": "see log",
+    "days": 146
+   },
+   {
+    "start": "2024-02-01",
+    "payouts": 10,
+    "withdrawn": 8644.0,
+    "end_balance": 3914.0,
+    "closed": false,
+    "lowest_balance": -972.0,
+    "first_payout_day": "see log",
+    "days": 141
+   },
+   {
+    "start": "2024-03-01",
+    "payouts": 14,
+    "withdrawn": 11919.0,
+    "end_balance": 6183.0,
+    "closed": false,
+    "lowest_balance": -37.0,
+    "first_payout_day": "see log",
+    "days": 141
+   },
+   {
+    "start": "2024-04-01",
+    "payouts": 14,
+    "withdrawn": 10765.0,
+    "end_balance": 5378.0,
+    "closed": false,
+    "lowest_balance": -557.0,
+    "first_payout_day": "see log",
+    "days": 137
+   },
+   {
+    "start": "2024-05-01",
+    "payouts": 13,
+    "withdrawn": 10369.0,
+    "end_balance": 4845.0,
+    "closed": false,
+    "lowest_balance": -608.0,
+    "first_payout_day": "see log",
+    "days": 130
+   },
+   {
+    "start": "2024-06-01",
+    "payouts": 14,
+    "withdrawn": 10803.0,
+    "end_balance": 4080.0,
+    "closed": false,
+    "lowest_balance": -207.0,
+    "first_payout_day": "see log",
+    "days": 125
+   },
+   {
+    "start": "2024-07-01",
+    "payouts": 16,
+    "withdrawn": 12908.0,
+    "end_balance": 5337.0,
+    "closed": false,
+    "lowest_balance": 0.0,
+    "first_payout_day": "see log",
+    "days": 124
+   },
+   {
+    "start": "2024-08-01",
+    "payouts": 9,
+    "withdrawn": 7081.0,
+    "end_balance": 3595.0,
+    "closed": false,
+    "lowest_balance": -636.0,
+    "first_payout_day": "see log",
+    "days": 125
+   },
+   {
+    "start": "2024-09-01",
+    "payouts": 7,
+    "withdrawn": 5705.0,
+    "end_balance": 3649.0,
+    "closed": false,
+    "lowest_balance": -1938.0,
+    "first_payout_day": "see log",
+    "days": 126
+   },
+   {
+    "start": "2024-10-01",
+    "payouts": 0,
+    "withdrawn": 0.0,
+    "end_balance": -2008.0,
+    "closed": true,
+    "lowest_balance": -2008.0,
+    "first_payout_day": null,
+    "days": 127
+   },
+   {
+    "start": "2024-11-01",
+    "payouts": 8,
+    "withdrawn": 7105.0,
+    "end_balance": 1994.0,
+    "closed": false,
+    "lowest_balance": 0.0,
+    "first_payout_day": "see log",
+    "days": 129
+   },
+   {
+    "start": "2024-12-01",
+    "payouts": 1,
+    "withdrawn": 980.0,
+    "end_balance": 4081.0,
+    "closed": false,
+    "lowest_balance": 0.0,
+    "first_payout_day": "see log",
+    "days": 128
+   },
+   {
+    "start": "2025-01-01",
+    "payouts": 0,
+    "withdrawn": 0.0,
+    "end_balance": 339.0,
+    "closed": false,
+    "lowest_balance": -367.0,
+    "first_payout_day": null,
+    "days": 130
+   }
+  ],
+  "rolling_12m_summary": {
+   "starts": 13,
+   "closed": 1,
+   "payouts_mean": 8.92,
+   "withdrawn_mean": 7281.0
+  }
+ },
+ "test": {
+  "last_bar_utc": "2026-11-05 23:59:00+00:00",
+  "intraday_trades": 113,
+  "overnight_nights": 33,
+  "intraday_net": 4224.0,
+  "intraday_pf": 1.411,
+  "overnight_net": 4153.0,
+  "book_1x": {
+   "trade_days": 105,
+   "net": 7365.0,
+   "days_ge150": 29,
+   "worst_day": -512.0,
+   "max_drawdown": 1944.0,
+   "net_by_year": {
+    "2026": 7365.0
+   }
+  },
+  "account_adopted_single_path": {
+   "payouts": 0,
+   "withdrawn": 0.0,
+   "end_balance": 3059.0,
+   "closed": false,
+   "lowest_balance": -1603.0,
+   "first_payout_day": null,
+   "days": 105
+  },
+  "account_reference_1x_keep4000_single_path": {
+   "payouts": 0,
+   "withdrawn": 0.0,
+   "end_balance": 3059.0,
+   "closed": false,
+   "lowest_balance": -1603.0,
+   "first_payout_day": null,
+   "days": 105
+  },
+  "account_adopted_costs_plus_1pt": {
+   "payouts": 0,
+   "withdrawn": 0.0,
+   "end_balance": 2716.0,
+   "closed": false,
+   "lowest_balance": -1633.0,
+   "first_payout_day": null,
+   "days": 105
+  }
+ },
+ "gate": {
+  "G1_book_net_positive": true,
+  "G2_not_closed": true,
+  "G3_validation_payouts_ge_8": true,
+  "G4_test_made_2000": true
+ },
+ "did_good": true
+}

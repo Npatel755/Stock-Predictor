@@ -1,0 +1,117 @@
+[
+  {
+    "name": "1. Standard 2-Month Baseline (Crabel 3c, Night 2c, MES 2.5c, No Scaling)",
+    "real": {
+      "pass_pct": 17.6,
+      "resets": 0.5,
+      "median_days": 29.5,
+      "worst_day": -735.4,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 1313.3
+    },
+    "zero": {
+      "pass_pct": 8.7,
+      "resets": 0.6,
+      "median_days": 33.0,
+      "worst_day": -914.1,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 672.7
+    },
+    "alpha": 8.9,
+    "cost": 122.0
+  },
+  {
+    "name": "2. + House Money Scaling (+1c at +$1.5k, +1.5c at +$2.5k)",
+    "real": {
+      "pass_pct": 17.7,
+      "resets": 0.5,
+      "median_days": 29.0,
+      "worst_day": -742.0,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 1330.0
+    },
+    "zero": {
+      "pass_pct": 8.8,
+      "resets": 0.6,
+      "median_days": 31.0,
+      "worst_day": -947.8,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 663.2
+    },
+    "alpha": 8.9,
+    "cost": 122.0
+  },
+  {
+    "name": "3. + Trailing Lock (+House Money Scaling)",
+    "real": {
+      "pass_pct": 17.5,
+      "resets": 0.6,
+      "median_days": 29.0,
+      "worst_day": -742.0,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 1220.3
+    },
+    "zero": {
+      "pass_pct": 8.6,
+      "resets": 0.6,
+      "median_days": 31.0,
+      "worst_day": -947.8,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 584.7
+    },
+    "alpha": 8.9,
+    "cost": 127.0
+  },
+  {
+    "name": "4. Sprint Base (Crabel 4c, Night 2.5c, MES 3c + Scaling)",
+    "real": {
+      "pass_pct": 22.4,
+      "resets": 0.6,
+      "median_days": 30.0,
+      "worst_day": -743.6,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 1082.1
+    },
+    "zero": {
+      "pass_pct": 10.5,
+      "resets": 0.8,
+      "median_days": 28.0,
+      "worst_day": -1082.5,
+      "dll_breaches": 14,
+      "floor_breaches": 0,
+      "median_final": 574.9
+    },
+    "alpha": 11.9,
+    "cost": 127.0
+  },
+  {
+    "name": "5. Ultra-Passer (Crabel 4.5c, Night 2.5c, MES 3.5c + Scaling)",
+    "real": {
+      "pass_pct": 23.3,
+      "resets": 0.6,
+      "median_days": 29.0,
+      "worst_day": -742.0,
+      "dll_breaches": 0,
+      "floor_breaches": 0,
+      "median_final": 1153.7
+    },
+    "zero": {
+      "pass_pct": 12.6,
+      "resets": 0.9,
+      "median_days": 28.0,
+      "worst_day": -1082.5,
+      "dll_breaches": 246,
+      "floor_breaches": 0,
+      "median_final": 527.4
+    },
+    "alpha": 10.7,
+    "cost": 127.0
+  }
+]

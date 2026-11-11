@@ -1,0 +1,197 @@
+{
+ "part_a": {
+  "09:45": {
+   "2010-16": {
+    "nights": 269,
+    "net": 19384.0,
+    "pf": 1.79,
+    "worst": -316.0
+   },
+   "2017-23": {
+    "nights": 249,
+    "net": 16236.0,
+    "pf": 1.488,
+    "worst": -311.0
+   }
+  },
+  "09:15": {
+   "2010-16": {
+    "nights": 269,
+    "net": 19063.0,
+    "pf": 1.863,
+    "worst": -316.0
+   },
+   "2017-23": {
+    "nights": 249,
+    "net": 17485.0,
+    "pf": 1.577,
+    "worst": -311.0
+   }
+  },
+  "check_0945_reproduces_payout_17": -6.37,
+  "0915_better_both_halves": false
+ },
+ "part_b": {
+  "(1) current: 2x from $4k, skip rule, K $6k": {
+   "S0": {
+    "usd": 24668.0,
+    "closed": 0.0,
+    "cons": 0.007,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 16702.0,
+    "closed": 0.022,
+    "cons": 0.05,
+    "near": 0.086
+   },
+   "S4": {
+    "usd": 10950.0,
+    "closed": 0.065,
+    "cons": 0.158,
+    "near": 0.144
+   },
+   "half1": {
+    "usd": 18216.0,
+    "closed": 0.0,
+    "cons": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 31601.0,
+    "closed": 0.0,
+    "cons": 0.015,
+    "near": 0.015
+   }
+  },
+  "(2) Aegis ladder, cap-aware, K $7.5k": {
+   "S0": {
+    "usd": 35777.0,
+    "closed": 0.0,
+    "cons": 0.007,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 23874.0,
+    "closed": 0.022,
+    "cons": 0.158,
+    "near": 0.086
+   },
+   "S4": {
+    "usd": 25576.0,
+    "closed": 0.065,
+    "cons": 0.151,
+    "near": 0.144
+   },
+   "half1": {
+    "usd": 26725.0,
+    "closed": 0.0,
+    "cons": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 45504.0,
+    "closed": 0.0,
+    "cons": 0.015,
+    "near": 0.015
+   }
+  },
+  "(3) Aegis ladder, skip rule, K $7.5k": {
+   "S0": {
+    "usd": 15763.0,
+    "closed": 0.0,
+    "cons": 0.007,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 9772.0,
+    "closed": 0.058,
+    "cons": 0.151,
+    "near": 0.086
+   },
+   "S4": {
+    "usd": 9890.0,
+    "closed": 0.065,
+    "cons": 0.094,
+    "near": 0.144
+   },
+   "half1": {
+    "usd": 12306.0,
+    "closed": 0.0,
+    "cons": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 19478.0,
+    "closed": 0.0,
+    "cons": 0.015,
+    "near": 0.015
+   }
+  },
+  "(4) current ladder, cap-aware, K $6k": {
+   "S0": {
+    "usd": 25899.0,
+    "closed": 0.0,
+    "cons": 0.007,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 17646.0,
+    "closed": 0.022,
+    "cons": 0.05,
+    "near": 0.086
+   },
+   "S4": {
+    "usd": 19143.0,
+    "closed": 0.065,
+    "cons": 0.165,
+    "near": 0.144
+   },
+   "half1": {
+    "usd": 18787.0,
+    "closed": 0.0,
+    "cons": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 33542.0,
+    "closed": 0.0,
+    "cons": 0.015,
+    "near": 0.015
+   }
+  },
+  "(5) v54 winner: 2x from $3k, skip rule, K $6k (reported only)": {
+   "S0": {
+    "usd": 26633.0,
+    "closed": 0.0,
+    "cons": 0.007,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 17858.0,
+    "closed": 0.022,
+    "cons": 0.165,
+    "near": 0.086
+   },
+   "S4": {
+    "usd": 12088.0,
+    "closed": 0.115,
+    "cons": 0.144,
+    "near": 0.144
+   },
+   "half1": {
+    "usd": 20080.0,
+    "closed": 0.0,
+    "cons": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 33674.0,
+    "closed": 0.0,
+    "cons": 0.015,
+    "near": 0.015
+   }
+  }
+ },
+ "aegis_ladder_confirmed": false
+}

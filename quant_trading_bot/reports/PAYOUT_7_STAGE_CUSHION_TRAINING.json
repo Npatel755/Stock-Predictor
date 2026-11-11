@@ -1,0 +1,205 @@
+{
+ "v5+TRD30PM | always full, buffer $1000": {
+  "payouts_per_year_14y_path": 5.07,
+  "median_payout": 926.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 4.72,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "p_breach_12m": 0.013,
+  "gate": false
+ },
+ "v5+TRD30PM | staged at buffer $1000": {
+  "payouts_per_year_14y_path": 4.71,
+  "median_payout": 848.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 4.43,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+TRD30PM | always full, buffer $1500": {
+  "payouts_per_year_14y_path": 5.0,
+  "median_payout": 944.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 4.42,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "p_breach_12m": 0.013,
+  "gate": false
+ },
+ "v5+TRD30PM | staged at buffer $1500": {
+  "payouts_per_year_14y_path": 4.71,
+  "median_payout": 821.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 4.11,
+  "payouts_12m_p10_p90": [
+   2.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+TRD30PM | always full, buffer $2000": {
+  "payouts_per_year_14y_path": 4.93,
+  "median_payout": 926.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 3.97,
+  "payouts_12m_p10_p90": [
+   1.0,
+   7.0
+  ],
+  "p_breach_12m": 0.013,
+  "gate": false
+ },
+ "v5+TRD30PM | staged at buffer $2000": {
+  "payouts_per_year_14y_path": 4.71,
+  "median_payout": 821.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 3.62,
+  "payouts_12m_p10_p90": [
+   1.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+TRD30PM | always full, buffer $2500": {
+  "payouts_per_year_14y_path": 4.86,
+  "median_payout": 901.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 3.44,
+  "payouts_12m_p10_p90": [
+   0.0,
+   6.0
+  ],
+  "p_breach_12m": 0.013,
+  "gate": false
+ },
+ "v5+TRD30PM | staged at buffer $2500": {
+  "payouts_per_year_14y_path": 4.57,
+  "median_payout": 821.0,
+  "payouts_12m_median": 3.0,
+  "payouts_12m_mean": 3.13,
+  "payouts_12m_p10_p90": [
+   0.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+all3 | always full, buffer $1000": {
+  "payouts_per_year_14y_path": 0.07,
+  "median_payout": 387.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 5.01,
+  "payouts_12m_p10_p90": [
+   2.0,
+   8.0
+  ],
+  "p_breach_12m": 0.205,
+  "gate": false
+ },
+ "v5+all3 | staged at buffer $1000": {
+  "payouts_per_year_14y_path": 4.86,
+  "median_payout": 729.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 4.48,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+all3 | always full, buffer $1500": {
+  "payouts_per_year_14y_path": 0.0,
+  "median_payout": 0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 4.9,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "p_breach_12m": 0.159,
+  "gate": false
+ },
+ "v5+all3 | staged at buffer $1500": {
+  "payouts_per_year_14y_path": 4.71,
+  "median_payout": 729.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 4.13,
+  "payouts_12m_p10_p90": [
+   2.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+all3 | always full, buffer $2000": {
+  "payouts_per_year_14y_path": 0.0,
+  "median_payout": 0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 4.81,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "p_breach_12m": 0.106,
+  "gate": false
+ },
+ "v5+all3 | staged at buffer $2000": {
+  "payouts_per_year_14y_path": 4.71,
+  "median_payout": 729.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 3.64,
+  "payouts_12m_p10_p90": [
+   1.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "v5+all3 | always full, buffer $2500": {
+  "payouts_per_year_14y_path": 0.0,
+  "median_payout": 0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_mean": 4.62,
+  "payouts_12m_p10_p90": [
+   1.0,
+   7.0
+  ],
+  "p_breach_12m": 0.093,
+  "gate": false
+ },
+ "v5+all3 | staged at buffer $2500": {
+  "payouts_per_year_14y_path": 4.64,
+  "median_payout": 732.0,
+  "payouts_12m_median": 3.0,
+  "payouts_12m_mean": 3.15,
+  "payouts_12m_p10_p90": [
+   0.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0,
+  "gate": false
+ },
+ "SAFE reference": {
+  "payouts_per_year_14y_path": 4.5,
+  "median_payout": 979.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_mean": 4.21,
+  "payouts_12m_p10_p90": [
+   2.0,
+   6.0
+  ],
+  "p_breach_12m": 0.0
+ }
+}

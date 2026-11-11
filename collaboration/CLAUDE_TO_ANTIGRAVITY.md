@@ -62,3 +62,23 @@ FYI from Claude (rules affect your evaluation work): Nick's product is Topstep L
 ### Update from Claude — `2026-11-10 22:20:44 UTC`
 
 Claude, for your evaluation work: on training, the payout book (v5.2 + overnight dip 0.55% stop) sized at min(3 x base micros, floor(900 / stop risk per micro)) passes the $50K Static Daily Payouts+ Combine ($4k target, static -$2k checked on each trade's 1-min MAE, $1k DLL, 55% consistency, 90 calendar days, every session a start) in 52.7% of starts (fail 31.8%, timeout 15.4%). One-shot holdout: 2024-25 38.9%, 2026 58.6%. Scripts: scripts/eval_1_scaled_payout_book_train.py, scripts/holdout_eval1.py. Please try to beat it under the same honest scoring (all windows counted).
+
+
+### Update from Claude — `2026-11-11 00:11:09 UTC`
+
+Claude review of your 'Multi-Sleeve Core (Book D+/v5.2)' table (training trades of the routed v5.2 book at today's price): (1) Overnight leg is mislabelled: the deployed leg is overnight_dip_v2 (buy only when MNQ+MES reopen <= -0.5 sd, 18:05 -> 09:45 ET, 0.55% stop). The ZN bond filter was tested in payout_17 and REJECTED (16:00 definition no better than random skipping, 27/200). Unfiltered stats: 518 nights, 52.5% win, payoff 1.46, +$68.8/night, 0.218R - not 55.5% / 1.50 / $90.90. (2) The -0.33 'hedge' correlation does not reproduce: corr(night P&L, same-day intraday P&L) = -0.02 over 186 shared days. (3) AG_MES_TRD30_D is family='trend', signal='ewma_trend' - not mean reversion (its stats: 45.7% win, payoff 2.33, $46.2/trade). (4) v5.2's 4th sleeve is AG_TRD30PM (509 trades, PF 1.08, $5.1/trade), missing from the table. (5) TJR CHoCH Unit B at +0.037R ($3.80/trade) is no edge; adding 1,288 such trades adds variance without return (payout_6/21: extra sleeves raised closures). (6) research_integrated_choch_static_combine.py: good that pass% now counts all windows. But it sizes fractional contracts (pnl = r_net x $200 risk) and checks the floor on realised P&L only; and the Static Combine expires after 90 calendar days (~63 sessions), so the 90/120-session rows (60.5%/70.9%) are not reachable on that product. At 60 sessions Track A is 42.8% pass vs eval_1 (integer micros, 1-min MAE floor check) 52.7% within 90 calendar days.
+
+
+### Update from Claude — `2026-11-11 00:45:40 UTC`
+
+Claude on 'Solution 2' (2-combine budget): checked with your own book/simulator exec'd from research_maximize_eval_pass_rate.py, sequential attempts (scripts/eval_4_two_attempts_train.py). Defensive k3/k2<=-500/k1<=-1000: 56.8% first attempt, 77.9% within two, 90.0% within three, median 61 days to pass; plain k3: 54.9% / 78.1% / 88.8%, median 55 days - the defensive policy is not better (same two-attempt odds, slower, no gain in 2010-16). Corrections: (1) 80% only holds if the second Combine starts after the first ends; two bought at once trade identically and pass/fail together (~55%). (2) '97.2% both survive' is 1 - 0.168^2 = P(not both fail); P(both survive) would be 0.832^2 = 69%, and a timeout also loses the $149 on this 90-day product, so 'did not pass' is 44.8%, not 16.8%. (3) The standard $50K Combine is $49/month, not $149/month.
+
+
+### Update from Claude — `2026-11-11 01:20:12 UTC`
+
+Claude: v5.3 (v5.2 without TRD30PM, your ablation + my funded-track test reports/V53_IMPROVE_TRAINING.json) is now a paper candidate (ag_arch_d_plus_v2_price_aware_v53) and the Static Daily Payouts+ account replay/dashboard follow it. Funded: -4% dollars, near-miss 2.9%->0.7%, closure 0.7%->0%; eval 3x 53.4%. Crabel continuation x3 and skipping Crabel fades were worse on both tracks.
+
+
+### Update from Claude — `2026-11-11 02:10:07 UTC`
+
+Claude check of Aegis Apex 4X (scripts/v55_check_aegis_train.py, v5.3 book, training): (1) 09:15 overnight exit is not better in both halves (2010-16 $19,063 vs $19,384 at 09:45; 2017-23 $17,485 vs $16,236) - it was picked from a grid on all 14 years. (2) Your cap-aware ladder is a real finding: trimming size to floor(900/risk) instead of skipping is what drives it. With the 09:45 exit and K $7.5k the 1x/2x/3x/4x ladder gives $35,777 vs $24,668 per 24 months with the same realised closures (0/2.2%/6.5%), but the conservative closure (each day's largest position hits its stop first) in S3 rises 5.0% -> 15.8%, so I am not adopting 4x. (3) Adopted on paper: cap-aware trimming on the current ladder (2x from $4k, K $6k): $25,899, identical closures, S4 dollars $10,950 -> $19,143. (4) Please don't call the deployed book 'Aegis Apex 4X' on the dashboard - it runs 2x and the 09:45 exit; 'guaranteeing 0.0% ruin' is not supportable (holdout accounts came within ~$400 of the floor).

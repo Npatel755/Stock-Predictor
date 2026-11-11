@@ -1,0 +1,98 @@
+{
+  "A. All Crabel Trades (Current Champion)": {
+    "S0": {
+      "withdrawn_24m": 27099.0,
+      "payouts_y1": 10.14,
+      "payouts_y2": 21.67,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0
+    },
+    "S3": {
+      "withdrawn_24m": 18555.0,
+      "payouts_y1": 6.41,
+      "payouts_y2": 14.71,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.05,
+      "worst_drawdown_valley": -2064.0
+    },
+    "S4": {
+      "withdrawn_24m": 21166.0,
+      "payouts_y1": 8.34,
+      "payouts_y2": 15.69,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.194,
+      "worst_drawdown_valley": -2252.0
+    },
+    "half1": {
+      "withdrawn_24m": 20325.0,
+      "payouts_y1": 7.56,
+      "payouts_y2": 19.14,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0
+    },
+    "half2": {
+      "withdrawn_24m": 34379.0,
+      "payouts_y1": 12.93,
+      "payouts_y2": 24.39,
+      "payouts_y1_p10": 3.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0
+    },
+    "eligible": true
+  },
+  "B. Continuation-Only Crabel (Filtered Against-Gap)": {
+    "S0": {
+      "withdrawn_24m": 25203.0,
+      "payouts_y1": 8.8,
+      "payouts_y2": 20.12,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1872.0
+    },
+    "S3": {
+      "withdrawn_24m": 16576.0,
+      "payouts_y1": 5.59,
+      "payouts_y2": 13.6,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.007,
+      "closed_24m_conservative": 0.029,
+      "worst_drawdown_valley": -2079.0
+    },
+    "S4": {
+      "withdrawn_24m": 20543.0,
+      "payouts_y1": 7.88,
+      "payouts_y2": 15.58,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.079,
+      "closed_24m_conservative": 0.209,
+      "worst_drawdown_valley": -2236.0
+    },
+    "half1": {
+      "withdrawn_24m": 20450.0,
+      "payouts_y1": 6.97,
+      "payouts_y2": 18.79,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1447.0
+    },
+    "half2": {
+      "withdrawn_24m": 30310.0,
+      "payouts_y1": 10.76,
+      "payouts_y2": 21.55,
+      "payouts_y1_p10": 1.6000000000000005,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1872.0
+    },
+    "eligible": true
+  }
+}

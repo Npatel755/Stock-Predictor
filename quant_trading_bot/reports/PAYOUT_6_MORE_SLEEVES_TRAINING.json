@@ -1,0 +1,138 @@
+{
+ "sleeve_trades_net_then_net_today": {
+  "CRABEL": [
+   536,
+   7597.0,
+   25854.0
+  ],
+  "TRD60": [
+   881,
+   8186.0,
+   38592.0
+  ],
+  "MES30": [
+   348,
+   3932.0,
+   12267.0
+  ],
+  "TRD30_D": [
+   1002,
+   10813.0,
+   46655.0
+  ],
+  "BRK30": [
+   709,
+   8334.0,
+   27542.0
+  ],
+  "TRD30PM": [
+   1054,
+   8970.0,
+   29493.0
+  ]
+ },
+ "v5": {
+  "days150_per_year": 24.6,
+  "days150_2010_19": 22.1,
+  "days150_2020_23": 31.0,
+  "net_per_year": 4788.0,
+  "pos_years": "13/14",
+  "worst_day": -610.0,
+  "max_drawdown": 1628.0,
+  "payouts_per_year": 4.5,
+  "median_payout": 979.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   6.0
+  ]
+ },
+ "v5 + TRD30_D": {
+  "days150_per_year": 27.9,
+  "days150_2010_19": 26.1,
+  "days150_2020_23": 32.2,
+  "net_per_year": 6214.0,
+  "pos_years": "12/14",
+  "worst_day": -733.0,
+  "max_drawdown": 3500.0,
+  "payouts_per_year": 5.0,
+  "median_payout": 1210.0,
+  "blowups_per_year": 0.07,
+  "dll_days": 0,
+  "p_breach_12m": 0.086,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "gate": false
+ },
+ "v5 + BRK30": {
+  "days150_per_year": 27.7,
+  "days150_2010_19": 25.7,
+  "days150_2020_23": 32.8,
+  "net_per_year": 6078.0,
+  "pos_years": "12/14",
+  "worst_day": -693.0,
+  "max_drawdown": 2902.0,
+  "payouts_per_year": 4.64,
+  "median_payout": 1138.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.04,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "gate": false
+ },
+ "v5 + TRD30PM": {
+  "days150_per_year": 29.1,
+  "days150_2010_19": 26.7,
+  "days150_2020_23": 35.2,
+  "net_per_year": 4983.0,
+  "pos_years": "13/14",
+  "worst_day": -640.0,
+  "max_drawdown": 2545.0,
+  "payouts_per_year": 5.07,
+  "median_payout": 926.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "p_breach_12m": 0.013,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ],
+  "gate": true
+ },
+ "v5 + all three": {
+  "days150_per_year": 34.9,
+  "days150_2010_19": 33.7,
+  "days150_2020_23": 37.8,
+  "net_per_year": 7906.0,
+  "pos_years": "12/14",
+  "worst_day": -933.0,
+  "max_drawdown": 4293.0,
+  "payouts_per_year": 5.86,
+  "median_payout": 1289.0,
+  "blowups_per_year": 0.29,
+  "dll_days": 0,
+  "p_breach_12m": 0.205,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   8.0
+  ],
+  "gate": false
+ }
+}

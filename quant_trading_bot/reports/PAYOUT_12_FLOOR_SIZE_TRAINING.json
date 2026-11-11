@@ -1,0 +1,171 @@
+{
+ "floor $2000": {
+  "v5.2": {
+   "payouts_12m_mean": 5.25,
+   "payouts_12m_p10_p90": [
+    3.0,
+    7.0
+   ],
+   "p_breach_12m": 0.007
+  },
+  "v5.2 + TRD30_D + BRK30": {
+   "payouts_12m_mean": 5.56,
+   "payouts_12m_p10_p90": [
+    3.0,
+    8.0
+   ],
+   "p_breach_12m": 0.146
+  },
+  "v5.2 + overnight": {
+   "payouts_12m_mean": 6.8,
+   "payouts_12m_p10_p90": [
+    5.0,
+    9.0
+   ],
+   "p_breach_12m": 0.026
+  },
+  "v5.2 + TRD30_D + BRK30 + overnight": {
+   "payouts_12m_mean": 6.77,
+   "payouts_12m_p10_p90": [
+    2.0,
+    10.0
+   ],
+   "p_breach_12m": 0.179
+  },
+  "best_within_2pct": "v5.2"
+ },
+ "floor $3000": {
+  "v5.2": {
+   "payouts_12m_mean": 5.26,
+   "payouts_12m_p10_p90": [
+    3.0,
+    7.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "v5.2 + TRD30_D + BRK30": {
+   "payouts_12m_mean": 5.75,
+   "payouts_12m_p10_p90": [
+    3.0,
+    8.0
+   ],
+   "p_breach_12m": 0.06
+  },
+  "v5.2 + overnight": {
+   "payouts_12m_mean": 6.94,
+   "payouts_12m_p10_p90": [
+    5.0,
+    9.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "v5.2 + TRD30_D + BRK30 + overnight": {
+   "payouts_12m_mean": 7.43,
+   "payouts_12m_p10_p90": [
+    5.0,
+    10.0
+   ],
+   "p_breach_12m": 0.033
+  },
+  "best_within_2pct": "v5.2 + overnight",
+  "2 micros: v5.2": {
+   "payouts_12m_mean": 6.35,
+   "payouts_12m_p10_p90": [
+    4.0,
+    9.0
+   ],
+   "p_breach_12m": 0.053
+  },
+  "2 micros: v5.2 + TRD30_D + BRK30": {
+   "payouts_12m_mean": 5.45,
+   "payouts_12m_p10_p90": [
+    0.0,
+    9.0
+   ],
+   "p_breach_12m": 0.47
+  },
+  "2 micros: v5.2 + overnight": {
+   "payouts_12m_mean": 7.5,
+   "payouts_12m_p10_p90": [
+    2.0,
+    11.0
+   ],
+   "p_breach_12m": 0.278
+  },
+  "2 micros: v5.2 + TRD30_D + BRK30 + overnight": {
+   "payouts_12m_mean": 6.11,
+   "payouts_12m_p10_p90": [
+    0.0,
+    11.0
+   ],
+   "p_breach_12m": 0.642
+  }
+ },
+ "floor $4500": {
+  "v5.2": {
+   "payouts_12m_mean": 5.26,
+   "payouts_12m_p10_p90": [
+    3.0,
+    7.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "v5.2 + TRD30_D + BRK30": {
+   "payouts_12m_mean": 5.81,
+   "payouts_12m_p10_p90": [
+    3.0,
+    8.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "v5.2 + overnight": {
+   "payouts_12m_mean": 6.94,
+   "payouts_12m_p10_p90": [
+    5.0,
+    9.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "v5.2 + TRD30_D + BRK30 + overnight": {
+   "payouts_12m_mean": 7.5,
+   "payouts_12m_p10_p90": [
+    5.0,
+    10.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "best_within_2pct": "v5.2 + TRD30_D + BRK30 + overnight",
+  "2 micros: v5.2": {
+   "payouts_12m_mean": 6.44,
+   "payouts_12m_p10_p90": [
+    4.0,
+    9.0
+   ],
+   "p_breach_12m": 0.0
+  },
+  "2 micros: v5.2 + TRD30_D + BRK30": {
+   "payouts_12m_mean": 6.5,
+   "payouts_12m_p10_p90": [
+    3.0,
+    9.0
+   ],
+   "p_breach_12m": 0.159
+  },
+  "2 micros: v5.2 + overnight": {
+   "payouts_12m_mean": 8.45,
+   "payouts_12m_p10_p90": [
+    6.0,
+    11.0
+   ],
+   "p_breach_12m": 0.026
+  },
+  "2 micros: v5.2 + TRD30_D + BRK30 + overnight": {
+   "payouts_12m_mean": 8.02,
+   "payouts_12m_p10_p90": [
+    4.0,
+    12.0
+   ],
+   "p_breach_12m": 0.192
+  }
+ }
+}

@@ -4,7 +4,7 @@
  "common_entries": 1289,
  "research_only": 0,
  "runner_only": 0,
- "max_abs_net_diff_common": 129.0,
+ "max_abs_net_diff_common": 0.0033,
  "research_days": {
   "net": 59257.67,
   "median_win_day": 154.88,
@@ -13,7 +13,7 @@
   "days_le_minus_1000": 0
  },
  "runner_days": {
-  "net": 59602.84,
+  "net": 59257.67,
   "median_win_day": 154.88,
   "days150_per_year": 19.3,
   "worst_day": -950.5,
@@ -40,97 +40,9 @@
  },
  "research_only_sample": [],
  "runner_only_sample": [],
- "exact": false,
- "entries_with_net_diff": 3,
- "net_diff_detail": [
-  {
-   "entry": "2022-11-03 10:00:00-04:00",
-   "research": -885.0,
-   "runner": -756.0,
-   "runner_trades": [
-    [
-     "AG_CRABEL15_D_3c_v4",
-     3,
-     -387.0,
-     "2022-11-03T14:00:00+00:00"
-    ],
-    [
-     "AG_TRD60_D_3c_v4",
-     3,
-     -369.0,
-     "2022-11-03T14:00:00+00:00"
-    ]
-   ],
-   "research_rows": [
-    [
-     -369.0,
-     "2022-11-03 10:00:00-04:00"
-    ],
-    [
-     -516.0,
-     "2022-11-03 10:00:00-04:00"
-    ]
-   ]
-  },
-  {
-   "entry": "2022-09-16 10:00:00-04:00",
-   "research": -787.0,
-   "runner": -658.5,
-   "runner_trades": [
-    [
-     "AG_CRABEL15_D_3c_v4",
-     3,
-     -385.5,
-     "2022-09-16T14:00:00+00:00"
-    ],
-    [
-     "AG_TRD60_D_3c_v4",
-     3,
-     -273.0,
-     "2022-09-16T14:00:00+00:00"
-    ]
-   ],
-   "research_rows": [
-    [
-     -273.0,
-     "2022-09-16 10:00:00-04:00"
-    ],
-    [
-     -514.0,
-     "2022-09-16 10:00:00-04:00"
-    ]
-   ]
-  },
-  {
-   "entry": "2022-05-06 10:00:00-04:00",
-   "research": -764.67,
-   "runner": -677.0,
-   "runner_trades": [
-    [
-     "AG_CRABEL15_D_3c_v4",
-     1,
-     -263.0,
-     "2022-05-06T14:00:00+00:00"
-    ],
-    [
-     "AG_TRD60_D_3c_v4",
-     2,
-     -414.0,
-     "2022-05-06T14:00:00+00:00"
-    ]
-   ],
-   "research_rows": [
-    [
-     -414.0,
-     "2022-05-06 10:00:00-04:00"
-    ],
-    [
-     -350.67,
-     "2022-05-06 10:00:00-04:00"
-    ]
-   ]
-  }
- ],
+ "exact": true,
+ "entries_with_net_diff": 0,
+ "net_diff_detail": [],
  "base_3c_v3_research_net_by_sleeve": {
   "CRABEL": 23908.0,
   "MES": 7961.0,

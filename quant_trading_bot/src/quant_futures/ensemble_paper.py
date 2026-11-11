@@ -324,10 +324,10 @@ CANDIDATES["ag_quad_v2"] = dict(
 
 # Dashboard grouping (Nick, 2026-11-09): variants of one architecture share a family so the dashboard shows a per-family net beside the overall net.
 FAMILIES = {
-    "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon", "overnight_dip_v2_stop055"),
+    "Overnight Dip": ("overnight_dip", "overnight_dip_v2", "overnight_dip_mes", "overnight_dip_v2_vix", "overnight_dip_v2_bond", "overnight_dip_v2_skew_addon", "overnight_dip_v2_stop055", "overnight_dip_v2_stop055_0915"),
     "AG All-Weather": ("ag_all_weather", "ag_all_weather_v2", "ag_all_weather_v2_1c", "ag_all_weather_v2_1c_skew_addon"),
     "AG Architecture C": ("ag_arch_c", "ag_arch_c_lite", "ag_arch_c_v2"),
-    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c", "ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3", "ag_arch_d_plus_v2_gapsize_3c_v3", "ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4", "ag_arch_d_plus_v2_gapsize_4c_v4", "ag_arch_d_plus_v2_1c_v5", "ag_arch_d_plus_v2_price_aware_v5", "ag_arch_d_plus_v2_1c_v52", "ag_arch_d_plus_v2_gap_addon_v52", "ag_arch_d_plus_v2_price_aware_v52"),
+    "AG Architecture D+": ("ag_arch_d_plus", "ag_arch_d_plus_v2", "ag_arch_d_plus_v2_2c", "ag_arch_d_plus_v2_gap_addon", "ag_arch_d_plus_v2_gapsize", "ag_arch_d_plus_v2_3c", "ag_arch_d_plus_v2_gap_addon_3c", "ag_arch_d_plus_v2_gapsize_3c", "ag_arch_d_plus_v2_3c_v3", "ag_arch_d_plus_v2_gap_addon_3c_v3", "ag_arch_d_plus_v2_gapsize_3c_v3", "ag_arch_d_plus_v2_3c_v4", "ag_arch_d_plus_v2_gap_addon_1of3_v4", "ag_arch_d_plus_v2_gapsize_4c_v4", "ag_arch_d_plus_v2_1c_v5", "ag_arch_d_plus_v2_price_aware_v5", "ag_arch_d_plus_v2_1c_v52", "ag_arch_d_plus_v2_gap_addon_v52", "ag_arch_d_plus_v2_price_aware_v52", "ag_arch_d_plus_v2_1c_v53", "ag_arch_d_plus_v2_gap_addon_v53", "ag_arch_d_plus_v2_price_aware_v53"),
     "AG Quad": ("ag_quad", "ag_quad_v2"),
     "Book A (overnight dip v2 + All-Weather v2 1c)": ("book_a", "book_a_bond", "book_a_skew"),
     "Book D+ (overnight dip + Architecture D+)": ("book_d_plus",),
@@ -511,6 +511,35 @@ CANDIDATES["ag_arch_d_plus_v2_price_aware_v52"] = dict(
                "Same assumptions as v5: training R-distribution and % volatility pattern repeat at today's prices. Paper only; no routing.",
 )
 
+# v5.3 (Claude, 2026-11-10; Nick: "ok just improve this strategy"): v5.2 without the MNQ 30m afternoon trend sleeve (TRD30PM: PF 1.08,
+# $5.1/trade in training). reports/V53_IMPROVE_TRAINING.json: on the Static Daily Payouts+ account rule, 24-month dollars -4% but S0 near-misses
+# 2.9% -> 0.7%, closures 0.7% -> 0% (S3 3.6% -> 2.2%), evaluation pass at 3x 52.7% -> 53.4%. Chosen as a safety trade, not a profit gain.
+CANDIDATES["ag_arch_d_plus_v2_1c_v53"] = dict(
+    version="5.3.0", router="posthoc_1c", day_filter="no_backwardation", hidden=True,
+    label="D+ v5.3 base (hidden): v5.2 without the afternoon trend sleeve, 1 micro each, $300 per-micro budget",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_1c_v53", _AG_CRABEL15_D, 1), **_V5),
+             dict(_dplus_sl("AG_TRD60_D_1c_v53", _AG_TRD60_D, 1), **_V5),
+             dict(_dplus_sl("AG_MES_TRD30_D_1c_v53", _AG_MES_TRD30_D, 1), day_filter_exempt=True, **_V5)],
+    provenance="v53 cell A (reports/V53_IMPROVE_TRAINING.json). Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_gap_addon_v53"] = dict(
+    version="5.3.0", hidden=True, addon_of="ag_arch_d_plus_v2_1c_v53", addon_sleeve="AG_CRABEL15_D_1c_v53", addon_filter="gap_continuation",
+    label="D+ v5.3 gap addon (hidden): routed Crabel trades that agree with the opening gap, once more (= 2 micros on those)",
+    sleeves=[dict(_dplus_sl("AG_CRABEL15_D_GAP_v53", _AG_CRABEL15_D, 1), **_V5)],
+    provenance="as the v5.2 gap addon. Paper only; no routing.",
+)
+
+CANDIDATES["ag_arch_d_plus_v2_price_aware_v53"] = dict(
+    version="5.3.0", category="future", account_static_floor=2000.0,
+    book=[["ag_arch_d_plus_v2_1c_v53", "ag_arch_d_plus_v2_gap_addon_v53"]], account_daily_stop=400.0,
+    label="FUTURE - D+ v5.3 payout build (v5.2 without the afternoon trend sleeve; 2 micros on Crabel drives that agree with the opening gap; $300 per-micro budget; account stop -$400)",
+    sleeves=[dict(sl) for k in ("ag_arch_d_plus_v2_1c_v53", "ag_arch_d_plus_v2_gap_addon_v53") for sl in CANDIDATES[k]["sleeves"]],
+    provenance="v53 cell A (Claude, 2026-11-10; training 2010-23 at the 2026-11-10 price level): Static Daily Payouts+ rule (2x from $4k, payouts above $6k) "
+               "$24,353 per 24 months (v5.2 $25,325), S0 near-miss 0.7% (2.9%), closure 0% (0.7%), S3 closure 2.2% (3.6%); evaluation at 3x 53.4% pass (52.7%). "
+               "Same assumptions as v5.2. Paper only; no routing.",
+)
+
 CANDIDATES["overnight_dip_v2_stop055"] = dict(
     version="1.0.0", overnight=True, exit_sod=585, require_mes_dip=True, stop_pct=0.0055, category="future",
     label="FUTURE - Overnight Dip v2 with a 0.55% protective stop (~$310 per micro at NQ 28k) - payout leg; Nick to enable it only once ~$500 is banked",
@@ -518,6 +547,15 @@ CANDIDATES["overnight_dip_v2_stop055"] = dict(
     provenance="payout_10/11 (Claude, 2026-11-10; training 2010-23 at today's price level): unstopped the worst night is -$2,701 per micro and the $1k DLL is hit in 42% "
                "of 12-month starts; with the 0.55% stop the worst night is -$316. Added to v5.2 and enabled only above a $500 balance: 6.4 payouts/yr, 0.7% breach. "
                "CAUTION: the overnight family failed its one-shot 2024-25 validation (overnight_2). Paper only; no routing.",
+)
+
+# Aegis Apex 4X comparison leg (Claude, 2026-11-10; Nick chose to track Antigravity's "Aegis" variant on paper): the same overnight dip with a
+# 09:15 ET exit instead of 09:45. reports/V55_CHECK_AEGIS_TRAINING.json: 09:15 is not better in both halves of training. Paper comparison only.
+CANDIDATES["overnight_dip_v2_stop055_0915"] = dict(
+    version="1.0.0", overnight=True, exit_sod=555, require_mes_dip=True, stop_pct=0.0055, category="future",
+    label="FUTURE - Overnight Dip v2, 0.55% stop, 09:15 ET exit (Aegis Apex 4X comparison leg)",
+    sleeves=[dict(name="OVN_DIP2_STOP_0915_1c", instrument="MNQ", bar_minutes=1, max_contracts=1)],
+    provenance="Antigravity research_supercharged_twostage_train.py (09:15 dawn exit); Claude v55: not better than 09:45 in both halves. Paper only; no routing.",
 )
 
 CANDIDATES["ag_arch_d_plus_v2_gap_addon_1of3_v4"] = dict(

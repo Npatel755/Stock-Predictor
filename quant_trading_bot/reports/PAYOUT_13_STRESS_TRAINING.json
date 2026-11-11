@@ -1,0 +1,54 @@
+{
+ "S0 base | R v5.2 + staged overnight": {
+  "payouts_12m_mean": 6.21,
+  "payouts_12m_p10": 4.0,
+  "p_breach_12m": 0.007
+ },
+ "S0 base | V v5.2 alone": {
+  "payouts_12m_mean": 5.25,
+  "payouts_12m_p10": 3.0,
+  "p_breach_12m": 0.007
+ },
+ "S1 costs +2 ticks/side | R v5.2 + staged overnight": {
+  "payouts_12m_mean": 6.04,
+  "payouts_12m_p10": 4.0,
+  "p_breach_12m": 0.007
+ },
+ "S1 costs +2 ticks/side | V v5.2 alone": {
+  "payouts_12m_mean": 5.11,
+  "payouts_12m_p10": 3.0,
+  "p_breach_12m": 0.007
+ },
+ "S2 edge -25% | R v5.2 + staged overnight": {
+  "payouts_12m_mean": 5.11,
+  "payouts_12m_p10": 2.0,
+  "p_breach_12m": 0.026
+ },
+ "S2 edge -25% | V v5.2 alone": {
+  "payouts_12m_mean": 4.42,
+  "payouts_12m_p10": 2.0,
+  "p_breach_12m": 0.026
+ },
+ "S3 costs + edge | R v5.2 + staged overnight": {
+  "payouts_12m_mean": 4.94,
+  "payouts_12m_p10": 2.0,
+  "p_breach_12m": 0.033
+ },
+ "S3 costs + edge | V v5.2 alone": {
+  "payouts_12m_mean": 4.29,
+  "payouts_12m_p10": 1.0,
+  "p_breach_12m": 0.033
+ },
+ "S4 volatility x1.5 | R v5.2 + staged overnight": {
+  "payouts_12m_mean": 4.48,
+  "payouts_12m_p10": 1.0,
+  "p_breach_12m": 0.113
+ },
+ "S4 volatility x1.5 | V v5.2 alone": {
+  "payouts_12m_mean": 3.7,
+  "payouts_12m_p10": 1.0,
+  "p_breach_12m": 0.086
+ },
+ "robust | R v5.2 + staged overnight": true,
+ "robust | V v5.2 alone": true
+}

@@ -1,0 +1,48 @@
+{
+ "overnight_runner": {
+  "nights": 518,
+  "net": 11145.31,
+  "worst_night": -796.1,
+  "worst_marked": -854.94,
+  "expected": "Devin: +11,797 / 490 nights"
+ },
+ "v4 + overnight x0": {
+  "net": 59257.67,
+  "net_2010_19": 16444.0,
+  "net_2020_23": 42814.0,
+  "days150_per_year": 19.3,
+  "median_win_day": 154.88,
+  "worst_day": -950.5,
+  "days_le_minus_1000": 0,
+  "nights_marked_le_minus_1000": 0,
+  "payouts_per_year": 3.79,
+  "median_payout": 864.0,
+  "blowups_per_year": 0.21
+ },
+ "v4 + overnight x1": {
+  "net": 70402.98,
+  "net_2010_19": 21556.0,
+  "net_2020_23": 48847.0,
+  "days150_per_year": 21.9,
+  "median_win_day": 104.45,
+  "worst_day": -979.59,
+  "days_le_minus_1000": 0,
+  "nights_marked_le_minus_1000": 0,
+  "payouts_per_year": 4.29,
+  "median_payout": 1241.0,
+  "blowups_per_year": 0.21
+ },
+ "v4 + overnight x2": {
+  "net": 81548.29,
+  "net_2010_19": 26668.0,
+  "net_2020_23": 54880.0,
+  "days150_per_year": 23.9,
+  "median_win_day": 125.32,
+  "worst_day": -1626.7,
+  "days_le_minus_1000": 4,
+  "nights_marked_le_minus_1000": 9,
+  "payouts_per_year": 4.64,
+  "median_payout": 1257.0,
+  "blowups_per_year": 0.29
+ }
+}

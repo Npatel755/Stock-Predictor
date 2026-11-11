@@ -1,0 +1,146 @@
+{
+ "ag_arch_d_plus": {
+  "research": "+20,723 / 1,968 trades",
+  "A_current_strict_floor_on": {
+   "net": 13065.5,
+   "trades": 1447,
+   "base_trades": 1447,
+   "locks": {
+    "AG_TRD30_D_1c": "maximum_drawdown"
+   }
+  },
+  "B_posthoc_floor_on": {
+   "net": 20723.25,
+   "trades": 1968,
+   "base_trades": 1968,
+   "locks": {}
+  },
+  "C_posthoc_floor_off": {
+   "net": 20723.25,
+   "trades": 1968,
+   "base_trades": 1968,
+   "locks": {}
+  }
+ },
+ "ag_arch_d_plus_v2": {
+  "research": "+17,576 / 1,398 trades",
+  "A_current_strict_floor_on": {
+   "net": 15074.25,
+   "trades": 1287,
+   "base_trades": 1287,
+   "locks": {}
+  },
+  "B_posthoc_floor_on": {
+   "net": 17576.0,
+   "trades": 1398,
+   "base_trades": 1398,
+   "locks": {}
+  },
+  "C_posthoc_floor_off": {
+   "net": 17576.0,
+   "trades": 1398,
+   "base_trades": 1398,
+   "locks": {}
+  }
+ },
+ "ag_arch_d_plus_v2_2c": {
+  "research": "+27,327 / 1,281 trades",
+  "A_current_strict_floor_on": {
+   "net": 28082.25,
+   "trades": 1334,
+   "base_trades": 1334,
+   "locks": {}
+  },
+  "B_posthoc_floor_on": {
+   "net": 27327.25,
+   "trades": 1281,
+   "base_trades": 1281,
+   "locks": {
+    "AG_TRD60_D_2c": "maximum_drawdown"
+   }
+  },
+  "C_posthoc_floor_off": {
+   "net": 27327.25,
+   "trades": 1281,
+   "base_trades": 1281,
+   "locks": {
+    "AG_TRD60_D_2c": "maximum_drawdown"
+   }
+  }
+ },
+ "ag_arch_d_plus_v2_gapsize": {
+  "research": "+23,142",
+  "A_current_strict_floor_on": {
+   "net": 18631.25,
+   "trades": 1452,
+   "base_trades": 1287,
+   "locks": {}
+  },
+  "B_posthoc_floor_on": {
+   "net": 23141.5,
+   "trades": 1659,
+   "base_trades": 1398,
+   "locks": {}
+  },
+  "C_posthoc_floor_off": {
+   "net": 23141.5,
+   "trades": 1659,
+   "base_trades": 1398,
+   "locks": {}
+  }
+ },
+ "ag_arch_d_plus_v2_gapsize_3c": {
+  "research": "+49,999 (1,228 base trades)",
+  "A_current_strict_floor_on": {
+   "net": 43170.75,
+   "trades": 1339,
+   "base_trades": 1159,
+   "locks": {
+    "AG_CRABEL15_D_3c": "maximum_drawdown",
+    "AG_TRD60_D_3c": "maximum_drawdown",
+    "AG_CRABEL15_D_GAP3": "maximum_drawdown"
+   }
+  },
+  "B_posthoc_floor_on": {
+   "net": 49999.5,
+   "trades": 1476,
+   "base_trades": 1228,
+   "locks": {
+    "AG_CRABEL15_D_3c": "maximum_drawdown",
+    "AG_TRD60_D_3c": "maximum_drawdown",
+    "AG_CRABEL15_D_GAP3": "maximum_drawdown"
+   }
+  },
+  "C_posthoc_floor_off": {
+   "net": 49999.5,
+   "trades": 1476,
+   "base_trades": 1228,
+   "locks": {
+    "AG_CRABEL15_D_3c": "maximum_drawdown",
+    "AG_TRD60_D_3c": "maximum_drawdown",
+    "AG_CRABEL15_D_GAP3": "maximum_drawdown"
+   }
+  }
+ },
+ "ag_arch_d_plus_v2_gapsize_3c_v3": {
+  "research": "+70,734 (1,456 base trades)",
+  "A_current_strict_floor_on": {
+   "net": 52449.0,
+   "trades": 1513,
+   "base_trades": 1335,
+   "locks": {}
+  },
+  "B_posthoc_floor_on": {
+   "net": 70733.75,
+   "trades": 1736,
+   "base_trades": 1456,
+   "locks": {}
+  },
+  "C_posthoc_floor_off": {
+   "net": 70733.75,
+   "trades": 1736,
+   "base_trades": 1456,
+   "locks": {}
+  }
+ }
+}

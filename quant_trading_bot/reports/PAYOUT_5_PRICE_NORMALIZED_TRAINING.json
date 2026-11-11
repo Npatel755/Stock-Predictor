@@ -1,0 +1,313 @@
+{
+ "stop_pct_check": {
+  "AG_CRABEL15_D_1c": {
+   "train_stop_pct_p10_p50_p90": [
+    0.194,
+    0.323,
+    0.572
+   ],
+   "today_stop_pct": 0.682,
+   "today_percentile_in_training": 0.95,
+   "by_era_median_pct": {
+    "(2009, 2015]": 0.321,
+    "(2015, 2019]": 0.255,
+    "(2019, 2023]": 0.401
+   }
+  },
+  "AG_MES_TRD30_D_1c": {
+   "train_stop_pct_p10_p50_p90": [
+    0.138,
+    0.238,
+    0.456
+   ],
+   "today_stop_pct": 0.376,
+   "today_percentile_in_training": 0.84,
+   "by_era_median_pct": {
+    "(2009, 2015]": 0.254,
+    "(2015, 2019]": 0.174,
+    "(2019, 2023]": 0.281
+   }
+  },
+  "AG_TRD60_D_1c": {
+   "train_stop_pct_p10_p50_p90": [
+    0.154,
+    0.28,
+    0.49
+   ],
+   "today_stop_pct": 0.874,
+   "today_percentile_in_training": 1.0,
+   "by_era_median_pct": {
+    "(2009, 2015]": 0.266,
+    "(2015, 2019]": 0.22,
+    "(2019, 2023]": 0.375
+   }
+  }
+ },
+ "trades": 1457,
+ "net_then_1c": 18386.5,
+ "N1 all sleeves 1 micro": {
+  "net_today_dollars": 69743.0,
+  "net_per_year": 4982.0,
+  "days150_per_year": 27.2,
+  "days150_2010_19": 23.4,
+  "days150_2020_23": 36.8,
+  "pos_years": "13/14",
+  "worst_day": -1594.0,
+  "max_drawdown": 2463.0,
+  "payouts_per_year": 4.86,
+  "median_payout": 944.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 2
+ },
+ "N1 + account stop $600": {
+  "net_today_dollars": 69544.0,
+  "net_per_year": 4967.0,
+  "days150_per_year": 27.2,
+  "days150_2010_19": 23.4,
+  "days150_2020_23": 36.8,
+  "pos_years": "13/14",
+  "worst_day": -1061.0,
+  "max_drawdown": 2231.0,
+  "payouts_per_year": 4.86,
+  "median_payout": 944.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 2
+ },
+ "N1 + account stop $400": {
+  "net_today_dollars": 70212.0,
+  "net_per_year": 5015.0,
+  "days150_per_year": 27.2,
+  "days150_2010_19": 23.4,
+  "days150_2020_23": 36.8,
+  "pos_years": "13/14",
+  "worst_day": -802.0,
+  "max_drawdown": 2231.0,
+  "payouts_per_year": 4.86,
+  "median_payout": 903.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0
+ },
+ "MES1 MES sleeve only (what the budget allows today)": {
+  "net_today_dollars": 8742.0,
+  "net_per_year": 624.0,
+  "days150_per_year": 3.9,
+  "days150_2010_19": 3.0,
+  "days150_2020_23": 6.2,
+  "pos_years": "11/14",
+  "worst_day": -313.0,
+  "max_drawdown": 1151.0,
+  "payouts_per_year": 0.71,
+  "median_payout": 473.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0
+ },
+ "PRICE-normalized, account stop $400": {
+  "net_today_dollars": 70212.0,
+  "net_per_year": 5015.0,
+  "days150_per_year": 27.2,
+  "days150_2010_19": 23.4,
+  "days150_2020_23": 36.8,
+  "pos_years": "13/14",
+  "worst_day": -802.0,
+  "max_drawdown": 2231.0,
+  "payouts_per_year": 4.86,
+  "median_payout": 903.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "starts": 151,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   7.0
+  ]
+ },
+ "TODAY-vol (R-rescaled), account stop $400": {
+  "net_today_dollars": 163450.0,
+  "net_per_year": 11675.0,
+  "days150_per_year": 32.9,
+  "days150_2010_19": 31.2,
+  "days150_2020_23": 37.2,
+  "pos_years": "12/14",
+  "worst_day": -1003.0,
+  "max_drawdown": 8045.0,
+  "payouts_per_year": 5.79,
+  "median_payout": 2083.0,
+  "blowups_per_year": 0.57,
+  "dll_days": 1,
+  "starts": 151,
+  "p_breach_12m": 0.457,
+  "p_dll_day_12m": 0.073,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   0.0,
+   8.0
+  ]
+ },
+ "TODAY-vol (R-rescaled), account stop $600": {
+  "net_today_dollars": 163894.0,
+  "net_per_year": 11707.0,
+  "days150_per_year": 33.9,
+  "days150_2010_19": 31.9,
+  "days150_2020_23": 38.8,
+  "pos_years": "13/14",
+  "worst_day": -1014.0,
+  "max_drawdown": 7275.0,
+  "payouts_per_year": 6.0,
+  "median_payout": 1867.0,
+  "blowups_per_year": 0.71,
+  "dll_days": 3,
+  "starts": 151,
+  "p_breach_12m": 0.523,
+  "p_dll_day_12m": 0.113,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   0.0,
+   8.0
+  ]
+ },
+ "TODAY-vol (R-rescaled), MES only": {
+  "net_today_dollars": 10462.0,
+  "net_per_year": 747.0,
+  "days150_per_year": 4.9,
+  "days150_2010_19": 3.9,
+  "days150_2020_23": 7.2,
+  "pos_years": "11/14",
+  "worst_day": -285.0,
+  "max_drawdown": 2227.0,
+  "payouts_per_year": 0.86,
+  "median_payout": 756.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "starts": 151,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 0.0,
+  "payouts_12m_p10_p90": [
+   0.0,
+   1.0
+  ]
+ },
+ "BUDGET $200/micro today, price-normalized, stop $400": {
+  "net_today_dollars": 32445.0,
+  "net_per_year": 2317.0,
+  "days150_per_year": 16.0,
+  "days150_2010_19": 16.3,
+  "days150_2020_23": 15.2,
+  "pos_years": "11/14",
+  "worst_day": -466.0,
+  "max_drawdown": 1850.0,
+  "payouts_per_year": 2.79,
+  "median_payout": 639.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "starts": 151,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 2.0,
+  "payouts_12m_p10_p90": [
+   0.0,
+   4.0
+  ],
+  "trades": 991,
+  "share_of_trades_kept": 0.68,
+  "kept_by_sleeve": {
+   "AG_CRABEL15_D_1c": 307,
+   "AG_MES_TRD30_D_1c": 210,
+   "AG_TRD60_D_1c": 474
+  }
+ },
+ "BUDGET $250/micro today, price-normalized, stop $400": {
+  "net_today_dollars": 53780.0,
+  "net_per_year": 3841.0,
+  "days150_per_year": 21.6,
+  "days150_2010_19": 20.1,
+  "days150_2020_23": 25.5,
+  "pos_years": "13/14",
+  "worst_day": -610.0,
+  "max_drawdown": 1896.0,
+  "payouts_per_year": 3.86,
+  "median_payout": 976.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "starts": 151,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   1.0,
+   5.0
+  ],
+  "trades": 1217,
+  "share_of_trades_kept": 0.835,
+  "kept_by_sleeve": {
+   "AG_CRABEL15_D_1c": 402,
+   "AG_MES_TRD30_D_1c": 217,
+   "AG_TRD60_D_1c": 598
+  }
+ },
+ "BUDGET $300/micro today, price-normalized, stop $400": {
+  "net_today_dollars": 65065.0,
+  "net_per_year": 4648.0,
+  "days150_per_year": 24.3,
+  "days150_2010_19": 22.0,
+  "days150_2020_23": 30.0,
+  "pos_years": "13/14",
+  "worst_day": -610.0,
+  "max_drawdown": 1628.0,
+  "payouts_per_year": 4.5,
+  "median_payout": 903.0,
+  "blowups_per_year": 0.0,
+  "dll_days": 0,
+  "starts": 151,
+  "p_breach_12m": 0.0,
+  "p_dll_day_12m": 0.0,
+  "payouts_12m_median": 4.0,
+  "payouts_12m_p10_p90": [
+   2.0,
+   6.0
+  ],
+  "trades": 1325,
+  "share_of_trades_kept": 0.909,
+  "kept_by_sleeve": {
+   "AG_CRABEL15_D_1c": 464,
+   "AG_MES_TRD30_D_1c": 220,
+   "AG_TRD60_D_1c": 641
+  }
+ },
+ "DEPLOYED v4 at today's prices (price-normalized)": {
+  "net_today_dollars": 138957.0,
+  "net_per_year": 9926.0,
+  "days150_per_year": 33.3,
+  "days150_2010_19": 31.4,
+  "days150_2020_23": 38.0,
+  "pos_years": "13/14",
+  "worst_day": -1292.0,
+  "max_drawdown": 5182.0,
+  "payouts_per_year": 5.71,
+  "median_payout": 1630.0,
+  "blowups_per_year": 0.36,
+  "dll_days": 2,
+  "starts": 151,
+  "p_breach_12m": 0.384,
+  "p_dll_day_12m": 0.079,
+  "payouts_12m_median": 5.0,
+  "payouts_12m_p10_p90": [
+   0.0,
+   8.0
+  ],
+  "trades": 1441,
+  "qty_mix": {
+   "3": 669,
+   "2": 448,
+   "1": 324
+  },
+  "kept_by_sleeve": {
+   "AG_CRABEL15_D_1c": 527,
+   "AG_MES_TRD30_D_1c": 221,
+   "AG_TRD60_D_1c": 693
+  }
+ },
+ "live_share_of_bars_within_budget_note": "live feed 2026-10-30..11-10: Crabel stop risk median $384, 60m trend $492, MES $147 per micro"
+}

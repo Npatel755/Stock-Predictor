@@ -1,0 +1,38 @@
+{
+ "v52": {
+  "runner_trades": 2481,
+  "runner_net": 28039.5,
+  "research_net": 28246.5,
+  "days_differing": 1,
+  "max_day_diff": 207.0,
+  "locks": {}
+ },
+ "overnight_dip_v2_regression": {
+  "nights": 518,
+  "net": 11145.31,
+  "expected": "518 / +11,145.31"
+ },
+ "overnight_stop055": {
+  "nights": 518,
+  "same_entries": true,
+  "runner_stop_exits": 163,
+  "research_stop_exits": 163,
+  "stop_decision_mismatches": 0,
+  "net": 7042.74,
+  "worst_night": -179.39
+ },
+ "v52_live_path": {
+  "cut": "2023-12-29 17:15:00+00:00",
+  "open": {
+   "AG_TRD60_D_1c_v52": -1,
+   "AG_MES_TRD30_D_1c_v52": -1
+  },
+  "prefix_ok": true
+ },
+ "overnight_live_path": {
+  "cut": "2023-12-06 02:05:00+00:00",
+  "open_qty": 1,
+  "open_since": "2023-12-05T23:05:00+00:00",
+  "prefix_ok": true
+ }
+}

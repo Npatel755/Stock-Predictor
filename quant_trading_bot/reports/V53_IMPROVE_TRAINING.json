@@ -1,0 +1,224 @@
+{
+ "base": {
+  "evaluation": {
+   "all": 52.7,
+   "half1": 40.5,
+   "half2": 65.2,
+   "fail": 31.8
+  },
+  "funded": {
+   "S0": {
+    "usd": 25325.0,
+    "closed": 0.007,
+    "near": 0.029
+   },
+   "S3": {
+    "usd": 15996.0,
+    "closed": 0.036,
+    "near": 0.137
+   },
+   "S4": {
+    "usd": 11579.0,
+    "closed": 0.065,
+    "near": 0.18
+   },
+   "half1": {
+    "usd": 19292.0,
+    "closed": 0.0,
+    "near": 0.042
+   },
+   "half2": {
+    "usd": 31808.0,
+    "closed": 0.015,
+    "near": 0.015
+   }
+  }
+ },
+ "A": {
+  "evaluation": {
+   "all": 53.4,
+   "half1": 45.8,
+   "half2": 61.2,
+   "fail": 28.0
+  },
+  "funded": {
+   "S0": {
+    "usd": 24353.0,
+    "closed": 0.0,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 16487.0,
+    "closed": 0.022,
+    "near": 0.086
+   },
+   "S4": {
+    "usd": 10546.0,
+    "closed": 0.065,
+    "near": 0.144
+   },
+   "half1": {
+    "usd": 18152.0,
+    "closed": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 31016.0,
+    "closed": 0.0,
+    "near": 0.015
+   }
+  },
+  "adopt_funded": false,
+  "adopt_evaluation": false
+ },
+ "B": {
+  "evaluation": {
+   "all": 52.4,
+   "half1": 40.0,
+   "half2": 65.0,
+   "fail": 32.0
+  },
+  "funded": {
+   "S0": {
+    "usd": 23189.0,
+    "closed": 0.007,
+    "near": 0.022
+   },
+   "S3": {
+    "usd": 14189.0,
+    "closed": 0.05,
+    "near": 0.151
+   },
+   "S4": {
+    "usd": 10560.0,
+    "closed": 0.086,
+    "near": 0.245
+   },
+   "half1": {
+    "usd": 17833.0,
+    "closed": 0.0,
+    "near": 0.028
+   },
+   "half2": {
+    "usd": 28944.0,
+    "closed": 0.015,
+    "near": 0.015
+   }
+  },
+  "adopt_funded": false,
+  "adopt_evaluation": false
+ },
+ "C": {
+  "evaluation": {
+   "all": 48.6,
+   "half1": 41.0,
+   "half2": 56.3,
+   "fail": 30.0
+  },
+  "funded": {
+   "S0": {
+    "usd": 23014.0,
+    "closed": 0.007,
+    "near": 0.022
+   },
+   "S3": {
+    "usd": 12942.0,
+    "closed": 0.043,
+    "near": 0.101
+   },
+   "S4": {
+    "usd": 10630.0,
+    "closed": 0.065,
+    "near": 0.151
+   },
+   "half1": {
+    "usd": 18693.0,
+    "closed": 0.0,
+    "near": 0.028
+   },
+   "half2": {
+    "usd": 27658.0,
+    "closed": 0.015,
+    "near": 0.015
+   }
+  },
+  "adopt_funded": false,
+  "adopt_evaluation": false
+ },
+ "A+B": {
+  "evaluation": {
+   "all": 53.2,
+   "half1": 45.6,
+   "half2": 60.9,
+   "fail": 28.1
+  },
+  "funded": {
+   "S0": {
+    "usd": 23124.0,
+    "closed": 0.007,
+    "near": 0.014
+   },
+   "S3": {
+    "usd": 14523.0,
+    "closed": 0.058,
+    "near": 0.129
+   },
+   "S4": {
+    "usd": 9865.0,
+    "closed": 0.086,
+    "near": 0.209
+   },
+   "half1": {
+    "usd": 17476.0,
+    "closed": 0.0,
+    "near": 0.014
+   },
+   "half2": {
+    "usd": 29194.0,
+    "closed": 0.015,
+    "near": 0.015
+   }
+  },
+  "adopt_funded": false,
+  "adopt_evaluation": false
+ },
+ "A+C": {
+  "evaluation": {
+   "all": 49.2,
+   "half1": 45.3,
+   "half2": 53.2,
+   "fail": 27.2
+  },
+  "funded": {
+   "S0": {
+    "usd": 22594.0,
+    "closed": 0.0,
+    "near": 0.007
+   },
+   "S3": {
+    "usd": 14373.0,
+    "closed": 0.007,
+    "near": 0.05
+   },
+   "S4": {
+    "usd": 10568.0,
+    "closed": 0.058,
+    "near": 0.101
+   },
+   "half1": {
+    "usd": 18270.0,
+    "closed": 0.0,
+    "near": 0.0
+   },
+   "half2": {
+    "usd": 27240.0,
+    "closed": 0.0,
+    "near": 0.015
+   }
+  },
+  "adopt_funded": false,
+  "adopt_evaluation": false
+ },
+ "selected_funded": null,
+ "selected_evaluation": []
+}
