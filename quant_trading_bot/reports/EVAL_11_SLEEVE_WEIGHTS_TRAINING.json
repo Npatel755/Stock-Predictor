@@ -1,0 +1,351 @@
+{
+ "groups": [
+  "BRK_E",
+  "CRABEL_CONT",
+  "CRABEL_FADE",
+  "MES_MOM",
+  "MES_TRD30",
+  "NIGHT",
+  "TRD60"
+ ],
+ "incumbent": {
+  "h1": {
+   "pass_": 54.5,
+   "fail": 20.0,
+   "timeout": 25.4,
+   "n": 1696
+  },
+  "h2": {
+   "pass_": 65.6,
+   "fail": 21.8,
+   "timeout": 12.6,
+   "n": 1664
+  }
+ },
+ "cells": {
+  "KELLY": {
+   "w_fit_A": {
+    "BRK_E": 0.92,
+    "CRABEL_CONT": 2.2,
+    "CRABEL_FADE": 0.05,
+    "MES_MOM": 1.06,
+    "MES_TRD30": 2.09,
+    "NIGHT": 0.88,
+    "TRD60": 0.79
+   },
+   "w_fit_B": {
+    "BRK_E": 1.09,
+    "CRABEL_CONT": 1.94,
+    "CRABEL_FADE": 1.03,
+    "MES_MOM": 1.28,
+    "MES_TRD30": 1.66,
+    "NIGHT": 0.37,
+    "TRD60": 0.62
+   },
+   "stats_A": {
+    "mean": {
+     "BRK_E": 24.64,
+     "CRABEL_CONT": 69.66,
+     "CRABEL_FADE": 1.92,
+     "MES_MOM": 12.67,
+     "MES_TRD30": 32.91,
+     "NIGHT": 71.98,
+     "TRD60": 37.09
+    },
+    "std": {
+     "BRK_E": 183.39,
+     "CRABEL_CONT": 199.9,
+     "CRABEL_FADE": 218.48,
+     "MES_MOM": 122.56,
+     "MES_TRD30": 141.04,
+     "NIGHT": 322.03,
+     "TRD60": 242.82
+    },
+    "count": {
+     "BRK_E": 269,
+     "CRABEL_CONT": 105,
+     "CRABEL_FADE": 94,
+     "MES_MOM": 114,
+     "MES_TRD30": 69,
+     "NIGHT": 269,
+     "TRD60": 319
+    }
+   },
+   "stats_B": {
+    "mean": {
+     "BRK_E": 45.64,
+     "CRABEL_CONT": 99.67,
+     "CRABEL_FADE": 65.22,
+     "MES_MOM": 27.6,
+     "MES_TRD30": 43.45,
+     "NIGHT": 65.32,
+     "TRD60": 43.38
+    },
+    "std": {
+     "BRK_E": 223.63,
+     "CRABEL_CONT": 247.96,
+     "CRABEL_FADE": 274.73,
+     "MES_MOM": 160.48,
+     "MES_TRD30": 177.06,
+     "NIGHT": 462.25,
+     "TRD60": 289.27
+    },
+    "count": {
+     "BRK_E": 209,
+     "CRABEL_CONT": 130,
+     "CRABEL_FADE": 124,
+     "MES_MOM": 161,
+     "MES_TRD30": 112,
+     "NIGHT": 249,
+     "TRD60": 284
+    }
+   },
+   "insample_A": {
+    "pass_": 57.3,
+    "fail": 23.1,
+    "timeout": 19.6,
+    "n": 1696
+   },
+   "oof_B": {
+    "pass_": 62.0,
+    "fail": 23.7,
+    "timeout": 14.2,
+    "n": 1664
+   },
+   "insample_B": {
+    "pass_": 64.9,
+    "fail": 20.9,
+    "timeout": 14.2,
+    "n": 1664
+   },
+   "oof_A": {
+    "pass_": 50.8,
+    "fail": 17.5,
+    "timeout": 31.7,
+    "n": 1696
+   }
+  },
+  "SHARPE": {
+   "w_fit_A": {
+    "BRK_E": 0.79,
+    "CRABEL_CONT": 2.05,
+    "CRABEL_FADE": 0.05,
+    "MES_MOM": 0.61,
+    "MES_TRD30": 1.37,
+    "NIGHT": 1.32,
+    "TRD60": 0.9
+   },
+   "w_fit_B": {
+    "BRK_E": 1.01,
+    "CRABEL_CONT": 1.98,
+    "CRABEL_FADE": 1.17,
+    "MES_MOM": 0.85,
+    "MES_TRD30": 1.21,
+    "NIGHT": 0.7,
+    "TRD60": 0.74
+   },
+   "stats_A": {
+    "mean": {
+     "BRK_E": 24.64,
+     "CRABEL_CONT": 69.66,
+     "CRABEL_FADE": 1.92,
+     "MES_MOM": 12.67,
+     "MES_TRD30": 32.91,
+     "NIGHT": 71.98,
+     "TRD60": 37.09
+    },
+    "std": {
+     "BRK_E": 183.39,
+     "CRABEL_CONT": 199.9,
+     "CRABEL_FADE": 218.48,
+     "MES_MOM": 122.56,
+     "MES_TRD30": 141.04,
+     "NIGHT": 322.03,
+     "TRD60": 242.82
+    },
+    "count": {
+     "BRK_E": 269,
+     "CRABEL_CONT": 105,
+     "CRABEL_FADE": 94,
+     "MES_MOM": 114,
+     "MES_TRD30": 69,
+     "NIGHT": 269,
+     "TRD60": 319
+    }
+   },
+   "stats_B": {
+    "mean": {
+     "BRK_E": 45.64,
+     "CRABEL_CONT": 99.67,
+     "CRABEL_FADE": 65.22,
+     "MES_MOM": 27.6,
+     "MES_TRD30": 43.45,
+     "NIGHT": 65.32,
+     "TRD60": 43.38
+    },
+    "std": {
+     "BRK_E": 223.63,
+     "CRABEL_CONT": 247.96,
+     "CRABEL_FADE": 274.73,
+     "MES_MOM": 160.48,
+     "MES_TRD30": 177.06,
+     "NIGHT": 462.25,
+     "TRD60": 289.27
+    },
+    "count": {
+     "BRK_E": 209,
+     "CRABEL_CONT": 130,
+     "CRABEL_FADE": 124,
+     "MES_MOM": 161,
+     "MES_TRD30": 112,
+     "NIGHT": 249,
+     "TRD60": 284
+    }
+   },
+   "insample_A": {
+    "pass_": 55.7,
+    "fail": 19.0,
+    "timeout": 25.3,
+    "n": 1696
+   },
+   "oof_B": {
+    "pass_": 63.4,
+    "fail": 24.5,
+    "timeout": 12.1,
+    "n": 1664
+   },
+   "insample_B": {
+    "pass_": 65.9,
+    "fail": 23.7,
+    "timeout": 10.4,
+    "n": 1664
+   },
+   "oof_A": {
+    "pass_": 54.5,
+    "fail": 19.3,
+    "timeout": 26.1,
+    "n": 1696
+   }
+  },
+  "HALF": {
+   "w_fit_A": {
+    "BRK_E": 0.96,
+    "CRABEL_CONT": 1.6,
+    "CRABEL_FADE": 0.53,
+    "MES_MOM": 1.03,
+    "MES_TRD30": 1.54,
+    "NIGHT": 0.94,
+    "TRD60": 0.9
+   },
+   "w_fit_B": {
+    "BRK_E": 1.05,
+    "CRABEL_CONT": 1.47,
+    "CRABEL_FADE": 1.02,
+    "MES_MOM": 1.14,
+    "MES_TRD30": 1.33,
+    "NIGHT": 0.68,
+    "TRD60": 0.81
+   },
+   "stats_A": {
+    "mean": {
+     "BRK_E": 24.64,
+     "CRABEL_CONT": 69.66,
+     "CRABEL_FADE": 1.92,
+     "MES_MOM": 12.67,
+     "MES_TRD30": 32.91,
+     "NIGHT": 71.98,
+     "TRD60": 37.09
+    },
+    "std": {
+     "BRK_E": 183.39,
+     "CRABEL_CONT": 199.9,
+     "CRABEL_FADE": 218.48,
+     "MES_MOM": 122.56,
+     "MES_TRD30": 141.04,
+     "NIGHT": 322.03,
+     "TRD60": 242.82
+    },
+    "count": {
+     "BRK_E": 269,
+     "CRABEL_CONT": 105,
+     "CRABEL_FADE": 94,
+     "MES_MOM": 114,
+     "MES_TRD30": 69,
+     "NIGHT": 269,
+     "TRD60": 319
+    }
+   },
+   "stats_B": {
+    "mean": {
+     "BRK_E": 45.64,
+     "CRABEL_CONT": 99.67,
+     "CRABEL_FADE": 65.22,
+     "MES_MOM": 27.6,
+     "MES_TRD30": 43.45,
+     "NIGHT": 65.32,
+     "TRD60": 43.38
+    },
+    "std": {
+     "BRK_E": 223.63,
+     "CRABEL_CONT": 247.96,
+     "CRABEL_FADE": 274.73,
+     "MES_MOM": 160.48,
+     "MES_TRD30": 177.06,
+     "NIGHT": 462.25,
+     "TRD60": 289.27
+    },
+    "count": {
+     "BRK_E": 209,
+     "CRABEL_CONT": 130,
+     "CRABEL_FADE": 124,
+     "MES_MOM": 161,
+     "MES_TRD30": 112,
+     "NIGHT": 249,
+     "TRD60": 284
+    }
+   },
+   "insample_A": {
+    "pass_": 55.9,
+    "fail": 24.3,
+    "timeout": 19.8,
+    "n": 1696
+   },
+   "oof_B": {
+    "pass_": 63.5,
+    "fail": 25.7,
+    "timeout": 10.8,
+    "n": 1664
+   },
+   "insample_B": {
+    "pass_": 63.5,
+    "fail": 19.7,
+    "timeout": 16.8,
+    "n": 1664
+   },
+   "oof_A": {
+    "pass_": 54.7,
+    "fail": 18.0,
+    "timeout": 27.2,
+    "n": 1696
+   }
+  }
+ },
+ "result": {
+  "picked_on_A": "KELLY",
+  "picked_on_B": "SHARPE",
+  "oof_h1": {
+   "pass_": 54.5,
+   "fail": 19.3,
+   "timeout": 26.1,
+   "n": 1696
+  },
+  "oof_h2": {
+   "pass_": 62.0,
+   "fail": 23.7,
+   "timeout": 14.2,
+   "n": 1664
+  },
+  "oof_all": 58.2,
+  "adopt": false
+ }
+}

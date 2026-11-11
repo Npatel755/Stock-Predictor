@@ -323,3 +323,29 @@
 - Pattern: endgame, extra sleeves and the $3k EOD product help calm 2010-16 only; the defensive ladder helps volatile 2017-23 only.
 - eval_8 (POST HOC, chosen after seeing both halves): extra sleeves + defensive (k3; k2 <= -$500; k1 <= -$1,000) + endgame (day >= 60 and
   > $1,000 short -> k5): 60.0% pass (54.5% / 65.6%), fail 20.9%, timeout 19.1%; vs v5.3 k3 53.4%. No clean holdout left: forward paper decides.
+
+## 2026-11-10 (Claude) Evaluation challenger on paper (champion/challenger, Nick: "yup")
+- `scripts/paper_account_static_daily.py` now replays a second evaluation card: eval_8 SLEEVES + DEF + ENDGAME (v5.3 + portfolio_e's
+  MNQ_BRK_E_2c and MES_MOM_3c re-routed one position at a time; 3x, 2x at <= -$500, 1x at <= -$1,000, 5x from day 60 when > $1,000 short).
+  Champion = v5.3 at 3x. Both also start on every weekday since 2026-11-06 ("rolling starts") for faster forward evidence.
+- Triggers fixed BEFORE any forward result: drop the Codex sleeves if their forward net per micro < $0 after >= 40 trades; the challenger
+  becomes the real-Combine plan only if, after >= 40 resolved rolling starts, its pass share >= champion's and fail share <= champion's + 5.
+- Day 1 (2026-11-10): champion +$113, challenger +$425 (one Codex MES momentum trade +$104 per micro). Meaningless sample.
+
+## 2026-11-10 (Claude) eval_9: optimal-control sizing and risk plumbing for the evaluation: nothing adopted (training only)
+- 2-fold protocol (pick/fit on 2010-16, run on 2017-23 and vice versa), bar = both out-of-fold halves >= incumbent + 1.0
+  (`reports/EVAL_9_OPTIMAL_SIZING_TRAINING.json`). Incumbent eval_8 SLEEVES + DEF + ENDGAME reproduced: 60.0% (54.5 / 65.6).
+- Dynamic-programming sizing (k by balance and sessions left, days as independent draws): out-of-fold 59.2% (53.0 / 65.6); k in 1..4: 59.0%.
+  The DP says start at 1x and size up late (fails 12.8% but timeouts 34%); it loses to plain 3x-from-day-1 because good and bad stretches
+  cluster, so early size in a good stretch passes before it ends. Independent-days DP is the wrong model here.
+- Per-trade risk cap $1,200 and $500 daily stop: + in 2010-16, - in 2017-23 again (cap $1,200: 57.8 / 63.8; stop $500: 56.5 / 64.3).
+- Daily profit stop (no new entries once the day is up >= $1,500 / $2,200): 61.5% (57.0 / 66.0) and 61.4% (56.2 / 66.6). Both values >= the
+  incumbent in both halves, but the fold-A pick ($1,500) adds only +0.4 on 2017-23 -> below the bar, not adopted. Small, consistent; it keeps
+  one big day from raising the 55% consistency target. Not added to the paper card mid-window.
+- Sizing/plumbing for this book is at a plateau of ~60-61%; only new independent edge can move it.
+
+## 2026-11-10 (Claude) eval_10: turn-of-month / pre-holiday long leg for the evaluation: REJECTED at gate 1 (training only)
+- Long 1 MNQ on the last session of the month + first 3 (+ pre-holiday), RTH 09:35-15:55 or full session 18:05-15:55, stop 0.5% / 1.0%
+  (`reports/EVAL_10_CALENDAR_LEG_TRAINING.json`). In every one of the 8 cells and both halves, those sessions did WORSE than other sessions
+  (RTH 2010-16: -$21 to -$46 per trade vs +$2-4 on other days; full session: +$7-17 vs +$20-33). The literature turn-of-month effect is not
+  present in NQ 2010-23; the long drift is overnight and not calendar-specific. Do not retry calendar longs on NQ.

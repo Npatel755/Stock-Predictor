@@ -1,0 +1,171 @@
+{
+ "cells": {
+  "RTH stop 0.5% TOM": {
+   "A": {
+    "n": 315,
+    "mean": -21.2,
+    "others_mean": 1.7,
+    "excess": -22.9,
+    "pf": 0.86,
+    "total": -6676.0
+   },
+   "B": {
+    "n": 319,
+    "mean": 6.8,
+    "others_mean": 10.3,
+    "excess": -3.4,
+    "pf": 1.04,
+    "total": 2174.0
+   },
+   "gate1": false
+  },
+  "RTH stop 0.5% TOM+PRE": {
+   "A": {
+    "n": 336,
+    "mean": -17.7,
+    "others_mean": 1.2,
+    "excess": -18.9,
+    "pf": 0.88,
+    "total": -5945.0
+   },
+   "B": {
+    "n": 330,
+    "mean": 6.3,
+    "others_mean": 10.4,
+    "excess": -4.0,
+    "pf": 1.04,
+    "total": 2095.0
+   },
+   "gate1": false
+  },
+  "RTH stop 1.0% TOM": {
+   "A": {
+    "n": 315,
+    "mean": -45.9,
+    "others_mean": 3.5,
+    "excess": -49.3,
+    "pf": 0.75,
+    "total": -14443.0
+   },
+   "B": {
+    "n": 319,
+    "mean": 3.9,
+    "others_mean": 5.4,
+    "excess": -1.5,
+    "pf": 1.02,
+    "total": 1239.0
+   },
+   "gate1": false
+  },
+  "RTH stop 1.0% TOM+PRE": {
+   "A": {
+    "n": 336,
+    "mean": -39.2,
+    "others_mean": 2.6,
+    "excess": -41.7,
+    "pf": 0.78,
+    "total": -13156.0
+   },
+   "B": {
+    "n": 330,
+    "mean": 3.8,
+    "others_mean": 5.5,
+    "excess": -1.7,
+    "pf": 1.02,
+    "total": 1252.0
+   },
+   "gate1": false
+  },
+  "FULL stop 0.5% TOM": {
+   "A": {
+    "n": 315,
+    "mean": 12.4,
+    "others_mean": 21.0,
+    "excess": -8.6,
+    "pf": 1.08,
+    "total": 3903.0
+   },
+   "B": {
+    "n": 319,
+    "mean": 17.2,
+    "others_mean": 19.9,
+    "excess": -2.7,
+    "pf": 1.1,
+    "total": 5488.0
+   },
+   "gate1": false
+  },
+  "FULL stop 0.5% TOM+PRE": {
+   "A": {
+    "n": 336,
+    "mean": 7.0,
+    "others_mean": 22.5,
+    "excess": -15.6,
+    "pf": 1.04,
+    "total": 2337.0
+   },
+   "B": {
+    "n": 330,
+    "mean": 14.5,
+    "others_mean": 20.6,
+    "excess": -6.1,
+    "pf": 1.08,
+    "total": 4774.0
+   },
+   "gate1": false
+  },
+  "FULL stop 1.0% TOM": {
+   "A": {
+    "n": 315,
+    "mean": 9.9,
+    "others_mean": 27.2,
+    "excess": -17.3,
+    "pf": 1.05,
+    "total": 3106.0
+   },
+   "B": {
+    "n": 319,
+    "mean": 11.4,
+    "others_mean": 32.8,
+    "excess": -21.3,
+    "pf": 1.05,
+    "total": 3650.0
+   },
+   "gate1": false
+  },
+  "FULL stop 1.0% TOM+PRE": {
+   "A": {
+    "n": 336,
+    "mean": 11.3,
+    "others_mean": 27.1,
+    "excess": -15.9,
+    "pf": 1.06,
+    "total": 3781.0
+   },
+   "B": {
+    "n": 330,
+    "mean": 10.3,
+    "others_mean": 33.2,
+    "excess": -22.9,
+    "pf": 1.05,
+    "total": 3409.0
+   },
+   "gate1": false
+  }
+ },
+ "incumbent": {
+  "h1": {
+   "pass_": 54.5,
+   "fail": 20.0,
+   "timeout": 25.4,
+   "n": 1696
+  },
+  "h2": {
+   "pass_": 65.6,
+   "fail": 21.8,
+   "timeout": 12.6,
+   "n": 1664
+  }
+ },
+ "gate2": "no cell passed gate 1 in both folds"
+}
