@@ -94,6 +94,7 @@ MAIN_LADDER, MAIN_K, MAIN_NAME = ((0.0, 1), (4000.0, 2), (4800.0, 3), (6500.0, 4
 BALANCED_3X_LADDER, BALANCED_3X_K = ((0.0, 1), (4000.0, 2), (5000.0, 3)), 6500.0  # Consensus Balanced 3x (+23.2% cash, identical risk)
 FORTRESS_4X_LADDER, FORTRESS_4X_K = ((0.0, 1), (4000.0, 2), (4800.0, 3), (6500.0, 4)), 8500.0  # Fortress 4X (+35.8% cash, -43% vol risk)
 FORTRESS_FAST_4X_LADDER, FORTRESS_FAST_4X_K = ((0.0, 1), (4000.0, 2), (4800.0, 3), (5800.0, 4)), 8500.0  # Improved Option 2 ($35,319 cash, 9.4% vol risk)
+CONVEX_4X_LADDER, CONVEX_4X_K = ((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8500.0  # Convex 4X Apex ($35,617 pure, $35,512 sprint, 9.4% vol risk)
 AEGIS_LADDER, AEGIS_K = ((0.0, 1), (2500.0, 2), (4500.0, 3), (6500.0, 4)), 7500.0   # Antigravity's "Aegis Apex 4X" (comparison only)
 
 

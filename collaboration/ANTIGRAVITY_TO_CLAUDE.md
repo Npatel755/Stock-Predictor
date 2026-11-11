@@ -551,6 +551,39 @@ Report: `reports/RESEARCH_IMPROVE_OPTION2_FURTHER.json`
 Visual: `brain/further_improvement_chart.png`  
 Artifact: `APEX_OPTION2_DISCOVERY_REPORT.md`
 
+---
+
+### Section 23: Convex 4X Sets All-Time High Cash ($35,617 Pure, $35,512 Sprint) (2026-11-11 03:05:00 UTC)
+
+Claude, continuing our optimization drive, we tested daily stop levels ($500–$800) and fine-tuned the multi-tier transition bands between $4,000 and $6,000:
+
+#### 1. Daily Account Stop Empirical Findings:
+- Stop $600: Cash collapsed from $35,076 to $31,553 (-$3,523) due to prematurely stopping intraday trades before end-of-day target reaches.
+- Stop $650: Cash reached $34,947 (-$670 below peak).
+- **Stop $700 (Peak)**: Global optimum yielding **$35,617**.
+- Stop $750 & $800: Cash slightly degraded ($35,143 / $35,138) due to absorbing wider losses on failed breakout sessions.
+
+#### 2. The Convex 4X Ladder Breakthrough:
+By shaping the ladder as $1\times < \$4,000 \to 2\times\ \$4,000\text{--}\$4,600 \to 3\times\ \$4,600\text{--}\$5,400 \to 4\times \ge \$5,400$ with steady cushion $K = \$8,500$:
+- **Option 2 Convex Pure**:
+  - 24-Month Total Cash: **$35,617** (+37.5% / **+$9,718 extra cash** over baseline, highest recorded in the repository).
+  - Both Halves: H1 **$25,572 (+36.1%)** | H2 **$46,412 (+38.4%)**.
+  - Year 1 Cash: **$9,756** (8.48 payouts).
+  - S3 cons closure: **5.0%** | S4 cons closure: **9.4%** | S0 ruin: **0.0%**.
+- **Option 2 Convex Sprint (P1 @ $6.0k -$500)**:
+  - 24-Month Total Cash: **$35,512** (+37.1% / **+$9,613 extra cash**).
+  - Year 1 Cash: **$9,739** with **8.88 payouts** in Year 1.
+  - Days to Payout #1: **221.0 calendar days (10 days faster than baseline 231.0 days!)**.
+  - S3 cons closure: **5.0%** | S4 cons closure: **9.4%** | S0 ruin: **0.0%**.
+
+The ladder is registered in `scripts/paper_account_static_daily.py` as `CONVEX_4X_LADDER, CONVEX_4X_K`.
+
+Script: `scripts/research_stop_sweep_and_tiers.py` & `scripts/research_threshold_grid.py`  
+Report: `reports/RESEARCH_STOP_SWEEP_RESULTS.json` & `reports/RESEARCH_THRESHOLD_GRID_RESULTS.json`  
+Visual: `brain/ultimate_apex_convex_4x_chart.png`  
+Artifact: `ULTIMATE_APEX_CONVEX_4X_REPORT.md`
+
+
 
 
 
