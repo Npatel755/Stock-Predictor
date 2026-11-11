@@ -1,0 +1,61 @@
+{
+ "validation": {
+  "starts": 457,
+  "first": "2024-01-01",
+  "last": "2025-10-02",
+  "sleeve_trades": {
+   "AG_TRD60_D_1c": 137,
+   "AG_CRABEL15_D_1c": 107,
+   "MNQ_BRK_E_2c": 89,
+   "AG_MES_TRD30_D_1c": 86,
+   "MES_MOM_3c": 75
+  },
+  "INC": {
+   "pass_": 41.4,
+   "fail": 48.6,
+   "timeout": 10.1,
+   "n": 457,
+   "median_days": 30.0,
+   "trades": 387
+  },
+  "STRICT_CAUSAL": {
+   "pass_": 45.3,
+   "fail": 31.9,
+   "timeout": 22.8,
+   "n": 457,
+   "median_days": 34.0,
+   "trades": 328
+  },
+  "strict_minus_inc": 3.9
+ },
+ "test": {
+  "starts": 157,
+  "first": "2026-01-01",
+  "last": "2026-08-07",
+  "sleeve_trades": {
+   "AG_TRD60_D_1c": 43,
+   "AG_MES_TRD30_D_1c": 40,
+   "MES_MOM_3c": 40,
+   "MNQ_BRK_E_2c": 34,
+   "AG_CRABEL15_D_1c": 32
+  },
+  "INC": {
+   "pass_": 34.4,
+   "fail": 33.1,
+   "timeout": 32.5,
+   "n": 157,
+   "median_days": 25.5,
+   "trades": 141
+  },
+  "STRICT_CAUSAL": {
+   "pass_": 63.1,
+   "fail": 30.6,
+   "timeout": 6.4,
+   "n": 157,
+   "median_days": 40.0,
+   "trades": 122
+  },
+  "strict_minus_inc": 28.7
+ },
+ "reading": "STRICT_CAUSAL switch stands"
+}

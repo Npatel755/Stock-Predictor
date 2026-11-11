@@ -1,0 +1,67 @@
+{
+ "cells": {
+  "0": {
+   "h1": {
+    "pass_within_two": 77.0,
+    "attempt2_pass_after_fail": 58.2,
+    "n_fail_first": 340,
+    "median_days_to_pass": 57.0
+   },
+   "h2": {
+    "pass_within_two": 87.9,
+    "attempt2_pass_after_fail": 62.7,
+    "n_fail_first": 362,
+    "median_days_to_pass": 44.0
+   }
+  },
+  "10": {
+   "h1": {
+    "pass_within_two": 77.8,
+    "attempt2_pass_after_fail": 62.4,
+    "n_fail_first": 340,
+    "median_days_to_pass": 60.0
+   },
+   "h2": {
+    "pass_within_two": 88.2,
+    "attempt2_pass_after_fail": 63.8,
+    "n_fail_first": 362,
+    "median_days_to_pass": 45.0
+   }
+  },
+  "20": {
+   "h1": {
+    "pass_within_two": 77.5,
+    "attempt2_pass_after_fail": 60.9,
+    "n_fail_first": 340,
+    "median_days_to_pass": 61.0
+   },
+   "h2": {
+    "pass_within_two": 87.0,
+    "attempt2_pass_after_fail": 58.6,
+    "n_fail_first": 362,
+    "median_days_to_pass": 45.0
+   }
+  },
+  "40": {
+   "h1": {
+    "pass_within_two": 78.1,
+    "attempt2_pass_after_fail": 63.5,
+    "n_fail_first": 340,
+    "median_days_to_pass": 62.0
+   },
+   "h2": {
+    "pass_within_two": 86.6,
+    "attempt2_pass_after_fail": 56.6,
+    "n_fail_first": 362,
+    "median_days_to_pass": 45.0
+   }
+  }
+ },
+ "result": {
+  "picked_on_h1": 40,
+  "picked_on_h2": 10,
+  "oof_h1": 77.8,
+  "oof_h2": 86.6,
+  "adopt": false
+ }
+}

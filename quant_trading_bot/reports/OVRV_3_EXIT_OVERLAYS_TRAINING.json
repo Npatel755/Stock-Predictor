@@ -1,0 +1,169 @@
+{
+ "baseline": {
+  "daily": {
+   "all": 0.1506,
+   "h1": 0.1352,
+   "h2": 0.165,
+   "mean": 106.1,
+   "sd": 704.0
+  },
+  "trades": {
+   "n": 2508,
+   "mean_pm": 46.85,
+   "sd_pm": 268.2,
+   "mean_k3": 136.0,
+   "sd_k3": 736.0
+  }
+ },
+ "incumbent": {
+  "h1": {
+   "pass_": 54.5,
+   "fail": 20.0,
+   "timeout": 25.4,
+   "n": 1696,
+   "median_days": 43.0
+  },
+  "h2": {
+   "pass_": 65.6,
+   "fail": 21.8,
+   "timeout": 12.6,
+   "n": 1664,
+   "median_days": 37.0
+  }
+ },
+ "cells": {
+  "E1": {
+   "name": "BE",
+   "changed_trades_k3": 417,
+   "changed_trades_k1": 417,
+   "partial_hits": 0,
+   "early_exits": 417,
+   "trades": {
+    "n": 2521,
+    "mean_pm": 44.36,
+    "sd_pm": 259.3,
+    "mean_k3": 129.2,
+    "sd_k3": 705.0
+   },
+   "daily": {
+    "all": 0.1512,
+    "h1": 0.143,
+    "h2": 0.1597,
+    "mean": 100.7,
+    "sd": 666.0
+   },
+   "gate1": false
+  },
+  "E2": {
+   "name": "H1R",
+   "changed_trades_k3": 1311,
+   "changed_trades_k1": 150,
+   "partial_hits": 1318,
+   "early_exits": 0,
+   "trades": {
+    "n": 2508,
+    "mean_pm": 42.7,
+    "sd_pm": 246.3,
+    "mean_k3": 121.4,
+    "sd_k3": 646.0
+   },
+   "daily": {
+    "all": 0.1534,
+    "h1": 0.1488,
+    "h2": 0.1592,
+    "mean": 94.1,
+    "sd": 613.0
+   },
+   "gate1": false
+  },
+  "E3": {
+   "name": "H2R",
+   "changed_trades_k3": 535,
+   "changed_trades_k1": 61,
+   "partial_hits": 537,
+   "early_exits": 0,
+   "trades": {
+    "n": 2508,
+    "mean_pm": 45.79,
+    "sd_pm": 261.5,
+    "mean_k3": 132.0,
+    "sd_k3": 708.0
+   },
+   "daily": {
+    "all": 0.1518,
+    "h1": 0.1391,
+    "h2": 0.1641,
+    "mean": 103.1,
+    "sd": 679.0
+   },
+   "gate1": false
+  },
+  "E4": {
+   "name": "TR2",
+   "changed_trades_k3": 297,
+   "changed_trades_k1": 297,
+   "partial_hits": 0,
+   "early_exits": 297,
+   "trades": {
+    "n": 2515,
+    "mean_pm": 44.08,
+    "sd_pm": 259.1,
+    "mean_k3": 127.2,
+    "sd_k3": 703.0
+   },
+   "daily": {
+    "all": 0.1478,
+    "h1": 0.1384,
+    "h2": 0.1572,
+    "mean": 99.7,
+    "sd": 675.0
+   },
+   "gate1": false
+  },
+  "E5": {
+   "name": "BE+H1R",
+   "changed_trades_k3": 1313,
+   "changed_trades_k1": 536,
+   "partial_hits": 1318,
+   "early_exits": 417,
+   "trades": {
+    "n": 2521,
+    "mean_pm": 41.04,
+    "sd_pm": 241.8,
+    "mean_k3": 116.8,
+    "sd_k3": 630.0
+   },
+   "daily": {
+    "all": 0.1541,
+    "h1": 0.1533,
+    "h2": 0.1563,
+    "mean": 91.2,
+    "sd": 591.0
+   },
+   "gate1": false
+  },
+  "E6": {
+   "name": "TIME90",
+   "changed_trades_k3": 594,
+   "changed_trades_k1": 594,
+   "partial_hits": 0,
+   "early_exits": 594,
+   "trades": {
+    "n": 2518,
+    "mean_pm": 43.94,
+    "sd_pm": 262.0,
+    "mean_k3": 127.3,
+    "sd_k3": 715.0
+   },
+   "daily": {
+    "all": 0.1443,
+    "h1": 0.1256,
+    "h2": 0.1613,
+    "mean": 99.0,
+    "sd": 686.0
+   },
+   "gate1": false
+  }
+ },
+ "gate1_passers": []
+}

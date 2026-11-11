@@ -1,0 +1,33 @@
+{
+ "written": "2026-11-11T18:56:36.518323Z",
+ "by": "Claude",
+ "requested_by": "Nick ('do it', 2026-11-11)",
+ "comparison": "INC (posthoc_1c research route) vs STRICT_CAUSAL (Harness.route_strict_causal), DEF_END sizing, v2 day semantics, same starts",
+ "splits": [
+  "validation 2024-01-01..2025-12-31",
+  "test 2026-01-01.."
+ ],
+ "reading": "switch to STRICT_CAUSAL stands unless STRICT_CAUSAL passes > 2.0 points less than INC in BOTH splits; then revert to INC until forward paper decides",
+ "training_reference": {
+  "INC_v2": [
+   49.7,
+   59.4
+  ],
+  "INC_measured_overlap": [
+   49.8,
+   60.0
+  ],
+  "STRICT_CAUSAL": [
+   51.5,
+   61.1
+  ]
+ },
+ "status_of_data": "2024-26 already read for this book family on 2026-11-10 (holdout_payout24, holdout_eval1): secondary evidence only",
+ "sha256": {
+  "scripts/holdout_eval36_strict.py": "00003fa7076802651703533c97e26a48b439fe427c465bff80c0cd4021e1e74c",
+  "scripts/eval_harness.py": "65d5eb902bef95cd5ba092b3f98dcc8ae4a9812760161aa759dbf2a7f568a24b",
+  "scripts/payout_lib.py": "c815b8d9a45775c737cfd44df17db0b5a0ee4839a2f444e60ce6d51effe010c1",
+  "scripts/mass_1m_search.py": "6b51315464c9f000a856d9f4447104f66562ab36c6053079572bc5594c996ba8",
+  "src/quant_futures/ensemble_paper.py": "de886b3e6cf35188cac344eaf3221e081ef3ec364a94beda7f001eef1507e1a7"
+ }
+}

@@ -1,0 +1,605 @@
+{
+ "cells": {
+  "FIX_1000_DN": {
+   "h1": {
+    "n": 1574,
+    "net": -22437.0,
+    "mean": -14.25,
+    "pf": 0.882,
+    "years_pos": "2/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": 10323.0,
+    "mean": 6.23,
+    "pf": 1.041,
+    "years_pos": "5/7"
+   },
+   "all": {
+    "n": 3230,
+    "net": -12114.0,
+    "mean": -3.75,
+    "pf": 0.972,
+    "years_pos": "7/14"
+   },
+   "placebo_beaten": 200,
+   "med_risk": 781.0,
+   "mean_qE": 3.0,
+   "screen": {
+    "name": "FIX_1000_DN",
+    "active_days": 3168,
+    "days_outside_book_calendar": 62,
+    "mean": -3.85,
+    "sd": 358.2,
+    "sr": -0.0108,
+    "sr_book": 0.1506,
+    "rho": 0.157,
+    "halves": {
+     "h1": {
+      "sr": -0.0454,
+      "sr_book": 0.1352,
+      "rho": 0.141,
+      "lift_at_best_w": -0.0084
+     },
+     "h2": {
+      "sr": 0.0137,
+      "sr_book": 0.165,
+      "rho": 0.165,
+      "lift_at_best_w": -0.003
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1452,
+     "0.5": 0.1382,
+     "1.0": 0.1219,
+     "2.0": 0.091,
+     "3.0": 0.0688
+    },
+    "best_w": 0.25,
+    "lift": -0.0054,
+    "screen_pass": false
+   }
+  },
+  "FIX_1000_BETA": {
+   "h1": {
+    "n": 1574,
+    "net": -20645.0,
+    "mean": -13.12,
+    "pf": 0.893,
+    "years_pos": "1/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": -4637.0,
+    "mean": -2.8,
+    "pf": 0.981,
+    "years_pos": "3/7"
+   },
+   "all": {
+    "n": 3230,
+    "net": -25282.0,
+    "mean": -7.83,
+    "pf": 0.942,
+    "years_pos": "4/14"
+   },
+   "placebo_beaten": 200,
+   "med_risk": 754.0,
+   "mean_qE": 3.5,
+   "screen": {
+    "name": "FIX_1000_BETA",
+    "active_days": 3168,
+    "days_outside_book_calendar": 62,
+    "mean": -7.12,
+    "sd": 347.8,
+    "sr": -0.0205,
+    "sr_book": 0.1506,
+    "rho": 0.092,
+    "halves": {
+     "h1": {
+      "sr": -0.0411,
+      "sr_book": 0.1352,
+      "rho": 0.118,
+      "lift_at_best_w": -0.0077
+     },
+     "h2": {
+      "sr": -0.005,
+      "sr_book": 0.165,
+      "rho": 0.076,
+      "lift_at_best_w": -0.0034
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1453,
+     "0.5": 0.1384,
+     "1.0": 0.1216,
+     "2.0": 0.0888,
+     "3.0": 0.0646
+    },
+    "best_w": 0.25,
+    "lift": -0.0053,
+    "screen_pass": false
+   }
+  },
+  "FIX_1030_DN": {
+   "h1": {
+    "n": 1576,
+    "net": -23482.0,
+    "mean": -14.9,
+    "pf": 0.86,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": -592.0,
+    "mean": -0.36,
+    "pf": 0.997,
+    "years_pos": "3/7"
+   },
+   "all": {
+    "n": 3232,
+    "net": -24074.0,
+    "mean": -7.45,
+    "pf": 0.939,
+    "years_pos": "3/14"
+   },
+   "placebo_beaten": 200,
+   "med_risk": 781.0,
+   "mean_qE": 3.0,
+   "screen": {
+    "name": "FIX_1030_DN",
+    "active_days": 3170,
+    "days_outside_book_calendar": 62,
+    "mean": -7.89,
+    "sd": 318.2,
+    "sr": -0.0248,
+    "sr_book": 0.1506,
+    "rho": 0.117,
+    "halves": {
+     "h1": {
+      "sr": -0.0551,
+      "sr_book": 0.1352,
+      "rho": 0.098,
+      "lift_at_best_w": -0.0076
+     },
+     "h2": {
+      "sr": -0.0049,
+      "sr_book": 0.165,
+      "rho": 0.126,
+      "lift_at_best_w": -0.0041
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.145,
+     "0.5": 0.138,
+     "1.0": 0.1218,
+     "2.0": 0.09,
+     "3.0": 0.0659
+    },
+    "best_w": 0.25,
+    "lift": -0.0056,
+    "screen_pass": false
+   }
+  },
+  "FIX_1030_BETA": {
+   "h1": {
+    "n": 1576,
+    "net": -29055.0,
+    "mean": -18.44,
+    "pf": 0.834,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": -16679.0,
+    "mean": -10.07,
+    "pf": 0.924,
+    "years_pos": "2/7"
+   },
+   "all": {
+    "n": 3232,
+    "net": -45734.0,
+    "mean": -14.15,
+    "pf": 0.885,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 196,
+   "med_risk": 754.0,
+   "mean_qE": 3.5,
+   "screen": {
+    "name": "FIX_1030_BETA",
+    "active_days": 3170,
+    "days_outside_book_calendar": 62,
+    "mean": -13.3,
+    "sd": 308.6,
+    "sr": -0.0431,
+    "sr_book": 0.1506,
+    "rho": 0.082,
+    "halves": {
+     "h1": {
+      "sr": -0.0666,
+      "sr_book": 0.1352,
+      "rho": 0.076,
+      "lift_at_best_w": -0.0087
+     },
+     "h2": {
+      "sr": -0.0266,
+      "sr_book": 0.165,
+      "rho": 0.085,
+      "lift_at_best_w": -0.0055
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1437,
+     "0.5": 0.1356,
+     "1.0": 0.1172,
+     "2.0": 0.0816,
+     "3.0": 0.0548
+    },
+    "best_w": 0.25,
+    "lift": -0.0069,
+    "screen_pass": false
+   }
+  },
+  "FIX_1100_DN": {
+   "h1": {
+    "n": 1576,
+    "net": -24887.0,
+    "mean": -15.79,
+    "pf": 0.837,
+    "years_pos": "1/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": -21038.0,
+    "mean": -12.7,
+    "pf": 0.901,
+    "years_pos": "1/7"
+   },
+   "all": {
+    "n": 3232,
+    "net": -45925.0,
+    "mean": -14.21,
+    "pf": 0.874,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 192,
+   "med_risk": 781.0,
+   "mean_qE": 3.0,
+   "screen": {
+    "name": "FIX_1100_DN",
+    "active_days": 3170,
+    "days_outside_book_calendar": 62,
+    "mean": -14.21,
+    "sd": 285.8,
+    "sr": -0.0497,
+    "sr_book": 0.1506,
+    "rho": 0.077,
+    "halves": {
+     "h1": {
+      "sr": -0.0648,
+      "sr_book": 0.1352,
+      "rho": 0.045,
+      "lift_at_best_w": -0.0071
+     },
+     "h2": {
+      "sr": -0.0409,
+      "sr_book": 0.165,
+      "rho": 0.094,
+      "lift_at_best_w": -0.0068
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1437,
+     "0.5": 0.1357,
+     "1.0": 0.1177,
+     "2.0": 0.0826,
+     "3.0": 0.0551
+    },
+    "best_w": 0.25,
+    "lift": -0.0069,
+    "screen_pass": false
+   }
+  },
+  "FIX_1100_BETA": {
+   "h1": {
+    "n": 1576,
+    "net": -27010.0,
+    "mean": -17.14,
+    "pf": 0.832,
+    "years_pos": "1/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": -36244.0,
+    "mean": -21.89,
+    "pf": 0.827,
+    "years_pos": "1/7"
+   },
+   "all": {
+    "n": 3232,
+    "net": -63254.0,
+    "mean": -19.57,
+    "pf": 0.829,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 187,
+   "med_risk": 754.0,
+   "mean_qE": 3.5,
+   "screen": {
+    "name": "FIX_1100_BETA",
+    "active_days": 3170,
+    "days_outside_book_calendar": 62,
+    "mean": -18.44,
+    "sd": 280.4,
+    "sr": -0.0658,
+    "sr_book": 0.1506,
+    "rho": 0.046,
+    "halves": {
+     "h1": {
+      "sr": -0.0681,
+      "sr_book": 0.1352,
+      "rho": 0.023,
+      "lift_at_best_w": -0.0074
+     },
+     "h2": {
+      "sr": -0.0655,
+      "sr_book": 0.165,
+      "rho": 0.059,
+      "lift_at_best_w": -0.0084
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1427,
+     "0.5": 0.1337,
+     "1.0": 0.1138,
+     "2.0": 0.0752,
+     "3.0": 0.0452
+    },
+    "best_w": 0.25,
+    "lift": -0.0079,
+    "screen_pass": false
+   }
+  },
+  "BAND_DN": {
+   "h1": {
+    "n": 1719,
+    "net": -32499.0,
+    "mean": -18.91,
+    "pf": 0.762,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1809,
+    "net": -8409.0,
+    "mean": -4.65,
+    "pf": 0.952,
+    "years_pos": "2/7"
+   },
+   "all": {
+    "n": 3528,
+    "net": -40908.0,
+    "mean": -11.6,
+    "pf": 0.869,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 199,
+   "med_risk": 86.0,
+   "mean_qE": 3.0,
+   "screen": {
+    "name": "BAND_DN",
+    "active_days": 2403,
+    "days_outside_book_calendar": 46,
+    "mean": -12.13,
+    "sd": 257.7,
+    "sr": -0.0471,
+    "sr_book": 0.1506,
+    "rho": 0.181,
+    "halves": {
+     "h1": {
+      "sr": -0.0937,
+      "sr_book": 0.1352,
+      "rho": 0.14,
+      "lift_at_best_w": -0.0098
+     },
+     "h2": {
+      "sr": -0.0164,
+      "sr_book": 0.165,
+      "rho": 0.202,
+      "lift_at_best_w": -0.0054
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1433,
+     "0.5": 0.1354,
+     "1.0": 0.1185,
+     "2.0": 0.0866,
+     "3.0": 0.0613
+    },
+    "best_w": 0.25,
+    "lift": -0.0072,
+    "screen_pass": false
+   }
+  },
+  "BAND_BETA": {
+   "h1": {
+    "n": 1759,
+    "net": -33603.0,
+    "mean": -19.1,
+    "pf": 0.767,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1817,
+    "net": -25508.0,
+    "mean": -14.04,
+    "pf": 0.856,
+    "years_pos": "2/7"
+   },
+   "all": {
+    "n": 3576,
+    "net": -59112.0,
+    "mean": -16.53,
+    "pf": 0.816,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 199,
+   "med_risk": 88.0,
+   "mean_qE": 3.5,
+   "screen": {
+    "name": "BAND_BETA",
+    "active_days": 2427,
+    "days_outside_book_calendar": 43,
+    "mean": -17.12,
+    "sd": 253.7,
+    "sr": -0.0675,
+    "sr_book": 0.1506,
+    "rho": 0.121,
+    "halves": {
+     "h1": {
+      "sr": -0.0938,
+      "sr_book": 0.1352,
+      "rho": 0.114,
+      "lift_at_best_w": -0.0098
+     },
+     "h2": {
+      "sr": -0.0495,
+      "sr_book": 0.165,
+      "rho": 0.125,
+      "lift_at_best_w": -0.007
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1424,
+     "0.5": 0.1334,
+     "1.0": 0.1145,
+     "2.0": 0.0784,
+     "3.0": 0.0498
+    },
+    "best_w": 0.25,
+    "lift": -0.0082,
+    "screen_pass": false
+   }
+  },
+  "STOP_DN": {
+   "h1": {
+    "n": 1574,
+    "net": -18741.0,
+    "mean": -11.91,
+    "pf": 0.888,
+    "years_pos": "3/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": 15592.0,
+    "mean": 9.42,
+    "pf": 1.072,
+    "years_pos": "5/7"
+   },
+   "all": {
+    "n": 3230,
+    "net": -3149.0,
+    "mean": -0.97,
+    "pf": 0.992,
+    "years_pos": "8/14"
+   },
+   "placebo_beaten": 200,
+   "med_risk": 207.0,
+   "mean_qE": 3.0,
+   "screen": {
+    "name": "STOP_DN",
+    "active_days": 3168,
+    "days_outside_book_calendar": 62,
+    "mean": -1.34,
+    "sd": 296.8,
+    "sr": -0.0045,
+    "sr_book": 0.1506,
+    "rho": 0.176,
+    "halves": {
+     "h1": {
+      "sr": -0.0463,
+      "sr_book": 0.1352,
+      "rho": 0.148,
+      "lift_at_best_w": -0.007
+     },
+     "h2": {
+      "sr": 0.0247,
+      "sr_book": 0.165,
+      "rho": 0.191,
+      "lift_at_best_w": -0.0016
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1466,
+     "0.5": 0.1415,
+     "1.0": 0.1291,
+     "2.0": 0.1036,
+     "3.0": 0.083
+    },
+    "best_w": 0.25,
+    "lift": -0.004,
+    "screen_pass": false
+   }
+  },
+  "STOP_BETA": {
+   "h1": {
+    "n": 1574,
+    "net": -16332.0,
+    "mean": -10.38,
+    "pf": 0.903,
+    "years_pos": "2/7"
+   },
+   "h2": {
+    "n": 1656,
+    "net": -16188.0,
+    "mean": -9.78,
+    "pf": 0.925,
+    "years_pos": "2/7"
+   },
+   "all": {
+    "n": 3230,
+    "net": -32519.0,
+    "mean": -10.07,
+    "pf": 0.915,
+    "years_pos": "4/14"
+   },
+   "placebo_beaten": 200,
+   "med_risk": 206.0,
+   "mean_qE": 3.5,
+   "screen": {
+    "name": "STOP_BETA",
+    "active_days": 3168,
+    "days_outside_book_calendar": 62,
+    "mean": -9.01,
+    "sd": 284.6,
+    "sr": -0.0317,
+    "sr_book": 0.1506,
+    "rho": 0.1,
+    "halves": {
+     "h1": {
+      "sr": -0.0398,
+      "sr_book": 0.1352,
+      "rho": 0.121,
+      "lift_at_best_w": -0.0061
+     },
+     "h2": {
+      "sr": -0.026,
+      "sr_book": 0.165,
+      "rho": 0.088,
+      "lift_at_best_w": -0.0049
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1452,
+     "0.5": 0.1387,
+     "1.0": 0.1235,
+     "2.0": 0.0928,
+     "3.0": 0.0681
+    },
+    "best_w": 0.25,
+    "lift": -0.0054,
+    "screen_pass": false
+   }
+  }
+ },
+ "screen_passers": []
+}

@@ -1,0 +1,28 @@
+{
+ "mini_until": "2019-05-06",
+ "sessions_total": 3448,
+ "sessions_in_former_hole": 88,
+ "n_h1": 1696,
+ "n_h2": 1752,
+ "trades_in_former_hole": 73,
+ "incumbent": {
+  "h1": {
+   "pass_": 51.4,
+   "fail": 21.6,
+   "timeout": 26.9,
+   "n": 1696,
+   "median_days": 41.5
+  },
+  "h2": {
+   "pass_": 64.1,
+   "fail": 22.4,
+   "timeout": 13.5,
+   "n": 1752,
+   "median_days": 37.0
+  }
+ },
+ "previous": {
+  "h1": 54.5,
+  "h2": 65.6
+ }
+}

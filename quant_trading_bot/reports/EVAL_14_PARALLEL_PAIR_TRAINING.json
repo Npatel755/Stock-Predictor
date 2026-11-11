@@ -1,0 +1,67 @@
+{
+ "single": {
+  "h1": 54.5,
+  "h2": 65.6
+ },
+ "sequential": {
+  "h1": 77.0,
+  "h2": 87.9
+ },
+ "pair": {
+  "K2": {
+   "h1": {
+    "at_least_one": 58.9,
+    "acct2_alone": 54.2,
+    "both": 49.9
+   },
+   "h2": {
+    "at_least_one": 68.2,
+    "acct2_alone": 61.7,
+    "both": 59.1
+   }
+  },
+  "K4": {
+   "h1": {
+    "at_least_one": 58.6,
+    "acct2_alone": 52.1,
+    "both": 48.0
+   },
+   "h2": {
+    "at_least_one": 68.7,
+    "acct2_alone": 59.4,
+    "both": 56.4
+   }
+  },
+  "K5": {
+   "h1": {
+    "at_least_one": 59.5,
+    "acct2_alone": 50.9,
+    "both": 46.0
+   },
+   "h2": {
+    "at_least_one": 68.8,
+    "acct2_alone": 58.4,
+    "both": 55.2
+   }
+  },
+  "AGG": {
+   "h1": {
+    "at_least_one": 58.5,
+    "acct2_alone": 53.8,
+    "both": 49.8
+   },
+   "h2": {
+    "at_least_one": 66.9,
+    "acct2_alone": 61.3,
+    "both": 60.0
+   }
+  }
+ },
+ "result": {
+  "picked_on_h1": "K5",
+  "picked_on_h2": "K5",
+  "oof_h1": 59.5,
+  "oof_h2": 68.8,
+  "oof_all": 64.1
+ }
+}

@@ -112,3 +112,30 @@ def test_chameleon_and_sprint():
     assert f["payouts_count"] >= 1
     assert f["payouts"][0]["amount"] == 500.0
     assert f["floor"] == 0.0
+
+
+def _t(hh, mm, hh2, mm2, net, mae, prio=0, d="2026-01-05", sleeve="X"):
+    a, b = pd.Timestamp(f"{d} {hh:02d}:{mm:02d}", tz=NY), pd.Timestamp(f"{d} {hh2:02d}:{mm2:02d}", tz=NY)
+    return dict(tin=a, tout=b, n_base=1, per_micro=net, mae=mae, risk=100.0, night=False, sleeve=sleeve, prio=prio)
+
+
+def test_strict_router_is_causal_and_one_position():
+    early = _t(10, 15, 10, 45, 50.0, -20.0, prio=5)        # known and filled at 10:15
+    late = _t(11, 0, 12, 0, 80.0, -30.0, prio=0)           # a 60m signal known only at 11:00 (its bar started 10:00)
+    overlap = _t(11, 30, 12, 30, 40.0, -10.0, prio=1)      # would stack on `late`
+    kept = acct.route_book_strict([late, overlap, early])
+    assert early in kept and late in kept and overlap not in kept     # the later-known trade cannot block the earlier one
+    same = acct.route_book_strict([_t(10, 0, 10, 30, 1.0, 0.0, prio=1), _t(10, 0, 10, 0, -5.0, -5.0, prio=0)])
+    assert len(same) == 1 and same[0]["prio"] == 0                     # one trade per entry minute, priority decides
+
+
+def test_intraday_stacking_and_floor():
+    a = _t(10, 0, 12, 0, 100.0, -300.0); b = _t(10, 30, 11, 30, 50.0, -400.0)   # b opens while a is open: worst points stack
+    p, w, n = acct.day_pnl_intraday([a, b], lambda r: 1, 700.0, True)
+    assert n == 2 and p == 150.0 and w == -700.0
+    p2, w2, _ = acct.day_pnl_intraday([dict(a, mae=-700.0), dict(b, mae=-400.0)], lambda r: 1, 700.0, True)
+    assert p2 == -1000.0                                               # stacked worst point reaches the DLL: flattened at -$1,000
+    rows = days(3, -450.0, risk=100.0)                                   # 3 x 3 micros x -$450 ... floor reached intraday on a positive day:
+    rows = [dict(r, per_micro=-200.0, mae=-200.0) for r in rows] + [dict(day("2026-01-08", 10.0, risk=100.0), mae=-300.0)]
+    ev = acct.evaluation(rows, pd.Timestamp("2026-01-05").date(), acct.k3_rule, today=pd.Timestamp("2026-01-20").date())
+    assert ev["status"] == "failed" and ev["on"] == "2026-01-08"         # -1,800 after 3 days; day 4 dips 3 x -300 = -900 before closing +30

@@ -1,0 +1,79 @@
+{
+ "trades": {
+  "FIRST": 694,
+  "ALL": 809
+ },
+ "cells": {
+  "FIRST_F2": {
+   "h1": {
+    "pass_": 54.2,
+    "fail": 24.8,
+    "timeout": 21.0,
+    "n": 1696,
+    "median_days": 40.0
+   },
+   "h2": {
+    "pass_": 62.6,
+    "fail": 24.9,
+    "timeout": 12.5,
+    "n": 1664,
+    "median_days": 36.0
+   }
+  },
+  "FIRST_F3": {
+   "h1": {
+    "pass_": 54.0,
+    "fail": 27.9,
+    "timeout": 18.1,
+    "n": 1696,
+    "median_days": 37.0
+   },
+   "h2": {
+    "pass_": 61.0,
+    "fail": 27.9,
+    "timeout": 11.1,
+    "n": 1664,
+    "median_days": 35.0
+   }
+  },
+  "ALL_F2": {
+   "h1": {
+    "pass_": 54.2,
+    "fail": 25.8,
+    "timeout": 19.9,
+    "n": 1696,
+    "median_days": 40.0
+   },
+   "h2": {
+    "pass_": 62.5,
+    "fail": 26.6,
+    "timeout": 10.9,
+    "n": 1664,
+    "median_days": 36.0
+   }
+  },
+  "ALL_F3": {
+   "h1": {
+    "pass_": 54.2,
+    "fail": 29.0,
+    "timeout": 16.9,
+    "n": 1696,
+    "median_days": 37.0
+   },
+   "h2": {
+    "pass_": 60.7,
+    "fail": 30.2,
+    "timeout": 9.1,
+    "n": 1664,
+    "median_days": 35.0
+   }
+  }
+ },
+ "result": {
+  "pick_h1": "FIRST_F2",
+  "pick_h2": "FIRST_F2",
+  "oof_h1": 54.2,
+  "oof_h2": 62.6,
+  "adopt": false
+ }
+}

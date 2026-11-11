@@ -1,0 +1,519 @@
+{
+ "incumbent": {
+  "pass_": {
+   "h1": {
+    "pass_": 54.5,
+    "fail": 20.0,
+    "timeout": 25.4,
+    "n": 1696,
+    "median_days": 43.0
+   },
+   "h2": {
+    "pass_": 65.6,
+    "fail": 21.8,
+    "timeout": 12.6,
+    "n": 1664,
+    "median_days": 37.0
+   }
+  },
+  "daily_sr": {
+   "all": 0.1506,
+   "h1": 0.1352,
+   "h2": 0.165,
+   "mean": 106.1,
+   "sd": 704.0
+  }
+ },
+ "F1_anatomy": {
+  "n_fail": 702,
+  "mae_only_share": 0.37,
+  "dll_day_share": 0.01,
+  "k_on_fail_day": {
+   "1": 695,
+   "2": 7
+  },
+  "worst_sleeve_on_fail_day": {
+   "NIGHT": 177,
+   "CRABEL_CONT": 157,
+   "BRK_E": 112,
+   "TRD60": 107,
+   "CRABEL_FADE": 55,
+   "MES_MOM": 49,
+   "MES_TRD30": 45
+  },
+  "cal_days_to_fail": {
+   "p25": 22.0,
+   "median": 36.5,
+   "p75": 56.0
+  },
+  "bal_before_fail_day": {
+   "p25": -1931.1780343222074,
+   "median": -1844.11570846459,
+   "p75": -1714.6250588591565
+  },
+  "fail_day_pnl": {
+   "median": -217.79226844633206,
+   "share_le_minus700": 0.01
+  },
+  "distinct_fail_days": 117,
+  "top_fail_days": {
+   "2015-01-13": 25,
+   "2013-12-19": 24,
+   "2013-12-20": 21,
+   "2020-01-02": 20,
+   "2010-11-23": 19,
+   "2012-09-04": 17,
+   "2017-06-15": 17,
+   "2018-03-07": 17,
+   "2011-11-21": 16,
+   "2020-01-14": 16,
+   "2023-03-09": 16,
+   "2021-03-05": 14
+  },
+  "fail_years": {
+   "2010": 53,
+   "2011": 82,
+   "2012": 44,
+   "2013": 55,
+   "2014": 2,
+   "2015": 80,
+   "2016": 24,
+   "2017": 60,
+   "2018": 43,
+   "2019": 6,
+   "2020": 121,
+   "2021": 29,
+   "2022": 11,
+   "2023": 92
+  },
+  "fail_day_loss_by_sleeve": {
+   "NIGHT": -65967.0,
+   "TRD60": -24421.0,
+   "CRABEL_FADE": -6156.0,
+   "BRK_E": -5187.0,
+   "MES_TRD30": 3286.0,
+   "CRABEL_CONT": 4951.0,
+   "MES_MOM": 9347.0
+  },
+  "sleeve_pnl_per_attempt_fail": {
+   "BRK_E": -328.5,
+   "CRABEL_CONT": -74.3,
+   "CRABEL_FADE": -197.4,
+   "MES_MOM": -18.1,
+   "MES_TRD30": -134.2,
+   "NIGHT": -626.0,
+   "TRD60": -576.5
+  },
+  "sleeve_pnl_per_attempt_pass": {
+   "BRK_E": 971.1,
+   "CRABEL_CONT": 1298.8,
+   "CRABEL_FADE": 549.0,
+   "MES_MOM": 236.7,
+   "MES_TRD30": 324.3,
+   "NIGHT": 1268.4,
+   "TRD60": 1398.8
+  },
+  "sleeve_pnl_per_attempt_timeout": {
+   "BRK_E": -36.2,
+   "CRABEL_CONT": 937.0,
+   "CRABEL_FADE": -218.6,
+   "MES_MOM": 161.0,
+   "MES_TRD30": 127.0,
+   "NIGHT": 518.8,
+   "TRD60": -97.6
+  },
+  "sleeve_share_of_book_trades": {
+   "TRD60": 0.24,
+   "NIGHT": 0.207,
+   "BRK_E": 0.191,
+   "MES_MOM": 0.11,
+   "CRABEL_CONT": 0.094,
+   "CRABEL_FADE": 0.087,
+   "MES_TRD30": 0.072
+  }
+ },
+ "F2_loso": {
+  "cells": {
+   "drop_CRABEL_CONT": {
+    "daily_sr": {
+     "all": 0.1241,
+     "h1": 0.1099,
+     "h2": 0.1371,
+     "mean": 76.2,
+     "sd": 614.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 47.8,
+      "fail": 23.6,
+      "timeout": 28.5,
+      "n": 1696,
+      "median_days": 44.0
+     },
+     "h2": {
+      "pass_": 61.1,
+      "fail": 20.9,
+      "timeout": 18.1,
+      "n": 1664,
+      "median_days": 42.0
+     }
+    }
+   },
+   "drop_CRABEL_FADE": {
+    "daily_sr": {
+     "all": 0.1476,
+     "h1": 0.1382,
+     "h2": 0.1571,
+     "mean": 99.8,
+     "sd": 676.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 55.6,
+      "fail": 14.4,
+      "timeout": 30.0,
+      "n": 1696,
+      "median_days": 47.0
+     },
+     "h2": {
+      "pass_": 62.6,
+      "fail": 20.6,
+      "timeout": 16.8,
+      "n": 1664,
+      "median_days": 42.0
+     }
+    }
+   },
+   "drop_TRD60": {
+    "daily_sr": {
+     "all": 0.1406,
+     "h1": 0.1223,
+     "h2": 0.1573,
+     "mean": 82.1,
+     "sd": 584.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 46.5,
+      "fail": 12.6,
+      "timeout": 40.9,
+      "n": 1696,
+      "median_days": 54.0
+     },
+     "h2": {
+      "pass_": 63.4,
+      "fail": 15.2,
+      "timeout": 21.4,
+      "n": 1664,
+      "median_days": 39.0
+     }
+    }
+   },
+   "drop_MES_TRD30": {
+    "daily_sr": {
+     "all": 0.1474,
+     "h1": 0.1341,
+     "h2": 0.1601,
+     "mean": 101.1,
+     "sd": 686.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 52.5,
+      "fail": 18.9,
+      "timeout": 28.6,
+      "n": 1696,
+      "median_days": 43.0
+     },
+     "h2": {
+      "pass_": 64.0,
+      "fail": 19.0,
+      "timeout": 17.0,
+      "n": 1664,
+      "median_days": 38.0
+     }
+    }
+   },
+   "drop_BRK_E": {
+    "daily_sr": {
+     "all": 0.1473,
+     "h1": 0.1273,
+     "h2": 0.1653,
+     "mean": 94.7,
+     "sd": 643.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 46.2,
+      "fail": 14.6,
+      "timeout": 39.3,
+      "n": 1696,
+      "median_days": 44.0
+     },
+     "h2": {
+      "pass_": 65.5,
+      "fail": 20.9,
+      "timeout": 13.6,
+      "n": 1664,
+      "median_days": 38.0
+     }
+    }
+   },
+   "drop_MES_MOM": {
+    "daily_sr": {
+     "all": 0.1456,
+     "h1": 0.1286,
+     "h2": 0.1613,
+     "mean": 101.1,
+     "sd": 694.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 50.8,
+      "fail": 25.8,
+      "timeout": 23.4,
+      "n": 1696,
+      "median_days": 42.5
+     },
+     "h2": {
+      "pass_": 64.4,
+      "fail": 22.0,
+      "timeout": 13.6,
+      "n": 1664,
+      "median_days": 36.0
+     }
+    }
+   },
+   "drop_NIGHT": {
+    "daily_sr": {
+     "all": 0.1299,
+     "h1": 0.1035,
+     "h2": 0.1528,
+     "mean": 82.9,
+     "sd": 638.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 38.1,
+      "fail": 14.7,
+      "timeout": 47.2,
+      "n": 1696,
+      "median_days": 50.0
+     },
+     "h2": {
+      "pass_": 60.0,
+      "fail": 12.1,
+      "timeout": 27.9,
+      "n": 1664,
+      "median_days": 43.0
+     }
+    }
+   }
+  },
+  "result": {
+   "picked_on_A": "drop_CRABEL_FADE",
+   "picked_on_B": "drop_BRK_E",
+   "oof_h1": 46.2,
+   "oof_h2": 62.6,
+   "oof_all": 54.3,
+   "adopt": false
+  }
+ },
+ "F3_routing": {
+  "cells": {
+   "NOROUTE": {
+    "extra_trades": 583,
+    "extra_net_per_micro_sum": 19525.0,
+    "extra_by_group": {
+     "TRD60": 204,
+     "MES_TRD30": 165,
+     "MES_MOM": 124,
+     "BRK_E": 79,
+     "CRABEL_CONT": 11
+    },
+    "daily_sr": {
+     "all": 0.1363,
+     "h1": 0.1108,
+     "h2": 0.1586,
+     "mean": 109.1,
+     "sd": 801.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 40.0,
+      "fail": 30.2,
+      "timeout": 29.8,
+      "n": 1696,
+      "median_days": 42.0
+     },
+     "h2": {
+      "pass_": 59.0,
+      "fail": 26.3,
+      "timeout": 14.7,
+      "n": 1664,
+      "median_days": 38.0
+     }
+    }
+   },
+   "TWOSLOT": {
+    "extra_trades": 485,
+    "extra_net_per_micro_sum": 16681.0,
+    "extra_by_group": {
+     "TRD60": 177,
+     "MES_TRD30": 133,
+     "MES_MOM": 88,
+     "BRK_E": 76,
+     "CRABEL_CONT": 11
+    },
+    "daily_sr": {
+     "all": 0.1403,
+     "h1": 0.1149,
+     "h2": 0.1625,
+     "mean": 110.8,
+     "sd": 790.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 45.3,
+      "fail": 30.1,
+      "timeout": 24.5,
+      "n": 1696,
+      "median_days": 43.0
+     },
+     "h2": {
+      "pass_": 62.4,
+      "fail": 25.8,
+      "timeout": 11.8,
+      "n": 1664,
+      "median_days": 38.0
+     }
+    }
+   }
+  },
+  "result": {
+   "picked_on_A": "TWOSLOT",
+   "picked_on_B": "TWOSLOT",
+   "oof_h1": 45.3,
+   "oof_h2": 62.4,
+   "oof_all": 53.8,
+   "adopt": false
+  }
+ },
+ "F5_crabel_base": {
+  "cells": {
+   "CC1": {
+    "daily_sr": {
+     "all": 0.1444,
+     "h1": 0.1303,
+     "h2": 0.1577,
+     "mean": 96.0,
+     "sd": 665.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 54.7,
+      "fail": 20.6,
+      "timeout": 24.7,
+      "n": 1696,
+      "median_days": 44.0
+     },
+     "h2": {
+      "pass_": 64.2,
+      "fail": 20.6,
+      "timeout": 15.2,
+      "n": 1664,
+      "median_days": 40.0
+     }
+    }
+   },
+   "CC3": {
+    "daily_sr": {
+     "all": 0.1508,
+     "h1": 0.1351,
+     "h2": 0.1655,
+     "mean": 107.6,
+     "sd": 714.0
+    },
+    "pass": {
+     "h1": {
+      "pass_": 54.7,
+      "fail": 21.8,
+      "timeout": 23.5,
+      "n": 1696,
+      "median_days": 43.0
+     },
+     "h2": {
+      "pass_": 65.3,
+      "fail": 24.2,
+      "timeout": 10.6,
+      "n": 1664,
+      "median_days": 36.0
+     }
+    }
+   }
+  },
+  "result": {
+   "picked_on_A": "CC1",
+   "picked_on_B": "CC3",
+   "oof_h1": 54.7,
+   "oof_h2": 64.2,
+   "oof_all": 59.4,
+   "adopt": false
+  }
+ },
+ "F4_coverage": {
+  "eligible": 2528,
+  "no_state": 45,
+  "state_counts": {
+   "1.0": 992,
+   "-1.0": 780,
+   "0.0": 756
+  }
+ },
+ "F4_noise_filter": {
+  "cells": {
+   "FA": {
+    "skipped": 0,
+    "skipped_by_group": {},
+    "daily_sr": {
+     "all": 0.1506,
+     "h1": 0.1352,
+     "h2": 0.165,
+     "mean": 106.1,
+     "sd": 704.0
+    },
+    "placebo_beaten": 0,
+    "placebo_sr": {
+     "p50": 0.1506,
+     "p95": 0.1506
+    },
+    "gate": false
+   },
+   "FB": {
+    "skipped": 756,
+    "skipped_by_group": {
+     "TRD60": 294,
+     "BRK_E": 145,
+     "CRABEL_FADE": 124,
+     "MES_MOM": 101,
+     "MES_TRD30": 68,
+     "CRABEL_CONT": 24
+    },
+    "daily_sr": {
+     "all": 0.1341,
+     "h1": 0.1294,
+     "h2": 0.1398,
+     "mean": 84.3,
+     "sd": 629.0
+    },
+    "placebo_beaten": 78,
+    "placebo_sr": {
+     "p50": 0.136,
+     "p95": 0.14551999999999998
+    },
+    "gate": false
+   }
+  },
+  "result": "no cell passed the placebo gate; no pass-rate claim"
+ }
+}

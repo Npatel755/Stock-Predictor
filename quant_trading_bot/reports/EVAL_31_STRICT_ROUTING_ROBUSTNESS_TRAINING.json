@@ -1,0 +1,111 @@
+{
+ "INC": {
+  "v2": {
+   "h1": {
+    "pass_": 49.7,
+    "fail": 26.2,
+    "timeout": 24.1,
+    "n": 1696,
+    "median_days": 39.0
+   },
+   "h2": {
+    "pass_": 59.4,
+    "fail": 26.9,
+    "timeout": 13.7,
+    "n": 1752,
+    "median_days": 41.0
+   }
+  },
+  "v2_opt": {
+   "h1": {
+    "pass_": 53.3,
+    "fail": 23.4,
+    "timeout": 23.3,
+    "n": 1696,
+    "median_days": 42.0
+   },
+   "h2": {
+    "pass_": 64.1,
+    "fail": 23.0,
+    "timeout": 12.9,
+    "n": 1752,
+    "median_days": 37.0
+   }
+  },
+  "v1": {
+   "h1": {
+    "pass_": 51.4,
+    "fail": 21.6,
+    "timeout": 26.9,
+    "n": 1696,
+    "median_days": 41.5
+   },
+   "h2": {
+    "pass_": 64.1,
+    "fail": 22.4,
+    "timeout": 13.5,
+    "n": 1752,
+    "median_days": 37.0
+   }
+  }
+ },
+ "STRICT": {
+  "v2": {
+   "h1": {
+    "pass_": 54.4,
+    "fail": 17.7,
+    "timeout": 27.9,
+    "n": 1696,
+    "median_days": 44.0
+   },
+   "h2": {
+    "pass_": 61.1,
+    "fail": 19.6,
+    "timeout": 19.3,
+    "n": 1752,
+    "median_days": 42.0
+   }
+  },
+  "v2_opt": {
+   "h1": {
+    "pass_": 54.4,
+    "fail": 17.7,
+    "timeout": 27.9,
+    "n": 1696,
+    "median_days": 44.0
+   },
+   "h2": {
+    "pass_": 61.1,
+    "fail": 19.6,
+    "timeout": 19.3,
+    "n": 1752,
+    "median_days": 42.0
+   }
+  },
+  "v1": {
+   "h1": {
+    "pass_": 54.4,
+    "fail": 17.7,
+    "timeout": 27.9,
+    "n": 1696,
+    "median_days": 44.0
+   },
+   "h2": {
+    "pass_": 61.1,
+    "fail": 19.6,
+    "timeout": 19.3,
+    "n": 1752,
+    "median_days": 42.0
+   }
+  }
+ },
+ "overlaps": {
+  "pairs": 384,
+  "same_side": 0.995,
+  "same_inst": 0.719,
+  "corr_pnl": 0.658,
+  "both_lose": 0.323,
+  "mean_second_trade_per_micro": 96.4,
+  "mean_all_trades_per_micro": 39.3
+ }
+}

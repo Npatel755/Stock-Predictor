@@ -364,3 +364,207 @@
   Fortified +4.5% / +4.4%, Apex Pure +4.7% / +5.0% -> none clears the >= 1.05x-in-both-halves bar. The Crown's K = $8,400 sits $50 above
   the $8,350 cliff where S4 jumps to 15.8%. It also changes the ladder (Convex 4000/4600/5400) at the same time.
 - Verdict: a small real gain (~+5%), not a breakthrough; fine as a paper comparison, not a reason to switch from Fortress 4X.
+
+## 2026-11-11 (Claude) eval_12: published "noise area" intraday momentum (Zarattini, Aziz & Barbon 2024) - NEW EDGE on MNQ, gate 2 FAILED
+- Published parameters, nothing tuned (`scripts/eval_12_noise_area_train.py`, `reports/EVAL_12_NOISE_AREA_TRAINING.json`): band = 14-session mean
+  |move from open| at each minute, around max/min(open, prior close); checks every 30 min 10:00-15:30; trailing stop = closer of band / VWAP.
+- Gate 1 (1 micro, today's prices, book costs): MNQ P (stop checked at the 30-min marks, as published) PF 1.14 (2010-16) / 1.32 (2017-23),
+  12/14 years, +$59.9k per micro 2010-23, 2,786 trades, 200/200 random-side placebos; MNQ R (resting stop) PF 1.13 / 1.40, 13/14 years.
+  MES fails 2010-16 (PF 1.05 / 1.01). First new independent edge found on NQ after the 15-min price-rule universe was closed.
+- Gate 2 FAILED: routed one-position at priority 12 and k-sized like the book, the eval_8 plan drops to 46.8% / 52.4% (fails 20% -> 41%).
+  A 10:01 noise entry held to 16:00 blocks the book's later decisions, and k3 on a nominal $62 stop hides a much larger real swing.
+- Drift control (same entry/exit times, always long): P 2010-16 +$15.6k vs +$6.6k, 2017-23 +$44.3k vs +$6.0k; P shorts +$2.5k / +$17.2k where the
+  same windows held long lose -$6.5k / -$21.1k -> real direction skill, not NQ's up-drift. R is weaker (2010-16 +$12.7k vs +$11.6k long-only;
+  R shorts lose in 2010-16). 2018 alone is ~30% of P's total; P sd $312 per micro per trade (mean $21.5), MAE p5 -$421.
+- eval_13 (new phase, `scripts/eval_13_noise_concurrent_train.py`, `reports/EVAL_13_NOISE_CONCURRENT_TRAINING.json`): the noise sleeve as a
+  separate concurrent position (not routed), 1 / 2 micros or k-sized, P or R stop: all 6 cells worse than the incumbent in BOTH halves
+  (best R 1-micro 49.4% / 58.0%, fails 20% -> 32-35%; noise alone at k 29-40%). REJECTED. Simulator reproduced the incumbent exactly first.
+- Why (training days, `scratchpad` check): book at k3 earns $101.5/session with sd $720 (daily Sharpe 0.141); noise 1 micro $17-18 with sd
+  $229-276 (0.065-0.075), corr +0.36 (both are NQ intraday trend). Adding 0.25-2 micros leaves the combined Sharpe at 0.130-0.143 while sd
+  rises 15-20%, and a fixed -$2,000 floor turns extra sd at the same Sharpe into fails.
+- SCREEN FOR FUTURE EVALUATION SLEEVES (cheap, before any pass-rate run): compute the combined daily Sharpe with the book at k3. A sleeve
+  can only help if it raises it materially (needs its own daily Sharpe well above corr x 0.141 at a tradable weight); a positive-edge,
+  trend-correlated sleeve just adds variance. The noise sleeve may still be useful for a deep-cushion funded tier (dollars, floor not binding).
+
+## 2026-11-11 (Claude, overnight) evaluation research harness + sensitivity
+- `scripts/eval_harness.py`: screen(daily) = seconds-fast daily-Sharpe gate vs the eval_8 book at k3 (book SR 0.151 with stops;
+  `reports/EVAL_BOOK_DAILY_TRAINING.csv`); Harness().pass_rate(book, extra) = eval_13 overlap simulator, reproduces 54.5 / 65.6 exactly.
+- Sensitivity (k3 constant, close-only floor approximation; base 55.1 / 62.3): +$50 per trade day (+23% edge) -> 66.5 / 69.5; same mean
+  with day swings x0.9 -> 59.6 / 67.0, x0.8 -> 66.0 / 72.7. Cutting variance is worth as much as adding edge: a ~20% rise in daily Sharpe
+  is worth ~+10 points. Targets for new streams: screen lift >= +0.007 (5%) to be worth a pass-rate run; ~+0.03 (20%) to matter.
+- ovrv_1 (fork B; `scripts/ovrv_1_rs_continuation_train.py`, `reports/OVRV_1_RS_CONTINUATION_TRAINING.json`): MNQ vs MES relative-strength
+  CONTINUATION (2 MNQ vs 2-5 MES, $24 round trip for a dollar-neutral unit), 10 cells: sign real (187-200/200 random-direction placebos) but
+  the move is below the 4-fill cost; every cell negative 2010-23, daily Sharpe -0.005..-0.068, screen lift < 0 in both halves. Closed.
+- ovrv_2 (fork B; `scripts/ovrv_2_overnight_breakout_train.py`, `reports/OVRV_2_OVERNIGHT_BREAKOUT_TRAINING.json`): 03:00 ET Europe-open
+  range breakout and noise-area bands from 18:00 / 03:00 on MNQ and MES, flat by 09:25, +1 tick per side overnight: 12/12 lose in both
+  halves (PF 0.64-0.98). Overnight breakouts mean-revert (bands beat only 0-4/200 placebos) but the reversal is ~$3-4 per trade gross vs
+  $4 (MNQ) / $8.50 (MES) costs, so the fade is not worth testing. Overnight momentum closed for the evaluation.
+- bookx_1 (fork C; `scripts/bookx_1_book_internals_train.py`, `reports/BOOKX_1_BOOK_INTERNALS_TRAINING.json`), nothing adopted:
+  * Fail anatomy: 702/3,360 starts fail; 99% fail at 1x after the defensive ladder, from a median -$1,844 balance, on a median -$218 day
+    (1% are DLL days) - slow bleeds, not blow-ups; 37% are intraday-only touches; fails land on only 117 distinct days (2020, 2023, 2011,
+    2015 clusters). Any real lever must act before -$1,000; gating near the floor only swaps fails for timeouts.
+  * Leave-one-sleeve-out: every sleeve earns its place (OOF 54.3%); dropping NIGHT is worst (38.1 / 60.0) although it loses most on fail days.
+  * Routing: re-adding the 485-583 trades the one-position router drops (+$17-20k per micro) lowers daily Sharpe to 0.136-0.140 and pass to
+    40-45 / 59-62: positive trades that add more variance than edge.
+  * Noise-area direction filter: no book trade ever opposes the noise state (all sleeves are trend/breakout); skipping in-band trades
+    beats only 78/200 random skips. Crabel continuation base 1 or 3: OOF 59.4%. All rejected.
+- ovrv_3 (fork B; `scripts/ovrv_3_exit_overlays_train.py`, `reports/OVRV_3_EXIT_OVERLAYS_TRAINING.json`): exit overlays on the book's own
+  trades (same entries, 1-min path, adverse-first within a bar, every partial pays its own fill): breakeven at +1R, half off at +1R / +2R,
+  trail from +2R, BE + half, 90-min time stop. Best (BE + half off at +1R) daily Sharpe 0.1541 vs 0.1506 (gate 0.1576): sd -16% but mean
+  -14%, i.e. trading smaller. Early exits help 2010-16 and hurt 2017-23 (the big trend winners). Exit management closed for the evaluation.
+- eval_14 (`scripts/eval_14_parallel_pair_train.py`, `reports/EVAL_14_PARALLEL_PAIR_TRAINING.json`), eval_8 plan: two Combines bought the
+  same day on the same trades reach at best 64.1% at least one pass (account 2 at k5, out-of-fold 59.5 / 68.8) vs 60.0% single - the
+  accounts pass and fail together (both pass 46-60%). Two SEQUENTIAL attempts (2nd bought the session after a fail/timeout): 77.0% / 87.9%
+  (~82%) within 180 days. A second purchase adds +4 points in parallel and +22 in sequence: plan for sequential attempts, never parallel.
+- tsm_1 (fork C; `scripts/tsm_1_daily_trend_metals_crude_btc_train.py`, `reports/TSM_1_DAILY_TREND_TRAINING.json`): daily time-series
+  momentum (L = 20/60/120/250, 1 micro or vol-scaled) on MGC / SIL / MCL / MBT, entered at the 18:00 ET reopen and flat at 16:00 ET each
+  day (Topstep's 16:10 ET flat rule forces a daily round trip; all four micros are Topstep-permitted per its help centre). Uncorrelated
+  with the book (rho -0.01..-0.04) but no gross edge 2011-23 (portfolio gross -$27k..+$30k vs $123-136k costs; 1-2 of 13 years positive;
+  best placebo 177/200). Silver's 5-tick cost alone ~$80k. REJECTED; daily-signal trend on these markets is closed.
+- Scale of what is needed: with the book at daily Sharpe 0.151, an uncorrelated stream lifts it to sqrt(0.151^2 + SR^2); a +0.03 lift
+  (~+10 points of pass rate) needs an all-session daily Sharpe ~0.1 (annual ~1.6) after micro costs - a second book as good as the first.
+  Sparse event streams (a few trades a year) cannot get there.
+- eval_15 (`scripts/eval_15_cooling_off_train.py`, `reports/EVAL_15_COOLING_OFF_TRAINING.json`): waiting W = 0/10/20/40 sessions after a
+  failed attempt before buying the next: pass within two attempts 77.0-78.1% (2010-16) / 86.6-88.2% (2017-23), out-of-fold no gain;
+  attempt 2 after a fail passes 57-64% (~ the unconditional 60%). Fails do not predict the next attempt: buy the next one immediately.
+- xmkt (fork A; `scripts/xmkt_*`, `reports/xmkt_SUMMARY_training.md`): Topstep-hours intraday rules on ZN (10 cells, hourly ZN.c.0, $52
+  round trip) and on M6E / M6A / M6B (30 cells, free HistData 1-min 2010-23, $45-70 per 10-micro unit): all 40 fail the screen (daily
+  Sharpe -0.09..-0.48, rho ~0). ZN gross ~+$7/trade vs $21-52 costs, 0/7 years positive per half; FX gross -1.3..+0.7 pips vs 5.6-7.2.
+  Topstep lists ZN and M6E for the Combine (no micro ZN); M6A / M6B on the Launchpad list; flat by 16:10 ET. HistData FX has the same
+  fall-gap-week clock defect as gold (from 2019: 08:30 spike at 07:30) - drop those weeks. Rates and FX intraday closed.
+- eval_16 (`scripts/eval_16_volume_and_volmanaged_train.py`, `reports/EVAL_16_VOLUME_VOLMANAGED_TRAINING.json`): (R) skipping book trades
+  when MNQ relative volume at the decision (vs the same minute's 14-session mean) < 0.8 / 1.0 removes 467 / 1,151 trades that were
+  PROFITABLE (+$14.5k / +$47.3k per micro); daily Sharpe 0.139 / 0.117, worse than 88 / 27 of 200 random skips - the ORB "stocks in play"
+  idea does not transfer to the index book. (V) volatility-managed size (k x median sigma / trailing 20- or 60-session NQ sigma, 1..5):
+  out-of-fold 51.4 / 63.8 vs 54.5 / 65.6 - the book earns in volatile markets, so sizing down there hurts. Both REJECTED.
+  The 1-min bars carry no historical bid/ask (columns empty 2010-23); order flow was already closed (orderflow_1/2).
+- regx_1 (fork D; `scripts/regx_1_registry_screen_train.py`, `reports/REGX_1_REGISTRY_SCREEN_TRAINING.json`, ledgers in
+  `reports/regx_ledgers/`): every registry sleeve not already in the book (22 distinct ledgers from 47 candidates + 13 _AG_ dicts + 4
+  overnight variants) through the daily-Sharpe screen: none passes. Top lifts (MNQ_HYB_C +0.008, TRD30PM +0.005-0.006) hurt 2010-16 and
+  fail the reverse 2-fold - the era effect that removed TRD30PM in v5.3; overnight variants help 2010-16 only (they double the night leg);
+  AG_TRD30_D is positive in both halves but only +0.002 (rho 0.45). Trend sleeves at rho 0.35-0.50 add variance in proportion to edge.
+  The registry is exhausted as a source of evaluation lift.
+- Note: research replays via run_routed cannot apply overnight_dip_v2_bond's ZN state on history (zn_down_days() has only the live
+  7-day yfinance window offline -> unknown state -> trade), so research rows for that candidate are the unfiltered night leg. The live
+  runner accumulates bars/zn_daily.csv and does apply it. Use xasset_3's ZN data for any historical bond-filter study.
+- eval_17 (`scripts/eval_17_eod_product_train.py`, `reports/EVAL_17_EOD_PRODUCT_TRAINING.json`): the eval_8 book on the Daily Payouts+
+  End-of-Day TRAILING option ($3,000 target, floor min($0, EOD peak - $2,000)): K2 54.7 / 60.4, K3 45.1 / 52.8, floor-relative ladder
+  52.1 / 62.1; out-of-fold 56.2% vs the static $4k product's 60.0%. Trailing fails 31-49%. With the larger book the STATIC product is
+  the better Combine (eval_7's opposite reading was on the old base book). Keep the static product.
+- eval_18 (`scripts/eval_18_stop_reverse_hedge_train.py`, `reports/EVAL_18_STOP_REVERSE_TRAINING.json`, ledgers
+  `reports/EVAL_18_SAR_X*_TRADES_TRAINING.csv`): stop-and-reverse after the book's own stop-outs (first per instrument per day, causal entry
+  the bar after the stop actually trades, stop 1R). X2 (+1R target) is a real small edge: PF 1.24 / 1.24, +$5.0k / +$5.2k per micro
+  (694 trades), daily Sharpe 0.047, rho -0.07 -> FIRST stream to pass the screen (lift +0.010, both halves). X1 (hold to close) and X3 (+2R)
+  are 2010-16 only. Pass rate: F1 54.7 / 66.0 (+0.2 / +0.4), k-sized 55.2 / 63.4; out-of-fold 54.7 / 63.4 -> NOT adopted. Too sparse
+  (active on ~1 day in 5, ~$3 per micro per active day) to move the pass rate; the screen overstates small sparse streams (the full
+  simulator's overlap / DLL handling eats the lift). Candidate for a deep-cushion funded tier.
+- eval_19 (`scripts/eval_19_friction_stress_train.py`): eval_8 plan with +1 / +2 ticks of extra slippage per side on every fill: 54.1 /
+  64.5 and 53.0 / 64.2 (vs 54.5 / 65.6). Not execution-fragile: ~1-1.5 points per extra tick per side.
+- eval_20 (`scripts/eval_20_by_year_train.py`, `reports/EVAL_20_BY_YEAR_TRAINING.json`): eval_8 plan pass rate by START YEAR ranges from
+  9% (2010 Jun-Dec) / 36% (2017) / 42% (2023) / 43% (2011) to 90-96% (2021-22); fails 47% in 2023. The 60% is an average over regimes,
+  and 2024-25's 39% (base book, holdout) looks like a bad-regime year, not a broken simulator. Timeouts (19% of starts): median final
+  balance +$619; 20% of timeouts (3.8% of all starts) end above $4,000 but short of a target raised by the 55% consistency rule, and 41% of
+  passes needed a raised target. The only lever on that is the daily profit stop (eval_9 PSTOP, +1.1 out-of-fold, below the bar).
+- Overlap-assumption check (diagnostic, scratchpad): with an OPTIMISTIC overlap rule (an open trade's MAE ignored) the SAR X2 hedge at
+  1 micro gives 55.5 / 66.0 and noise R 52.3 / 62.6 (conservative: 54.7 / 66.0 and 49.4 / 58.0). The rejections do not depend on the
+  conservative assumption.
+- eval_21 (`scripts/eval_21_swap_trd60_noise_train.py`, `reports/EVAL_21_SWAP_TRD60_NOISE_TRAINING.json`): SWAPPING TRD60 for the
+  noise-area sleeve at TRD60's router priority: daily Sharpe 0.134 (P) / 0.130 (R) vs 0.151; pass 45.6 / 57.1 and 45.5 / 55.4. TRD60 is
+  the better MNQ trend rule for this book; the noise sleeve takes 2,440-3,779 slots and crowds out the others. REJECTED.
+- Overnight 2026-11-11 summary: `reports/OVERNIGHT_EVAL_RESEARCH_2026-11-11.md`. Do not re-run: rates/FX intraday, metals/crude/BTC daily
+  trend, NQ/ES RS continuation, overnight breakouts, exit overlays, routing changes, RVOL filter, vol-managed sizing, registry sleeves,
+  noise-area (add / concurrent / swap), stop-and-reverse hedge, EOD product, cooling-off, parallel pairs.
+
+## 2026-11-11 (Claude, morning) attempt management continued
+- eval_22 (`scripts/eval_22_early_replacement_train.py`, `reports/EVAL_22_EARLY_REPLACEMENT_TRAINING.json`): buy attempt 2 early (2-purchase
+  budget, attempt 1 keeps trading). Once an attempt closes at <= -$1,500 it passes only 12-19% of the time. Pass within 90 / 120 / 180 days
+  of the first purchase: SEQ 60.4 / 69.0 / 76.9 (2010-16) and 75.4 / 81.2 / 88.6 (2017-23); T_DEAD (buy at a -$1,500 close) 67.0 / 72.8 /
+  77.6 and 76.9 / 80.9 / 86.7, wasting the 2nd purchase 4-6% of the time; T_LATE (day >= 60 and < +$1,500) and T_BOTH similar.
+  Out-of-fold on the primary (120 days): 70.1 / 81.9 vs SEQ 69.0 / 81.2 -> NOT adopted (+0.7 < +1.0 in 2017-23). Early buying makes
+  passing faster (90-day +1.5 to +6.6) but not more likely by 180 days; offer it to Nick as a speed-vs-$149 choice, not a rule.
+- eval_23 (`scripts/eval_23_sar_size_density_train.py`, `reports/EVAL_23_SAR_SIZE_DENSITY_TRAINING.json`): the stop-and-reverse hedge at
+  the screen's preferred size (F2 / F3) and on every stop-out: 54.0-54.2 (2010-16) / 60.7-62.6 (2017-23), fails up to 25-30%; out-of-fold
+  54.2 / 62.6 -> REJECTED. Pass rate FALLS with size while the screen's daily Sharpe rises.
+  Lesson: a stream that only trades after the book has lost puts its own losses on days that are already losing, so it fattens the left
+  tail that hits a fixed floor. The daily-Sharpe screen is necessary but not sufficient; conditional-on-loss hedges (incl. a night-leg
+  stop reversal) are closed for the evaluation.
+
+## 2026-11-11 (Claude, afternoon) timing, in-day rules, day-to-day sizing, attempt budget, and a training-data hole
+- eval_24 (`scripts/eval_24_purchase_timing_train.py`, `reports/EVAL_24_PURCHASE_TIMING_TRAINING.json`): WHEN to buy - 7 regime gates on the
+  purchase day (NQ 20-day vol vs its 1-year median, vol rising, 60-day efficiency ratio, >= 5% pullback, book's trailing 60 / 120-session
+  P&L). The vol gate FLIPS sign between halves: low vol is better in 2010-16 (63.7 vs 46.6 closed), high vol in 2017-23 (73.5 vs 58.2).
+  Out-of-fold 53.6 / 58.5 vs ungated 54.5 / 65.6; waiting for an open gate costs ~20 sessions per purchase and lowers pass-within-180-days
+  (two attempts 71.1 / 88.1 vs 76.9 / 88.5). REJECTED. Purchase timing by regime is closed; buy when ready.
+- eval_25 (`scripts/eval_25_lock_and_consistency_cap_train.py`): two parameter-free in-day rules. LOCK (no new entries once the account
+  has passed intraday) 54.8 / 66.1; CAPDYN (no new entries once the day reaches max($2,200, best day) = the most a day can make without
+  raising the 55%-rule target) 55.0 / 65.5; both 55.2 / 66.0 vs 54.5 / 65.6. Below the +1 bar, not a plan change - but LOCK is common
+  sense live: stop trading the day the target is reached.
+- eval_26 A (`scripts/eval_26_after_loss_sizing_train.py`): the next active day after a book loss < -$300 has daily Sharpe 0.26 / 0.30 vs
+  0.19 / 0.24 overall (after a win 0.16 / 0.22), but sizing on it does not transfer: k4 after a loss, k2 after a win, or both: W1 (k2
+  after a win) +4.6 in 2010-16 and -1.9 in 2017-23; out-of-fold 54.3 / 63.5; matched-rate random placebo beats the picked cell in 2017-23.
+  REJECTED. Day-to-day state sizing is closed (with eval_9 DP sizing and eval_16 vol sizing, sizing is exhausted).
+- eval_26 B: attempt budget, incumbent plan, next attempt bought the session after a miss, up to Topstep's 5 purchases (first decision
+  days 2010-06..2022-09): pass by attempt 1 / 2 / 3 / 4 / 5 = 60.6 / 82.9 / 95.5 / 98.8 / 99.4% (2010-16: 54.5 / 77.0 / 93.2 / 97.8 /
+  98.9); mean 1.62 purchases ($242); median 61 days from the first purchase to the pass, 90th percentile 180. Attempts are positively
+  correlated through regimes, so in a 2024-25-like year (39% per attempt) plan on three.
+- DATA HOLE (found by eval_24's roll-gap check): `mass_1m_search.load_bars(split="train")` uses NQ / ES before 2019-01-01 and MNQ / MES
+  after, but the micros start 2019-05-05, so Jan 1 - May 5, 2019 has NO bars in every study using it (67 scripts; payout_2 / payout_4 /
+  export_dplus_v2 hard-code the same cutover). The NQ / ES train files do contain those months (~118k minute bars each). Effect on the
+  evaluation: 71 start chains touch the hole; starts whose 90-day window overlaps it pass 42.9% vs 66.5% for the rest of 2017-23 (the
+  clock runs with no trades), so 2017-23 rates were biased down ~1 point; funded 24-month windows spanning 2019 lost ~4 months of trading.
+  `TRAIN_MINI_UNTIL` env var added to the loader (default unchanged so results reproduce; "2019-05-06" fills the hole). Re-measure: eval_27.
+- eval_27 (`scripts/eval_27_hole_fill_check_train.py`): with the hole filled (TRAIN_MINI_UNTIL=2019-05-06; +88 sessions, +73 book trades,
+  +21 nights) the v1 harness gave 51.4 / 64.1 - INCLUDING a 2010-16 change although every 2010-16 trade is byte-identical. That exposed:
+- SIMULATOR LOOK-AHEAD + UNSTABLE TIES (eval_28, `scripts/eval_28_corrected_semantics_train.py`, `reports/EVAL_28_CORRECTED_SEMANTICS_*`):
+  the evaluation day simulator used since eval_5 (eval_5 evaluate -> eval_9 run_day -> eval_harness.sim_day, "v1") treats book trades as
+  strictly sequential: before trade j it adds the FINAL P&L of every earlier accepted trade, also those still OPEN at j's entry (341
+  entries in the eval_8 book; posthoc_1c routing lets a 30m decision overlap a 60m trade, a documented quirk that live shares), so the
+  $400 / $700 daily stop can skip j because an open trade WILL lose - a look-ahead that skips trades on bad days. Same-minute ties (269
+  days) are ordered by pandas' unstable sort, so tie order (and the pass rate, ~3 points) changed with the frame's row count - every
+  extra-stream study (eval_13 / 18 / 23 ...) also reshuffled the book's ties. 831 trades had MAE better than their final loss (319 stopped
+  inside the entry minute: MAE ~-$1 vs final up to -$289 per micro). Fix: `Harness.sim_day_v2` / `pass_rate(v2=True)` (realised = trades
+  closed before the entry; open trades add their MAE to the DLL / floor worst case; MAE capped at final P&L; order-invariant, verified on a
+  shuffled frame). eval_8 plan under v2: 49.7 / 60.6 (hole) and 49.7 / 59.4 (filled), fails 26% (v1 said 20-22%); flat k3 48.2 / 57.1.
+  The honest per-attempt rate is ~55%, not 60%. The plan still beats flat k3 by +1.5 / +3.1. v1 stays the default only so old results
+  reproduce; NEW evaluation work must use v2 and TRAIN_MINI_UNTIL=2019-05-06. Not affected: the paper replay
+  (`paper_account_static_daily.day_pnl` counts only trades with tout <= tin) and payout_lib.day_series (same causal rule; it still counts a
+  zero-duration same-minute trade as closed - minor). All "+x points" decisions of eval_9..26 were made under v1: most rejections were by
+  margins larger than the bias, but sub-2-point readings (PSTOP, eval_18 F1, eval_22, eval_25) are inside v1's tie noise.
+- eval_29 (`scripts/eval_29_ladder_recheck_v2_train.py`, `reports/EVAL_29_LADDER_RECHECK_V2_TRAINING.json`; v2 + filled data): 9 pre-declared
+  ladders. INC 49.7 / 59.4; flat k3 48.1 / 56.3; NOLATE 49.2 / 58.0; K4BASE 45.9 / 57.4; TIGHT (k2 at -300, k1 at -700) 48.0 / 61.1;
+  LOOSE 49.8 / 58.7; LATE45 51.4 / 59.2; LATE4 49.2 / 59.0; K2BASE (k2 top, late k5) 54.1 / 59.0 with fails 18-22%. Picks differ by half
+  (K2BASE / TIGHT); out-of-fold 48.0 / 59.0 -> INC stays. K2BASE is the fallback if forward runs weak (+4.4 in 2010-16, -0.4 in 2017-23,
+  fewer blowups, slower). Budget under v2: pass by attempt 1..5 = 55.2 / 79.0 / 91.8 / 97.0 / 98.8% (2010-16: 49.7 / 71.3 / 86.6 / 94.6 /
+  97.8); mean 1.77 purchases ($264); median 65 days, 90th percentile 203.
+
+## 2026-11-11 (Claude, evening) whole-programme review under the corrected simulator: STRICT routing is the improvement
+- eval_30 (`scripts/eval_30_book_and_dp_recheck_v2_train.py`, `reports/EVAL_30_BOOK_DP_RECHECK_V2_TRAINING.json`; v2 + filled data):
+  leave-one-sleeve-out: NO_CRABEL 47.5 / 56.2, NO_TRD60 45.2 / 58.5, NO_MES_TRD30 49.8 / 56.4, NO_MES_MOM 50.1 / 58.9 (MES_MOM adds
+  nothing), NO_MNQ_BRK_E 45.0 / 62.2 (era-split), NO_NIGHT 35.5 / 53.3 (night leg essential), CRAB_N1 51.2 / 58.6. STRICT routing (live
+  strict_1c rule: skip a trade decided before the latest exit of any accepted trade - never two positions) 54.4 / 61.1, fails 17.7 / 19.6
+  vs INC 49.7 / 59.4 (26%). Pre-declared 2-fold did not adopt (2017-23 pick NO_MNQ_BRK_E fails in 2010-16). DP sizer refit on v2 days:
+  out-of-fold 48.9 / 60.6 (DP4), 48.6 / 60.3 (DP6) - not adopted; the DP wants k2 early (as eval_29's K2BASE).
+- eval_31 (`scripts/eval_31_strict_routing_robustness_train.py`): STRICT is 54.4 / 61.1 under v1, v2 and v2_OPT (no overlaps, so the
+  overlap rule cannot matter). INC depends on it: v2 49.7 / 59.4, v2_OPT (open trades' MAE ignored) 53.3 / 64.1. Overlaps: 384 pairs,
+  99.5% same direction, 72% same instrument, P&L corr 0.66 - in effect doubled positions on trend days (second trade +$96 per micro).
+- eval_32 (`scripts/eval_32_exact_overlap_path_train.py`): exact joint path on 1-minute bars: the share of the open trade's MAE that is
+  concurrent with the new trade's worst point is median 0.90 (75th pct 1.0, mean 0.67). INC re-priced: 49.8 / 60.0 (median), 50.2 / 61.1
+  (mean). Pre-declared verdict: SWITCH to STRICT (+4.6 / +1.1 at the median; +4.2 / 0.0 at the mean; never worse; fails -7 points).
+  STRICT budget: pass by attempt 1..5 = 58.8 / 80.9 / 94.8 / 99.1 / 99.9% (INC 55.2 / 79.0 / 91.8 / 97.0 / 98.8), mean 1.66 purchases.
+  Caveat: the paper replay checks the evaluation floor on realised day P&L only, which hides exactly the stacked intraday drawdown STRICT
+  avoids - a forward STRICT-vs-posthoc comparison needs an intraday floor check in the replay first.
+- eval_33 (`scripts/eval_33_strict_sizing_rules_train.py`): sizing and day rules re-tuned ON THE STRICT BOOK (14 cells): INC 54.4 / 61.1;
+  K3 52.8 / 60.3; NOLATE 52.8 / 60.6; K4BASE 54.2 / 59.4; K4LAD 53.3 / 59.9; TIGHT 52.7 / 59.9; LOOSE 54.4 / 60.5; LATE45 54.8 / 61.4;
+  LATE6 55.1 / 60.8; K2BASE 54.0 / 59.0; LOCKCAP 54.4 / 61.5; stops $500/$1,000 54.0 / 61.0, $300/$600 52.8 / 57.7; risk cap $1,200
+  54.3 / 56.3. A flat plateau around DEF_END: out-of-fold 54.4 / 60.8 -> keep DEF_END. Sizing is settled for the strict book.
+- eval_34 (`scripts/eval_34_strict_sleeve_pool_train.py`): 12 registry sleeves added one at a time + 2 drops ON THE STRICT BOOK. BOTH
+  halves pick ADD_MNQ_E57_1c: 55.3 / 62.7 (+0.9 / +1.6) - misses the +1.0 bar by 0.1 in 2010-16 -> NOT adopted (no relaxing after the
+  fact); a forward-paper candidate only. Others: CRABEL15 (non-D) / MES_TRD30 / TRD60C ~0; TRD30C, TRD60Q, HYB_C, TRD30PM mixed or worse;
+  BRK30 47.1 / 52.7, MORN30 52.8 / 56.5, TRD30_D 52.8 / 56.4, MNQ_VOL 43.5 / 50.9; dropping MES_MOM -0.7 / -1.7 (it helps under strict),
+  dropping MNQ_BRK_E 49.1 / 61.4. The sleeve pool is exhausted for the strict book too.
+- eval_35 (`scripts/eval_35_strict_noise_sleeve_train.py`): noise-area momentum as a lowest-priority ROUTED sleeve on the strict book:
+  P 36.1 / 40.6, R 40.3 / 44.6, fails 39-49% (it takes 1,769-2,876 slots; small stop-risk estimates, large real MAE). Closed for the
+  evaluation in every form (concurrent, swap, routed).
+- Funded side and strict routing: not run. The overlapping second trades earn +$96 per micro (2.5x the average) and the funded floor
+  only binds at 1x before the first payout, so strict routing would cost funded dollars for little safety. Worth a check only if forward
+  funded closures run high.

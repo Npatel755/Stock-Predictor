@@ -1,0 +1,65 @@
+{
+ "base": {
+  "h1": {
+   "pass_": 54.4,
+   "fail": 17.7,
+   "timeout": 27.9,
+   "n": 1696,
+   "median_days": 44.0
+  },
+  "h2": {
+   "pass_": 61.1,
+   "fail": 19.6,
+   "timeout": 19.3,
+   "n": 1752,
+   "median_days": 42.0
+  }
+ },
+ "ADD_NOISE_P": {
+  "h1": {
+   "pass_": 36.1,
+   "fail": 48.8,
+   "timeout": 15.2,
+   "n": 1696,
+   "median_days": 37.5
+  },
+  "h2": {
+   "pass_": 40.6,
+   "fail": 48.5,
+   "timeout": 10.8,
+   "n": 1752,
+   "median_days": 33.5
+  },
+  "noise_taken": 1769,
+  "book_trades": 3904
+ },
+ "ADD_NOISE_R": {
+  "h1": {
+   "pass_": 40.3,
+   "fail": 40.5,
+   "timeout": 19.2,
+   "n": 1696,
+   "median_days": 44.0
+  },
+  "h2": {
+   "pass_": 44.6,
+   "fail": 39.2,
+   "timeout": 16.3,
+   "n": 1752,
+   "median_days": 38.0
+  },
+  "noise_taken": 2876,
+  "book_trades": 5037
+ },
+ "result": {
+  "pick_h1": "ADD_NOISE_R",
+  "pick_h2": "ADD_NOISE_R",
+  "oof_h1": 40.3,
+  "oof_h2": 44.6,
+  "base": [
+   54.4,
+   61.1
+  ],
+  "adopt": false
+ }
+}

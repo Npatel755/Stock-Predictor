@@ -1,0 +1,761 @@
+{
+ "cells": {
+  "ORB_MNQ_15_OPP": {
+   "h1": {
+    "n": 1090,
+    "net": -8441.0,
+    "mean": -7.74,
+    "pf": 0.895,
+    "years_pos": "3/7"
+   },
+   "h2": {
+    "n": 1703,
+    "net": -8630.0,
+    "mean": -5.07,
+    "pf": 0.934,
+    "years_pos": "3/7"
+   },
+   "all": {
+    "n": 2793,
+    "net": -17071.0,
+    "mean": -6.11,
+    "pf": 0.919,
+    "years_pos": "6/14"
+   },
+   "placebo_beaten": 67,
+   "exits": {
+    "stop": 1754,
+    "eod": 1039
+   },
+   "med_risk": 102.0,
+   "screen": {
+    "name": "ORB_MNQ_15_OPP",
+    "active_days": 2730,
+    "days_outside_book_calendar": 63,
+    "mean": -4.73,
+    "sd": 188.2,
+    "sr": -0.0251,
+    "sr_book": 0.1506,
+    "rho": 0.032,
+    "halves": {
+     "h1": {
+      "sr": -0.0316,
+      "sr_book": 0.1352,
+      "rho": 0.058,
+      "lift_at_best_w": -0.0028
+     },
+     "h2": {
+      "sr": -0.0208,
+      "sr_book": 0.165,
+      "rho": 0.018,
+      "lift_at_best_w": -0.002
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1483,
+     "0.5": 0.1453,
+     "1.0": 0.1379,
+     "2.0": 0.1194,
+     "3.0": 0.1002
+    },
+    "best_w": 0.25,
+    "lift": -0.0023,
+    "screen_pass": false
+   }
+  },
+  "ORB_MNQ_15_MID": {
+   "h1": {
+    "n": 1090,
+    "net": -8513.0,
+    "mean": -7.81,
+    "pf": 0.855,
+    "years_pos": "2/7"
+   },
+   "h2": {
+    "n": 1703,
+    "net": -16762.0,
+    "mean": -9.84,
+    "pf": 0.823,
+    "years_pos": "1/7"
+   },
+   "all": {
+    "n": 2793,
+    "net": -25275.0,
+    "mean": -9.05,
+    "pf": 0.835,
+    "years_pos": "3/14"
+   },
+   "placebo_beaten": 13,
+   "exits": {
+    "stop": 2233,
+    "eod": 560
+   },
+   "med_risk": 57.0,
+   "screen": {
+    "name": "ORB_MNQ_15_MID",
+    "active_days": 2730,
+    "days_outside_book_calendar": 63,
+    "mean": -7.17,
+    "sd": 147.2,
+    "sr": -0.0487,
+    "sr_book": 0.1506,
+    "rho": 0.037,
+    "halves": {
+     "h1": {
+      "sr": -0.0403,
+      "sr_book": 0.1352,
+      "rho": 0.051,
+      "lift_at_best_w": -0.0026
+     },
+     "h2": {
+      "sr": -0.0561,
+      "sr_book": 0.165,
+      "rho": 0.03,
+      "lift_at_best_w": -0.0035
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1476,
+     "0.5": 0.1442,
+     "1.0": 0.1364,
+     "2.0": 0.1186,
+     "3.0": 0.1
+    },
+    "best_w": 0.25,
+    "lift": -0.003,
+    "screen_pass": false
+   }
+  },
+  "ORB_MNQ_30_OPP": {
+   "h1": {
+    "n": 1087,
+    "net": -1466.0,
+    "mean": -1.35,
+    "pf": 0.982,
+    "years_pos": "3/7"
+   },
+   "h2": {
+    "n": 1695,
+    "net": -7971.0,
+    "mean": -4.7,
+    "pf": 0.944,
+    "years_pos": "3/7"
+   },
+   "all": {
+    "n": 2782,
+    "net": -9437.0,
+    "mean": -3.39,
+    "pf": 0.958,
+    "years_pos": "6/14"
+   },
+   "placebo_beaten": 121,
+   "exits": {
+    "stop": 1394,
+    "eod": 1388
+   },
+   "med_risk": 132.0,
+   "screen": {
+    "name": "ORB_MNQ_30_OPP",
+    "active_days": 2719,
+    "days_outside_book_calendar": 63,
+    "mean": -2.54,
+    "sd": 200.1,
+    "sr": -0.0127,
+    "sr_book": 0.1506,
+    "rho": 0.031,
+    "halves": {
+     "h1": {
+      "sr": -0.0051,
+      "sr_book": 0.1352,
+      "rho": 0.054,
+      "lift_at_best_w": -0.0012
+     },
+     "h2": {
+      "sr": -0.0186,
+      "sr_book": 0.165,
+      "rho": 0.018,
+      "lift_at_best_w": -0.002
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.149,
+     "0.5": 0.1467,
+     "1.0": 0.1402,
+     "2.0": 0.123,
+     "3.0": 0.1048
+    },
+    "best_w": 0.25,
+    "lift": -0.0016,
+    "screen_pass": false
+   }
+  },
+  "ORB_MNQ_30_MID": {
+   "h1": {
+    "n": 1087,
+    "net": -2082.0,
+    "mean": -1.91,
+    "pf": 0.968,
+    "years_pos": "3/7"
+   },
+   "h2": {
+    "n": 1695,
+    "net": -11860.0,
+    "mean": -7.0,
+    "pf": 0.89,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 2782,
+    "net": -13942.0,
+    "mean": -5.01,
+    "pf": 0.919,
+    "years_pos": "3/14"
+   },
+   "placebo_beaten": 77,
+   "exits": {
+    "stop": 1974,
+    "eod": 808
+   },
+   "med_risk": 72.0,
+   "screen": {
+    "name": "ORB_MNQ_30_MID",
+    "active_days": 2719,
+    "days_outside_book_calendar": 63,
+    "mean": -4.05,
+    "sd": 163.8,
+    "sr": -0.0247,
+    "sr_book": 0.1506,
+    "rho": 0.045,
+    "halves": {
+     "h1": {
+      "sr": -0.0087,
+      "sr_book": 0.1352,
+      "rho": 0.066,
+      "lift_at_best_w": -0.0012
+     },
+     "h2": {
+      "sr": -0.0377,
+      "sr_book": 0.165,
+      "rho": 0.034,
+      "lift_at_best_w": -0.0028
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1485,
+     "0.5": 0.146,
+     "1.0": 0.1397,
+     "2.0": 0.124,
+     "3.0": 0.1071
+    },
+    "best_w": 0.25,
+    "lift": -0.0021,
+    "screen_pass": false
+   }
+  },
+  "BAND18_MNQ": {
+   "h1": {
+    "n": 1226,
+    "net": -8739.0,
+    "mean": -7.13,
+    "pf": 0.881,
+    "years_pos": "2/7"
+   },
+   "h2": {
+    "n": 1892,
+    "net": -28133.0,
+    "mean": -14.87,
+    "pf": 0.794,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 3118,
+    "net": -36871.0,
+    "mean": -11.83,
+    "pf": 0.825,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 4,
+   "exits": {
+    "check": 1976,
+    "eod": 1142
+   },
+   "med_risk": 42.0,
+   "screen": {
+    "name": "BAND18_MNQ",
+    "active_days": 2028,
+    "days_outside_book_calendar": 48,
+    "mean": -10.69,
+    "sd": 203.4,
+    "sr": -0.0525,
+    "sr_book": 0.1506,
+    "rho": 0.037,
+    "halves": {
+     "h1": {
+      "sr": -0.0312,
+      "sr_book": 0.1352,
+      "rho": 0.042,
+      "lift_at_best_w": -0.0028
+     },
+     "h2": {
+      "sr": -0.0692,
+      "sr_book": 0.165,
+      "rho": 0.036,
+      "lift_at_best_w": -0.006
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.146,
+     "0.5": 0.1408,
+     "1.0": 0.1288,
+     "2.0": 0.1025,
+     "3.0": 0.078
+    },
+    "best_w": 0.25,
+    "lift": -0.0046,
+    "screen_pass": false
+   }
+  },
+  "BAND3_MNQ": {
+   "h1": {
+    "n": 1474,
+    "net": -5901.0,
+    "mean": -4.0,
+    "pf": 0.92,
+    "years_pos": "2/7"
+   },
+   "h2": {
+    "n": 2341,
+    "net": -19092.0,
+    "mean": -8.16,
+    "pf": 0.857,
+    "years_pos": "1/7"
+   },
+   "all": {
+    "n": 3815,
+    "net": -24994.0,
+    "mean": -6.55,
+    "pf": 0.879,
+    "years_pos": "3/14"
+   },
+   "placebo_beaten": 37,
+   "exits": {
+    "check": 2703,
+    "eod": 1112
+   },
+   "med_risk": 31.0,
+   "screen": {
+    "name": "BAND3_MNQ",
+    "active_days": 2258,
+    "days_outside_book_calendar": 51,
+    "mean": -7.46,
+    "sd": 191.9,
+    "sr": -0.0389,
+    "sr_book": 0.1506,
+    "rho": -0.012,
+    "halves": {
+     "h1": {
+      "sr": -0.023,
+      "sr_book": 0.1352,
+      "rho": 0.024,
+      "lift_at_best_w": -0.0019
+     },
+     "h2": {
+      "sr": -0.051,
+      "sr_book": 0.165,
+      "rho": -0.031,
+      "lift_at_best_w": -0.0037
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1477,
+     "0.5": 0.1442,
+     "1.0": 0.1355,
+     "2.0": 0.1142,
+     "3.0": 0.0926
+    },
+    "best_w": 0.25,
+    "lift": -0.0029,
+    "screen_pass": false
+   }
+  },
+  "ORB_MES_15_OPP": {
+   "h1": {
+    "n": 1657,
+    "net": -19681.0,
+    "mean": -11.88,
+    "pf": 0.761,
+    "years_pos": "1/7"
+   },
+   "h2": {
+    "n": 1703,
+    "net": -16433.0,
+    "mean": -9.65,
+    "pf": 0.8,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 3360,
+    "net": -36114.0,
+    "mean": -10.75,
+    "pf": 0.78,
+    "years_pos": "1/14"
+   },
+   "placebo_beaten": 31,
+   "exits": {
+    "stop": 2135,
+    "eod": 1225
+   },
+   "med_risk": 63.0,
+   "screen": {
+    "name": "ORB_MES_15_OPP",
+    "active_days": 3297,
+    "days_outside_book_calendar": 63,
+    "mean": -10.32,
+    "sd": 122.6,
+    "sr": -0.0842,
+    "sr_book": 0.1506,
+    "rho": -0.008,
+    "halves": {
+     "h1": {
+      "sr": -0.0976,
+      "sr_book": 0.1352,
+      "rho": 0.003,
+      "lift_at_best_w": -0.0049
+     },
+     "h2": {
+      "sr": -0.0714,
+      "sr_book": 0.165,
+      "rho": -0.018,
+      "lift_at_best_w": -0.0029
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1468,
+     "0.5": 0.1428,
+     "1.0": 0.1341,
+     "2.0": 0.1148,
+     "3.0": 0.0948
+    },
+    "best_w": 0.25,
+    "lift": -0.0038,
+    "screen_pass": false
+   }
+  },
+  "ORB_MES_15_MID": {
+   "h1": {
+    "n": 1657,
+    "net": -19642.0,
+    "mean": -11.85,
+    "pf": 0.684,
+    "years_pos": "1/7"
+   },
+   "h2": {
+    "n": 1703,
+    "net": -18749.0,
+    "mean": -11.01,
+    "pf": 0.696,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 3360,
+    "net": -38391.0,
+    "mean": -11.43,
+    "pf": 0.69,
+    "years_pos": "1/14"
+   },
+   "placebo_beaten": 7,
+   "exits": {
+    "stop": 2639,
+    "eod": 721
+   },
+   "med_risk": 37.0,
+   "screen": {
+    "name": "ORB_MES_15_MID",
+    "active_days": 3297,
+    "days_outside_book_calendar": 63,
+    "mean": -11.07,
+    "sd": 92.9,
+    "sr": -0.1191,
+    "sr_book": 0.1506,
+    "rho": -0.001,
+    "halves": {
+     "h1": {
+      "sr": -0.1288,
+      "sr_book": 0.1352,
+      "rho": 0.002,
+      "lift_at_best_w": -0.0049
+     },
+     "h2": {
+      "sr": -0.1099,
+      "sr_book": 0.165,
+      "rho": -0.002,
+      "lift_at_best_w": -0.0034
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1466,
+     "0.5": 0.1424,
+     "1.0": 0.1337,
+     "2.0": 0.1152,
+     "3.0": 0.0962
+    },
+    "best_w": 0.25,
+    "lift": -0.004,
+    "screen_pass": false
+   }
+  },
+  "ORB_MES_30_OPP": {
+   "h1": {
+    "n": 1651,
+    "net": -15876.0,
+    "mean": -9.62,
+    "pf": 0.812,
+    "years_pos": "2/7"
+   },
+   "h2": {
+    "n": 1699,
+    "net": -17009.0,
+    "mean": -10.01,
+    "pf": 0.806,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 3350,
+    "net": -32886.0,
+    "mean": -9.82,
+    "pf": 0.809,
+    "years_pos": "2/14"
+   },
+   "placebo_beaten": 55,
+   "exits": {
+    "stop": 1728,
+    "eod": 1622
+   },
+   "med_risk": 80.0,
+   "screen": {
+    "name": "ORB_MES_30_OPP",
+    "active_days": 3287,
+    "days_outside_book_calendar": 63,
+    "mean": -9.45,
+    "sd": 130.1,
+    "sr": -0.0726,
+    "sr_book": 0.1506,
+    "rho": -0.011,
+    "halves": {
+     "h1": {
+      "sr": -0.0745,
+      "sr_book": 0.1352,
+      "rho": 0.008,
+      "lift_at_best_w": -0.0041
+     },
+     "h2": {
+      "sr": -0.0709,
+      "sr_book": 0.165,
+      "rho": -0.026,
+      "lift_at_best_w": -0.003
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1472,
+     "0.5": 0.1434,
+     "1.0": 0.1352,
+     "2.0": 0.1165,
+     "3.0": 0.097
+    },
+    "best_w": 0.25,
+    "lift": -0.0034,
+    "screen_pass": false
+   }
+  },
+  "ORB_MES_30_MID": {
+   "h1": {
+    "n": 1651,
+    "net": -18157.0,
+    "mean": -11.0,
+    "pf": 0.734,
+    "years_pos": "1/7"
+   },
+   "h2": {
+    "n": 1699,
+    "net": -19316.0,
+    "mean": -11.37,
+    "pf": 0.721,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 3350,
+    "net": -37473.0,
+    "mean": -11.19,
+    "pf": 0.728,
+    "years_pos": "1/14"
+   },
+   "placebo_beaten": 14,
+   "exits": {
+    "stop": 2383,
+    "eod": 967
+   },
+   "med_risk": 46.0,
+   "screen": {
+    "name": "ORB_MES_30_MID",
+    "active_days": 3287,
+    "days_outside_book_calendar": 63,
+    "mean": -10.92,
+    "sd": 102.0,
+    "sr": -0.1071,
+    "sr_book": 0.1506,
+    "rho": -0.004,
+    "halves": {
+     "h1": {
+      "sr": -0.1066,
+      "sr_book": 0.1352,
+      "rho": 0.022,
+      "lift_at_best_w": -0.0046
+     },
+     "h2": {
+      "sr": -0.1076,
+      "sr_book": 0.165,
+      "rho": -0.023,
+      "lift_at_best_w": -0.0035
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1466,
+     "0.5": 0.1425,
+     "1.0": 0.1338,
+     "2.0": 0.115,
+     "3.0": 0.0956
+    },
+    "best_w": 0.25,
+    "lift": -0.004,
+    "screen_pass": false
+   }
+  },
+  "BAND18_MES": {
+   "h1": {
+    "n": 1936,
+    "net": -23878.0,
+    "mean": -12.33,
+    "pf": 0.696,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1928,
+    "net": -29946.0,
+    "mean": -15.53,
+    "pf": 0.655,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 3864,
+    "net": -53824.0,
+    "mean": -13.93,
+    "pf": 0.674,
+    "years_pos": "0/14"
+   },
+   "placebo_beaten": 0,
+   "exits": {
+    "check": 2509,
+    "eod": 1355
+   },
+   "med_risk": 28.0,
+   "screen": {
+    "name": "BAND18_MES",
+    "active_days": 2495,
+    "days_outside_book_calendar": 50,
+    "mean": -15.61,
+    "sd": 132.5,
+    "sr": -0.1178,
+    "sr_book": 0.1506,
+    "rho": 0.026,
+    "halves": {
+     "h1": {
+      "sr": -0.1153,
+      "sr_book": 0.1352,
+      "rho": 0.047,
+      "lift_at_best_w": -0.0062
+     },
+     "h2": {
+      "sr": -0.1206,
+      "sr_book": 0.165,
+      "rho": 0.012,
+      "lift_at_best_w": -0.0057
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1447,
+     "0.5": 0.1386,
+     "1.0": 0.1256,
+     "2.0": 0.0986,
+     "3.0": 0.0724
+    },
+    "best_w": 0.25,
+    "lift": -0.0059,
+    "screen_pass": false
+   }
+  },
+  "BAND3_MES": {
+   "h1": {
+    "n": 2338,
+    "net": -22721.0,
+    "mean": -9.72,
+    "pf": 0.713,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 2353,
+    "net": -32014.0,
+    "mean": -13.61,
+    "pf": 0.64,
+    "years_pos": "0/7"
+   },
+   "all": {
+    "n": 4691,
+    "net": -54735.0,
+    "mean": -11.67,
+    "pf": 0.674,
+    "years_pos": "0/14"
+   },
+   "placebo_beaten": 4,
+   "exits": {
+    "check": 3358,
+    "eod": 1333
+   },
+   "med_risk": 24.0,
+   "screen": {
+    "name": "BAND3_MES",
+    "active_days": 2768,
+    "days_outside_book_calendar": 57,
+    "mean": -15.85,
+    "sd": 127.6,
+    "sr": -0.1242,
+    "sr_book": 0.1506,
+    "rho": -0.026,
+    "halves": {
+     "h1": {
+      "sr": -0.1161,
+      "sr_book": 0.1352,
+      "rho": 0.004,
+      "lift_at_best_w": -0.0057
+     },
+     "h2": {
+      "sr": -0.132,
+      "sr_book": 0.165,
+      "rho": -0.045,
+      "lift_at_best_w": -0.0056
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.145,
+     "0.5": 0.1391,
+     "1.0": 0.1266,
+     "2.0": 0.1001,
+     "3.0": 0.0738
+    },
+    "best_w": 0.25,
+    "lift": -0.0056,
+    "screen_pass": false
+   }
+  }
+ },
+ "screen_passers": []
+}

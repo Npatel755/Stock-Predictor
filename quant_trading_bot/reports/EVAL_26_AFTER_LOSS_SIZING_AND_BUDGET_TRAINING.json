@@ -1,0 +1,190 @@
+{
+ "A": {
+  "INC": {
+   "h1": {
+    "pass_": 54.5,
+    "fail": 20.0,
+    "timeout": 25.4,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 65.6,
+    "fail": 21.8,
+    "timeout": 12.6,
+    "n": 1664
+   }
+  },
+  "L1": {
+   "h1": {
+    "pass_": 55.1,
+    "fail": 20.8,
+    "timeout": 24.1,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 63.9,
+    "fail": 24.5,
+    "timeout": 11.5,
+    "n": 1664
+   },
+   "trigger_up_dn": [
+    0.443,
+    0.0
+   ]
+  },
+  "L2": {
+   "h1": {
+    "pass_": 54.3,
+    "fail": 20.2,
+    "timeout": 25.5,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 65.0,
+    "fail": 22.8,
+    "timeout": 12.2,
+    "n": 1664
+   },
+   "trigger_up_dn": [
+    0.294,
+    0.0
+   ]
+  },
+  "W1": {
+   "h1": {
+    "pass_": 59.1,
+    "fail": 18.3,
+    "timeout": 22.6,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 63.7,
+    "fail": 22.7,
+    "timeout": 13.6,
+    "n": 1664
+   },
+   "trigger_up_dn": [
+    0.0,
+    0.554
+   ]
+  },
+  "LW": {
+   "h1": {
+    "pass_": 59.6,
+    "fail": 17.9,
+    "timeout": 22.5,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 63.5,
+    "fail": 23.9,
+    "timeout": 12.6,
+    "n": 1664
+   },
+   "trigger_up_dn": [
+    0.247,
+    0.553
+   ]
+  }
+ },
+ "placebo": {
+  "L2": {
+   "h1": {
+    "mean": 53.9,
+    "max": 54.5,
+    "cell": 54.3
+   },
+   "h2": {
+    "mean": 65.2,
+    "max": 65.7,
+    "cell": 65.0
+   }
+  },
+  "LW": {
+   "h1": {
+    "mean": 55.6,
+    "max": 56.9,
+    "cell": 59.6
+   },
+   "h2": {
+    "mean": 63.9,
+    "max": 64.7,
+    "cell": 63.5
+   }
+  }
+ },
+ "A_result": {
+  "pick_h1": "LW",
+  "pick_h2": "L2",
+  "oof_h1": 54.3,
+  "oof_h2": 63.5,
+  "placebo_ok": false,
+  "adopt": false
+ },
+ "B_budget": {
+  "h1": {
+   "n": 1696,
+   "by_1": 54.5,
+   "by_2": 77.0,
+   "by_3": 93.2,
+   "by_4": 97.8,
+   "by_5": 98.9,
+   "mean_purchases": 1.77,
+   "mean_spend_usd": 264.0,
+   "median_days": 72.0,
+   "p90_days": 209.0
+  },
+  "h2": {
+   "n": 1407,
+   "by_1": 67.8,
+   "by_2": 90.0,
+   "by_3": 98.2,
+   "by_4": 100.0,
+   "by_5": 100.0,
+   "mean_purchases": 1.44,
+   "mean_spend_usd": 214.0,
+   "median_days": 50.0,
+   "p90_days": 156.0
+  },
+  "all": {
+   "n": 3103,
+   "by_1": 60.6,
+   "by_2": 82.9,
+   "by_3": 95.5,
+   "by_4": 98.8,
+   "by_5": 99.4,
+   "mean_purchases": 1.62,
+   "mean_spend_usd": 242.0,
+   "median_days": 61.0,
+   "p90_days": 180.0
+  }
+ },
+ "C_hole": {
+  "h2_without_hole_chains": {
+   "n": 1336,
+   "by_1": 69.4,
+   "by_2": 89.6,
+   "by_3": 98.1,
+   "by_4": 100.0,
+   "by_5": 100.0,
+   "mean_purchases": 1.43,
+   "mean_spend_usd": 213.0,
+   "median_days": 49.0,
+   "p90_days": 149.0
+  },
+  "hole_chains": {
+   "n": 71,
+   "by_1": 38.0,
+   "by_2": 98.6,
+   "by_3": 100.0,
+   "by_4": 100.0,
+   "by_5": 100.0,
+   "mean_purchases": 1.63,
+   "mean_spend_usd": 243.0,
+   "median_days": 138.0,
+   "p90_days": 177.0
+  },
+  "single_attempt_h2_without_hole": 66.5,
+  "single_attempt_h2_hole_starts": 42.9
+ }
+}

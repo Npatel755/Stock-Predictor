@@ -17,6 +17,10 @@ m.RUN, m.SUFFIX = RUN, "_1m"
 m.DB = RUN / "results_1m.sqlite"; m.FROZEN = RUN / "frozen_survivors_1m.json"
 m.YEARS = list(range(2010, 2024))
 PRODUCTS = ("MES", "MNQ"); MINI_OF = {"MES": "ES", "MNQ": "NQ"}
+# Train split: E-mini bars up to MINI_UNTIL, micro bars after. MNQ / MES only exist from 2019-05-05 (evening), so the historical default
+# "2019-01-01" leaves a Jan 1 - May 5, 2019 hole with no bars (found by Claude 2026-11-11, eval_24). "2019-05-06" fills it with NQ / ES
+# bars like 2010-18. Default kept so existing results reproduce; set TRAIN_MINI_UNTIL=2019-05-06 to measure or adopt the fix.
+MINI_UNTIL = os.environ.get("TRAIN_MINI_UNTIL", "2019-01-01")
 RES = (1, 3, 5)
 FAMILIES = ("vwap_snapback", "volume_exhaustion", "orb_fade", "rsi_extreme", "keltner_fade", "stretch_fade")
 LOOKBACKS = (10, 20, 30, 60); ORB_MINUTES = (15, 30, 60)
@@ -49,7 +53,7 @@ def unit_key(u):
 def load_bars(product, res, start, end, split):
     """1-minute Databento bars aggregated to `res` minutes (lenient), canonicalised."""
     frames = []
-    for sym, lo, hi in ((MINI_OF[product], start, min(end, "2019-01-01")), (product, max(start, "2019-01-01"), end)) if split == "train" else ((product, start, end),):
+    for sym, lo, hi in ((MINI_OF[product], start, min(end, MINI_UNTIL)), (product, max(start, MINI_UNTIL), end)) if split == "train" else ((product, start, end),):
         if lo >= hi:
             continue
         path = str(CAT[sym]["splits"][split]["path"])

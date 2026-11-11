@@ -1,0 +1,202 @@
+{
+ "cells": {
+  "INC": {
+   "h1": {
+    "pass_": 49.7,
+    "fail": 26.2,
+    "timeout": 24.1,
+    "n": 1696,
+    "median_days": 39.0
+   },
+   "h2": {
+    "pass_": 59.4,
+    "fail": 26.9,
+    "timeout": 13.7,
+    "n": 1752,
+    "median_days": 41.0
+   }
+  },
+  "K3": {
+   "h1": {
+    "pass_": 48.1,
+    "fail": 36.9,
+    "timeout": 15.1,
+    "n": 1696,
+    "median_days": 37.0
+   },
+   "h2": {
+    "pass_": 56.3,
+    "fail": 36.2,
+    "timeout": 7.4,
+    "n": 1752,
+    "median_days": 39.0
+   }
+  },
+  "NOLATE": {
+   "h1": {
+    "pass_": 49.2,
+    "fail": 25.9,
+    "timeout": 24.9,
+    "n": 1696,
+    "median_days": 39.0
+   },
+   "h2": {
+    "pass_": 58.0,
+    "fail": 26.3,
+    "timeout": 15.7,
+    "n": 1752,
+    "median_days": 41.0
+   }
+  },
+  "K4BASE": {
+   "h1": {
+    "pass_": 45.9,
+    "fail": 30.0,
+    "timeout": 24.2,
+    "n": 1696,
+    "median_days": 38.0
+   },
+   "h2": {
+    "pass_": 57.4,
+    "fail": 29.1,
+    "timeout": 13.6,
+    "n": 1752,
+    "median_days": 40.0
+   }
+  },
+  "TIGHT": {
+   "h1": {
+    "pass_": 48.0,
+    "fail": 17.5,
+    "timeout": 34.6,
+    "n": 1696,
+    "median_days": 41.0
+   },
+   "h2": {
+    "pass_": 61.1,
+    "fail": 20.7,
+    "timeout": 18.3,
+    "n": 1752,
+    "median_days": 42.0
+   }
+  },
+  "LOOSE": {
+   "h1": {
+    "pass_": 49.8,
+    "fail": 31.7,
+    "timeout": 18.5,
+    "n": 1696,
+    "median_days": 39.0
+   },
+   "h2": {
+    "pass_": 58.7,
+    "fail": 32.4,
+    "timeout": 9.0,
+    "n": 1752,
+    "median_days": 41.0
+   }
+  },
+  "LATE45": {
+   "h1": {
+    "pass_": 51.4,
+    "fail": 27.1,
+    "timeout": 21.6,
+    "n": 1696,
+    "median_days": 41.0
+   },
+   "h2": {
+    "pass_": 59.2,
+    "fail": 27.2,
+    "timeout": 13.6,
+    "n": 1752,
+    "median_days": 41.0
+   }
+  },
+  "LATE4": {
+   "h1": {
+    "pass_": 49.2,
+    "fail": 26.3,
+    "timeout": 24.5,
+    "n": 1696,
+    "median_days": 39.0
+   },
+   "h2": {
+    "pass_": 59.0,
+    "fail": 26.3,
+    "timeout": 14.7,
+    "n": 1752,
+    "median_days": 41.0
+   }
+  },
+  "K2BASE": {
+   "h1": {
+    "pass_": 54.1,
+    "fail": 18.3,
+    "timeout": 27.6,
+    "n": 1696,
+    "median_days": 49.0
+   },
+   "h2": {
+    "pass_": 59.0,
+    "fail": 21.5,
+    "timeout": 19.5,
+    "n": 1752,
+    "median_days": 44.0
+   }
+  }
+ },
+ "result": {
+  "pick_h1": "K2BASE",
+  "pick_h2": "TIGHT",
+  "oof_h1": 48.0,
+  "oof_h2": 59.0,
+  "inc": {
+   "h1": 49.7,
+   "h2": 59.4
+  },
+  "adopt": false
+ },
+ "budget_v2": {
+  "rule": "INC",
+  "single": {
+   "h1": 49.7,
+   "h2": 59.4
+  },
+  "h1": {
+   "by_1": 49.7,
+   "by_2": 71.3,
+   "by_3": 86.6,
+   "by_4": 94.6,
+   "by_5": 97.8,
+   "n": 1696,
+   "mean_purchases": 1.98,
+   "mean_spend_usd": 295.0,
+   "median_days": 71.0,
+   "p90_days": 244.0
+  },
+  "h2": {
+   "by_1": 61.5,
+   "by_2": 87.8,
+   "by_3": 97.7,
+   "by_4": 99.7,
+   "by_5": 100.0,
+   "n": 1495,
+   "mean_purchases": 1.53,
+   "mean_spend_usd": 228.0,
+   "median_days": 59.0,
+   "p90_days": 161.0
+  },
+  "all": {
+   "by_1": 55.2,
+   "by_2": 79.0,
+   "by_3": 91.8,
+   "by_4": 97.0,
+   "by_5": 98.8,
+   "n": 3191,
+   "mean_purchases": 1.77,
+   "mean_spend_usd": 264.0,
+   "median_days": 65.0,
+   "p90_days": 202.70000000000027
+  }
+ }
+}

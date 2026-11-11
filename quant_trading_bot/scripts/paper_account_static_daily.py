@@ -11,7 +11,7 @@ through two tracks, from the paper start, and writes <root>/_account_static_dail
   EVALUATION (eval_1, k = 3; holdout-checked in reports/HOLDOUT_EVAL1_RESULTS.json): size min(3 x base, floor($900 / stop risk per micro)),
     overnight min(3, floor($900 / risk)); account stop $700; target $4,000 with the 55% consistency rule; floor -$2,000; DLL $1,000; 90 days.
   EVALUATION CHALLENGER (since 2026-11-10, Nick: "yup"; eval_8 "SLEEVES + DEF + ENDGAME", chosen POST HOC on 2010-23 training, 60.0% vs
-    53.4%): the v5.3 trades plus two Codex sleeves already on paper in portfolio_e (MNQ_BRK_E_2c, MES_MOM_3c; 1 micro base, skipped when the
+    53.4%; CORRECTED 2026-11-11 for a simulator look-ahead (eval_28/29): 55.2% per attempt, 49.7 / 59.4 by half): the v5.3 trades plus two Codex sleeves already on paper in portfolio_e (MNQ_BRK_E_2c, MES_MOM_3c; 1 micro base, skipped when the
     stop risks > $300 per micro), re-routed one position at a time (research rule: by decision time, then priority, v5.3 first); size
     k = 3, k = 2 once the balance is <= -$500, k = 1 at <= -$1,000 ($400 daily stop at k = 1); from calendar day 60, while more than $1,000
     short of the target and above -$500, k = 5. Same $900 per-trade risk cap, target, floor, DLL and 90 days as the 3x card.
@@ -21,7 +21,12 @@ through two tracks, from the paper start, and writes <root>/_account_static_dail
     $0 after >= 40 forward trades, drop them from the challenger (it becomes DEF + ENDGAME on v5.3); (b) once >= 40 rolling starts of both rules
     have resolved, the challenger replaces the 3x rule as the plan for a real Combine only if its pass share >= the 3x rule's and its fail
     share <= the 3x rule's + 5 points. Nothing is promoted automatically.
-Known gaps vs research: trades are routed at 1x before sizing (v55 measured the rules this way); the floor is checked on realised day P&L
+  PLAN (since 2026-11-11, Nick: "do it"): the challenger's trades and sizing with CAUSAL one-position routing (route_book_strict: never two
+    positions; eval_30-36, holdout_eval36) is the rule for a real Combine. Card "evaluation_strict"; the posthoc challenger stays for comparison.
+  EVALUATION FLOOR (since 2026-11-11): every evaluation card checks the static floor and the DLL INTRADAY with the research v2 day rules
+    (day_pnl_intraday: realised only once closed before the next entry; open trades' worst points stack; each trade's worst point from the
+    runner's 1-minute bars). The funded cards still check the floor on realised day P&L.
+Known gaps vs research: trades are routed at 1x before sizing (v55 measured the rules this way); the funded floor is checked on realised day P&L
 (the runner's own intrabar drawdown is reported beside it); v5.3 trades the runner rejected while routing cannot come back when a Codex trade
 blocks the one that blocked them; portfolio_e's own paper-account locks can stop its sleeves. Paper only; nothing is routed anywhere.
 """
@@ -77,7 +82,8 @@ def group_intraday(trades):
     rows = []
     for v in out.values():
         rows.append(dict(tin=pd.Timestamp(v["entry_ts"]).tz_convert(NY), tout=pd.Timestamp(v["exit_ts"]).tz_convert(NY), n_base=v["n_base"],
-                         per_micro=v["net_total"] / (v["n_base"] * max(1, v.get("qty", 1))), risk=v.get("risk"), night=False, sleeve=v["sleeve"]))
+                         per_micro=v["net_total"] / (v["n_base"] * max(1, v.get("qty", 1))), risk=v.get("risk"), night=False, sleeve=v["sleeve"],
+                         side=int(v.get("side", 0) or 0), entry=v.get("entry_price")))
     return rows
 
 
@@ -86,7 +92,8 @@ def night_rows(trades):
     for t in trades:
         e = float(t["entry_price"])
         rows.append(dict(tin=pd.Timestamp(t["entry_ts"]).tz_convert(NY), tout=pd.Timestamp(t["exit_ts"]).tz_convert(NY), n_base=1,
-                         per_micro=t["net"] / max(1, t.get("qty", 1)), risk=0.0055 * e * MULT["MNQ"] + 1.0 + 0.75 * MULT["MNQ"], night=True, sleeve=t["sleeve"]))
+                         per_micro=t["net"] / max(1, t.get("qty", 1)), risk=0.0055 * e * MULT["MNQ"] + 1.0 + 0.75 * MULT["MNQ"], night=True, sleeve=t["sleeve"],
+                         side=int(t.get("side", 1) or 1), entry=e, inst="MNQ"))
     return rows
 
 
@@ -97,7 +104,8 @@ def extra_rows(trades):
         if t["sleeve"] not in EXTRA_PRIO or t.get("risk") is None or t["risk"] > 300.0: continue
         tin = pd.Timestamp(t["entry_ts"]).tz_convert(NY)
         rows.append(dict(tin=tin, tout=pd.Timestamp(t["exit_ts"]).tz_convert(NY), n_base=1, per_micro=t["net"] / max(1, t.get("qty", 1)),
-                         risk=t["risk"], night=False, sleeve=t["sleeve"], prio=EXTRA_PRIO[t["sleeve"]], dec=tin - pd.Timedelta(minutes=t.get("bar_minutes", 15))))
+                         risk=t["risk"], night=False, sleeve=t["sleeve"], prio=EXTRA_PRIO[t["sleeve"]], dec=tin - pd.Timedelta(minutes=t.get("bar_minutes", 15)),
+                         side=int(t.get("side", 0) or 0), entry=t.get("entry_price")))
     return rows
 
 
@@ -110,6 +118,52 @@ def route_book(rows):
         if any(a <= dec < b for a, b in acc[-6:]): continue
         acc.append((r["tin"], r["tout"])); keep.append(r)
     return keep + [r for r in rows if r["night"]]
+
+
+def route_book_strict(rows):
+    """PLAN rule since 2026-11-11 (eval_36, holdout_eval36): CAUSAL one position at a time. Trades in the order their signal is known and
+    filled (entry time, then priority); a trade is taken only if no accepted trade is still open at that moment, one per entry minute.
+    Overnight rows are not routed (they close before the RTH sleeves trade)."""
+    keep, until, last = [], None, None
+    for r in sorted((r for r in rows if not r["night"]), key=lambda r: (r["tin"], r.get("prio", 0))):
+        if until is not None and (r["tin"] < until or r["tin"] == last): continue
+        until = r["tout"] if until is None else max(until, r["tout"]); last = r["tin"]; keep.append(r)
+    return keep + [r for r in rows if r["night"]]
+
+
+def attach_mae(rows, specs, bars):
+    """Worst point per micro of each trade from the runner's 1-minute bars (adverse bar extreme between entry and exit), never better than
+    the trade's final net. Falls back to min(0, net) when the price or the bars are missing."""
+    idx = {k: (b.ts.dt.as_unit("ns").astype("int64").to_numpy(), b.high.to_numpy(float), b.low.to_numpy(float)) for k, b in bars.items()}
+    for r in rows:
+        if "mae" in r: continue
+        inst = r.get("inst") or specs.get(r["sleeve"], {}).get("instrument"); fallback = min(0.0, r["per_micro"])
+        if inst not in idx or not r.get("entry") or not r.get("side"): r["mae"] = fallback; continue
+        ts, hi, lo = idx[inst]; i0, i1 = np.searchsorted(ts, r["tin"].value), np.searchsorted(ts, r["tout"].value)
+        if i1 <= i0: r["mae"] = fallback; continue
+        adv = lo[i0:i1].min() if r["side"] > 0 else hi[i0:i1].max()
+        r["mae"] = min(r["per_micro"], min(0.0, r["side"] * (adv - float(r["entry"]))) * MULT[inst])
+    return rows
+
+
+def day_pnl_intraday(rows, size_of, stop, night_on):
+    """Evaluation day with the research v2 semantics (eval_28): a trade is realised only once it closed before the next entry (no look-ahead);
+    while trades are open their worst points add up (same-direction stacking); DLL flattens at -$1,000. Returns (P&L, worst point, trades)."""
+    taken = []; worst = 0.0; dll = False
+    for r in sorted(rows, key=lambda r: (r["tin"], r["tout"])):
+        if r["night"] and not night_on: continue
+        q = size_of(r)
+        if q < 1: continue
+        done = [x for x in taken if x["tout"] < r["tin"] or (x["tout"] == r["tin"] and x["tin"] < r["tin"])]
+        real = sum(x["net"] for x in done)
+        if real <= -stop or real <= -1000.0: continue
+        opn = sum(x["mae"] for x in taken if not any(x is y for y in done))
+        mae = min(r.get("mae", min(0.0, r["per_micro"])), r["per_micro"]) * q
+        w = real + mae + opn; worst = min(worst, w)
+        if w <= -1000.0: dll = True; break
+        taken.append(dict(tin=r["tin"], tout=r["tout"], net=r["per_micro"] * q, mae=mae))
+    p = -1000.0 if dll else max(sum(x["net"] for x in taken), -1000.0)
+    return p, min(worst, p), len(taken)
 
 
 def day_pnl(rows, size_of, stop, night_on):
@@ -201,8 +255,9 @@ def evaluation(rows, start_date, rule=k3_rule, today=None):
         def esize(r, k=k):
             if r["risk"] is None: return 0
             return int(min(k * r["n_base"], np.floor(900.0 / r["risk"])))
-        p, _ = day_pnl(days[d], esize, 400.0 if k == 1 else 700.0, True); bal += p; best = max(best, p)
-        if bal <= -2000.0: status = "failed"; when = str(d); break
+        p, w, _ = day_pnl_intraday(days[d], esize, 400.0 if k == 1 else 700.0, True)
+        if bal + min(w, p) <= -2000.0: bal += min(w, p); status = "failed"; when = str(d); break   # static floor checked intraday (since 2026-11-11)
+        bal += p; best = max(best, p)
         if bal >= max(4000.0, best / 0.55): status = "passed"; when = str(d); break
     if status == "open" and today >= end: status = "expired"
     tgt = max(4000.0, best / 0.55)
@@ -236,7 +291,7 @@ def main(argv=None):
     n = read_trades(root / NIGHT / "ledger.jsonl")
     start = pd.Timestamp((root / "start.txt").read_text().strip()).date() if (root / "start.txt").exists() else min(
         [pd.Timestamp(t["exit_ts"]).tz_convert(NY).date() for t in v + n], default=pd.Timestamp.now(tz=NY).date())
-    res = replay(group_intraday(v) + night_rows(n), start)
+    res = replay(attach_mae(group_intraday(v) + night_rows(n), specs, bars), start)
     res["funded"]["name"] = MAIN_NAME
     # EVALUATION challenger (eval_8): v5.3 + the two Codex sleeves, re-routed, defensive + endgame sizing
     x = stop_risk_per_micro([dict(t, bar_minutes=int(specs[t["sleeve"]].get("bar_minutes", 15))) for t in read_trades(root / EXTRA / "ledger.jsonl")
@@ -245,14 +300,20 @@ def main(argv=None):
     vr = group_intraday(v)
     for r in vr:
         r["prio"] = prio.get(r["sleeve"], 0); r["dec"] = r["tin"] - pd.Timedelta(minutes=int(specs.get(r["sleeve"], {}).get("bar_minutes", 15)))
-    book_c = route_book(vr + extra_rows(x) + night_rows(n)); book_3 = group_intraday(v) + night_rows(n)
+    pool = attach_mae(vr + extra_rows(x) + night_rows(n), specs, bars)
+    book_c = route_book(pool); book_s = route_book_strict(pool); book_3 = attach_mae(group_intraday(v) + night_rows(n), specs, bars)
+    res["evaluation_strict"] = dict(evaluation(book_s, start, combined_rule), name="PLAN: one position at a time + 2 Codex sleeves, defensive + endgame",
+                                    rolling=rolling(book_s, start, combined_rule), status_note="the plan for a real Combine (Nick 2026-11-11)",
+                                    extra_taken=sum(1 for r in book_s if r["sleeve"] in EXTRA_PRIO), trades=sum(1 for r in book_s if not r["night"]),
+                                    rule="causal one-position routing; 3x; 2x at <= -$500; 1x at <= -$1,000; from day 60, > $1,000 short and above -$500: 5x; $900 risk cap per trade",
+                                    caution="training 51.5 / 61.1 (vs 49.8 / 60.0 overlapping), one-shot 2024-25 45.3% vs 41.4%, 2026 63.1% vs 34.4% (holdout_eval36); forward paper decides")
     res["evaluation"].update(name="v5.3 book at 3x, champion", rolling=rolling(book_3, start, k3_rule))
     res["evaluation_combined"] = dict(evaluation(book_c, start, combined_rule), name="v5.3 + 2 Codex sleeves, defensive + endgame",
                                       rolling=rolling(book_c, start, combined_rule), extra_trades=len(x),
                                       extra_taken=sum(1 for r in book_c if r["sleeve"] in EXTRA_PRIO),
                                       extra_net_per_micro=round(sum(t["net"] / max(1, t.get("qty", 1)) for t in x), 2),
                                       rule="3x; 2x at <= -$500; 1x at <= -$1,000; from day 60, > $1,000 short and above -$500: 5x; $900 risk cap per trade",
-                                      caution="chosen after seeing all of 2010-23 (training 60.0% vs 53.4%, no clean holdout left); forward paper decides")
+                                      caution="chosen after seeing all of 2010-23 (training 55.2% per attempt after the eval_28 look-ahead fix; was quoted 60.0%; no clean holdout left); forward paper decides")
     n915 = read_trades(root / NIGHT_0915 / "ledger.jsonl")
     res["aegis"] = dict(funded(group_intraday(v) + night_rows(n915), start, AEGIS_LADDER, AEGIS_K), overnight_exit="09:15 ET", overnight_trades=len(n915),
                         name="Aegis Apex 4X (Antigravity)", status="comparison only, not adopted",
@@ -285,12 +346,17 @@ def main(argv=None):
         d["account_static_daily"] = dict(funded_balance=res["funded"]["balance"], funded_payouts=res["funded"]["payouts_count"], funded_withdrawn=res["funded"]["withdrawn"],
                                          size_stage=res["funded"]["size_stage"], evaluation=res["evaluation"]["status"], evaluation_balance=res["evaluation"]["balance"],
                                          aegis_balance=res["aegis"]["balance"], aegis_payouts=res["aegis"]["payouts_count"], aegis_stage=res["aegis"]["size_stage"],
-                                         evaluation_combined=res["evaluation_combined"]["status"], evaluation_combined_balance=res["evaluation_combined"]["balance"])
+                                         evaluation_combined=res["evaluation_combined"]["status"], evaluation_combined_balance=res["evaluation_combined"]["balance"],
+                                         evaluation_strict=res["evaluation_strict"]["status"], evaluation_strict_balance=res["evaluation_strict"]["balance"])
         dash.write_text(json.dumps(d, indent=1, sort_keys=True, default=str))
     pf, pe, pa, pc = prev.get("funded", {}), prev.get("evaluation", {}), prev.get("aegis", {}), prev.get("evaluation_combined", {})
     if res["evaluation_combined"]["status"] != pc.get("status", "open") and res["evaluation_combined"]["status"] != "open":
         ep.notify(f"Paper evaluation (challenger): {res['evaluation_combined']['status']}",
                   f"balance ${res['evaluation_combined']['balance']:,.2f} on {res['evaluation_combined']['on']}")
+    ps = prev.get("evaluation_strict", {})
+    if res["evaluation_strict"]["status"] != ps.get("status", "open") and res["evaluation_strict"]["status"] != "open":
+        ep.notify(f"Paper evaluation (PLAN, one position): {res['evaluation_strict']['status']}",
+                  f"balance ${res['evaluation_strict']['balance']:,.2f} on {res['evaluation_strict']['on']}")
     if res["aegis"]["payouts_count"] > pa.get("payouts_count", 0):
         last = res["aegis"]["payouts"][-1]; ep.notify("Aegis paper: payout", f"${last['amount']:,.2f} on {last['date']}; balance ${res['aegis']['balance']:,.2f}")
     if res["aegis"]["closed_on"] and not pa.get("closed_on"):

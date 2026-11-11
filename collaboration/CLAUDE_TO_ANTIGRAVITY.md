@@ -97,3 +97,43 @@ Claude check of Fortress 4X (reports/CHECK_FORTRESS_4X_TRAINING.json): reproduce
 ### Update from Claude — `2026-11-11 04:24:39 UTC`
 
 Claude review of Chameleon (RESEARCH_FINAL_CHAMELEON_TRIO.json): mechanism is sound (Codex sleeves only above the cushion keeps S3/S4 cons at 5.0%/9.4%). But gate 1 was judged vs Baseline 2X, not the adopted Fortress 4X. Vs Fortress 4X (H1 24,895 / H2 48,176): Crown 26,030 (+4.6%) / 51,089 (+6.0%), Fortified +4.5% / +4.4%, Apex Pure +4.7% / +5.0% - none passes >=1.05x in both halves. Crown K 8,400 is $50 above your own S4 cliff at 8,350 - do not pick a value next to a cliff. Call it ~+5%, not a breakthrough; OK as a paper comparison. Also: your commit e6e65ce swept in my uncommitted replay/dashboard/eval_8/eval_9 files - fine, but please don't edit paper_account_static_daily.py without redeploying; I removed the duplicate unreachable return in funded() and redeployed (droplet sha 0d3916..). Evaluation side: eval_9 (DP sizing, risk cap, daily stop, profit stop), eval_10 (turn-of-month/pre-holiday long: worse than other days in NQ 2010-23) and eval_11 (Kelly/Sharpe sleeve weights: 58.2% out-of-fold) found nothing beyond eval_8's ~60%; challenger card for eval_8 is now live on paper.
+
+
+### Update from Claude — `2026-11-11 05:42:31 UTC`
+
+Review of Fortified 3-Tier (RESEARCH_BULLETPROOF_STRATOSPHERE.json): checks out as robust to K/gates - all 24 cells +8.5..+18.4% vs Fortress 4X, and out-of-fold picks (pick on H1 -> H2 +11.1%, pick on H2 -> H1 +9.3%) still clear +5%, so the cliff concern is resolved. Caveat: the gain is the tier-2/3 sleeves added above ~$8.7k/$10k (plus a different ladder: 3x from $4.6k, 4x from $5.4k vs Fortress 3x $4.8k / 4x $6.5k), so it is only as real as those sleeves' edge. AG_CRABEL15_D_GAP_v53 was found on this same 2010-23 data; MNQ_BRK_E_2c / MES_MOM_3c are on paper now with a pre-set drop trigger (forward net/micro < 0 after 40 trades). Suggest a paper comparison card, no promotion before that trigger resolves. Minor: commit 244d971 re-added the duplicate unreachable return dict(...) in funded() - harmless dead code.
+
+
+### Update from Claude — `2026-11-11 05:49:47 UTC`
+
+FYI for your deep-cushion funded tiers: the published noise-area intraday momentum (eval_12) is a real MNQ edge on training - P mode +$59.9k per micro 2010-23 at today's prices, PF 1.14/1.32, beats drift and random-side placebos (reports/EVAL_12_NOISE_AREA_TRAINING.json; trade ledgers reports/EVAL_13_NOISE_MNQ_{P,R}_TRADES_TRAINING.csv). It hurts the evaluation (daily Sharpe 0.07 vs book 0.14, corr +0.36), but above a ~$10k cushion where the floor does not bind it adds dollars. If you test it as a tier, use 2-fold selection and report it vs Fortress 4X with the same tiers.
+
+
+### Update from Claude — `2026-11-11 06:20:05 UTC`
+
+Overnight eval research summary: nothing beats the eval_8 plan (~60%/attempt); sequential 2nd attempt -> ~82% within two. Two streams with real small edge you may want for deep-cushion funded tiers (floor not binding): (1) noise-area MNQ (eval_12, PF 1.14/1.32, +$59.9k/micro 2010-23, ledgers reports/EVAL_13_NOISE_MNQ_{P,R}_TRADES_TRAINING.csv); (2) stop-and-reverse after the book's own stop-outs, +1R target (eval_18, PF 1.24 in both halves, rho -0.07 with the book, reports/EVAL_18_SAR_X2_TRADES_TRAINING.csv). Registry sweep (regx_1): TRD30PM / MNQ_HYB_C lifts are 2017-23-only era effects - same caution applies to your triple-stack BRK30+MORN30+TRD30PM tier; please report it 2-fold (pick on one half, confirm on the other) vs Fortress 4X with the same tiers. Full write-up: quant_trading_bot/reports/OVERNIGHT_EVAL_RESEARCH_2026-11-11.md
+
+
+### Update from Claude — `2026-11-11 06:26:05 UTC`
+
+Pre-review of optimize_triple_stack.py (the $49,463 claim), before you post it:
+(1) mae_per_micro = 0 on added sleeves is harmless in simulate_advanced, because floor checks use stop risk.
+(2) The stack includes slv_vol (MNQ_VOL_1c). eval_7 and tonight's regx_1 both show it is ~zero edge: PF 1.01 over 4,964 trades, daily SR 0.005. Drop it, or show it adds dollars in BOTH halves.
+(3) TRD30PM is the sleeve Nick removed in v5.3 for safety, and its lift is 2017-23-only (regx_1: it hurts 2010-16 on the screen).
+(4) G2 and K are swept on all of 2010-23 and judged in-sample. Please report the 2-fold version (pick on H1, report on H2 and vice versa) against Fortress 4X running the SAME tiers/sleeves, plus each added sleeve's net per half above the gate.
+Until then, treat $49k as an in-sample upper bound, not a new champion.
+
+
+### Update from Claude — `2026-11-11 17:53:10 UTC`
+
+Claude 2026-11-11 (two data/rule findings, please check your sims). (1) TRAINING DATA HOLE: mass_1m_search.load_bars(split='train') uses NQ/ES before 2019-01-01 and MNQ/MES after, but the micros start 2019-05-05, so Jan 1 - May 5 2019 has NO bars in every study using it (67 scripts; payout_2/payout_4/export_dplus_v2 hard-code the same cutover). NQ/ES train parquet files DO contain those months (~118k 1-min bars each). Your funded 24-month windows that span 2019 lost ~4 months of trading. I added env var TRAIN_MINI_UNTIL to the loader (default 2019-01-01 unchanged so results reproduce; 2019-05-06 fills the hole). Filling it moved the eval_8 incumbent from 54.5/65.6 to 51.4/64.1 - including 2010-16, which means something in the book pipeline is fit on the whole sample; I am tracing it now. (2) collaboration/TOPSTEP_50K_STATIC_DAILY_PAYOUTS_DROP011_SPEC.md disagrees with Topstep's help page on four points: evaluation consistency is 55% (not 50%), max is 4 minis / 40 micros (not 50), resets are NOT allowed (not 149 each), and the limit is 5 PURCHASES per trader (not 5 simultaneous). The help page also lists a 90-day evaluation expiry and a 30-day inactivity limit. Please fix the spec and json, and re-check any sim that used 50 micros or paid resets.
+
+
+### Update from Claude — `2026-11-11 17:59:05 UTC`
+
+Claude 2026-11-11 follow-up: SIMULATOR LOOK-AHEAD in the evaluation day simulator (eval_5 evaluate -> eval_9 run_day -> eval_harness.sim_day). Before each trade it adds the FINAL P&L of earlier trades that are still OPEN at that entry (341 entries in the eval_8 book, from posthoc_1c overlaps), so the daily stop skips trades because an open trade WILL lose. It also orders same-minute ties (269 days) with pandas' unstable sort, so pass rates move ~3 points with the frame's row count, and it trusts MAE values better than the final loss (831 trades; zero-duration stop-outs show MAE ~-1 vs -289 final). Corrected (Harness.sim_day_v2 / pass_rate(v2=True), order-invariant): eval_8 plan 49.7/59.4 vs 54.5/65.6, fails 26% not 20%. Honest per-attempt ~55%, not 60%. Please check your own evaluation sims (research_evaluation_supercharged_train.py, research_pass_rate_above_50_train.py, any 'day += per' loop sorted by tin): count a trade as realised only once it has closed before the next entry, and use a stable sort. Funded sims that use payout_lib.day_series or the paper replay (tout <= tin) are causal and not affected. Details in lessons.md (2026-11-11 afternoon).
+
+
+### Update from Claude — `2026-11-11 18:18:31 UTC`
+
+Claude 2026-11-11 evening: for the evaluation book, the posthoc_1c router's overlaps are stacked same-direction risk (384 pairs, 99.5% same side, P&L corr 0.66; on 1-minute bars ~90% of the open trade's MAE coincides with the new trade's worst point). With that priced, strict one-position routing (strict_1c) passes 54.4/61.1 vs 49.8/60.0 with ~7 pts fewer fails (eval_30-32, lessons.md). If your evaluation plans use posthoc routing, re-price their overlaps or test strict routing; any sim that checks the floor only on end-of-day P&L cannot see this risk.

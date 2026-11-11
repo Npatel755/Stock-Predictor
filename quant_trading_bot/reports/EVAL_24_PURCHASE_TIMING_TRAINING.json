@@ -1,0 +1,189 @@
+{
+ "ungated": {
+  "h1": 54.5,
+  "h2": 65.6
+ },
+ "gates": {
+  "VOLHI": {
+   "h1": {
+    "coverage": 41.8,
+    "n": 709,
+    "pass_": 53.6,
+    "closed_pass": 55.2
+   },
+   "h2": {
+    "coverage": 48.6,
+    "n": 808,
+    "pass_": 73.5,
+    "closed_pass": 58.2
+   },
+   "eligible": true
+  },
+  "VOLLO": {
+   "h1": {
+    "coverage": 46.5,
+    "n": 788,
+    "pass_": 63.7,
+    "closed_pass": 46.6
+   },
+   "h2": {
+    "coverage": 47.5,
+    "n": 791,
+    "pass_": 58.5,
+    "closed_pass": 72.1
+   },
+   "eligible": true
+  },
+  "VOLUP": {
+   "h1": {
+    "coverage": 41.9,
+    "n": 710,
+    "pass_": 55.4,
+    "closed_pass": 54.0
+   },
+   "h2": {
+    "coverage": 44.5,
+    "n": 741,
+    "pass_": 66.3,
+    "closed_pass": 65.1
+   },
+   "eligible": true
+  },
+  "ER_HI": {
+   "h1": {
+    "coverage": 39.0,
+    "n": 661,
+    "pass_": 57.6,
+    "closed_pass": 52.6
+   },
+   "h2": {
+    "coverage": 46.5,
+    "n": 773,
+    "pass_": 59.9,
+    "closed_pass": 70.6
+   },
+   "eligible": true
+  },
+  "CORR": {
+   "h1": {
+    "coverage": 23.9,
+    "n": 405,
+    "pass_": 45.4,
+    "closed_pass": 57.4
+   },
+   "h2": {
+    "coverage": 37.4,
+    "n": 622,
+    "pass_": 71.9,
+    "closed_pass": 61.9
+   },
+   "eligible": false
+  },
+  "BOOK60": {
+   "h1": {
+    "coverage": 86.4,
+    "n": 1465,
+    "pass_": 53.4,
+    "closed_pass": 61.5
+   },
+   "h2": {
+    "coverage": 86.9,
+    "n": 1446,
+    "pass_": 67.6,
+    "closed_pass": 52.8
+   },
+   "eligible": true
+  },
+  "BOOK120": {
+   "h1": {
+    "coverage": 92.1,
+    "n": 1562,
+    "pass_": 57.9,
+    "closed_pass": 15.7
+   },
+   "h2": {
+    "coverage": 96.4,
+    "n": 1604,
+    "pass_": 65.0,
+    "closed_pass": 81.7
+   },
+   "eligible": true
+  }
+ },
+ "descriptive_spearman": {
+  "V20": {
+   "h1": -0.259,
+   "h2": 0.218
+  },
+  "V20_V60": {
+   "h1": -0.108,
+   "h2": 0.009
+  },
+  "ER60": {
+   "h1": 0.003,
+   "h2": -0.203
+  },
+  "PULLBACK": {
+   "h1": 0.105,
+   "h2": -0.186
+  },
+  "BOOK60": {
+   "h1": -0.019,
+   "h2": 0.13
+  },
+  "BOOK120": {
+   "h1": -0.005,
+   "h2": 0.135
+  }
+ },
+ "result": {
+  "pick_h1": "VOLLO",
+  "pick_h2": "VOLHI",
+  "oof_h1": 53.6,
+  "oof_h2": 58.5,
+  "placebo": {
+   "VOLHI": {
+    "h1": {
+     "lift": -0.9,
+     "rank": 0.482,
+     "p95": 7.8
+    },
+    "h2": {
+     "lift": 7.9,
+     "rank": 1.0,
+     "p95": 5.8
+    }
+   },
+   "VOLLO": {
+    "h1": {
+     "lift": 9.2,
+     "rank": 0.958,
+     "p95": 7.7
+    },
+    "h2": {
+     "lift": -7.1,
+     "rank": 0.004,
+     "p95": 11.7
+    }
+   }
+  },
+  "adopt": false
+ },
+ "two_attempts_180d": {
+  "UNGATED": {
+   "h1": 76.9,
+   "h2": 88.5,
+   "mean_wait_sessions": 0.0
+  },
+  "VOLHI": {
+   "h1": 71.1,
+   "h2": 88.1,
+   "mean_wait_sessions": 19.1
+  },
+  "VOLLO": {
+   "h1": 70.0,
+   "h2": 73.0,
+   "mean_wait_sessions": 20.0
+  }
+ }
+}

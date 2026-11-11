@@ -1,0 +1,66 @@
+{
+ "base": {
+  "sr": [
+   0.1506,
+   0.1352,
+   0.165
+  ]
+ },
+ "cells": {
+  "P": {
+   "sr": [
+    0.1342,
+    0.113,
+    0.1531
+   ],
+   "noise_trades_taken": 2440,
+   "pass_": {
+    "h1": {
+     "pass_": 45.6,
+     "fail": 36.9,
+     "timeout": 17.5,
+     "n": 1696,
+     "median_days": 37.0
+    },
+    "h2": {
+     "pass_": 57.1,
+     "fail": 35.5,
+     "timeout": 7.4,
+     "n": 1664,
+     "median_days": 30.5
+    }
+   }
+  },
+  "R": {
+   "sr": [
+    0.1296,
+    0.1083,
+    0.1486
+   ],
+   "noise_trades_taken": 3779,
+   "pass_": {
+    "h1": {
+     "pass_": 45.5,
+     "fail": 29.6,
+     "timeout": 24.9,
+     "n": 1696,
+     "median_days": 44.5
+    },
+    "h2": {
+     "pass_": 55.4,
+     "fail": 32.9,
+     "timeout": 11.7,
+     "n": 1664,
+     "median_days": 31.0
+    }
+   }
+  }
+ },
+ "result": {
+  "pick_h1": "P",
+  "pick_h2": "P",
+  "oof_h1": 45.6,
+  "oof_h2": 57.1,
+  "adopt": false
+ }
+}

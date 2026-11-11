@@ -1,0 +1,178 @@
+{
+ "cells": {
+  "MNQ_P": {
+   "h1": {
+    "n": 1360,
+    "net": 15592.0,
+    "mean": 11.46,
+    "pf": 1.141,
+    "years_pos": "6/7",
+    "win": 36.2
+   },
+   "h2": {
+    "n": 1426,
+    "net": 44322.0,
+    "mean": 31.08,
+    "pf": 1.322,
+    "years_pos": "6/7",
+    "win": 40.3
+   },
+   "all": {
+    "n": 2786,
+    "net": 59914.0,
+    "mean": 21.51,
+    "pf": 1.241,
+    "years_pos": "12/14",
+    "win": 38.3
+   },
+   "placebo_beaten": 200,
+   "exits": {
+    "check": 1767,
+    "eod": 1019
+   },
+   "med_risk_today": 62.0,
+   "gate1": true
+  },
+  "MNQ_R": {
+   "h1": {
+    "n": 2187,
+    "net": 12699.0,
+    "mean": 5.81,
+    "pf": 1.131,
+    "years_pos": "6/7",
+    "win": 23.6
+   },
+   "h2": {
+    "n": 2200,
+    "net": 45614.0,
+    "mean": 20.73,
+    "pf": 1.402,
+    "years_pos": "7/7",
+    "win": 25.4
+   },
+   "all": {
+    "n": 4387,
+    "net": 58314.0,
+    "mean": 13.29,
+    "pf": 1.277,
+    "years_pos": "13/14",
+    "win": 24.5
+   },
+   "placebo_beaten": 200,
+   "exits": {
+    "stop": 3597,
+    "eod": 709,
+    "check": 81
+   },
+   "med_risk_today": 60.0,
+   "gate1": true
+  },
+  "MES_P": {
+   "h1": {
+    "n": 1465,
+    "net": 3416.0,
+    "mean": 2.33,
+    "pf": 1.048,
+    "years_pos": "3/7",
+    "win": 33.7
+   },
+   "h2": {
+    "n": 1434,
+    "net": 15900.0,
+    "mean": 11.09,
+    "pf": 1.206,
+    "years_pos": "5/7",
+    "win": 37.9
+   },
+   "all": {
+    "n": 2899,
+    "net": 19315.0,
+    "mean": 6.66,
+    "pf": 1.131,
+    "years_pos": "8/14",
+    "win": 35.8
+   },
+   "placebo_beaten": 200,
+   "exits": {
+    "check": 1888,
+    "eod": 1011
+   },
+   "med_risk_today": 34.0,
+   "gate1": false
+  },
+  "MES_R": {
+   "h1": {
+    "n": 2318,
+    "net": 513.0,
+    "mean": 0.22,
+    "pf": 1.008,
+    "years_pos": "5/7",
+    "win": 20.9
+   },
+   "h2": {
+    "n": 2286,
+    "net": 10291.0,
+    "mean": 4.5,
+    "pf": 1.145,
+    "years_pos": "4/7",
+    "win": 23.6
+   },
+   "all": {
+    "n": 4604,
+    "net": 10804.0,
+    "mean": 2.35,
+    "pf": 1.08,
+    "years_pos": "9/14",
+    "win": 22.3
+   },
+   "placebo_beaten": 200,
+   "exits": {
+    "stop": 3832,
+    "eod": 683,
+    "check": 89
+   },
+   "med_risk_today": 34.0,
+   "gate1": false
+  }
+ },
+ "gate1_pass": [
+  "MNQ_P",
+  "MNQ_R"
+ ],
+ "gate2_cell": "MNQ_P",
+ "gate2": {
+  "incumbent": {
+   "h1": {
+    "pass_": 54.5,
+    "fail": 20.0,
+    "timeout": 25.4,
+    "median_days": 43.0,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 65.6,
+    "fail": 21.8,
+    "timeout": 12.6,
+    "median_days": 37.0,
+    "n": 1664
+   }
+  },
+  "with_sleeve": {
+   "h1": {
+    "pass_": 46.8,
+    "fail": 42.6,
+    "timeout": 10.6,
+    "median_days": 37.0,
+    "n": 1696
+   },
+   "h2": {
+    "pass_": 52.4,
+    "fail": 39.0,
+    "timeout": 8.6,
+    "median_days": 32.0,
+    "n": 1664
+   }
+  },
+  "adopt": false
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "pairs": 384,
+ "f_median": 0.899,
+ "f_p75": 1.0,
+ "f_mean": 0.672,
+ "mean_exact": -128.8,
+ "mean_v2": -172.9,
+ "mean_opt": -80.4,
+ "INC_v2_F_median": {
+  "h1": {
+   "pass_": 49.8,
+   "fail": 25.9,
+   "timeout": 24.2,
+   "n": 1696,
+   "median_days": 40.0
+  },
+  "h2": {
+   "pass_": 60.0,
+   "fail": 26.5,
+   "timeout": 13.4,
+   "n": 1752,
+   "median_days": 41.0
+  }
+ },
+ "INC_v2_F_p75": {
+  "h1": {
+   "pass_": 49.7,
+   "fail": 26.2,
+   "timeout": 24.1,
+   "n": 1696,
+   "median_days": 39.0
+  },
+  "h2": {
+   "pass_": 59.4,
+   "fail": 26.9,
+   "timeout": 13.7,
+   "n": 1752,
+   "median_days": 41.0
+  }
+ },
+ "STRICT": {
+  "h1": 54.4,
+  "h2": 61.1
+ },
+ "verdict": "SWITCH to STRICT"
+}

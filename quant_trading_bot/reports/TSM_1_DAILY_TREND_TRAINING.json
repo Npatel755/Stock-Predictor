@@ -1,0 +1,781 @@
+{
+ "target_sd": 196.54187424806332,
+ "markets": {
+  "GC": {
+   "P_star": 2072.8,
+   "daily_sd_1micro": 203.94586312617847,
+   "sessions": 3025
+  },
+  "SI": {
+   "P_star": 24.035,
+   "daily_sd_1micro": 443.56926027762347,
+   "sessions": 3014
+  },
+  "CL": {
+   "P_star": 71.38,
+   "daily_sd_1micro": 186.6160886682833,
+   "sessions": 2929
+  },
+  "BTC": {
+   "P_star": 42515.0,
+   "daily_sd_1micro": 189.13788536994815,
+   "sessions": 1135
+  }
+ },
+ "cells": {
+  "F_L20": {
+   "portfolio": {
+    "n": 10103,
+    "net": -105365.0,
+    "net_h1": -26374.0,
+    "net_h2": -78991.0,
+    "pf": 0.889,
+    "years_pos": "2/13",
+    "gross": 17747.0,
+    "costs": 123112.0,
+    "cost_share_of_gross": 6.94
+   },
+   "per_market": {
+    "GC": {
+     "n": 3025,
+     "net": -16181.0,
+     "net_h1": 2178.0,
+     "net_h2": -18360.0,
+     "pf": 0.928,
+     "years_pos": "3/13",
+     "gross": 3481.0,
+     "costs": 19662.0,
+     "cost_share_of_gross": 5.65
+    },
+    "SI": {
+     "n": 3014,
+     "net": -81530.0,
+     "net_h1": -20913.0,
+     "net_h2": -60617.0,
+     "pf": 0.832,
+     "years_pos": "2/13",
+     "gross": -1659.0,
+     "costs": 79871.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2929,
+     "net": -13668.0,
+     "net_h1": -7640.0,
+     "net_h2": -6028.0,
+     "pf": 0.924,
+     "years_pos": "4/13",
+     "gross": 5371.0,
+     "costs": 19038.0,
+     "cost_share_of_gross": 3.54
+    },
+    "BTC": {
+     "n": 1135,
+     "net": 6014.0,
+     "net_h1": 0.0,
+     "net_h2": 6014.0,
+     "pf": 1.099,
+     "years_pos": "4/5",
+     "gross": 10554.0,
+     "costs": 4540.0,
+     "cost_share_of_gross": 0.43
+    }
+   },
+   "placebo_beaten": 142,
+   "screen": {
+    "name": "F_L20",
+    "active_days": 2942,
+    "days_outside_book_calendar": 147,
+    "mean": -28.25,
+    "sd": 577.9,
+    "sr": -0.0489,
+    "sr_book": 0.1506,
+    "rho": -0.04,
+    "halves": {
+     "h1": {
+      "sr": -0.0276,
+      "sr_book": 0.1352,
+      "rho": -0.036,
+      "lift_at_best_w": -0.0084
+     },
+     "h2": {
+      "sr": -0.0688,
+      "sr_book": 0.165,
+      "rho": -0.041,
+      "lift_at_best_w": -0.0147
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1388,
+     "0.5": 0.1225,
+     "1.0": 0.0871,
+     "2.0": 0.0373,
+     "3.0": 0.0116
+    },
+    "best_w": 0.25,
+    "lift": -0.0118,
+    "screen_pass": false
+   }
+  },
+  "F_L60": {
+   "portfolio": {
+    "n": 10103,
+    "net": -150417.0,
+    "net_h1": -46271.0,
+    "net_h2": -104146.0,
+    "pf": 0.845,
+    "years_pos": "2/13",
+    "gross": -27305.0,
+    "costs": 123112.0,
+    "cost_share_of_gross": "gross<=0"
+   },
+   "per_market": {
+    "GC": {
+     "n": 3025,
+     "net": -14306.0,
+     "net_h1": -2167.0,
+     "net_h2": -12139.0,
+     "pf": 0.936,
+     "years_pos": "4/13",
+     "gross": 5357.0,
+     "costs": 19662.0,
+     "cost_share_of_gross": 3.67
+    },
+    "SI": {
+     "n": 3014,
+     "net": -117488.0,
+     "net_h1": -39623.0,
+     "net_h2": -77865.0,
+     "pf": 0.766,
+     "years_pos": "1/13",
+     "gross": -37617.0,
+     "costs": 79871.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2929,
+     "net": -17479.0,
+     "net_h1": -4481.0,
+     "net_h2": -12999.0,
+     "pf": 0.904,
+     "years_pos": "3/13",
+     "gross": 1559.0,
+     "costs": 19038.0,
+     "cost_share_of_gross": 12.21
+    },
+    "BTC": {
+     "n": 1135,
+     "net": -1144.0,
+     "net_h1": 0.0,
+     "net_h2": -1144.0,
+     "pf": 0.982,
+     "years_pos": "3/5",
+     "gross": 3396.0,
+     "costs": 4540.0,
+     "cost_share_of_gross": 1.34
+    }
+   },
+   "placebo_beaten": 32,
+   "screen": {
+    "name": "F_L60",
+    "active_days": 2942,
+    "days_outside_book_calendar": 147,
+    "mean": -40.26,
+    "sd": 568.8,
+    "sr": -0.0708,
+    "sr_book": 0.1506,
+    "rho": -0.021,
+    "halves": {
+     "h1": {
+      "sr": -0.0484,
+      "sr_book": 0.1352,
+      "rho": -0.005,
+      "lift_at_best_w": -0.0141
+     },
+     "h2": {
+      "sr": -0.0928,
+      "sr_book": 0.165,
+      "rho": -0.032,
+      "lift_at_best_w": -0.0186
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1342,
+     "0.5": 0.114,
+     "1.0": 0.0734,
+     "2.0": 0.0193,
+     "3.0": -0.008
+    },
+    "best_w": 0.25,
+    "lift": -0.0164,
+    "screen_pass": false
+   }
+  },
+  "F_L120": {
+   "portfolio": {
+    "n": 10103,
+    "net": -123302.0,
+    "net_h1": -40430.0,
+    "net_h2": -82872.0,
+    "pf": 0.871,
+    "years_pos": "1/13",
+    "gross": -190.0,
+    "costs": 123112.0,
+    "cost_share_of_gross": "gross<=0"
+   },
+   "per_market": {
+    "GC": {
+     "n": 3025,
+     "net": -12761.0,
+     "net_h1": -249.0,
+     "net_h2": -12513.0,
+     "pf": 0.943,
+     "years_pos": "3/13",
+     "gross": 6901.0,
+     "costs": 19662.0,
+     "cost_share_of_gross": 2.85
+    },
+    "SI": {
+     "n": 3014,
+     "net": -88511.0,
+     "net_h1": -31209.0,
+     "net_h2": -57302.0,
+     "pf": 0.818,
+     "years_pos": "1/13",
+     "gross": -8640.0,
+     "costs": 79871.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2929,
+     "net": -13878.0,
+     "net_h1": -8972.0,
+     "net_h2": -4906.0,
+     "pf": 0.923,
+     "years_pos": "4/13",
+     "gross": 5160.0,
+     "costs": 19038.0,
+     "cost_share_of_gross": 3.69
+    },
+    "BTC": {
+     "n": 1135,
+     "net": -8151.0,
+     "net_h1": 0.0,
+     "net_h2": -8151.0,
+     "pf": 0.88,
+     "years_pos": "2/5",
+     "gross": -3611.0,
+     "costs": 4540.0,
+     "cost_share_of_gross": "gross<=0"
+    }
+   },
+   "placebo_beaten": 102,
+   "screen": {
+    "name": "F_L120",
+    "active_days": 2942,
+    "days_outside_book_calendar": 147,
+    "mean": -31.49,
+    "sd": 564.4,
+    "sr": -0.0558,
+    "sr_book": 0.1506,
+    "rho": -0.029,
+    "halves": {
+     "h1": {
+      "sr": -0.0437,
+      "sr_book": 0.1352,
+      "rho": -0.024,
+      "lift_at_best_w": -0.0121
+     },
+     "h2": {
+      "sr": -0.0674,
+      "sr_book": 0.165,
+      "rho": -0.032,
+      "lift_at_best_w": -0.0141
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1375,
+     "0.5": 0.1202,
+     "1.0": 0.0838,
+     "2.0": 0.0328,
+     "3.0": 0.0064
+    },
+    "best_w": 0.25,
+    "lift": -0.0131,
+    "screen_pass": false
+   }
+  },
+  "F_L250": {
+   "portfolio": {
+    "n": 10087,
+    "net": -149367.0,
+    "net_h1": -63348.0,
+    "net_h2": -86019.0,
+    "pf": 0.846,
+    "years_pos": "1/13",
+    "gross": -26407.0,
+    "costs": 122960.0,
+    "cost_share_of_gross": "gross<=0"
+   },
+   "per_market": {
+    "GC": {
+     "n": 3022,
+     "net": -26970.0,
+     "net_h1": -9841.0,
+     "net_h2": -17130.0,
+     "pf": 0.883,
+     "years_pos": "3/13",
+     "gross": -7327.0,
+     "costs": 19643.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "SI": {
+     "n": 3011,
+     "net": -97105.0,
+     "net_h1": -41820.0,
+     "net_h2": -55285.0,
+     "pf": 0.802,
+     "years_pos": "2/13",
+     "gross": -17314.0,
+     "costs": 79792.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2924,
+     "net": -24984.0,
+     "net_h1": -11687.0,
+     "net_h2": -13297.0,
+     "pf": 0.865,
+     "years_pos": "1/13",
+     "gross": -5978.0,
+     "costs": 19006.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "BTC": {
+     "n": 1130,
+     "net": -307.0,
+     "net_h1": 0.0,
+     "net_h2": -307.0,
+     "pf": 0.995,
+     "years_pos": "3/5",
+     "gross": 4213.0,
+     "costs": 4520.0,
+     "cost_share_of_gross": 1.07
+    }
+   },
+   "placebo_beaten": 31,
+   "screen": {
+    "name": "F_L250",
+    "active_days": 2939,
+    "days_outside_book_calendar": 147,
+    "mean": -41.21,
+    "sd": 560.0,
+    "sr": -0.0736,
+    "sr_book": 0.1506,
+    "rho": -0.017,
+    "halves": {
+     "h1": {
+      "sr": -0.0664,
+      "sr_book": 0.1352,
+      "rho": -0.021,
+      "lift_at_best_w": -0.0177
+     },
+     "h2": {
+      "sr": -0.0809,
+      "sr_book": 0.165,
+      "rho": -0.014,
+      "lift_at_best_w": -0.0164
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1338,
+     "0.5": 0.1134,
+     "1.0": 0.0727,
+     "2.0": 0.018,
+     "3.0": -0.0097
+    },
+    "best_w": 0.25,
+    "lift": -0.0168,
+    "screen_pass": false
+   }
+  },
+  "V_L20": {
+   "portfolio": {
+    "n": 10103,
+    "net": -106489.0,
+    "net_h1": -29469.0,
+    "net_h2": -77021.0,
+    "pf": 0.897,
+    "years_pos": "2/13",
+    "gross": 29572.0,
+    "costs": 136061.0,
+    "cost_share_of_gross": 4.6
+   },
+   "per_market": {
+    "GC": {
+     "n": 3025,
+     "net": -18214.0,
+     "net_h1": 2740.0,
+     "net_h2": -20954.0,
+     "pf": 0.927,
+     "years_pos": "4/13",
+     "gross": 4211.0,
+     "costs": 22425.0,
+     "cost_share_of_gross": 5.33
+    },
+    "SI": {
+     "n": 3014,
+     "net": -81530.0,
+     "net_h1": -20913.0,
+     "net_h2": -60617.0,
+     "pf": 0.832,
+     "years_pos": "2/13",
+     "gross": -1659.0,
+     "costs": 79871.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2929,
+     "net": -15518.0,
+     "net_h1": -11295.0,
+     "net_h2": -4223.0,
+     "pf": 0.934,
+     "years_pos": "3/13",
+     "gross": 12783.0,
+     "costs": 28301.0,
+     "cost_share_of_gross": 2.21
+    },
+    "BTC": {
+     "n": 1135,
+     "net": 8773.0,
+     "net_h1": 0.0,
+     "net_h2": 8773.0,
+     "pf": 1.125,
+     "years_pos": "4/5",
+     "gross": 14237.0,
+     "costs": 5464.0,
+     "cost_share_of_gross": 0.38
+    }
+   },
+   "placebo_beaten": 177,
+   "screen": {
+    "name": "V_L20",
+    "active_days": 2942,
+    "days_outside_book_calendar": 147,
+    "mean": -28.67,
+    "sd": 605.6,
+    "sr": -0.0473,
+    "sr_book": 0.1506,
+    "rho": -0.041,
+    "halves": {
+     "h1": {
+      "sr": -0.0304,
+      "sr_book": 0.1352,
+      "rho": -0.04,
+      "lift_at_best_w": -0.0093
+     },
+     "h2": {
+      "sr": -0.0627,
+      "sr_book": 0.165,
+      "rho": -0.041,
+      "lift_at_best_w": -0.0146
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1385,
+     "0.5": 0.1215,
+     "1.0": 0.0851,
+     "2.0": 0.0354,
+     "3.0": 0.0104
+    },
+    "best_w": 0.25,
+    "lift": -0.0121,
+    "screen_pass": false
+   }
+  },
+  "V_L60": {
+   "portfolio": {
+    "n": 10103,
+    "net": -148799.0,
+    "net_h1": -46442.0,
+    "net_h2": -102357.0,
+    "pf": 0.859,
+    "years_pos": "2/13",
+    "gross": -12738.0,
+    "costs": 136061.0,
+    "cost_share_of_gross": "gross<=0"
+   },
+   "per_market": {
+    "GC": {
+     "n": 3025,
+     "net": -14331.0,
+     "net_h1": -1408.0,
+     "net_h2": -12924.0,
+     "pf": 0.942,
+     "years_pos": "4/13",
+     "gross": 8094.0,
+     "costs": 22425.0,
+     "cost_share_of_gross": 2.77
+    },
+    "SI": {
+     "n": 3014,
+     "net": -117488.0,
+     "net_h1": -39623.0,
+     "net_h2": -77865.0,
+     "pf": 0.766,
+     "years_pos": "1/13",
+     "gross": -37617.0,
+     "costs": 79871.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2929,
+     "net": -17009.0,
+     "net_h1": -5411.0,
+     "net_h2": -11598.0,
+     "pf": 0.928,
+     "years_pos": "4/13",
+     "gross": 11292.0,
+     "costs": 28301.0,
+     "cost_share_of_gross": 2.51
+    },
+    "BTC": {
+     "n": 1135,
+     "net": 30.0,
+     "net_h1": 0.0,
+     "net_h2": 30.0,
+     "pf": 1.0,
+     "years_pos": "3/5",
+     "gross": 5494.0,
+     "costs": 5464.0,
+     "cost_share_of_gross": 0.99
+    }
+   },
+   "placebo_beaten": 80,
+   "screen": {
+    "name": "V_L60",
+    "active_days": 2942,
+    "days_outside_book_calendar": 147,
+    "mean": -39.11,
+    "sd": 594.0,
+    "sr": -0.0658,
+    "sr_book": 0.1506,
+    "rho": -0.026,
+    "halves": {
+     "h1": {
+      "sr": -0.0474,
+      "sr_book": 0.1352,
+      "rho": -0.012,
+      "lift_at_best_w": -0.0142
+     },
+     "h2": {
+      "sr": -0.0835,
+      "sr_book": 0.165,
+      "rho": -0.036,
+      "lift_at_best_w": -0.018
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1345,
+     "0.5": 0.1142,
+     "1.0": 0.0736,
+     "2.0": 0.0204,
+     "3.0": -0.0059
+    },
+    "best_w": 0.25,
+    "lift": -0.0161,
+    "screen_pass": false
+   }
+  },
+  "V_L120": {
+   "portfolio": {
+    "n": 10103,
+    "net": -127911.0,
+    "net_h1": -42930.0,
+    "net_h2": -84981.0,
+    "pf": 0.878,
+    "years_pos": "1/13",
+    "gross": 8150.0,
+    "costs": 136061.0,
+    "cost_share_of_gross": 16.69
+   },
+   "per_market": {
+    "GC": {
+     "n": 3025,
+     "net": -13038.0,
+     "net_h1": -1099.0,
+     "net_h2": -11939.0,
+     "pf": 0.947,
+     "years_pos": "3/13",
+     "gross": 9387.0,
+     "costs": 22425.0,
+     "cost_share_of_gross": 2.39
+    },
+    "SI": {
+     "n": 3014,
+     "net": -88511.0,
+     "net_h1": -31209.0,
+     "net_h2": -57302.0,
+     "pf": 0.818,
+     "years_pos": "1/13",
+     "gross": -8640.0,
+     "costs": 79871.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2929,
+     "net": -16389.0,
+     "net_h1": -10623.0,
+     "net_h2": -5766.0,
+     "pf": 0.93,
+     "years_pos": "4/13",
+     "gross": 11912.0,
+     "costs": 28301.0,
+     "cost_share_of_gross": 2.38
+    },
+    "BTC": {
+     "n": 1135,
+     "net": -9973.0,
+     "net_h1": 0.0,
+     "net_h2": -9973.0,
+     "pf": 0.875,
+     "years_pos": "2/5",
+     "gross": -4509.0,
+     "costs": 5464.0,
+     "cost_share_of_gross": "gross<=0"
+    }
+   },
+   "placebo_beaten": 129,
+   "screen": {
+    "name": "V_L120",
+    "active_days": 2942,
+    "days_outside_book_calendar": 147,
+    "mean": -31.62,
+    "sd": 588.9,
+    "sr": -0.0537,
+    "sr_book": 0.1506,
+    "rho": -0.032,
+    "halves": {
+     "h1": {
+      "sr": -0.0456,
+      "sr_book": 0.1352,
+      "rho": -0.032,
+      "lift_at_best_w": -0.0127
+     },
+     "h2": {
+      "sr": -0.0613,
+      "sr_book": 0.165,
+      "rho": -0.031,
+      "lift_at_best_w": -0.014
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1373,
+     "0.5": 0.1196,
+     "1.0": 0.0824,
+     "2.0": 0.0316,
+     "3.0": 0.006
+    },
+    "best_w": 0.25,
+    "lift": -0.0133,
+    "screen_pass": false
+   }
+  },
+  "V_L250": {
+   "portfolio": {
+    "n": 10087,
+    "net": -156026.0,
+    "net_h1": -65992.0,
+    "net_h2": -90033.0,
+    "pf": 0.853,
+    "years_pos": "2/13",
+    "gross": -20116.0,
+    "costs": 135910.0,
+    "cost_share_of_gross": "gross<=0"
+   },
+   "per_market": {
+    "GC": {
+     "n": 3022,
+     "net": -28179.0,
+     "net_h1": -9082.0,
+     "net_h2": -19097.0,
+     "pf": 0.889,
+     "years_pos": "3/13",
+     "gross": -5773.0,
+     "costs": 22406.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "SI": {
+     "n": 3011,
+     "net": -97105.0,
+     "net_h1": -41820.0,
+     "net_h2": -55285.0,
+     "pf": 0.802,
+     "years_pos": "2/13",
+     "gross": -17314.0,
+     "costs": 79792.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "CL": {
+     "n": 2924,
+     "net": -32481.0,
+     "net_h1": -15091.0,
+     "net_h2": -17390.0,
+     "pf": 0.867,
+     "years_pos": "2/13",
+     "gross": -4213.0,
+     "costs": 28268.0,
+     "cost_share_of_gross": "gross<=0"
+    },
+    "BTC": {
+     "n": 1130,
+     "net": 1739.0,
+     "net_h1": 0.0,
+     "net_h2": 1739.0,
+     "pf": 1.023,
+     "years_pos": "3/5",
+     "gross": 7183.0,
+     "costs": 5444.0,
+     "cost_share_of_gross": 0.76
+    }
+   },
+   "placebo_beaten": 50,
+   "screen": {
+    "name": "V_L250",
+    "active_days": 2939,
+    "days_outside_book_calendar": 147,
+    "mean": -43.24,
+    "sd": 584.9,
+    "sr": -0.0739,
+    "sr_book": 0.1506,
+    "rho": -0.018,
+    "halves": {
+     "h1": {
+      "sr": -0.0674,
+      "sr_book": 0.1352,
+      "rho": -0.025,
+      "lift_at_best_w": -0.0184
+     },
+     "h2": {
+      "sr": -0.0803,
+      "sr_book": 0.165,
+      "rho": -0.013,
+      "lift_at_best_w": -0.0174
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1329,
+     "0.5": 0.1115,
+     "1.0": 0.0692,
+     "2.0": 0.0145,
+     "3.0": -0.0126
+    },
+    "best_w": 0.25,
+    "lift": -0.0177,
+    "screen_pass": false
+   }
+  }
+ },
+ "screen_passers": [],
+ "result": "no portfolio cell passed the daily-Sharpe screen; no pass-rate run"
+}

@@ -1,0 +1,546 @@
+{
+ "costs_rt_per_contract": 52.115,
+ "cells": {
+  "NOISE_15": {
+   "h1": {
+    "n": 1075,
+    "net": -50867,
+    "pf": 0.51,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1071,
+    "net": -46721,
+    "pf": 0.511,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 189,
+   "med_risk": 99,
+   "exits": {
+    "check": 1121,
+    "eod": 1025
+   },
+   "screen": {
+    "name": "ZN_NOISE_15",
+    "active_days": 1707,
+    "days_outside_book_calendar": 83,
+    "mean": -27.93,
+    "sd": 147.2,
+    "sr": -0.1897,
+    "sr_book": 0.1506,
+    "rho": -0.01,
+    "halves": {
+     "h1": {
+      "sr": -0.1984,
+      "sr_book": 0.1352,
+      "rho": -0.011,
+      "lift_at_best_w": -0.0124
+     },
+     "h2": {
+      "sr": -0.1805,
+      "sr_book": 0.165,
+      "rho": -0.011,
+      "lift_at_best_w": -0.0083
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1406,
+     "0.5": 0.1302,
+     "1.0": 0.1088,
+     "2.0": 0.066,
+     "3.0": 0.0269
+    },
+    "best_w": 0.25,
+    "lift": -0.01,
+    "screen_pass": false
+   }
+  },
+  "NOISE_16": {
+   "h1": {
+    "n": 1075,
+    "net": -50133,
+    "pf": 0.527,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1071,
+    "net": -47159,
+    "pf": 0.515,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 189,
+   "med_risk": 99,
+   "exits": {
+    "check": 1121,
+    "eod": 1025
+   },
+   "screen": {
+    "name": "ZN_NOISE_16",
+    "active_days": 1707,
+    "days_outside_book_calendar": 83,
+    "mean": -27.94,
+    "sd": 151.0,
+    "sr": -0.185,
+    "sr_book": 0.1506,
+    "rho": -0.013,
+    "halves": {
+     "h1": {
+      "sr": -0.1899,
+      "sr_book": 0.1352,
+      "rho": -0.019,
+      "lift_at_best_w": -0.0122
+     },
+     "h2": {
+      "sr": -0.1798,
+      "sr_book": 0.165,
+      "rho": -0.009,
+      "lift_at_best_w": -0.0084
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1406,
+     "0.5": 0.1302,
+     "1.0": 0.1087,
+     "2.0": 0.0658,
+     "3.0": 0.0267
+    },
+    "best_w": 0.25,
+    "lift": -0.01,
+    "screen_pass": false
+   }
+  },
+  "ORB_1": {
+   "h1": {
+    "n": 1358,
+    "net": -64335,
+    "pf": 0.548,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1363,
+    "net": -59126,
+    "pf": 0.524,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 191,
+   "med_risk": 302,
+   "exits": {
+    "time": 2242,
+    "stop": 479
+   },
+   "screen": {
+    "name": "ZN_ORB_1",
+    "active_days": 2601,
+    "days_outside_book_calendar": 120,
+    "mean": -35.72,
+    "sd": 174.1,
+    "sr": -0.2051,
+    "sr_book": 0.1506,
+    "rho": 0.024,
+    "halves": {
+     "h1": {
+      "sr": -0.203,
+      "sr_book": 0.1352,
+      "rho": 0.017,
+      "lift_at_best_w": -0.0161
+     },
+     "h2": {
+      "sr": -0.209,
+      "sr_book": 0.165,
+      "rho": 0.032,
+      "lift_at_best_w": -0.011
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1374,
+     "0.5": 0.1239,
+     "1.0": 0.0964,
+     "2.0": 0.0436,
+     "3.0": -0.0012
+    },
+    "best_w": 0.25,
+    "lift": -0.0131,
+    "screen_pass": false
+   }
+  },
+  "ORB_2": {
+   "h1": {
+    "n": 1086,
+    "net": -50144,
+    "pf": 0.495,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1047,
+    "net": -47033,
+    "pf": 0.441,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 195,
+   "med_risk": 349,
+   "exits": {
+    "time": 1973,
+    "stop": 160
+   },
+   "screen": {
+    "name": "ZN_ORB_2",
+    "active_days": 2042,
+    "days_outside_book_calendar": 91,
+    "mean": -28.37,
+    "sd": 133.1,
+    "sr": -0.2132,
+    "sr_book": 0.1506,
+    "rho": 0.015,
+    "halves": {
+     "h1": {
+      "sr": -0.2038,
+      "sr_book": 0.1352,
+      "rho": 0.011,
+      "lift_at_best_w": -0.0124
+     },
+     "h2": {
+      "sr": -0.227,
+      "sr_book": 0.165,
+      "rho": 0.02,
+      "lift_at_best_w": -0.0088
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1403,
+     "0.5": 0.1297,
+     "1.0": 0.1081,
+     "2.0": 0.0652,
+     "3.0": 0.0257
+    },
+    "best_w": 0.25,
+    "lift": -0.0103,
+    "screen_pass": false
+   }
+  },
+  "TSMOM_20_D": {
+   "h1": {
+    "n": 1581,
+    "net": -85855,
+    "pf": 0.651,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1626,
+    "net": -80851,
+    "pf": 0.648,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 101,
+   "med_risk": 493,
+   "exits": {
+    "time": 2824,
+    "stop": 383
+   },
+   "screen": {
+    "name": "ZN_TSMOM_20_D",
+    "active_days": 3065,
+    "days_outside_book_calendar": 142,
+    "mean": -47.35,
+    "sd": 299.9,
+    "sr": -0.1579,
+    "sr_book": 0.1506,
+    "rho": 0.006,
+    "halves": {
+     "h1": {
+      "sr": -0.1598,
+      "sr_book": 0.1352,
+      "rho": 0.004,
+      "lift_at_best_w": -0.0215
+     },
+     "h2": {
+      "sr": -0.1561,
+      "sr_book": 0.165,
+      "rho": 0.008,
+      "lift_at_best_w": -0.0148
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1329,
+     "0.5": 0.1143,
+     "1.0": 0.0765,
+     "2.0": 0.0122,
+     "3.0": -0.0314
+    },
+    "best_w": 0.25,
+    "lift": -0.0176,
+    "screen_pass": false
+   }
+  },
+  "TSMOM_60_D": {
+   "h1": {
+    "n": 1541,
+    "net": -73478,
+    "pf": 0.684,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1626,
+    "net": -74487,
+    "pf": 0.671,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 171,
+   "med_risk": 490,
+   "exits": {
+    "time": 2787,
+    "stop": 380
+   },
+   "screen": {
+    "name": "ZN_TSMOM_60_D",
+    "active_days": 3025,
+    "days_outside_book_calendar": 142,
+    "mean": -42.59,
+    "sd": 297.3,
+    "sr": -0.1433,
+    "sr_book": 0.1506,
+    "rho": -0.003,
+    "halves": {
+     "h1": {
+      "sr": -0.1414,
+      "sr_book": 0.1352,
+      "rho": -0.023,
+      "lift_at_best_w": -0.0184
+     },
+     "h2": {
+      "sr": -0.1454,
+      "sr_book": 0.165,
+      "rho": 0.013,
+      "lift_at_best_w": -0.014
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1348,
+     "0.5": 0.1178,
+     "1.0": 0.0831,
+     "2.0": 0.0227,
+     "3.0": -0.0191
+    },
+    "best_w": 0.25,
+    "lift": -0.0158,
+    "screen_pass": false
+   }
+  },
+  "TSMOM_20_ON": {
+   "h1": {
+    "n": 1038,
+    "net": -66095,
+    "pf": 0.664,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1104,
+    "net": -59153,
+    "pf": 0.688,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 42,
+   "med_risk": 492,
+   "exits": {
+    "time": 1691,
+    "stop": 451
+   },
+   "screen": {
+    "name": "ZN_TSMOM_20_ON",
+    "active_days": 2035,
+    "days_outside_book_calendar": 99,
+    "mean": -35.19,
+    "sd": 289.0,
+    "sr": -0.1218,
+    "sr_book": 0.1506,
+    "rho": -0.015,
+    "halves": {
+     "h1": {
+      "sr": -0.1294,
+      "sr_book": 0.1352,
+      "rho": -0.013,
+      "lift_at_best_w": -0.0166
+     },
+     "h2": {
+      "sr": -0.1135,
+      "sr_book": 0.165,
+      "rho": -0.017,
+      "lift_at_best_w": -0.0103
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1376,
+     "0.5": 0.1234,
+     "1.0": 0.0936,
+     "2.0": 0.0394,
+     "3.0": 0.0004
+    },
+    "best_w": 0.25,
+    "lift": -0.013,
+    "screen_pass": false
+   }
+  },
+  "TSMOM_60_ON": {
+   "h1": {
+    "n": 1006,
+    "net": -51793,
+    "pf": 0.716,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1104,
+    "net": -51232,
+    "pf": 0.725,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 145,
+   "med_risk": 490,
+   "exits": {
+    "time": 1679,
+    "stop": 431
+   },
+   "screen": {
+    "name": "ZN_TSMOM_60_ON",
+    "active_days": 2001,
+    "days_outside_book_calendar": 99,
+    "mean": -28.9,
+    "sd": 287.8,
+    "sr": -0.1004,
+    "sr_book": 0.1506,
+    "rho": -0.011,
+    "halves": {
+     "h1": {
+      "sr": -0.1039,
+      "sr_book": 0.1352,
+      "rho": -0.043,
+      "lift_at_best_w": -0.0128
+     },
+     "h2": {
+      "sr": -0.0968,
+      "sr_book": 0.165,
+      "rho": 0.015,
+      "lift_at_best_w": -0.0095
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1398,
+     "0.5": 0.1277,
+     "1.0": 0.1018,
+     "2.0": 0.0533,
+     "3.0": 0.0175
+    },
+    "best_w": 0.25,
+    "lift": -0.0108,
+    "screen_pass": false
+   }
+  },
+  "IM_1": {
+   "h1": {
+    "n": 1510,
+    "net": -79515,
+    "pf": 0.246,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1550,
+    "net": -73554,
+    "pf": 0.215,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 180,
+   "med_risk": 273,
+   "exits": {
+    "time": 2965,
+    "stop": 95
+   },
+   "screen": {
+    "name": "ZN_IM_1",
+    "active_days": 2923,
+    "days_outside_book_calendar": 137,
+    "mean": -43.82,
+    "sd": 90.9,
+    "sr": -0.4821,
+    "sr_book": 0.1506,
+    "rho": 0.013,
+    "halves": {
+     "h1": {
+      "sr": -0.4728,
+      "sr_book": 0.1352,
+      "rho": 0.044,
+      "lift_at_best_w": -0.0195
+     },
+     "h2": {
+      "sr": -0.4984,
+      "sr_book": 0.165,
+      "rho": -0.018,
+      "lift_at_best_w": -0.013
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1349,
+     "0.5": 0.1191,
+     "1.0": 0.0875,
+     "2.0": 0.0252,
+     "3.0": -0.0335
+    },
+    "best_w": 0.25,
+    "lift": -0.0157,
+    "screen_pass": false
+   }
+  },
+  "IM_2": {
+   "h1": {
+    "n": 1522,
+    "net": -81429,
+    "pf": 0.237,
+    "years_pos": "0/7"
+   },
+   "h2": {
+    "n": 1550,
+    "net": -70310,
+    "pf": 0.228,
+    "years_pos": "0/7"
+   },
+   "placebo_beaten": 193,
+   "med_risk": 273,
+   "exits": {
+    "time": 2974,
+    "stop": 98
+   },
+   "screen": {
+    "name": "ZN_IM_2",
+    "active_days": 2936,
+    "days_outside_book_calendar": 136,
+    "mean": -43.51,
+    "sd": 89.8,
+    "sr": -0.4847,
+    "sr_book": 0.1506,
+    "rho": -0.003,
+    "halves": {
+     "h1": {
+      "sr": -0.4941,
+      "sr_book": 0.1352,
+      "rho": 0.041,
+      "lift_at_best_w": -0.0199
+     },
+     "h2": {
+      "sr": -0.4782,
+      "sr_book": 0.165,
+      "rho": -0.048,
+      "lift_at_best_w": -0.0123
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1351,
+     "0.5": 0.1195,
+     "1.0": 0.0881,
+     "2.0": 0.0262,
+     "3.0": -0.0325
+    },
+    "best_w": 0.25,
+    "lift": -0.0155,
+    "screen_pass": false
+   }
+  }
+ },
+ "screen_passers": []
+}

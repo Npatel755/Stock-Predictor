@@ -1,0 +1,70 @@
+{
+ "mini_until": "2019-05-06",
+ "n_h1": 1696,
+ "n_h2": 1752,
+ "v1": {
+  "h1": {
+   "pass_": 51.4,
+   "fail": 21.6,
+   "timeout": 26.9,
+   "n": 1696,
+   "median_days": 41.5
+  },
+  "h2": {
+   "pass_": 64.1,
+   "fail": 22.4,
+   "timeout": 13.5,
+   "n": 1752,
+   "median_days": 37.0
+  }
+ },
+ "v2": {
+  "h1": {
+   "pass_": 49.7,
+   "fail": 26.2,
+   "timeout": 24.1,
+   "n": 1696,
+   "median_days": 39.0
+  },
+  "h2": {
+   "pass_": 59.4,
+   "fail": 26.9,
+   "timeout": 13.7,
+   "n": 1752,
+   "median_days": 41.0
+  }
+ },
+ "v2_shuffled": {
+  "h1": {
+   "pass_": 49.7,
+   "fail": 26.2,
+   "timeout": 24.1,
+   "n": 1696,
+   "median_days": 39.0
+  },
+  "h2": {
+   "pass_": 59.4,
+   "fail": 26.9,
+   "timeout": 13.7,
+   "n": 1752,
+   "median_days": 41.0
+  }
+ },
+ "v2_order_invariant": true,
+ "v2_flat_k3": {
+  "h1": {
+   "pass_": 48.1,
+   "fail": 36.9,
+   "timeout": 15.1,
+   "n": 1696,
+   "median_days": 37.0
+  },
+  "h2": {
+   "pass_": 56.3,
+   "fail": 36.2,
+   "timeout": 7.4,
+   "n": 1752,
+   "median_days": 39.0
+  }
+ }
+}

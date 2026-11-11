@@ -1,0 +1,201 @@
+{
+ "stopouts": 717,
+ "cells": {
+  "X1": {
+   "h1": {
+    "n": 353,
+    "net": 8323.0,
+    "pf": 1.303
+   },
+   "h2": {
+    "n": 341,
+    "net": 1787.0,
+    "pf": 1.058
+   },
+   "exits": {
+    "stop": 372,
+    "eod": 322
+   },
+   "screen": {
+    "name": "SAR_X1",
+    "active_days": 634,
+    "days_outside_book_calendar": 15,
+    "mean": 3.11,
+    "sd": 118.8,
+    "sr": 0.0262,
+    "sr_book": 0.1506,
+    "rho": -0.018,
+    "halves": {
+     "h1": {
+      "sr": 0.0416,
+      "sr_book": 0.1352,
+      "rho": -0.055,
+      "lift_at_best_w": 0.0069
+     },
+     "h2": {
+      "sr": 0.0107,
+      "sr_book": 0.165,
+      "rho": 0.011,
+      "lift_at_best_w": -0.0005
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1517,
+     "0.5": 0.1525,
+     "1.0": 0.1533,
+     "2.0": 0.1519,
+     "3.0": 0.1473
+    },
+    "best_w": 1.0,
+    "lift": 0.0027,
+    "screen_pass": false
+   }
+  },
+  "X2": {
+   "h1": {
+    "n": 353,
+    "net": 5013.0,
+    "pf": 1.24
+   },
+   "h2": {
+    "n": 341,
+    "net": 5164.0,
+    "pf": 1.239
+   },
+   "exits": {
+    "target": 365,
+    "stop": 275,
+    "eod": 54
+   },
+   "screen": {
+    "name": "SAR_X2",
+    "active_days": 634,
+    "days_outside_book_calendar": 15,
+    "mean": 3.27,
+    "sd": 69.0,
+    "sr": 0.0474,
+    "sr_book": 0.1506,
+    "rho": -0.068,
+    "halves": {
+     "h1": {
+      "sr": 0.0442,
+      "sr_book": 0.1352,
+      "rho": -0.068,
+      "lift_at_best_w": 0.01
+     },
+     "h2": {
+      "sr": 0.0505,
+      "sr_book": 0.165,
+      "rho": -0.069,
+      "lift_at_best_w": 0.0105
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.152,
+     "0.5": 0.1532,
+     "1.0": 0.1555,
+     "2.0": 0.159,
+     "3.0": 0.1608
+    },
+    "best_w": 3.0,
+    "lift": 0.0102,
+    "screen_pass": true
+   }
+  },
+  "X3": {
+   "h1": {
+    "n": 353,
+    "net": 6431.0,
+    "pf": 1.247
+   },
+   "h2": {
+    "n": 341,
+    "net": 281.0,
+    "pf": 1.01
+   },
+   "exits": {
+    "stop": 351,
+    "target": 181,
+    "eod": 162
+   },
+   "screen": {
+    "name": "SAR_X3",
+    "active_days": 634,
+    "days_outside_book_calendar": 15,
+    "mean": 2.15,
+    "sd": 92.4,
+    "sr": 0.0232,
+    "sr_book": 0.1506,
+    "rho": -0.025,
+    "halves": {
+     "h1": {
+      "sr": 0.0412,
+      "sr_book": 0.1352,
+      "rho": -0.058,
+      "lift_at_best_w": 0.0059
+     },
+     "h2": {
+      "sr": 0.005,
+      "sr_book": 0.165,
+      "rho": 0.001,
+      "lift_at_best_w": -0.0006
+     }
+    },
+    "comb_sr": {
+     "0.25": 0.1514,
+     "0.5": 0.152,
+     "1.0": 0.1528,
+     "2.0": 0.1525,
+     "3.0": 0.1499
+    },
+    "best_w": 1.0,
+    "lift": 0.0022,
+    "screen_pass": false
+   }
+  }
+ },
+ "gate1_pass": [
+  "X2"
+ ],
+ "gate2": {
+  "cells": {
+   "X2_F1": {
+    "h1": {
+     "pass_": 54.7,
+     "fail": 22.2,
+     "timeout": 23.1,
+     "n": 1696,
+     "median_days": 42.5
+    },
+    "h2": {
+     "pass_": 66.0,
+     "fail": 23.7,
+     "timeout": 10.3,
+     "n": 1664,
+     "median_days": 38.0
+    }
+   },
+   "X2_K": {
+    "h1": {
+     "pass_": 55.2,
+     "fail": 24.7,
+     "timeout": 20.0,
+     "n": 1696,
+     "median_days": 38.0
+    },
+    "h2": {
+     "pass_": 63.4,
+     "fail": 24.1,
+     "timeout": 12.5,
+     "n": 1664,
+     "median_days": 35.0
+    }
+   }
+  },
+  "pick_h1": "X2_K",
+  "pick_h2": "X2_F1",
+  "oof_h1": 54.7,
+  "oof_h2": 63.4,
+  "adopt": false
+ }
+}

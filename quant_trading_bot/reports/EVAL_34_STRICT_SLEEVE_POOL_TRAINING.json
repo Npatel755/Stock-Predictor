@@ -1,0 +1,244 @@
+{
+ "rounds": [
+  {
+   "round": 1,
+   "base": {
+    "h1": 54.4,
+    "h2": 61.1
+   },
+   "cells": {
+    "ADD_AG_BRK30_1c": {
+     "h1": {
+      "pass_": 47.1,
+      "fail": 20.1,
+      "timeout": 32.8,
+      "n": 1696,
+      "median_days": 43.0
+     },
+     "h2": {
+      "pass_": 52.7,
+      "fail": 28.9,
+      "timeout": 18.3,
+      "n": 1752,
+      "median_days": 45.0
+     }
+    },
+    "ADD_AG_CRABEL15_1c": {
+     "h1": {
+      "pass_": 53.5,
+      "fail": 17.1,
+      "timeout": 29.4,
+      "n": 1696,
+      "median_days": 46.0
+     },
+     "h2": {
+      "pass_": 61.1,
+      "fail": 20.7,
+      "timeout": 18.2,
+      "n": 1752,
+      "median_days": 42.0
+     }
+    },
+    "ADD_AG_MES_TRD30_1c": {
+     "h1": {
+      "pass_": 54.4,
+      "fail": 17.7,
+      "timeout": 27.9,
+      "n": 1696,
+      "median_days": 44.0
+     },
+     "h2": {
+      "pass_": 61.1,
+      "fail": 19.6,
+      "timeout": 19.3,
+      "n": 1752,
+      "median_days": 42.0
+     }
+    },
+    "ADD_AG_MORN30_1c": {
+     "h1": {
+      "pass_": 52.8,
+      "fail": 22.2,
+      "timeout": 25.0,
+      "n": 1696,
+      "median_days": 45.0
+     },
+     "h2": {
+      "pass_": 56.5,
+      "fail": 22.0,
+      "timeout": 21.5,
+      "n": 1752,
+      "median_days": 43.0
+     }
+    },
+    "ADD_AG_TRD30C_1c": {
+     "h1": {
+      "pass_": 54.5,
+      "fail": 20.0,
+      "timeout": 25.5,
+      "n": 1696,
+      "median_days": 45.0
+     },
+     "h2": {
+      "pass_": 58.8,
+      "fail": 21.7,
+      "timeout": 19.5,
+      "n": 1752,
+      "median_days": 44.0
+     }
+    },
+    "ADD_AG_TRD30PM_1c": {
+     "h1": {
+      "pass_": 49.4,
+      "fail": 22.5,
+      "timeout": 28.1,
+      "n": 1696,
+      "median_days": 44.0
+     },
+     "h2": {
+      "pass_": 60.9,
+      "fail": 18.2,
+      "timeout": 20.9,
+      "n": 1752,
+      "median_days": 41.0
+     }
+    },
+    "ADD_AG_TRD30_D_1c": {
+     "h1": {
+      "pass_": 52.8,
+      "fail": 22.2,
+      "timeout": 25.0,
+      "n": 1696,
+      "median_days": 45.0
+     },
+     "h2": {
+      "pass_": 56.4,
+      "fail": 22.0,
+      "timeout": 21.6,
+      "n": 1752,
+      "median_days": 42.0
+     }
+    },
+    "ADD_AG_TRD60C_1c": {
+     "h1": {
+      "pass_": 54.4,
+      "fail": 17.7,
+      "timeout": 27.9,
+      "n": 1696,
+      "median_days": 44.0
+     },
+     "h2": {
+      "pass_": 61.1,
+      "fail": 19.8,
+      "timeout": 19.1,
+      "n": 1752,
+      "median_days": 42.0
+     }
+    },
+    "ADD_AG_TRD60Q_1c": {
+     "h1": {
+      "pass_": 54.0,
+      "fail": 17.4,
+      "timeout": 28.6,
+      "n": 1696,
+      "median_days": 45.0
+     },
+     "h2": {
+      "pass_": 59.3,
+      "fail": 21.9,
+      "timeout": 18.8,
+      "n": 1752,
+      "median_days": 41.0
+     }
+    },
+    "ADD_MNQ_E57_1c": {
+     "h1": {
+      "pass_": 55.3,
+      "fail": 18.1,
+      "timeout": 26.6,
+      "n": 1696,
+      "median_days": 45.0
+     },
+     "h2": {
+      "pass_": 62.7,
+      "fail": 19.3,
+      "timeout": 18.0,
+      "n": 1752,
+      "median_days": 40.0
+     }
+    },
+    "ADD_MNQ_HYB_C_1c": {
+     "h1": {
+      "pass_": 51.4,
+      "fail": 18.4,
+      "timeout": 30.2,
+      "n": 1696,
+      "median_days": 48.0
+     },
+     "h2": {
+      "pass_": 61.1,
+      "fail": 19.5,
+      "timeout": 19.3,
+      "n": 1752,
+      "median_days": 39.0
+     }
+    },
+    "ADD_MNQ_VOL_1c": {
+     "h1": {
+      "pass_": 43.5,
+      "fail": 44.9,
+      "timeout": 11.6,
+      "n": 1696,
+      "median_days": 28.0
+     },
+     "h2": {
+      "pass_": 50.9,
+      "fail": 39.0,
+      "timeout": 10.1,
+      "n": 1752,
+      "median_days": 31.0
+     }
+    },
+    "DROP_MES_MOM_3c": {
+     "h1": {
+      "pass_": 53.7,
+      "fail": 17.1,
+      "timeout": 29.2,
+      "n": 1696,
+      "median_days": 45.0
+     },
+     "h2": {
+      "pass_": 59.4,
+      "fail": 19.2,
+      "timeout": 21.3,
+      "n": 1752,
+      "median_days": 39.0
+     }
+    },
+    "DROP_MNQ_BRK_E_2c": {
+     "h1": {
+      "pass_": 49.1,
+      "fail": 13.4,
+      "timeout": 37.6,
+      "n": 1696,
+      "median_days": 48.0
+     },
+     "h2": {
+      "pass_": 61.4,
+      "fail": 19.2,
+      "timeout": 19.3,
+      "n": 1752,
+      "median_days": 41.0
+     }
+    }
+   },
+   "pick_h1": "ADD_MNQ_E57_1c",
+   "pick_h2": "ADD_MNQ_E57_1c",
+   "oof_h1": 55.3,
+   "oof_h2": 62.7,
+   "adopt": false,
+   "same_pick": true
+  }
+ ],
+ "final_changes": []
+}
