@@ -138,3 +138,41 @@ In `low_budget.py` and `funded_search.py`:
 - Do **not** use `"$1,500, first trade only"` with `dll: 0` on this account, as a single full stop-out loses -$1,500 and immediately violates the -$1,000 DLL on Day 1.
 - Instead, use **Asymmetric Convex Sizing (`Bal-3`)**: risk $150–$300 in base/drawdown, scaling up to $950–$1,500 only using banked *house money* once equity > +$1,000.
 - This achieves **0.0 resets paid, 0 DLL touches, and 99.5% account survival** while passing the +$4,000 target.
+
+
+### 9. Empirical Results: Integrating Friend's Claude's TJR ES CHoCH with Multi-Sleeve Core
+*Timestamp: 2026-11-10T19:03:00-05:00*
+
+**Core Invariant Preserved**: ZERO touch of Validation (2024–2025) or Test (2026). All tests run strictly on `GLBX-20261106-FX6FM5XWUX-v3/splits/ES/train.parquet` (2010–2023, 4.73M 1m bars).
+
+Following Nick's directive ("try it"), we implemented and backtested the integration of friend's Claude's **TJR ES CHoCH** (`2a56c6c23d02` and `6fe8aae66be4`) alongside our multi-sleeve book (Crabel ORB 15m, Overnight ZN Drift, Volatility Breakout, MES Reversion).
+
+#### 1. Discovery: Friend's Claude Item Alone vs. Integrated Portfolio
+1. **Friend's Claude Item Alone** (`CHOCH 6FE8 + CHOCH 2A56 + Nick Momentum`):
+   - Under safe zero-reset sizing, produces only **3.1% pass at 60 days (2.9 mo)** and **11.4% pass at 120 days (5.7 mo)**.
+   - *Root cause*: ES CHoCH has modest net expectancy (+0.037R on 2A56, +0.001R on 6FE8) after realistic commissions ($1.24/MES). It cannot carry an evaluation alone without excessive leverage.
+2. **Integrated Portfolio** (Multi-Sleeve Core + ES CHoCH Unit B):
+   - Trade count expands from 2,687 to **3,975 trades**.
+   - ES CHoCH acts as an uncorrelated liquidity and diversification hedge on the S&P 500, smoothing equity and boosting trade frequency.
+
+#### 2. Track A: Zero-Reset Scorecard (Topstep $50K Static, $149 One-Time)
+- **1.0 Month (21 sessions)**: **9.4% Pass**, **100.0% Survival** (0.00% Ruin), 0 DLL Breaches.
+- **1.4 Months (30 sessions)**: **18.8% Pass**, **100.0% Survival** (0.00% Ruin), 0 DLL Breaches.
+- **2.0 Months (42 sessions)**: **29.1% Pass**, **100.0% Survival** (0.00% Ruin), 0 DLL Breaches.
+- **2.9 Months (60 sessions)**: **42.8% Pass**, **99.8% Survival** (0.17% Ruin), 0 DLL Breaches.
+- **4.3 Months (90 sessions)**: **60.5% Pass**, **99.3% Survival** (0.70% Ruin), 0 DLL Breaches.
+- **5.7 Months (120 sessions)**: **70.9% Pass**, **97.3% Survival** (2.71% Ruin), 0 DLL Breaches.
+- **Resets Paid**: **EXACTLY 0.0 RESETS** ($149 total cost).
+
+#### 3. Track B: High-Velocity Sprint Mode ($950 $\rightarrow$ $1,500 House Money)
+- **2 Days**: **1.9% Pass**, **0.0% Ruin** (100% Survival), 2.2% DLL hits.
+- **5 Days**: **9.5% Pass**, **2.3% Ruin**, 15.3% DLL hits.
+- **10 Days**: **21.6% Pass**, **12.4% Ruin**, 35.4% DLL hits.
+- **15 Days**: **30.5% Pass**, **19.9% Ruin**, 49.1% DLL hits.
+- **20 Days**: **36.5% Pass**, **25.0% Ruin**, 59.5% DLL hits.
+
+Artifacts and code:
+- Report: `INTEGRATED_CHOCH_STATIC_COMBINE_REPORT.md`
+- Chart: `reports/integrated_choch_static_combine_chart.png`
+- Results JSON: `reports/INTEGRATED_CHOCH_STATIC_COMBINE.json`
+- Script: `scripts/research_integrated_choch_static_combine.py`

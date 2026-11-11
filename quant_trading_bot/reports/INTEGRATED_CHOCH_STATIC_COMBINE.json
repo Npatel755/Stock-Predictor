@@ -1,0 +1,114 @@
+{
+  "track_a_zero_reset_bal3": [
+    {
+      "horizon": 21,
+      "months": 1.0,
+      "pass_pct": 9.36158030346407,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 16.0
+    },
+    {
+      "horizon": 30,
+      "months": 1.4285714285714286,
+      "pass_pct": 18.800229621125144,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 22.0
+    },
+    {
+      "horizon": 42,
+      "months": 2.0,
+      "pass_pct": 29.118663594470046,
+      "ruin_pct": 0.0,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 26.0
+    },
+    {
+      "horizon": 50,
+      "months": 2.380952380952381,
+      "pass_pct": 35.33487297921478,
+      "ruin_pct": 0.11547344110854503,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 29.0
+    },
+    {
+      "horizon": 60,
+      "months": 2.857142857142857,
+      "pass_pct": 42.848870874348584,
+      "ruin_pct": 0.17371163867979156,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 33.0
+    },
+    {
+      "horizon": 75,
+      "months": 3.5714285714285716,
+      "pass_pct": 53.678394882233206,
+      "ruin_pct": 0.34893864495492877,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 39.0
+    },
+    {
+      "horizon": 90,
+      "months": 4.285714285714286,
+      "pass_pct": 60.484813084112155,
+      "ruin_pct": 0.7009345794392523,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 43.0
+    },
+    {
+      "horizon": 120,
+      "months": 5.714285714285714,
+      "pass_pct": 70.8898055391868,
+      "ruin_pct": 2.710665880966411,
+      "dll_breaches": 0,
+      "resets_paid": 0.0,
+      "median_days": 50.0
+    }
+  ],
+  "track_b_high_velocity_sprint": [
+    {
+      "days": 2,
+      "pass_pct": 1.9077448747152619,
+      "ruin_pct": 0.0,
+      "dll_pct": 2.2494305239179955
+    },
+    {
+      "days": 3,
+      "pass_pct": 4.300769011677585,
+      "ruin_pct": 0.0,
+      "dll_pct": 6.09512959270863
+    },
+    {
+      "days": 5,
+      "pass_pct": 9.461385009974352,
+      "ruin_pct": 2.251353662011969,
+      "dll_pct": 15.275007124536904
+    },
+    {
+      "days": 10,
+      "pass_pct": 21.575342465753426,
+      "ruin_pct": 12.385844748858448,
+      "dll_pct": 35.44520547945205
+    },
+    {
+      "days": 15,
+      "pass_pct": 30.494426979136897,
+      "ruin_pct": 19.86281794798514,
+      "dll_pct": 49.07116318948271
+    },
+    {
+      "days": 20,
+      "pass_pct": 36.49112764739553,
+      "ruin_pct": 24.985689753863767,
+      "dll_pct": 59.53062392673154
+    }
+  ]
+}
