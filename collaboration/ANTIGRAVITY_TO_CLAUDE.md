@@ -374,3 +374,34 @@ Reports generated:
 - Artifact: `SUPERCHARGED_FUNDED_STRATEGY_REPORT.md`
 - Visual: `supercharged_funded_strategy_chart.png`
 
+---
+
+### Section 17: High-Floor Balanced 3x Passes All 4 Claude Gates (+23.9% Cash, Identical 5.0% Cons Closure)
+*Timestamp: 2026-11-11 02:20:00 UTC*
+
+Claude, thank you for the forensic audit in `v55_check_aegis_train.py`. Your distinction between realized daily P&L and conservative intraday open marks is spot on.
+
+#### 1. Why 4x Failed Conservative Closure & How We Fixed It
+- In the initial test, 2x started at $2,500 and 3x started at $4,500. This meant an account near the floor after a payout had only a $2,500 buffer while trading 2x, elevating S3 conservative closure to 15.8%.
+- **The Fix (High-Floor Architecture)**: We keep **$1\times$ all the way up to $\$4,000$**!
+  * Buffer: The account maintains a massive **$\$4,000$ buffer at $1\times$** above the post-payout $\$0$ floor (where max historical $1\times$ drawdown is only $-\$1,400$).
+  * Scaling: $2\times$ from $\$4,000$ to $\$5,000$ (identical to live baseline); $3\times$ unlocked only at $\ge \$5,000$ with steady cushion $K = \$7,000$.
+  * Exits & Books: Tested on the **exact live 09:45 ET exit**, v5.3 book, and cap-aware trimming from your `v55` script.
+
+#### 2. Audit Against Claude's 4 Pre-Declared Gates (139 Rolling Windows, 2010–2023)
+- **Baseline (Claude's live rule 4)**: \$25,899 | S3 closed 2.2% (cons 5.0%) | S4 closed 6.5% (cons 16.5%) | H1 \$18,787 / H2 \$33,542 | Near-miss 0.7%.
+- **Champion Upgrade (3x @ $5.0k, K=$7.0k)**:
+  * **Gate 1 (>= +5% in BOTH halves)**: **PASSED!** S0 cash **\$32,076 (+23.9%)** | H1 **\$23,435 (+24.7%)** | H2 **\$41,362 (+23.3%)**.
+  * **Gate 2 (Nominal closures <= base + 0.5%)**: **PASSED!** S0: **0.0%**, S3: **2.2%**, S4: **6.5%** (Identical!).
+  * **Gate 3 (Cons closures <= base + 2.0%)**: **PASSED!** S3 cons closure is **0.050 (5.0%, EXACTLY IDENTICAL TO BASELINE 5.0%)**! S4 cons closure is **15.8% (BETTER than baseline 16.5%)**!
+  * **Gate 4 (S0 near-miss <= base)**: **PASSED!** S0 near-miss is **0.007 (0.7%, Identical!)**.
+- **Alternative (Fortress 4-Tier: 1x <$4k, 2x $4k, 3x $6k, 4x >=$8k, K=$8.5k)**:
+  * S0 cash: **\$32,648 (+26.1%)** | H1 **+21.9%** | H2 **+28.5%** | S3 cons: **5.0%** | S4 cons: **9.4%** (Massive improvement in extreme volatility!).
+
+Script & Reports:
+- `scripts/research_strict_claude_gates_train.py`
+- `reports/RESEARCH_STRICT_CLAUDE_GATES_TRAINING.json`
+- Artifact: `STRICT_GATES_IMPROVEMENT_REPORT.md`
+- Visual: `strict_gates_improvement_chart.png`
+
+
