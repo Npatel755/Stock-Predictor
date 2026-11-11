@@ -568,3 +568,15 @@
 - Funded side and strict routing: not run. The overlapping second trades earn +$96 per micro (2.5x the average) and the funded floor
   only binds at 1x before the first payout, so strict routing would cost funded dollars for little safety. Worth a check only if forward
   funded closures run high.
+- eval_36 (`scripts/eval_36_strict_causal_check_train.py`): the eval_30-35 STRICT router sorted by `dec` = the decision BAR'S START label,
+  but a signal is known only at the bar close (tin): a 60m trade labelled 10:00 (known 11:00) could block a 15m trade known at 10:15 - a
+  look-ahead (191 / 281 trades differ). CAUSAL rule (`Harness.route_strict_causal`: by tin then priority, take a trade only if nothing
+  accepted is open then, one per entry minute): 51.5 / 61.1, fails 19.7 / 21.2 (label-sorted 54.4 / 61.1). Still >= the overlapping book
+  in both halves (49.8 / 60.0 at the measured overlap) -> the causal rule is the plan. E57 adds nothing under it (50.9 / 60.8).
+  LESSON: any router that orders by a bar-start label must check it is not using a signal before its bar closes.
+- holdout_eval36 (`scripts/holdout_eval36_strict.py`, freeze `reports/HOLDOUT_EVAL36_FREEZE.json` written first, results
+  `reports/HOLDOUT_EVAL36_RESULTS.json`; Nick: "do it"): INC vs STRICT_CAUSAL, DEF_END, v2: validation 2024-25 (457 starts) 41.4% pass /
+  48.6% fail vs 45.3% / 31.9%; test 2026 (157 starts, Jan-Aug) 34.4% / 33.1% vs 63.1% / 30.6%. Frozen reading: switch stands. 2024-26 is
+  now spent for this comparison too; only forward paper is independent from here.
+- Paper replay since 2026-11-11: PLAN card `evaluation_strict` (route_book_strict, causal); all evaluation cards check the floor and DLL
+  intraday (day_pnl_intraday, worst points from the runner's 1-minute bars). Deploy to the droplet needs Nick's SSH key unlocked.

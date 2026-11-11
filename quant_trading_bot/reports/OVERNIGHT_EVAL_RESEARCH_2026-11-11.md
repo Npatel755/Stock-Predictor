@@ -16,6 +16,14 @@ Re-checking 9 size ladders under the corrected rules adopts nothing. Passed by a
 eval_22, eval_25) are inside v1's noise. Afternoon studies: eval_24 purchase timing by regime (sign flips between halves, rejected),
 eval_25 lock-the-pass / consistency cap (+0.5, common sense live), eval_26 day-to-day sizing (rejected).
 
+## Final (2026-11-11, late): the plan is CAUSAL one-position routing - read this first
+
+The strict numbers below (54.4 / 61.1) came from a router that sorted trades by their signal bar's START, so a 60-minute signal known
+at 11:00 could block a 15-minute trade at 10:15 (a look-ahead). The causal version (eval_36; trades in the order their signal is
+known) passes **51.5 / 61.1, fails ~20%**, vs the overlapping book's 49.8 / 60.0 (fails ~26%). One-shot holdout, frozen before the run
+(holdout_eval36): **2024-25 45.3% pass / 31.9% fail vs 41.4% / 48.6%; 2026 63.1% vs 34.4%**. Adopted as the plan for a real Combine;
+on paper as the PLAN card. With the causal router the MNQ_E57 near-miss disappears (50.9 / 60.8).
+
 ## Evening review (2026-11-11): one real improvement - strict one-position routing
 
 Re-checking the whole evaluation book under the corrected simulator (eval_30-32): the book's posthoc router lets a second trade open
