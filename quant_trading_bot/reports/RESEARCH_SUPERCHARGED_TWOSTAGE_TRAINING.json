@@ -1,0 +1,532 @@
+{
+  "Baseline 2x (K=$5.5k Single Stage)": {
+    "S0": {
+      "withdrawn_24m": 26969.0,
+      "payouts_y1": 9.63,
+      "payouts_y2": 21.09,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 59.0
+    },
+    "S3": {
+      "withdrawn_24m": 17101.0,
+      "payouts_y1": 5.82,
+      "payouts_y2": 12.77,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.165,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 73.0
+    },
+    "S4": {
+      "withdrawn_24m": 19951.0,
+      "payouts_y1": 7.57,
+      "payouts_y2": 14.68,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.216,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 49.5
+    },
+    "half1": {
+      "withdrawn_24m": 19558.0,
+      "payouts_y1": 7.17,
+      "payouts_y2": 18.17,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 80.0
+    },
+    "half2": {
+      "withdrawn_24m": 34932.0,
+      "payouts_y1": 12.27,
+      "payouts_y2": 24.22,
+      "payouts_y1_p10": 2.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 41.0
+    },
+    "eligible": true
+  },
+  "Single-Stage Supercharged 4x (K=$7.5k)": {
+    "S0": {
+      "withdrawn_24m": 37988.0,
+      "payouts_y1": 9.91,
+      "payouts_y2": 23.36,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 64.0
+    },
+    "S3": {
+      "withdrawn_24m": 23135.0,
+      "payouts_y1": 6.06,
+      "payouts_y2": 13.93,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.072,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 77.0
+    },
+    "S4": {
+      "withdrawn_24m": 27375.0,
+      "payouts_y1": 7.61,
+      "payouts_y2": 16.1,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.158,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 54.0
+    },
+    "half1": {
+      "withdrawn_24m": 27673.0,
+      "payouts_y1": 7.39,
+      "payouts_y2": 20.67,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 82.5
+    },
+    "half2": {
+      "withdrawn_24m": 49072.0,
+      "payouts_y1": 12.61,
+      "payouts_y2": 26.25,
+      "payouts_y1_p10": 2.200000000000001,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 45.0
+    },
+    "eligible": true
+  },
+  "Single-Stage Supercharged 4x (K=$8.0k)": {
+    "S0": {
+      "withdrawn_24m": 38095.0,
+      "payouts_y1": 9.78,
+      "payouts_y2": 24.09,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 65.0
+    },
+    "S3": {
+      "withdrawn_24m": 23248.0,
+      "payouts_y1": 5.76,
+      "payouts_y2": 13.94,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.144,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 77.0
+    },
+    "S4": {
+      "withdrawn_24m": 27003.0,
+      "payouts_y1": 7.24,
+      "payouts_y2": 16.06,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.158,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 55.0
+    },
+    "half1": {
+      "withdrawn_24m": 27406.0,
+      "payouts_y1": 7.04,
+      "payouts_y2": 20.88,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 83.0
+    },
+    "half2": {
+      "withdrawn_24m": 49582.0,
+      "payouts_y1": 12.73,
+      "payouts_y2": 27.55,
+      "payouts_y1_p10": 2.200000000000001,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 46.0
+    },
+    "eligible": true
+  },
+  "Two-Stage Supercharged 4x (P1 @ $4.0k -$1k | K=$7.0k)": {
+    "S0": {
+      "withdrawn_24m": 35642.0,
+      "payouts_y1": 10.57,
+      "payouts_y2": 22.06,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 44.0
+    },
+    "S3": {
+      "withdrawn_24m": 22345.0,
+      "payouts_y1": 6.47,
+      "payouts_y2": 12.96,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.237,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 52.0
+    },
+    "S4": {
+      "withdrawn_24m": 26168.0,
+      "payouts_y1": 7.96,
+      "payouts_y2": 15.38,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.072,
+      "closed_24m_conservative": 0.23,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.0
+    },
+    "half1": {
+      "withdrawn_24m": 26811.0,
+      "payouts_y1": 7.86,
+      "payouts_y2": 20.11,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 52.5
+    },
+    "half2": {
+      "withdrawn_24m": 45132.0,
+      "payouts_y1": 13.48,
+      "payouts_y2": 24.15,
+      "payouts_y1_p10": 3.200000000000001,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 33.0
+    },
+    "eligible": true
+  },
+  "Two-Stage Supercharged 4x (P1 @ $4.0k -$1k | K=$7.5k)": {
+    "S0": {
+      "withdrawn_24m": 37263.0,
+      "payouts_y1": 10.35,
+      "payouts_y2": 23.06,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 44.0
+    },
+    "S3": {
+      "withdrawn_24m": 22622.0,
+      "payouts_y1": 6.29,
+      "payouts_y2": 13.53,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.137,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 52.0
+    },
+    "S4": {
+      "withdrawn_24m": 26810.0,
+      "payouts_y1": 7.82,
+      "payouts_y2": 15.91,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.072,
+      "closed_24m_conservative": 0.18,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.0
+    },
+    "half1": {
+      "withdrawn_24m": 26970.0,
+      "payouts_y1": 7.68,
+      "payouts_y2": 20.1,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 52.5
+    },
+    "half2": {
+      "withdrawn_24m": 48324.0,
+      "payouts_y1": 13.22,
+      "payouts_y2": 26.25,
+      "payouts_y1_p10": 2.6000000000000005,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 33.0
+    },
+    "eligible": true
+  },
+  "Two-Stage Supercharged 4x (P1 @ $4.0k -$1k | K=$8.0k)": {
+    "S0": {
+      "withdrawn_24m": 37377.0,
+      "payouts_y1": 10.15,
+      "payouts_y2": 23.83,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 44.0
+    },
+    "S3": {
+      "withdrawn_24m": 22631.0,
+      "payouts_y1": 6.14,
+      "payouts_y2": 13.64,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.216,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 52.0
+    },
+    "S4": {
+      "withdrawn_24m": 26471.0,
+      "payouts_y1": 7.42,
+      "payouts_y2": 15.89,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.072,
+      "closed_24m_conservative": 0.18,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.0
+    },
+    "half1": {
+      "withdrawn_24m": 26670.0,
+      "payouts_y1": 7.39,
+      "payouts_y2": 20.4,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 52.5
+    },
+    "half2": {
+      "withdrawn_24m": 48882.0,
+      "payouts_y1": 13.12,
+      "payouts_y2": 27.52,
+      "payouts_y1_p10": 1.6000000000000005,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 33.0
+    },
+    "eligible": true
+  },
+  "Two-Stage 3x Tier (P1 @ $4.0k -$1k | K=$6.5k)": {
+    "S0": {
+      "withdrawn_24m": 33868.0,
+      "payouts_y1": 11.18,
+      "payouts_y2": 22.24,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.122,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 44.0
+    },
+    "S3": {
+      "withdrawn_24m": 20920.0,
+      "payouts_y1": 7.06,
+      "payouts_y2": 13.32,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.173,
+      "closed_24m_conservative": 0.237,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 52.0
+    },
+    "S4": {
+      "withdrawn_24m": 24566.0,
+      "payouts_y1": 8.42,
+      "payouts_y2": 15.24,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.072,
+      "closed_24m_conservative": 0.216,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.0
+    },
+    "half1": {
+      "withdrawn_24m": 25826.0,
+      "payouts_y1": 8.64,
+      "payouts_y2": 20.49,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 52.5
+    },
+    "half2": {
+      "withdrawn_24m": 42510.0,
+      "payouts_y1": 13.91,
+      "payouts_y2": 24.13,
+      "payouts_y1_p10": 3.200000000000001,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.254,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 33.0
+    },
+    "eligible": false
+  },
+  "Two-Stage 3x Tier (P1 @ $4.0k -$1k | K=$7.0k)": {
+    "S0": {
+      "withdrawn_24m": 34908.0,
+      "payouts_y1": 10.86,
+      "payouts_y2": 23.67,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 44.0
+    },
+    "S3": {
+      "withdrawn_24m": 21487.0,
+      "payouts_y1": 6.76,
+      "payouts_y2": 13.51,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.237,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 52.0
+    },
+    "S4": {
+      "withdrawn_24m": 25591.0,
+      "payouts_y1": 8.22,
+      "payouts_y2": 16.59,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.072,
+      "closed_24m_conservative": 0.18,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.0
+    },
+    "half1": {
+      "withdrawn_24m": 25794.0,
+      "payouts_y1": 8.21,
+      "payouts_y2": 20.78,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 52.5
+    },
+    "half2": {
+      "withdrawn_24m": 44703.0,
+      "payouts_y1": 13.72,
+      "payouts_y2": 26.78,
+      "payouts_y1_p10": 2.6000000000000005,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 33.0
+    },
+    "eligible": true
+  },
+  "Two-Stage Conservative 4x (P1 @ $4.0k -$1k | K=$7.5k)": {
+    "S0": {
+      "withdrawn_24m": 35662.0,
+      "payouts_y1": 9.65,
+      "payouts_y2": 23.06,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 46.0
+    },
+    "S3": {
+      "withdrawn_24m": 21495.0,
+      "payouts_y1": 5.33,
+      "payouts_y2": 13.58,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.05,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 56.0
+    },
+    "S4": {
+      "withdrawn_24m": 25293.0,
+      "payouts_y1": 7.22,
+      "payouts_y2": 15.29,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.144,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.5
+    },
+    "half1": {
+      "withdrawn_24m": 25839.0,
+      "payouts_y1": 7.12,
+      "payouts_y2": 19.92,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 56.5
+    },
+    "half2": {
+      "withdrawn_24m": 46217.0,
+      "payouts_y1": 12.36,
+      "payouts_y2": 26.43,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 36.0
+    },
+    "eligible": true
+  },
+  "Two-Stage Conservative 4x (P1 @ $4.0k -$1k | K=$8.0k)": {
+    "S0": {
+      "withdrawn_24m": 35929.0,
+      "payouts_y1": 9.28,
+      "payouts_y2": 22.88,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.007,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 46.0
+    },
+    "S3": {
+      "withdrawn_24m": 21744.0,
+      "payouts_y1": 5.27,
+      "payouts_y2": 14.08,
+      "payouts_y1_p10": 0.0,
+      "closed_24m": 0.022,
+      "closed_24m_conservative": 0.05,
+      "worst_drawdown_valley": -2064.0,
+      "median_days_to_p1": 56.0
+    },
+    "S4": {
+      "withdrawn_24m": 25900.0,
+      "payouts_y1": 7.13,
+      "payouts_y2": 15.76,
+      "payouts_y1_p10": 0.8000000000000007,
+      "closed_24m": 0.065,
+      "closed_24m_conservative": 0.129,
+      "worst_drawdown_valley": -2252.0,
+      "median_days_to_p1": 41.5
+    },
+    "half1": {
+      "withdrawn_24m": 25987.0,
+      "payouts_y1": 6.83,
+      "payouts_y2": 19.96,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.0,
+      "worst_drawdown_valley": -1470.0,
+      "median_days_to_p1": 56.5
+    },
+    "half2": {
+      "withdrawn_24m": 46612.0,
+      "payouts_y1": 11.91,
+      "payouts_y2": 26.03,
+      "payouts_y1_p10": 1.0,
+      "closed_24m": 0.0,
+      "closed_24m_conservative": 0.015,
+      "worst_drawdown_valley": -1686.0,
+      "median_days_to_p1": 36.0
+    },
+    "eligible": true
+  }
+}
