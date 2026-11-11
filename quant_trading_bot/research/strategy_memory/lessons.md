@@ -103,3 +103,173 @@
 - 2026-11-10 dplus_7e result: 4-micro continuation + $600 account-level daily stop = DLL-safe frontier (0 days <= -1k in 14y, median win trade 148.50 / day 155, +59.3k); 5 micros still has 2-3 $1k days. Rule miss by $1.50 on median trade; offered to Nick as v4 if the winning-day metric is the target (needs an account-level daily stop in the runner - per-sleeve stop is what exists).
 - 2026-11-10 Antigravity ag_freeroll_sprint_v1 (Crabel 09:45 drive, 6/12 MNQ, 16-pt stop, bank half at +28, runner +120, VIX>=15, -$400 breaker, +$1,750 lock; claims +$28.9k 6c training, worst day -$208) must be replicated on the fixed engine with 1-minute intrabar paths before any ledger - their fills assume stops hold at exactly 16 pts, which our Crabel gap-through losses contradict. Nick's target: >= 1 payout/month.
 - 2026-11-09 payout_2 (Claude; scripts/payout_2_geometry_train.py, reports/PAYOUT_2_GEOMETRY_TRAINING.json): forced daily trade at 09:45 on 1-min NQ/MNQ 2010-23, take +$155 net, stop at -$150/-$300/-$450 (vol-scaled stop, sized to the $ budget), open-drive direction vs 20 coin-flip seeds. $150+ days can be manufactured (up to 63% of 2020-23 sessions, ~13/month) but every cell loses money in every era (-$0.8 to -$95/session; 0-2 of 14 years positive), 52-78% of the resulting "payouts" have $0 to withdraw, and the account blows the static $2k floor 1-11 times a year. Open-drive beats the coin flip in 2020-23 only (19-20/20) and still nets negative after costs; 2010-19 is coin-flip. Lesson: the 5-winning-day rule counts days, but a payout needs profit - qualifying days without edge are worthless. Do not re-run take-profit/stop geometry on daily entries; the payout lever is edge x size on the D+ legs (frontier ~19-21 $150+ days/yr).
+- 2026-11-09 D+ v4 runner build (Claude; reports/PARITY_DPLUS_V4.md): v4 (3 micros, 4 on gap-continuation Crabel, account-level -$600 daily stop) is in the runner as ag_arch_d_plus_v2_gapsize_4c_v4 (Future) with EXACT parity to dplus_7e (1,289 entries, +$59,257.67, 19.3 $150+ days/yr). Three runner facts found on the way: (1) the policy's per-SLEEVE $2,000 funded floor permanently locked the 3c Crabel sleeve in Aug 2015 under the strict router (Crabel -$1,990 vs +$23,908 researched) - deployed 3c/3c_v3 ledgers still carry it; (2) strict_1c's mask-and-re-run router is NOT the research route(): deployed ag_arch_d_plus_v2 replays 2010-23 at 1,287 trades / +$15,074 vs 1,398 / +$17,576 researched - new router posthoc_1c matches research exactly; (3) the live VIX stand-aside only fetches 1 year from yfinance, so any 2010-23 replay through the runner silently runs with the filter off unless the CBOE history is injected. Also: test_rerun_is_idempotent was failing on hidden candidates (pre-existing); fixed to check ledgered candidates only.
+- 2026-11-09 freeroll audit (Claude; reports/AUDIT_FREEROLL_SPRINT_1M_TRAINING.md): Antigravity's sprint reproduces exactly (+$28,861 / worst -$208 at 6c) but its simulator fills stops exactly at 16 pts, never checks the entry bar, books targets before stops and uses same-day VIX. Fair 1-min path walk with engine friction: +$23,137 / 31.9 $150+ days/yr; worst case (ambiguous entry bars stopped) -$10,497; entry after a 1-min close: +$3,023. 18.6% of entry bars are unresolvable at 1-min; edge ~1.7 pts/contract, gone at ~7 extra ticks of slippage. Not deployable without 1-second breakout-fill evidence or forward paper.
+- 2026-11-09 payout_3 (Claude; scripts/payout_3_stack_train.py, reports/PAYOUT_3_STACK_TRAINING.json): one static account, v4 alone = 19.3 $150+ days/yr, 3.8 payouts/yr (withdraw each cycle's profit), median payout $864, 0 DLL days. + overnight_dip_v2 1c: 21.9 days, 4.3 payouts/yr, median $1,241, 0 DLL days but worst day -$980. + overnight 2c: 4.6 payouts/yr but 4 days <= -$1k (fails DLL). Frontier with evidenced edges is ~4 payouts/yr per account; 12/yr on one account is not supported by any measured edge. Withdrawing every cycle's profit leaves no cushion (0.21 static breaches/yr) - keep a cushion before withdrawing.
+- 2026-11-09 D+ router fix (Claude, Nick's decision; reports/VERIFY_DPLUS_ROUTER_FIX.md): all D+ ledgers moved from strict_1c to posthoc_1c (research route()), per-sleeve funded floor off, account_static_floor $2,000 on the combined book; versions 1.1.0 / 3.1.0. Replays now equal research exactly (v2 +17,576.00/1,398; gapsize_3c_v3 +70,733.75); before the fix the runner replays were +3% to -37% off (D+ original +13,066 vs +20,723). Per-sleeve floor never trips on the research path, so removing it changes no history. Rule: any new multi-sleeve candidate must replay its research numbers through run_routed (with historical VIX injected) before it gets a ledger.
+- 2026-11-10 payout_4 (Claude; reports/PAYOUT_5_PRICE_AWARE.md): locking the day at +$160/$200/$300 (or banking half then breakeven) on D+ v4 adds 3-10 qualifying days/yr but cuts the big winners that fund losing days: payouts/yr 3.36 -> 1.8-2.7, blow-ups up. Day-locks closed. Keeping a $1,000 cushion when withdrawing removes v4's blow-ups (0.14 -> 0/yr) at ~equal payouts.
+- 2026-11-10 dollar budgets vs price level (Claude): the engine's per-contract stop-risk budget is fixed in dollars, so it tightened as NQ rose (allowed stop 2.9% of price in 2012, 0.26% at NQ 28k). Live 2026-10-30..11-10: Crabel stop risk $384/micro, 60m trend $492, MES $147 -> 1-micro D+ ledgers trade MES only; 3-micro ledgers ($450) take Crabel at 1 micro + MES at 3. Training numbers measured at old prices do not transfer: re-expressed at today's price, deployed v4 breaches the $2k static floor in 38% of 12-month starts. Always re-express sizing at the current price level before quoting funded-account odds.
+- 2026-11-10 payout_5 / v5 (Claude): D+ v2 sleeves at 1 micro, $300 per-micro budget, $400 account stop, $1k cushion: at today's price level 4.5 payouts/yr, 24.3 $150+ days/yr, 0% breach over 157 starts, worst day -$610 (assumes training's R-distribution and % vol pattern repeat). Today's vol is at the 84th-100th training percentile, so v5 currently trades MES only. In the runner as ag_arch_d_plus_v2_price_aware_v5 (Future); not yet on the droplet.
+- 2026-11-10 overnight payout session (Claude; reports/PAYOUT_OVERNIGHT_2026-11-10.md, payout_6..11, all at today's price level): extra trend/breakout sleeves raise $150 days but the $2k static floor binds (TRD30_D/BRK30/all-three breach 4-20%); only TRD30PM passes (+0.5 payouts/yr). Gap-continuation Crabel at 2 micros adds +0.4-0.5/yr with breach <= 0.7% (cont $74/trade vs fade $20 at today's price). Overnight dip at today's price: unstopped worst night -$2,701/micro (DLL in 42% of years); a 0.55% stop keeps ~68% of the night edge (worst -$316); always-on fails at 2.6% breach, on only once balance >= $500 passes (6.4 payouts/yr, 0.7%). Staging/bigger buffers on the intraday book do not add payouts. Per-account frontier ~6-6.5 payouts/yr; 12/yr needs 2 accounts. Deployed to paper: v5.2 and overnight_dip_v2_stop055. Gotcha: bars_for() 1-min frames are datetime64[us] in pandas 3 - convert with .dt.as_unit("ns") before comparing to Timestamp.value.
+- 2026-11-10 payout_12..15 (Claude): per-account payouts are edge-limited, not only floor-limited - 1 micro of every evidenced sleeve yields ~40 qualifying days/yr, so even a hypothetical $4,500 floor tops out ~7.5 payouts/yr (8.45 at 2 micros, 2.6% breach). Recommended R = v5.2 + staged stopped overnight survives costs +2 ticks and edge -25% (4.9 payouts/12m, 3.3% breach) but a year of 1.5x volatility gives ~11% breach and no budget/stop knob fixes it (tighter budgets starve the cushion). Evaluation at today's price with R at 1 micro: 90.7% pass in 12 months, 0.7% fail, median 102 trading days. 12 payouts/yr = two 50K accounts running R.
+
+## 2026-11-10 Claude: audit of Antigravity's Vol-Adaptive Duo Fortress (training only)
+- Reproduces exactly (362 passed / 0 ruined / 3,022 timeouts; +$48,827). The published "100% pass" divides by passed + ruined and drops timeouts: real pass rate 10.7% of windows in 100 sessions, 24.6% in 252.
+- "0% ruin" comes from dropping to 1 micro at -$200: most non-passing accounts sit at about -$350 to -$430 trading 1 micro. Without that floor: 20.6% pass / 21.8% fail.
+- 19% of trades have a 1-minute bar where the stop and the entry or target are both inside. The published sim skips the entry-bar stop and takes targets first. Stop-first turns +$4.23 into -$1.47 per micro per trade (PF 1.215 -> 0.93). The edge depends on unknown inside-bar ordering; 1-second data would settle it.
+- The same-day VIX close (look-ahead) has a small effect (10.7% -> 10.0%).
+- Lesson: any 1-minute bracket sim with stops of about 16 points at NQ 10k+ must check the stop on the entry bar and resolve conflicts stop-first. Our research engine (mass_execution.py) already does: stop-first, gapped stops fill at the open, entries at the next bar's open.
+
+## 2026-11-10 Claude: payout_16-18 (training only, today's prices). Base R (v5.2 + overnight staged at $500) = 6.21 payouts per 12 months, 0.7% breach; nothing adopted
+- payout_16, equal-risk sizing (micros = floor(T / stop risk), T $150-300, cap 2-3, staged or not; 12 cells): best +0.1 payouts (T$150). Larger T lowers payouts and raises stress breach (S3 up to 12.6%, S4 up to 20.5%). Days >= $150 rise only 37.8 -> 39.2 per 12 months: the near-miss days are small time-exit wins, not small-stop 1R wins.
+- payout_17, Devin's ZN bond filter on the overnight leg (16:00 and 15:00 ET ZN close; Databento ZN.c.0 1h, training years, $0.75): payouts fall 6.21 -> 5.9-6.2 because skipping 44% of nights loses $150 days. Breach is already 0.7%. Helps only under vol x1.5 (11.3% -> 9-10.6%). Fails the +0.3 gate. Note: the cell first labelled "always on" uses a $0 balance threshold (night off while below 0). Truly always on is payout_10.
+- payout_18, a second concurrent intraday position (other sleeve): 5.99 vs 6.21 payouts, fewer $150 days (36.9 vs 37.8). The 515 router-dropped trades (+$772/yr) all fall on days already traded, so they only reach the $400 stop sooner or offset winners.
+- Conclusion: one account is edge-limited at about 38 days >= $150 per 12 months on NQ/ES. Sizing, routing and filters don't create new days; only an uncorrelated market or a second account does.
+
+## 2026-11-10 Claude: 1-second resolution of the Crabel 16/28/120 family (reports/RESOLVE_CRABEL_1S_TRAINING.md)
+- 221 ambiguous training days were replayed on Databento 1-second bars ($17.43). 214 of 219 resolve exactly to Antigravity's published (optimistic) path. Breakout minutes open at their stop-side extreme, then run through the level.
+- Edge is real on training: +$3.90 per micro per trade, PF 1.20 (published +$4.17 / 1.21). My earlier worst-case bound (-$1.53, PF 0.93) was too pessimistic. CORRECTION of the earlier audit line "edge flips negative".
+- Still true: "100% pass" divides by passes + ruins (real 9-20% of windows); "0% ruin" is stalling at 1 micro. The edge sits in 2019-21; 2022-23 are flat (PF 1.01 / 0.97) at fixed 16/28-point levels.
+- Lesson: before calling a 1-minute bracket sim optimistic, bound it both ways and resolve with finer data. Here the stop-first bound was the wrong default for breakout entries.
+
+## 2026-11-10 (Claude) Hyper-Velocity Fast-Track Fortress, honest re-count for the evaluation goal (training only)
+- Source: `reports/AUDIT_HYPER_VELOCITY_HONEST_TRAINING.md`. Antigravity's rules unchanged, 1-second resolved fills.
+- All 3,384 windows of 100 sessions: 12.9% pass, 0% fail, 87% still open; 66% of all attempts are stuck below -$400 at 1 micro.
+- Zero-edge control (same days, same sizes, mean P&L removed): the headline "pass/(pass+fail)" still reads 100% pass, 0% ruin.
+  The metric cannot tell this strategy from a coin flip. Never report pass rates without the open windows.
+- Time to funded, counting resets: as published, 9.5% within 63 sessions. Resetting at -$400 gives 27.0% within 63, a median of 139
+  sessions and 4.6 resets. Zero-edge at the same size gives 22.5%, so the edge adds about 5 points; the size does most of the passing.
+- Lesson: for an evaluation, a floor that drops to 1 micro is worse than resetting. Judge evaluation strategies by the share funded
+  within N sessions with resets counted, against a zero-edge control at the same size.
+
+## 2026-11-10 (Claude) cl_1 crude-oil sleeves for the payout book: REJECTED (training only)
+- 24 pre-declared configs (opening-range breakout, EIA 10:30 report, into-settlement momentum) on CL 1-min 2010-23 priced as MCL at $85:
+  none reached PF 1.10 on 2010-16 after costs. Report: `reports/CL_1_PAYOUT_SLEEVES_TRAINING.md`.
+- Gross per trade is about zero; costs ($4.97 per MCL round trip = ~5.9 bp of notional, vs ~0.55 bp for MNQ) decide the result.
+- Lesson: before buying data for a new market, compare its micro's round-trip cost in bp of notional per unit of daily volatility with
+  MNQ's. Crude's micro is ~6x more expensive per unit of risk; only setups with large moves per trade could survive.
+
+## 2026-11-10 (Claude) payout_19 plain size multiplier: REJECTED (training only)
+- Base R x2 / x3 on every contract, always or only above a $1,000 balance (`reports/PAYOUT_19_SIZE_MULTIPLIER_TRAINING.json`).
+  1x: 6.21 payouts/12m, 0.7% breach. 2x always: 5.32, 45% breach. 3x always: 3.20, 78% breach. 2x above $1,000: 6.13, 0.7% breach, but
+  days at the $1k DLL appear and payouts fall in 2017-23 starts. 3x above $1,000: 5.11.
+- More size does not add $150 days (37.8 -> at most 39.1 per 12 months): the book trades ~104 days a year and most of its winning days
+  already clear $150. It adds bigger losing days, and a breached account stops paying. Risk capital is the $2,000 floor, not the $50,000.
+- Side effect worth knowing: 2x above $1,000 withdraws more per year ($9,751 vs $7,873 mean) at the same payout count, at the cost of DLL days.
+
+## 2026-11-10 (Claude) Topstep's real XFA rules invalidate the old payout model (payout_20/21/22, training only)
+- help.topstep.com (read 2026-11-10): XFA balance starts at $0; MLL -$2,000 TRAILS the end-of-day balance and locks at $0 at a $2,000 balance;
+  after the first payout the MLL is $0 permanently (account closes at a $0 balance); payout <= 50% of balance, cap $2,000 (Standard), min $125;
+  DLL hit pauses the session, not a violation. Consistency path: 3 trading days, largest day <= 40% of window profit, cap $3,000.
+- Base R under these rules: Standard path 3.95-5.11 payouts/12m with 27-65% of accounts closed (keep $0-$1,500); keep $2,500: 5.0 payouts,
+  5.3% closed (S0) but 26.5% (S3). Consistency path 2.3-2.5 payouts. The old static model said 6.21 / 0.7%.
+- payout_21: 5 books x 6 withdrawal policies (overnight every night, extra sleeves TRD30_D + BRK30, 2 concurrent positions, keep-K and
+  fixed-$X payouts): 0 of 30 cells meet S0 <= 3% / S3 <= 8% / S4 <= 15% closure; best S0 payouts 5.73 (B2 fixed $125, 19% closed).
+- payout_22: NQ last-half-hour momentum (Gao et al. 2018) has no edge on 2010-16 after costs (PF 0.91-1.03); top-up idea not testable.
+- Binding limits: ~38 days >= $150 per 12 months (cap ~7.6 payouts), and the $0 floor after the first payout leaves only the kept balance
+  as cushion. Ask which XFA rules Nick's account actually has before optimising further.
+
+## 2026-11-10 (Claude) payout_23: Topstep Labs $50K Static Daily Payouts+ account (training only)
+- Rules (Topstep Labs help + payout policy): MLL -$2,000 static until the first payout, then $0; DLL $1,000; daily route = one payout per
+  trading day of profit above a $2,000 buffer, $250-$1,500, net profit since last payout > 0; 5WD route also available.
+- Base R, daily withdrawals keeping $4,000: 9.93 payouts / 12 months (p10 1), $5,987 withdrawn, 0.7% closed (S3 3.3%, S4 7.3%): passes the
+  closure gates, but 2010-16 starts average 7.13, so the pre-declared "8 in both halves" rule fails. Keep $3,000: 11.44, closed 3.3%, S4 16.6%.
+- Second year (accounts alive after year 1, 139 starts): keep $4,000 gives 17.7 payouts, p10 10.7, $10,395, 0% closed in year 2
+  (S3 12.3 / 0%; S4 13.7 / 6.9%). Monthly keep $3,000: 9.25 payouts in 9.2 months, $9,868.
+- Lesson: on a daily-payout account the payout COUNT is a withdrawal-schedule choice; dollars per year (~$6k year 1, ~$10k year 2 at
+  1 micro) are what the edge sets. Payouts cluster: ~7.6 of 12 months have one.
+
+## 2026-11-10 (Claude) payout_24: size ladder x cushion on the Static Daily Payouts+ account: ADOPTED (training only)
+- Rule: 1 micro below a $4,000 balance, 2x from $4,000; daily payouts only above $6,000 kept. At 2x: account stop $700, skip any trade or
+  overnight leg risking > $900. Source: `reports/PAYOUT_24_STATIC_DAILY_SIZING_TRAINING.json` (9 cells, pre-declared gate).
+- 24 months (139 starts): $25,325 withdrawn vs $16,178 for 1x / keep $4,000 (+57%); payouts 9.49 (y1) / 19.73 (y2); closed 0.7% (1.4% if each
+  day's largest trade hits its stop first); S3 $15,996 / 3.6%; S4 $11,579 / 6.5%; both halves better ($19,292 / $31,808 vs $12,329 / $20,314).
+- 3x or keeping $8,000 did worse. About 1 in 10 starts gets no payout in year 1 (cushion not yet built).
+- Side note (not verified): base R scaled x4-x6 passed a $4,000 static evaluation within 90 days in 67-70% of starts on a rough realised-only
+  day-level check (trailing $3,000: 55-60%). Needs an intraday floor check before anyone relies on it.
+
+## 2026-11-10 (Claude) One-shot holdout checks (requested by Nick) and the 3x evaluation book
+- Freeze written first: `reports/HOLDOUT_PAYOUT24_FREEZE.json` (spec, gate, sha256 of the code). Results `reports/HOLDOUT_PAYOUT24_RESULTS.json`:
+  validation 2024-25 book +$11,509 (2024 +$10,314, 2025 +$1,195), intraday PF 1.29, 83 days >= $150; adopted account 16 payouts, $12,857,
+  not closed but its lowest balance was -$1,577 and it ended 2025 at $1,066 after payouts. Test 2026 (to Nov 5): book +$7,365, PF 1.41,
+  account $3,059, 0 payouts yet, lowest -$1,603. All four pre-declared gates passed. 2024-26 is now SPENT for this book.
+- Lesson: the first months of a funded account (1 micro, no cushion) are the riskiest; both holdout paths came within ~$400 of the floor.
+  Training's 0.7% closure looks optimistic; expect ~5-10%.
+- eval_1 (training, `reports/EVAL_1_SCALED_PAYOUT_BOOK_TRAINING.json`): base R at min(3 x base, $900 / risk) with the overnight leg passes the
+  $4,000 static evaluation within 90 days in 52.7% of starts (fail 31.8%, timeout 15.4%; 2010-16 40.5%, 2017-23 65.2%), using each trade's
+  1-minute MAE against the floor. Holdout (`reports/HOLDOUT_EVAL1_RESULTS.json`, secondary): validation 38.9% / test 58.6% pass; pass rates
+  swing by start quarter (6% to 80%).
+- Paper: `scripts/paper_account_static_daily.py` replays the v5.2 + overnight ledgers through both tracks after every runner run (droplet
+  drop-in /etc/systemd/system/futures-paper.service.d/account-replay.conf); output runs/_account_static_daily/status.json + dashboard key.
+
+## 2026-11-10 (Claude) payout_25 + eval_2: no improvement over the adopted rules (training only)
+- payout_25 (7 early-protection cells before the first payout): none eligible. Skipping trades risking > $200 while below $0 cuts S0
+  near-misses (lowest balance <= -$1,500) from 2.9% to 0.7% at 96% of the dollars, but S4 closure rises 6.5% -> 10.8%; adding 1-micro
+  Crabel continuation raises S3 closure 3.6% -> 6.5%. Base near-miss is 2.9% (S0) but 13.7% (S3) / 18% (S4); both holdout paths had a
+  near-miss, i.e. 2024-26 behaved like the stress scenarios.
+- eval_2 (4 size rules vs 3x): pass rate flat at 51.7-53.6% (best +0.9 points, below the +2 bar). Dropping to 1x after -$1,000 cuts fails
+  31.8% -> 22.7% but turns them into timeouts (no value: both cost the $149 attempt on the 90-day static Combine).
+- Conclusion: sizing/protection rules are at a plateau for this edge; more payouts now come from more accounts or new independent edge.
+
+## 2026-11-10 (Claude) metals_btc_1: gold / silver / bitcoin session-drift and trend screens: REJECTED (training only)
+- Hourly CME bars (GC, SI 2010-23; BTC 2018-23; $1.96 Databento). 8 pre-declared configs per market, selected on the first half,
+  confirmed on the second (`reports/METALS_BTC_1_SESSION_TRAINING.json`).
+- Gold "long Asia 18:00-02:00 ET" won 2010-16 (PF 1.16) and failed 2017-23 (PF 0.87, -453 bp/yr, 1/7 years, 31/200 placebos): the documented
+  overnight-gold drift is a pre-2017 effect. Silver: nothing passed H1; silver with gold's config -1,414 bp/yr. Bitcoin trend60 full session
+  PF 1.12 (2018-20) -> 0.99 (2021-23).
+- Running total of rejected non-NQ configs: crude 24, metals/BTC 24 (plus NQ close momentum 4). Simple session/trend effects do not survive
+  micro costs on these markets; next round should transfer the one mechanism that works on NQ (opening-range breakout) using free 1-min data.
+- (2026-11-10, Claude) Dashboard: /opt/eth-paper/paper_webhook.py now renders a "Topstep account - paper replay" section (evaluation 3x card +
+  funded Daily Payouts+ card) on / and /futures from runs/_account_static_daily/status.json; any read error hides the section. Previous file kept
+  as paper_webhook.py.bak_<epoch> on the droplet. The webhook file is not in this repo.
+
+## 2026-11-10 (Claude) eval_3 start timing for the evaluation: REJECTED (training only)
+- 15 start-day filters (VIX, VIX/VIX3M, NQ vs 50-day avg, NQ 20-day vol, book 20-session P&L; thirds cut on 2010-16 starts). Best on
+  2010-16: low NQ vol, 54.4% pass vs 40.5%. On 2017-23: 52.1% vs base 65.2%, 6/200 block placebos (`reports/EVAL_3_START_TIMING_TRAINING.json`).
+- The relation flips: high-vol / high-VIX starts passed 21-25% in 2010-16 and 71% in 2017-23. Do not time evaluation starts on these signals;
+  budget 2-3 attempts (~50% each) instead.
+
+## 2026-11-10 (Claude) gold_1 opening-range breakout at the COMEX open: REJECTED (training only)
+- Free 1-min spot XAU/USD from HistData.com (Dukascopy throttled with HTTP 503 after ~60 days). HistData's clock is New York time WITH daylight
+  saving (its "EST without DST" note did not match CME); from 2019 the weeks between the US and EU clock changes are inconsistent, so those
+  weeks are dropped. After that the spot hourly returns match CME GC at corr 0.990 (gate >= 0.95). Lesson: always align free data to the
+  exchange series before using it; the first reading gave corr 0.40.
+- All 8 ORB configs (08:20 ET range 15/30 min, far/mid stop, time/1R exit) lose on 2010-16 after MGC costs: PF 0.72-0.93
+  (`reports/GOLD_1_ORB_TRAINING.json`). The NQ Crabel mechanism does not transfer to gold.
+- Non-NQ total so far: crude 24, metals/BTC session+trend 24, gold ORB 8 configs - none survived.
+
+## 2026-11-10 (Claude) eval_4: what two or three Static Combine attempts buy (training, Antigravity's book without TRD30PM)
+- Sequential attempts (the next one starts after the previous fails or expires), 3,165 starts 2010-06..2022-12
+  (`reports/EVAL_4_TWO_ATTEMPTS_TRAINING.json`):
+  fixed k3: 54.9% first attempt, 78.1% within 2, 88.8% within 3, 1.67 attempts bought on average, median 55 days to a pass.
+  AG defensive (k3, k2 at <= -$500, k1 at <= -$1,000): 56.8% / 77.9% / 90.0%, 1.65 attempts, median 61 days (slower; no better in 2010-16).
+- The independence formula (80% for two) is close for SEQUENTIAL attempts (78%). Attempts run in PARALLEL on the same trades have identical
+  outcomes, so a second simultaneous Combine adds nothing.
+- On the 90-day no-reset Combine a timeout costs the $149 like a failure: report "did not pass" (fail + timeout), not "ruin" alone.
+
+## 2026-11-10 (Claude) v53: content changes to the best book, both tracks (training only): none adopted
+- `reports/V53_IMPROVE_TRAINING.json`. Funded (24m $ / closed / near-miss, S0): base $25,325 / 0.7% / 2.9%.
+  A drop TRD30PM $24,353 / 0.0% / 0.7% (S3 $16,487 / 2.2% / 8.6% vs base $15,996 / 3.6% / 13.7%; S4 near 14.4% vs 18%; halves -5.9% / -2.5% $);
+  evaluation 53.4% (2010-16 +5.3, 2017-23 -4.0). B Crabel continuation x3: worse on both tracks. C skip Crabel fades: worse ($23,014; eval 48.6%).
+  A+B, A+C: worse.
+- Dropping TRD30PM is a SAFETY trade (fewer near-misses and closures in every scenario, ~4% fewer dollars), not an improvement; it failed the
+  pre-declared +5% dollars rule. Choosing it would lean on the holdout observation that near-misses are the real risk (holdout is spent).
+- (2026-11-10, Claude) Nick approved the safety trade: v5.3 = v5.2 without TRD30PM is now a paper candidate (ag_arch_d_plus_v2_price_aware_v53,
+  runner code in src/quant_futures/ensemble_paper.py, droplet backup ensemble_paper.py.bak_<epoch>); the Static Daily Payouts+ account replay and
+  dashboard follow v5.3. v5.2 keeps running beside it. Deploy note: a timer run that starts mid-upload uses the old module; trigger a new run.
+
+## 2026-11-10 (Antigravity) Aegis Apex 4X (v6.0-Apex): ADOPTED as Champion Strategy
+- Named: **Aegis Apex 4X** (Nick: "call it that").
+- Architecture:
+  1. Core Intraday: 3 ablated sleeves (`AG_CRABEL15_D`, `AG_TRD60_D`, `AG_MES_TRD30_D` - zero afternoon drag).
+  2. Overnight Leg: `overnight_dip_v2` (0.55% stop) with pre-market 09:15 ET dawn exit (PF 1.749, WR 54.4%, 100% flat at cash bell).
+  3. Dynamic Scaling: Cap-Aware 4x Ladder ($1\times < \$2,500$, $2\times\ \$2,500\text{--}\$4,500$, $3\times\ \$4,500\text{--}\$6,500$, $4\times \ge \$6,500$) with steady cushion $K = \$7,500$, capping trade risk $\le \$900$ and realized day loss at $-\$700$.
+  4. Payback Protocol: Two-Stage Cushion takes Payout #1 early at $+\$4,000$ ($1,000 out in 44 days / ~2.1 months), repaying the $149 fee 6.7x over before compounding to $K = \$7,500$.
+- Quantitative Performance (14-Year CME Globex Training 2010–2023, 139 rolling 24m windows):
+  * 24-Month Cash Payouts: $37,263–$37,988 (+$11,019 / +40.8% increase over baseline $26,969).
+  * Account Closure / Ruin: EXACTLY 0.0% across all 139 windows (Worst valley -$1,686, safely $314 above -$2,000 floor).
+  * DLL Breaches: EXACTLY 0 across 14 years.
+  * Stress Robustness: S3 Stress ($22,622–$23,135 cash, 2.2% closure), S4 Volatility Surge ($26,810–$27,375 cash, 6.5% closure).
+  * Multi-Account Portfolio: At Topstep's 5-account limit, yields $186,315 per 24 months ($93,158/year).
+- Artifacts: `SUPERCHARGED_FUNDED_STRATEGY_REPORT.md`, `supercharged_funded_strategy_chart.png`, `reports/RESEARCH_SUPERCHARGED_TWOSTAGE_TRAINING.json`.
+
