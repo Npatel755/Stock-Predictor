@@ -1,0 +1,185 @@
+{
+ "base v5.3 k3": {
+  "all": 53.4,
+  "h1": 45.8,
+  "h2": 61.2,
+  "fail": 28.0,
+  "timeout": 18.6,
+  "median_days": 39.0
+ },
+ "B endgame day 45, gap > $1000, k5": {
+  "all": 54.6,
+  "h1": 48.5,
+  "h2": 60.9,
+  "fail": 30.0,
+  "timeout": 15.3,
+  "median_days": 40.0
+ },
+ "B endgame day 45, gap > $1000, k6": {
+  "all": 54.8,
+  "h1": 48.6,
+  "h2": 61.1,
+  "fail": 31.1,
+  "timeout": 14.1,
+  "median_days": 40.0
+ },
+ "B endgame day 45, gap > $2000, k5": {
+  "all": 54.3,
+  "h1": 47.7,
+  "h2": 61.1,
+  "fail": 29.9,
+  "timeout": 15.8,
+  "median_days": 40.0
+ },
+ "B endgame day 45, gap > $2000, k6": {
+  "all": 54.6,
+  "h1": 48.3,
+  "h2": 61.1,
+  "fail": 30.8,
+  "timeout": 14.6,
+  "median_days": 40.0
+ },
+ "B endgame day 60, gap > $1000, k5": {
+  "all": 54.9,
+  "h1": 48.9,
+  "h2": 61.0,
+  "fail": 29.4,
+  "timeout": 15.7,
+  "median_days": 40.0
+ },
+ "B endgame day 60, gap > $1000, k6": {
+  "all": 54.8,
+  "h1": 48.8,
+  "h2": 60.9,
+  "fail": 29.9,
+  "timeout": 15.3,
+  "median_days": 40.0
+ },
+ "B endgame day 60, gap > $2000, k5": {
+  "all": 54.3,
+  "h1": 47.8,
+  "h2": 61.0,
+  "fail": 29.3,
+  "timeout": 16.3,
+  "median_days": 40.0
+ },
+ "B endgame day 60, gap > $2000, k6": {
+  "all": 54.5,
+  "h1": 48.3,
+  "h2": 60.9,
+  "fail": 29.7,
+  "timeout": 15.7,
+  "median_days": 40.0
+ },
+ "B endgame day 75, gap > $1000, k5": {
+  "all": 54.7,
+  "h1": 48.3,
+  "h2": 61.2,
+  "fail": 28.7,
+  "timeout": 16.6,
+  "median_days": 40.0
+ },
+ "B endgame day 75, gap > $1000, k6": {
+  "all": 54.6,
+  "h1": 48.2,
+  "h2": 61.2,
+  "fail": 29.0,
+  "timeout": 16.4,
+  "median_days": 40.0
+ },
+ "B endgame day 75, gap > $2000, k5": {
+  "all": 54.0,
+  "h1": 47.1,
+  "h2": 61.1,
+  "fail": 28.7,
+  "timeout": 17.2,
+  "median_days": 39.0
+ },
+ "B endgame day 75, gap > $2000, k6": {
+  "all": 54.2,
+  "h1": 47.4,
+  "h2": 61.1,
+  "fail": 29.0,
+  "timeout": 16.8,
+  "median_days": 40.0
+ },
+ "C equal risk $300": {
+  "all": 27.4,
+  "h1": 22.6,
+  "h2": 32.2,
+  "fail": 10.3,
+  "timeout": 62.3,
+  "median_days": 61.0
+ },
+ "C equal risk $450": {
+  "all": 45.4,
+  "h1": 34.8,
+  "h2": 56.2,
+  "fail": 18.6,
+  "timeout": 36.0,
+  "median_days": 54.0
+ },
+ "C equal risk $600": {
+  "all": 49.3,
+  "h1": 37.1,
+  "h2": 61.8,
+  "fail": 29.1,
+  "timeout": 21.6,
+  "median_days": 44.0
+ },
+ "D book v5.2 k3": {
+  "all": 52.7,
+  "h1": 40.5,
+  "h2": 65.2,
+  "fail": 31.8,
+  "timeout": 15.4,
+  "median_days": 37.0
+ },
+ "D book v5.3+TRD30_D k3": {
+  "all": 53.1,
+  "h1": 50.2,
+  "h2": 56.0,
+  "fail": 34.3,
+  "timeout": 12.6,
+  "median_days": 37.0
+ },
+ "D book v5.3+BRK30 k3": {
+  "all": 46.5,
+  "h1": 39.4,
+  "h2": 53.7,
+  "fail": 37.6,
+  "timeout": 16.0,
+  "median_days": 35.0
+ },
+ "D book v5.3+TRD30_D+BRK30 k3": {
+  "all": 50.8,
+  "h1": 44.8,
+  "h2": 57.0,
+  "fail": 37.1,
+  "timeout": 12.0,
+  "median_days": 34.0
+ },
+ "family_winners": {
+  "B": {
+   "winner": "B endgame day 60, gap > $1000, k5",
+   "h1": 48.9,
+   "h2": 61.0,
+   "base_h2": 61.2,
+   "confirmed": false
+  },
+  "C": {
+   "winner": "C equal risk $600",
+   "h1": 37.1,
+   "h2": 61.8,
+   "base_h2": 61.2,
+   "confirmed": false
+  },
+  "D": {
+   "winner": "D book v5.3+TRD30_D k3",
+   "h1": 50.2,
+   "h2": 56.0,
+   "base_h2": 61.2,
+   "confirmed": false
+  }
+ }
+}

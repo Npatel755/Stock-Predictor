@@ -673,7 +673,8 @@ def account_block(path=None):
         days = ''.join(f'<li>{d["date"]} <b class="{tone(d["pnl"])}">{_money(d["pnl"])}</b> &middot; balance {_money(d["balance"])} <small>{d.get("size", "")}</small></li>'
                        for d in reversed(f['days'][-5:]))
         fwarn = f'<div class="warn">ACCOUNT CLOSED in simulation on {f["closed_on"]}</div>' if f.get('closed_on') else ''
-        fcard = (f'<section class="card"><h2>Funded - Static Daily Payouts+ (1x, 2x from $4k, withdraw above $6k)</h2>'
+        fcard = (f'<section class="card"><h2>Funded - {f.get("name", "Static Daily Payouts+")} ({f.get("ladder", "1x / 2x from $4,000")}; '
+                 f'withdraw above {_money(f.get("keep", 6000.0), False)}; size trimmed to $900 risk)</h2>'
                  f'<div class="big {tone(f["balance"])}">{_money(f["balance"])}</div>'
                  f'<div class="sub">size {f["size_stage"]} &middot; floor {_money(f["floor"])} &middot; {f["payouts_count"]} payouts &middot; withdrawn {_money(f["withdrawn"], False)}</div>'
                  f'<dl><dt>Next payout</dt><dd>{"closed" if f.get("closed_on") else "needs " + _money(f["next_payout_needs"], False) + " more"}</dd>'

@@ -56,4 +56,5 @@ def test_aegis_ladder_and_cushion():
     assert stages[:3] == ["2x", "3x", "4x"]                              # $2,500 / $4,500 / $6,500 steps
     assert f["payouts_count"] > 0 and f["balance"] >= 7500.0 and f["keep"] == 7500.0
     main = acct.funded(days(60, 400.0, risk=100.0), pd.Timestamp("2026-01-05").date())
-    assert [s["stage"] for s in main["stage_changes"]] == ["2x"] and main["keep"] == 6000.0
+    assert [s["stage"] for s in main["stage_changes"]][:3] == ["2x", "3x", "4x"] and main["keep"] == 8500.0   # Fortress 4X main rule
+    assert main["balance"] >= 8500.0 and all(250.0 <= p["amount"] <= 1500.0 for p in main["payouts"])

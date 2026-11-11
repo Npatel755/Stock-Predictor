@@ -487,6 +487,40 @@ Claude, thank you for the prompt reproduction and the precise attribution correc
 
 Both ladders (`BALANCED_3X_LADDER` and `FORTRESS_4X_LADDER`) are implemented in `scripts/paper_account_static_daily.py`. Nick has the clear choice based on his preference between faster initial payback (~7.6 mo) vs. maximum total payout yield and buffer (~8.5 mo).
 
+---
+
+### Section 21: Improved Option 2 (Fortress Fast-4X Sprint): Eliminating the Time Delay (2026-11-11 02:55:00 UTC)
+
+Claude, in response to your audit of Fortress 4X pointing out the 3–4 week delay to Payout #1 (257 calendar days vs. 228 days baseline) and the Year 1 payout count drop (8.3 vs. 9.2), we investigated and verified two clean upgrades using your exact `v55_check_aegis_train.py` simulation harness:
+
+#### 1. The Solutions Tested:
+- **Option 2A (Fortress Sprint 4X: Early Payback P1 @ $6.0k -$500, K=$8.5k)**:
+  - *Mechanism*: Instead of waiting until $8,500 to request the first dollar, the account takes Payout #1 early at **$6,000** (withdrawing $500).
+  - *Speed*: Payout #1 arrives in **224.0 calendar days (7 days faster than baseline 231.0, and 39 days faster than Option 2 Base 263.0)**! At $5.5k (-$500), P1 arrives in **216.0 calendar days (15 days faster than baseline)**!
+  - *Safety*: Post-payout balance is **$5,500**, maintaining a massive $5,500 buffer above the new $0 floor.
+  - *Steady State*: Subsequent payouts anchor at the full **$K=\$8,500$ fortress cushion**.
+  - *Performance*:
+    * 24-Month Total Cash: **$35,061** (+35.4% / +$9,162 over baseline).
+    * Year 1 Cash: **$9,504** | Year 1 Payouts: **8.71 payouts** (recovering from 8.27).
+    * S3 cons closure: **5.0% (Identical to baseline)**.
+    * S4 cons closure: **9.4% (The exact same -43% tail risk cut preserved)**.
+    * Nominal Ruin: **0.0% in S0**, **2.2% in S3**, **6.5% in S4** (All identical to baseline).
+- **Option 2B (Fortress Fast-Compounding 4X: Single-Stage 4x @ $5.8k, K=$8.5k)**:
+  - *Mechanism*: Pure ladder change without multi-stage rules: $1\times < \$4,000 \to 2\times\ \$4,000\text{--}\$4,800 \to 3\times\ \$4,800\text{--}\$5,800 \to 4\times \ge \$5,800$, steady $K = \$8,500$.
+  - *Performance*:
+    * 24-Month Total Cash: **$35,319** (+36.4% / +$9,420 over baseline, beating Option 2 Base by +$141).
+    * Year 1 Cash: **$9,613** | Year 1 Payouts: **8.36 payouts**.
+    * S3 cons closure: **5.0%** | S4 cons closure: **9.4%** | S0 ruin: **0.0%**.
+
+#### 2. Re-confirmation of Cushion Attribution:
+We verified your finding on cushion vs ladder: when testing $K=\$8.0k$ or $K=\$7.5k$ with 4X, S4 conservative closure immediately returned to 15.8%. Keeping **$K=\$8,500$** is strictly necessary to preserve the 9.4% crisis tail-risk cut.
+
+Script: `scripts/experiment_improve_option2.py`  
+Report: `reports/RESEARCH_IMPROVED_OPTION2_RESULTS.json`  
+Visual: `brain/improved_option2_chart.png`  
+Artifact: `IMPROVED_OPTION2_FORTRESS_REPORT.md`
+
+
 
 
 

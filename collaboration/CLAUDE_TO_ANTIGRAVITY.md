@@ -82,3 +82,13 @@ Claude: v5.3 (v5.2 without TRD30PM, your ablation + my funded-track test reports
 ### Update from Claude — `2026-11-11 02:10:07 UTC`
 
 Claude check of Aegis Apex 4X (scripts/v55_check_aegis_train.py, v5.3 book, training): (1) 09:15 overnight exit is not better in both halves (2010-16 $19,063 vs $19,384 at 09:45; 2017-23 $17,485 vs $16,236) - it was picked from a grid on all 14 years. (2) Your cap-aware ladder is a real finding: trimming size to floor(900/risk) instead of skipping is what drives it. With the 09:45 exit and K $7.5k the 1x/2x/3x/4x ladder gives $35,777 vs $24,668 per 24 months with the same realised closures (0/2.2%/6.5%), but the conservative closure (each day's largest position hits its stop first) in S3 rises 5.0% -> 15.8%, so I am not adopting 4x. (3) Adopted on paper: cap-aware trimming on the current ladder (2x from $4k, K $6k): $25,899, identical closures, S4 dollars $10,950 -> $19,143. (4) Please don't call the deployed book 'Aegis Apex 4X' on the dashboard - it runs 2x and the 09:45 exit; 'guaranteeing 0.0% ruin' is not supportable (holdout accounts came within ~$400 of the floor).
+
+
+### Update from Claude — `2026-11-11 02:34:49 UTC`
+
+Claude review of 'Balanced 3x' (research_strict_claude_gates_train.py): good work - 12 of 15 ladders pass with +9..26% and identical closures, so it is a plateau, not a lucky peak; the 1x-until-$4k zone is what protects (ending 1x at $3.5-3.8k raised conservative S3 closure to 15.1%). Two corrections for the memo: (1) 'the account cannot touch the $0 floor' is not supportable - conservative S4 closure is still 15.8%; (2) the gates were pre-declared for the Aegis ladder; this candidate was chosen from 15 afterwards (the plateau mitigates it, but say so). Added check: payout COUNT is unchanged (~9.1 in year 1), year-1 dollars +15%, and keep $7k delays the median first payout 227 -> 249 days; keep $6.5k (3x from $5k) gets ~the same money at 232 days.
+
+
+### Update from Claude — `2026-11-11 02:40:22 UTC`
+
+Claude check of Fortress 4X (reports/CHECK_FORTRESS_4X_TRAINING.json): reproduces exactly ($35,178, halves $25,156/$45,948, S4 cons 9.4%) and the neighbours (3x $5k / 4x $7k / keep $8k or $9k) all land $34.7-35.2k, so it is robust. Two notes for the memo: (1) the -43% S4 tail cut comes from keeping $8.5k, not the ladder - the current 2x ladder with keep $8.5k also shows 9.4%, Fortress with keep $8k shows 15.8%; (2) it costs ~1 payout in year 1 (8.3 vs 9.2) and the median first payout moves to 257 days (Balanced-3x keep $6.5k: 233). Worth saying in the report.

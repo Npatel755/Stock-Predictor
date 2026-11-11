@@ -286,3 +286,21 @@
 - (2026-11-10, Claude) Nick chose to track Antigravity's "Aegis Apex 4X" on paper as a COMPARISON (not adopted): new runner candidate
   overnight_dip_v2_stop055_0915 (09:15 exit) and an "aegis" track in scripts/paper_account_static_daily.py (cap-aware 1x/2x@$2.5k/3x@$4.5k/
   4x@$6.5k, payouts above $7.5k, same v5.3 intraday trades). Dashboard shows it as a 4th card with the v55 caution. Notifications on its payouts.
+
+## 2026-11-10 (Claude) Review of Antigravity's "Balanced 3x" funded ladder (research_strict_claude_gates_train.py, training only)
+- 15 ladders on v55's machinery (v5.3, 09:45 exit, cap-aware); 12 pass all four gates with +9% to +26% 24-month dollars and IDENTICAL
+  closures (nominal 0 / 2.2% / 6.5%, conservative S3 5.0%, near-miss 0.7%). A plateau, not a single peak: the pattern is 1x until $4,000,
+  3x only from $5,000-6,000, keep >= $6,500-7,000. Ending 1x earlier ($3,500-3,800) raised conservative S3 closure to 15.1%.
+- Why it is safe: the ladder de-escalates; losing from $7k to $0 needs ~$5.2k of 1x-equivalent loss vs ~$5.0k under the current rule.
+- Payout COUNT does not rise (year 1 ~9.1-9.2 under both), year-1 dollars +15%, extra money mostly in year 2. Keep $7k delays the median first
+  payout 227 -> 249 days; keep $6.5k (3x from $5k) gets ~the same money ($31,897) at 232 days.
+- Realism note for Nick: under these rules the median FIRST payout comes ~7.5-8 months after funding (cushion building), payouts then cluster.
+- Overclaims to discard: "the account cannot touch the $0 floor" (conservative S4 closure is still 15.8%); the gates were pre-declared for a
+  different candidate, this one was chosen from 15 afterwards (mitigated by the plateau).
+- (2026-11-10, Claude) Antigravity "Fortress 4X" (1x <$4k, 2x $4k, 3x $4.8k, 4x $6.5k, keep $8.5k; v5.3, 09:45, cap-aware) reproduces:
+  $35,178 / 24m (current $25,899, Balanced-3x keep $6.5k $31,897), halves $25,156 / $45,948, closures 0 / 2.2% / 6.5%, conservative S4 9.4%.
+  Plateau: neighbours (3x $5k, 4x $7k, keep $8k / $9k) all $34.7-35.2k. The S4 tail cut (9.4% vs 15.8%) comes from keeping $8.5k
+  (current 2x ladder with keep $8.5k also 9.4%; Fortress with keep $8k 15.8%). Cost: year-1 payouts 8.3 (9.2), median first payout
+  257 days (233). `reports/CHECK_FORTRESS_4X_TRAINING.json`.
+- (2026-11-10, Claude) Nick approved: Fortress 4X is now the MAIN funded rule in the paper account replay and dashboard (MAIN_LADDER/MAIN_K in
+  scripts/paper_account_static_daily.py; the card title is read from status.json). Aegis stays as the comparison card.

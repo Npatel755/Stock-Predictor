@@ -3,7 +3,8 @@
 Replays the forward paper trades of the v5.3 payout build (ag_arch_d_plus_v2_price_aware_v53; v5.2 until 2026-11-10) and the overnight leg (overnight_dip_v2_stop055)
 through two tracks, from the paper start, and writes <root>/_account_static_daily/status.json (plus an "account_static_daily" entry in
 <root>/dashboard.json). Notifies (ntfy, same channel as the runner) on a new payout, a size-stage change, or an evaluation pass / fail.
-  FUNDED (payout_24, adopted; holdout-checked in reports/HOLDOUT_PAYOUT24_RESULTS.json): balance from $0; floor -$2,000 static until the
+  FUNDED (Fortress 4X since 2026-11-10: 1x <$4,000, 2x from $4,000, 3x from $4,800, 4x from $6,500, payouts above $8,500 - the lines below
+    describe the earlier payout_24 rule it replaced; account mechanics are unchanged): balance from $0; floor -$2,000 static until the
     first payout, then $0; DLL $1,000; 1x below a $4,000 balance at the prior close, 2x from $4,000 (account stop $700; since 2026-11-10 a trade
     is TRIMMED to floor($900 / stop risk per micro) micros instead of skipped when 2x would risk more than $900, v55 cell 4); overnight leg only while the balance >= $500; daily payout of profit above $6,000 when >= $250, max $1,500,
     net profit since the last payout > 0.
@@ -87,9 +88,12 @@ def day_pnl(rows, size_of, stop, night_on):
     return max(sum(x["net"] for x in taken), -1000.0), len(taken)
 
 
-MAIN_LADDER, MAIN_K = ((0.0, 1), (4000.0, 2)), 6000.0
+# Main funded rule since 2026-11-10 (Nick: "yes"): Antigravity's Fortress 4X, checked in reports/CHECK_FORTRESS_4X_TRAINING.json.
+MAIN_LADDER, MAIN_K, MAIN_NAME = ((0.0, 1), (4000.0, 2), (4800.0, 3), (6500.0, 4)), 8500.0, "Fortress 4X"
+# previous main rule (payout_24 + cap-aware): ((0.0, 1), (4000.0, 2)), keep $6,000
 BALANCED_3X_LADDER, BALANCED_3X_K = ((0.0, 1), (4000.0, 2), (5000.0, 3)), 6500.0  # Consensus Balanced 3x (+23.2% cash, identical risk)
 FORTRESS_4X_LADDER, FORTRESS_4X_K = ((0.0, 1), (4000.0, 2), (4800.0, 3), (6500.0, 4)), 8500.0  # Fortress 4X (+35.8% cash, -43% vol risk)
+FORTRESS_FAST_4X_LADDER, FORTRESS_FAST_4X_K = ((0.0, 1), (4000.0, 2), (4800.0, 3), (5800.0, 4)), 8500.0  # Improved Option 2 ($35,319 cash, 9.4% vol risk)
 AEGIS_LADDER, AEGIS_K = ((0.0, 1), (2500.0, 2), (4500.0, 3), (6500.0, 4)), 7500.0   # Antigravity's "Aegis Apex 4X" (comparison only)
 
 
@@ -158,6 +162,7 @@ def main(argv=None):
     start = pd.Timestamp((root / "start.txt").read_text().strip()).date() if (root / "start.txt").exists() else min(
         [pd.Timestamp(t["exit_ts"]).tz_convert(NY).date() for t in v + n], default=pd.Timestamp.now(tz=NY).date())
     res = replay(group_intraday(v) + night_rows(n), start)
+    res["funded"]["name"] = MAIN_NAME
     n915 = read_trades(root / NIGHT_0915 / "ledger.jsonl")
     res["aegis"] = dict(funded(group_intraday(v) + night_rows(n915), start, AEGIS_LADDER, AEGIS_K), overnight_exit="09:15 ET", overnight_trades=len(n915),
                         name="Aegis Apex 4X (Antigravity)", status="comparison only, not adopted",
