@@ -1,0 +1,286 @@
+{
+ "part_a": {
+  "k2": {
+   "static_4k": {
+    "all": 52.1,
+    "h1": 43.5,
+    "h2": 60.8,
+    "fail": 19.8,
+    "timeout": 28.2,
+    "median_days": 47.0
+   },
+   "eod_trailing_3k": {
+    "all": 58.8,
+    "h1": 56.5,
+    "h2": 61.1,
+    "fail": 30.8,
+    "timeout": 10.4
+   }
+  },
+  "k3": {
+   "static_4k": {
+    "all": 53.4,
+    "h1": 45.8,
+    "h2": 61.2,
+    "fail": 28.0,
+    "timeout": 18.6,
+    "median_days": 39.0
+   },
+   "eod_trailing_3k": {
+    "all": 53.6,
+    "h1": 48.5,
+    "h2": 58.8,
+    "fail": 38.9,
+    "timeout": 7.5
+   }
+  },
+  "k4": {
+   "static_4k": {
+    "all": 53.0,
+    "h1": 45.3,
+    "h2": 60.8,
+    "fail": 32.4,
+    "timeout": 14.6,
+    "median_days": 37.0
+   },
+   "eod_trailing_3k": {
+    "all": 48.4,
+    "h1": 40.7,
+    "h2": 56.2,
+    "fail": 44.6,
+    "timeout": 7.0
+   }
+  },
+  "k5": {
+   "static_4k": {
+    "all": 51.6,
+    "h1": 43.4,
+    "h2": 59.9,
+    "fail": 36.0,
+    "timeout": 12.4,
+    "median_days": 35.0
+   },
+   "eod_trailing_3k": {
+    "all": 45.7,
+    "h1": 37.0,
+    "h2": 54.6,
+    "fail": 48.4,
+    "timeout": 5.9
+   }
+  }
+ },
+ "part_b": {
+  "v5.3": {
+   "all": 53.4,
+   "h1": 45.8,
+   "h2": 61.2,
+   "fail": 28.0,
+   "timeout": 18.6,
+   "median_days": 39.0
+  },
+  "steps": [
+   {
+    "step": 1,
+    "tried": {
+     "MES_MOM_3c": {
+      "all": 53.3,
+      "h1": 45.8,
+      "h2": 60.9,
+      "fail": 28.2,
+      "timeout": 18.6,
+      "median_days": 38.0
+     },
+     "MNQ_BRK_E_2c": {
+      "all": 54.2,
+      "h1": 49.6,
+      "h2": 58.9,
+      "fail": 33.2,
+      "timeout": 12.6,
+      "median_days": 35.0
+     },
+     "MNQ_VOL_1c": {
+      "all": 47.5,
+      "h1": 43.4,
+      "h2": 51.6,
+      "fail": 47.5,
+      "timeout": 5.1,
+      "median_days": 26.0
+     },
+     "MNQ_E57_1c": {
+      "all": 52.8,
+      "h1": 45.6,
+      "h2": 60.1,
+      "fail": 28.7,
+      "timeout": 18.5,
+      "median_days": 37.0
+     },
+     "MNQ_HYB_C_1c": {
+      "all": 52.9,
+      "h1": 43.2,
+      "h2": 62.7,
+      "fail": 29.1,
+      "timeout": 18.0,
+      "median_days": 37.0
+     },
+     "AG_MORN30_1c": {
+      "all": 51.5,
+      "h1": 46.5,
+      "h2": 56.6,
+      "fail": 35.0,
+      "timeout": 13.5,
+      "median_days": 37.0
+     },
+     "AG_TRD30C_1c": {
+      "all": 51.5,
+      "h1": 46.5,
+      "h2": 56.6,
+      "fail": 35.0,
+      "timeout": 13.5,
+      "median_days": 37.0
+     },
+     "AG_TRD60C_1c": {
+      "all": 50.2,
+      "h1": 43.3,
+      "h2": 57.3,
+      "fail": 34.9,
+      "timeout": 14.9,
+      "median_days": 37.0
+     }
+    },
+    "best": "MNQ_BRK_E_2c",
+    "added": true
+   },
+   {
+    "step": 2,
+    "tried": {
+     "MES_MOM_3c": {
+      "all": 57.0,
+      "h1": 52.8,
+      "h2": 61.3,
+      "fail": 31.8,
+      "timeout": 11.2,
+      "median_days": 36.0
+     },
+     "MNQ_VOL_1c": {
+      "all": 48.0,
+      "h1": 43.0,
+      "h2": 53.1,
+      "fail": 47.0,
+      "timeout": 5.1,
+      "median_days": 26.0
+     },
+     "MNQ_E57_1c": {
+      "all": 54.6,
+      "h1": 48.8,
+      "h2": 60.5,
+      "fail": 33.3,
+      "timeout": 12.1,
+      "median_days": 35.0
+     },
+     "MNQ_HYB_C_1c": {
+      "all": 53.8,
+      "h1": 46.5,
+      "h2": 61.2,
+      "fail": 33.5,
+      "timeout": 12.7,
+      "median_days": 35.0
+     },
+     "AG_MORN30_1c": {
+      "all": 55.6,
+      "h1": 51.5,
+      "h2": 59.7,
+      "fail": 36.7,
+      "timeout": 7.8,
+      "median_days": 36.0
+     },
+     "AG_TRD30C_1c": {
+      "all": 55.6,
+      "h1": 51.5,
+      "h2": 59.7,
+      "fail": 36.7,
+      "timeout": 7.8,
+      "median_days": 36.0
+     },
+     "AG_TRD60C_1c": {
+      "all": 51.8,
+      "h1": 46.5,
+      "h2": 57.1,
+      "fail": 37.6,
+      "timeout": 10.6,
+      "median_days": 35.0
+     }
+    },
+    "best": "MES_MOM_3c",
+    "added": true
+   },
+   {
+    "step": 3,
+    "tried": {
+     "MNQ_VOL_1c": {
+      "all": 49.4,
+      "h1": 43.9,
+      "h2": 55.0,
+      "fail": 45.1,
+      "timeout": 5.4,
+      "median_days": 25.0
+     },
+     "MNQ_E57_1c": {
+      "all": 56.2,
+      "h1": 50.5,
+      "h2": 62.0,
+      "fail": 32.9,
+      "timeout": 11.0,
+      "median_days": 36.0
+     },
+     "MNQ_HYB_C_1c": {
+      "all": 56.3,
+      "h1": 48.8,
+      "h2": 63.9,
+      "fail": 31.8,
+      "timeout": 11.9,
+      "median_days": 36.0
+     },
+     "AG_MORN30_1c": {
+      "all": 55.6,
+      "h1": 51.4,
+      "h2": 59.8,
+      "fail": 36.0,
+      "timeout": 8.5,
+      "median_days": 36.0
+     },
+     "AG_TRD30C_1c": {
+      "all": 55.6,
+      "h1": 51.4,
+      "h2": 59.8,
+      "fail": 36.0,
+      "timeout": 8.5,
+      "median_days": 36.0
+     },
+     "AG_TRD60C_1c": {
+      "all": 52.6,
+      "h1": 46.9,
+      "h2": 58.4,
+      "fail": 37.0,
+      "timeout": 10.4,
+      "median_days": 35.0
+     }
+    },
+    "best": "AG_MORN30_1c",
+    "added": false
+   }
+  ],
+  "final_sleeves_added": [
+   "MNQ_BRK_E_2c",
+   "MES_MOM_3c"
+  ],
+  "final": {
+   "all": 57.0,
+   "h1": 52.8,
+   "h2": 61.3,
+   "fail": 31.8,
+   "timeout": 11.2,
+   "median_days": 36.0
+  },
+  "confirmed": false
+ }
+}

@@ -58,3 +58,51 @@ def test_aegis_ladder_and_cushion():
     main = acct.funded(days(60, 400.0, risk=100.0), pd.Timestamp("2026-01-05").date())
     assert [s["stage"] for s in main["stage_changes"]][:3] == ["2x", "3x", "4x"] and main["keep"] == 8500.0   # Fortress 4X main rule
     assert main["balance"] >= 8500.0 and all(250.0 <= p["amount"] <= 1500.0 for p in main["payouts"])
+
+
+def test_combined_rule_steps():
+    r = acct.combined_rule
+    assert [r(0, 0, 4000), r(-600, 10, 4000), r(-1200, 10, 4000)] == [3, 2, 1]               # defensive ladder
+    assert [r(100, 61, 4000), r(3500, 61, 4000), r(-600, 61, 4000), r(100, 59, 4000)] == [5, 3, 2, 3]   # endgame only late, short, above -$500
+
+
+def test_combined_defensive_slows_the_fail():
+    rows = days(6, -300.0, risk=100.0)                                       # -$300 per micro every day
+    k3 = acct.evaluation(rows, pd.Timestamp("2026-01-05").date(), acct.k3_rule)
+    cb = acct.evaluation(rows, pd.Timestamp("2026-01-05").date(), acct.combined_rule)
+    assert k3["status"] == "failed" and k3["on"] == "2026-01-07"              # -900 x 3
+    assert cb["status"] == "failed" and cb["on"] == "2026-01-08"              # -900, -600 (2x), -300 (1x), -300 (1x)
+
+
+def test_combined_endgame_size_now():
+    rows = days(50, 10.0, risk=100.0)                                         # +$30 a day at 3x: far short of $4,000 by day 60
+    e = acct.evaluation(rows, pd.Timestamp("2026-01-05").date(), acct.combined_rule, today=pd.Timestamp("2026-03-10").date())
+    assert e["status"] == "open" and e["size_now"] == "5x"
+
+
+def test_route_book_one_position():
+    a = dict(day("2026-01-05", 100.0), prio=0, dec=pd.Timestamp("2026-01-05 09:45", tz=NY))        # 10:00-12:00
+    b = dict(day("2026-01-05", 100.0, hh=11), prio=10, dec=pd.Timestamp("2026-01-05 10:45", tz=NY))  # decided inside a -> skipped
+    c = dict(day("2026-01-05", 100.0, hh=12), prio=11, dec=pd.Timestamp("2026-01-05 12:00", tz=NY))  # a has exited -> kept
+    n = day("2026-01-05", 50.0, night=True, hh=1)
+    kept = acct.route_book([b, c, a, n])
+    assert [r["tin"].hour for r in kept] == [10, 12, 1]
+
+
+def test_rolling_starts():
+    rows = days(30, 100.0, risk=100.0)
+    r = acct.rolling(rows, pd.Timestamp("2026-01-05").date(), acct.k3_rule, today=pd.Timestamp("2026-02-13").date())
+    assert r["starts"] == 30 and r["passed"] + r["failed"] + r["expired"] + r["open"] == 30 and r["passed"] >= 1
+
+
+def test_chameleon_and_sprint():
+    assert acct.CHAMELEON_CROWN_K == 8400.0
+    assert acct.CHAMELEON_CROWN_GATE == 8500.0
+    assert acct.CHAMELEON_FORTIFIED_K == 8500.0
+    assert acct.CHAMELEON_FORTIFIED_GATE == 8550.0
+    # Test sprint mode takes $500 at $6,000
+    rows = days(30, 300.0, risk=100.0)
+    f = acct.funded(rows, pd.Timestamp("2026-01-05").date(), acct.CHAMELEON_CROWN_LADDER, acct.CHAMELEON_CROWN_K, sprint=True)
+    assert f["payouts_count"] >= 1
+    assert f["payouts"][0]["amount"] == 500.0
+    assert f["floor"] == 0.0

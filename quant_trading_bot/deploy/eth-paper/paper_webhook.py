@@ -661,14 +661,33 @@ def account_block(path=None):
         f, e = a['funded'], a['evaluation']
         def tone(v):
             return 'pos' if v > 0 else 'neg' if v < 0 else 'flat'
+        def roll(x):
+            r = x.get('rolling')
+            if not r: return ''
+            return (f'<dt>Rolling starts</dt><dd><small>{r["starts"]} started (one per weekday): {r["passed"]} passed, {r["failed"]} failed, '
+                    f'{r["expired"]} expired, {r["open"]} still open</small></dd>')
         st = {'open': 'in progress', 'passed': 'PASSED', 'failed': 'FAILED', 'expired': 'expired (90 days)'}.get(e['status'], e['status'])
         ewarn = '<div class="warn">Evaluation failed in simulation</div>' if e['status'] == 'failed' else ''
         need = max(0.0, e['target'] - e['balance'])
-        ecard = (f'<section class="card"><h2>Evaluation - $50K Static Combine (payout book at 3x)</h2>'
+        ecard = (f'<section class="card"><h2>Evaluation - $50K Static Combine ({e.get("name", "payout book at 3x")})</h2>'
                  f'<div class="big {tone(e["balance"])}">{_money(e["balance"])}</div>'
                  f'<div class="sub">{st}{" on " + e["on"] if e.get("on") else ""} &middot; target {_money(e["target"], False)} &middot; {e["days_left"]} days left (expires {e["expires"]})</div>'
                  f'<dl><dt>Still needed</dt><dd>{_money(need, False)}</dd><dt>Best day</dt><dd>{_money(e["best_day"])} <small>(55% rule raises the target above $4,000 if one day is too big)</small></dd>'
-                 f'<dt>Rules</dt><dd><small>3x the book, max $900 risk per trade, $700 daily stop, floor -$2,000</small></dd></dl>{ewarn}</section>')
+                 f'<dt>Rules</dt><dd><small>3x the book, max $900 risk per trade, $700 daily stop, floor -$2,000</small></dd>{roll(e)}</dl>{ewarn}</section>')
+        c = a.get('evaluation_combined')
+        ccard = ''
+        if c:
+            cst = {'open': 'in progress', 'passed': 'PASSED', 'failed': 'FAILED', 'expired': 'expired (90 days)'}.get(c['status'], c['status'])
+            cwarn = '<div class="warn">Evaluation failed in simulation</div>' if c['status'] == 'failed' else ''
+            ccard = (f'<section class="card" style="border-color:#1f4a6b"><h2>Evaluation challenger - {c.get("name", "combined rule")}</h2>'
+                     f'<div class="big {tone(c["balance"])}">{_money(c["balance"])}</div>'
+                     f'<div class="sub">{cst}{" on " + c["on"] if c.get("on") else ""} &middot; target {_money(c["target"], False)} &middot; {c["days_left"]} days left'
+                     f'{" &middot; size now " + c["size_now"] if c.get("size_now") else ""}</div>'
+                     f'<dl><dt>Still needed</dt><dd>{_money(max(0.0, c["target"] - c["balance"]), False)}</dd>'
+                     f'<dt>Rules</dt><dd><small>{c.get("rule", "")}</small></dd>'
+                     f'<dt>Codex sleeves</dt><dd><small>{c.get("extra_trades", 0)} paper trades, {c.get("extra_taken", 0)} taken after routing, '
+                     f'{_money(c.get("extra_net_per_micro", 0.0))} per micro</small></dd>{roll(c)}</dl>'
+                     f'<div class="note" style="margin-top:8px">{c.get("caution", "")}</div>{cwarn}</section>')
         pays = ''.join(f'<li>{p["date"]} <b class="pos">{_money(p["amount"])}</b></li>' for p in reversed(f['payouts'][-5:]))
         days = ''.join(f'<li>{d["date"]} <b class="{tone(d["pnl"])}">{_money(d["pnl"])}</b> &middot; balance {_money(d["balance"])} <small>{d.get("size", "")}</small></li>'
                        for d in reversed(f['days'][-5:]))
@@ -697,10 +716,10 @@ def account_block(path=None):
                        f'<b class="{tone(x["net_1x"])}">{_money(x["net_1x"])}</b></li>' for x in a.get('strategies', []))
         scard = (f'<section class="card"><h2>Strategies in this account ({a.get("book", "D+ v5.2 payout build + overnight leg")})</h2>'
                  f'<ul class="trades">{rows or "<li><small>strategy list not available yet</small></li>"}</ul>'
-                 f'<div class="sub" style="margin-top:8px">paper trades at 1 micro each since {a["paper_start"]}; the cards above size them up (3x evaluation, 2x funded from $4k)</div></section>')
+                 f'<div class="sub" style="margin-top:8px">paper trades at 1 micro each since {a["paper_start"]}; the cards above size them up. The two Codex sleeves count only in the evaluation challenger.</div></section>')
         return (f'<h1 style="margin-top:22px">Topstep account - paper replay</h1>'
                 f'<div class="muted">{a.get("book", "v5.2 payout build + overnight leg")} ledgers replayed through the Static Daily Payouts+ rules &middot; paper start {a["paper_start"]} '
-                f'&middot; updated {a["updated"][:16].replace("T", " ")}Z &middot; simulated, nothing routed</div><div class="grid">{ecard}{fcard}{acard}{scard}</div>')
+                f'&middot; updated {a["updated"][:16].replace("T", " ")}Z &middot; simulated, nothing routed</div><div class="grid">{ecard}{ccard}{fcard}{acard}{scard}</div>')
     except Exception:  # noqa: BLE001
         return ''
 

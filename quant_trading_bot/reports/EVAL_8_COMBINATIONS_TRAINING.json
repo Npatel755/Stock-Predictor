@@ -1,0 +1,55 @@
+{
+ "base v5.3 k3": {
+  "all": 53.4,
+  "h1": 45.8,
+  "h2": 61.2,
+  "fail": 28.0,
+  "timeout": 18.6,
+  "median_days": 39.0
+ },
+ "DEF": {
+  "all": 55.2,
+  "h1": 45.6,
+  "h2": 65.1,
+  "fail": 16.8,
+  "timeout": 27.9,
+  "median_days": 41.0,
+  "robust": false
+ },
+ "DEF + ENDGAME": {
+  "all": 56.2,
+  "h1": 47.6,
+  "h2": 65.0,
+  "fail": 17.1,
+  "timeout": 26.7,
+  "median_days": 41.0,
+  "robust": true
+ },
+ "SLEEVES": {
+  "all": 56.9,
+  "h1": 52.8,
+  "h2": 61.0,
+  "fail": 32.0,
+  "timeout": 11.2,
+  "median_days": 36.0,
+  "robust": false
+ },
+ "SLEEVES + DEF": {
+  "all": 58.4,
+  "h1": 52.4,
+  "h2": 64.6,
+  "fail": 20.6,
+  "timeout": 21.0,
+  "median_days": 38.0,
+  "robust": true
+ },
+ "SLEEVES + DEF + ENDGAME": {
+  "all": 60.0,
+  "h1": 54.5,
+  "h2": 65.6,
+  "fail": 20.9,
+  "timeout": 19.1,
+  "median_days": 39.0,
+  "robust": true
+ }
+}

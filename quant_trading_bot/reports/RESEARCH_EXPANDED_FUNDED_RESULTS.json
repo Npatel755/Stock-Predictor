@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Base v5.3",
+    "pure": {
+      "usd": 35617.0,
+      "h1": 25572.0,
+      "h2": 46412.0,
+      "y1_usd": 9756.0,
+      "y1_pays": 8.48,
+      "p1_days": 257.0,
+      "s3_cons": 0.05,
+      "s4_cons": 0.094,
+      "s0_closed": 0.0
+    },
+    "sprint": {
+      "usd": 35512.0,
+      "y1_usd": 9739.0,
+      "y1_pays": 8.88,
+      "p1_days": 221.0,
+      "s3_cons": 0.05,
+      "s4_cons": 0.094,
+      "s0_closed": 0.0
+    },
+    "milestone": {
+      "usd": 35336.0,
+      "y1_usd": 9696.0,
+      "y1_pays": 9.22,
+      "p1_days": 216.0,
+      "s3_cons": 0.065,
+      "s4_cons": 0.094,
+      "s0_closed": 0.0
+    }
+  },
+  {
+    "name": "Expanded (v5.3 + BRK_E + MES_MOM)",
+    "pure": {
+      "usd": 41407.0,
+      "h1": 31179.0,
+      "h2": 52398.0,
+      "y1_usd": 11554.0,
+      "y1_pays": 10.14,
+      "p1_days": 245.0,
+      "s3_cons": 0.108,
+      "s4_cons": 0.173,
+      "s0_closed": 0.0
+    },
+    "sprint": {
+      "usd": 41091.0,
+      "y1_usd": 11480.0,
+      "y1_pays": 10.5,
+      "p1_days": 215.0,
+      "s3_cons": 0.115,
+      "s4_cons": 0.173,
+      "s0_closed": 0.0
+    },
+    "milestone": {
+      "usd": 41078.0,
+      "y1_usd": 11448.0,
+      "y1_pays": 10.8,
+      "p1_days": 193.0,
+      "s3_cons": 0.115,
+      "s4_cons": 0.173,
+      "s0_closed": 0.0
+    }
+  }
+]

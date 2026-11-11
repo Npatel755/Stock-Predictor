@@ -315,3 +315,11 @@
   prohibited (incl. MNQ/NQ, even briefly); same markets across accounts allowed; "account stacking" = repeatedly trading aggressively, hitting
   the MLL and switching accounts; $50K Daily Payouts+ purchases capped at 5 per trader TOTAL (do not refresh after failures).
   So parallel attempts buy speed (pass within one window) at the cost of the lifetime allowance; per purchase, single attempts are more efficient.
+
+## 2026-11-10 (Claude) eval_7 / eval_8: product, sleeve pool and combinations (training only)
+- eval_7 A: EOD-trailing $3,000 Daily Payouts+ Combine at k2 passes 58.8% (2010-16 56.5%, 2017-23 61.1%) vs Static $4k k3 53.4% (45.8 / 61.2);
+  the gain is all in 2010-16; its funded side is riskier (trailing floor). eval_7 B: greedy add MNQ_BRK_E_2c + MES_MOM_3c: 57.0% (52.8 / 61.3),
+  2017-23 not improved -> not confirmed. MNQ_VOL_1c is ~zero edge (PF 1.01, 4,964 trades) and hurts.
+- Pattern: endgame, extra sleeves and the $3k EOD product help calm 2010-16 only; the defensive ladder helps volatile 2017-23 only.
+- eval_8 (POST HOC, chosen after seeing both halves): extra sleeves + defensive (k3; k2 <= -$500; k1 <= -$1,000) + endgame (day >= 60 and
+  > $1,000 short -> k5): 60.0% pass (54.5% / 65.6%), fail 20.9%, timeout 19.1%; vs v5.3 k3 53.4%. No clean holdout left: forward paper decides.
