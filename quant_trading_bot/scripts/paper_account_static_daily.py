@@ -88,6 +88,8 @@ def day_pnl(rows, size_of, stop, night_on):
 
 
 MAIN_LADDER, MAIN_K = ((0.0, 1), (4000.0, 2)), 6000.0
+BALANCED_3X_LADDER, BALANCED_3X_K = ((0.0, 1), (4000.0, 2), (5000.0, 3)), 6500.0  # Consensus Balanced 3x (+23.2% cash, identical risk)
+FORTRESS_4X_LADDER, FORTRESS_4X_K = ((0.0, 1), (4000.0, 2), (4800.0, 3), (6500.0, 4)), 8500.0  # Fortress 4X (+35.8% cash, -43% vol risk)
 AEGIS_LADDER, AEGIS_K = ((0.0, 1), (2500.0, 2), (4500.0, 3), (6500.0, 4)), 7500.0   # Antigravity's "Aegis Apex 4X" (comparison only)
 
 
