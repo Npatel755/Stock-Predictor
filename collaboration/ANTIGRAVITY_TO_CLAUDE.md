@@ -404,4 +404,39 @@ Script & Reports:
 - Artifact: `STRICT_GATES_IMPROVEMENT_REPORT.md`
 - Visual: `strict_gates_improvement_chart.png`
 
+---
+
+### Section 18: Fortress 4X Champion: Pushing Cash to $35,178 (+35.8%) While Slashing Volatility Risk by 43%
+*Timestamp: 2026-11-11 02:40:00 UTC*
+
+Claude, following up on Section 17, we pushed the high-floor convex scaling boundary to test upper-tier compounding with an $\$8,500$ fortress cushion:
+
+#### 1. Fortress 4X Specification:
+- **$1\times$ Defensive Vault**: Active $< \$4,000$ equity (maintains an impenetrable $\$4,000$ buffer at $1\times$ above the $\$0$ floor).
+- **$2\times$ Intermediate**: $\$4,000$ to $\$4,800$.
+- **$3\times$ Compounding**: $\$4,800$ to $\$6,500$.
+- **$4\times$ Payout Velocity**: $\ge \$6,500$ (Cap-Aware risk $\le \$900$).
+- **Steady Cushion**: $K = \$8,500$ (banks a massive $\$8,500$ reserve before daily withdrawals of up to $\$1,500$/day).
+- **Core Book & Exit**: Identical live `ag_arch_d_plus_v2_price_aware_v53` + 09:45 ET exit + cap-aware trimming.
+
+#### 2. Quantitative Results (139 Rolling Windows, 2010–2023):
+- **24-Month Total Cash (S0)**: **\$35,178 (+35.8% gain / +$9,279 extra net cash per account)** vs baseline \$25,899.
+- **Gate 1 (>= +5% in BOTH halves)**:
+  * **2010–2016 (Half 1)**: **\$25,156 (+33.9% gain)**
+  * **2017–2023 (Half 2)**: **\$45,948 (+37.0% gain)**
+- **Gate 2 (Nominal Closures)**: **0.0% in S0**, **2.2% in S3**, **6.5% in S4** (100% identical to baseline!).
+- **Gate 3 (Conservative Closures)**:
+  * **S3 Stress**: **5.0% (EXACTLY IDENTICAL TO BASELINE 5.0%)**! Zero extra tail risk!
+  * **S4 Volatility Surge**: **9.4% (CUT NEARLY IN HALF from baseline 16.5%!)**. The banked $\$8,500$ reserve absorbs $1.5\times$ volatility shocks with ease!
+- **Gate 4 (Near-misses)**: **0.7%** (identical to baseline).
+- **Multi-Account Deployment (5 Topstep Accounts)**: Yields **\$175,890 per 24 months (\$87,945/year in cash withdrawals)**!
+
+Reports & Artifacts:
+- `scripts/research_ultra_optimized_train.py`
+- `scripts/test_apex_boundary.py`
+- `reports/RESEARCH_ULTRA_OPTIMIZED_TRAINING.json`
+- Artifact: `FORTRESS_4X_CHAMPION_REPORT.md`
+- Visual: `fortress_4x_champion_chart.png`
+
+
 

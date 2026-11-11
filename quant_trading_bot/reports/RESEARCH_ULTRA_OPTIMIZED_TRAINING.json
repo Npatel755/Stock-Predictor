@@ -1,0 +1,2792 @@
+[
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$4.8k, 3x >=$4.8k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        4800,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": false,
+    "s0_usd": 32205.0,
+    "s0_gain_pct": 24.3,
+    "h1_usd": 23575.0,
+    "h1_gain_pct": 25.5,
+    "h2_usd": 41480.0,
+    "h2_gain_pct": 23.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 67.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$4.8k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        4800,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": true,
+    "s0_usd": 30972.0,
+    "s0_gain_pct": 19.6,
+    "h1_usd": 22370.0,
+    "h1_gain_pct": 19.1,
+    "h2_usd": 40216.0,
+    "h2_gain_pct": 19.9,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$4.8k, 3x >=$4.8k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        4800,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": false,
+    "s0_usd": 32781.0,
+    "s0_gain_pct": 26.6,
+    "h1_usd": 23929.0,
+    "h1_gain_pct": 27.4,
+    "h2_usd": 42294.0,
+    "h2_gain_pct": 26.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 70.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$4.8k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        4800,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": true,
+    "s0_usd": 31423.0,
+    "s0_gain_pct": 21.3,
+    "h1_usd": 22619.0,
+    "h1_gain_pct": 20.4,
+    "h2_usd": 40883.0,
+    "h2_gain_pct": 21.9,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$4.8k, 3x >=$4.8k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        4800,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32605.0,
+    "s0_gain_pct": 25.9,
+    "h1_usd": 23801.0,
+    "h1_gain_pct": 26.7,
+    "h2_usd": 42066.0,
+    "h2_gain_pct": 25.4,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$4.8k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        4800,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31234.0,
+    "s0_gain_pct": 20.6,
+    "h1_usd": 22444.0,
+    "h1_gain_pct": 19.5,
+    "h2_usd": 40679.0,
+    "h2_gain_pct": 21.3,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.0k, 3x >=$5.0k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": false,
+    "s0_usd": 31897.0,
+    "s0_gain_pct": 23.2,
+    "h1_usd": 23310.0,
+    "h1_gain_pct": 24.1,
+    "h2_usd": 41125.0,
+    "h2_gain_pct": 22.6,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 67.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.0k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": true,
+    "s0_usd": 30810.0,
+    "s0_gain_pct": 19.0,
+    "h1_usd": 22193.0,
+    "h1_gain_pct": 18.1,
+    "h2_usd": 40069.0,
+    "h2_gain_pct": 19.5,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.0k, 3x >=$5.0k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": false,
+    "s0_usd": 32076.0,
+    "s0_gain_pct": 23.9,
+    "h1_usd": 23435.0,
+    "h1_gain_pct": 24.7,
+    "h2_usd": 41362.0,
+    "h2_gain_pct": 23.3,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 70.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.0k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": true,
+    "s0_usd": 30882.0,
+    "s0_gain_pct": 19.2,
+    "h1_usd": 22211.0,
+    "h1_gain_pct": 18.2,
+    "h2_usd": 40201.0,
+    "h2_gain_pct": 19.9,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.0k, 3x >=$5.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32563.0,
+    "s0_gain_pct": 25.7,
+    "h1_usd": 23507.0,
+    "h1_gain_pct": 25.1,
+    "h2_usd": 42295.0,
+    "h2_gain_pct": 26.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31320.0,
+    "s0_gain_pct": 20.9,
+    "h1_usd": 22192.0,
+    "h1_gain_pct": 18.1,
+    "h2_usd": 41130.0,
+    "h2_gain_pct": 22.6,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.2k, 3x >=$5.2k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5200,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": false,
+    "s0_usd": 30897.0,
+    "s0_gain_pct": 19.3,
+    "h1_usd": 22155.0,
+    "h1_gain_pct": 17.9,
+    "h2_usd": 40292.0,
+    "h2_gain_pct": 20.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 69.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.2k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5200,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": true,
+    "s0_usd": 29944.0,
+    "s0_gain_pct": 15.6,
+    "h1_usd": 21265.0,
+    "h1_gain_pct": 13.2,
+    "h2_usd": 39271.0,
+    "h2_gain_pct": 17.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.2k, 3x >=$5.2k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5200,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": false,
+    "s0_usd": 31776.0,
+    "s0_gain_pct": 22.7,
+    "h1_usd": 23577.0,
+    "h1_gain_pct": 25.5,
+    "h2_usd": 40586.0,
+    "h2_gain_pct": 21.0,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 71.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.2k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5200,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": true,
+    "s0_usd": 30639.0,
+    "s0_gain_pct": 18.3,
+    "h1_usd": 22453.0,
+    "h1_gain_pct": 19.5,
+    "h2_usd": 39436.0,
+    "h2_gain_pct": 17.6,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.2k, 3x >=$5.2k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5200,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32674.0,
+    "s0_gain_pct": 26.2,
+    "h1_usd": 23532.0,
+    "h1_gain_pct": 25.3,
+    "h2_usd": 42498.0,
+    "h2_gain_pct": 26.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.101,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.2k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5200,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31438.0,
+    "s0_gain_pct": 21.4,
+    "h1_usd": 22438.0,
+    "h1_gain_pct": 19.4,
+    "h2_usd": 41110.0,
+    "h2_gain_pct": 22.6,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.108,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.5k, 3x >=$5.5k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": false,
+    "s0_usd": 30524.0,
+    "s0_gain_pct": 17.9,
+    "h1_usd": 22178.0,
+    "h1_gain_pct": 18.0,
+    "h2_usd": 39492.0,
+    "h2_gain_pct": 17.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.165,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 69.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.5k | K=$6.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ]
+    ],
+    "cushion": 6500.0,
+    "two_stage": true,
+    "s0_usd": 29618.0,
+    "s0_gain_pct": 14.4,
+    "h1_usd": 21251.0,
+    "h1_gain_pct": 13.1,
+    "h2_usd": 38611.0,
+    "h2_gain_pct": 15.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.201,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.5k, 3x >=$5.5k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": false,
+    "s0_usd": 31993.0,
+    "s0_gain_pct": 23.5,
+    "h1_usd": 23005.0,
+    "h1_gain_pct": 22.5,
+    "h2_usd": 41652.0,
+    "h2_gain_pct": 24.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.5k | K=$7.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ]
+    ],
+    "cushion": 7000.0,
+    "two_stage": true,
+    "s0_usd": 30890.0,
+    "s0_gain_pct": 19.3,
+    "h1_usd": 21846.0,
+    "h1_gain_pct": 16.3,
+    "h2_usd": 40610.0,
+    "h2_gain_pct": 21.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "3-tier (1x <$4k, 2x $4k-$5.5k, 3x >=$5.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32210.0,
+    "s0_gain_pct": 24.4,
+    "h1_usd": 23125.0,
+    "h1_gain_pct": 23.1,
+    "h2_usd": 41974.0,
+    "h2_gain_pct": 25.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.101,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "Two-Stage 3-tier (P1 @ $4k | 3x >=$5.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31029.0,
+    "s0_gain_pct": 19.8,
+    "h1_usd": 22002.0,
+    "h1_gain_pct": 17.1,
+    "h2_usd": 40730.0,
+    "h2_gain_pct": 21.4,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.108,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$7.0k, 4x >=$7.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 33883.0,
+    "s0_gain_pct": 30.8,
+    "h1_usd": 24151.0,
+    "h1_gain_pct": 28.6,
+    "h2_usd": 44341.0,
+    "h2_gain_pct": 32.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$7.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 32514.0,
+    "s0_gain_pct": 25.5,
+    "h1_usd": 22676.0,
+    "h1_gain_pct": 20.7,
+    "h2_usd": 43087.0,
+    "h2_gain_pct": 28.5,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$7.0k, 4x >=$7.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 34480.0,
+    "s0_gain_pct": 33.1,
+    "h1_usd": 24784.0,
+    "h1_gain_pct": 31.9,
+    "h2_usd": 44900.0,
+    "h2_gain_pct": 33.9,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 73.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$7.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 32956.0,
+    "s0_gain_pct": 27.2,
+    "h1_usd": 23176.0,
+    "h1_gain_pct": 23.4,
+    "h2_usd": 43465.0,
+    "h2_gain_pct": 29.6,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$7.0k, 4x >=$7.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 34621.0,
+    "s0_gain_pct": 33.7,
+    "h1_usd": 24654.0,
+    "h1_gain_pct": 31.2,
+    "h2_usd": 45332.0,
+    "h2_gain_pct": 35.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 74.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$7.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 33028.0,
+    "s0_gain_pct": 27.5,
+    "h1_usd": 23019.0,
+    "h1_gain_pct": 22.5,
+    "h2_usd": 43784.0,
+    "h2_gain_pct": 30.5,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$7.5k, 4x >=$7.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 33999.0,
+    "s0_gain_pct": 31.3,
+    "h1_usd": 24404.0,
+    "h1_gain_pct": 29.9,
+    "h2_usd": 44310.0,
+    "h2_gain_pct": 32.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$7.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 32599.0,
+    "s0_gain_pct": 25.9,
+    "h1_usd": 22912.0,
+    "h1_gain_pct": 22.0,
+    "h2_usd": 43009.0,
+    "h2_gain_pct": 28.2,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$7.5k, 4x >=$7.5k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 33859.0,
+    "s0_gain_pct": 30.7,
+    "h1_usd": 24570.0,
+    "h1_gain_pct": 30.8,
+    "h2_usd": 43840.0,
+    "h2_gain_pct": 30.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 73.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$7.5k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 32351.0,
+    "s0_gain_pct": 24.9,
+    "h1_usd": 23039.0,
+    "h1_gain_pct": 22.6,
+    "h2_usd": 42358.0,
+    "h2_gain_pct": 26.3,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$7.5k, 4x >=$7.5k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 34301.0,
+    "s0_gain_pct": 32.4,
+    "h1_usd": 24325.0,
+    "h1_gain_pct": 29.5,
+    "h2_usd": 45021.0,
+    "h2_gain_pct": 34.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 73.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$7.5k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 32707.0,
+    "s0_gain_pct": 26.3,
+    "h1_usd": 22745.0,
+    "h1_gain_pct": 21.1,
+    "h2_usd": 43414.0,
+    "h2_gain_pct": 29.4,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$8.0k, 4x >=$8.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 33062.0,
+    "s0_gain_pct": 27.7,
+    "h1_usd": 23332.0,
+    "h1_gain_pct": 24.2,
+    "h2_usd": 43518.0,
+    "h2_gain_pct": 29.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$8.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31808.0,
+    "s0_gain_pct": 22.8,
+    "h1_usd": 22010.0,
+    "h1_gain_pct": 17.2,
+    "h2_usd": 42337.0,
+    "h2_gain_pct": 26.2,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$8.0k, 4x >=$8.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 33698.0,
+    "s0_gain_pct": 30.1,
+    "h1_usd": 24335.0,
+    "h1_gain_pct": 29.5,
+    "h2_usd": 43759.0,
+    "h2_gain_pct": 30.5,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 73.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$8.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 32248.0,
+    "s0_gain_pct": 24.5,
+    "h1_usd": 22892.0,
+    "h1_gain_pct": 21.9,
+    "h2_usd": 42302.0,
+    "h2_gain_pct": 26.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.0k, 3x $5.0k-$8.0k, 4x >=$8.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 33443.0,
+    "s0_gain_pct": 29.1,
+    "h1_usd": 24072.0,
+    "h1_gain_pct": 28.1,
+    "h2_usd": 43513.0,
+    "h2_gain_pct": 29.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 73.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.0k, 4x >=$8.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 31955.0,
+    "s0_gain_pct": 23.4,
+    "h1_usd": 22555.0,
+    "h1_gain_pct": 20.1,
+    "h2_usd": 42056.0,
+    "h2_gain_pct": 25.4,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$7.0k, 4x >=$7.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 33495.0,
+    "s0_gain_pct": 29.3,
+    "h1_usd": 24021.0,
+    "h1_gain_pct": 27.9,
+    "h2_usd": 43677.0,
+    "h2_gain_pct": 30.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$7.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 32247.0,
+    "s0_gain_pct": 24.5,
+    "h1_usd": 22739.0,
+    "h1_gain_pct": 21.0,
+    "h2_usd": 42465.0,
+    "h2_gain_pct": 26.6,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$7.0k, 4x >=$7.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 34247.0,
+    "s0_gain_pct": 32.2,
+    "h1_usd": 24391.0,
+    "h1_gain_pct": 29.8,
+    "h2_usd": 44838.0,
+    "h2_gain_pct": 33.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 74.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$7.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 32843.0,
+    "s0_gain_pct": 26.8,
+    "h1_usd": 22987.0,
+    "h1_gain_pct": 22.4,
+    "h2_usd": 43434.0,
+    "h2_gain_pct": 29.5,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$7.0k, 4x >=$7.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 34139.0,
+    "s0_gain_pct": 31.8,
+    "h1_usd": 24350.0,
+    "h1_gain_pct": 29.6,
+    "h2_usd": 44659.0,
+    "h2_gain_pct": 33.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 76.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$7.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 32711.0,
+    "s0_gain_pct": 26.3,
+    "h1_usd": 22924.0,
+    "h1_gain_pct": 22.0,
+    "h2_usd": 43229.0,
+    "h2_gain_pct": 28.9,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$7.5k, 4x >=$7.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 33418.0,
+    "s0_gain_pct": 29.0,
+    "h1_usd": 23865.0,
+    "h1_gain_pct": 27.0,
+    "h2_usd": 43684.0,
+    "h2_gain_pct": 30.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$7.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 32219.0,
+    "s0_gain_pct": 24.4,
+    "h1_usd": 22641.0,
+    "h1_gain_pct": 20.5,
+    "h2_usd": 42512.0,
+    "h2_gain_pct": 26.7,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$7.5k, 4x >=$7.5k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 33480.0,
+    "s0_gain_pct": 29.3,
+    "h1_usd": 23875.0,
+    "h1_gain_pct": 27.1,
+    "h2_usd": 43801.0,
+    "h2_gain_pct": 30.6,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 74.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$7.5k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 32138.0,
+    "s0_gain_pct": 24.1,
+    "h1_usd": 22618.0,
+    "h1_gain_pct": 20.4,
+    "h2_usd": 42368.0,
+    "h2_gain_pct": 26.3,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$7.5k, 4x >=$7.5k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 33816.0,
+    "s0_gain_pct": 30.6,
+    "h1_usd": 24013.0,
+    "h1_gain_pct": 27.8,
+    "h2_usd": 44351.0,
+    "h2_gain_pct": 32.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 74.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$7.5k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 32426.0,
+    "s0_gain_pct": 25.2,
+    "h1_usd": 22665.0,
+    "h1_gain_pct": 20.6,
+    "h2_usd": 42916.0,
+    "h2_gain_pct": 27.9,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$8.0k, 4x >=$8.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32785.0,
+    "s0_gain_pct": 26.6,
+    "h1_usd": 23153.0,
+    "h1_gain_pct": 23.2,
+    "h2_usd": 43135.0,
+    "h2_gain_pct": 28.6,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.101,
+    "s0_near": 0.007,
+    "med_d1": 72.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$8.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31578.0,
+    "s0_gain_pct": 21.9,
+    "h1_usd": 22021.0,
+    "h1_gain_pct": 17.2,
+    "h2_usd": 41848.0,
+    "h2_gain_pct": 24.8,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.108,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$8.0k, 4x >=$8.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 33267.0,
+    "s0_gain_pct": 28.4,
+    "h1_usd": 23726.0,
+    "h1_gain_pct": 26.3,
+    "h2_usd": 43519.0,
+    "h2_gain_pct": 29.7,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 74.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$8.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 31967.0,
+    "s0_gain_pct": 23.4,
+    "h1_usd": 22513.0,
+    "h1_gain_pct": 19.8,
+    "h2_usd": 42126.0,
+    "h2_gain_pct": 25.6,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$5.5k, 3x $5.5k-$8.0k, 4x >=$8.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 33080.0,
+    "s0_gain_pct": 27.7,
+    "h1_usd": 23825.0,
+    "h1_gain_pct": 26.8,
+    "h2_usd": 43025.0,
+    "h2_gain_pct": 28.3,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 75.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$5.5k, 4x >=$8.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        5500,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 31750.0,
+    "s0_gain_pct": 22.6,
+    "h1_usd": 22499.0,
+    "h1_gain_pct": 19.8,
+    "h2_usd": 41691.0,
+    "h2_gain_pct": 24.3,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$7.0k, 4x >=$7.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 33230.0,
+    "s0_gain_pct": 28.3,
+    "h1_usd": 23409.0,
+    "h1_gain_pct": 24.6,
+    "h2_usd": 43784.0,
+    "h2_gain_pct": 30.5,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 73.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$7.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31949.0,
+    "s0_gain_pct": 23.4,
+    "h1_usd": 22307.0,
+    "h1_gain_pct": 18.7,
+    "h2_usd": 42312.0,
+    "h2_gain_pct": 26.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$7.0k, 4x >=$7.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 33632.0,
+    "s0_gain_pct": 29.9,
+    "h1_usd": 23426.0,
+    "h1_gain_pct": 24.7,
+    "h2_usd": 44599.0,
+    "h2_gain_pct": 33.0,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 75.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$7.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 32362.0,
+    "s0_gain_pct": 25.0,
+    "h1_usd": 22306.0,
+    "h1_gain_pct": 18.7,
+    "h2_usd": 43170.0,
+    "h2_gain_pct": 28.7,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$7.0k, 4x >=$7.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 33524.0,
+    "s0_gain_pct": 29.4,
+    "h1_usd": 23536.0,
+    "h1_gain_pct": 25.3,
+    "h2_usd": 44257.0,
+    "h2_gain_pct": 31.9,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 76.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$7.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 32213.0,
+    "s0_gain_pct": 24.4,
+    "h1_usd": 22305.0,
+    "h1_gain_pct": 18.7,
+    "h2_usd": 42859.0,
+    "h2_gain_pct": 27.8,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$7.5k, 4x >=$7.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32749.0,
+    "s0_gain_pct": 26.4,
+    "h1_usd": 22928.0,
+    "h1_gain_pct": 22.0,
+    "h2_usd": 43303.0,
+    "h2_gain_pct": 29.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.101,
+    "s0_near": 0.007,
+    "med_d1": 73.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$7.5k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31583.0,
+    "s0_gain_pct": 21.9,
+    "h1_usd": 21924.0,
+    "h1_gain_pct": 16.7,
+    "h2_usd": 41963.0,
+    "h2_gain_pct": 25.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.108,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$7.5k, 4x >=$7.5k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 32819.0,
+    "s0_gain_pct": 26.7,
+    "h1_usd": 23064.0,
+    "h1_gain_pct": 22.8,
+    "h2_usd": 43302.0,
+    "h2_gain_pct": 29.1,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 75.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$7.5k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 31604.0,
+    "s0_gain_pct": 22.0,
+    "h1_usd": 22041.0,
+    "h1_gain_pct": 17.3,
+    "h2_usd": 41881.0,
+    "h2_gain_pct": 24.9,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$7.5k, 4x >=$7.5k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 33314.0,
+    "s0_gain_pct": 28.6,
+    "h1_usd": 23377.0,
+    "h1_gain_pct": 24.4,
+    "h2_usd": 43991.0,
+    "h2_gain_pct": 31.2,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 76.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$7.5k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        7500,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 32076.0,
+    "s0_gain_pct": 23.9,
+    "h1_usd": 22197.0,
+    "h1_gain_pct": 18.2,
+    "h2_usd": 42692.0,
+    "h2_gain_pct": 27.3,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$8.0k, 4x >=$8.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": false,
+    "s0_usd": 32172.0,
+    "s0_gain_pct": 24.2,
+    "h1_usd": 22362.0,
+    "h1_gain_pct": 19.0,
+    "h2_usd": 42714.0,
+    "h2_gain_pct": 27.3,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.101,
+    "s0_near": 0.007,
+    "med_d1": 73.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$8.0k | K=$7.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 7500.0,
+    "two_stage": true,
+    "s0_usd": 31052.0,
+    "s0_gain_pct": 19.9,
+    "h1_usd": 21408.0,
+    "h1_gain_pct": 14.0,
+    "h2_usd": 41416.0,
+    "h2_gain_pct": 23.5,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.108,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$8.0k, 4x >=$8.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": false,
+    "s0_usd": 32642.0,
+    "s0_gain_pct": 26.0,
+    "h1_usd": 22967.0,
+    "h1_gain_pct": 22.2,
+    "h2_usd": 43039.0,
+    "h2_gain_pct": 28.3,
+    "s3_cons": 0.05,
+    "s4_cons": 0.158,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 76.0,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$8.0k | K=$8.0k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8000.0,
+    "two_stage": true,
+    "s0_usd": 31460.0,
+    "s0_gain_pct": 21.5,
+    "h1_usd": 22001.0,
+    "h1_gain_pct": 17.1,
+    "h2_usd": 41624.0,
+    "h2_gain_pct": 24.1,
+    "s3_cons": 0.065,
+    "s4_cons": 0.194,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  },
+  {
+    "name": "4-tier (1x <$4k, 2x $4k-$6.0k, 3x $6.0k-$8.0k, 4x >=$8.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": false,
+    "s0_usd": 32648.0,
+    "s0_gain_pct": 26.1,
+    "h1_usd": 22907.0,
+    "h1_gain_pct": 21.9,
+    "h2_usd": 43116.0,
+    "h2_gain_pct": 28.5,
+    "s3_cons": 0.05,
+    "s4_cons": 0.094,
+    "s0_closed": 0.0,
+    "s3_closed": 0.022,
+    "s4_closed": 0.065,
+    "s0_near": 0.007,
+    "med_d1": 76.5,
+    "ALL_GATES_PASSED": true
+  },
+  {
+    "name": "Two-Stage 4-tier (P1 @ $4k | 3x >=$6.0k, 4x >=$8.0k | K=$8.5k)",
+    "ladder": [
+      [
+        0,
+        1
+      ],
+      [
+        4000,
+        2
+      ],
+      [
+        6000,
+        3
+      ],
+      [
+        8000,
+        4
+      ]
+    ],
+    "cushion": 8500.0,
+    "two_stage": true,
+    "s0_usd": 31432.0,
+    "s0_gain_pct": 21.4,
+    "h1_usd": 21838.0,
+    "h1_gain_pct": 16.2,
+    "h2_usd": 41742.0,
+    "h2_gain_pct": 24.4,
+    "s3_cons": 0.065,
+    "s4_cons": 0.129,
+    "s0_closed": 0.0,
+    "s3_closed": 0.029,
+    "s4_closed": 0.072,
+    "s0_near": 0.007,
+    "med_d1": 50.0,
+    "ALL_GATES_PASSED": false
+  }
+]
