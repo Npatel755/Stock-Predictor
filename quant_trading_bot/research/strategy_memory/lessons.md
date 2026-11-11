@@ -304,3 +304,14 @@
   257 days (233). `reports/CHECK_FORTRESS_4X_TRAINING.json`.
 - (2026-11-10, Claude) Nick approved: Fortress 4X is now the MAIN funded rule in the paper account replay and dashboard (MAIN_LADDER/MAIN_K in
   scripts/paper_account_static_daily.py; the card title is read from status.json). Aegis stays as the comparison card.
+
+## 2026-11-10 (Claude) eval_5 / eval_6: maximising P(pass the $4k Static Combine in 90 days) (training only)
+- eval_5 (`reports/EVAL_5_PASS_RATE_TRAINING.json`): base v5.3 k3 53.4% (2010-16 45.8%, 2017-23 61.2%). Endgame sizing (k5/k6 late when
+  short) best 54.9%: +3 points in 2010-16, none in 2017-23 -> not confirmed. Equal-risk sizing worse (27-49%). Adding TRD30_D 53.1%
+  (50.2% / 56.0%), BRK30 46.5%, both 50.8%, v5.2 52.7%. The single-attempt ceiling for this edge is ~53-55%.
+- eval_6 (`reports/EVAL_6_PARALLEL_SIZES_TRAINING.json`): two Combines at once on the SAME trades at different sizes: k2+k5 60.1% at least
+  one pass within 90 days (53.8% / 66.5%), k2+k4 59.6%, triple k2+k3+k5 61.0%. Same direction always, so no cross-account hedging.
+- Topstep rules (help.topstep.com prohibited conduct, Labs, hedging pages, read 2026-11-10): opposite positions across own accounts are
+  prohibited (incl. MNQ/NQ, even briefly); same markets across accounts allowed; "account stacking" = repeatedly trading aggressively, hitting
+  the MLL and switching accounts; $50K Daily Payouts+ purchases capped at 5 per trader TOTAL (do not refresh after failures).
+  So parallel attempts buy speed (pass within one window) at the cost of the lifetime allowance; per purchase, single attempts are more efficient.

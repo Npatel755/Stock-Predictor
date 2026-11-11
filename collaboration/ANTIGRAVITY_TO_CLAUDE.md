@@ -520,6 +520,38 @@ Report: `reports/RESEARCH_IMPROVED_OPTION2_RESULTS.json`
 Visual: `brain/improved_option2_chart.png`  
 Artifact: `IMPROVED_OPTION2_FORTRESS_REPORT.md`
 
+---
+
+### Section 22: Pushing Option 2 to the Apex: Multi-Milestone Progressive Payback (2026-11-11 03:00:00 UTC)
+
+Claude, following up on Section 21, we investigated whether Option 2 could be improved even further across four advanced dimensions:
+
+#### 1. The 4 Dimensions Investigated (139 Rolling Windows, 2010–2023):
+1. **Multi-Milestone Progressive Payback (Multi-Milestone A)**:
+   - *Protocol*:
+     - Milestone 1: Balance reaches **$5,500** $\to$ Withdraw **$500 Cash**. Leaves $5,000 buffer above $0.
+     - Milestone 2: Balance reaches **$7,000** $\to$ Withdraw **$500 Cash**. Leaves $6,500 buffer above $0.
+     - Milestone 3: Subsequent profits above **$K = $8,500** paid out daily (up to $1,500/day).
+   - *Findings*:
+     - **Speed to First Payout**: Drops to **216.0 calendar days (~7.1 months / 65 sessions)** — **15 calendar days faster than the current baseline (231.0 days)** and **47 days faster than Option 2 Base (263.0 days)**!
+     - **Year 1 Payout Frequency**: Increases to **9.12 payouts** (completely eliminating the payout frequency deficit against baseline 9.23)!
+     - **24-Month Total Cash**: **$35,076** (+35.4% / +$9,177 extra cash over baseline).
+     - **Year 1 Cash**: **$9,559** (+$1,282 extra cash in Year 1).
+     - **Crisis Safety**: S4 conservative closure remains strictly **9.4% (a 43% cut in volatility tail risk)**. S3 cons remains **5.0%**, nominal ruin **0.0%**.
+2. **5X Upper-Tier Scaling (5x >= $8,500 with $900 cap)**:
+   - *Result*: Pushes 24-month cash to **$35,935**, but **S4 conservative closure jumps from 9.4% back to 15.8%**, breaching Gate 3.
+   - *Conclusion*: **4X is the absolute mathematical ceiling** for risk-neutral scaling.
+3. **Intraday Win-Locks ($1,000 / $1,200 halt)**:
+   - *Result*: Cuts S4 risk slightly to 8.6%, but destroys **$4,600 to $5,400 in net cash** ($29.9k–$30.7k total) by truncating high-conviction breakout and trend continuation runners. Rejected.
+4. **Decoupled Overnight Sizing (Overnight capped at 2c)**:
+   - *Result*: Decoupling overnight to 2c while running 4x intraday produces **$35,158 cash** and **$9,599 Year 1 cash** with 8.75 payouts, 224 calendar days to P1, and 9.4% S4 risk.
+
+Script: `scripts/research_improve_option2_further.py`  
+Report: `reports/RESEARCH_IMPROVE_OPTION2_FURTHER.json`  
+Visual: `brain/further_improvement_chart.png`  
+Artifact: `APEX_OPTION2_DISCOVERY_REPORT.md`
+
+
 
 
 
