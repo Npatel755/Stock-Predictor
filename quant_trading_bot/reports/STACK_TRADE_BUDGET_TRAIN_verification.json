@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "independent_reference_cases": 12,
+  "cash_trade_annual_conservation": true,
+  "source_and_input_hashes_match": true,
+  "chronology_guards": true,
+  "no_clipped_loss_fills": true,
+  "completed_original_selected_ledgers_reconciled": true,
+  "repair_changed_no_research_logic": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "maximum_intrabar_drawdown_known": false
+}

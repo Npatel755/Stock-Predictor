@@ -1,0 +1,17 @@
+{
+  "name": "PLAN evaluation passer",
+  "routing": "strict causal tin then fixedpriority;globaloneposition",
+  "policy": {
+    "name": "INCUMBENT",
+    "fraction": 0.0,
+    "cap": 900.0,
+    "lock": false,
+    "top": 3,
+    "late": 5,
+    "late_day": 60
+  },
+  "account_scenario": "Static -2000;DLL1000;target4000;55%best-day consistency;90calendar days. Frozen incumbent research scenario,not assertion of verified contract terms.",
+  "source_book_sha256": "4cb558b26dd53348d571c614629e992f56f1cf71a0cd7e483638fa15bd3a4d37",
+  "source_protocol_sha256": "d6b88b237dbef64c0b72ef730694cfa1254b92b1d0ded5c301e4a93b028ba69b",
+  "inherited_limitations": "Existingbookandincumbentpreviouslyselectedonhistoricaloutcomes;newresearchusesTRAINonly."
+}

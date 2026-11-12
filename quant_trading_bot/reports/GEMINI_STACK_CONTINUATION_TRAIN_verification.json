@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "legacy_reproduced": {
+    "S0": true,
+    "S3": true,
+    "S4": true
+  },
+  "legacy_path_reference_checks": 417,
+  "baseline_causal_path_reference_checks": 417,
+  "frozen_choice_reference_checks": 183,
+  "withdrawal_balance_conservation": true,
+  "earlier_train_only_selection": true,
+  "latertrain_not_used_to_replace_choice": true,
+  "exact_not_rounded_gates": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "source_hashes_match": true,
+  "production_certification": false,
+  "prescore_seal_matches": true,
+  "all_original_source_hashes_match": true,
+  "raw_tables_hashes_match": true,
+  "train_only_data_guards_pass": true,
+  "fixture_tests_passed": 20,
+  "model_scope": "Dailyaccountscenarioonly;notverifiedintrabaraccountcompliance",
+  "legacy_base_only_calendar_issue_confirmed": true,
+  "legacy_rounding_gate_issue_confirmed": true,
+  "candidate_count": 31,
+  "selected_earlier_train_mean_lift": 0.0733069745007866,
+  "later_train_mean_lift": 0.026627360846963155,
+  "accepted": false
+}

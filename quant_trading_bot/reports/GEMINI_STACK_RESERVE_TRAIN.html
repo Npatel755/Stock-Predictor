@@ -1,0 +1,654 @@
+﻿<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reserve controller: no qualifying improvement</title><style>body{font:16px/1.6 system-ui;margin:32px auto;padding:0 24px;max-width:1400px;background:#111820;color:#e7edf2}a{color:#8dd5ff}table{border-collapse:collapse;font-size:14px}th,td{padding:9px;border-bottom:1px solid #456}img{width:100%}.scroll{overflow:auto}pre{white-space:pre-wrap}.note{background:#352d21;padding:18px}</style>
+    <h1>Reserve controller: no qualifying improvement</h1><!-- ABSOLUTE_DD_FAIL_BANNER --><p class="note"><strong>No qualifying improvement. Strict $2,000 maximum drawdown: FAIL.</strong> All 145 cells exceeded $2,000 in earlier-TRAIN end-of-day trading drawdown; the smallest was $4,001.40. The incumbent reached $4,548.49 earlier and $7,457.23 later. An initial loss floor does not measure maximum trading drawdown.</p><p>145 predeclared configurations; TRAIN-only ranking. One choice frozen before this run's later-TRAIN check. External validation/test and deployed settings unchanged.</p>
+    <p class="note">Both earlier and later TRAIN were examined in previous research. Later TRAIN is a reused internal robustness check, not fresh confirmation. 23 crossing windows excluded from choice/check. All amounts below are model scenarios, not verified funded-account returns. Withdrawals are different from trading P&amp;L.</p>
+    <img src="GEMINI_STACK_RESERVE_TRAIN.png" alt="Withdrawals by historical training start date"><h2>Matched comparisons</h2><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Period</th>
+      <th>Policy</th>
+      <th>Scenario</th>
+      <th>Starts</th>
+      <th>Mean_withdrawals</th>
+      <th>Trading_PnL</th>
+      <th>EOD_trading_DD_max</th>
+      <th>Closed_pct</th>
+      <th>Stoprisk_flag_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Earlier TRAIN</td>
+      <td>baseline</td>
+      <td>S0</td>
+      <td>55</td>
+      <td>22,508.99</td>
+      <td>29,939.57</td>
+      <td>4,548.49</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Earlier TRAIN</td>
+      <td>baseline</td>
+      <td>S3</td>
+      <td>55</td>
+      <td>10,745.78</td>
+      <td>17,120.31</td>
+      <td>5,960.87</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Earlier TRAIN</td>
+      <td>baseline</td>
+      <td>S4</td>
+      <td>55</td>
+      <td>16,008.49</td>
+      <td>22,541.48</td>
+      <td>6,478.02</td>
+      <td>1.82</td>
+      <td>5.45</td>
+    </tr>
+    <tr>
+      <td>Earlier TRAIN</td>
+      <td>choice</td>
+      <td>S0</td>
+      <td>55</td>
+      <td>22,508.99</td>
+      <td>29,939.57</td>
+      <td>4,548.49</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Earlier TRAIN</td>
+      <td>choice</td>
+      <td>S3</td>
+      <td>55</td>
+      <td>10,745.78</td>
+      <td>17,120.31</td>
+      <td>5,960.87</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Earlier TRAIN</td>
+      <td>choice</td>
+      <td>S4</td>
+      <td>55</td>
+      <td>16,008.49</td>
+      <td>22,541.48</td>
+      <td>6,478.02</td>
+      <td>1.82</td>
+      <td>5.45</td>
+    </tr>
+    <tr>
+      <td>Later reused TRAIN</td>
+      <td>baseline</td>
+      <td>S0</td>
+      <td>61</td>
+      <td>39,757.38</td>
+      <td>47,119.56</td>
+      <td>7,457.23</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Later reused TRAIN</td>
+      <td>baseline</td>
+      <td>S3</td>
+      <td>61</td>
+      <td>29,443.24</td>
+      <td>35,647.74</td>
+      <td>8,251.72</td>
+      <td>0.00</td>
+      <td>1.64</td>
+    </tr>
+    <tr>
+      <td>Later reused TRAIN</td>
+      <td>baseline</td>
+      <td>S4</td>
+      <td>61</td>
+      <td>24,531.21</td>
+      <td>30,890.75</td>
+      <td>7,859.18</td>
+      <td>6.56</td>
+      <td>6.56</td>
+    </tr>
+    <tr>
+      <td>Later reused TRAIN</td>
+      <td>choice</td>
+      <td>S0</td>
+      <td>61</td>
+      <td>39,757.38</td>
+      <td>47,119.56</td>
+      <td>7,457.23</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Later reused TRAIN</td>
+      <td>choice</td>
+      <td>S3</td>
+      <td>61</td>
+      <td>29,443.24</td>
+      <td>35,647.74</td>
+      <td>8,251.72</td>
+      <td>0.00</td>
+      <td>1.64</td>
+    </tr>
+    <tr>
+      <td>Later reused TRAIN</td>
+      <td>choice</td>
+      <td>S4</td>
+      <td>61</td>
+      <td>24,531.21</td>
+      <td>30,890.75</td>
+      <td>7,859.18</td>
+      <td>6.56</td>
+      <td>6.56</td>
+    </tr>
+  </tbody>
+</table></div>
+    <h2>Frozen rules</h2><p>The unchanged base book trades below activation. The triple book activates at the on threshold and deactivates only below the off threshold; decisions use the prior balance. Size2 at4000, size3 at4600, size4 at the configured threshold. First withdrawal500 at6000; later withdrawals capped1500 with minimum250 excess over keep. Night threshold500 and all signals/costs unchanged.</p><pre>{
+  &quot;name&quot;: &quot;incumbent&quot;,
+  &quot;keep&quot;: 8600.0,
+  &quot;on&quot;: 8700.0,
+  &quot;off&quot;: 8700.0,
+  &quot;four_at&quot;: 5400.0
+}</pre>
+    <p>Acceptance requires at least5% higher S0 withdrawals in both earlier and later TRAIN; no lower S3/S4 withdrawals, no worse maximum EOD trading drawdown in each scenario, exact stop-risk gates, and closure/near-miss gates. A failed later check cannot select a replacement.</p>
+    <h2>Limits and uncertainty</h2><p>Daily P&amp;L clipping, EOD closure and largest-stop-risk proxy are approximate. Not intrabar funded compliance. Normalized reference prices, dependent overlapping windows and repeated search limit inference. EOD trading drawdown excludes withdrawals and includes the initial equity peak. It is not intrabar drawdown; the $2,000 initial loss floor is different from total trading-equity drawdown after capital accumulates. The stop-risk flag is a conservative proxy, not an observed floor breach.</p><pre>{
+  &quot;paired_mean_withdrawal_difference&quot;: 0.0,
+  &quot;descriptive_5_95_percentile_dollar_range&quot;: [
+    0.0,
+    0.0
+  ],
+  &quot;block_monthly_starts&quot;: 12,
+  &quot;replicates&quot;: 5000,
+  &quot;selection_adjusted&quot;: false,
+  &quot;warning&quot;: &quot;Exploratory uncertainty only: overlapping24monthwindows, circular12monthblocks and repeated selection; not a confidence guarantee.&quot;
+}</pre>
+    <h2>All earlier-TRAIN configurations</h2><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>keep</th>
+      <th>on</th>
+      <th>off</th>
+      <th>four_at</th>
+      <th>eligible</th>
+      <th>S0_withdrawals</th>
+      <th>S0_lift</th>
+      <th>S0_closed</th>
+      <th>S0_stoprisk</th>
+      <th>S0_worst_eod_trading_dd</th>
+      <th>S3_withdrawals</th>
+      <th>S3_closed</th>
+      <th>S3_stoprisk</th>
+      <th>S3_worst_eod_trading_dd</th>
+      <th>S4_withdrawals</th>
+      <th>S4_closed</th>
+      <th>S4_stoprisk</th>
+      <th>S4_worst_eod_trading_dd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>incumbent</td>
+      <td>8,600.000</td>
+      <td>8,700.000</td>
+      <td>8,700.000</td>
+      <td>5,400.000</td>
+      <td>True</td>
+      <td>22,508.990</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,548.493</td>
+      <td>10,745.778</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,960.874</td>
+      <td>16,008.489</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,478.015</td>
+    </tr>
+    <tr>
+      <td>K8600_ON9500_H0_M45400</td>
+      <td>8,600.000</td>
+      <td>9,500.000</td>
+      <td>9,500.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>24,422.102</td>
+      <td>0.085</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,195.526</td>
+      <td>10,017.542</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,533.517</td>
+      <td>14,525.206</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,436.444</td>
+    </tr>
+    <tr>
+      <td>K8200_ON9000_H0_M45400</td>
+      <td>8,200.000</td>
+      <td>9,000.000</td>
+      <td>9,000.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>24,272.418</td>
+      <td>0.078</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,088.359</td>
+      <td>10,811.972</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,215.793</td>
+      <td>14,900.595</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,226.402</td>
+    </tr>
+    <tr>
+      <td>K8600_ON9500_H0_M46500</td>
+      <td>8,600.000</td>
+      <td>9,500.000</td>
+      <td>9,500.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,993.313</td>
+      <td>0.066</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,225.888</td>
+      <td>10,155.242</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,285.838</td>
+      <td>14,665.789</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,328.785</td>
+    </tr>
+    <tr>
+      <td>K8200_ON9000_H0_M46500</td>
+      <td>8,200.000</td>
+      <td>9,000.000</td>
+      <td>9,000.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,957.144</td>
+      <td>0.064</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>10,605.872</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,011.260</td>
+      <td>14,953.232</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,929.845</td>
+    </tr>
+    <tr>
+      <td>K8200_ON9500_H500_M45400</td>
+      <td>8,200.000</td>
+      <td>9,500.000</td>
+      <td>9,000.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,915.698</td>
+      <td>0.062</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,088.359</td>
+      <td>10,460.745</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,215.793</td>
+      <td>15,618.836</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,965.926</td>
+    </tr>
+    <tr>
+      <td>K8600_ON9500_H1000_M45400</td>
+      <td>8,600.000</td>
+      <td>9,500.000</td>
+      <td>8,500.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,787.377</td>
+      <td>0.057</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,195.526</td>
+      <td>9,982.965</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,533.517</td>
+      <td>14,568.735</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,478.015</td>
+    </tr>
+    <tr>
+      <td>K8600_ON10000_H500_M45400</td>
+      <td>8,600.000</td>
+      <td>10,000.000</td>
+      <td>9,500.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,686.917</td>
+      <td>0.052</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,195.526</td>
+      <td>10,031.746</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,533.517</td>
+      <td>15,254.028</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,452.095</td>
+    </tr>
+    <tr>
+      <td>K7800_ON9000_H0_M46500</td>
+      <td>7,800.000</td>
+      <td>9,000.000</td>
+      <td>9,000.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,629.278</td>
+      <td>0.050</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>10,197.713</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,730.194</td>
+      <td>15,985.324</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,643.671</td>
+    </tr>
+    <tr>
+      <td>K7800_ON9500_H500_M46500</td>
+      <td>7,800.000</td>
+      <td>9,500.000</td>
+      <td>9,000.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,613.434</td>
+      <td>0.049</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>10,424.762</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,730.194</td>
+      <td>16,256.417</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,643.671</td>
+    </tr>
+    <tr>
+      <td>K8200_ON9500_H0_M45400</td>
+      <td>8,200.000</td>
+      <td>9,500.000</td>
+      <td>9,500.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,586.646</td>
+      <td>0.048</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,088.359</td>
+      <td>10,343.353</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,215.793</td>
+      <td>15,618.836</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,965.926</td>
+    </tr>
+    <tr>
+      <td>K8200_ON10000_H0_M45400</td>
+      <td>8,200.000</td>
+      <td>10,000.000</td>
+      <td>10,000.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,570.656</td>
+      <td>0.047</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,088.359</td>
+      <td>10,571.882</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,215.793</td>
+      <td>15,877.857</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,965.926</td>
+    </tr>
+    <tr>
+      <td>K8200_ON10000_H500_M45400</td>
+      <td>8,200.000</td>
+      <td>10,000.000</td>
+      <td>9,500.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,570.656</td>
+      <td>0.047</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,088.359</td>
+      <td>10,560.017</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,215.793</td>
+      <td>15,905.129</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,965.926</td>
+    </tr>
+    <tr>
+      <td>K8200_ON10000_H1000_M45400</td>
+      <td>8,200.000</td>
+      <td>10,000.000</td>
+      <td>9,000.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,568.155</td>
+      <td>0.047</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,088.359</td>
+      <td>10,597.830</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,215.793</td>
+      <td>15,905.129</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,965.926</td>
+    </tr>
+    <tr>
+      <td>K8600_ON9500_H0_M47500</td>
+      <td>8,600.000</td>
+      <td>9,500.000</td>
+      <td>9,500.000</td>
+      <td>7,500.000</td>
+      <td>False</td>
+      <td>23,561.539</td>
+      <td>0.047</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>9,992.841</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,535.502</td>
+      <td>14,814.585</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,092.922</td>
+    </tr>
+    <tr>
+      <td>K8200_ON9500_H500_M46500</td>
+      <td>8,200.000</td>
+      <td>9,500.000</td>
+      <td>9,000.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,525.134</td>
+      <td>0.045</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>10,174.211</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,011.260</td>
+      <td>15,624.180</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,858.267</td>
+    </tr>
+    <tr>
+      <td>K7800_ON8500_H0_M45400</td>
+      <td>7,800.000</td>
+      <td>8,500.000</td>
+      <td>8,500.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,519.712</td>
+      <td>0.045</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,726.578</td>
+      <td>11,176.273</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>5,036.912</td>
+      <td>15,398.782</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,671.363</td>
+    </tr>
+    <tr>
+      <td>K9000_ON10000_H0_M45400</td>
+      <td>9,000.000</td>
+      <td>10,000.000</td>
+      <td>10,000.000</td>
+      <td>5,400.000</td>
+      <td>False</td>
+      <td>23,481.938</td>
+      <td>0.043</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,303.811</td>
+      <td>9,429.774</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>6,923.938</td>
+      <td>14,639.208</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>6,922.614</td>
+    </tr>
+    <tr>
+      <td>K7800_ON10000_H0_M46500</td>
+      <td>7,800.000</td>
+      <td>10,000.000</td>
+      <td>10,000.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,474.584</td>
+      <td>0.043</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>10,424.762</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,730.194</td>
+      <td>16,067.952</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,643.671</td>
+    </tr>
+    <tr>
+      <td>K7800_ON10000_H1000_M46500</td>
+      <td>7,800.000</td>
+      <td>10,000.000</td>
+      <td>9,000.000</td>
+      <td>6,500.000</td>
+      <td>False</td>
+      <td>23,474.584</td>
+      <td>0.043</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,001.396</td>
+      <td>10,424.762</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>4,730.194</td>
+      <td>16,108.974</td>
+      <td>0.018</td>
+      <td>0.055</td>
+      <td>5,643.671</td>
+    </tr>
+  </tbody>
+</table></div>
+    <p><a href="../runs/gemini_stack_reserve_v1/protocol.json">Frozen protocol</a> Â· <a href="../runs/gemini_stack_reserve_v1/all_earlier_training_candidates.csv">All configurations</a> Â· <a href="GEMINI_STACK_RESERVE_TRAIN.json">Full results</a> Â· <a href="GEMINI_STACK_RESERVE_TRAIN_verification.json">Verification</a></p><!-- POSTRUN_AUDIT --><h2>Strict $2,000 drawdown audit: FAIL</h2><p class="note">Every cell exceeds2000 in earlier TRAIN EOD trading drawdown. Intrabar drawdown is at least as large, not certified by this daily model. Initial loss floor and trading drawdown differ. No replacement was selected.</p><img src="GEMINI_STACK_RESERVE_TRAIN_DRAWDOWN.png" alt="All configurations exceed two thousand dollar trading drawdown"><p>The highest earlier-TRAIN withdrawal variant made $24,422.10 on average, but failed S3_withdrawals, S4_withdrawals. It was not checked on later TRAIN or selected. All 144 alternatives were rejected; the incumbent remains unchanged.</p><pre>{
+  &quot;passed&quot;: true,
+  &quot;configurations_reconciled&quot;: 145,
+  &quot;additional_independent_reference_paths&quot;: 1305,
+  &quot;all_frozen_sources_match&quot;: true,
+  &quot;all_earlier_metrics_reconciled&quot;: true,
+  &quot;conservation_all_earlier_paths&quot;: true,
+  &quot;alternative_rejection_counts&quot;: {
+    &quot;S0_drawdown&quot;: 38,
+    &quot;S3_drawdown&quot;: 13,
+    &quot;S3_withdrawals&quot;: 115,
+    &quot;S4_drawdown&quot;: 75,
+    &quot;S4_withdrawals&quot;: 127
+  },
+  &quot;top_unqualified_earlier_withdrawal_case&quot;: {
+    &quot;name&quot;: &quot;K8600_ON9500_H0_M45400&quot;,
+    &quot;reasons&quot;: [
+      &quot;S3_withdrawals&quot;,
+      &quot;S4_withdrawals&quot;
+    ],
+    &quot;mean_withdrawals&quot;: 24422.101867788984,
+    &quot;worst_eod_trading_dd&quot;: 4195.52589462206,
+    &quot;S3_withdrawals&quot;: 10017.541600524253,
+    &quot;S4_withdrawals&quot;: 14525.205537861642
+  },
+  &quot;alternatives_sent_to_later_train&quot;: 0,
+  &quot;validation_accessed&quot;: false,
+  &quot;test_accessed&quot;: false,
+  &quot;earlier_S0_cases_with_strict_sub2000_eod_trading_drawdown&quot;: 0,
+  &quot;smallest_earlier_S0_worst_eod_trading_drawdown&quot;: 4001.396171524615,
+  &quot;incumbent_earlier_S0_eod_trading_dd&quot;: 4548.492955641093,
+  &quot;incumbent_later_S0_eod_trading_dd&quot;: 7457.230857874885,
+  &quot;strict_sub2000_drawdown_status&quot;: &quot;FAIL&quot;,
+  &quot;warning&quot;: &quot;Every cell exceeds2000 in earlier TRAIN EOD trading drawdown. Intrabar drawdown is at least as large, not certified by this daily model. Initial loss floor and trading drawdown differ. No replacement was selected.&quot;
+}</pre></html>

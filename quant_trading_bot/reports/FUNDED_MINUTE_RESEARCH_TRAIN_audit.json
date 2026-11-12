@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "all48prefix_metrics_and_raw_arrays_reconciled": true,
+  "distinct_prefix_outcome_arrays": 10,
+  "benchmark_period_cost_summaries_reconciled": 4,
+  "independent_trade_accounting_and_fill_checks": 21747,
+  "instrumented_frozen_engine_parity_cases": 10,
+  "synthetic_tests": 22,
+  "data_fault_samples": [
+    {
+      "policy": "FORTRESS_STYLE_MINUTE_REFERENCE",
+      "window_start": "2012-08-01",
+      "at_utc": "2014-07-23 05:26:00+00:00",
+      "frozen_line": 85,
+      "condition": "if qty[k]>0 and asset[k]==a and last_quote[a]>=0 and ts[i]-ts[last_quote[a]]>5*60000000000:data_fault=1",
+      "quote_context": [
+        {
+          "asset": 0,
+          "last_quote_utc": "2014-07-23 05:20:00+00:00",
+          "quote_age_minutes": 6.0
+        },
+        {
+          "asset": 1,
+          "last_quote_utc": "2014-07-23 05:26:00+00:00",
+          "quote_age_minutes": 0.0
+        }
+      ]
+    },
+    {
+      "policy": "K2000_E0_F0.25_N0_P0",
+      "window_start": "2012-08-01",
+      "at_utc": "2014-07-23 05:26:00+00:00",
+      "frozen_line": 85,
+      "condition": "if qty[k]>0 and asset[k]==a and last_quote[a]>=0 and ts[i]-ts[last_quote[a]]>5*60000000000:data_fault=1",
+      "quote_context": [
+        {
+          "asset": 0,
+          "last_quote_utc": "2014-07-23 05:20:00+00:00",
+          "quote_age_minutes": 6.0
+        },
+        {
+          "asset": 1,
+          "last_quote_utc": "2014-07-23 05:26:00+00:00",
+          "quote_age_minutes": 0.0
+        }
+      ]
+    }
+  ],
+  "qualifying_replacement": false,
+  "zero_qualifiers": true,
+  "no_candidate_selected_or_controlled": true,
+  "postrun_audit_deviation": "First audit accidentally replayed first registered candidate at two laterTRAIN diagnostic starts (2017Jan,2022Jan) after all48 rejected. No alternative chosen, no settings changed, no validation/test accessed. LaterTRAIN not entirely sealed for that rejected policy; these two cases are not confirmation evidence. Corrected audit limits alternate diagnostic cases to earlierTRAIN.",
+  "warning": "Accounting audit passed; research outcomes fail. Partial values on data-fault/inactivity paths are NOT credible complete24monthpayout forecasts. Diagnostic instrumentation is sameengine parity, not independentenginevalidation.",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "forward_paper_accessed": false,
+  "deployment_changed": false
+}

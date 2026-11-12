@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "source_core_tests_passed": 10,
+  "postrun_scheduled_open_integration_tests_passed": 3,
+  "independent_prefix_reference_cases": 1154,
+  "source_price_bound_checks": 24,
+  "selected_incumbent_reference_cases": 4,
+  "all_report_links_resolve": true,
+  "linked_artifacts": 5,
+  "research_outcome": "NO_QUALIFIED_IMPROVEMENT",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "deployed": false,
+  "files_sha256": {
+    "quant_trading_bot\\runs\\stack_continuous_exposure_fixed_v1\\protocol.json": "30c8b3366ac595eea189317821270abee34f9911b1e3772d9fe2481b46bd1a95",
+    "quant_trading_bot\\runs\\stack_continuous_exposure_fixed_v1\\frozen_prefix_choice.json": "87583358ca1af033a7200cb4c5e1fd40dfb768a10aef1f8dd8e0866472cb5bc8",
+    "quant_trading_bot\\runs\\stack_continuous_exposure_fixed_v1\\results.json": "016ff2487dafb8f4a03a40c1ab32fce630179439dc759553ffc748f2c8e89582",
+    "quant_trading_bot\\runs\\stack_continuous_exposure_fixed_v1\\postrun_audit.json": "072a7b789eb2c94326fda34088466f7826dc95d2667f3ad2c51ca5ae52dcccfb",
+    "quant_trading_bot\\runs\\stack_continuous_exposure_fixed_v1\\training_trade_bounds.parquet": "a6c312fe24e5b90931c45e9809718af97b1546652c0bf8d4aed3b5250b1604db",
+    "quant_trading_bot\\runs\\stack_continuous_exposure_fixed_v1\\research_memo.md": "14e004eb7a4e4aa8a2df0c6f191ad7d5ecaf0c661a3f451f472414b69947626c",
+    "quant_trading_bot\\reports\\STACK_CONTINUOUS_EXPOSURE_FIXED_TRAIN.html": "c59a9f4cf558d83459a4d3a232f95505ac96377e5ed5417bf3061dfad09041e6",
+    "quant_trading_bot\\reports\\STACK_CONTINUOUS_EXPOSURE_FIXED_TRAIN.png": "5d24078146088d46b2a55e1fdfdd119b1c79ee22183a292ae7099c7348a94e61"
+  }
+}

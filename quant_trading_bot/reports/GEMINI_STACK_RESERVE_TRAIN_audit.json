@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "configurations_reconciled": 145,
+  "additional_independent_reference_paths": 1305,
+  "all_frozen_sources_match": true,
+  "all_earlier_metrics_reconciled": true,
+  "conservation_all_earlier_paths": true,
+  "alternative_rejection_counts": {
+    "S0_drawdown": 38,
+    "S3_drawdown": 13,
+    "S3_withdrawals": 115,
+    "S4_drawdown": 75,
+    "S4_withdrawals": 127
+  },
+  "top_unqualified_earlier_withdrawal_case": {
+    "name": "K8600_ON9500_H0_M45400",
+    "reasons": [
+      "S3_withdrawals",
+      "S4_withdrawals"
+    ],
+    "mean_withdrawals": 24422.101867788984,
+    "worst_eod_trading_dd": 4195.52589462206,
+    "S3_withdrawals": 10017.541600524253,
+    "S4_withdrawals": 14525.205537861642
+  },
+  "alternatives_sent_to_later_train": 0,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "earlier_S0_cases_with_strict_sub2000_eod_trading_drawdown": 0,
+  "smallest_earlier_S0_worst_eod_trading_drawdown": 4001.396171524615,
+  "incumbent_earlier_S0_eod_trading_dd": 4548.492955641093,
+  "incumbent_later_S0_eod_trading_dd": 7457.230857874885,
+  "strict_sub2000_drawdown_status": "FAIL",
+  "warning": "Every cell exceeds2000 in earlier TRAIN EOD trading drawdown. Intrabar drawdown is at least as large, not certified by this daily model. Initial loss floor and trading drawdown differ. No replacement was selected."
+}

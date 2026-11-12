@@ -1,0 +1,10 @@
+{
+  "reason": "Original main iterated all period metadata items including the integer embargo field after completing earlier/later selected metrics. Only explicit earlier/later phases are processed here.",
+  "source_sha256": "d1f3a6e4e1f70e33b49573d0878d7128fcb886435cd6976511b9f39099b30fd7",
+  "original_source_unchanged": true,
+  "configuration_and_ranking_unchanged": true,
+  "frozen_choice_sha256": "ae77b07efea5e5c3964c7f122b4a47af399a6d778a50cf042349e00542d79a6c",
+  "protocol_sha256": "867fd7308f448d00ec4bdff1e93bb2df21165d74f538f4bc2e74130e04a0a6fa",
+  "null_csv_sha256": "d7d1d28f65791c287afaa8497e99a671fc54b3d7e394a68469cd11fb5725e4a3",
+  "recorded_at": "2026-11-11 22:53:39.357438+00:00"
+}

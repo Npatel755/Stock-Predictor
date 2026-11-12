@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "all_report_links_resolve": true,
+  "local_links_checked": 7,
+  "skill_archive_count": 3,
+  "installed_skill_directories_verified": 74,
+  "frozen_diagnostic_preserved": true,
+  "figures_visually_reviewed": true,
+  "tests_passed": 10,
+  "independent_reference_cases": 1024,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "funded_account_certification": false,
+  "files_sha256": {
+    "quant_trading_bot\\runs\\stack_trade_budget_v1\\protocol.json": "867fd7308f448d00ec4bdff1e93bb2df21165d74f538f4bc2e74130e04a0a6fa",
+    "quant_trading_bot\\runs\\stack_trade_budget_v1\\frozen_earlier_train_choice.json": "ae77b07efea5e5c3964c7f122b4a47af399a6d778a50cf042349e00542d79a6c",
+    "quant_trading_bot\\runs\\stack_trade_budget_v1\\results.json": "4f1ab78235a3946392615d9b75b50dae47031e8961e489c4c07d74d90daf813a",
+    "quant_trading_bot\\runs\\stack_trade_budget_v1\\verification.json": "d2c667363094119a3b5310bc7950f34e97a1e19d7c3b5bfbc391aae274d81125",
+    "quant_trading_bot\\runs\\stack_trade_budget_v1\\postrun_audit.json": "29b8e07ff9e3b6010af883ee515d657d912236e0c565a7c870568b6a6909808c",
+    "quant_trading_bot\\runs\\stack_trade_budget_v1\\completion_repair_seal.json": "ac6079db4713e9d240806e7e6197f4f6f2d156fff76c94ef7eba6db49f5800c4",
+    "quant_trading_bot\\strategy_versions\\gemini_triple_stack\\v1.2.0-trade-budget-diagnostic\\frozen_candidate.json": "780db8ad0775fd3481e0afd43559fd6784abf09630a6e70b3612d8448501eb50",
+    "quant_trading_bot\\reports\\STACK_TRADE_BUDGET_TRAIN.html": "b6b01ebfbbea8222e7192831802b5beb5e865b28c72b6fe95dca5c069fa76788",
+    "quant_trading_bot\\reports\\STACK_TRADE_BUDGET_TRAIN.png": "2a7047a5f94ea4507b1a6c89f5bd81a38d61a6e8526e2bb742f829b74127841b",
+    "quant_trading_bot\\reports\\STACK_TRADE_BUDGET_TRAIN_DRAWDOWN.png": "9ae83434faa3d715f4d8cf6a59083d42f5f2f8e7a5079f50574397d0d26e7da6",
+    "quant_trading_bot\\reports\\SKILL_ARCHIVE_INSTALL_20261111.json": "260d320335255347bd022b3125ee36783977dff56f4cebfa46a45ba6d099d8da"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "status": "NO_QUALIFIED_IMPROVEMENT",
+  "accepted": false,
+  "candidates": 576,
+  "prefix_qualifiers": 0,
+  "configuration": null,
+  "selected": {
+    "REPRICED_INCUMBENT": {
+      "prefix": {
+        "base": {
+          "net_pnl": 48.5,
+          "cash_drawdown": 15.5,
+          "conservative_OHLC_drawdown_bound": 87.0,
+          "trades": 3.0,
+          "profit_factor": 3.1555555555555554,
+          "maximum_inactive_days": 3816.3229166666665,
+          "unknown_path_exposures": 1.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            48.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "chronological_block_net": [
+            48.5,
+            0.0,
+            0.0
+          ],
+          "worst_cost_block_annualized": 0.0,
+          "qualified": false
+        },
+        "cost2": {
+          "net_pnl": 36.5,
+          "cash_drawdown": 19.5,
+          "conservative_OHLC_drawdown_bound": 92.0,
+          "trades": 3.0,
+          "profit_factor": 2.280701754385965,
+          "maximum_inactive_days": 3816.3229166666665,
+          "unknown_path_exposures": 1.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            36.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "chronological_block_net": [
+            36.5,
+            0.0,
+            0.0
+          ],
+          "worst_cost_block_annualized": 0.0,
+          "qualified": false
+        }
+      },
+      "continuous_full": {
+        "base": {
+          "net_pnl": 48.5,
+          "cash_drawdown": 15.5,
+          "conservative_OHLC_drawdown_bound": 87.0,
+          "trades": 3.0,
+          "profit_factor": 3.1555555555555554,
+          "maximum_inactive_days": 4911.322916666667,
+          "unknown_path_exposures": 1.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            48.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "chronological_block_net": [
+            48.5,
+            0.0,
+            0.0
+          ],
+          "worst_cost_block_annualized": 0.0,
+          "qualified": false
+        },
+        "cost2": {
+          "net_pnl": 36.5,
+          "cash_drawdown": 19.5,
+          "conservative_OHLC_drawdown_bound": 92.0,
+          "trades": 3.0,
+          "profit_factor": 2.280701754385965,
+          "maximum_inactive_days": 4911.322916666667,
+          "unknown_path_exposures": 1.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            36.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "chronological_block_net": [
+            36.5,
+            0.0,
+            0.0
+          ],
+          "worst_cost_block_annualized": 0.0,
+          "qualified": false
+        }
+      }
+    }
+  },
+  "units": "Historical raw fill dollars using micro multipliers; not old normalized dollars and not withdrawals.",
+  "exact_intrabar_order_known": false,
+  "conservative_fullbar_excursions": true,
+  "independent_confirmation": false,
+  "prior_TRAIN_reused": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "forward_paper_accessed": false,
+  "deployment_changed": false,
+  "protocol_sha256": "43fceed6670918fe952e8efa3a0adb0caf094c5d1968e0b8232ee818d21c73fd",
+  "frozen_choice_sha256": "8a1ff1bd417c4bc0d31472a829a0238360df3c8f8144707253f18711e83a956e"
+}

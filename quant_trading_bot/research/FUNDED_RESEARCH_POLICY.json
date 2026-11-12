@@ -1,0 +1,11 @@
+{
+  "updated_user_date": "2026-11-11",
+  "authorization": "User explicitly selected account floor and daily-loss rules instead of strict2000maximumdrawdown.",
+  "strict_global_drawdown_required": false,
+  "validation_test_tuning_allowed": false,
+  "automatic_holdout_access_allowed": false,
+  "rules_file": "research/prop_firms/topstep_daily_static_verified_20261111.json",
+  "deployed_strategy_change_authorized": false,
+  "prior_strict_drawdown_studies": "Preserve as historical experiments. Their globalDD and activity screens are not verified funded-account rules.",
+  "unrun_entry_quality_draft": "stack_entry_quality_train.py: eight fixtures passed, but no protocol frozen and no candidate scored. Superseded current scope; do not launch old strict-DD batch automatically."
+}

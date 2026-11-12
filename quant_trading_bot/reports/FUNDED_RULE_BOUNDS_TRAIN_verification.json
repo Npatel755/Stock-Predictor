@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "independent_account_reference_cases": 232,
+  "all_computed_cash_conserved": true,
+  "global_DD_gate_removed": true,
+  "floor_and_DLL_separate": true,
+  "no_loss_clipping_or_fake_liquidations": true,
+  "source_hashes_match": true,
+  "validation_accessed": false,
+  "test_accessed": false
+}

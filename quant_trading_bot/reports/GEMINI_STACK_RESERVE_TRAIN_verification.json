@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "independent_reference_paths": 696,
+  "original_baseline_parity_paths": 165,
+  "conservation_all_candidates": true,
+  "source_hashes_match": true,
+  "cache_hash_verified": true,
+  "only_input_data_files": [
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\gemini_stack_continuation_v1\\causal\\complete.json",
+    "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\runs\\gemini_stack_continuation_v1\\causal\\tables.npz"
+  ],
+  "training_roles_and_end_dates_verified": true,
+  "dates_before_2024": true,
+  "later_choice_freeze_verified": true,
+  "candidates": 145,
+  "unique_configs": 145,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "actual_intrabar_funded_certification": false
+}

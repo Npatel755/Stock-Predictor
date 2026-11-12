@@ -1,0 +1,133 @@
+{
+  "baseline": {
+    "name": "PLAN evaluation passer",
+    "routing": "strict causal tin then fixedpriority;globaloneposition",
+    "policy": {
+      "name": "INCUMBENT",
+      "fraction": 0.0,
+      "cap": 900.0,
+      "lock": false,
+      "top": 3,
+      "late": 5,
+      "late_day": 60
+    },
+    "account_scenario": "Static -2000;DLL1000;target4000;55%best-day consistency;90calendar days. Frozen incumbent research scenario,not assertion of verified contract terms.",
+    "source_book_sha256": "4cb558b26dd53348d571c614629e992f56f1cf71a0cd7e483638fa15bd3a4d37",
+    "source_protocol_sha256": "d6b88b237dbef64c0b72ef730694cfa1254b92b1d0ded5c301e4a93b028ba69b",
+    "inherited_limitations": "Existingbookandincumbentpreviouslyselectedonhistoricaloutcomes;newresearchusesTRAINonly."
+  },
+  "configuration_count": 45,
+  "baseline_all_training": {
+    "n": 3448,
+    "pass_rate": 56.409512761020885,
+    "failure_rate": 20.475638051044083,
+    "timeout_rate": 23.114849187935036,
+    "median_pass_days": 45.0,
+    "minimum_attempt_balance_bound": -2569.053876785225,
+    "worst_success_balance_bound": -1989.161528967947
+  },
+  "discovery": {
+    "period": "2010June-2016,90daywindowsendingbefore2017",
+    "starts": 1632,
+    "baseline": {
+      "name": "INCUMBENT",
+      "fraction": 0.0,
+      "cap": 900.0,
+      "lock": false,
+      "top": 3,
+      "late": 5,
+      "late_day": 60,
+      "n": 1632,
+      "pass_rate": 50.79656862745098,
+      "failure_rate": 20.465686274509803,
+      "timeout_rate": 28.737745098039213,
+      "median_pass_days": 50.0,
+      "minimum_attempt_balance_bound": -2569.053876785225,
+      "worst_success_balance_bound": -1975.5722296093913
+    },
+    "selected": {
+      "name": "INCUMBENT",
+      "fraction": 0.0,
+      "cap": 900.0,
+      "lock": false,
+      "top": 3,
+      "late": 5,
+      "late_day": 60,
+      "n": 1632,
+      "pass_rate": 50.79656862745098,
+      "failure_rate": 20.465686274509803,
+      "timeout_rate": 28.737745098039213,
+      "median_pass_days": 50.0,
+      "minimum_attempt_balance_bound": -2569.053876785225,
+      "worst_success_balance_bound": -1975.5722296093913
+    },
+    "gate": false
+  },
+  "frozen_candidate": {
+    "name": "INCUMBENT",
+    "fraction": 0.0,
+    "cap": 900.0,
+    "lock": false,
+    "top": 3,
+    "late": 5,
+    "late_day": 60
+  },
+  "confirmation": {
+    "period": "2017-2023SeptemberTRAINstarts",
+    "baseline": {
+      "n": 1752,
+      "pass_rate": 61.130136986301366,
+      "failure_rate": 21.232876712328768,
+      "timeout_rate": 17.636986301369863,
+      "median_pass_days": 41.0,
+      "minimum_attempt_balance_bound": -2469.733232593941,
+      "worst_success_balance_bound": -1972.4494781162923
+    },
+    "candidate": {
+      "n": 1752,
+      "pass_rate": 61.130136986301366,
+      "failure_rate": 21.232876712328768,
+      "timeout_rate": 17.636986301369863,
+      "median_pass_days": 41.0,
+      "minimum_attempt_balance_bound": -2469.733232593941,
+      "worst_success_balance_bound": -1972.4494781162923
+    },
+    "gate": false,
+    "extra_1point_cost_baseline": {
+      "n": 1752,
+      "pass_rate": 59.53196347031964,
+      "failure_rate": 22.203196347031966,
+      "timeout_rate": 18.2648401826484,
+      "median_pass_days": 42.0,
+      "minimum_attempt_balance_bound": -2488.733232593941,
+      "worst_success_balance_bound": -1978.5732392411091
+    },
+    "extra_1point_cost_candidate": {
+      "n": 1752,
+      "pass_rate": 59.53196347031964,
+      "failure_rate": 22.203196347031966,
+      "timeout_rate": 18.2648401826484,
+      "median_pass_days": 42.0,
+      "minimum_attempt_balance_bound": -2488.733232593941,
+      "worst_success_balance_bound": -1978.5732392411091
+    },
+    "paired_year_bootstrap": {
+      "block": "start-calendar-year",
+      "blocks": 7,
+      "replicates": 1999,
+      "mean_lift_pp": 0.0,
+      "percentile95_lift_pp": [
+        0.0,
+        0.0
+      ],
+      "limitation": "Overlapping90-daystarts are dependent;onlysevenlaterTRAINyearblocks,so uncertainty is coarse andnotexternalconfirmation."
+    }
+  },
+  "accepted_training_improvement": false,
+  "classification": "NO_QUALIFIED_IMPROVEMENT",
+  "independent_day_parity_checks": 6980,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "paper_results_used_for_selection": false,
+  "limitations": "Trade-levelMAE/DLLscenarioisnotexactintrabarfillreplay.Originaltradesareprice-normalizedtofrozenreferenceprices;notactualhistoricalUSDreturns.Overlappingstartsand44trialselectionlimitstatisticalconfidence.Nolive/paperchanges."
+}

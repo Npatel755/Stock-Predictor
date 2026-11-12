@@ -284,8 +284,9 @@ def sync_unified_collaboration_stream(devin_msgs: list[dict], ag_turns: list[dic
         lines.append("---")
         lines.append("")
 
-    with open(stream_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+    # Preserve all four cached sources, including Claude and Codex.
+    from shared_history import write_unified
+    write_unified(COLLAB_ROOT)
 
     logger.info(f"Updated Unified Collaboration Stream ({len(events)} total events) -> {stream_path.name}")
 

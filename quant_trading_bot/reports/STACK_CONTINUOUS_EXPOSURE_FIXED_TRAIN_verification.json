@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "selected_reference_cases": 4,
+  "cash_trade_annual_conservation": true,
+  "prefix_state_matches_continuous": true,
+  "frozen_source_input_hashes_match": true,
+  "losses_not_clipped": true,
+  "peak_never_reset": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "verified_broker_funded_compliance": false
+}

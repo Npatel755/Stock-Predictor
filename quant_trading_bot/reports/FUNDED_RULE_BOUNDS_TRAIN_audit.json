@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "independent_sampled_reference_cases": 870,
+  "all145prefix_summaries_reconciled": true,
+  "nominal_new_account_policies": 144,
+  "distinct_prefix_outcome_arrays": 5,
+  "alternatives_without_earlier_floor_DLL_bound_touches": 144,
+  "alternatives_with_zero_earlier_stressed_book_value": 144,
+  "source_opportunity_gaps_over30days": [
+    {
+      "previous": "2011-08-01 10:30:00-04:00",
+      "next": "2011-09-02 10:00:00-04:00",
+      "calendar_days": 31.979166666666668
+    },
+    {
+      "previous": "2020-03-26 10:30:00-04:00",
+      "next": "2020-04-28 10:00:00-04:00",
+      "calendar_days": 32.979166666666664
+    }
+  ],
+  "old_377strict_entry_filters_not_frozen_or_scored": true,
+  "policy_change_saved": true,
+  "global_DD_filter_removed": true,
+  "possible_DLL_touch_is_not_declared_account_failure": true,
+  "no_madeup_liquidation_fill_or_recovery_credit": true,
+  "zero_touch_paths_only_feasibility_screen": true,
+  "market_data_role": "TRAIN_ONLY",
+  "no_alternate_later_case": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "sources": [
+    "https://help.topstep.com/en/articles/15520357-topstep-labs",
+    "https://help.topstep.com/en/articles/10490293-daily-loss-limit-in-the-trading-combine-and-express-funded-account",
+    "https://help.topstep.com/en/articles/8284215-express-funded-account-parameters"
+  ],
+  "next_needed": "Full minute-event joint-position/overnight account replay with gap-aware forced liquidation; no withdrawal-only ranking. Separate low-cost entry research needed for early period profitability.",
+  "router_correction": "A one-position router changes the strategy. A performance gap alone is not proof that the older overlap/posthoc rule had lookahead. Old router causality requires a separate timed-stream audit; this prototype does not prove it either way.",
+  "verdict": "NO_QUALIFIED_ACCOUNT_POLICY; preserve deployedFortress, no new champion."
+}

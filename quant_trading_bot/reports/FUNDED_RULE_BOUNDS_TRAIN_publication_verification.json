@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "source_tests_passed": 13,
+  "independent_reference_cases": 1102,
+  "all145prefix_summaries_reconciled": true,
+  "all1808source_opportunities_quote_verified": true,
+  "report_links_resolve": true,
+  "globalDDgate_removed": true,
+  "strict377draft_scored": false,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "deployed": false,
+  "files_sha256": {
+    "quant_trading_bot\\runs\\funded_rule_bounds_v1\\protocol.json": "072cc625a7361d6c06ab8ee9c3b58a5416b43796f3f22578585b4fbbed75a1e2",
+    "quant_trading_bot\\runs\\funded_rule_bounds_v1\\results.json": "fbc5b232fdb98b136c33d4cab21681d31cba5afcddbd9162c9cb7a55875010ea",
+    "quant_trading_bot\\runs\\funded_rule_bounds_v1\\postrun_audit.json": "4d023fa742716cdfcc05994837370619facabc68c653a4d9c824bca372b934e2",
+    "quant_trading_bot\\runs\\funded_rule_bounds_v1\\complete_training_book.parquet": "ec33555d19c746e3eab7baf88f5c1ba7ee45962a87d3bbc1fbbad3a836527acc",
+    "quant_trading_bot\\runs\\funded_rule_bounds_v1\\frozen_earlier_choice.json": "0f92ef9bb03937846058b5f3211ae1cb4337cabf8237c4f7a52997d10713f85d",
+    "quant_trading_bot\\reports\\FUNDED_RULE_BOUNDS_TRAIN.html": "d96d987fc34b7d47d5aad9c25a489ea8b66f5fd18956a9f3a0db92c405630359",
+    "quant_trading_bot\\research\\FUNDED_RESEARCH_POLICY.json": "c5fef03ddc35066eba574bbc29e646974e07eb7ff5168658cc28bddc2958d25a",
+    "quant_trading_bot\\research\\prop_firms\\topstep_daily_static_verified_20261111.json": "261885273e2d02ce81a91672d370b87bab4331d3358a5af932cb2bf76889ae6f"
+  }
+}

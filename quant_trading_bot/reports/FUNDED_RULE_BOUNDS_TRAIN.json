@@ -1,0 +1,88 @@
+{
+  "status": "NO_QUALIFIED_ACCOUNT_POLICY",
+  "accepted_feasibility": false,
+  "demonstrated_matched_profit_improvement": false,
+  "benchmark_fully_resolved": false,
+  "configuration": null,
+  "candidates": 144,
+  "earlier_choice": null,
+  "earlier_benchmark": {
+    "base": {
+      "mean_trader_cash": 0.0,
+      "mean_economic_book_value": 0.0,
+      "mean_gross_withdrawals": 0.0,
+      "mean_ending_balance": 604.4545454545455,
+      "mean_known_trading_pnl": 604.4545454545455,
+      "mean_payouts": 0.0,
+      "mean_trades": 183.8181818181818,
+      "possible_floor_cases": 0,
+      "possible_DLL_cases": 0,
+      "inactivity_cases": 14,
+      "maximum_trading_OHLC_DD_bound": 511.25,
+      "windows": 55,
+      "resolved": false
+    },
+    "cost2": {
+      "mean_trader_cash": 0.0,
+      "mean_economic_book_value": 0.0,
+      "mean_gross_withdrawals": 0.0,
+      "mean_ending_balance": -102.50909090909092,
+      "mean_known_trading_pnl": -102.50909090909092,
+      "mean_payouts": 0.0,
+      "mean_trades": 183.8181818181818,
+      "possible_floor_cases": 0,
+      "possible_DLL_cases": 0,
+      "inactivity_cases": 14,
+      "maximum_trading_OHLC_DD_bound": 775.75,
+      "windows": 55,
+      "resolved": false
+    },
+    "reference_checks": 0
+  },
+  "later": {
+    "F4X_LADDER_INTRADAY_CAUSAL_BENCHMARK": {
+      "base": {
+        "mean_trader_cash": 144.83360655737707,
+        "mean_economic_book_value": 570.5040983606558,
+        "mean_gross_withdrawals": 160.9262295081967,
+        "mean_ending_balance": 4993.672131147541,
+        "mean_known_trading_pnl": 5154.598360655737,
+        "mean_payouts": 0.29508196721311475,
+        "mean_trades": 159.9672131147541,
+        "possible_floor_cases": 0,
+        "possible_DLL_cases": 31,
+        "inactivity_cases": 14,
+        "maximum_trading_OHLC_DD_bound": 3040.0,
+        "windows": 61,
+        "resolved": false
+      },
+      "cost2": {
+        "mean_trader_cash": 54.778278688524594,
+        "mean_economic_book_value": 283.03155737704924,
+        "mean_gross_withdrawals": 60.864754098360656,
+        "mean_ending_balance": 4355.581967213115,
+        "mean_known_trading_pnl": 4416.446721311476,
+        "mean_payouts": 0.13114754098360656,
+        "mean_trades": 163.88524590163934,
+        "possible_floor_cases": 0,
+        "possible_DLL_cases": 28,
+        "inactivity_cases": 17,
+        "maximum_trading_OHLC_DD_bound": 2442.0,
+        "windows": 61,
+        "resolved": false
+      },
+      "reference_checks": 122
+    }
+  },
+  "global_drawdown_filter_used": false,
+  "scope": "Intraday-only causal1position prototype, not exact deployed Fortress4X, no overnight/5daypath. Paths with possible program interventions are unresolved,not confirmed account failures.",
+  "metric_limits": "Book value includes hypothetical residual profit,not guaranteed payout. Cases with rule-bound touches cannot validate forced-fill cashflows. Zero-touch conservative bounds avoid this unresolved fill branch.",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "paper_outcomes_accessed": false,
+  "deployment_changed": false,
+  "independent_confirmation": false,
+  "protocol_sha256": "072cc625a7361d6c06ab8ee9c3b58a5416b43796f3f22578585b4fbbed75a1e2",
+  "rules_sha256": "261885273e2d02ce81a91672d370b87bab4331d3358a5af932cb2bf76889ae6f",
+  "frozen_choice_sha256": "0f92ef9bb03937846058b5f3211ae1cb4337cabf8237c4f7a52997d10713f85d"
+}

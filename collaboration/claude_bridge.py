@@ -318,8 +318,9 @@ def sync_unified_stream(ag_turns: list[dict], claude_turns: list[dict], devin_ms
         lines.append("---")
         lines.append("")
 
-    with open(UNIFIED_STREAM_PATH, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+    # One common renderer keeps Codex present when this legacy watcher runs.
+    from shared_history import write_unified
+    write_unified(COLLAB_ROOT)
 
 
 def sync_all():

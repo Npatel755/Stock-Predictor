@@ -1,0 +1,4681 @@
+{
+  "run_id": "stack_continuous_exposure_fixed_v1",
+  "frozen_at": "2026-11-12 02:32:58.996541+00:00",
+  "candidates": [
+    {
+      "name": "T1600_C1_R100_F0.25_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R100_F0.25_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R100_F0.5_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R100_F0.5_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R100_F0.75_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R100_F0.75_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R100_F1_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R100_F1_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R150_F0.25_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R150_F0.25_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R150_F0.5_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R150_F0.5_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R150_F0.75_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R150_F0.75_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R150_F1_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R150_F1_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R200_F0.25_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R200_F0.25_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R200_F0.5_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R200_F0.5_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R200_F0.75_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R200_F0.75_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R200_F1_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R200_F1_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R250_F0.25_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R250_F0.25_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R250_F0.5_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R250_F0.5_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R250_F0.75_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R250_F0.75_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R250_F1_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R250_F1_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R300_F0.25_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R300_F0.25_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R300_F0.5_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R300_F0.5_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R300_F0.75_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R300_F0.75_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R300_F1_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R300_F1_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R350_F0.25_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R350_F0.25_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R350_F0.5_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R350_F0.5_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R350_F0.75_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R350_F0.75_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C1_R350_F1_M0",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C1_R350_F1_M1",
+      "target": 1600.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R100_F0.25_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R100_F0.25_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R100_F0.5_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R100_F0.5_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R100_F0.75_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R100_F0.75_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R100_F1_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R100_F1_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R150_F0.25_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R150_F0.25_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R150_F0.5_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R150_F0.5_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R150_F0.75_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R150_F0.75_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R150_F1_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R150_F1_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R200_F0.25_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R200_F0.25_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R200_F0.5_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R200_F0.5_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R200_F0.75_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R200_F0.75_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R200_F1_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R200_F1_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R250_F0.25_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R250_F0.25_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R250_F0.5_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R250_F0.5_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R250_F0.75_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R250_F0.75_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R250_F1_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R250_F1_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R300_F0.25_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R300_F0.25_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R300_F0.5_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R300_F0.5_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R300_F0.75_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R300_F0.75_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R300_F1_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R300_F1_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R350_F0.25_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R350_F0.25_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R350_F0.5_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R350_F0.5_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R350_F0.75_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R350_F0.75_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C2_R350_F1_M0",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C2_R350_F1_M1",
+      "target": 1600.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R100_F0.25_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R100_F0.25_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R100_F0.5_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R100_F0.5_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R100_F0.75_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R100_F0.75_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R100_F1_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R100_F1_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R150_F0.25_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R150_F0.25_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R150_F0.5_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R150_F0.5_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R150_F0.75_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R150_F0.75_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R150_F1_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R150_F1_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R200_F0.25_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R200_F0.25_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R200_F0.5_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R200_F0.5_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R200_F0.75_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R200_F0.75_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R200_F1_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R200_F1_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R250_F0.25_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R250_F0.25_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R250_F0.5_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R250_F0.5_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R250_F0.75_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R250_F0.75_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R250_F1_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R250_F1_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R300_F0.25_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R300_F0.25_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R300_F0.5_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R300_F0.5_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R300_F0.75_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R300_F0.75_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R300_F1_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R300_F1_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R350_F0.25_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R350_F0.25_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R350_F0.5_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R350_F0.5_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R350_F0.75_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R350_F0.75_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1600_C3_R350_F1_M0",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1600_C3_R350_F1_M1",
+      "target": 1600.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R100_F0.25_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R100_F0.25_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R100_F0.5_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R100_F0.5_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R100_F0.75_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R100_F0.75_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R100_F1_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R100_F1_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R150_F0.25_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R150_F0.25_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R150_F0.5_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R150_F0.5_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R150_F0.75_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R150_F0.75_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R150_F1_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R150_F1_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R200_F0.25_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R200_F0.25_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R200_F0.5_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R200_F0.5_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R200_F0.75_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R200_F0.75_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R200_F1_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R200_F1_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R250_F0.25_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R250_F0.25_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R250_F0.5_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R250_F0.5_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R250_F0.75_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R250_F0.75_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R250_F1_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R250_F1_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R300_F0.25_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R300_F0.25_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R300_F0.5_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R300_F0.5_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R300_F0.75_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R300_F0.75_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R300_F1_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R300_F1_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R350_F0.25_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R350_F0.25_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R350_F0.5_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R350_F0.5_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R350_F0.75_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R350_F0.75_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C1_R350_F1_M0",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C1_R350_F1_M1",
+      "target": 1750.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R100_F0.25_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R100_F0.25_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R100_F0.5_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R100_F0.5_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R100_F0.75_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R100_F0.75_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R100_F1_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R100_F1_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R150_F0.25_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R150_F0.25_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R150_F0.5_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R150_F0.5_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R150_F0.75_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R150_F0.75_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R150_F1_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R150_F1_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R200_F0.25_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R200_F0.25_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R200_F0.5_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R200_F0.5_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R200_F0.75_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R200_F0.75_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R200_F1_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R200_F1_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R250_F0.25_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R250_F0.25_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R250_F0.5_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R250_F0.5_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R250_F0.75_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R250_F0.75_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R250_F1_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R250_F1_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R300_F0.25_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R300_F0.25_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R300_F0.5_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R300_F0.5_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R300_F0.75_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R300_F0.75_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R300_F1_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R300_F1_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R350_F0.25_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R350_F0.25_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R350_F0.5_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R350_F0.5_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R350_F0.75_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R350_F0.75_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C2_R350_F1_M0",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C2_R350_F1_M1",
+      "target": 1750.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R100_F0.25_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R100_F0.25_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R100_F0.5_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R100_F0.5_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R100_F0.75_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R100_F0.75_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R100_F1_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R100_F1_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R150_F0.25_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R150_F0.25_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R150_F0.5_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R150_F0.5_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R150_F0.75_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R150_F0.75_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R150_F1_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R150_F1_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R200_F0.25_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R200_F0.25_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R200_F0.5_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R200_F0.5_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R200_F0.75_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R200_F0.75_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R200_F1_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R200_F1_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R250_F0.25_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R250_F0.25_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R250_F0.5_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R250_F0.5_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R250_F0.75_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R250_F0.75_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R250_F1_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R250_F1_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R300_F0.25_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R300_F0.25_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R300_F0.5_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R300_F0.5_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R300_F0.75_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R300_F0.75_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R300_F1_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R300_F1_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R350_F0.25_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R350_F0.25_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R350_F0.5_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R350_F0.5_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R350_F0.75_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R350_F0.75_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1750_C3_R350_F1_M0",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1750_C3_R350_F1_M1",
+      "target": 1750.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R100_F0.25_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R100_F0.25_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R100_F0.5_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R100_F0.5_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R100_F0.75_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R100_F0.75_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R100_F1_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R100_F1_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R150_F0.25_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R150_F0.25_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R150_F0.5_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R150_F0.5_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R150_F0.75_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R150_F0.75_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R150_F1_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R150_F1_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R200_F0.25_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R200_F0.25_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R200_F0.5_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R200_F0.5_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R200_F0.75_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R200_F0.75_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R200_F1_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R200_F1_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R250_F0.25_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R250_F0.25_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R250_F0.5_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R250_F0.5_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R250_F0.75_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R250_F0.75_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R250_F1_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R250_F1_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R300_F0.25_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R300_F0.25_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R300_F0.5_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R300_F0.5_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R300_F0.75_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R300_F0.75_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R300_F1_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R300_F1_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R350_F0.25_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R350_F0.25_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R350_F0.5_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R350_F0.5_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R350_F0.75_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R350_F0.75_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C1_R350_F1_M0",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C1_R350_F1_M1",
+      "target": 1850.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R100_F0.25_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R100_F0.25_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R100_F0.5_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R100_F0.5_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R100_F0.75_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R100_F0.75_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R100_F1_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R100_F1_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R150_F0.25_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R150_F0.25_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R150_F0.5_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R150_F0.5_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R150_F0.75_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R150_F0.75_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R150_F1_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R150_F1_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R200_F0.25_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R200_F0.25_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R200_F0.5_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R200_F0.5_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R200_F0.75_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R200_F0.75_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R200_F1_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R200_F1_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R250_F0.25_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R250_F0.25_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R250_F0.5_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R250_F0.5_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R250_F0.75_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R250_F0.75_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R250_F1_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R250_F1_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R300_F0.25_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R300_F0.25_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R300_F0.5_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R300_F0.5_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R300_F0.75_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R300_F0.75_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R300_F1_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R300_F1_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R350_F0.25_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R350_F0.25_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R350_F0.5_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R350_F0.5_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R350_F0.75_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R350_F0.75_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C2_R350_F1_M0",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C2_R350_F1_M1",
+      "target": 1850.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R100_F0.25_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R100_F0.25_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R100_F0.5_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R100_F0.5_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R100_F0.75_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R100_F0.75_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R100_F1_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R100_F1_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R150_F0.25_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R150_F0.25_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R150_F0.5_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R150_F0.5_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R150_F0.75_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R150_F0.75_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R150_F1_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R150_F1_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R200_F0.25_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R200_F0.25_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R200_F0.5_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R200_F0.5_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R200_F0.75_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R200_F0.75_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R200_F1_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R200_F1_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R250_F0.25_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R250_F0.25_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R250_F0.5_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R250_F0.5_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R250_F0.75_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R250_F0.75_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R250_F1_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R250_F1_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R300_F0.25_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R300_F0.25_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R300_F0.5_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R300_F0.5_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R300_F0.75_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R300_F0.75_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R300_F1_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R300_F1_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R350_F0.25_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R350_F0.25_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R350_F0.5_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R350_F0.5_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R350_F0.75_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R350_F0.75_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1850_C3_R350_F1_M0",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1850_C3_R350_F1_M1",
+      "target": 1850.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R100_F0.25_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R100_F0.25_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R100_F0.5_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R100_F0.5_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R100_F0.75_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R100_F0.75_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R100_F1_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R100_F1_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R150_F0.25_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R150_F0.25_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R150_F0.5_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R150_F0.5_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R150_F0.75_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R150_F0.75_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R150_F1_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R150_F1_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R200_F0.25_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R200_F0.25_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R200_F0.5_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R200_F0.5_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R200_F0.75_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R200_F0.75_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R200_F1_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R200_F1_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R250_F0.25_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R250_F0.25_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R250_F0.5_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R250_F0.5_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R250_F0.75_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R250_F0.75_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R250_F1_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R250_F1_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R300_F0.25_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R300_F0.25_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R300_F0.5_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R300_F0.5_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R300_F0.75_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R300_F0.75_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R300_F1_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R300_F1_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R350_F0.25_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R350_F0.25_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R350_F0.5_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R350_F0.5_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R350_F0.75_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R350_F0.75_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C1_R350_F1_M0",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C1_R350_F1_M1",
+      "target": 1900.0,
+      "cap": 1.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R100_F0.25_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R100_F0.25_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R100_F0.5_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R100_F0.5_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R100_F0.75_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R100_F0.75_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R100_F1_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R100_F1_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R150_F0.25_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R150_F0.25_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R150_F0.5_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R150_F0.5_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R150_F0.75_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R150_F0.75_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R150_F1_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R150_F1_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R200_F0.25_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R200_F0.25_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R200_F0.5_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R200_F0.5_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R200_F0.75_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R200_F0.75_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R200_F1_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R200_F1_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R250_F0.25_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R250_F0.25_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R250_F0.5_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R250_F0.5_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R250_F0.75_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R250_F0.75_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R250_F1_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R250_F1_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R300_F0.25_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R300_F0.25_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R300_F0.5_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R300_F0.5_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R300_F0.75_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R300_F0.75_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R300_F1_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R300_F1_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R350_F0.25_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R350_F0.25_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R350_F0.5_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R350_F0.5_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R350_F0.75_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R350_F0.75_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C2_R350_F1_M0",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C2_R350_F1_M1",
+      "target": 1900.0,
+      "cap": 2.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R100_F0.25_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R100_F0.25_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R100_F0.5_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R100_F0.5_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R100_F0.75_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R100_F0.75_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R100_F1_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R100_F1_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 100.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R150_F0.25_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R150_F0.25_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R150_F0.5_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R150_F0.5_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R150_F0.75_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R150_F0.75_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R150_F1_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R150_F1_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R200_F0.25_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R200_F0.25_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R200_F0.5_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R200_F0.5_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R200_F0.75_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R200_F0.75_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R200_F1_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R200_F1_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 200.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R250_F0.25_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R250_F0.25_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R250_F0.5_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R250_F0.5_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R250_F0.75_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R250_F0.75_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R250_F1_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R250_F1_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 250.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R300_F0.25_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R300_F0.25_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R300_F0.5_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R300_F0.5_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R300_F0.75_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R300_F0.75_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R300_F1_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R300_F1_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R350_F0.25_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R350_F0.25_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.25,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R350_F0.5_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R350_F0.5_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.5,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R350_F0.75_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R350_F0.75_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 0.75,
+      "marked": true
+    },
+    {
+      "name": "T1900_C3_R350_F1_M0",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": false
+    },
+    {
+      "name": "T1900_C3_R350_F1_M1",
+      "target": 1900.0,
+      "cap": 3.0,
+      "risk_cap": 350.0,
+      "fraction": 1.0,
+      "marked": true
+    }
+  ],
+  "incumbent": {
+    "name": "REPRICED_INCUMBENT",
+    "cap": 1.0,
+    "risk_cap": 225.0,
+    "fraction": 1.0,
+    "target": 1800.0,
+    "marked": false
+  },
+  "source_hashes": {
+    "scripts\\stack_continuous_train.py": "c502f42ba1cc55bd25703e50086f64a819117e47b8cf8bfa978316ebc92d5bed",
+    "scripts\\stack_continuous_core.py": "92d4a487034db723ef54532ada269c52ddbca8cb6c8fc2bd03e43d6ba584489a",
+    "tests\\test_stack_continuous_core.py": "bb7b790254c30fccc60b3284d7fda7e5b0e0343c2c3068f9336f0be976b9db9e",
+    "scripts\\stack_continuous_exposure_fix_train.py": "eca040b293e694ca864ae93bf970e36b20deca8f726bbc3692d1d22073d0e611"
+  },
+  "training_sources": {
+    "ES": {
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\market\\GLBX-20261106-FX6FM5XWUX-v3\\splits\\ES\\train.parquet",
+      "sha256": "b167a7bd2d1b45c33b6688cb863128484d0f3d34e13d8f8d36c859c75aecb2e7",
+      "role": "train",
+      "dataset_version": "b167a7bd2d1b45c33b6688cb863128484d0f3d34e13d8f8d36c859c75aecb2e7"
+    },
+    "NQ": {
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\market\\GLBX-20261106-FX6FM5XWUX-v3\\splits\\NQ\\train.parquet",
+      "sha256": "9319b0e81bba3d5b74c334b029b85ea3ba574642fbc17bbd3c6fa6f926094079",
+      "role": "train",
+      "dataset_version": "9319b0e81bba3d5b74c334b029b85ea3ba574642fbc17bbd3c6fa6f926094079"
+    },
+    "MES": {
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\market\\GLBX-20261106-FX6FM5XWUX-v3\\splits\\MES\\train.parquet",
+      "sha256": "93fb381d4f21ce1802979ffefa9f26c9a6419d370b22827e98caedf677ea2c0b",
+      "role": "train",
+      "dataset_version": "93fb381d4f21ce1802979ffefa9f26c9a6419d370b22827e98caedf677ea2c0b"
+    },
+    "MNQ": {
+      "path": "C:\\Users\\Nick\\OneDrive\\Attachments\\Desktop\\Stock Predictor Codex ETH BNB\\quant_trading_bot\\data\\market\\GLBX-20261106-FX6FM5XWUX-v3\\splits\\MNQ\\train.parquet",
+      "sha256": "9ff96dc3b1814a7569724a360fbd6628674fd802c015e1d79cb230547ddc8381",
+      "role": "train",
+      "dataset_version": "9ff96dc3b1814a7569724a360fbd6628674fd802c015e1d79cb230547ddc8381"
+    }
+  },
+  "base_book_sha256": "e623f1ab5a203324b4cfa15f62d06ac759fb1e82b25560bbd7d638e1aefd6f71",
+  "catalog_sha256": "df7d66317a6963ff866906a4717e2ebf5a334c21e6f5544f8cd0a24b2c92c611",
+  "hypothesis": "Smaller entry-risk fractions and explicit completed-mark risk peaks may avoid the absorbing risk state while preserving a strict2000drawdown ceiling. Test actual historical dollars and a single continuous account, not normalized/reset blocks.",
+  "data": "Existing three-sleeve causal base signals only; no overnight/new entry filters. TRAIN2010July-2023. E-mini bars proxy pre2019; micro contract economics, not historical micro liquidity.",
+  "boundaries": "Entry suppression8days after2010Jul1, before2024Jan1, and either side of internal2021Jan1. Prefix2010-2020 chooses one policy; full2010-2023 replays only frozen choice+incumbent, with no2021state reset. All TRAIN repeatedly used in historical research, not fresh holdouts.",
+  "prices": "Use saved actual entry/exit fill prices and micro multiplier minus1dollarRT fee. Saved fills include0.5point/side slippage. Cost2 subtracts extra1dollar+1point*multiplier; entry fee and entry-risk reserves also stressed. Original normalized reports preserved; profits not directly comparable.",
+  "mark_bounds": "Join source1minuteOHLC from entry through exit-bar confirmation. Full first/last bar can overstate excursions after the true exit; pessimistic favorable-before-adverse order bounds intrabar drawdown. Not exact tick chronology or verified broker trailing-equity rules. Entry quantity fixed before consulting current excursions. Scheduled-open exits (source no_entry at>=15:55) use source bars before tout plus the exit-open cashfill, since no exposure exists in subsequent bars. Conservative entry/exit routing availability is unchanged.",
+  "QA": "Accepted paths require a quote at entry, one contract within the held interval, no duplicate timestamps, validOHLC/nonnegativevolume, and no internal quote gap>5minutes. Bad path cannot become zeroMAE or be silently deleted. Reject policy with attempted bad-data exposure.",
+  "risk": "Risk budgets target1600..1900, never userdrawdownlimit2000. Remaining budget calculated against either completed cash peak or conservative completed mark peak; never reset peaks/cash byyear. Integer qty<=cap*source base size, global6. All gap loss fills fully debited. Reject actual/conservative bound touch2000.",
+  "qualification": "Both base/cost2: positive net, cash and conservativeOHLCdrawdown bound strictly<2000, no bad-path/breach, max inactivity<=180days. Prefix>=300trades,>=15/year,>=8positiveyears of11, positive net in each2010-13/2014-17/2018-20block. Full>=15/year and>=10positiveyears of14;2021-23incrementalnet>0and>=2/3positiveyears.",
+  "rank": "EarlierTRAIN-only: greatest minimum cost2 annualized profit across three chronological blocks; then cost2totalnet, basetotalnet, lower OHLCbound, name. Freeze one before full laterTRAIN replay. No alternative chosen from laterTRAIN.",
+  "improvement": "Chosen policy must qualify on prefix and full, and exceed repriced incumbent base AND cost2 net by>=5% on both prefix and continuous fullTRAIN. Failed baseline paths are stopped/censored at risk rejection; disclose unequal exposure, not a buy-and-hold comparison.",
+  "uncertainty": "576 nominal allocations, unknown historical effective search count. Neighborhood/path counts and descriptive pairedblock uncertainty only; no independent unseen claims or fake significance. No live or payout certification.",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "paper_outcomes_accessed": false,
+  "automatic_holdout_stage": false,
+  "data_integrity_repair": {
+    "original_run_sha256": "07e71f41a36024bf8dd6dc55adf081cc8a0d97b1f4908182283aee262b632d30",
+    "original_bound_table_sha256": "7f5ca4265a5dd234a0c5c406aa565ff2c8adcabe11aa4538efeb5fbe1e58a473",
+    "original_protocol_sha256": "43fceed6670918fe952e8efa3a0adb0caf094c5d1968e0b8232ee818d21c73fd",
+    "explanation": "269original invalid intervals all failed gap-only QA. Source mass_execution no_entry exits at opening[i] before high/low. Correct ALL exits at/after15:55ET to mark exposure only before tout, including the actual exit-open fill; keep exit-bar confirmation as conservative routing delay. No filter/gate/config changed.",
+    "original_failed_results_preserved": true,
+    "original_prefix_choice": null,
+    "source_engine_sha256": "a31ef27f3df1e02fc59d4cb86ed9cbb512eec90ad5d361dcd202a5a6da9cd6af",
+    "source_sleeve_wrapper_sha256": "de886b3e6cf35188cac344eaf3221e081ef3ec364a94beda7f001eef1507e1a7"
+  }
+}

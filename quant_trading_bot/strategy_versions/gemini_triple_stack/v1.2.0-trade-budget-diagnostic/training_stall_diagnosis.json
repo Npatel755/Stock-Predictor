@@ -1,0 +1,6 @@
+{
+  "last_completed_cost2_trade": "2023-03-30 15:00:00+00:00",
+  "final_closed_cash_drawdown": 1797.7060006846514,
+  "remaining_1800_budget": 2.2939993153486284,
+  "interpretation": "Budget shrank to about2.29 dollars, too small for a micro contract. Low observed drawdown partly reflects stopping trading. The frozen activity gate correctly rejects it; do not reset the equity peak or relax the gate after seeing this."
+}

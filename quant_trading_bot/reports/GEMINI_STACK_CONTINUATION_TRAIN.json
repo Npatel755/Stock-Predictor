@@ -1,0 +1,336 @@
+{
+  "legacy_original": {
+    "name": "Gemini triple stack",
+    "configuration": {
+      "name": "triple_K8600_G8700",
+      "book": "triple",
+      "K": 8600.0,
+      "gate1": 8700.0,
+      "gate2": 8700.0,
+      "max_p4": 1500.0
+    },
+    "claimed_24month_mean_withdrawals": 52016.0,
+    "reproduced_legacy_metrics": {
+      "S0": {
+        "mean_withdrawals": 52015.71534675662,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.007194244604316547,
+        "near_miss_fraction": 0.007194244604316547,
+        "median_first_withdrawal_calendar_days": 221.0,
+        "mean_firstyear_payouts": 8.83453237410072,
+        "mean_firstyear_withdrawals": 10730.457902047257,
+        "mean_ending_balance": 30917.05522484817,
+        "mean_net_trading_pnl": 82932.7705716048,
+        "mean_payout_count": 38.68345323741007,
+        "windows": 139
+      },
+      "S3": {
+        "mean_withdrawals": 33140.22838881298,
+        "closed_fraction": 0.02158273381294964,
+        "conservative_stoprisk_flag_fraction": 0.050359712230215826,
+        "near_miss_fraction": 0.08633093525179857,
+        "median_first_withdrawal_calendar_days": 302.0,
+        "mean_firstyear_payouts": 4.9352517985611515,
+        "mean_firstyear_withdrawals": 6059.934818771025,
+        "mean_ending_balance": 24290.204048540152,
+        "mean_net_trading_pnl": 57430.43243735313,
+        "mean_payout_count": 24.503597122302157,
+        "windows": 139
+      },
+      "S4": {
+        "mean_withdrawals": 36398.86246964216,
+        "closed_fraction": 0.06474820143884892,
+        "conservative_stoprisk_flag_fraction": 0.09352517985611511,
+        "near_miss_fraction": 0.14388489208633093,
+        "median_first_withdrawal_calendar_days": 246.0,
+        "mean_firstyear_payouts": 6.856115107913669,
+        "mean_firstyear_withdrawals": 8071.891534183769,
+        "mean_ending_balance": 24279.939653887646,
+        "mean_net_trading_pnl": 60678.80212352981,
+        "mean_payout_count": 27.302158273381295,
+        "windows": 139
+      },
+      "independent_path_checks": 417
+    },
+    "corrected_causal_baseline": {
+      "S0": {
+        "mean_withdrawals": 29081.59850244767,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.007194244604316547,
+        "median_first_withdrawal_calendar_days": 266.0,
+        "mean_firstyear_payouts": 7.071942446043166,
+        "mean_firstyear_withdrawals": 7218.905657132393,
+        "mean_ending_balance": 7348.260963689711,
+        "mean_net_trading_pnl": 36429.85946613738,
+        "mean_payout_count": 27.719424460431654,
+        "windows": 139
+      },
+      "S3": {
+        "mean_withdrawals": 17936.22777004107,
+        "closed_fraction": 0.007194244604316547,
+        "conservative_stoprisk_flag_fraction": 0.014388489208633094,
+        "near_miss_fraction": 0.07913669064748201,
+        "median_first_withdrawal_calendar_days": 350.0,
+        "mean_firstyear_payouts": 3.79136690647482,
+        "mean_firstyear_withdrawals": 4102.646138452892,
+        "mean_ending_balance": 5978.377709523534,
+        "mean_net_trading_pnl": 23914.605479564605,
+        "mean_payout_count": 16.287769784172664,
+        "windows": 139
+      },
+      "S4": {
+        "mean_withdrawals": 19175.913005330625,
+        "closed_fraction": 0.050359712230215826,
+        "conservative_stoprisk_flag_fraction": 0.07194244604316546,
+        "near_miss_fraction": 0.1079136690647482,
+        "median_first_withdrawal_calendar_days": 247.0,
+        "mean_firstyear_payouts": 5.079136690647482,
+        "mean_firstyear_withdrawals": 5156.939055258705,
+        "mean_ending_balance": 6353.175267658014,
+        "mean_net_trading_pnl": 25529.088272988643,
+        "mean_payout_count": 17.92086330935252,
+        "windows": 139
+      },
+      "independent_path_checks": 417
+    },
+    "protocol_sha256": "151b306197573e5de90b76f2e762334a1fd9f9ca6408929efdf81ada89764c61",
+    "legacy_warning": "Oldrouterand2019hole. S3flag7/139=5.03597%,rounded5.0usedinoriginalgates. Thisfailsstrict5%limit.",
+    "live_deployed": false,
+    "external_confirmation": false
+  },
+  "causal_full_training_baseline": {
+    "S0": {
+      "mean_withdrawals": 29081.59850244767,
+      "closed_fraction": 0.0,
+      "conservative_stoprisk_flag_fraction": 0.0,
+      "near_miss_fraction": 0.007194244604316547,
+      "median_first_withdrawal_calendar_days": 266.0,
+      "mean_firstyear_payouts": 7.071942446043166,
+      "mean_firstyear_withdrawals": 7218.905657132393,
+      "mean_ending_balance": 7348.260963689711,
+      "mean_net_trading_pnl": 36429.85946613738,
+      "mean_payout_count": 27.719424460431654,
+      "windows": 139
+    },
+    "S3": {
+      "mean_withdrawals": 17936.22777004107,
+      "closed_fraction": 0.007194244604316547,
+      "conservative_stoprisk_flag_fraction": 0.014388489208633094,
+      "near_miss_fraction": 0.07913669064748201,
+      "median_first_withdrawal_calendar_days": 350.0,
+      "mean_firstyear_payouts": 3.79136690647482,
+      "mean_firstyear_withdrawals": 4102.646138452892,
+      "mean_ending_balance": 5978.377709523534,
+      "mean_net_trading_pnl": 23914.605479564605,
+      "mean_payout_count": 16.287769784172664,
+      "windows": 139
+    },
+    "S4": {
+      "mean_withdrawals": 19175.913005330625,
+      "closed_fraction": 0.050359712230215826,
+      "conservative_stoprisk_flag_fraction": 0.07194244604316546,
+      "near_miss_fraction": 0.1079136690647482,
+      "median_first_withdrawal_calendar_days": 247.0,
+      "mean_firstyear_payouts": 5.079136690647482,
+      "mean_firstyear_withdrawals": 5156.939055258705,
+      "mean_ending_balance": 6353.175267658014,
+      "mean_net_trading_pnl": 25529.088272988643,
+      "mean_payout_count": 17.92086330935252,
+      "windows": 139
+    },
+    "independent_path_checks": 417
+  },
+  "discovery": {
+    "baseline": {
+      "S0": {
+        "mean_withdrawals": 22508.990320627992,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.0,
+        "median_first_withdrawal_calendar_days": 308.0,
+        "mean_firstyear_payouts": 4.454545454545454,
+        "mean_firstyear_withdrawals": 3722.7847417597814,
+        "mean_ending_balance": 7430.581611118177,
+        "mean_net_trading_pnl": 29939.571931746174,
+        "mean_payout_count": 24.236363636363638,
+        "windows": 55
+      },
+      "S3": {
+        "mean_withdrawals": 10745.778409069864,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.10909090909090909,
+        "median_first_withdrawal_calendar_days": 417.0,
+        "mean_firstyear_payouts": 1.1454545454545455,
+        "mean_firstyear_withdrawals": 1005.9973839599498,
+        "mean_ending_balance": 6374.528447510721,
+        "mean_net_trading_pnl": 17120.306856580584,
+        "mean_payout_count": 10.872727272727273,
+        "windows": 55
+      },
+      "S4": {
+        "mean_withdrawals": 16008.489173132935,
+        "closed_fraction": 0.01818181818181818,
+        "conservative_stoprisk_flag_fraction": 0.05454545454545454,
+        "near_miss_fraction": 0.07272727272727272,
+        "median_first_withdrawal_calendar_days": 310.0,
+        "mean_firstyear_payouts": 3.1272727272727274,
+        "mean_firstyear_withdrawals": 2944.8227216209093,
+        "mean_ending_balance": 6532.992085785604,
+        "mean_net_trading_pnl": 22541.481258918535,
+        "mean_payout_count": 16.236363636363638,
+        "windows": 55
+      },
+      "independent_path_checks": 0
+    },
+    "frozen_choice": {
+      "S0": {
+        "mean_withdrawals": 24159.05630010072,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.0,
+        "median_first_withdrawal_calendar_days": 308.0,
+        "mean_firstyear_payouts": 4.581818181818182,
+        "mean_firstyear_withdrawals": 3922.1189754604347,
+        "mean_ending_balance": 7428.585505467528,
+        "mean_net_trading_pnl": 31587.641805568255,
+        "mean_payout_count": 25.272727272727273,
+        "windows": 55
+      },
+      "S3": {
+        "mean_withdrawals": 10667.000819517865,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.10909090909090909,
+        "median_first_withdrawal_calendar_days": 417.0,
+        "mean_firstyear_payouts": 1.1636363636363636,
+        "mean_firstyear_withdrawals": 1010.1021405823005,
+        "mean_ending_balance": 6221.622487323432,
+        "mean_net_trading_pnl": 16888.623306841295,
+        "mean_payout_count": 10.963636363636363,
+        "windows": 55
+      },
+      "S4": {
+        "mean_withdrawals": 14462.726707029628,
+        "closed_fraction": 0.01818181818181818,
+        "conservative_stoprisk_flag_fraction": 0.05454545454545454,
+        "near_miss_fraction": 0.07272727272727272,
+        "median_first_withdrawal_calendar_days": 310.0,
+        "mean_firstyear_payouts": 3.2181818181818183,
+        "mean_firstyear_withdrawals": 2819.829484451202,
+        "mean_ending_balance": 6124.810273208396,
+        "mean_net_trading_pnl": 20587.536980238026,
+        "mean_payout_count": 15.763636363636364,
+        "windows": 55
+      },
+      "independent_path_checks": 0
+    },
+    "lift_fraction": 0.0733069745007866,
+    "eligible_cells": 31
+  },
+  "frozen_configuration": {
+    "name": "triple_K8400_G9000",
+    "book": "triple",
+    "K": 8400.0,
+    "gate1": 9000.0,
+    "gate2": 9000.0,
+    "max_p4": 1500.0
+  },
+  "confirmation": {
+    "baseline": {
+      "S0": {
+        "mean_withdrawals": 39757.3799965268,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.0,
+        "median_first_withdrawal_calendar_days": 195.0,
+        "mean_firstyear_payouts": 10.295081967213115,
+        "mean_firstyear_withdrawals": 11348.71224438356,
+        "mean_ending_balance": 7362.180436212644,
+        "mean_net_trading_pnl": 47119.56043273943,
+        "mean_payout_count": 34.950819672131146,
+        "windows": 61
+      },
+      "S3": {
+        "mean_withdrawals": 29443.243450577225,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.01639344262295082,
+        "near_miss_fraction": 0.04918032786885246,
+        "median_first_withdrawal_calendar_days": 217.0,
+        "mean_firstyear_payouts": 6.819672131147541,
+        "mean_firstyear_withdrawals": 7691.682279298974,
+        "mean_ending_balance": 6204.501354119973,
+        "mean_net_trading_pnl": 35647.744804697184,
+        "mean_payout_count": 25.360655737704917,
+        "windows": 61
+      },
+      "S4": {
+        "mean_withdrawals": 24531.20531669688,
+        "closed_fraction": 0.06557377049180328,
+        "conservative_stoprisk_flag_fraction": 0.06557377049180328,
+        "near_miss_fraction": 0.11475409836065574,
+        "median_first_withdrawal_calendar_days": 207.0,
+        "mean_firstyear_payouts": 7.065573770491803,
+        "mean_firstyear_withdrawals": 7656.997263194217,
+        "mean_ending_balance": 6359.539686427139,
+        "mean_net_trading_pnl": 30890.74500312401,
+        "mean_payout_count": 21.049180327868854,
+        "windows": 61
+      },
+      "independent_path_checks": 0
+    },
+    "frozen_choice": {
+      "S0": {
+        "mean_withdrawals": 40816.01410002415,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.0,
+        "near_miss_fraction": 0.0,
+        "median_first_withdrawal_calendar_days": 195.0,
+        "mean_firstyear_payouts": 10.295081967213115,
+        "mean_firstyear_withdrawals": 11292.222004435636,
+        "mean_ending_balance": 7478.657120070399,
+        "mean_net_trading_pnl": 48294.67122009453,
+        "mean_payout_count": 35.459016393442624,
+        "windows": 61
+      },
+      "S3": {
+        "mean_withdrawals": 28162.181674220392,
+        "closed_fraction": 0.0,
+        "conservative_stoprisk_flag_fraction": 0.01639344262295082,
+        "near_miss_fraction": 0.04918032786885246,
+        "median_first_withdrawal_calendar_days": 217.0,
+        "mean_firstyear_payouts": 6.508196721311475,
+        "mean_firstyear_withdrawals": 7248.505938516217,
+        "mean_ending_balance": 6435.910736522157,
+        "mean_net_trading_pnl": 34598.092410742545,
+        "mean_payout_count": 24.19672131147541,
+        "windows": 61
+      },
+      "S4": {
+        "mean_withdrawals": 24423.714821345304,
+        "closed_fraction": 0.06557377049180328,
+        "conservative_stoprisk_flag_fraction": 0.06557377049180328,
+        "near_miss_fraction": 0.11475409836065574,
+        "median_first_withdrawal_calendar_days": 207.0,
+        "mean_firstyear_payouts": 7.245901639344262,
+        "mean_firstyear_withdrawals": 7813.006932887028,
+        "mean_ending_balance": 6222.0869233229005,
+        "mean_net_trading_pnl": 30645.801744668206,
+        "mean_payout_count": 20.721311475409838,
+        "windows": 61
+      },
+      "independent_path_checks": 183
+    },
+    "lift_fraction": 0.026627360846963155,
+    "risk_gate": true
+  },
+  "candidates": 31,
+  "verified_training_improvement": false,
+  "classification": "NO_QUALIFIED_IMPROVEMENT",
+  "model_warning": "CausalroutingandTRAINgapfillarecorrected,butaccountusesdailyP&Lclippingandlargest-stop-riskproxies,notexactintrabarDLL/floorreplay. Withdrawalsarehypotheticalandpayouteligibilityrulesunverified. RepeatedTRAINoptimizationandnormalizedpricessignificantlylimitclaims.",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "deployment_changed": false,
+  "independent_unseen_confirmation": false
+}

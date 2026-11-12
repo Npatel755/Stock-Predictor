@@ -1,0 +1,450 @@
+{
+  "configuration": {
+    "name": "base_N0_C1_R225_F1",
+    "book": "base",
+    "night": false,
+    "cap": 1.0,
+    "risk_cap": 225.0,
+    "fraction": 1.0
+  },
+  "results": {
+    "status": "NO_QUALIFIED_IMPROVEMENT",
+    "accepted_training_feasibility_improvement": false,
+    "candidates": 504,
+    "controls": 2,
+    "earlier_qualified": 8,
+    "configuration": {
+      "name": "base_N0_C1_R225_F1",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    "earlier": {
+      "base": {
+        "net_pnl": 17600.878130571095,
+        "maximum_realized_cash_drawdown": 1409.7090165099144,
+        "trades": 509.0,
+        "profit_factor": 1.512714673540573,
+        "positive_years": 6.0,
+        "minimum_annual_trades": 28.0,
+        "maximum_inactive_calendar_days": 76.75,
+        "risk_budget_skips": 113.0,
+        "drawdown_breach": 0.0,
+        "annual_net": [
+          -835.8379597964419,
+          3602.1980464462217,
+          2678.6885725544826,
+          1930.4438039913425,
+          4823.898831441207,
+          3315.795877847856,
+          2085.690958086427
+        ],
+        "annual_trades": [
+          28,
+          48,
+          70,
+          98,
+          84,
+          93,
+          88
+        ],
+        "qualified": true
+      },
+      "cost2": {
+        "net_pnl": 16070.354465992174,
+        "maximum_realized_cash_drawdown": 1638.2090165099125,
+        "trades": 505.0,
+        "profit_factor": 1.4596625444309705,
+        "positive_years": 6.0,
+        "minimum_annual_trades": 26.0,
+        "maximum_inactive_calendar_days": 76.75,
+        "risk_budget_skips": 123.0,
+        "drawdown_breach": 0.0,
+        "annual_net": [
+          -975.5289217353678,
+          3428.1980464462217,
+          3244.836356578382,
+          1434.4422101653204,
+          4254.763966651189,
+          2912.95184980001,
+          1770.6909580864271
+        ],
+        "annual_trades": [
+          26,
+          48,
+          69,
+          97,
+          84,
+          93,
+          88
+        ],
+        "qualified": true
+      }
+    },
+    "earlier_controls": {
+      "CONTROL_STATIC_1": {
+        "base": {
+          "net_pnl": 1007.646215973019,
+          "maximum_realized_cash_drawdown": 2087.4848840316963,
+          "trades": 129.0,
+          "profit_factor": 1.07377658473806,
+          "positive_years": 1.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2263.3229166666665,
+          "risk_budget_skips": 3.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            1007.646215973019,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            129,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        },
+        "cost2": {
+          "net_pnl": 758.4589406315376,
+          "maximum_realized_cash_drawdown": 2012.6721593731768,
+          "trades": 128.0,
+          "profit_factor": 1.0552158119352621,
+          "positive_years": 1.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2263.34375,
+          "risk_budget_skips": 3.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            758.4589406315376,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            128,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        }
+      },
+      "CONTROL_STATIC_2": {
+        "base": {
+          "net_pnl": -1937.0915354165666,
+          "maximum_realized_cash_drawdown": 2086.630723854588,
+          "trades": 8.0,
+          "profit_factor": 0.15099529346958518,
+          "positive_years": 0.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2362.3958333333335,
+          "risk_budget_skips": 0.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            -1937.0915354165666,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        },
+        "cost2": {
+          "net_pnl": -1985.0915354165666,
+          "maximum_realized_cash_drawdown": 2128.630723854588,
+          "trades": 8.0,
+          "profit_factor": 0.14347207577689067,
+          "positive_years": 0.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2362.3958333333335,
+          "risk_budget_skips": 0.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            -1985.0915354165666,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        }
+      }
+    },
+    "later_reused_train": {
+      "CONTROL_STATIC_1": {
+        "base": {
+          "net_pnl": -1489.6510229743662,
+          "maximum_realized_cash_drawdown": 2011.8628682292704,
+          "trades": 147.0,
+          "profit_factor": 0.7896323188384564,
+          "positive_years": 0.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2428.375,
+          "risk_budget_skips": 0.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            -1489.6510229743662,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            147,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        },
+        "cost2": {
+          "net_pnl": -1790.5285473687695,
+          "maximum_realized_cash_drawdown": 2024.7403926236734,
+          "trades": 145.0,
+          "profit_factor": 0.7517217369106185,
+          "positive_years": 0.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2431.3229166666665,
+          "risk_budget_skips": 0.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            -1790.5285473687695,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            145,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        }
+      },
+      "CONTROL_STATIC_2": {
+        "base": {
+          "net_pnl": -1052.6212682912544,
+          "maximum_realized_cash_drawdown": 2042.059929774026,
+          "trades": 112.0,
+          "profit_factor": 0.8971989497111431,
+          "positive_years": 0.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2456.3229166666665,
+          "risk_budget_skips": 0.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            -1052.6212682912544,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            112,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        },
+        "cost2": {
+          "net_pnl": -1921.9820053261046,
+          "maximum_realized_cash_drawdown": 2024.8326829840153,
+          "trades": 33.0,
+          "profit_factor": 0.4995379618792892,
+          "positive_years": 0.0,
+          "minimum_annual_trades": 0.0,
+          "maximum_inactive_calendar_days": 2522.28125,
+          "risk_budget_skips": 0.0,
+          "drawdown_breach": 1.0,
+          "annual_net": [
+            -1921.9820053261046,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual_trades": [
+            33,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "qualified": false
+        }
+      },
+      "base_N0_C1_R225_F1": {
+        "base": {
+          "net_pnl": 22564.086075628416,
+          "maximum_realized_cash_drawdown": 1551.5908848792387,
+          "trades": 579.0,
+          "profit_factor": 1.5450518052701316,
+          "positive_years": 7.0,
+          "minimum_annual_trades": 52.0,
+          "maximum_inactive_calendar_days": 90.66666666666667,
+          "risk_budget_skips": 263.0,
+          "drawdown_breach": 0.0,
+          "annual_net": [
+            1958.6167017619107,
+            6475.674256472769,
+            214.2367949099165,
+            641.3790010184503,
+            4159.085704648246,
+            8276.582835911715,
+            838.5107809053923
+          ],
+          "annual_trades": [
+            116,
+            80,
+            92,
+            54,
+            80,
+            52,
+            105
+          ],
+          "qualified": true
+        },
+        "cost2": {
+          "net_pnl": 17757.18388841901,
+          "maximum_realized_cash_drawdown": 1797.7060006846514,
+          "trades": 482.0,
+          "profit_factor": 1.5230997920951446,
+          "positive_years": 5.0,
+          "minimum_annual_trades": 13.0,
+          "maximum_inactive_calendar_days": 276.375,
+          "risk_budget_skips": 400.0,
+          "drawdown_breach": 0.0,
+          "annual_net": [
+            996.3348779756432,
+            6196.625019116601,
+            -106.76320509008364,
+            330.8113082191662,
+            3550.6151018909604,
+            7617.441351070273,
+            -827.8805647635573
+          ],
+          "annual_trades": [
+            116,
+            79,
+            92,
+            52,
+            81,
+            49,
+            13
+          ],
+          "qualified": false
+        }
+      }
+    },
+    "synthetic_null": {
+      "repeats": 20,
+      "whole_grid_cells": 10080,
+      "cost2_maximum_net_95th_percentile": 194.5574289780327,
+      "passed": true,
+      "not_confirmatory": true
+    },
+    "comparison_to_Gemini": "Different execution-clock/size/risk objective. No withdrawals simulated. Cannot compare trading profits directly to prior mean24month withdrawals or claim a funded-payout replacement.",
+    "caveats": "Realized cash drawdown only: missing intratrade OHLC/MAE for extra sleeves. No intrabar funded compliance or payout estimate. Historical percent returns at inherited fixed MNQ27981.5/MES7584 reference levels, not actual historical dollar returns. Source strategies and earlier/later TRAIN repeatedly selected in past; unknown total historical multiplicity. No independent holdout claim.",
+    "intrabar_drawdown_verified": false,
+    "funded_account_certified": false,
+    "independent_unseen_confirmation": false,
+    "validation_accessed": false,
+    "test_accessed": false,
+    "forward_paper_accessed": false,
+    "deployment_changed": false,
+    "protocol_sha256": "867fd7308f448d00ec4bdff1e93bb2df21165d74f538f4bc2e74130e04a0a6fa",
+    "frozen_choice_sha256": "ae77b07efea5e5c3964c7f122b4a47af399a6d778a50cf042349e00542d79a6c",
+    "completion_repair_seal_sha256": "ac6079db4713e9d240806e7e6197f4f6f2d156fff76c94ef7eba6db49f5800c4"
+  },
+  "audit": {
+    "passed": true,
+    "independent_full_earlier_reference_cases": 1012,
+    "all506_checkpoint_metrics_reconciled": true,
+    "earlier_execution_signatures": 150,
+    "nominal_candidate_allocations": 504,
+    "earlier_qualified_allocations": 8,
+    "earlier_qualified_distinct_execution_paths": 4,
+    "chosen_frozen_rank_verified": true,
+    "all20_null_checkpoint_rows_reconciled": true,
+    "source_and_cache_hashes_verified": true,
+    "signature_method": "SHA256 of accepted entry/exit times, multiplier, integer quantity and net cashflows at both costs. Counts distinct earlier realized execution paths, not independent hypotheses.",
+    "qualifying_realized_metrics_do_not_verify_intrabar_equity": true,
+    "unverified_intrabar_fields_never_used_as_zero": true,
+    "rejected_reason": "Doubled-cost later-TRAIN maximum inactivity276.375calendar days exceeds the frozen180day limit.",
+    "no_alternative_selected_after_later_train": true,
+    "later_cost2_inactive_days": 276.375,
+    "maximum_intrabar_drawdown": "UNKNOWN",
+    "payout_results": "NOT_SIMULATED",
+    "earlier_and_later_are_reused_train": true,
+    "validation_accessed": false,
+    "test_accessed": false,
+    "forward_paper_accessed": false,
+    "statistical_evidence": "INSUFFICIENT_FOR_UNSEEN_OR_FUNDED_CLAIM",
+    "decision": "Save frozen diagnostic; no replacement/deployment."
+  },
+  "classification": "REJECTED_TRAIN_DIAGNOSTIC",
+  "replaces_champion": false,
+  "live_or_paper_deployed": false,
+  "exact_signals": "Base book from causal TRAIN cache, fixed priority. Integer source contract weights; cap1, riskcap225, fraction1 of remaining1800 realized-DD budget. No overnight. Entry/exit signals unchanged."
+}

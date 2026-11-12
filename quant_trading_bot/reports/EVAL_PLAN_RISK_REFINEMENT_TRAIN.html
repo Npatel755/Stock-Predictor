@@ -1,0 +1,109 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TRAIN-only evaluation passer: no qualifying improvement</title><style>body{font:16px/1.65 system-ui;background:#101820;color:#edf2f7;max-width:1200px;padding:32px;margin:auto}a{color:#91d7ff}table{border-collapse:collapse}td,th{padding:12px;border-bottom:1px solid #445566}img{width:100%}pre{white-space:pre-wrap}.scroll{overflow:auto}</style><h1>TRAIN-only evaluation passer: no qualifying improvement</h1><p>Fixed causal one-position PLAN book;45predeclaredpolicies including baseline. Discovery is earlierTRAIN;one winner is frozen before laterTRAINconfirmation. Validation,test,andforwardpaperoutcomes were not used. No live or paper configuration was changed.</p><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Period</th>
+      <th>Policy</th>
+      <th>Starts</th>
+      <th>Pass_pct</th>
+      <th>Fail_pct</th>
+      <th>Timeout_pct</th>
+      <th>Median_calendar_days</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>discovery</td>
+      <td>Baseline</td>
+      <td>1632</td>
+      <td>50.80</td>
+      <td>20.47</td>
+      <td>28.74</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>discovery</td>
+      <td>Frozenchoice</td>
+      <td>1632</td>
+      <td>50.80</td>
+      <td>20.47</td>
+      <td>28.74</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>confirmation</td>
+      <td>Baseline</td>
+      <td>1752</td>
+      <td>61.13</td>
+      <td>21.23</td>
+      <td>17.64</td>
+      <td>41.00</td>
+    </tr>
+    <tr>
+      <td>confirmation</td>
+      <td>Frozenchoice</td>
+      <td>1752</td>
+      <td>61.13</td>
+      <td>21.23</td>
+      <td>17.64</td>
+      <td>41.00</td>
+    </tr>
+  </tbody>
+</table></div><img src="EVAL_PLAN_RISK_REFINEMENT_TRAIN.png" alt="EarlierTRAINdiscoveryandlaterTRAINconfirmationpassshares"><h2>Frozen sizing policy</h2><pre>{
+  &quot;name&quot;: &quot;INCUMBENT&quot;,
+  &quot;fraction&quot;: 0.0,
+  &quot;cap&quot;: 900.0,
+  &quot;lock&quot;: false,
+  &quot;top&quot;: 3,
+  &quot;late&quot;: 5,
+  &quot;late_day&quot;: 60
+}</pre><p>Risk budget per entry = min(cap,fraction × remaining static-floor cushion),if fraction is positive. Otherwise use the incumbent cap. Sizes are also limited by the defensive/endgame ladder and50micros. Position quantity is determined before observing its outcome or MAE. Positivefraction policies reduce risk as the account approaches the fixedfloor. Lock skips later entries only after already-realized profit meets target and consistency.</p><h2>Limits of the evidence</h2><p>Account scenario remains target$4,000,staticfloor−$2,000,DLL$1,000,55%best-dayconsistency,and90calendardays. These are the frozen incumbent research assumptions,not independently verified current account rules. DLL accounting uses a conservative whole-trade adverse bound,not an exact path/stopfill simulation. The book uses fixed reference-price normalization; results are historical scenarios,not actual normalized-dollar trades. Overlapping rolling attempts are dependent;44 alternatives create selection bias. No fresh unseen confirmation is available.</p><h2>LaterTRAIN uncertainty and execution stress</h2><pre>{
+  &quot;period&quot;: &quot;2017-2023SeptemberTRAINstarts&quot;,
+  &quot;baseline&quot;: {
+    &quot;n&quot;: 1752,
+    &quot;pass_rate&quot;: 61.130136986301366,
+    &quot;failure_rate&quot;: 21.232876712328768,
+    &quot;timeout_rate&quot;: 17.636986301369863,
+    &quot;median_pass_days&quot;: 41.0,
+    &quot;minimum_attempt_balance_bound&quot;: -2469.733232593941,
+    &quot;worst_success_balance_bound&quot;: -1972.4494781162923
+  },
+  &quot;candidate&quot;: {
+    &quot;n&quot;: 1752,
+    &quot;pass_rate&quot;: 61.130136986301366,
+    &quot;failure_rate&quot;: 21.232876712328768,
+    &quot;timeout_rate&quot;: 17.636986301369863,
+    &quot;median_pass_days&quot;: 41.0,
+    &quot;minimum_attempt_balance_bound&quot;: -2469.733232593941,
+    &quot;worst_success_balance_bound&quot;: -1972.4494781162923
+  },
+  &quot;gate&quot;: false,
+  &quot;extra_1point_cost_baseline&quot;: {
+    &quot;n&quot;: 1752,
+    &quot;pass_rate&quot;: 59.53196347031964,
+    &quot;failure_rate&quot;: 22.203196347031966,
+    &quot;timeout_rate&quot;: 18.2648401826484,
+    &quot;median_pass_days&quot;: 42.0,
+    &quot;minimum_attempt_balance_bound&quot;: -2488.733232593941,
+    &quot;worst_success_balance_bound&quot;: -1978.5732392411091
+  },
+  &quot;extra_1point_cost_candidate&quot;: {
+    &quot;n&quot;: 1752,
+    &quot;pass_rate&quot;: 59.53196347031964,
+    &quot;failure_rate&quot;: 22.203196347031966,
+    &quot;timeout_rate&quot;: 18.2648401826484,
+    &quot;median_pass_days&quot;: 42.0,
+    &quot;minimum_attempt_balance_bound&quot;: -2488.733232593941,
+    &quot;worst_success_balance_bound&quot;: -1978.5732392411091
+  },
+  &quot;paired_year_bootstrap&quot;: {
+    &quot;block&quot;: &quot;start-calendar-year&quot;,
+    &quot;blocks&quot;: 7,
+    &quot;replicates&quot;: 1999,
+    &quot;mean_lift_pp&quot;: 0.0,
+    &quot;percentile95_lift_pp&quot;: [
+      0.0,
+      0.0
+    ],
+    &quot;limitation&quot;: &quot;Overlapping90-daystarts are dependent;onlysevenlaterTRAINyearblocks,so uncertainty is coarse andnotexternalconfirmation.&quot;
+  }
+}</pre><p><a href="../runs/eval_plan_risk_refinement_v1/protocol.json">Frozen protocol</a> · <a href="../runs/eval_plan_risk_refinement_v1/frozen_discovery_winner.json">Winner freeze before laterTRAIN</a> · <a href="../runs/eval_plan_risk_refinement_v1/all_discovery_policies.csv">All discovery cells</a> · <a href="EVAL_PLAN_RISK_REFINEMENT_TRAIN.json">Full result</a></p><h2>Discovery trade-off</h2><p>The strongest alternative by discovery pass share used at most half of the remaining floor cushion per entry,with a$900cap and realized-pass lock. It passed49.69%,had0%modeledfloorfailures,andtimedout50.31%. The incumbentpassed50.80%,failed20.47%,andtimedout28.74%. A timeout still consumesanattempt;the saferalternative didnotimprovepassprobability andwasnotselectedorlater-TRAINconfirmed.</p><p>6,980 independent day comparisons matched the deployed PLAN baseline.25targetedcausality/accounttests passed. The daily stop is fixed at day start($400at1x,otherwise$700),rather than inspecting future trade risk to choose it. This preserves the deployed PLAN semantics even where an older research helper differs.</p><p><a href="EVAL_PLAN_RISK_REFINEMENT_TRAIN_verification.json">Verification record</a></p></html>

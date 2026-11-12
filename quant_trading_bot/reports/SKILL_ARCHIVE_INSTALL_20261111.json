@@ -1,0 +1,803 @@
+{
+  "installed_at": "20261111T224326921672Z",
+  "archives": [
+    {
+      "path": "C:\\Users\\Nick\\Downloads\\claude-skills.zip",
+      "sha256": "d561f42dadcb76aa157145d742b7ac51676e10e24e36f7e45c0e4b5b17fe770a"
+    },
+    {
+      "path": "C:\\Users\\Nick\\Downloads\\devin-news-trading-intelligence-addon.zip",
+      "sha256": "fce1f7dc60986738ee08e3c6e73241c3da73e48c28e8ffe64c5d3b15910e5b5c"
+    },
+    {
+      "path": "C:\\Users\\Nick\\Downloads\\devin-quant-skills-complete-43.zip",
+      "sha256": "3437c74c06bdf184fdf192274c577c89d41ca4343daff66c11dbc30708710c1a"
+    }
+  ],
+  "skills": [
+    {
+      "name": "3d-print-tuning",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\3d-print-tuning",
+      "backup": null,
+      "files": {
+        "SKILL.md": "9f8009192c7ed07f9b557e0ed7f4e71fb0e23d528b67556437677fac4a43a953"
+      }
+    },
+    {
+      "name": "ai-work-order",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\ai-work-order",
+      "backup": null,
+      "files": {
+        "SKILL.md": "4f2ddff9f644ca024f50dbf660fda8b8b912a678d3a52a9f0e79ca6b0670f4a6"
+      }
+    },
+    {
+      "name": "android-aso",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\android-aso",
+      "backup": null,
+      "files": {
+        "LICENSE": "7fdc99dd7d8c1242068d470c2a3f91d531a622dbcad57da91971389dbe5155ec",
+        "SKILL.md": "95ef9f95e9df8d79ab0019e23b67759a704e9d1fb0916bac48c4cc1e89793444"
+      }
+    },
+    {
+      "name": "app-post-launch",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\app-post-launch",
+      "backup": null,
+      "files": {
+        "SKILL.md": "78d0d11543c0ed8c587df3ed2872fa2c696790f19adbcd234662a123cae532be"
+      }
+    },
+    {
+      "name": "aso-audit",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\aso-audit",
+      "backup": null,
+      "files": {
+        "LICENSE": "7fdc99dd7d8c1242068d470c2a3f91d531a622dbcad57da91971389dbe5155ec",
+        "SKILL.md": "5e730bd246b83cf320978118f12d9330a74a94446efe540324753b824e09774c"
+      }
+    },
+    {
+      "name": "claude-toolkit-picks",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\claude-toolkit-picks",
+      "backup": null,
+      "files": {
+        "SKILL.md": "c1e5b0bfab0c4e3038f7f9198b991ce544960393bf35754d471cb1bc842b3357"
+      }
+    },
+    {
+      "name": "college-playbook",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\college-playbook",
+      "backup": null,
+      "files": {
+        "SKILL.md": "d39531a8757d7692add49f7fa9d4fb02aa6b8c2349718de4b2687479345f130c"
+      }
+    },
+    {
+      "name": "competitor-analysis",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\competitor-analysis",
+      "backup": null,
+      "files": {
+        "LICENSE": "7fdc99dd7d8c1242068d470c2a3f91d531a622dbcad57da91971389dbe5155ec",
+        "SKILL.md": "477f43b0486887e3535cec63d1810c041e4784be4123a920fc19119e97fe7385"
+      }
+    },
+    {
+      "name": "content-engine",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\content-engine",
+      "backup": null,
+      "files": {
+        "SKILL.md": "9143aa8aea1f020ba6835858deb429d260b91f92cb6ea3705017f5db32ab1fd9"
+      }
+    },
+    {
+      "name": "copywriting",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\copywriting",
+      "backup": null,
+      "files": {
+        "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+        "references/ai-tells.md": "b98c3a19b3a75c714d69e80a0076e4c07244b0e833c2ce81ff2631224fb7f7b2",
+        "references/copy-frameworks.md": "352122944bf9e891ceb0e003adce41591d111e9d97057700626249919dfe430d",
+        "references/natural-transitions.md": "9bd61b0de5be2c4de4ce130c68236b4f290b12737823827a458bb2b4c8584683",
+        "SKILL.md": "d1343bae6840eda8cb6233394ae4ea2bfa8324266fd7f22a492bedf2d9df1795"
+      }
+    },
+    {
+      "name": "demo-video-edit",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\demo-video-edit",
+      "backup": null,
+      "files": {
+        "SKILL.md": "e38219fd9684b6aa7afafbd715ce5607fc2c7a37f2291769b79b0c4938c25339"
+      }
+    },
+    {
+      "name": "frontend-design",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\frontend-design",
+      "backup": null,
+      "files": {
+        "LICENSE.txt": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "SKILL.md": "5158c5e29ca3c0c3b551a8ba9761cbcb23fbc1073ab9d121045ef16535e25ff7"
+      }
+    },
+    {
+      "name": "high-protein-meal-prep",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\high-protein-meal-prep",
+      "backup": null,
+      "files": {
+        "SKILL.md": "117d7c7ab68625515ec8db3a71709fda258028f0f5888d0bd88d754752a93ba3"
+      }
+    },
+    {
+      "name": "internship-hunt",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\internship-hunt",
+      "backup": null,
+      "files": {
+        "SKILL.md": "d55391d85d894b0af3b4eafdbbbce470b32d310261f75b5fecaac5a4ab4eda37"
+      }
+    },
+    {
+      "name": "keyword-research",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\keyword-research",
+      "backup": null,
+      "files": {
+        "LICENSE": "7fdc99dd7d8c1242068d470c2a3f91d531a622dbcad57da91971389dbe5155ec",
+        "SKILL.md": "32b77c579bcd966b28a6058d91c124935e22bb4f0a1c2da5de3dcb4b374c2e6b"
+      }
+    },
+    {
+      "name": "metadata-optimization",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\metadata-optimization",
+      "backup": null,
+      "files": {
+        "LICENSE": "7fdc99dd7d8c1242068d470c2a3f91d531a622dbcad57da91971389dbe5155ec",
+        "SKILL.md": "e0ec42c20bf7026ebc9108257927bf49998f2d2ba592a58ce609149ebf53243e"
+      }
+    },
+    {
+      "name": "mobile-app-launch",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\mobile-app-launch",
+      "backup": null,
+      "files": {
+        "SKILL.md": "dfab5d2aa03f7643603e6e3cac22808413ab791c1e9d2ffd646bae27b5ab9b40"
+      }
+    },
+    {
+      "name": "paid-ads-playbook",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\paid-ads-playbook",
+      "backup": null,
+      "files": {
+        "SKILL.md": "50c951b80bfa3b7530caaacaeb74dc4afc1a6c2ea84a02704a1855a9e187ef10"
+      }
+    },
+    {
+      "name": "paywalls",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\paywalls",
+      "backup": null,
+      "files": {
+        "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+        "references/experiments.md": "5a5760e23c4809ddbc123905e0073ebca2653e7edad29482db810b825d62bd19",
+        "SKILL.md": "2db45cfc5b43b0da2e212e17f5ea726d65f2ce52689f24415146145e9f8bee9e"
+      }
+    },
+    {
+      "name": "pricing",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\pricing",
+      "backup": null,
+      "files": {
+        "LICENSE": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+        "references/pricing-models.md": "2cdb900b74f56a796c0331725e73eff4ecd84f8021b42efbb0a5b4903d1d9b16",
+        "references/pricing-page-teardown.md": "b58a3bffa58ae7c3a475aba33887daaa98e0dc0de57ea948314256b08aa306ad",
+        "references/research-methods.md": "90337058da40c2fcf858bfee9ee8905ad1dc3a5f90d1878f9a8e9ab79193631b",
+        "references/tier-structure.md": "b59910d37cceb74484f28b065963daa60f5c4fb1ffc36a0584d0f3cad11f3e30",
+        "SKILL.md": "80581cd4e8bc40938ed6addc1738c3c882cf23ef162cbbda189dc9d5c30f81ae"
+      }
+    },
+    {
+      "name": "reel-edit-style",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\reel-edit-style",
+      "backup": null,
+      "files": {
+        "SKILL.md": "9d93c432e7657165c9c385fa14bfb3bfbd9a4274ac349641c92eea88106bb353"
+      }
+    },
+    {
+      "name": "reel-to-skills",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\reel-to-skills",
+      "backup": null,
+      "files": {
+        "scripts/digest.py": "ce3d73b54c3f97ca979d46dcd274753968ea28b604a74bde8b711a75bc652421",
+        "scripts/editbreak.py": "531dcbcc8fe501f52ece34c1cd533e3296293482d585c74b94cfc18fd741c35f",
+        "scripts/parse_export.py": "81a46667fd3156d7425b15b5081a82976e4912aa09af5ad121ee58b895d1d666",
+        "scripts/setup.ps1": "2fe5444c2858fa9e35e878690c10a50653f8d648c0bb74b905653f982d01047f",
+        "scripts/show.py": "ad193f00c6b4764e2287b953b9d54f10301f0cef282142c6d72b8212867d9e05",
+        "SKILL.md": "13914cc6f2f2a0d98d52b3ca8324d1743a1f2f9f9e1f53b26b941840eff8ec5a"
+      }
+    },
+    {
+      "name": "ship-quality-web",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\ship-quality-web",
+      "backup": null,
+      "files": {
+        "SKILL.md": "07d6acecd7262476b3813a8cfb81965096add7078c73b12bd05fa42249536cfa"
+      }
+    },
+    {
+      "name": "short-form-video-growth",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\short-form-video-growth",
+      "backup": null,
+      "files": {
+        "SKILL.md": "7c63022fd5f83913d7f234aa8951e732ace60e30dc19f8b606e750fa58f3f4e4"
+      }
+    },
+    {
+      "name": "site-search-visibility",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\site-search-visibility",
+      "backup": null,
+      "files": {
+        "SKILL.md": "77721d9e800673122dc30551552b9c73e65d76713b213262c1494f994c082f5b"
+      }
+    },
+    {
+      "name": "stock-research-scan",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\stock-research-scan",
+      "backup": null,
+      "files": {
+        "SKILL.md": "d39895ed802924de83f1a2e90ed602df722b6f070da92324e4628ccb1895dece"
+      }
+    },
+    {
+      "name": "strategy-backtest-lab",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\strategy-backtest-lab",
+      "backup": null,
+      "files": {
+        "SKILL.md": "837db1c9292bf136fec3b9a0b58d94d65d5df0793c1de547a9869bd4b0c61325"
+      }
+    },
+    {
+      "name": "trade-risk-sizing",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\trade-risk-sizing",
+      "backup": null,
+      "files": {
+        "SKILL.md": "5be3e0736711d6979f62ab6dd392dc193ce384cc49f3ebfb344476884aa8e4b6"
+      }
+    },
+    {
+      "name": "voice-profile",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\voice-profile",
+      "backup": null,
+      "files": {
+        "SKILL.md": "ac8990ef74f28ecf3e7b7eabf0809579d9546a9d597aea3d300a5c9121560de1"
+      }
+    },
+    {
+      "name": "webapp-testing",
+      "status": "installed",
+      "archive": "claude-skills.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\webapp-testing",
+      "backup": null,
+      "files": {
+        "examples/console_logging.py": "ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da",
+        "examples/element_discovery.py": "d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0",
+        "examples/static_html_automation.py": "9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064",
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "scripts/with_server.py": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd",
+        "SKILL.md": "1fda2f49334bdd97622760230e4aedfc503f90cebca2e9f2ba21982a313fe823"
+      }
+    },
+    {
+      "name": "news-trading-intelligence",
+      "status": "installed",
+      "archive": "devin-news-trading-intelligence-addon.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\news-trading-intelligence",
+      "backup": null,
+      "files": {
+        "SKILL.md": "0ae364e3d07d5e206d63ae7cd919767618418788054a1687ff3f591a53dda39c",
+        "references/point-in-time-news-price-alignment.md": "e6d635ccdda7aa4980f74d5ac85a81761bb08317e8fd29da9b1535679d09eaab",
+        "templates/NEWS_EVENT_RECORD.json": "ea6678b22037e41e546682d7d9f97847f81a2ef1bf2632e2f5a7a62bfc6a1879"
+      }
+    },
+    {
+      "name": "academic-paper-mining",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\academic-paper-mining",
+      "backup": null,
+      "files": {
+        "SKILL.md": "27b99db93b75f32897a95930dbe0dae55eff1806f7acdeda572eac7db05803bc"
+      }
+    },
+    {
+      "name": "adversarial-stress-lab",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\adversarial-stress-lab",
+      "backup": null,
+      "files": {
+        "SKILL.md": "04d5eb6670364e21b9765b8974bcffce25b35f888632f37da4491ad06ee5505b"
+      }
+    },
+    {
+      "name": "backtesting-engine",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\backtesting-engine",
+      "backup": null,
+      "files": {
+        "SKILL.md": "dea7e6176655427d0223e2c4cb9efb7dd34886995b79b7251486bdc109f85962"
+      }
+    },
+    {
+      "name": "batch-streaming-signal-parity",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\batch-streaming-signal-parity",
+      "backup": null,
+      "files": {
+        "SKILL.md": "1778e554a24c5cb62e6c5ea4248c460a39d67fa7a6705ff407d518c259747449"
+      }
+    },
+    {
+      "name": "champion-challenger",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\champion-challenger",
+      "backup": null,
+      "files": {
+        "SKILL.md": "d77d7e6f040992e4fcf73570152f5157a5871aee4d5d1b547f6516b088b77b9a"
+      }
+    },
+    {
+      "name": "cross-contract-transfer",
+      "status": "updated_with_backup",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\cross-contract-transfer",
+      "backup": "C:\\Users\\Nick\\.codex\\skill-install-backups\\20261111T224326921672Z\\cross-contract-transfer",
+      "files": {
+        "SKILL.md": "099ad9fc092d150a8b9f43d4f07c041a888c9dac04861af9ad0d5019e5f944e0"
+      }
+    },
+    {
+      "name": "cross-source-triangulation",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\cross-source-triangulation",
+      "backup": null,
+      "files": {
+        "SKILL.md": "a6ab45d75d7b17d6dfa4e43ab4325205530a921f62aa1a86aaaa69471451637b"
+      }
+    },
+    {
+      "name": "data-integrity",
+      "status": "updated_with_backup",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\data-integrity",
+      "backup": "C:\\Users\\Nick\\.codex\\skill-install-backups\\20261111T224326921672Z\\data-integrity",
+      "files": {
+        "SKILL.md": "9c6d6f0fe5c7c847a9715f70060f6cf9713ba419cf531e2ffb7cf83be607d8b3"
+      }
+    },
+    {
+      "name": "deployment-safety-monitoring",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\deployment-safety-monitoring",
+      "backup": null,
+      "files": {
+        "SKILL.md": "0c800b06378887570a84fa87041372f927e1ebd43c9cacd11da05c43dff4e15d"
+      }
+    },
+    {
+      "name": "economic-event-research",
+      "status": "updated_with_backup",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\economic-event-research",
+      "backup": "C:\\Users\\Nick\\.codex\\skill-install-backups\\20261111T224326921672Z\\economic-event-research",
+      "files": {
+        "SKILL.md": "6f4a6dac577289a2b7cb864177cabe95062a33734e6d38e6ab92e409dfdf0aa3"
+      }
+    },
+    {
+      "name": "evidence-provenance",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\evidence-provenance",
+      "backup": null,
+      "files": {
+        "SKILL.md": "f815da2cc7755acb9304c72c09bb8c220e9ba7570d95e24d3bb694e49705b9eb"
+      }
+    },
+    {
+      "name": "execution-optimization",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\execution-optimization",
+      "backup": null,
+      "files": {
+        "SKILL.md": "5ebfbbc44f9f1adc05d440300f8abc8756242f131e31b3b871ef7f28cb936c23"
+      }
+    },
+    {
+      "name": "failure-learning",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\failure-learning",
+      "backup": null,
+      "files": {
+        "SKILL.md": "9ce0f4fd59c07553fafd530798cdab186f7780c68313ece79b19cb0b592d70e6"
+      }
+    },
+    {
+      "name": "futures-contract-lifecycle",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\futures-contract-lifecycle",
+      "backup": null,
+      "files": {
+        "SKILL.md": "5a790858136188cfc0e46a6be44b24a69d424390beb192577f1c3f215308d713"
+      }
+    },
+    {
+      "name": "hypothesis-transfer",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\hypothesis-transfer",
+      "backup": null,
+      "files": {
+        "SKILL.md": "1239d6275eedb575514186300d3464bec87317c6d6ec9ba15f6715418e2c07c8"
+      }
+    },
+    {
+      "name": "intraday-session-clock",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\intraday-session-clock",
+      "backup": null,
+      "files": {
+        "SKILL.md": "8a07233573865d578dd354d6e515419dc9132a132f25e33e943d106533aee372"
+      }
+    },
+    {
+      "name": "market-regime-analysis",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\market-regime-analysis",
+      "backup": null,
+      "files": {
+        "SKILL.md": "fa6537a73459c74b3556a706bc2bf7968539665e6120d7ab675cd048e36ff2e9"
+      }
+    },
+    {
+      "name": "negative-control-testing",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\negative-control-testing",
+      "backup": null,
+      "files": {
+        "SKILL.md": "5c75ca5c0b4812ea305703fd6bd6f60e7a90a93a5834e1d90bb91792f568d538"
+      }
+    },
+    {
+      "name": "orderflow-microstructure",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\orderflow-microstructure",
+      "backup": null,
+      "files": {
+        "SKILL.md": "1cdcead5f9cf299f1e939a02344dd8d402e79bc9d4c447aac2a4f8b2cc57cdde"
+      }
+    },
+    {
+      "name": "overfitting-defense",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\overfitting-defense",
+      "backup": null,
+      "files": {
+        "SKILL.md": "693a289d5078391a599f297be4fb93aec723b8ac7b4e21c75dd76cda5604ae72"
+      }
+    },
+    {
+      "name": "paper-trading-reconciliation",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\paper-trading-reconciliation",
+      "backup": null,
+      "files": {
+        "SKILL.md": "241aa81b2408f50cf4fbe9a803135889a15f0ed54c54234a0f718fae2187115c"
+      }
+    },
+    {
+      "name": "pinescript-strategy-porting",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\pinescript-strategy-porting",
+      "backup": null,
+      "files": {
+        "SKILL.md": "0f696b91adebd66773491cf6e6f9089aec49e7b11b287d40f91716c76992b58c"
+      }
+    },
+    {
+      "name": "point-in-time-feature-engineering",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\point-in-time-feature-engineering",
+      "backup": null,
+      "files": {
+        "SKILL.md": "f0b01eccb952d817a461388cfd27ebca1b8aa375b5e37d8cc6f2b390e71cae65"
+      }
+    },
+    {
+      "name": "portfolio-construction",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\portfolio-construction",
+      "backup": null,
+      "files": {
+        "SKILL.md": "3215e56a1364cec66baea906f7f36a8797ecc849b3b5dee71bf0fd912dedc638"
+      }
+    },
+    {
+      "name": "public-strategy-mining",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\public-strategy-mining",
+      "backup": null,
+      "files": {
+        "SKILL.md": "c06d4b370c7bb967d50f225b372c8f07a1f26ed47fca7064bd6b5057ebed5f81"
+      }
+    },
+    {
+      "name": "quantconnect-deep-research",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\quantconnect-deep-research",
+      "backup": null,
+      "files": {
+        "SKILL.md": "5e6124c8579a13999285af6858a3967fc90fb7cad1c832803bbf45cff3e75d96",
+        "references/quantconnect-research-map.md": "4e45e3584d774122eaa2c3cb8ea9ed09a30560ff2d875cffdcb724781ba2e390"
+      }
+    },
+    {
+      "name": "quantconnect-lean-replication",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\quantconnect-lean-replication",
+      "backup": null,
+      "files": {
+        "SKILL.md": "cea863c69630992588c38a3c89e58ebf916fea2be3d396bfbdc153bc7bfa1ccc"
+      }
+    },
+    {
+      "name": "quantconnect-strategy-forensics",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\quantconnect-strategy-forensics",
+      "backup": null,
+      "files": {
+        "SKILL.md": "ba0d1a785b3b3b73a6201018dc0104fbd515b12d61a0fc3df7fc28b5a4c4c4de",
+        "references/forensic-protocol.md": "20a6e4d4a4657a7890088352d69e26ca73069e9cfc746583f2e90d93a90845fa",
+        "references/futures-transfer-audit.md": "6789fd67f5c924d7b8025bc0697e295ae7e0f5aaaac9785f099d7badd0dbdda2",
+        "references/platform-integration.md": "7bdb753b9754e5b8ef6d4a50a30a4fe2a982e9030b076242b1eb10f45001240e",
+        "templates/audit-report.md": "ce26bcf7bb6891e688952d1fdc79bfcc6c63830086a19448e83da4137e030b9d",
+        "templates/forensic-card.json": "90f560c77b40fea1dfeea96a1a0c3b7b0b583ec3430f3e7ef2d8261ab4af6b86"
+      }
+    },
+    {
+      "name": "research-orchestrator",
+      "status": "updated_with_backup",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\research-orchestrator",
+      "backup": "C:\\Users\\Nick\\.codex\\skill-install-backups\\20261111T224326921672Z\\research-orchestrator",
+      "files": {
+        "SKILL.md": "f50dc5dd54fc4f8f72553e6b178cba98080e616e8f76d4090250dbaaafe2c386"
+      }
+    },
+    {
+      "name": "research-prioritization",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\research-prioritization",
+      "backup": null,
+      "files": {
+        "SKILL.md": "738ea840339c5e32d30f7fb126c300229faced652394622fc92d37b2636397fa"
+      }
+    },
+    {
+      "name": "research-source-ingestion",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\research-source-ingestion",
+      "backup": null,
+      "files": {
+        "SKILL.md": "7de3b7bcf4db7233250070a753c290d10d578287b54cf5b5cde212e7d65b3fb4"
+      }
+    },
+    {
+      "name": "risk-management",
+      "status": "updated_with_backup",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\risk-management",
+      "backup": "C:\\Users\\Nick\\.codex\\skill-install-backups\\20261111T224326921672Z\\risk-management",
+      "files": {
+        "SKILL.md": "c9b528ebc5535088095adc4ce930b353f9cb79f393dea9d006769e89b0ef113a"
+      }
+    },
+    {
+      "name": "risk-of-ruin-monte-carlo",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\risk-of-ruin-monte-carlo",
+      "backup": null,
+      "files": {
+        "SKILL.md": "d45f0ef57c3181594cc8aaed510effdd1e79adf07333b98841c7fbf1359faf5f"
+      }
+    },
+    {
+      "name": "signal-ablation",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\signal-ablation",
+      "backup": null,
+      "files": {
+        "SKILL.md": "71356887728c547074afb2c9ae826e4d2dc01dc56c98f5d9a9de3ba3c248ea7a"
+      }
+    },
+    {
+      "name": "simulator-verification",
+      "status": "updated_with_backup",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\simulator-verification",
+      "backup": "C:\\Users\\Nick\\.codex\\skill-install-backups\\20261111T224326921672Z\\simulator-verification",
+      "files": {
+        "SKILL.md": "f87e4b912abd746aecd2ddfa5d805d9d0beb6046c0f5a2024d47a70835c5a4a6"
+      }
+    },
+    {
+      "name": "statistical-evidence-auditor",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\statistical-evidence-auditor",
+      "backup": null,
+      "files": {
+        "SKILL.md": "c248d066a1ff4a03f8808f9fab0eb58012dae8f3dd7d03250319e9a32bf20f67"
+      }
+    },
+    {
+      "name": "strategy-decomposition",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\strategy-decomposition",
+      "backup": null,
+      "files": {
+        "SKILL.md": "1a48a86c68d4ebe17e38f832d0a9e55c4ab7a047797b14294d51d5b203e17b45"
+      }
+    },
+    {
+      "name": "strategy-discovery",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\strategy-discovery",
+      "backup": null,
+      "files": {
+        "SKILL.md": "f185fcb3ffba757c228c193bec63ec661db0c3e2b03ed204ed368ab9bfdd69af"
+      }
+    },
+    {
+      "name": "strategy-memory",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\strategy-memory",
+      "backup": null,
+      "files": {
+        "SKILL.md": "10b6b2638431e40c607efa5cdcf165a21f734b15a32e1bdfa5ec8f1e7ea75cc9"
+      }
+    },
+    {
+      "name": "strategy-replication",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\strategy-replication",
+      "backup": null,
+      "files": {
+        "SKILL.md": "80fceae6a0f8bafa4cc978b15b9f8dbd5e4bd9494ae7a2599049e3155d330dc8"
+      }
+    },
+    {
+      "name": "trade-edge-attribution",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\trade-edge-attribution",
+      "backup": null,
+      "files": {
+        "SKILL.md": "761f25b14c43cb92d8b0f7af9d9cdfd2f9a1e5b76839a2653ffd5940389f72b3"
+      }
+    },
+    {
+      "name": "walk-forward-validation",
+      "status": "already_present",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\walk-forward-validation",
+      "backup": null,
+      "files": {
+        "SKILL.md": "2f8b9038ae4ffe3f6db6296399a24a0037fb40299d9a5036818fd063ebf72333"
+      }
+    },
+    {
+      "name": "youtube-strategy-research",
+      "status": "installed",
+      "archive": "devin-quant-skills-complete-43.zip",
+      "destination": "C:\\Users\\Nick\\.codex\\skills\\youtube-strategy-research",
+      "backup": null,
+      "files": {
+        "SKILL.md": "8427b48e9a3828e987b722c3ffc40eb5466b9bfe778438aa103df59d734fa8f8",
+        "references/source-checklist.md": "78377bc15076ad3d5a96a9475e8df85183501f4574f3f503072b37cebbbcd656"
+      }
+    }
+  ],
+  "counts": {
+    "installed": 56,
+    "updated_with_backup": 6,
+    "already_present": 12
+  },
+  "total_skills": 74,
+  "bundled_programs_executed": false,
+  "non_skill_prompts_activated": false
+}

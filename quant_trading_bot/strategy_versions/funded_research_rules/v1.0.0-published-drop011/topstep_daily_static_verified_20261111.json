@@ -1,0 +1,29 @@
+{
+  "id": "topstep_drop011_daily_static_funded_v20261111",
+  "verified_date_user_timezone": "2026-11-11 America/New_York",
+  "scope": "Published Drop011 Daily Payouts+ Static XFA terms; individual account dashboard not inspected. Supersedes old research assumptions, not deployed settings.",
+  "sources": [
+    "https://help.topstep.com/en/articles/15520357-topstep-labs",
+    "https://help.topstep.com/en/articles/10490293-daily-loss-limit-in-the-trading-combine-and-express-funded-account",
+    "https://help.topstep.com/en/articles/8284223-what-is-the-scaling-plan",
+    "https://help.topstep.com/en/articles/8284204-what-is-the-maximum-loss-limit"
+  ],
+  "funded_initial_balance": 0,
+  "initial_static_floor": -2000,
+  "floor_after_first_payout": 0,
+  "global_peak_to_trough_drawdown_ceiling": null,
+  "daily_loss_limit": 1000,
+  "daily_loss_action": "Liquidate and suspend that session; not permanent closure unless floor also breached.",
+  "risk_basis": "Intraday account P&L includes open positions; no end-of-day loss clipping.",
+  "session_timezone": "America/Chicago",
+  "session_open": "17:00",
+  "session_close": "15:10",
+  "daily_payout": {"buffer": 2000, "minimum": 250, "maximum": 1500, "profit_share": 0.9, "positive_since_last_required_after_first": true, "one_per_trading_day": true},
+  "five_winning_days_path": {"qualifying_day_net": 150, "days": 5, "balance_fraction_limit": 0.5, "payout_cap_static": 8000, "resets_with_any_payout": true},
+  "conservative_research_position_limit_micros": 20,
+  "funded_consistency_requirement": null,
+  "inactivity_note": "Official XFA parameters say accounts inactive morethan30days may close; treat such paths as unresolved eligibility, not certain closure.",
+  "inactivity_source": "https://help.topstep.com/en/articles/8284215-express-funded-account-parameters",
+  "source_conflict_notes": "Specific daily-path table gives minimum250; generic marketing mentions125. Use specific250.8000belongs to5day path, never daily. Published rules do not verify this user's individual account assignment or all news/operational restrictions.",
+  "user_policy_override": "2026-11-11: use verified account floor/DLL instead of blanket2000maximumdrawdown. Do not tune on validation/test."
+}

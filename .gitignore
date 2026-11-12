@@ -13,3 +13,11 @@ backtesting/.venv/
 backtesting/downloads/
 .pytest_cache/
 *.pyc
+
+# Private, local conversation mirrors and watcher runtime state.
+collaboration/CODEX_CHAT_HISTORY.md
+collaboration/CODEX_FULL_CHAT_HISTORY.jsonl
+collaboration/codex_history_config.json
+collaboration/codex_history_status.json
+collaboration/codex_history_process.json
+collaboration/codex_history.*.log

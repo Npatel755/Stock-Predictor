@@ -1,0 +1,4124 @@
+{
+  "run_id": "stack_trade_budget_v1",
+  "frozen_at": "2026-11-11 22:52:33.719781+00:00",
+  "hypotheses": [
+    "Finite remaining drawdown budget may control closed-equity drawdown better than capital-only leverage.",
+    "Fixed dollar stop-risk allocation and integer contract caps may avoid scaling fragile trades.",
+    "Previously generated TRAIN signal books provide bounded ablations, not new validation-driven entries."
+  ],
+  "candidates": [
+    {
+      "name": "base_N0_C1_R150_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C1_R150_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C1_R150_F1",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C1_R225_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C1_R225_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C1_R225_F1",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C1_R300_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C1_R300_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C1_R300_F1",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C1_R450_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C1_R450_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C1_R450_F1",
+      "book": "base",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C2_R150_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C2_R150_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C2_R150_F1",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C2_R225_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C2_R225_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C2_R225_F1",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C2_R300_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C2_R300_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C2_R300_F1",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C2_R450_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C2_R450_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C2_R450_F1",
+      "book": "base",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C3_R150_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C3_R150_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C3_R150_F1",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C3_R225_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C3_R225_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C3_R225_F1",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C3_R300_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C3_R300_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C3_R300_F1",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N0_C3_R450_F0.25",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N0_C3_R450_F0.5",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N0_C3_R450_F1",
+      "book": "base",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C1_R150_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C1_R150_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C1_R150_F1",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C1_R225_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C1_R225_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C1_R225_F1",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C1_R300_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C1_R300_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C1_R300_F1",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C1_R450_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C1_R450_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C1_R450_F1",
+      "book": "base",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C2_R150_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C2_R150_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C2_R150_F1",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C2_R225_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C2_R225_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C2_R225_F1",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C2_R300_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C2_R300_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C2_R300_F1",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C2_R450_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C2_R450_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C2_R450_F1",
+      "book": "base",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C3_R150_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C3_R150_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C3_R150_F1",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C3_R225_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C3_R225_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C3_R225_F1",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C3_R300_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C3_R300_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C3_R300_F1",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "base_N1_C3_R450_F0.25",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "base_N1_C3_R450_F0.5",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "base_N1_C3_R450_F1",
+      "book": "base",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C1_R150_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C1_R150_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C1_R150_F1",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C1_R225_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C1_R225_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C1_R225_F1",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C1_R300_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C1_R300_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C1_R300_F1",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C1_R450_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C1_R450_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C1_R450_F1",
+      "book": "both",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C2_R150_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C2_R150_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C2_R150_F1",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C2_R225_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C2_R225_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C2_R225_F1",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C2_R300_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C2_R300_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C2_R300_F1",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C2_R450_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C2_R450_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C2_R450_F1",
+      "book": "both",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C3_R150_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C3_R150_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C3_R150_F1",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C3_R225_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C3_R225_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C3_R225_F1",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C3_R300_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C3_R300_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C3_R300_F1",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N0_C3_R450_F0.25",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N0_C3_R450_F0.5",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N0_C3_R450_F1",
+      "book": "both",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C1_R150_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C1_R150_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C1_R150_F1",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C1_R225_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C1_R225_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C1_R225_F1",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C1_R300_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C1_R300_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C1_R300_F1",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C1_R450_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C1_R450_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C1_R450_F1",
+      "book": "both",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C2_R150_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C2_R150_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C2_R150_F1",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C2_R225_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C2_R225_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C2_R225_F1",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C2_R300_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C2_R300_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C2_R300_F1",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C2_R450_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C2_R450_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C2_R450_F1",
+      "book": "both",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C3_R150_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C3_R150_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C3_R150_F1",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C3_R225_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C3_R225_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C3_R225_F1",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C3_R300_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C3_R300_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C3_R300_F1",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "both_N1_C3_R450_F0.25",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "both_N1_C3_R450_F0.5",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "both_N1_C3_R450_F1",
+      "book": "both",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C1_R150_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C1_R150_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C1_R150_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C1_R225_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C1_R225_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C1_R225_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C1_R300_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C1_R300_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C1_R300_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C1_R450_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C1_R450_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C1_R450_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C2_R150_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C2_R150_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C2_R150_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C2_R225_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C2_R225_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C2_R225_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C2_R300_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C2_R300_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C2_R300_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C2_R450_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C2_R450_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C2_R450_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C3_R150_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C3_R150_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C3_R150_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C3_R225_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C3_R225_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C3_R225_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C3_R300_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C3_R300_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C3_R300_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N0_C3_R450_F0.25",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N0_C3_R450_F0.5",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N0_C3_R450_F1",
+      "book": "triple",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C1_R150_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C1_R150_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C1_R150_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C1_R225_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C1_R225_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C1_R225_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C1_R300_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C1_R300_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C1_R300_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C1_R450_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C1_R450_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C1_R450_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C2_R150_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C2_R150_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C2_R150_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C2_R225_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C2_R225_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C2_R225_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C2_R300_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C2_R300_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C2_R300_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C2_R450_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C2_R450_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C2_R450_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C3_R150_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C3_R150_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C3_R150_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C3_R225_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C3_R225_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C3_R225_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C3_R300_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C3_R300_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C3_R300_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_N1_C3_R450_F0.25",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_N1_C3_R450_F0.5",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_N1_C3_R450_F1",
+      "book": "triple",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R150_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R150_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R150_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R225_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R225_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R225_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R300_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R300_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R300_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R450_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R450_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C1_R450_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R150_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R150_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R150_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R225_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R225_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R225_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R300_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R300_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R300_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R450_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R450_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C2_R450_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R150_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R150_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R150_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R225_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R225_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R225_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R300_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R300_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R300_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R450_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R450_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N0_C3_R450_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R150_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R150_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R150_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R225_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R225_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R225_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R300_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R300_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R300_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R450_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R450_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C1_R450_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R150_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R150_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R150_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R225_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R225_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R225_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R300_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R300_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R300_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R450_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R450_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C2_R450_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R150_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R150_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R150_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R225_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R225_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R225_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R300_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R300_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R300_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R450_F0.25",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R450_F0.5",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_TRD60Q_1c_N1_C3_R450_F1",
+      "book": "triple_AG_TRD60Q_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R150_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R150_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R150_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R225_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R225_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R225_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R300_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R300_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R300_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R450_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R450_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C1_R450_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R150_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R150_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R150_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R225_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R225_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R225_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R300_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R300_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R300_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R450_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R450_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C2_R450_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R150_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R150_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R150_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R225_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R225_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R225_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R300_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R300_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R300_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R450_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R450_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N0_C3_R450_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R150_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R150_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R150_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R225_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R225_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R225_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R300_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R300_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R300_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R450_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R450_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C1_R450_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R150_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R150_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R150_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R225_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R225_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R225_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R300_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R300_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R300_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R450_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R450_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C2_R450_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R150_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R150_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R150_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R225_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R225_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R225_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R300_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R300_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R300_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R450_F0.25",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R450_F0.5",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_AG_MES_TRD30_1c_N1_C3_R450_F1",
+      "book": "triple_AG_MES_TRD30_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R150_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R150_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R150_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R225_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R225_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R225_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R300_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R300_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R300_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R450_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R450_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C1_R450_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R150_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R150_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R150_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R225_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R225_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R225_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R300_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R300_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R300_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R450_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R450_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C2_R450_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R150_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R150_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R150_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R225_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R225_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R225_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R300_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R300_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R300_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R450_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R450_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N0_C3_R450_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R150_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R150_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R150_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R225_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R225_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R225_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R300_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R300_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R300_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R450_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R450_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C1_R450_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R150_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R150_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R150_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R225_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R225_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R225_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R300_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R300_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R300_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R450_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R450_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C2_R450_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R150_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R150_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R150_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R225_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R225_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R225_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R300_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R300_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R300_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R450_F0.25",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R450_F0.5",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MNQ_E57_1c_N1_C3_R450_F1",
+      "book": "triple_MNQ_E57_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R150_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R150_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R150_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R225_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R225_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R225_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R300_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R300_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R300_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R450_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R450_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C1_R450_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R150_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R150_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R150_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R225_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R225_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R225_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R300_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R300_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R300_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R450_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R450_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C2_R450_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R150_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R150_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R150_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R225_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R225_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R225_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R300_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R300_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R300_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R450_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R450_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N0_C3_R450_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": false,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R150_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R150_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R150_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R225_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R225_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R225_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R300_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R300_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R300_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R450_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R450_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C1_R450_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R150_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R150_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R150_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R225_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R225_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R225_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R300_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R300_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R300_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R450_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R450_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C2_R450_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R150_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R150_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R150_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 150.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R225_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R225_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R225_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 225.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R300_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R300_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R300_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 300.0,
+      "fraction": 1.0
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R450_F0.25",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.25
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R450_F0.5",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 0.5
+    },
+    {
+      "name": "triple_MES_MOM_1c_N1_C3_R450_F1",
+      "book": "triple_MES_MOM_1c",
+      "night": true,
+      "cap": 3.0,
+      "risk_cap": 450.0,
+      "fraction": 1.0
+    }
+  ],
+  "controls": [
+    {
+      "name": "CONTROL_STATIC_1",
+      "book": "triple",
+      "night": true,
+      "cap": 1.0,
+      "risk_cap": 450.0,
+      "fraction": 0.0
+    },
+    {
+      "name": "CONTROL_STATIC_2",
+      "book": "triple",
+      "night": true,
+      "cap": 2.0,
+      "risk_cap": 900.0,
+      "fraction": 0.0
+    }
+  ],
+  "input_sha256": {
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_base.parquet": "e623f1ab5a203324b4cfa15f62d06ac759fb1e82b25560bbd7d638e1aefd6f71",
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_both.parquet": "eee99e9bc50e783a17a111def7a1218e3f530058acd643cb1d116582d6ffdea0",
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_triple.parquet": "e644c91f4f88e805cdc83d3fbb102dd67f87650e78e3c26b1742f9bd563a1ae8",
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_triple_AG_TRD60Q_1c.parquet": "6346ca0eadf9f7278ee18d6a25be38a4943c9560a93b0975b053a7c75cbfb42d",
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_triple_AG_MES_TRD30_1c.parquet": "ff6cce8296164b8db84d4213036bf050ef93b6cfd43a7e624a1ecb19460cc285",
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_triple_MNQ_E57_1c.parquet": "f51f3ba1d7857d5f02d522b0fb1101973c3b972cb282c56b2a426b224a9a1e4f",
+    "runs\\gemini_stack_continuation_v1\\causal\\raw_triple_MES_MOM_1c.parquet": "a2ba5630561ec48e99ff88a2d26904d04019a534c3f8109a4ddca7d6e49a9b12",
+    "runs\\gemini_stack_continuation_v1\\causal\\overnight_training.parquet": "7d90e2b6b52a850c04914cc9b8222133a1c88e85c6b3070d3b2841c29d15b399",
+    "runs\\gemini_stack_continuation_v1\\causal\\complete.json": "1d9f0e7291cdc6b15d62918b9431fd2553eaf9d327bdf86eb4addae12c3c52a6"
+  },
+  "source_sha256": {
+    "scripts\\stack_trade_budget_train.py": "83920cc324f60ae6ed825f2c6d8b11f875b48cd0bd2f4c6899ce343168cbab17",
+    "scripts\\stack_trade_budget_core.py": "48869ed7e2bb597bc2b892f9fe2ea87f4a5c99dccd92af645600a6ae6c2865a0",
+    "tests\\test_stack_trade_budget_core.py": "3c3f0f430a284b1d906bc567b0b7017a7ba343b581c5428b0634da7d4731d0ef"
+  },
+  "objective": "Maximize earlier TRAIN net P&L after doubled costs among realized-DD/stability qualifiers. Compare with static1x and2x controls on identical books/clocks/costs.",
+  "periods": {
+    "earlier": [
+      "2010-07-01",
+      "2017-01-01"
+    ],
+    "later": [
+      "2017-01-01",
+      "2024-01-01"
+    ],
+    "boundary_entry_embargo_and_purge_days": 8
+  },
+  "selection": "Rank candidates on EARLIER TRAIN only: cost2 net descending, base net descending, base DD ascending, name. Freeze one before later TRAIN. No alternate from later results. All blocks are previously reused TRAIN.",
+  "qualification": "For both base and doubled costs: net>0; maximum transaction/closed-cash DD strictly<2000; >=150 trades; >=5 positive calendar years outof7; >=10 trades each year; no inactive stretch>180calendar days; zero observed DD breach. Original initial peak included; no loss clipping.",
+  "improvement": "If static1x qualifies, frozen candidate must beat its base AND cost2 net by>=5%, in both earlier and later TRAIN. If static1x fails, a passing constrained candidate is a feasibility improvement, not a claim of higher unconstrained profit. Null diagnostic must pass. No funded/live promotion.",
+  "mechanics": "Risk budget=min(configured cap,fraction*(1800-current realized DD)); qty=min(cap*source base size,6,floor(budget/(entry stop risk+stress cost))). No fractional contracts. Night only after500 completed profit. No cash withdrawals or balance-compounding ladder in this allocation study.",
+  "execution": "Same frozen historical signal entries/exits and normalized returns; costs are1 dollar RT fee plus1point RT slippage in cache. Doubled costs subtract another1+instrument multiplier per contract. Half fee debited at entry. Single position reserved through exit-bar confirmation (tout+signal bar interval;1minute night). Skip overlapping entries, do not reorder priorities from returns. No new entry/exit tuning.",
+  "null_control": "20 predetermined synthetic null paths. Blockwise sign reversal of gross trade returns in20calendar-day blocks, same signs across books, preserving costs/times/risks. Repeat complete504cell earlier search per seed. Compare selected cost2 net to95th percentile of null maximum qualifying net. Synthetic accounting diagnostic, not valid tradable signals or confirmatory p-value.",
+  "null_seeds": [
+    2026111100,
+    2026111101,
+    2026111102,
+    2026111103,
+    2026111104,
+    2026111105,
+    2026111106,
+    2026111107,
+    2026111108,
+    2026111109,
+    2026111110,
+    2026111111,
+    2026111112,
+    2026111113,
+    2026111114,
+    2026111115,
+    2026111116,
+    2026111117,
+    2026111118,
+    2026111119
+  ],
+  "caveats": "Realized cash drawdown only: missing intratrade OHLC/MAE for extra sleeves. No intrabar funded compliance or payout estimate. Historical percent returns at inherited fixed MNQ27981.5/MES7584 reference levels, not actual historical dollar returns. Source strategies and earlier/later TRAIN repeatedly selected in past; unknown total historical multiplicity. No independent holdout claim.",
+  "history_inventory_sha256": "a91f6f5831ec253bc880f0498400cb58889b9f1cc944a8bb5ea393d949b7727b",
+  "skill_install_manifest_sha256": "260d320335255347bd022b3125ee36783977dff56f4cebfa46a45ba6d099d8da",
+  "validation_accessed": false,
+  "test_accessed": false,
+  "forward_paper_accessed": false,
+  "automatic_holdout_stage": false
+}
