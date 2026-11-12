@@ -1,0 +1,344 @@
+{
+ "part_a": {
+  "TRI_S0": {
+   "usd": 45455.0,
+   "usd_h1": 27477.0,
+   "usd_h2": 64637.0,
+   "closed": 0.0,
+   "cons": 0.0072,
+   "near": 0.0072,
+   "first_median": 216.0,
+   "y1_pays": 9.13,
+   "y2_pays": 28.07,
+   "y1_usd": 10249.0,
+   "end_bal": 17110.0,
+   "usd_plus_end": 62566.0,
+   "big_payouts": 0.0
+  },
+  "AG_TRD60Q_1c": {
+   "h1_long": {
+    "n": 276,
+    "per_micro": 45.9,
+    "pf": 1.684
+   },
+   "h1_short": {
+    "n": 181,
+    "per_micro": 27.33,
+    "pf": 1.247
+   },
+   "h2_long": {
+    "n": 291,
+    "per_micro": 46.67,
+    "pf": 1.528
+   },
+   "h2_short": {
+    "n": 207,
+    "per_micro": 29.85,
+    "pf": 1.226
+   },
+   "real_gain": [
+    3273.0,
+    6713.0
+   ],
+   "always_long_gain": [
+    613.0,
+    2670.0
+   ],
+   "random_gain_19th": [
+    544.0,
+    7018.0
+   ],
+   "random_gain_median": [
+    -61.0,
+    4390.0
+   ],
+   "signal": false
+  },
+  "MNQ_E57_1c": {
+   "h1_long": {
+    "n": 210,
+    "per_micro": 26.55,
+    "pf": 1.656
+   },
+   "h1_short": {
+    "n": 100,
+    "per_micro": 13.85,
+    "pf": 1.218
+   },
+   "h2_long": {
+    "n": 253,
+    "per_micro": 16.03,
+    "pf": 1.313
+   },
+   "h2_short": {
+    "n": 115,
+    "per_micro": 65.43,
+    "pf": 1.754
+   },
+   "real_gain": [
+    3494.0,
+    2234.0
+   ],
+   "always_long_gain": [
+    3451.0,
+    -2839.0
+   ],
+   "random_gain_19th": [
+    3365.0,
+    3409.0
+   ],
+   "random_gain_median": [
+    2703.0,
+    669.0
+   ],
+   "signal": false
+  },
+  "kept_adds": []
+ },
+ "part_b": {
+  "D": {
+   "S0": {
+    "usd": 45455.0,
+    "usd_h1": 27477.0,
+    "usd_h2": 64637.0,
+    "closed": 0.0,
+    "cons": 0.0072,
+    "near": 0.0072,
+    "first_median": 216.0,
+    "y1_pays": 9.13,
+    "y2_pays": 28.07,
+    "y1_usd": 10249.0,
+    "end_bal": 17110.0,
+    "usd_plus_end": 62566.0,
+    "big_payouts": 0.0
+   },
+   "S3": {
+    "usd": 29240.0,
+    "usd_h1": 13470.0,
+    "usd_h2": 46388.0,
+    "closed": 0.0216,
+    "cons": 0.0504,
+    "near": 0.0863,
+    "first_median": 302.0,
+    "y1_pays": 5.28,
+    "y2_pays": 17.6,
+    "y1_usd": 6306.0,
+    "end_bal": 12639.0,
+    "usd_plus_end": 41878.0,
+    "big_payouts": 0.0
+   },
+   "S4": {
+    "usd": 26947.0,
+    "usd_h1": 21675.0,
+    "usd_h2": 32588.0,
+    "closed": 0.0432,
+    "cons": 0.0719,
+    "near": 0.1223,
+    "first_median": 223.0,
+    "y1_pays": 6.8,
+    "y2_pays": 15.83,
+    "y1_usd": 7364.0,
+    "end_bal": 8104.0,
+    "usd_plus_end": 35051.0,
+    "big_payouts": 0.0
+   }
+  },
+  "H1500": {
+   "S0": {
+    "usd": 45520.0,
+    "usd_h1": 26991.0,
+    "usd_h2": 65358.0,
+    "closed": 0.0,
+    "cons": 0.0072,
+    "near": 0.0072,
+    "first_median": 216.0,
+    "y1_pays": 7.06,
+    "y2_pays": 18.2,
+    "y1_usd": 10593.0,
+    "end_bal": 9666.0,
+    "usd_plus_end": 55186.0,
+    "big_payouts": 4.68
+   },
+   "S3": {
+    "usd": 29090.0,
+    "usd_h1": 11424.0,
+    "usd_h2": 48245.0,
+    "closed": 0.0216,
+    "cons": 0.0504,
+    "near": 0.0863,
+    "first_median": 302.0,
+    "y1_pays": 3.6,
+    "y2_pays": 11.34,
+    "y1_usd": 6452.0,
+    "end_bal": 8139.0,
+    "usd_plus_end": 37229.0,
+    "big_payouts": 3.19
+   },
+   "S4": {
+    "usd": 25072.0,
+    "usd_h1": 19665.0,
+    "usd_h2": 30718.0,
+    "closed": 0.0432,
+    "cons": 0.0719,
+    "near": 0.1223,
+    "first_median": 223.0,
+    "y1_pays": 5.23,
+    "y2_pays": 10.79,
+    "y1_usd": 6837.0,
+    "end_bal": 6960.0,
+    "usd_plus_end": 32032.0,
+    "big_payouts": 2.72
+   }
+  },
+  "H4000": {
+   "S0": {
+    "usd": 42939.0,
+    "usd_h1": 27372.0,
+    "usd_h2": 59606.0,
+    "closed": 0.0,
+    "cons": 0.0072,
+    "near": 0.0072,
+    "first_median": 216.0,
+    "y1_pays": 8.33,
+    "y2_pays": 20.72,
+    "y1_usd": 11121.0,
+    "end_bal": 7926.0,
+    "usd_plus_end": 50864.0,
+    "big_payouts": 2.0
+   },
+   "S3": {
+    "usd": 29308.0,
+    "usd_h1": 13504.0,
+    "usd_h2": 46493.0,
+    "closed": 0.0216,
+    "cons": 0.0504,
+    "near": 0.0863,
+    "first_median": 302.0,
+    "y1_pays": 4.67,
+    "y2_pays": 13.09,
+    "y1_usd": 6834.0,
+    "end_bal": 7051.0,
+    "usd_plus_end": 36360.0,
+    "big_payouts": 1.41
+   },
+   "S4": {
+    "usd": 27080.0,
+    "usd_h1": 21626.0,
+    "usd_h2": 32720.0,
+    "closed": 0.0432,
+    "cons": 0.0719,
+    "near": 0.1223,
+    "first_median": 223.0,
+    "y1_pays": 6.68,
+    "y2_pays": 13.38,
+    "y1_usd": 7566.0,
+    "end_bal": 6925.0,
+    "usd_plus_end": 34005.0,
+    "big_payouts": 1.02
+   }
+  },
+  "H8000": {
+   "S0": {
+    "usd": 49287.0,
+    "usd_h1": 27885.0,
+    "usd_h2": 72026.0,
+    "closed": 0.0,
+    "cons": 0.0072,
+    "near": 0.0072,
+    "first_median": 216.0,
+    "y1_pays": 8.5,
+    "y2_pays": 23.18,
+    "y1_usd": 10619.0,
+    "end_bal": 9484.0,
+    "usd_plus_end": 58770.0,
+    "big_payouts": 1.91
+   },
+   "S3": {
+    "usd": 29949.0,
+    "usd_h1": 13470.0,
+    "usd_h2": 47858.0,
+    "closed": 0.0216,
+    "cons": 0.0504,
+    "near": 0.0863,
+    "first_median": 302.0,
+    "y1_pays": 4.61,
+    "y2_pays": 13.17,
+    "y1_usd": 6494.0,
+    "end_bal": 8197.0,
+    "usd_plus_end": 38146.0,
+    "big_payouts": 1.32
+   },
+   "S4": {
+    "usd": 27035.0,
+    "usd_h1": 21492.0,
+    "usd_h2": 32786.0,
+    "closed": 0.0432,
+    "cons": 0.0719,
+    "near": 0.1223,
+    "first_median": 223.0,
+    "y1_pays": 6.76,
+    "y2_pays": 15.06,
+    "y1_usd": 7451.0,
+    "end_bal": 6974.0,
+    "usd_plus_end": 34009.0,
+    "big_payouts": 0.2
+   }
+  },
+  "W": {
+   "S0": {
+    "usd": 50379.0,
+    "usd_h1": 26325.0,
+    "usd_h2": 76325.0,
+    "closed": 0.0,
+    "cons": 0.0072,
+    "near": 0.0072,
+    "first_median": 216.0,
+    "y1_pays": 3.82,
+    "y2_pays": 8.99,
+    "y1_usd": 11551.0,
+    "end_bal": 10319.0,
+    "usd_plus_end": 60698.0,
+    "big_payouts": 11.82
+   },
+   "S3": {
+    "usd": 33072.0,
+    "usd_h1": 12624.0,
+    "usd_h2": 55235.0,
+    "closed": 0.0216,
+    "cons": 0.0504,
+    "near": 0.0863,
+    "first_median": 302.0,
+    "y1_pays": 2.23,
+    "y2_pays": 6.36,
+    "y1_usd": 6602.0,
+    "end_bal": 8318.0,
+    "usd_plus_end": 41390.0,
+    "big_payouts": 7.7
+   },
+   "S4": {
+    "usd": 30696.0,
+    "usd_h1": 24052.0,
+    "usd_h2": 37582.0,
+    "closed": 0.0432,
+    "cons": 0.0719,
+    "near": 0.1223,
+    "first_median": 223.0,
+    "y1_pays": 2.79,
+    "y2_pays": 5.94,
+    "y1_usd": 8284.0,
+    "end_bal": 7928.0,
+    "usd_plus_end": 38624.0,
+    "big_payouts": 7.81
+   }
+  }
+ },
+ "validation_accessed": false,
+ "test_accessed": false,
+ "part_b_qualifies": {
+  "H1500": false,
+  "H4000": false,
+  "H8000": false,
+  "W": false
+ },
+ "part_b_pick": "D"
+}

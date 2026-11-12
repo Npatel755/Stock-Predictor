@@ -139,3 +139,81 @@ def test_intraday_stacking_and_floor():
     rows = [dict(r, per_micro=-200.0, mae=-200.0) for r in rows] + [dict(day("2026-01-08", 10.0, risk=100.0), mae=-300.0)]
     ev = acct.evaluation(rows, pd.Timestamp("2026-01-05").date(), acct.k3_rule, today=pd.Timestamp("2026-01-20").date())
     assert ev["status"] == "failed" and ev["on"] == "2026-01-08"         # -1,800 after 3 days; day 4 dips 3 x -300 = -900 before closing +30
+
+
+# ---- 2026-11-12: keep-alive, DLL worst cap, noise-area sleeve, funded challenger
+def D(s):
+    return pd.Timestamp(s).date()
+
+
+def test_keep_alive_due_and_weekend_shift():
+    assert acct.keep_alive_due(D("2026-01-05")) == D("2026-01-30")          # Mon + 25 = Fri
+    assert acct.keep_alive_due(D("2026-01-06")) == D("2026-02-02")          # Tue + 25 = Sat -> Mon
+    assert acct.keep_alives_before(D("2026-01-05"), D("2026-01-30")) == []   # due day itself not yet passed
+    assert acct.keep_alives_before(D("2026-01-05"), D("2026-03-01")) == [D("2026-01-30"), D("2026-02-24")]
+
+
+def test_keep_alive_funded_between_trades_and_up_to_today():
+    rows = [day("2026-01-05", 100.0), day("2026-02-20", 100.0)]
+    f = acct.funded(rows, D("2026-01-05"))
+    assert f["keep_alives"] == ["2026-01-30"] and f["balance"] == 197.0       # one $3 round trip after 25 quiet days
+    g = acct.funded(rows, D("2026-01-05"), today=D("2026-03-20"))
+    assert g["keep_alives"] == ["2026-01-30", "2026-03-17"] and g["balance"] == 194.0
+    assert g["days_since_activity"] == 3 and g["next_keep_alive"] == "2026-04-13" and g["last_trade"] == "2026-02-20"
+
+
+def test_keep_alive_evaluation_clock_starts_at_purchase():
+    e = acct.evaluation([day("2026-02-10", 100.0, risk=100.0)], D("2026-01-05"), acct.k3_rule, today=D("2026-02-11"))
+    assert e["keep_alives"] == ["2026-01-30"] and e["balance"] == 297.0       # -3, then 3 micros x $100
+    quiet = acct.evaluation([], D("2026-01-05"), acct.k3_rule, today=D("2026-03-01"))
+    assert quiet["keep_alives"] == ["2026-01-30", "2026-02-24"] and quiet["status"] == "open" and quiet["days_since_activity"] == 5
+
+
+def test_dll_day_worst_capped_at_limit():
+    a = _t(10, 0, 12, 0, 100.0, -700.0); b = _t(10, 30, 11, 30, 50.0, -600.0)   # stacked worst -1,300 -> DLL at -1,000
+    p, w, n = acct.day_pnl_intraday([a, b], lambda r: 1, 2000.0, True)
+    assert p == -1000.0 and w == -1000.0
+
+
+def _sessions(n=15, start="2026-02-02"):
+    """n RTH sessions of synthetic MNQ 1-minute bars: 14 quiet ones (|move| <= 0.05%), then a breakout above the band at 10:00."""
+    rows = []
+    for k, d in enumerate(pd.bdate_range(start, periods=n)):
+        t0 = pd.Timestamp(f"{d.date()} 09:30", tz=NY)
+        for m in range(390):
+            if k < n - 1:
+                c = 20000.0 * (1 + 0.0005 * np.sin(m / 7.0)); o = h = l = c
+            else:
+                o = 20000.0 if m <= 29 else 20100.0; c = 20000.0 if m < 29 else (20100.0 if m < 389 else 20200.0)
+                h, l = max(o, c), min(o, c)
+            rows.append(dict(ts=(t0 + pd.Timedelta(minutes=m)).tz_convert("UTC"), open=o, high=h, low=l, close=c, volume=1.0))
+    return pd.DataFrame(rows)
+
+
+import numpy as np  # noqa: E402
+
+
+def test_noise_rows_breakout_long_to_close():
+    b = _sessions()
+    assert len(acct.noise_sessions(b)) == 15 and acct.noise_rows(b.iloc[: 390 * 14]) == []     # 14 sessions: still warming up
+    r = acct.noise_rows(b)
+    assert len(r) == 1
+    t = r[0]; h = acct.NOISE_HALF
+    assert t["side"] == 1 and t["tin"].strftime("%H:%M") == "10:00" and t["tout"].strftime("%H:%M") == "16:00" and t["extra"]
+    assert abs(t["per_micro"] - (((20200.0 - h) - (20100.0 + h)) * 2.0 - 1.22)) < 1e-9 and t["risk"] <= 300.0
+
+
+def test_challenger_takes_noise_only_at_4x():
+    book = days(30, 400.0, risk=100.0)
+    noise = [dict(day(str(d.date()), 50.0, hh=13), extra=True, mae=0.0) for d in pd.bdate_range("2026-01-05", periods=30)]
+    ch = acct.funded(book + noise, D("2026-01-05"), intraday=True, extra_q=acct.NOISE_Q)
+    same = acct.funded(book, D("2026-01-05"), intraday=True)
+    at4 = sum(1 for x in ch["days"] if x.get("size") == "4x")
+    assert at4 > 0 and abs((ch["balance"] + ch["withdrawn"]) - (same["balance"] + same["withdrawn"]) - 50.0 * at4) < 1e-6
+    assert all(x["size"] == y["size"] for x, y in zip(ch["days"], same["days"]))   # same ladder path: the sleeve never trades below 4x
+
+
+def test_funded_intraday_dll_vs_end_of_day():
+    a = dict(_t(10, 0, 12, 0, 100.0, -700.0), risk=100.0); b = dict(_t(10, 30, 11, 30, 50.0, -600.0), risk=100.0)
+    eod = acct.funded([a, b], D("2026-01-05")); intra = acct.funded([a, b], D("2026-01-05"), intraday=True)
+    assert eod["balance"] == 150.0 and intra["balance"] == -1000.0

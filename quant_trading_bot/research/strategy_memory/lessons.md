@@ -585,3 +585,126 @@
   backup .bak_1794424768; eth-paper restarted). Dry run on a /tmp copy first: existing cards unchanged (champion +$113.25, challenger
   +$783.75, funded +$37.75); PLAN card +$471.75 (one position at a time took 1 of the 2 Codex trades). Live https://143-198-126-83.sslip.io/futures
   HTTP 200 with the PLAN card. Undo: restore the two backups and restart eth-paper.
+
+- eval_plan_risk_refinement_v1: user asked improve currentPLANevaluationpasser. PreservedcorrectedstrictcausalPLANbook+DEF_END;tested44predeclaredriskallocation/lockalternatives on2010-2016TRAINstarts(purged90daysbefore2017). Nonebeatsincumbent50.80%pass/20.47%floorfail. Bestroomcap alternative49.69%pass/0%floorfail/50.31%timeoutwasnotselected. Incumbentkept,2017-2023TRAIN61.13%pass/21.23%floorfail,noholdoutsorforwardpaperselection. 25tests+6980independentdayparitychecks. Do nottunefromsharedchatV/Tresults. Report EVAL_PLAN_RISK_REFINEMENT_TRAIN.html.
+
+- gemini_stack_continuation_v1 resumedGeminitriple/quadgateandsinglesleevework,31cells. Reproducedlegacy$52015.72mean24monthwithdrawals;fullcalendaralone$44654.28;causalrouting+2019TRAINgapfilled+allcalendar$29081.60. OriginalS3risk7/139=5.03597%failsstrict5despiteroundedpass. EarlierTRAINchoiceK8400/G9000gains7.33%,laterTRAIN+2.66%,failsfrozen5%gate;notpromoted. NoexternalV/T/paperoutcomesusedforselection. Modelstilldailyclipping/stopriskproxy,notexactintrabarcompliance. See reports/GEMINI_STACK_CONTINUATION_TRAIN.html.
+
+- gemini_stack_reserve_v1: 145 predeclared TRAIN-only reserve, stack activation/release and four-times scaling policies (144 alternatives). No alternative passed all frozen stress/nonworsening-DD gates. Best earlier withdrawal amount24422.10 (+8.50%) failed S3/S4 stress, so no alternative was sent to later TRAIN. Incumbent kept. IMPORTANT: added withdrawal-neutral EOD trading-equity DD is4548.49 earlier/7457.23 later; smallest earlier DD among all145 is4001.40. The2000 initial account loss floor does NOT imply sub2000 trading-equity DD. All cases FAIL the strict absolute2000 DD objective. 19 tests,2001 total independent reference paths, all145 metrics rechecked; no V/T, forward-paper or deployment access. Report GEMINI_STACK_RESERVE_TRAIN.html; frozen configs/code/checkpoints/rejections preserved in runs/gemini_stack_reserve_v1. Future research must explicitly enforce actual trading drawdown, not merely floor risk.
+
+- stack_trade_budget_v1: 504 frozen TRAIN-only allocations (150 distinct earlier executions),8 earlier qualifiers/4 distinct paths. Chosen base/no-night cap1 risk225 fraction1: earlier+17600.88/realizedDD1409.71;cost2+16070.35/DD1638.21. Later+22564.09/DD1551.59;cost2+17757.18/DD1797.71, but276.375day inactivity fails180day gate. Remaining budget2.29 after2023-03-30 explains stalled trading. Rejected, saved v1.2.0-trade-budget-diagnostic; no alternative chosen.10tests+1024 full reference cases,20 full-grid null diagnostics. Missing intratrade marks/payout model mean no funded/intrabar PASS. Reused TRAIN, no V/T/paper outcomes or deployment. Installed ZIP skills56new/6backed-up updates/12existing (74total). Reports STACK_TRADE_BUDGET_TRAIN.html and audit/memo.
+
+## 2026-11-11 (Claude) payout_26: one funded scoreboard + router question (training only)
+- Footing for every cell: 2019 hole filled, full calendar (Codex's fix), Antigravity's table builder, 139 x 24-month windows. Parity: the triple
+  stack with one-position routing reproduces Codex's $29,081.60 exactly. `reports/PAYOUT_26_ROUTER_SCOREBOARD_TRAINING.json`.
+- payout_lib.route ("posthoc") is causal: a trade is skipped only when an accepted trade that ENTERED at or before its decision-bar start is
+  still open, processed in decision order. Swapping it for one-position routing is a rule change, not a bug fix. Codex's -$15.6k "correction"
+  of the triple stack was -$16.4k router swap and +$0.8k gap fill; the calendar fix (-$7.4k) is a real bug fix.
+- R2 (one position at a time on the funded account): NOT adopted. Fortress 4X S0 $35,870 -> $29,962 (h1 -13%, h2 -18%), S3 closure 2.2% ->
+  0.7% but S4 4.3% -> 5.0%. The evaluation result (eval_36) does not transfer: with a cushion, the overlapping same-direction trades pay.
+  Caveat: funded tables check the floor at end of day and clip the day at the DLL; overlap MAE is not modelled here.
+- R3 (triple stack vs Fortress 4X, posthoc router, same footing): the triple stack PASSES the pre-declared rule: S0 $45,455 vs $35,870 (+27%;
+  h1 +8.5%, h2 +36%), closure 0 / 2.2 / 4.3% identical, near-miss identical, S3 $29,240 vs $22,598, S4 $26,947 vs $25,388; median first
+  payout 216 vs 258 days; better in 100 of 139 windows. Caveats: its gates/K/sleeves were picked by Antigravity on all 14 training years
+  (on the buggy calendar); the gain is concentrated in 2016, 2020 and 2021 starts (2021 +$50.7k; 2013-14 starts slightly worse); the stack only
+  trades above $8,700, so forward paper cannot tell them apart for ~8+ months.
+- Antigravity's optimize_triple_stack / optimize_quad_stack / push_beyond_52k all use simulate_advanced's base-only calendar: their numbers
+  are inflated. Codex's reserve (145) and continuation (31) grids used one-position routing as the baseline, so "no improvement" there is
+  relative to a rule the paper account does not use.
+
+- stack_continuous_exposure_fixed_v1:576frozen allocations/385distinct prefix executions. No prefix qualifier: all576fail cost-stressed profitable-year/block gates. Source OHLC repair fixes postexit gaps on all476scheduled-open closes;1789paths nowvalid. Original faileddataaudit preserved. Rebuilt incumbent2010July-2023continuous historical-dollar net19169.25/cashDD955.75/OHLCbound1157.75;extraRTcoststress13929.25/DDbound1207.75;1334trades,maxinactivity32.91days. But stressed2010-13 loses1036.25;not a new qualifying champion. No annual2021reset, no alternate laterTRAIN, no V/T/paper or deployment.10tests+1154prefix refs+24sourcebound checks+4incumbent refs. Save v1.2.1-historical-dollar-audit. Allocation-only search cannot fix early negative after-cost expectancy; no more same-grid sweeps.
+
+## 2026-11-11 (Claude) payout_27-29: the stack's gains are variance + a simulator artifact; Fortress 4X stays (training only)
+- payout_27 (`reports/PAYOUT_27_STACK_CONTENT_TRAINING.json`): drop-one / add-one on the triple stack's book. Adding AG_TRD60Q_1c + MNQ_E57_1c
+  "qualified" (+15.7% / +10.9% withdrawn by half, S0 $51,036). REVERTED by payout_28's pre-declared placebo rule.
+- payout_28 Part A (`reports/PAYOUT_28_PLACEBO_AND_SWEEP_TRAINING.json`): the same trades with RANDOM sides add almost as much (TRD60Q random
+  median +$4,390 in half 2; real +$6,713 < 19th-of-20 random +$7,018). E57's real gain is below the random 19th in both halves. Neither is signal.
+  Part B: sweeping the stuck balance with the 5-winning-day path ($8,000 per request; Nick's card confirms both paths at any time): none of
+  H1500 / H4000 / H8000 / 5WD-only beats daily-only by +3% in both halves; sweeping lowers the balance, so the stack trades less.
+- payout_29 (`reports/PAYOUT_29_STACK_PLACEBO_TRAINING.json`): triple stack S0 $45,455 vs random-side stacks (median $38,147; h1 19th $31,281 >
+  TRI h1 $27,477) and always-long stack (h1 $28,483 > TRI). R1 (signal) FAILS in half 1; passes in half 2 only. TRI's ladder / K / sprint
+  without the sleeves = $36,193 (F4X $35,870): the rest of the rule adds nothing.
+- THE ARTIFACT: tables clip the day's FINAL P&L at -$1,000, but not the days that went below -$1,000 intraday and recovered (the real DLL
+  liquidates those). Clipping adds $9,419 per 24-month window to the stack vs $1,534 to Fortress 4X. Unclipped: TRI $36,657 vs F4X $34,217
+  (+7%; half 1 $23,362 < $23,825). Expected-value-wise a final-P&L clip is a free put; with intraday liquidation (optional stopping) it is not.
+- Also: "dollars withdrawn" ratchets (gains above K are paid out, losses come out of the retained balance), so any added variance at deep
+  cushion raises it. Report VALUE = withdrawn + max(0, ending balance - $2,000) beside it.
+- Rules for future funded comparisons: (1) random-side placebo (20 seeds) for any added sleeve; (2) report the unclipped number; (3) value
+  metric. Anything that adds trades above a cushion needs intraday (MAE) DLL modelling before it can be believed. payout_26's R3
+  ("triple stack beats Fortress 4X") is withdrawn; Antigravity's Chameleon / Stratosphere / triple / quad family all add sleeves at deep cushion.
+
+## 2026-11-11 (Claude) payout_30-31: funded rules on an INTRADAY simulator; Fortress 4X stays (training only)
+- New `scripts/funded_intraday_core.py` (8 fixtures in tests/test_funded_intraday_core.py): 1-minute MAE for every trade (base, stack
+  sleeves, overnight leg), open MAE stacks, DLL first passage (day liquidated at -$1,000), floor checked on the intraday worst, MAE stressed
+  like P&L in S3 / S4. Parity: with MAE = 0 it gives Fortress 4X $35,374 vs the old tables' $35,870.
+- Honest Fortress 4X (`reports/PAYOUT_30_INTRADAY_FUNDED_TRAINING.json`): S0 $31,748 per 24 months (h1 $22,422 / h2 $41,914; old $35,870),
+  closed 0 / 4.3 / 5.8% (S0 / S3 / S4; old 0 / 2.2 / 4.3), year-1 payouts 7.96, first payout median 257 days, 7.6 DLL days per window.
+- Challengers, none qualify (rule: +3% both halves, value not lower, S3 / S4 not lower, closure <= +0.5 pt): B3X $28,354 (y1 9.06),
+  P24 $25,416 (y1 9.44), triple stack $28,945 (now BELOW F4X; 20.9 DLL days per window: its old edge was the clip), F4X + DLL budget
+  $30,144 (0 DLL days), F4X one-position (payout_31) $29,070 (S3 closed 0.7% but S4 6.5%).
+- Nick (2026-11-11): drop Codex's $2,000 peak-to-trough cap for payout work; the account only closes at its floor (-$2,000 static until the
+  first payout, $0 after it).
+- Use funded_intraday_core for any new funded comparison. The paper funded card still checks end of day; its forward numbers will read
+  optimistic by roughly the old-vs-new gap (~11%).
+
+- funded_rule_bounds_v1: user explicitly removed blanket$2000maxDD for funded research, using verified accountfloor/DLL instead. Published Drop011daily and5day payout paths distinguished.144new account policies/5earlier outcome arrays;zero early boundtouches butzero stressed economicvalue for every alternative;31.98/32.98day intraday opportunity gaps add inactivity risk. No qualifier/newchampion or V/T access.13tests+1102reference cases; all145summaries reconciled. Account intervention bounds are unresolved fills, not confirmed closures. Keep Fortress deployed; one-position prototype is not its full parity model. Obsolete377strict entry-filter draft never scored. Rules version under strategy_versions/funded_research_rules/v1.0.0-published-drop011.
+
+## 2026-11-11 (Claude) payout_32-34: exact minute marks; noise-area sleeve at 4x ADOPTED as the funded challenger (training only)
+- payout_32 diagnosis (`reports/PAYOUT_32_F4X_DIAGNOSIS_TRAINING.json`):
+  - Almost all of F4X's DLL cost comes from STACKED days. At 4x / S0, 53 stacked liquidations cost $22.2k over 2010-23; the 45
+    single-trade ones cost ~$0, because those days end near -$1,000 anyway.
+  - The night leg is never involved in a liquidation.
+  - All S3 / S4 closures are slow 1x bleeds before any payout: late 2013, mid-2017, mid-2019; no day worse than about -$600. No
+    ladder or K setting reaches them; every rule has the same closures.
+- payout_33 (`funded_intraday_core.sim_day_path`, 12 fixtures): every open trade marked at each 1-minute bar's adverse extreme instead
+  of assuming all worst points coincide.
+  - Parity: flat marks reproduce the core exactly.
+  - F4X $32,597 per 24 months (was $31,748). 4x liquidations 98 -> 92: the stacking is real (same-direction NQ / ES trades hit their
+    worst together).
+  - TRI $29,932, B3X $28,869, P24 $25,416. The ranking is unchanged.
+  - Core fix: a liquidated day's worst is now -$1,000; it used to report the full stacked MAE. No closure moves.
+- payout_34 (`reports/PAYOUT_34_NOISE_FUNDED_SLEEVE_TRAINING.json`): eval_12's noise-area momentum (MNQ P, published parameters,
+  1 micro) as a separate add-on position, not routed with the book. Pre-declared cells (micros at m = 1/2/3/4), bar, and signal check.
+  - NA 1/1/1/1: $37,755, but closures 21.6 / 49.6 / 33.1%. The sleeve's ~$4.4k/yr swings are larger than the $2,000 cushion.
+  - NB 0/1/1/1: $36,291, fails S3 ($19,097 < $19,881).
+  - ND 0/1/1/2: fails S3 and closures (9.3 / 10.1%).
+  - **NC 0/0/0/1 (1 micro only at 4x, balance >= $6,500) QUALIFIES:**
+    - S0 $35,788 (+9.8%; h1 25,415 / h2 47,099 vs 23,012 / 43,051).
+    - Value $40,883 (30,378 / 52,340 vs 28,098 / 49,067).
+    - S3 $20,957, S4 $28,836. Closures unchanged at 0 / 4.3 / 5.8%.
+    - Year-1 payouts 8.91 (was 8.09); first payout 255 days.
+  - Signal check passed. NC beats the 19th of 20 random-side sleeves (24,303 / 46,219) and the always-long sleeve (22,372 / 43,716) in
+    both halves. Always-long adds nothing ($32,595 vs $32,597).
+- payout_34b robustness (`reports/PAYOUT_34B_NOISE_ROBUSTNESS_TRAINING.json`):
+  - The gain is positive in all 13 start years; 117 / 139 windows better; median +$2,444.
+  - Leave-one-year-out stays >= +5.5% overall, except without 2018: h2 +2.9% (h1 +10%). The sleeve is a high-volatility-year earner.
+- Reproduction: without the 2019 fill, eval_12's code gives its 2,786 trades / $59,914 exactly. The fill changes only Jan-May 2019.
+- Status: TENTATIVE (training only). The funded holdout (2024-26) was spent on payout_24; the noise signal itself has never been run on
+  2024-26. Next evidence: a one-shot frozen standalone check, if Nick wants it, and forward paper as a challenger card.
+- Topstep facts (help center, read 2026-11-11):
+  - "XFAs with no trading activity for more than 30 days may be closed". Daily Payouts+ Combine: "If there are no trades placed for 30
+    days, the account will close".
+  - "You can hold up to 5 active XFAs at a time". Trade copier allowed ("up to $750K buying power").
+  - "Hedging across accounts and coordinated trading with others is prohibited."
+- Inactivity: 7.2% of F4X windows have a gap of more than 30 days (longest 49, Aug-Sep 2011, intraday-only below $500). The evaluation
+  book's longest gap is 29 days (Mar-Apr 2020). Proposal for both tracks: a 1-micro keep-alive round trip after 25 calendar days with no
+  fill (~$3).
+
+
+## Codex: funded_minute_research_v2 — no qualifying replacement
+48 policies/10 distinct earlier outcome arrays, all rejected. Minute joint overnight replay exposes missing quotes and inactivity, not verified improvement. Do not fill across missing-price intervals or quote partial cash as full24month payouts. Uniform planned09:45 exits replace cached realized safety exits before scoring; general cashholiday guards are strategy assumptions.22fixtures,all48 rawarray reconciliations,21747independent reference trade checks. Not deployed Fortress parity. First postrun audit accidentally checked one rejected policy at2laterTRAIN starts; recorded, no selection change and no validation/test access. Preserve failures; establish streaming parity/source completeness before another payout comparison.
+- 2026-11-12 PAPER (Nick: "do 2 amd 1"). Deployed to the droplet; backups `*.bak_20261112_claude`.
+  - Funded CHALLENGER card: Fortress 4X + the noise sleeve, 1 micro only at 4x. Floor and DLL checked intraday; Fortress 4X alone on the
+    same check is shown beside it.
+  - The noise trades come from the runner's own Yahoo 1-minute MNQ bars (`noise_rows` in `paper_account_static_daily.py`).
+  - Parity on 2010-23 training bars: 2,757 / 2,786 eval_12 trades match exactly, with identical prices. 40 of the 41 differences are at
+    contract rolls (Yahoo has no contract label); the last one is the $300 risk filter applied at the actual price.
+  - The signal needs 14 prior full sessions. The store starts on 2026-10-30, so the first signal comes around Nov 20.
+  - Triggers, written before any forward noise trade:
+    - Retire the sleeve if it averages <= -$10 per trade after >= 150 forward trades.
+    - Promotion is Nick's call, only with >= 150 trades averaging > $0 and the challenger at least matching Fortress 4X on the same check.
+  - KEEP-ALIVE on every card: a simulated 1-micro round trip (-$3) on the first weekday >= 25 days after the last trade (the evaluation's
+    clock starts at purchase). The dashboard shows days since the last trade. ntfy warns at 20 days for the funded rule and the PLAN.
+  - Paper replay `day_pnl_intraday`: the worst point on a liquidated day is now capped at -$1,000 (same fix as research payout_33).
+    Every existing card kept its balance on the switch.
+  - Tests: 21 replay fixtures + 12 core fixtures pass.
