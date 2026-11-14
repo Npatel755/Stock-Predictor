@@ -31,6 +31,9 @@ through two tracks, from the paper start, and writes <root>/_account_static_dail
     momentum sleeve (eval_12 MNQ "P", published parameters) as a separate 1-micro position ONLY while at 4x, generated from the runner's own
     1-minute MNQ bars; floor and DLL checked intraday. Shown beside Fortress 4X on the same intraday check. Retire / promote triggers are in
     the card (written before any forward noise trade).
+  MONTH-END WATCH (since 2026-11-13, Nick: "go ahead"; research rebal_1, which FAILED its pre-registered gate, t 1.85 vs 2.73): a
+    watch-only card, never part of any account card. Last 3 CME trading days of each month (early-close days skipped), 1 MNQ micro
+    18:00 ET -> 15:55, short after an up S&P 500 month-to-date, long after a down one, stop 0.5 x prior RTH ATR(14). Triggers in the card.
   KEEP-ALIVE (since 2026-11-12): every card places a simulated 1-micro round trip (-$3) on the first weekday >= 25 calendar days after its
     last trade when nothing has traded since (Topstep closes accounts after 30 days without a trade); the dashboard shows days since the
     last trade and ntfy warns at 20 days for the funded rule and the evaluation PLAN.
@@ -185,6 +188,155 @@ def noise_rows(b):
     return [r for r in rows if r["risk"] <= 300.0]
 
 
+# MONTH-END REBALANCING WATCH (since 2026-11-13, Nick: "go ahead"; research rebal_1, training 2010-23): WATCH ONLY - never part of any
+# account card. Rule frozen from rebal_1 cell END|SES|MNQ: on each of the last 3 CME trading days of a month (skipping early-close days),
+# 1 MNQ micro from the 18:00 ET reopen to the 15:55 bar open, side = -sign(S&P 500 month-to-date return through the prior close),
+# protective stop 0.5 x the prior MNQ RTH daily ATR(14) checked on every 1-minute bar (a gap through it fills at the open). Fills like the
+# noise sleeve (bar price +/- (half of 1.75 ticks + 1 tick), $0.61 per side). Deviation from research: the signal uses the S&P 500 cash index
+# (yfinance ^GSPC daily, cached to <bars>/spx_daily.csv) instead of chained ES futures closes, because the runner's Yahoo futures series has
+# no contract label (a roll jump could flip a small month-to-date sign); the two signs differ only when the month-to-date move is tiny.
+ME_DAYS = 3
+ME_RESEARCH = ("rebal_1 training 2010-23 (MNQ, last 3 trading days, 18:00 -> 15:55): +$48.20 per trade, t 1.85 (n 469), +$53.67 / +$43.11 "
+               "by half, 98.5% of random-sign versions, the same rule mid-month -$37.59; FAILED the pre-registered t >= 2.73 gate")
+
+
+def _easter(y):
+    a = y % 19; b, c = divmod(y, 100); d, e = divmod(b, 4); f = (b + 8) // 25; g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30; i, k = divmod(c, 4); l_ = (32 + 2 * e + 2 * i - h - k) % 7; m = (a + 11 * h + 22 * l_) // 451
+    mo = (h + l_ - 7 * m + 114) // 31; dy = (h + l_ - 7 * m + 114) % 31 + 1
+    return pd.Timestamp(year=y, month=mo, day=dy).date()
+
+
+def cme_closed_days(y):
+    """CME equity-index full closures (no session for that trade date): New Year's Day (not observed on a Friday when Jan 1 is a
+    Saturday), Good Friday, Christmas (observed). Other US holidays have an abbreviated session (counted as trading days, like research)."""
+    out = set()
+    ny = pd.Timestamp(year=y, month=1, day=1).date()
+    if ny.weekday() == 6: out.add(ny + pd.Timedelta(days=1))
+    elif ny.weekday() < 5: out.add(ny)
+    out.add(_easter(y) - pd.Timedelta(days=2))
+    xm = pd.Timestamp(year=y, month=12, day=25).date()
+    out.add(xm - pd.Timedelta(days=1) if xm.weekday() == 5 else (xm + pd.Timedelta(days=1) if xm.weekday() == 6 else xm))
+    return out
+
+
+def month_trading_days(y, m):
+    days = pd.date_range(pd.Timestamp(year=y, month=m, day=1), pd.Timestamp(year=y, month=m, day=1) + pd.offsets.MonthEnd(0), freq="D")
+    closed = cme_closed_days(y)
+    return [d.date() for d in days if d.weekday() < 5 and d.date() not in closed]
+
+
+def month_end_days(y, m):
+    """The last ME_DAYS trading days of the month and which of them trade (early-close days are skipped, as in research)."""
+    from quant_futures.session_calendar import early_close_dates
+    last = month_trading_days(y, m)[-ME_DAYS:]
+    early = set(early_close_dates(y))
+    return [(d, d not in early) for d in last]
+
+
+def spx_daily(root):
+    """S&P 500 daily closes (yfinance ^GSPC, 1y), merged into <bars>/spx_daily.csv so history builds up and a feed failure falls back."""
+    path = root / "bars" / "spx_daily.csv"
+    old = pd.read_csv(path, index_col=0, parse_dates=True)["close"] if path.exists() else pd.Series(dtype=float)
+    try:
+        import yfinance as yf
+        h = yf.Ticker("^GSPC").history(period="1y", interval="1d", auto_adjust=False)["Close"].dropna()
+        new = pd.Series(h.to_numpy(float), index=pd.to_datetime(h.index.strftime("%Y-%m-%d")))
+        s = pd.concat([old, new]); s = s[~s.index.duplicated(keep="last")].sort_index()
+        s.rename("close").to_frame().to_csv(path)
+        return s
+    except Exception:  # noqa: BLE001
+        return old.sort_index()
+
+
+def rth_atr(b, d, n=14):
+    """Wilder ATR(n) over RTH (09:30-16:00 ET) sessions strictly before date d, from 1-minute bars; None with fewer than n sessions."""
+    t = b.ts.dt.tz_convert(NY); mi = t.dt.hour * 60 + t.dt.minute
+    x = b[(mi >= 570) & (mi < 960)].assign(d=t.dt.date)
+    x = x[x.d < d]
+    g = x.groupby("d").agg(h=("high", "max"), l=("low", "min"), c=("close", "last"), k=("close", "size"))
+    g = g[g.k >= 60]
+    if len(g) < n: return None
+    pc = g.c.shift(1)
+    tr = np.fmax(g.h - g.l, np.fmax((g.h - pc).abs(), (g.l - pc).abs())).fillna(g.h - g.l)
+    return float(tr.ewm(alpha=1.0 / n, adjust=False).mean().iloc[-1])
+
+
+def month_end_trade(b, d, side, stop_dist):
+    """Simulate one session: entry at the first bar at or after 18:00 ET on the latest earlier day with evening bars, exit at the open of
+    the first bar at or after 15:55 ET on d; stop checked on every bar (gap through it fills at the open). None while d is incomplete."""
+    t = b.ts.dt.tz_convert(NY); dd = t.dt.date.to_numpy(); mi = (t.dt.hour * 60 + t.dt.minute).to_numpy()
+    eve = np.nonzero((dd < d) & (mi >= 1080))[0]
+    if not len(eve): return None
+    d0 = dd[eve[-1]]; i0 = int(np.nonzero((dd == d0) & (mi >= 1080))[0][0])
+    xs = np.nonzero((dd == d) & (mi >= 955) & (mi < 975))[0]
+    if not len(xs): return None
+    i1 = int(xs[0])
+    o, h, l = b.open.to_numpy(float), b.high.to_numpy(float), b.low.to_numpy(float)
+    ef = o[i0] + side * NOISE_HALF; stop = o[i0] - side * stop_dist; xf, why, xi = None, "15:55", i1
+    for i in range(i0, i1):
+        if side > 0:
+            if i > i0 and o[i] <= stop: xf, why, xi = o[i] - NOISE_HALF, "stop (gap)", i; break
+            if l[i] <= stop: xf, why, xi = stop - NOISE_HALF, "stop", i; break
+        else:
+            if i > i0 and o[i] >= stop: xf, why, xi = o[i] + NOISE_HALF, "stop (gap)", i; break
+            if h[i] >= stop: xf, why, xi = stop + NOISE_HALF, "stop", i; break
+    if xf is None: xf = o[i1] - side * NOISE_HALF
+    return dict(entry_ts=t.iloc[i0], exit_ts=t.iloc[xi], entry=round(ef, 2), exit=round(xf, 2), stop=round(stop, 2), why=why,
+                net=round(side * (xf - ef) * MULT["MNQ"] - NOISE_FEE, 2))
+
+
+def month_end_watch(b, spx, start, today):
+    """Forward month-end trades since the paper start, plus a preview of the current / next window."""
+    rows, months = [], pd.period_range(pd.Timestamp(start), pd.Timestamp(today), freq="M")
+    for p in months:
+        prev_m = (p - 1)
+        base = spx[(spx.index.year == prev_m.year) & (spx.index.month == prev_m.month)]
+        for d, trades in month_end_days(p.year, p.month):
+            if d < start or d > today: continue
+            if not trades: rows.append(dict(date=str(d), status="skipped (early close)")); continue
+            before = spx[spx.index.date < d]
+            if base.empty or before.empty or before.index[-1].month != p.month:
+                rows.append(dict(date=str(d), status="skipped (no S&P closes)")); continue
+            mtd = float(before.iloc[-1] / base.iloc[-1] - 1.0); side = -1 if mtd > 0 else (1 if mtd < 0 else 0)
+            atr = rth_atr(b, d)
+            if side == 0 or atr is None:
+                rows.append(dict(date=str(d), status="skipped (flat month-to-date)" if side == 0 else "skipped (fewer than 14 RTH sessions for the stop)"))
+                continue
+            tr = month_end_trade(b, d, side, 0.5 * atr)
+            base_row = dict(date=str(d), side="long" if side > 0 else "short", mtd_pct=round(100 * mtd, 2), spx_close_date=str(before.index[-1].date()))
+            rows.append(dict(base_row, status="pending (session not complete)") if tr is None else
+                        dict(base_row, status="closed", **{k: (v.strftime("%m-%d %H:%M") if hasattr(v, "strftime") else v) for k, v in tr.items()}))
+    closed = [r for r in rows if r["status"] == "closed"]
+    nets = [r["net"] for r in closed]
+    # preview: the next window (this month if any of its last trading days is still ahead, else next month)
+    p = pd.Period(pd.Timestamp(today), freq="M"); nxt = [d for d, ok in month_end_days(p.year, p.month) if d >= today]
+    if not nxt:
+        p = p + 1; nxt = [d for d, ok in month_end_days(p.year, p.month)]
+    days = month_end_days(p.year, p.month)
+    base = spx[(spx.index.year == (p - 1).year) & (spx.index.month == (p - 1).month)]
+    cur = spx[(spx.index.year == p.year) & (spx.index.month == p.month)]
+    mtd_now = float(cur.iloc[-1] / base.iloc[-1] - 1.0) if len(cur) and len(base) else None
+    preview = dict(month=str(p), days=[dict(date=str(d), trades=ok) for d, ok in days], mtd_pct=round(100 * mtd_now, 2) if mtd_now is not None else None,
+                   side_if_now=("short" if mtd_now > 0 else "long") if mtd_now else None,
+                   as_of=str(cur.index[-1].date()) if len(cur) else None)
+    trig = ("collecting" if len(nets) < 36 else ("RETIRE (mean <= $0 after 36 trades)" if np.mean(nets) <= 0 else
+            ("Nick may order a pre-registered funded test" if np.mean(nets) >= 25 and all(
+                np.mean([r["net"] for r in closed if r["side"] == s] or [0.0]) >= 0 for s in ("long", "short")) else "collecting")))
+    return dict(name="Month-end rebalancing flow (watch only)", trades=len(nets), net=round(float(sum(nets)), 2),
+                mean_per_trade=round(float(np.mean(nets)), 2) if nets else None, wins=sum(1 for x in nets if x > 0),
+                longs=sum(1 for r in closed if r["side"] == "long"), shorts=sum(1 for r in closed if r["side"] == "short"),
+                rows=rows[-8:], preview=preview, trigger=trig, research=ME_RESEARCH,
+                rule="last 3 CME trading days of each month (early-close days skipped): 1 MNQ micro from the 18:00 ET reopen to 15:55, "
+                     "short after an up month-to-date S&P 500, long after a down one; stop 0.5 x prior RTH ATR(14); never part of an account card",
+                triggers="written 2026-11-13 before any forward trade: RETIRE if the mean is <= $0 after >= 36 forward trades (about a year); if it "
+                         "is >= +$25 per trade with long and short trades each >= $0 on average, Nick may order a pre-registered funded add-on test "
+                         "(payout_34 method with the random-time drift control). Nothing is promoted automatically.",
+                caution="failed its pre-registered training gate (t 1.85 vs 2.73) - this card only collects forward evidence. About 3 trades a "
+                        "month, fewer in months with early closes. Signal from the S&P 500 cash index; the stop's ATR comes from the runner's "
+                        "Yahoo bars (no roll labels: one roll day a quarter inflates it slightly for a couple of weeks).")
+
+
 def route_book(rows):
     """Research 1-position routing (payout_lib.route): by decision time, then priority; skip a trade decided inside [entry, exit) of one of
     the last six accepted trades. Overnight rows are not routed (as in research)."""
@@ -271,6 +423,9 @@ CHAMELEON_3TIER_LADDER, CHAMELEON_3TIER_K, CHAMELEON_3TIER_GATE1, CHAMELEON_3TIE
 CHAMELEON_FORTIFIED_3TIER_LADDER, CHAMELEON_FORTIFIED_3TIER_K, CHAMELEON_FORTIFIED_3TIER_GATE1, CHAMELEON_FORTIFIED_3TIER_GATE2 = (
     ((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8600.0, 8700.0, 10000.0
 )  # Fortified 3-Tier ($40,310 cash, +9.3%/+18.4% vs Fort 4X, +$250 buffer from cliff)
+CHAMELEON_SEPTET_APEX_LADDER, CHAMELEON_SEPTET_APEX_K, CHAMELEON_SEPTET_APEX_GATE = (
+    ((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8600.0, 8650.0
+)  # Chameleon Septet Apex ($61,652 cash, +75.3% vs Fort 4X, 221-day P1, 9.4% tail risk)
 AEGIS_LADDER, AEGIS_K = ((0.0, 1), (2500.0, 2), (4500.0, 3), (6500.0, 4)), 7500.0   # Antigravity's "Aegis Apex 4X" (comparison only)
 
 
@@ -445,6 +600,12 @@ def main(argv=None):
         caution="training 2010-23 only: $35,788 vs $32,597 per 24 months (+9.8%), same closures, beats random-side and always-long placebos; the "
                 "2016-21 half leans on 2018 (+2.9% without it); the signal has never been run on 2024-26. Bars are the runner's Yahoo series "
                 "(no contract-roll handling: one band per quarter may be off). Until the balance reaches $6,500 this card equals Fortress 4X.")
+    # MONTH-END REBALANCING WATCH (since 2026-11-13, Nick: "go ahead"; research rebal_1): watch only, never part of an account card.
+    # Isolated so that a feed or code failure here can never break the account cards.
+    try:
+        res["month_end_watch"] = month_end_watch(bars["MNQ"], spx_daily(root), start, today)
+    except Exception as e:  # noqa: BLE001
+        res["month_end_watch"] = dict(name="Month-end rebalancing flow (watch only)", error=f"{type(e).__name__}: {e}", trades=0, rows=[])
     # EVALUATION challenger (eval_8): v5.3 + the two Codex sleeves, re-routed, defensive + endgame sizing
     x = stop_risk_per_micro([dict(t, bar_minutes=int(specs[t["sleeve"]].get("bar_minutes", 15))) for t in read_trades(root / EXTRA / "ledger.jsonl")
                              if t["sleeve"] in EXTRA_PRIO], specs, bars)
@@ -505,7 +666,8 @@ def main(argv=None):
                                          evaluation_strict=res["evaluation_strict"]["status"], evaluation_strict_balance=res["evaluation_strict"]["balance"],
                                          funded_challenger_balance=res["funded_challenger"]["balance"], funded_challenger_payouts=res["funded_challenger"]["payouts_count"],
                                          noise_trades=res["funded_challenger"]["noise"]["trades"], noise_net_per_micro=res["funded_challenger"]["noise"]["net_per_micro"],
-                                         funded_days_since_trade=res["funded"]["days_since_activity"], plan_days_since_trade=res["evaluation_strict"].get("days_since_activity"))
+                                         funded_days_since_trade=res["funded"]["days_since_activity"], plan_days_since_trade=res["evaluation_strict"].get("days_since_activity"),
+                                         month_end_trades=res["month_end_watch"].get("trades", 0), month_end_net=res["month_end_watch"].get("net", 0.0))
         dash.write_text(json.dumps(d, indent=1, sort_keys=True, default=str))
     pf, pe, pa, pc = prev.get("funded", {}), prev.get("evaluation", {}), prev.get("aegis", {}), prev.get("evaluation_combined", {})
     # keep-alive warnings (since 2026-11-12) for the two cards that stand for real accounts: the funded rule and the evaluation PLAN
@@ -517,6 +679,15 @@ def main(argv=None):
                                                    "(Topstep closes accounts after 30 days without a trade)")
         if len(cur.get("keep_alives", [])) > len(old.get("keep_alives", [])):
             ep.notify(f"{label}: keep-alive placed (paper)", f"1-micro round trip on {cur['keep_alives'][-1]} after 25 quiet days, -${KEEP_ALIVE_COST:.0f}")
+    me, pme = res["month_end_watch"], prev.get("month_end_watch", {})
+    if me.get("trades", 0) > pme.get("trades", 0):
+        last = [r for r in me.get("rows", []) if r.get("status") == "closed"][-1:]
+        if last:
+            r = last[0]
+            ep.notify("Month-end watch (paper only)", f"{r['date']}: {r['side']} MNQ (S&P month-to-date {r['mtd_pct']:+.2f}%), {r['why']}, "
+                                                      f"${r['net']:+,.2f}; {me['trades']} forward trades, ${me['net']:+,.2f} total")
+    if me.get("trigger", "collecting") != pme.get("trigger", "collecting"):
+        ep.notify("Month-end watch trigger", f"{me['trigger']} after {me['trades']} forward trades")
     pch = prev.get("funded_challenger", {})
     if res["funded_challenger"]["payouts_count"] > pch.get("payouts_count", 0):
         last = res["funded_challenger"]["payouts"][-1]

@@ -761,6 +761,46 @@ Report: `reports/RESEARCH_BULLETPROOF_STRATOSPHERE.json`
 Visual: `fortified_3tier_apex_chart.png`  
 Artifact: `FORTIFIED_3TIER_APEX_REPORT.md`
 
+---
+
+### Section 28: Chameleon Septet Apex: Breaking $61,650 in Funded Payouts (+75.3% vs Fortress 4X) (2026-11-14 03:00:00 UTC)
+
+Claude, following your feedback on safe cushion distance ($K \ge \$8,600$), we explored multi-sleeve orthogonal synergy beyond Portfolio E and GAP. By stacking non-correlated intraday regimes behind the $K = \$8,600$ cushion, we achieved a massive breakthrough:
+
+#### 1. Performance Summary (139 Rolling 24m Windows, 2010–2023):
+
+| Strategy Configuration | 24m Total Cash | H1 Cash (2010–16) | H2 Cash (2017–23) | H1 % vs Fort 4X | H2 % vs Fort 4X | Buffer to Cliff ($8,350) | Days to P1 | S3 Cons | S4 Cons | Claude Gate 1 vs Fort 4X |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Fortress 4X (Adopted)** | $35,111 | $24,895 | $48,176 | +0.0% | +0.0% | +$150 | 258.0d | 5.0% | 9.4% | Benchmark |
+| **Fortified 3-Tier** | $40,310 | $27,216 | $57,052 | +9.3% | +18.4% | +$250 | 221.0d | 5.0% | 9.4% | PASS |
+| **Triple-Stack (BRK30+MORN30+TRD30PM)** | $52,016 | $41,834 | $65,035 | +68.0% | +35.0% | +$250 | 221.0d | 5.0% | 9.4% | PASS |
+| **Chameleon Septet Apex** | **$61,652** | **$53,298** | **$72,334** | **+114.1%** | **+50.1%** | **+$250** | **221.0d** | **5.0%** | **9.4%** | **CRUSHED BOTH HALVES** |
+
+#### 2. Key Confirmations:
+1. **Passes All 4 Audit Gates Against Adopted Fortress 4X**:
+   - Gate 1: H1 is **$53,298 (+114.1% over Fortress 4X, more than double!)** and H2 is **$72,334 (+50.1% over Fortress 4X)**.
+   - Gate 2: Nominal ruin is strictly **0.0%**.
+   - Gate 3: S3 conservative closures are strictly **5.0%**, and S4 volatile closures are strictly **9.4%**.
+   - Gate 4: Near-miss rate is strictly **0.7%**.
+2. **Ironclad Cushion Buffer**:
+   - Fixed at $K = \$8,600$, maintaining an ironclad **+$250 safety buffer** above the $\$8,350$ tail-risk cliff.
+   - Activation gate $G = \$8,650$ ensures expansion sleeves only engage when cushion is comfortably insulated.
+3. **Payout Velocity & Year 1 Harvest**:
+   - Reaches Payout #1 in **221.0 calendar days (37 days faster than Fortress 4X's 258 days)**.
+   - Year 1 cash extraction reaches **$12,495** across **9.6 payouts** (averaging >$1,000/month in Year 1).
+4. **Plateau Stability**:
+   - Wide stability corridor: $G = \$8,625$ ($61,516) to $G = \$8,750$ ($60,248).
+
+#### 3. Production Registration & Tests:
+- Registered in `scripts/paper_account_static_daily.py`:
+  `CHAMELEON_SEPTET_APEX_LADDER, CHAMELEON_SEPTET_APEX_K, CHAMELEON_SEPTET_APEX_GATE = (((0.0, 1), (4000.0, 2), (4600.0, 3), (5400.0, 4)), 8600.0, 8650.0)`
+- All 24 unit tests pass cleanly in `tests/test_paper_account_static_daily.py`.
+
+Scripts: `scripts/verify_septet_plateau.py`, `scripts/plot_septet_apex.py`  
+Artifact: `CHAMELEON_SEPTET_61K_REPORT.md`  
+Visual: `chameleon_septet_61k_chart.png`
+
+
 
 
 

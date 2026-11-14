@@ -106,6 +106,8 @@ def test_chameleon_and_sprint():
     assert acct.CHAMELEON_FORTIFIED_3TIER_K == 8600.0
     assert acct.CHAMELEON_FORTIFIED_3TIER_GATE1 == 8700.0
     assert acct.CHAMELEON_FORTIFIED_3TIER_GATE2 == 10000.0
+    assert acct.CHAMELEON_SEPTET_APEX_K == 8600.0
+    assert acct.CHAMELEON_SEPTET_APEX_GATE == 8650.0
     # Test sprint mode takes $500 at $6,000
     rows = days(30, 300.0, risk=100.0)
     f = acct.funded(rows, pd.Timestamp("2026-01-05").date(), acct.CHAMELEON_CROWN_LADDER, acct.CHAMELEON_CROWN_K, sprint=True)
@@ -217,3 +219,51 @@ def test_funded_intraday_dll_vs_end_of_day():
     a = dict(_t(10, 0, 12, 0, 100.0, -700.0), risk=100.0); b = dict(_t(10, 30, 11, 30, 50.0, -600.0), risk=100.0)
     eod = acct.funded([a, b], D("2026-01-05")); intra = acct.funded([a, b], D("2026-01-05"), intraday=True)
     assert eod["balance"] == 150.0 and intra["balance"] == -1000.0
+
+
+# ---------------------------------------------------------------- month-end watch (Claude 2026-11-13)
+def _bars(rows):
+    """rows: (NY time string, open, high, low, close) -> runner-style 1-minute frame (UTC ts)."""
+    df = pd.DataFrame(rows, columns=["t", "open", "high", "low", "close"])
+    return df.assign(ts=pd.to_datetime(df.t).dt.tz_localize(NY).dt.tz_convert("UTC"), volume=1.0)[["ts", "open", "high", "low", "close", "volume"]]
+
+
+def test_month_end_calendar():
+    import datetime as dt
+    assert acct.month_end_days(2026, 11) == [(dt.date(2026, 11, 26), False), (dt.date(2026, 11, 27), False), (dt.date(2026, 11, 30), True)]
+    assert [d for d, ok in acct.month_end_days(2026, 12)] == [dt.date(2026, 12, 29), dt.date(2026, 12, 30), dt.date(2026, 12, 31)]
+    assert acct.cme_closed_days(2027) == {dt.date(2027, 1, 1), dt.date(2027, 3, 26), dt.date(2027, 12, 24)}   # Good Friday; Christmas on a Saturday
+    assert dt.date(2022, 12, 31) not in acct.cme_closed_days(2022) and dt.date(2021, 12, 31) not in acct.cme_closed_days(2022)
+
+
+def test_month_end_trade_exit_stop_and_gap():
+    import datetime as dt
+    d = dt.date(2026, 11, 30)                                   # Monday: the session starts Sunday 18:00
+    base = [("2026-11-27 12:00", 100, 100, 100, 100), ("2026-11-29 18:00", 100, 101, 99.5, 100.5), ("2026-11-30 09:30", 101, 102, 100.5, 101.5),
+            ("2026-11-30 15:55", 103, 103, 102, 102.5)]
+    r = acct.month_end_trade(_bars(base), d, 1, 5.0)            # long, stop 95: never touched -> exits at the 15:55 open
+    half = acct.NOISE_HALF
+    assert r["why"] == "15:55" and r["entry"] == round(100 + half, 2) and r["exit"] == round(103 - half, 2)
+    assert abs(r["net"] - ((103 - half - (100 + half)) * 2 - acct.NOISE_FEE)) < 0.006          # net from unrounded fills, rounded to cents
+    stop_rows = base[:2] + [("2026-11-30 09:30", 101, 101, 94.0, 96)] + base[3:]
+    r = acct.month_end_trade(_bars(stop_rows), d, 1, 5.0)       # low 94 <= stop 95 -> filled at the stop minus slippage
+    assert r["why"] == "stop" and r["exit"] == round(95 - half, 2)
+    gap_rows = base[:2] + [("2026-11-30 09:30", 93.0, 94, 92, 93.5)] + base[3:]
+    r = acct.month_end_trade(_bars(gap_rows), d, 1, 5.0)        # opens through the stop -> filled at the open
+    assert r["why"] == "stop (gap)" and r["exit"] == round(93.0 - half, 2)
+    assert acct.month_end_trade(_bars(base[:3]), d, 1, 5.0) is None   # no 15:55 bar yet: session incomplete
+
+
+def test_month_end_watch_signal_side_and_skips():
+    import datetime as dt
+    spx = pd.Series([100.0, 103.0, 104.0], index=pd.to_datetime(["2026-10-30", "2026-11-25", "2026-11-27"]))
+    rows = [("2026-11-27 12:00", 100, 100, 100, 100), ("2026-11-29 18:00", 100, 100, 100, 100), ("2026-11-30 15:55", 97, 97, 97, 97)]   # short wins 3 pts
+    # 14 earlier RTH sessions so the stop ATR exists (range 2 points each)
+    for day_ in pd.bdate_range("2026-11-02", periods=15):     # 60 RTH bars per session (the ATR counts sessions with >= 60 bars)
+        for m in range(60):
+            rows.append((f"{day_.date()} {9 + (30 + m) // 60:02d}:{(30 + m) % 60:02d}", 100, 101, 99, 100))
+    w = acct.month_end_watch(_bars(rows), spx, dt.date(2026, 11, 2), dt.date(2026, 11, 30))
+    closed = [r for r in w["rows"] if r["status"] == "closed"]
+    skipped = [r for r in w["rows"] if r["status"].startswith("skipped (early")]
+    assert len(skipped) == 2 and len(closed) == 1 and closed[0]["side"] == "short" and closed[0]["mtd_pct"] == 4.0   # 104 / 100 - 1
+    assert closed[0]["net"] > 0 and w["trades"] == 1 and w["trigger"] == "collecting"
